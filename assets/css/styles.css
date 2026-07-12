@@ -558,3 +558,60 @@ footer {
 }
 
 
+/* Service Desk Action Buttons Layout */
+.service-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.action-btn:active {
+    transform: scale(0.98);
+}
+
+/* Call Button - High Visibility Orange */
+.call-now-btn {
+    background-color: var(--accent-orange, #e67e22);
+    color: #fff;
+    border: 2px solid var(--accent-orange, #e67e22);
+}
+.call-now-btn:hover {
+    background-color: #d35400;
+}
+
+/* Message Button - Clean Dark Border Outline */
+.message-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid var(--border-color, #333);
+}
+.message-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-green, #2ecc71);
+}
+
+@media (min-width: 768px) {
+    .service-actions {
+        flex-direction: row;
+    }
+    .action-btn {
+        flex: 1;
+    }
+}
+
+

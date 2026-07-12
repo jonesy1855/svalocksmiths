@@ -642,5 +642,68 @@ footer {
 .service-card-link:hover .read-more {
     color: var(--accent-orange, #e67e22);
 }
+/* --- UNIVERSAL DESKTOP & WIDESCREEN OPTIMIZATION --- */
+@media (min-width: 992px) {
+    /* 1. Prevent the entire site layout from stretching infinitely wide */
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* 2. Make the Service Capability Cards sit in a beautiful 2x2 grid */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* 3. Make Recent Interventions sit neatly side-by-side */
+    .interventions-container, 
+    .recent-grid { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* 4. Fix the Who Am I section so image and text sit side-by-side */
+    #about .about-content-wrapper,
+    #about .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+    #about img, #about .about-image {
+        flex: 1;
+        max-width: 45%;
+        margin-bottom: 0;
+    }
+    #about .about-text {
+        flex: 1.2;
+    }
+
+    /* 5. Make the FAQ / Equipment sections stretch into a clean 3-column array */
+    .faq-grid, 
+    .equipment-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    /* 6. Fix the Service Desk at the bottom so the two forms sit beautifully side-by-side */
+    .forms-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        align-items: flex-start;
+    }
+    .form-box {
+        flex: 1;
+        margin-bottom: 0;
+    }
+}
 
 

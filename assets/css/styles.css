@@ -488,3 +488,33 @@ footer {
     .video-card { flex: 0 0 85%; } /* 1 partial card showing on phone to prompt swipe gesture */
     .slider-arrow { display: none; } /* Hide tracking arrows on mobile, rely on native swipe */
 }
+.responsive-img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border-color, #333);
+    display: block;
+}
+
+/* Adjust layout block for the profile section to accommodate the image */
+.profile-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .profile-block {
+        flex-direction: row;
+        align-items: center;
+    }
+    .profile-img-container {
+        flex: 1;
+    }
+    .profile-text {
+        flex: 1;
+    }
+}
+

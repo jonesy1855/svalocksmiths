@@ -614,4 +614,33 @@ footer {
     }
 }
 
+/* Ensure the clickable wrappers don't break our theme styling */
+.service-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    outline: none;
+}
+
+/* Move the hover lifting effect to the link level so it stays buttery smooth */
+.service-card-link:hover .service-card {
+    transform: translateY(-5px);
+    border-color: var(--accent-green, #2ecc71);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Style for the 'Learn More' trigger line */
+.read-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--accent-green, #2ecc71);
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.service-card-link:hover .read-more {
+    color: var(--accent-orange, #e67e22);
+}
+
 

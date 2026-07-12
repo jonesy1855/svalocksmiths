@@ -27,43 +27,26 @@ header {
     border-bottom: 2px solid var(--accent-green);
     position: sticky; 
     top: 0;
-    z-index: 100; /* Increased slightly to make sure it floats above everything else */
+    z-index: 100;
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(5px); /* Optional: gives a sleek premium blurred effect through the dark glass background */
+    backdrop-filter: blur(5px);
 }
-
-
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
-.logo-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #444, #222);
-    border: 2px solid var(--accent-green);
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: var(--accent-green);
-}
-
-/* Styling for the new official logo image */
 .logo-img {
-    width: 100px;       /* Keeps it perfectly sized in the header */
-    height: 125px;      /* Maintains a uniform square/circle ratio */
-    object-fit: contain;
-    border-radius: 4px; /* Optional slight smoothing */
+    width: 110px;
+    height: 88px;
+    object-fit: cover;
+    border-radius: 38%;
 }
-
 
 .brand-name h1 {
     font-size: 1.4rem;
@@ -270,7 +253,6 @@ footer {
 
 /* --- New UX Component Extensions --- */
 
-/* Tools Gallery Section */
 .tools-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

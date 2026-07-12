@@ -209,7 +209,7 @@
             </div>
         </div>
     </div>
-
+    
     <div class="container" id="contact">
         <h2 class="section-title">Service Desk</h2>
         <div class="forms-wrapper">
@@ -221,19 +221,19 @@
                 <form id="enquiryForm" action="https://formspree.io/f/mqerzyoj" method="POST">
                     <div class="form-group">
                         <label for="enquiryName">Your Name</label>
-                        <input type="text" id="enquiryName" class="form-control" placeholder="e.g. John Evans" required>
+                        <input type="text" id="enquiryName" name="Name" class="form-control" placeholder="e.g. John Evans" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiryContact">Phone / Email</label>
-                        <input type="text" id="enquiryContact" class="form-control" placeholder="e.g. 07700 900077" required>
+                        <input type="text" id="enquiryContact" name="Contact Details" class="form-control" placeholder="e.g. 07700 900077" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiryLocation">Location (Town or Parish)</label>
-                        <input type="text" id="enquiryLocation" class="form-control" placeholder="e.g. Craven Arms, Oswestry" required>
+                        <input type="text" id="enquiryLocation" name="Location" class="form-control" placeholder="e.g. Craven Arms, Oswestry" required>
                     </div>
                     <div class="form-group">
                         <label for="enquiryMsg">Requirements</label>
-                        <textarea id="enquiryMsg" class="form-control" rows="4" placeholder="Describe the vehicle issue or requirements..." required></textarea>
+                        <textarea id="enquiryMsg" name="Requirements/Message" class="form-control" rows="4" placeholder="Describe the vehicle issue or requirements..." required></textarea>
                     </div>
                     <button type="submit" class="cta-btn" style="width:100%;">Submit Request</button>
                 </form>
@@ -242,10 +242,10 @@
             <!-- Booking Order Form -->
             <div class="form-box" style="border-color: rgba(46, 204, 113, 0.3);">
                 <h3>Emergency Booking Order</h3>
-                <form id="orderForm" action="https://formspree.io/f/maqrwpgv" method="POST"="POST">
+                <form id="orderForm" action="https://formspree.io/f/maqrwpgv" method="POST">
                     <div class="form-group">
                         <label for="vehicleType">Machinery Category</label>
-                        <select id="vehicleType" class="form-control" required>
+                        <select id="vehicleType" name="Machinery Category" class="form-control" required>
                             <option value="">-- Select Vehicle Class --</option>
                             <option value="agri">Agricultural / Plant (Tractor, Combine, Excavator)</option>
                             <option value="hgv">HGV / Commercial Lorry (24V System)</option>
@@ -255,11 +255,11 @@
                     </div>
                     <div class="form-group">
                         <label for="v5Details">Year, Make & Model</label>
-                        <input type="text" id="v5Details" class="form-control" placeholder="e.g. 2021 John Deere 6R or Scania R500" required>
+                        <input type="text" id="v5Details" name="Vehicle Details" class="form-control" placeholder="e.g. 2021 John Deere 6R or Scania R500" required>
                     </div>
                     <div class="form-group">
                         <label for="jobUrgency">Urgency Tier</label>
-                        <select id="jobUrgency" class="form-control" required>
+                        <select id="jobUrgency" name="Urgency Level" class="form-control" required>
                             <option value="standard">Standard Booking (Spare Key / Duplicate)</option>
                             <option value="urgent">Urgent Business Down (Stranded Fleet asset)</option>
                             <option value="emergency">Immediate Emergency (All Keys Lost / Locked Out)</option>
@@ -267,7 +267,7 @@
                     </div>
                     <div class="form-group">
                         <label for="siteAddress">Precise Location (What3Words or Postcode)</label>
-                        <input type="text" id="siteAddress" class="form-control" placeholder="e.g. ///wiped.contracts.blurs or SY5 9XX" required>
+                        <input type="text" id="siteAddress" name="Precise Location" class="form-control" placeholder="e.g. ///wiped.contracts.blurs or SY5 9XX" required>
                     </div>
                     <button type="submit" class="cta-btn" style="width:100%; background-color: var(--accent-orange); color:white;">Dispatch Mobile Van</button>
                 </form>
@@ -275,6 +275,10 @@
 
         </div>
     </div>
+
+
+
+
 
     <footer>
         <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile 12V/24V Auto Locksmith Services.</p>

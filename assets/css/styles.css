@@ -18,20 +18,24 @@
 body {
     background-color: var(--primary-bg);
     color: var(--text-light);
+    padding:-top: 20px;
     line-height: 1.6;
 }
 
 header {
     background-color: rgba(26, 26, 26, 0.95);
     border-bottom: 2px solid var(--accent-green);
-    position: sticky;
+    position: sticky; 
     top: 0;
-    z-index: 1000;
+    z-index: 100; /* Increased slightly to make sure it floats above everything else */
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    backdrop-filter: blur(5px); /* Optional: gives a sleek premium blurred effect through the dark glass background */
 }
+
+
 
 .logo-container {
     display: flex;
@@ -120,6 +124,7 @@ nav a:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 4rem 2rem;
+    scroll-margin-top: 90px; /* Prevents nav links from cutting off titles when clicked */
 }
 
 .section-title {

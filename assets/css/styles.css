@@ -244,6 +244,56 @@ footer {
     border-top: 1px solid var(--border-color);
 }
 
+/* --- HIGH-END DESKTOP HOVER EFFECT upgrades --- */
+@media (min-width: 992px) {
+    /* Smooth scaling effect on service cards */
+    .service-card-link {
+        text-decoration: none;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .service-card-link:hover {
+        transform: translateY(-6px);
+    }
+
+    /* Subtle internal card hover updates */
+    .service-card {
+        transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+    .service-card:hover {
+        border-color: var(--accent-green, #2ecc71);
+        box-shadow: 0 10px 20px rgba(46, 204, 113, 0.1);
+    }
+
+    /* Elevate your forms on desktop focus */
+    .form-box {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .form-box:focus-within {
+        transform: scale(1.01);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Polish Form Controls */
+    .form-control {
+        transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    .form-control:focus {
+        border-color: var(--accent-green, #2ecc71);
+        background-color: rgba(255, 255, 255, 0.04);
+        outline: none;
+    }
+
+    /* Hover animations on action buttons */
+    .cta-btn, .action-btn {
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.2s ease;
+    }
+    .cta-btn:hover, .action-btn:hover {
+        transform: scale(1.03);
+        filter: brightness(1.1);
+    }
+}
+
+
 @media (max-width: 768px) {
     header { flex-direction: column; gap: 15px; text-align: center; }
     nav { margin-left: 0; }

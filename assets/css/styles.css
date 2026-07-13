@@ -747,4 +747,43 @@ footer {
     }
 }
 
+/* --- PREMIUM DESKTOP VISUAL STRUCTURE UPGRADES --- */
+@media (min-width: 992px) {
+    /* Give the Hero Section a massive, premium widescreen presence */
+    .hero {
+        background: linear-gradient(180deg, rgba(20,20,20,0.8) 0%, rgba(10,10,10,0.95) 100%);
+        border-bottom: 1px solid rgba(46, 204, 113, 0.15); /* Soft neon green horizon line */
+        padding: 100px 20px; /* Gives your text epic breathing space */
+        margin-bottom: 60px;
+    }
+
+    .hero h2 {
+        font-size: 2.8rem; /* Makes your main statement punchy and authoritative */
+        letter-spacing: -0.5px;
+    }
+
+    /* Alternating Section Background Blocks (Zebra Striping) */
+    #tools, #about {
+        background-color: #161616; /* Slightly lighter carbon shade to break up the flat black */
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        padding: 50px 40px;
+        margin-top: 60px;
+        margin-bottom: 60px;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+
+    /* Fix headings so they stand out sharply within their new blocks */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    /* Clean up the grid spacing so it doesn't look clumped */
+    .services-grid, .tools-gallery, .portfolio-matrix {
+        gap: 35px; /* Widens the gap on big monitors */
+    }
+}
+
 

@@ -731,6 +731,30 @@ select option {
     #about .about-text {
         flex: 1.2;
     }
+/* --- ABOUT SECTION BACKGROUND --- */
+.about-bg-section {
+    position: relative;
+    background-image: 
+        linear-gradient(to right, rgba(10, 10, 10, 0.95) 30%, rgba(10, 10, 10, 0.8) 100%), 
+        url('../images/who_am_i_back.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Smooth on mobile */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (min-width: 992px) {
+    .about-bg-section {
+        background-attachment: fixed; /* Parallax effect on desktop */
+        background-image: 
+            linear-gradient(to right, rgba(10, 10, 10, 0.95) 40%, rgba(10, 10, 10, 0.75) 100%), 
+            url('../images/who_am_i_back.jpg');
+    }
+}
+
+
 
     /* 5. Make the FAQ / Equipment sections stretch into a clean 3-column array */
     .faq-grid, 

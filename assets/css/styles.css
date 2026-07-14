@@ -1213,3 +1213,21 @@ form.emergency-form {
     align-items: center;
     justify-content: center;
 }
+
+/* Force the Who Am I container to stack vertically so the heading stays at the top */
+#about, 
+.about-bg-section {
+    display: block !important;
+}
+
+#about .container {
+    display: block !important;
+}
+
+/* Force the heading to take up 100% width and center align */
+#about .section-title {
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 50px !important;
+}

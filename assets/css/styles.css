@@ -513,7 +513,7 @@ nav a:hover {
 
 .bench-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
 
@@ -552,7 +552,7 @@ nav a:hover {
     width: 100%;
     height: auto; /* Allows portrait and square images to display fully */
     display: block;
-    object-fit: contain; /* Ensures the whole technical layout stays entirely visible */
+    object-fit: cover; /* Ensures the whole technical layout stays entirely visible */
 }
 
 .step-badge {

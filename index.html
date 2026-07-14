@@ -320,68 +320,99 @@
     </div>
 
 
-    <div class="container" id="contact" style="border-top: 1px solid var(--border-color); padding-top: 40px;">
-        <h2 class="section-title">Service Desk</h2>
-        <div class="forms-wrapper">
+    <!-- SERVICE DESK / CONTACT SECTION -->
+    <div class="container" id="service-desk" style="padding: 80px 20px;">
+        <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Need Help? - Contact Us</h2>
+        
+        <!-- The Balanced Two-Column Form Grid -->
+        <div class="service-desk-grid">
             
-            <!-- Inquiry Form -->
-            <div class="form-box">
-                <h3>General Enquiries</h3>
-                <form id="enquiryForm" action="https://formspree.io/f/mqerzyoj" method="POST">
+            <!-- Left Form: General Enquiries -->
+            <form class="general-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-content-wrapper">
+                    <h3 class="form-header">General Enquiries</h3>
+                    
                     <div class="form-group">
-                        <label for="enquiryName">Your Name</label>
-                        <input type="text" id="enquiryName" name="Name" class="form-control" placeholder="e.g. John Evans" required>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. John Evans" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="enquiryContact">Phone / Email</label>
-                        <input type="text" id="enquiryContact" name="Contact Details" class="form-control" placeholder="e.g. 07736888888" required>
+                        <label for="contactInfo">Phone / Email</label>
+                        <input type="text" id="contactInfo" name="contactInfo" placeholder="e.g. 07736888888" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="enquiryLocation">Location (Town or Parish)</label>
-                        <input type="text" id="enquiryLocation" name="Location" class="form-control" placeholder="e.g. Craven Arms, Oswestry" required>
+                        <label for="location">Location (Town or Parish)</label>
+                        <input type="text" id="location" name="location" placeholder="e.g. Craven Arms, Oswestry" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="enquiryMsg">Requirements</label>
-                        <textarea id="enquiryMsg" name="Requirements/Message" class="form-control" rows="4" placeholder="Describe the vehicle issue or requirements..." required></textarea>
+                        <label for="requirements">Requirements</label>
+                        <textarea id="requirements" name="requirements" rows="4" placeholder="Describe the vehicle issue or requirements..." required style="resize: none;"></textarea>
                     </div>
-                    <button type="submit" class="cta-btn" style="width:100%;">Submit Request</button>
-                </form>
-            </div>
+                </div>
+                
+                <!-- Submit button pushed to absolute bottom -->
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
 
-            <!-- Booking Form -->
-            <div class="form-box" style="border-color: rgba(46, 204, 113, 0.3);">
-                <h3>Emergency Booking Order</h3>
-                <form id="orderForm" action="https://formspree.io/f/maqrwpgv" method="POST">
+            <!-- Right Form: Emergency Booking Order -->
+            <form class="emergency-form" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-content-wrapper">
+                    <h3 class="form-header" style="color: #f39c12;">Emergency Booking Order</h3>
+                    
                     <div class="form-group">
-                        <label for="vehicleType">Vehicle Category</label>
-                        <select id="vehicleType" name="Vehicle Class" class="form-control" required>
-                            <option value="">-- Select Vehicle Class --</option>
-                            <option value="passenger">Standard Passenger Car</option>
-                            <option value="van">Light Commercial Van / Trade Fleet</option>
+                        <label for="vehicleCategory">Vehicle Category</label>
+                        <select id="vehicleCategory" name="vehicleCategory" required>
+                            <option value="" disabled selected>-- Select Vehicle Class --</option>
+                            <option value="standard-car">Standard Passenger Car</option>
+                            <option value="commercial-van">Commercial Van / Fleet Vehicle</option>
+                            <option value="high-security">Premium / High-Security (BMW, Mercedes, VAG)</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="v5Details">Year, Make & Model</label>
-                        <input type="text" id="v5Details" name="Vehicle Details" class="form-control" placeholder="e.g. 2018 Ford Transit or 2020 VW Golf" required>
+                        <label for="vehicleDetails">Year, Make & Model</label>
+                        <input type="text" id="vehicleDetails" name="vehicleDetails" placeholder="e.g. 2018 Ford Transit or 2020 VW Golf" required>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="jobUrgency">Urgency Tier</label>
-                        <select id="jobUrgency" name="Urgency Level" class="form-control" required>
+                        <label for="urgency">Urgency Tier</label>
+                        <select id="urgency" name="urgency" required>
                             <option value="standard">Standard Booking (Spare Key / Duplicate)</option>
                             <option value="urgent">Urgent Business Down (Stranded Trade Van)</option>
-                            <option value="emergency">Immediate Emergency (All Keys Lost / Locked Out)</option>
+                            <option value="emergency">Emergency Lockout (Keys Locked Inside / Lost)</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="siteAddress">Precise Location (What3Words or Postcode)</label>
-                        <input type="text" id="siteAddress" name="Precise Location" class="form-control" placeholder="e.g. ///wiped.contracts.blurs or SY5 9XX" required>
+                        <label for="preciseLocation">Precise Location (What3Words or Postcode)</label>
+                        <input type="text" id="preciseLocation" name="preciseLocation" placeholder="e.g. ///wiped.contracts.blurs or SY5 9XX" required>
                     </div>
-                    <button type="submit" class="cta-btn" style="width:100%; background-color: var(--accent-orange, #e67e22); color:white;">Dispatch Mobile Van</button>
-                </form>
-            </div>
+                </div>
+                
+                <!-- Submit button pushed to absolute bottom -->
+                <button type="submit" class="submit-btn emergency-submit">Dispatch Mobile Van</button>
+            </form>
 
         </div>
+
+        <!-- Sleek Quick-Access Contact Strip (Sits beautifully below the forms) -->
+        <div class="quick-contact-strip">
+            <p class="strip-label">Prefer Direct Communication? Connect Instantly:</p>
+            <div class="strip-buttons">
+                <a href="tel:+447736888888" class="contact-strip-btn phone-btn">
+                    <span class="btn-icon">📞</span> CALL DIRECT
+                </a>
+                <a href="https://wa.me/447736888888" target="_blank" class="contact-strip-btn whatsapp-btn">
+                    <span class="btn-icon">💬</span> WHATSAPP CHAT
+                </a>
+            </div>
+        </div>
+
     </div>
+
 
     <footer>
         <div class="footer-content">

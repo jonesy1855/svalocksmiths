@@ -1040,3 +1040,135 @@ form.emergency-form {
     color: #444 !important;
     font-size: 0.85rem;
 }
+
+/* =======================================================
+   FORM ALIGNMENT & QUICK-CONTACT STRIP STYLES
+   ======================================================= */
+
+/* Force columns to align to equal height on desktops */
+.service-desk-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: stretch; /* Forces both forms to match heights */
+}
+
+@media (min-width: 992px) {
+    .service-desk-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Make each form a flexbox column so we can push buttons down */
+.general-form, .emergency-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Stretch form box to fill the parent card height */
+}
+
+.form-content-wrapper {
+    flex-grow: 1; /* Pushes everything above the button up */
+}
+
+/* Keep the headers looking punchy */
+.form-header {
+    font-size: 1.2rem;
+    color: #2ecc71;
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 10px;
+}
+
+/* Force buttons to align at the exact bottom */
+.submit-btn {
+    margin-top: 30px !important; /* Pushes the button cleanly away from the fields */
+    width: 100%;
+}
+
+/* --- QUICK CONTACT STRIP --- */
+.quick-contact-strip {
+    margin-top: 40px;
+    background: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.strip-label {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.strip-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+    .strip-buttons {
+        flex-direction: row; /* Horizontal side-by-side on tablet/desktop */
+    }
+}
+
+/* Quick Action Button Base */
+.contact-strip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    min-width: 220px;
+}
+
+.btn-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Phone Button Colors (Deep Dark Slate with a bright hover glow) */
+.phone-btn {
+    background: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-btn:hover {
+    background: #ffffff;
+    color: #111111;
+    border-color: #ffffff;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* WhatsApp Button Colors (Subtle green container, popping when hovered) */
+.whatsapp-btn {
+    background: rgba(37, 211, 102, 0.1);
+    color: #25d366;
+    border: 1px solid rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background: #25d366;
+    color: #111111;
+    border-color: #25d366;
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+    transform: translateY(-2px);
+}

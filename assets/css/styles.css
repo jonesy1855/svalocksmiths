@@ -513,8 +513,13 @@ nav a:hover {
 
 .bench-grid {
     display: grid;
+<<<<<<< Updated upstream
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+=======
+    grid-template-columns: 1fr;
+    gap: 15px;
+>>>>>>> Stashed changes
 }
 
 /* Adjust the card structure slightly to breathe better with vertical images */
@@ -538,10 +543,15 @@ nav a:hover {
 .bench-img-wrapper {
     position: relative;
     width: 100%;
+<<<<<<< Updated upstream
     height: auto; /* Wipes out the forced 160px landscape restriction */
     border-radius: 6px;
+=======
+    height: 160px;
+    border-radius: 8px;
+>>>>>>> Stashed changes
     overflow: hidden;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     background: #1a1a1a;
     /* Adds a sleek, tech-focused border framing the photo */
     border: 1px solid rgba(255, 255, 255, 0.08); 
@@ -550,9 +560,14 @@ nav a:hover {
 
 .bench-img-wrapper img {
     width: 100%;
-    height: auto; /* Allows portrait and square images to display fully */
+    height: 100%;
     display: block;
+<<<<<<< Updated upstream
     object-fit: cover; /* Ensures the whole technical layout stays entirely visible */
+=======
+    object-fit: cover;
+    object-position: center;
+>>>>>>> Stashed changes
 }
 
 .step-badge {
@@ -899,6 +914,17 @@ footer {
 /* ==========================================================================
    9. RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
+
+/* 2. Responsive upgrades (Applies to tablets and desktop screens) */
+@media (min-width: 576px) {
+    .bench-grid {
+        grid-template-columns: 1fr 1fr !important; /* Sweet 2x2 grid */
+    }
+    
+    .bench-img-wrapper {
+        height: 180px !important; /* Slightly taller on desktop */
+    }
+}
 
 /* Tablet Optimization (768px down) */
 @media (max-width: 768px) {

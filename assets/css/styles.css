@@ -1172,3 +1172,18 @@ form.emergency-form {
     box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
     transform: translateY(-2px);
 }
+/* Style adjustment for SVG icons in contact buttons */
+.btn-svg-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Ensure the parent button text stays vertically centered */
+.contact-strip-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

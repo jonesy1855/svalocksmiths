@@ -1019,3 +1019,39 @@ footer {
         linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
         url('../images/xhorse-key-tool-plus.jpg');
 }
+/* 4. Emergency Lockout Card Background Setup */
+.emergency-lockout-card {
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(38, 38, 38, 0.92), rgba(38, 38, 38, 0.96)), 
+        url('../images/vehicle-access-wedges.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* 5. Van Security Card Background Setup */
+.van-security-card {
+    position: relative;
+    background-image: 
+        linear-gradient(rgba(38, 38, 38, 0.92), rgba(38, 38, 38, 0.96)), 
+        url('../images/van-deadlock.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+/* 6. Smooth Hover Transition Upgrades */
+.service-card-link:hover .emergency-lockout-card {
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
+        url('../images/vehicle-access-wedges.jpg');
+}
+
+.service-card-link:hover .van-security-card {
+    background-image: 
+        linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
+        url('../images/van-deadlock.jpg');
+}

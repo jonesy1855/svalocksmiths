@@ -1055,3 +1055,19 @@ footer {
         linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
         url('../images/van-deadlock.jpg');
 }
+
+/* Navigation Portal Link */
+.portal-link {
+    font-weight: 500;
+    color: #ffffff;
+    border: 1px dashed rgba(57, 255, 20, 0.4); /* Subtly dashed green border */
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.portal-link:hover {
+    color: #39FF14;
+    border-color: #39FF14;
+    background: rgba(57, 255, 20, 0.05);
+}

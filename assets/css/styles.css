@@ -1071,3 +1071,37 @@ footer {
     border-color: #39FF14;
     background: rgba(57, 255, 20, 0.05);
 }
+
+/* --- MOBILE HEADER OPTIMIZATIONS --- */
+@media (max-width: 768px) {
+    /* Stack the logo/brand above the navigation menu on mobile */
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    /* Distribute navigation items evenly and prevent squeezing */
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px; /* Slightly tighter gaps so everything fits */
+        width: 100%;
+    }
+
+    /* Global rules for mobile links to keep them neat */
+    header nav a {
+        font-size: 0.8rem; /* Slightly smaller font for mobile screen bounds */
+        white-space: nowrap; /* Prevents text like "Call Now" or "Client Login" from splitting into two lines */
+        padding: 4px 6px;
+    }
+
+    /* Keep the call button tight and sharp */
+    nav .header-cta {
+        padding: 6px 10px !important;
+        font-size: 0.8rem !important;
+    }
+}

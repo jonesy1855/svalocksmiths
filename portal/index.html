@@ -147,10 +147,24 @@
             letter-spacing: 0.5px;
         }
 
-        /* Booking/Calendar Area */
+        /* Booking/Calendar Area Layout Fixes */
         .calendar-container {
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Dark Mode filter applied directly to widget container */
+        .calendly-inline-widget {
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
+        }
+
+        /* Re-invert images/logos inside the widget back to normal colors */
+        .calendly-inline-widget iframe img,
+        .calendly-inline-widget img {
+            filter: invert(1) hue-rotate(180deg) !important;
         }
 
         /* Quick Links/Utility Panel */
@@ -194,14 +208,6 @@
             margin-top: auto;
             background-color: #121212;
         }
-        /* Apply the dark mode filter to the parent container to stop Calendly's JS from breaking it */
-        .calendly-inline-widget {
-            border-radius: 12px !important;
-            overflow: hidden !important;
-            /* Forces everything inside this container to invert and stay dark */
-            filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
-        }
-
     </style>
 </head>
 <body>
@@ -215,8 +221,8 @@
                 <span class="brand-subtitle">Mobile Car & Van Auto Locksmith</span>
             </div>
         </div>
-        <!-- Absolute Path Logout Button -->
-        <a href="https://svalocksmiths.co.uk/cdn-cgi/access/logout?return_to=https%3A%2F%2Fsvalocksmiths.co.uk" class="logout-btn">Log Out</a>
+        <!-- Working Cloudflare Access Logout Redirection Endpoint -->
+        <a href="https://svalocksmiths.co.uk/cdn-cgi/access/logout?returnTo=https%3A%2F%2Fsvalocksmiths.co.uk" class="logout-btn">Log Out</a>
     </header>
 
     <main>
@@ -255,15 +261,14 @@
                 </div>
             </div>
 
-            <!-- Right Side: The Booking Calendar -->
+            <!-- Right Side: The Booking Calendar (Sized to remove scrollbars) -->
             <div class="card calendar-container">
                 <h2>Reserve Your Booking</h2>
                 
                 <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/svalocksmiths-info/1hour-diagnostics" style="min-width:320px;height:700px;"></div>
+                <div class="calendly-inline-widget" data-url="https://calendly.com/svalocksmiths-info/1hour-diagnostics" style="min-width:320px;height:750px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
-
             </div>
 
         </div>

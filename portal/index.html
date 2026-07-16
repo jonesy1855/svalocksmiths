@@ -8,7 +8,7 @@
         :root {
             --bg-color: #121212;
             --card-bg: #1e1e1e;
-            --accent-color: #e50914; /* Change this to SVA's signature brand color if different */
+            --accent-color: #2ecc71; /* Change this to SVA's signature brand color if different */
             --text-main: #ffffff;
             --text-muted: #aaaaaa;
             --border-color: #333333;
@@ -175,14 +175,32 @@
             border-top: 1px solid var(--border-color);
             margin-top: auto;
         }
+        
+        .logo-container {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Adjust this height to match your logo's dimensions */
+        }
+        
+        .portal-logo {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">SVA<span>PORTAL</span></div>
+            <div class="logo-container">
+                <!-- Replace 'logo.png' with your actual image path (e.g., '/images/logo.png' or a full URL) -->
+                <img src="assets/images/logo.png" alt="SVA Locksmiths Logo" class="portal-logo">
+            </div>
+
         <!-- This cleanly logs them out of Cloudflare and redirects back to the main public site -->
-        <a href="/cdn-cgi/access/logout?return_to=https://svalocksmiths.co.uk" class="logout-btn">Log Out</a>
+            <a href="https://svalocksmiths.co.uk/cdn-cgi/access/logout?return_to=https://svalocksmiths.co.uk" class="logout-btn">Log Out</a>
+
     </header>
 
     <main>

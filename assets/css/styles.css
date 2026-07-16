@@ -1212,3 +1212,101 @@ footer {
         background-color: var(--accent-green, #39FF14);
     }
 }
+
+.action-gallery-container {
+    margin: 3rem auto;
+    max-width: 1200px;
+    padding: 0 1.5rem;
+}
+
+.gallery-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.gallery-header h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-header p {
+    color: var(--accent-color, #2ecc71); /* Uses your signature green */
+    font-size: 1rem;
+}
+
+.action-gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 1.5rem;
+}
+
+/* Switches to 2 columns on tablets, and 4 columns on large desktop screens */
+@media (min-width: 768px) {
+    .action-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .action-gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.gallery-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #333333;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-color, #2ecc71);
+}
+
+/* Container sizing locked down tight */
+.sva-slider-container {
+    width: 100%;
+    height: 280px; /* Locks the height of the photo area */
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    background-color: #121212; /* Black bars on the sides so portrait photos blend in */
+}
+
+.sva-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Updated to 'contain' so the whole phone photo fits cleanly */
+.sva-slider .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevents the insane zooming/cropping */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: svaCrossfade 16s infinite ease-in-out;
+}
+
+/* Keeping your smooth crossfade timings */
+.sva-slider .slide:nth-child(1) { animation-delay: 0s; }
+.sva-slider .slide:nth-child(2) { animation-delay: 4s; }
+.sva-slider .slide:nth-child(3) { animation-delay: 8s; }
+.sva-slider .slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes svaCrossfade {
+    0% { opacity: 0; }
+    5% { opacity: 1; }     
+    25% { opacity: 1; }    
+    30% { opacity: 0; }    
+    100% { opacity: 0; }   
+}

@@ -194,6 +194,14 @@
             margin-top: auto;
             background-color: #121212;
         }
+        /* Apply the dark mode filter to the parent container to stop Calendly's JS from breaking it */
+        .calendly-inline-widget {
+            border-radius: 12px !important;
+            overflow: hidden !important;
+            /* Forces everything inside this container to invert and stay dark */
+            filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
+        }
+
     </style>
 </head>
 <body>

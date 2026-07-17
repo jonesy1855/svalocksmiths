@@ -1672,45 +1672,77 @@ main h2::after {
 
 
 /* ==========================================================================
-   3. HERO & GLOBAL ACTIONS (CLEANED)
+   3. HERO & GLOBAL ACTIONS (SIDE-BY-SIDE SPLIT)
    ========================================================================== */
 .hero {
     position: relative;
     width: 100%;
-    min-height: 500px; 
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
+    background: #141414 !important; /* Rich dark base color */
     border-bottom: 1px solid var(--border-color);
-    background: transparent !important;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* The inner content area wrapper */
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr; /* Stacked layout default for mobile screens */
+    gap: 30px;
+    max-width: 1200px;
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Keeps text perfectly legible */
-    z-index: 1;
+    align-items: center;
 }
 
-/* Set purely to the locksmith-at-work image - no animation needed */
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* The Branding Image Box */
+.hero-image-wrapper {
+    width: 100%;
+    max-height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.hero-image-wrapper img {
     width: 100%;
     height: 100%;
-    background-image: url('../assets/images/locksmith-at-work.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 0;
+    object-fit: cover;
+    display: block;
+}
+
+/* The Text Alignment Column */
+.hero-text-block {
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+/* Desktop Upgrade: Snap into a beautiful 2-column split */
+@media (min-width: 992px) {
+    .hero {
+        padding: 80px 20px;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1.1fr 0.9fr; /* Picture left, Text right */
+    }
+    
+    .hero-text-block {
+        text-align: left; /* Dynamic professional left alignment on PC */
+    }
 }
 
 /* PROFILE / INTERVENTION BLOCK */
@@ -1718,20 +1750,12 @@ main h2::after {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    background-color: var(--secondary-bg);
     padding: 3rem;
-    border-radius: 12px; /* Slightly smoother corners to match the bench cards */
+    border-radius: 6px;
     border: 1px solid var(--border-color);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    
-    /* ADD YOUR BRANDING PICTURE AS THE BACKGROUND */
-    background-image: linear-gradient(rgba(20, 20, 20, 0.85), rgba(20, 20, 20, 0.9)), 
-                      url('../assets/images/sva-hero-bg.png');
-    background-size: cover;
-    background-position: center top; /* Keeps your face visible inside the card area */
-    background-repeat: no-repeat;
 }
+
 
 /* Force all text inside the profile block to be bright and highly legible over the image */
 .profile-text h3 {

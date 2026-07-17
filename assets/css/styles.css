@@ -1682,3 +1682,44 @@ footer {
 .video-preview-wrapper.activated iframe {
     pointer-events: auto; /* 👈 Restores normal YouTube player control clicks */
 }
+
+/* Split Layout Style (Matches your top card) */
+.split-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Squeeze the video wrapper to take up exactly the left half */
+.split-card .video-preview-wrapper {
+    width: 50%; /* 👈 Matches the photo width of your top card */
+    aspect-ratio: 16/9;
+    border-radius: 12px 0 0 12px;
+    border: none;
+}
+
+/* Center the text container on the right side */
+.split-card .portfolio-card-content {
+    width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Responsive adjustment: Stack them on mobile screens */
+@media (max-width: 768px) {
+    .split-card {
+        flex-direction: column;
+    }
+    .split-card .video-preview-wrapper,
+    .split-card .portfolio-card-content {
+        width: 100%;
+    }
+    .split-card .video-preview-wrapper {
+        border-radius: 12px 12px 0 0;
+    }
+}

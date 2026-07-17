@@ -337,29 +337,35 @@
 
                 </div>
 
-                <!-- PRECISION KEY CUTTING VIDEO REEL CONTAINER -->
-                <div class="video-preview-wrapper" id="xhorseVideoWrapper">
-                    <!-- Overlay Play Button and text -->
-                    <div class="video-overlay" id="videoOverlay">
-                        <div class="play-button-icon">
-                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#e2b13c">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
+                <!-- WORKSHOP TECH / PRECISION KEY CUTTING CARD -->
+                <div class="portfolio-card split-card">
+                    
+                    <!-- LEFT SIDE: The Video Preview Wrapper -->
+                    <div class="video-preview-wrapper" id="xhorseVideoWrapper">
+                        <div class="video-overlay" id="videoOverlay">
+                            <div class="play-button-icon">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="#e2b13c">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <span>Tap to Play Video (With Sound)</span>
                         </div>
-                        <span>Click to Play Full Video with Sound</span>
+                        <!-- API will mount the video iframe inside this div -->
+                        <div id="xhorsePlayer"></div>
                     </div>
                 
-                    <!-- YouTube Embed Configured for a Silent Preview Loop -->
-                    <!-- Start at 3:45 (225s) where the actual key cutting start, or leave blank to start from 0 -->
-                    <iframe 
-                        id="xhorseIframe"
-                        src="https://www.youtube.com/embed/LVGqfBbJvG8?autoplay=1&mute=1&controls=0&loop=1&playlist=LVGqfBbJvG8&playsinline=1&rel=0" 
-                        title="Xhorse Dolphin XP005 Key Cutting Preview" 
-                        frameborder="0" 
-                        allow="autoplay; encrypted-media" 
-                        allowfullscreen>
-                    </iframe>
+                    <!-- RIGHT SIDE: The Text Content -->
+                    <div class="portfolio-card-content">
+                        <div class="tag-row">
+                            <span class="card-tag">[WORKSHOP TECH]</span>
+                            <span class="live-feed-tag">LIVE FEED</span>
+                        </div>
+                        <h3>PRECISION CUTTING A CAR KEY</h3>
+                        <p>Automated CNC laser tracking in progress. Decoding and cutting high-security automotive blades back to exact factory dimensions using computerized milling equipment.</p>
+                    </div>
+                
                 </div>
+
 
 
                 <!-- Card 3: Programming a Transponder Remote with Split Layout -->
@@ -497,6 +503,61 @@
     </footer>
 
     <script src="assets/js/forms.js"></script>
+    <!-- Load the YouTube Iframe Player API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    
+    <script>
+    let player;
+    
+    // 1. This function runs automatically when the YouTube API loads
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('xhorsePlayer', {
+            height: '100%',
+            width: '100%',
+            videoId: 'LVGqfBbJvG8',
+            playerVars: {
+                'autoplay': 1,
+                'mute': 1,
+                'controls': 0,
+                'loop': 1,
+                'playlist': 'LVGqfBbJvG8',
+                'playsinline': 1,
+                'rel': 0,
+                'start': 290 // 👈 Starts right at 4:50 where the actual machine cutting begins!
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+    
+    // 2. When the preview is ready, speed it up to 2.0x (Time-Lapse effect!)
+    function onPlayerReady(event) {
+        event.target.setPlaybackRate(3.0); // 👈 Sets preview speed to double speed
+        event.target.playVideo();
+    }
+    
+    // 3. Listen for the user clicking "Play"
+    document.addEventListener("DOMContentLoaded", function() {
+        const videoWrapper = document.getElementById("xhorseVideoWrapper");
+        const videoOverlay = document.getElementById("videoOverlay");
+    
+        if (videoOverlay) {
+            videoOverlay.addEventListener("click", function() {
+                // Hide the glass overlay
+                videoOverlay.style.display = "none";
+                videoWrapper.classList.add("activated");
+                
+                if (player) {
+                    player.unMute();           // Unmute the audio
+                    player.setPlaybackRate(1.0); // Drop speed back to normal 1.0x
+                    player.seekTo(290);          // Restart at the cutting action with sound
+                    player.playVideo();
+                }
+            });
+        }
+    });
+    </script>
 
 </body>
 </html>

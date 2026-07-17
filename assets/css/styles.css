@@ -1409,8 +1409,11 @@ footer {
     transition: opacity 1s ease-in-out;
 }
 
+/* ==========================================================================
+   DEALER TOOLING SUITE SLIDESHOW ANIMATIONS (KEEP THIS!)
+   ========================================================================== */
+
 /* --- Left Card: 4-Image Timing Framework --- */
-/* Total loop time: 16 seconds (4s per image) */
 .dealer-suite-container .tooling-card:nth-child(1) .slide-img {
     animation: diagnosticFadeLoop 16s infinite;
 }
@@ -1420,12 +1423,11 @@ footer {
 .dealer-suite-container .tooling-card:nth-child(1) .slide-img:nth-child(4) { animation-delay: 12s; }
 
 @keyframes diagnosticFadeLoop {
-    0%, 25% { opacity: 1; }  /* Visible for 4 seconds */
-    31.25%, 100% { opacity: 0; } /* Fade out and stay hidden */
+    0%, 25% { opacity: 1; }  
+    31.25%, 100% { opacity: 0; } 
 }
 
 /* --- Right Card: 3-Image Timing Framework --- */
-/* Total loop time: 12 seconds (4s per image) */
 .dealer-suite-container .tooling-card:nth-child(2) .slide-img {
     animation: cuttingFadeLoop 12s infinite;
 }
@@ -1434,39 +1436,45 @@ footer {
 .dealer-suite-container .tooling-card:nth-child(2) .slide-img:nth-child(3) { animation-delay: 8s; }
 
 @keyframes cuttingFadeLoop {
-    0%, 33.33% { opacity: 1; } /* Visible for 4 seconds */
-    41.66%, 100% { opacity: 0; } /* Fade out and stay hidden */
+    0%, 33.33% { opacity: 1; } 
+    41.66%, 100% { opacity: 0; } 
 }
+
+
+/* ==========================================================================
+   UPDATED FIXED LAYOUT & TEXT FIXES (THE PARTS WE TWEAKED)
+   ========================================================================== */
+
 /* 1. Ensure the parent container maintains its two-column grid layout */
 .dealer-suite-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 25px;
     width: 100%;
-    margin-top: 30px;
-}
-
-/* 2. Force the cards to contain everything tightly */
-.tooling-card {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    background: #1a1a1a; /* Match your existing card background color */
-    border-radius: 12px;
-    padding: 20px;
-    overflow: hidden;
+    margin: 40px 0;
     box-sizing: border-box;
 }
 
-/* 3. Hard-constrain the slideshow window inside the card */
+/* 2. Fix the card background and padding so the text stays INSIDE */
+.tooling-card {
+    display: flex;
+    flex-direction: column;
+    background: #1e1e1e; 
+    border-radius: 12px;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. Give the image window a nice, natural height */
 .slideshow-wrapper {
     position: relative;
     width: 100%;
-    height: 220px; /* Adjust this number to change how tall the image box is */
+    height: 240px; 
     overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 15px;
-    background: #000; /* Keeps a dark background while images fade */
+    margin-bottom: 20px;
+    background: #111; /* Dark fill behind contained images */
 }
 
 /* 4. Keep the images contained perfectly inside that wrapper window */
@@ -1476,6 +1484,21 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 👈 This stops the zooming and shows the whole tool */
+    object-fit: contain; /* Keeps the whole tool visible */
     border-radius: 8px;
+}
+
+/* 5. FORCE the text content to wrap cleanly and stay in bounds */
+.card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content p {
+    white-space: normal;  
+    word-wrap: break-word;
+    line-height: 1.6;
+    margin-top: 10px;
+    color: #ccc;
 }

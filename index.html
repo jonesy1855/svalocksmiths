@@ -337,34 +337,34 @@
 
                 </div>
 
-                <!-- WORKSHOP TECH / PRECISION KEY CUTTING CARD -->
-                <div class="portfolio-card split-card">
-                    
-                    <!-- LEFT SIDE: The Video Preview Wrapper -->
-                    <div class="video-preview-wrapper" id="xhorseVideoWrapper">
-                        <div class="video-overlay" id="videoOverlay">
-                            <div class="play-button-icon">
-                                <svg viewBox="0 0 24 24" width="24" height="24" fill="#e2b13c">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </div>
-                            <span>Tap to Play Video (With Sound)</span>
-                        </div>
-                        <!-- API will mount the video iframe inside this div -->
-                        <div id="xhorsePlayer"></div>
-                    </div>
-                
-                    <!-- RIGHT SIDE: The Text Content -->
-                    <div class="portfolio-card-content">
-                        <div class="tag-row">
-                            <span class="card-tag">[WORKSHOP TECH]</span>
-                            <span class="live-feed-tag">LIVE FEED</span>
-                        </div>
-                        <h3>PRECISION CUTTING A CAR KEY</h3>
-                        <p>Automated CNC laser tracking in progress. Decoding and cutting high-security automotive blades back to exact factory dimensions using computerized milling equipment.</p>
-                    </div>
-                
-                </div>
+<!-- WORKSHOP TECH / PRECISION KEY CUTTING CARD -->
+<div class="portfolio-card"> <!-- 👈 Reverted class to match your other standard cards exactly -->
+    
+    <!-- LEFT SIDE: The Video Preview Wrapper (Mimicking the standard image size) -->
+    <div class="portfolio-image-wrapper video-preview-wrapper" id="xhorseVideoWrapper">
+        <div class="video-overlay" id="videoOverlay">
+            <div class="play-button-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="#e2b13c">
+                    <path d="M8 5v14l11-7z"/>
+                </svg>
+            </div>
+            <span>Tap to Play Video</span>
+        </div>
+        <div id="xhorsePlayer"></div>
+    </div>
+
+    <!-- RIGHT SIDE: Text Content (Matching the top and bottom structure) -->
+    <div class="portfolio-content"> <!-- 👈 Changed to match whatever class your top card uses (usually portfolio-content or card-content) -->
+        <div class="tag-row" style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
+            <span class="card-tag">[WORKSHOP TECH]</span>
+            <span class="live-feed">LIVE FEED</span> <!-- 👈 Match the exact class name of your top card's green badge -->
+        </div>
+        <h3>PRECISION CUTTING A CAR KEY</h3>
+        <p>Automated CNC laser tracking in progress. Decoding and cutting high-security automotive blades back to exact factory dimensions using computerized milling equipment.</p>
+    </div>
+
+</div>
+
 
 
 
@@ -536,7 +536,7 @@
     
     // 2. When the preview is ready, speed it up and start the custom timestamp loop
     function onPlayerReady(event) {
-        event.target.setPlaybackRate(2.0); // 2x speed for time-lapse
+        event.target.setPlaybackRate(4.0); // 2x speed for time-lapse
         event.target.playVideo();
         
         // Start checking the time every half-second to force the loop

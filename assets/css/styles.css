@@ -1723,3 +1723,31 @@ footer {
         border-radius: 12px 12px 0 0;
     }
 }
+/* FORCE the video wrapper to copy your standard portfolio image layout */
+.portfolio-card .video-preview-wrapper {
+    position: relative;
+    width: 100%; /* Spans full width of the left column */
+    /* Adjust these to match the exact dimensions of the images on your top/bottom cards */
+    height: 220px; 
+    border-radius: 8px;
+    overflow: hidden;
+    background: #111;
+    border: none;
+}
+
+/* Ensure the iframe stays locked inside that same container size */
+.video-preview-wrapper iframe,
+.video-preview-wrapper #xhorsePlayer {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Make sure the text block on the right matches the spacing of the other cards */
+.portfolio-card .portfolio-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers text next to the video */
+}

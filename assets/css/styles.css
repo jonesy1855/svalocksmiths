@@ -1557,3 +1557,36 @@ footer {
 .video-preview-wrapper.activated iframe {
     pointer-events: auto;
 }
+
+/* ==========================================================================
+   CAROUSEL OVERLAP & SIZE RESTRICTION PATCH
+   ========================================================================== */
+
+/* Force Card 2 to match the exact physical dimensions of Card 1 and 3 */
+.video-reel .lishi-split-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .video-reel .lishi-split-card {
+        grid-template-columns: 1.2fr 2fr; /* Desktop side-by-side splits */
+    }
+}
+
+/* Hard-clamp the video wrapper so it NEVER spills out of its column */
+.video-reel #xhorseVideoWrapper {
+    width: 100% !important;
+    height: 320px !important; /* Forces the vertical height on mobile */
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .video-reel #xhorseVideoWrapper {
+        height: 100% !important; /* Lets it stretch perfectly to match the desktop card height */
+        min-height: 300px;
+    }
+}

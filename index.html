@@ -301,96 +301,82 @@
 
 
 
+    <!-- SVA IN ACTION: STACKED LAYOUT -->
     <div class="container video-section" id="vlogs">
         <h2 class="section-title">SVA IN ACTION</h2>
         
-        <div class="slider-container">
-            <div class="slider-arrow arrow-left" id="slideLeft">&#10094;</div>
-            <div class="slider-arrow arrow-right" id="slideRight">&#10095;</div>
+        <div class="stacked-cards-container">
             
-            <div class="video-reel" id="videoReel">
-                
-                    <!-- Card 1: Mr. Li Picks in Action with Split Layout -->
-                    <div class="card lishi-split-card">
-                        
-                        <!-- Left Side: Dynamic Auto-scrolling Portrait Slider -->
-                        <div class="sva-slider-container">
-                            <div class="sva-slider">
-                                <img src="/assets/images/lishi-pick-entry-1.jpg" alt="Lishi pick decoding lock" class="slide">
-                                <img src="/assets/images/lishi-pick-entry-2.jpg" alt="SVA locksmith using Genuine Lishi" class="slide">
-                                <img src="/assets/images/lishi-pick-entry-3.jpg" alt="Non-destructive vehicle entry" class="slide">
-                                <img src="/assets/images/lishi-pick-entry-4.jpg" alt="Lock picking demonstration" class="slide">
-                            </div>
-                        </div>
-                    
-                        <!-- Right Side: Tech Data & Briefing Text -->
-                        <div class="card-content split-content">
-                            <div class="meta-badge-row">
-                                <span class="category-tag">LOCK PICKING</span>
-                                <span class="status-indicator">LIVE FEED</span>
-                            </div>
-                            <h4>MR. LI PICKS IN ACTION</h4>
-                            <p class="briefing-text">Real-time non-destructive entry on-site using specialized decoding picks. Tool tracking: Genuine Lishi HU92 series.</p>
-                        </div>
-                    </div>
-
-
-                </div>
-
-<!-- WORKSHOP TECH / PRECISION KEY CUTTING CARD -->
-<div class="portfolio-card"> <!-- 👈 Reverted class to match your other standard cards exactly -->
-    
-    <!-- LEFT SIDE: The Video Preview Wrapper (Mimicking the standard image size) -->
-    <div class="portfolio-image-wrapper video-preview-wrapper" id="xhorseVideoWrapper">
-        <div class="video-overlay" id="videoOverlay">
-            <div class="play-button-icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="#e2b13c">
-                    <path d="M8 5v14l11-7z"/>
-                </svg>
-            </div>
-            <span>Tap to Play Video</span>
-        </div>
-        <div id="xhorsePlayer"></div>
-    </div>
-
-    <!-- RIGHT SIDE: Text Content (Matching the top and bottom structure) -->
-    <div class="portfolio-content"> <!-- 👈 Changed to match whatever class your top card uses (usually portfolio-content or card-content) -->
-        <div class="tag-row" style="display: flex; gap: 8px; align-items: center; margin-bottom: 12px;">
-            <span class="card-tag">[WORKSHOP TECH]</span>
-            <span class="live-feed">LIVE FEED</span> <!-- 👈 Match the exact class name of your top card's green badge -->
-        </div>
-        <h3>PRECISION CUTTING A CAR KEY</h3>
-        <p>Automated CNC laser tracking in progress. Decoding and cutting high-security automotive blades back to exact factory dimensions using computerized milling equipment.</p>
-    </div>
-
-</div>
-
-
-
-
-                <!-- Card 3: Programming a Transponder Remote with Split Layout -->
-                <div class="card lishi-split-card">
-                    
-                    <!-- Left Side: Action Photo -->
-                    <div class="sva-slider-container">
-                        <img src="/assets/images/key-programming-bench.png" alt="SVA Locksmith programming transponder key on diagnostic bench" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                
-                    <!-- Right Side: Tech Data & Briefing Text -->
-                    <div class="card-content split-content">
-                        <div class="meta-badge-row">
-                            <span class="category-tag">OBD DIAGNOSTICS</span>
-                            <span class="status-indicator">BENCH TECH</span>
-                        </div>
-                        <h4>PROGRAMMING A TRANSPONDER REMOTE</h4>
-                        <p class="briefing-text">Direct EEPROM memory reading and transponder key generation using advanced Xhorse programming hardware.</p>
+            <!-- Card 1: Mr. Li Picks in Action -->
+            <div class="card lishi-split-card">
+                <!-- Left Side: Dynamic Auto-scrolling Portrait Slider -->
+                <div class="sva-slider-container">
+                    <div class="sva-slider">
+                        <img src="/assets/images/lishi-pick-entry-1.jpg" alt="Lishi pick decoding lock" class="slide">
+                        <img src="/assets/images/lishi-pick-entry-2.jpg" alt="SVA locksmith using Genuine Lishi" class="slide">
+                        <img src="/assets/images/lishi-pick-entry-3.jpg" alt="Non-destructive vehicle entry" class="slide">
+                        <img src="/assets/images/lishi-pick-entry-4.jpg" alt="Lock picking demonstration" class="slide">
                     </div>
                 </div>
-
-
+            
+                <!-- Right Side: Tech Data & Briefing Text -->
+                <div class="card-content split-content">
+                    <div class="meta-badge-row">
+                        <span class="category-tag">LOCK PICKING</span>
+                        <span class="status-indicator">LIVE FEED</span>
+                    </div>
+                    <h4>MR. LI PICKS IN ACTION</h4>
+                    <p class="briefing-text">Real-time non-destructive entry on-site using specialized decoding picks. Tool tracking: Genuine Lishi HU92 series.</p>
+                </div>
             </div>
+
+            <!-- Card 2: Workshop Tech / Precision Key Cutting Video -->
+            <div class="card lishi-split-card">
+                <!-- Left Side: Video Wrapper -->
+                <div class="sva-slider-container video-preview-wrapper" id="xhorseVideoWrapper">
+                    <div class="video-overlay" id="videoOverlay">
+                        <div class="play-button-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="#e2b13c">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </div>
+                        <span>Tap to Play Video</span>
+                    </div>
+                    <div id="xhorsePlayer"></div>
+                </div>
+            
+                <!-- Right Side: Text Content -->
+                <div class="card-content split-content"> 
+                    <div class="meta-badge-row">
+                        <span class="category-tag">WORKSHOP TECH</span>
+                        <span class="status-indicator">LIVE FEED</span>
+                    </div>
+                    <h4>PRECISION CUTTING A CAR KEY</h4>
+                    <p class="briefing-text">Automated CNC laser tracking in progress. Decoding and cutting high-security automotive blades back to exact factory dimensions using computerized milling equipment.</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Programming a Transponder Remote -->
+            <div class="card lishi-split-card">
+                <!-- Left Side: Action Photo -->
+                <div class="sva-slider-container">
+                    <img src="/assets/images/key-programming-bench.png" alt="SVA Locksmith programming transponder key on diagnostic bench" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            
+                <!-- Right Side: Tech Data & Briefing Text -->
+                <div class="card-content split-content">
+                    <div class="meta-badge-row">
+                        <span class="category-tag">OBD DIAGNOSTICS</span>
+                        <span class="status-indicator">BENCH TECH</span>
+                    </div>
+                    <h4>PROGRAMMING A TRANSPONDER REMOTE</h4>
+                    <p class="briefing-text">Direct EEPROM memory reading and transponder key generation using advanced Xhorse programming hardware.</p>
+                </div>
+            </div>
+
         </div>
     </div>
+
 
 
     <!-- SERVICE DESK / CONTACT SECTION -->

@@ -1590,3 +1590,49 @@ footer {
         min-height: 300px;
     }
 }
+/* ==========================================================================
+   10. STACKED CARDS LAYOUT (NO MORE CAROUSEL BREAKS!)
+   ========================================================================== */
+
+/* Main wrapper centering the column */
+.stacked-cards-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between each vertical card */
+    max-width: 1000px; /* Aligns width perfectly with your dealer-suite above */
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Force each card to display as a full-width block */
+.stacked-cards-container .lishi-split-card {
+    width: 100%;
+    margin-bottom: 0; /* Handled by container gap */
+}
+
+/* Ensure the video container exactly mirrors Card 1 & 3 sizes */
+#xhorseVideoWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 320px; /* Solid mobile fallback */
+    background: #111;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    #xhorseVideoWrapper {
+        min-height: 300px; /* Desktop height */
+    }
+}
+
+/* Match the iframe dimensions completely */
+#xhorseVideoWrapper iframe,
+#xhorseVideoWrapper #xhorsePlayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
+}

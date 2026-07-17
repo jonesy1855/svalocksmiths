@@ -1437,3 +1437,45 @@ footer {
     0%, 33.33% { opacity: 1; } /* Visible for 4 seconds */
     41.66%, 100% { opacity: 0; } /* Fade out and stay hidden */
 }
+/* 1. Ensure the parent container maintains its two-column grid layout */
+.dealer-suite-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* 2. Force the cards to contain everything tightly */
+.tooling-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #1a1a1a; /* Match your existing card background color */
+    border-radius: 12px;
+    padding: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* 3. Hard-constrain the slideshow window inside the card */
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Adjust this number to change how tall the image box is */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #000; /* Keeps a dark background while images fade */
+}
+
+/* 4. Keep the images contained perfectly inside that wrapper window */
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Forces image to crop cleanly instead of stretching */
+    border-radius: 8px;
+}

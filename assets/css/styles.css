@@ -1677,29 +1677,32 @@ main h2::after {
 }
 
 
-/* 1. Define the Hero Container */
-.hero-section {
+/* 1. The Main Hero Box */
+.hero {
     position: relative;
     width: 100%;
-    min-height: 500px; /* Adjust to match your current layout height */
+    min-height: 500px; 
     overflow: hidden;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px; /* Gives your text some breathing room */
 }
 
-/* 2. Create an invisible overlay to ensure text stays readable */
-.hero-section::before {
+/* 2. Soft dark tint overlay so text is highly readable */
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.45); /* Soft dark overlay */
+    background: rgba(0, 0, 0, 0.55); /* Tint adjusted for high contrast */
     z-index: 1;
 }
 
-/* 3. Create a pseudo-element to handle the fading background */
-.hero-section::after {
+/* 3. The Crossfading Backgrounds */
+.hero::after {
     content: '';
     position: absolute;
     top: 0;
@@ -1710,26 +1713,27 @@ main h2::after {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 0;
-    /* This points to your animation name, total loop time (8s), and infinite looping */
     animation: heroCrossfade 8s infinite ease-in-out; 
 }
 
-/* 4. Ensure your actual text content sits safely on top of the images */
-.hero-section > * {
+/* 4. Keeps your text elements safely resting on top */
+.hero-content {
     position: relative;
     z-index: 2;
+    max-width: 800px; /* Keeps text lengths comfortable to read on big screens */
+    text-align: center;
+    color: #ffffff;
 }
 
-/* 5. The Magic Crossfade Animation Timings */
+/* 5. The Animation Loop (Points to your asset folder) */
 @keyframes heroCrossfade {
     0%, 45% {
-        background-image: url('../images/sva-hero-bg.png');
+        background-image: url('assets/images/sva-hero-bg.png');
     }
     50%, 95% {
-        background-image: url('../images/locksmith-at-work.png');
+        background-image: url('assets/images/locksmith-at-work.png');
     }
     100% {
-        background-image: url('../images/sva-hero-bg.png');
+        background-image: url('assets/images/sva-hero-bg.png');
     }
 }
-

@@ -1672,23 +1672,19 @@ main h2::after {
 
 
 /* ==========================================================================
-   3. HERO & GLOBAL ACTIONS (CLEANED & DYNAMIC)
+   3. HERO & GLOBAL ACTIONS (CLEANED)
    ========================================================================== */
-/* 1. The Main Hero Box Container */
 .hero {
     position: relative;
     width: 100%;
+    min-height: 500px; 
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0; /* Let the image dictate the height naturally */
-}
-
-.hero-bg-img {
-    width: 100%;
-    height: auto; /* Scales perfectly; nothing gets cropped! */
-    display: block;
+    padding: 60px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent !important;
 }
 
 .hero::before {
@@ -1698,15 +1694,53 @@ main h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Keeps text perfectly readable over the image */
+    background: rgba(0, 0, 0, 0.65); /* Keeps text perfectly legible */
     z-index: 1;
 }
 
-.hero-content {
-    position: absolute; /* Floats perfectly on top of the image */
-    z-index: 2;
-    max-width: 800px;
-    text-align: center;
-    color: #ffffff;
-    padding: 20px;
+/* Set purely to the locksmith-at-work image - no animation needed */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/images/locksmith-at-work.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+/* PROFILE / INTERVENTION BLOCK */
+.profile-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 3rem;
+    border-radius: 12px; /* Slightly smoother corners to match the bench cards */
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    
+    /* ADD YOUR BRANDING PICTURE AS THE BACKGROUND */
+    background-image: linear-gradient(rgba(20, 20, 20, 0.85), rgba(20, 20, 20, 0.9)), 
+                      url('../assets/images/sva-hero-bg.png');
+    background-size: cover;
+    background-position: center top; /* Keeps your face visible inside the card area */
+    background-repeat: no-repeat;
+}
+
+/* Force all text inside the profile block to be bright and highly legible over the image */
+.profile-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-green);
+}
+
+.profile-text p {
+    color: #ffffff; /* Crisp white text so it pops off your dark photo background */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }

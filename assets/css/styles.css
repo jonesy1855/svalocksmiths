@@ -1740,12 +1740,12 @@ main h2::after {
 /* 5. The Animation Loop (Points precisely to your assets folder) */
 @keyframes heroCrossfade {
     0%, 45% {
-        background-image: url('assets/images/sva-hero-bg.png');
+        background-image: url('/assets/images/sva-hero-bg.png');
     }
     50%, 95% {
-        background-image: url('assets/images/locksmith-at-work.png');
+        background-image: url('/assets/images/locksmith-at-work.png');
     }
     100% {
-        background-image: url('assets/images/sva-hero-bg.png');
+        background-image: url('/assets/images/sva-hero-bg.png');
     }
 }

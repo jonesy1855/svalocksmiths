@@ -1476,6 +1476,6 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Forces image to crop cleanly instead of stretching */
+    object-fit: contain; /* 👈 This stops the zooming and shows the whole tool */
     border-radius: 8px;
 }

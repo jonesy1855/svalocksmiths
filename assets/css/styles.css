@@ -1678,17 +1678,19 @@ main h2::after {
 .hero {
     position: relative;
     width: 100%;
-    min-height: 500px; 
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
-    border-bottom: 1px solid var(--border-color);
-    background: transparent !important; /* Forces out any residual background blockers */
+    padding: 0; /* Let the image dictate the height naturally */
 }
 
-/* 2. Soft dark tint overlay so text is highly readable */
+.hero-bg-img {
+    width: 100%;
+    height: auto; /* Scales perfectly; nothing gets cropped! */
+    display: block;
+}
+
 .hero::before {
     content: '';
     position: absolute;
@@ -1696,59 +1698,15 @@ main h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.65); /* Set slightly darker for flawless tactical text contrast */
+    background: rgba(0, 0, 0, 0.6); /* Keeps text perfectly readable over the image */
     z-index: 1;
 }
 
-.hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    
-    /* Lock the alignment to the top so your head stays in frame */
-    background-position: center top; 
-    
-    background-repeat: no-repeat;
-    z-index: 0;
-    animation: heroCrossfade 8s infinite ease-in-out; 
-}
-
-
-/* 4. Keeps your text elements safely resting on top */
 .hero-content {
-    position: relative;
+    position: absolute; /* Floats perfectly on top of the image */
     z-index: 2;
-    max-width: 800px; /* Kept tight to prevent massive screens from stretching lines */
+    max-width: 800px;
     text-align: center;
     color: #ffffff;
-}
-
-.hero h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--text-light); /* Swapped from muted to light to stand out on images */
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-}
-
-/* 5. The Animation Loop (Points precisely to your assets folder) */
-@keyframes heroCrossfade {
-    0%, 45% {
-        background-image: url('/assets/images/sva-hero-bg.png');
-    }
-    50%, 95% {
-        background-image: url('/assets/images/locksmith-at-work.png');
-    }
-    100% {
-        background-image: url('/assets/images/sva-hero-bg.png');
-    }
+    padding: 20px;
 }

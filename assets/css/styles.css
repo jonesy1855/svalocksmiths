@@ -1388,3 +1388,52 @@ footer {
     filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
 }
 
+/* Container and Card Framework (Tweak to match your existing spacing) */
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Adjust height to fit your card layout */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps images crisp without distortion */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* --- Left Card: 4-Image Timing Framework --- */
+/* Total loop time: 16 seconds (4s per image) */
+.dealer-suite-container .tooling-card:nth-child(1) .slide-img {
+    animation: diagnosticFadeLoop 16s infinite;
+}
+.dealer-suite-container .tooling-card:nth-child(1) .slide-img:nth-child(1) { animation-delay: 0s; }
+.dealer-suite-container .tooling-card:nth-child(1) .slide-img:nth-child(2) { animation-delay: 4s; }
+.dealer-suite-container .tooling-card:nth-child(1) .slide-img:nth-child(3) { animation-delay: 8s; }
+.dealer-suite-container .tooling-card:nth-child(1) .slide-img:nth-child(4) { animation-delay: 12s; }
+
+@keyframes diagnosticFadeLoop {
+    0%, 25% { opacity: 1; }  /* Visible for 4 seconds */
+    31.25%, 100% { opacity: 0; } /* Fade out and stay hidden */
+}
+
+/* --- Right Card: 3-Image Timing Framework --- */
+/* Total loop time: 12 seconds (4s per image) */
+.dealer-suite-container .tooling-card:nth-child(2) .slide-img {
+    animation: cuttingFadeLoop 12s infinite;
+}
+.dealer-suite-container .tooling-card:nth-child(2) .slide-img:nth-child(1) { animation-delay: 0s; }
+.dealer-suite-container .tooling-card:nth-child(2) .slide-img:nth-child(2) { animation-delay: 4s; }
+.dealer-suite-container .tooling-card:nth-child(2) .slide-img:nth-child(3) { animation-delay: 8s; }
+
+@keyframes cuttingFadeLoop {
+    0%, 33.33% { opacity: 1; } /* Visible for 4 seconds */
+    41.66%, 100% { opacity: 0; } /* Fade out and stay hidden */
+}

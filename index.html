@@ -508,6 +508,9 @@
     
     <script>
     let player;
+    let previewLoopInterval;
+    const startSeconds = 290; // 4:50 (Start of cutting)
+    const endSeconds = 410;   // 6:50 (End of cutting)
     
     // 1. This function runs automatically when the YouTube API loads
     function onYouTubeIframeAPIReady() {
@@ -523,7 +526,7 @@
                 'playlist': 'LVGqfBbJvG8',
                 'playsinline': 1,
                 'rel': 0,
-                'start': 290 // 👈 Starts right at 4:50 where the actual machine cutting begins!
+                'start': startSeconds
             },
             events: {
                 'onReady': onPlayerReady
@@ -531,10 +534,20 @@
         });
     }
     
-    // 2. When the preview is ready, speed it up to 2.0x (Time-Lapse effect!)
+    // 2. When the preview is ready, speed it up and start the custom timestamp loop
     function onPlayerReady(event) {
-        event.target.setPlaybackRate(3.0); // 👈 Sets preview speed to double speed
+        event.target.setPlaybackRate(2.0); // 2x speed for time-lapse
         event.target.playVideo();
+        
+        // Start checking the time every half-second to force the loop
+        previewLoopInterval = setInterval(function() {
+            if (player && typeof player.getCurrentTime === 'function') {
+                let currentTime = player.getCurrentTime();
+                if (currentTime >= endSeconds) {
+                    player.seekTo(startSeconds);
+                }
+            }
+        }, 500);
     }
     
     // 3. Listen for the user clicking "Play"
@@ -544,14 +557,17 @@
     
         if (videoOverlay) {
             videoOverlay.addEventListener("click", function() {
-                // Hide the glass overlay
+                // Stop the custom loop interval so they can watch the whole video
+                clearInterval(previewLoopInterval);
+                
+                // Hide the glass overlay and unlock controls
                 videoOverlay.style.display = "none";
                 videoWrapper.classList.add("activated");
                 
                 if (player) {
-                    player.unMute();           // Unmute the audio
-                    player.setPlaybackRate(1.0); // Drop speed back to normal 1.0x
-                    player.seekTo(290);          // Restart at the cutting action with sound
+                    player.unMute();             // Bring back sound
+                    player.setPlaybackRate(1.0);   // Normal speed
+                    player.seekTo(startSeconds);   // Restart at the beginning of the action
                     player.playVideo();
                 }
             });

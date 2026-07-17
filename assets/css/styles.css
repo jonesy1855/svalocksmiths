@@ -21,7 +21,7 @@
 body {
     background-color: var(--primary-bg);
     color: var(--text-light);
-    padding-top: 20px; /* Fixed rendering syntax typo */
+    padding-top: 20px; 
     line-height: 1.6;
 }
 
@@ -364,7 +364,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   5. VIDEO REEL UI COMPONENT
+   5. VIDEO REEL UI COMPONENT (SVA IN ACTION CAROUSEL)
    ========================================================================== */
 .video-section {
     border-top: 1px solid var(--border-color);
@@ -473,7 +473,7 @@ nav a:hover {
 .arrow-right { right: 10px; }
 
 /* ==========================================================================
-   6. EX-FORCES WHO AM I BENCH JOURNEY GRID
+   6. EX-FORCES WHO AM I BENCH JOURNEY GRID (CLEANED OF CONFLICTS)
    ========================================================================== */
 .about-bg-section {
     position: relative;
@@ -513,13 +513,8 @@ nav a:hover {
 
 .bench-grid {
     display: grid;
-<<<<<<< Updated upstream
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-=======
     grid-template-columns: 1fr;
     gap: 15px;
->>>>>>> Stashed changes
 }
 
 /* Adjust the card structure slightly to breathe better with vertical images */
@@ -543,17 +538,11 @@ nav a:hover {
 .bench-img-wrapper {
     position: relative;
     width: 100%;
-<<<<<<< Updated upstream
-    height: auto; /* Wipes out the forced 160px landscape restriction */
-    border-radius: 6px;
-=======
     height: 160px;
     border-radius: 8px;
->>>>>>> Stashed changes
     overflow: hidden;
     margin-bottom: 12px;
     background: #1a1a1a;
-    /* Adds a sleek, tech-focused border framing the photo */
     border: 1px solid rgba(255, 255, 255, 0.08); 
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
@@ -562,12 +551,8 @@ nav a:hover {
     width: 100%;
     height: 100%;
     display: block;
-<<<<<<< Updated upstream
-    object-fit: cover; /* Ensures the whole technical layout stays entirely visible */
-=======
     object-fit: cover;
     object-position: center;
->>>>>>> Stashed changes
 }
 
 .step-badge {
@@ -978,7 +963,6 @@ footer {
     }
 }
 
-
 /* --- SERVICES INTERACTIVE BACKGROUNDS --- */
 
 /* 1. Spare & Duplicate Keys Card Background Setup */
@@ -1008,10 +992,9 @@ footer {
 /* 3. Smooth Hover Transition Effect */
 .service-card-link:hover .spare-keys-card,
 .service-card-link:hover .all-keys-lost-card {
-    /* Slightly clears the dark overlay curtain when a user hovers on it */
     background-image: 
         linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
-        url('../images/xhorse-dolphin-key-cutter.jpg'); /* Adjusted for matching background layout triggers */
+        url('../images/xhorse-dolphin-key-cutter.jpg'); 
 }
 
 .service-card-link:hover .all-keys-lost-card {
@@ -1019,6 +1002,7 @@ footer {
         linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
         url('../images/xhorse-key-tool-plus.jpg');
 }
+
 /* 4. Emergency Lockout Card Background Setup */
 .emergency-lockout-card {
     position: relative;
@@ -1060,7 +1044,7 @@ footer {
 .portal-link {
     font-weight: 500;
     color: #ffffff;
-    border: 1px dashed rgba(57, 255, 20, 0.4); /* Subtly dashed green border */
+    border: 1px dashed rgba(57, 255, 20, 0.4); 
     padding: 6px 12px;
     border-radius: 4px;
     transition: all 0.2s ease;
@@ -1074,7 +1058,6 @@ footer {
 
 /* --- MOBILE HEADER OPTIMIZATIONS --- */
 @media (max-width: 768px) {
-    /* Stack the logo/brand above the navigation menu on mobile */
     header {
         flex-direction: column;
         align-items: center;
@@ -1082,24 +1065,21 @@ footer {
         padding: 12px;
     }
 
-    /* Distribute navigation items evenly and prevent squeezing */
     header nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 8px; /* Slightly tighter gaps so everything fits */
+        gap: 8px; 
         width: 100%;
     }
 
-    /* Global rules for mobile links to keep them neat */
     header nav a {
-        font-size: 0.8rem; /* Slightly smaller font for mobile screen bounds */
-        white-space: nowrap; /* Prevents text like "Call Now" or "Client Login" from splitting into two lines */
+        font-size: 0.8rem; 
+        white-space: nowrap; 
         padding: 4px 6px;
     }
 
-    /* Keep the call button tight and sharp */
     nav .header-cta {
         padding: 6px 10px !important;
         font-size: 0.8rem !important;
@@ -1107,18 +1087,14 @@ footer {
 }
 
 /* ==========================================
-   🍔 MODERN RESPONSIVE COLLAPSIBLE NAV
+   MODERN RESPONSIVE COLLAPSIBLE NAV
    ========================================== */
-
-/* Hide checkbox and hamburger button on desktop */
 .menu-toggle,
 .hamburger-btn {
     display: none;
 }
 
-/* --- MOBILE SPECIFIC RULES --- */
 @media (max-width: 768px) {
-    /* Adjust header layout */
     header {
         position: relative;
         justify-content: space-between;
@@ -1126,7 +1102,6 @@ footer {
         padding: 15px;
     }
 
-    /* Position the mobile menu links into a vertical drawer */
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -1137,8 +1112,6 @@ footer {
         background-color: #1a1a1a;
         border-bottom: 2px solid var(--border-color, #333);
         box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        
-        /* Collapse effect using height/opacity */
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -1148,7 +1121,6 @@ footer {
         padding: 0;
     }
 
-    /* Format links inside the open drawer */
     .nav-links a {
         display: block;
         padding: 15px 20px;
@@ -1158,7 +1130,6 @@ footer {
         box-sizing: border-box;
     }
 
-    /* Keep CTA and Portal links clean inside drawer */
     .nav-links .portal-link {
         border: none;
         border-radius: 0;
@@ -1170,7 +1141,6 @@ footer {
         border-radius: 0;
     }
 
-    /* Show hamburger icon on mobile */
     .hamburger-btn {
         display: flex;
         flex-direction: column;
@@ -1181,7 +1151,6 @@ footer {
         z-index: 1000;
     }
 
-    /* Create the three horizontal menu lines */
     .hamburger-btn span {
         display: block;
         height: 2px;
@@ -1191,15 +1160,13 @@ footer {
         transition: all 0.3s ease-in-out;
     }
 
-    /* ⚡ THE MAGIC TOGGLE: When checkbox is checked, slide-reveal the menu */
     .menu-toggle:checked ~ .nav-links {
-        max-height: 300px; /* High enough to fit all your menu links */
+        max-height: 300px; 
         opacity: 1;
         visibility: visible;
         padding: 10px 0;
     }
 
-    /* 🔄 ANIMATION: Turn hamburger into an 'X' when checked */
     .menu-toggle:checked ~ .hamburger-btn span:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
         background-color: var(--accent-green, #39FF14);
@@ -1213,6 +1180,9 @@ footer {
     }
 }
 
+/* ==========================================
+   ACTION GALLERY COMPONENT
+   ========================================== */
 .action-gallery-container {
     margin: 3rem auto;
     max-width: 1200px;
@@ -1232,17 +1202,16 @@ footer {
 }
 
 .gallery-header p {
-    color: var(--accent-color, #2ecc71); /* Uses your signature green */
+    color: var(--accent-color, #2ecc71); 
     font-size: 1rem;
 }
 
 .action-gallery-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1 column on mobile */
+    grid-template-columns: 1fr; 
     gap: 1.5rem;
 }
 
-/* Switches to 2 columns on tablets, and 4 columns on large desktop screens */
 @media (min-width: 768px) {
     .action-gallery-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1269,11 +1238,13 @@ footer {
     border-color: var(--accent-color, #2ecc71);
 }
 
-/* Split Card Layout - Changes to a 2-column grid on desktop screens */
+/* ==========================================
+   SLIDER SPLIT-CARD PATTERNS (CARDS 1 & 3)
+   ========================================== */
 .lishi-split-card {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile default: Stacked */
-    padding: 0 !important; /* Lets the photo sit flush against the card edges */
+    grid-template-columns: 1fr; 
+    padding: 0 !important; 
     overflow: hidden;
     background-color: #1e1e1e;
     border: 1px solid #333333;
@@ -1282,15 +1253,14 @@ footer {
 
 @media (min-width: 768px) {
     .lishi-split-card {
-        grid-template-columns: 1.2fr 2fr; /* Desktop: Photo on left (1.2), Text on right (2) */
+        grid-template-columns: 1.2fr 2fr; 
         min-height: 300px;
     }
 }
 
-/* Container fits the height perfectly */
 .sva-slider-container {
     width: 100%;
-    height: 320px; /* Mobile height */
+    height: 320px; 
     position: relative;
     overflow: hidden;
     background-color: #121212;
@@ -1298,7 +1268,7 @@ footer {
 
 @media (min-width: 768px) {
     .sva-slider-container {
-        height: 100%; /* Spans the full height of the desktop card panel */
+        height: 100%; 
     }
 }
 
@@ -1308,7 +1278,6 @@ footer {
     position: relative;
 }
 
-/* Object-fit Cover works perfectly now because the container matches a portrait shape! */
 .sva-slider .slide {
     width: 100%;
     height: 100%;
@@ -1320,7 +1289,19 @@ footer {
     animation: svaCrossfade 16s infinite ease-in-out;
 }
 
-/* Text Padding & Layout */
+.sva-slider .slide:nth-child(1) { animation-delay: 0s; }
+.sva-slider .slide:nth-child(2) { animation-delay: 4s; }
+.sva-slider .slide:nth-child(3) { animation-delay: 8s; }
+.sva-slider .slide:nth-child(4) { animation-delay: 12s; }
+
+@keyframes svaCrossfade {
+    0% { opacity: 0; }
+    5% { opacity: 1; }     
+    25% { opacity: 1; }    
+    30% { opacity: 0; }    
+    100% { opacity: 0; }   
+}
+
 .split-content {
     padding: 1.5rem;
     display: flex;
@@ -1367,35 +1348,66 @@ footer {
     line-height: 1.5;
 }
 
-/* Keep your smooth crossfade loop animation intact */
-.sva-slider .slide:nth-child(1) { animation-delay: 0s; }
-.sva-slider .slide:nth-child(2) { animation-delay: 4s; }
-.sva-slider .slide:nth-child(3) { animation-delay: 8s; }
-.sva-slider .slide:nth-child(4) { animation-delay: 12s; }
-
-@keyframes svaCrossfade {
-    0% { opacity: 0; }
-    5% { opacity: 1; }     
-    25% { opacity: 1; }    
-    30% { opacity: 0; }    
-    100% { opacity: 0; }   
-}
-/* Apply the dark mode filter to the parent container to stop Calendly's JS from breaking it */
+/* ==========================================
+   CALENDLY OVERRIDES
+   ========================================== */
 .calendly-inline-widget {
     border-radius: 12px !important;
     overflow: hidden !important;
-    /* Forces everything inside this container to invert and stay dark */
     filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(0.9) !important;
 }
 
-/* Container and Card Framework (Tweak to match your existing spacing) */
+/* ==========================================================================
+   DEALER LEVEL TOOLING SUITE (GLASS WINDOW EFFECT)
+   ========================================================================== */
+.dealer-suite-section {
+    position: relative;
+    padding: 60px 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.75)), url('../images/who_am_i_back.jpg'); 
+}
+
+.dealer-suite-section .section-title h2 {
+    color: #e2b13c; 
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.dealer-suite-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto 0 auto;
+    box-sizing: border-box;
+}
+
+.tooling-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(20, 20, 20, 0.65); 
+    backdrop-filter: blur(4px); 
+    border-radius: 12px;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
 .slideshow-wrapper {
     position: relative;
     width: 100%;
-    height: 250px; /* Adjust height to fit your card layout */
+    height: 240px; 
     overflow: hidden;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    background: rgba(30, 30, 30, 0.5); 
 }
 
 .slide-img {
@@ -1404,16 +1416,13 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Keeps images crisp without distortion */
+    object-fit: contain; 
+    border-radius: 8px;
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
 
-/* ==========================================================================
-   DEALER TOOLING SUITE SLIDESHOW ANIMATIONS (KEEP THIS!)
-   ========================================================================== */
-
-/* --- Left Card: 4-Image Timing Framework --- */
+/* --- Slideshow Animations --- */
 .dealer-suite-container .tooling-card:nth-child(1) .slide-img {
     animation: diagnosticFadeLoop 16s infinite;
 }
@@ -1427,7 +1436,6 @@ footer {
     31.25%, 100% { opacity: 0; } 
 }
 
-/* --- Right Card: 3-Image Timing Framework --- */
 .dealer-suite-container .tooling-card:nth-child(2) .slide-img {
     animation: cuttingFadeLoop 12s infinite;
 }
@@ -1440,149 +1448,15 @@ footer {
     41.66%, 100% { opacity: 0; } 
 }
 
-
-/* ==========================================================================
-   UPDATED FIXED LAYOUT & TEXT FIXES (THE PARTS WE TWEAKED)
-   ========================================================================== */
-
-/* 1. Ensure the parent container maintains its two-column grid layout */
-.dealer-suite-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    width: 1000px;
-    margin: 40px auto;
-    box-sizing: border-box;
-}
-
-/* 2. Fix the card background and padding so the text stays INSIDE */
-.tooling-card {
-    display: flex;
-    flex-direction: column;
-    background: #1e1e1e; 
-    border-radius: 12px;
-    padding: 25px;
-    box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* 3. Give the image window a nice, natural height */
-.slideshow-wrapper {
-    position: relative;
-    width: 100%;
-    height: 240px; 
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    background: #1e1e1e; /* Dark fill behind contained images */
-}
-
-/* 4. Keep the images contained perfectly inside that wrapper window */
-.slide-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Keeps the whole tool visible */
-    border-radius: 8px;
-}
-
-/* 5. FORCE the text content to wrap cleanly and stay in bounds */
+/* --- Card Typography & Content --- */
 .card-content {
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.card-content p {
-    white-space: normal;  
-    word-wrap: break-word;
-    line-height: 1.6;
-    margin-top: 10px;
-    color: #ccc;
-}
-
-/* ==========================================================================
-   UPDATED FIXED-WINDOW LAYOUT & BRAND COLORS
-   ========================================================================== */
-
-/* 1. The Main Section Window Container (Creates the glass window effect) */
-.dealer-suite-section {
-    position: relative;
-    padding: 60px 0;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    /* Use a dark linear overlay + your background image path */
-    background-image: linear-gradient(to right, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.75)), url('../images/who_am_i_back.jpg'); 
-}
-
-/* Section Main Heading Style Override (Adjust to match site fonts) */
-.dealer-suite-section .section-title h2 {
-    color: #e2b13c; /* Match your prominent golden/yellow heading color */
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin-bottom: 5px;
-    text-transform: uppercase;
-}
-
-/* 2. Grid spacing adjustments inside the section window */
-.dealer-suite-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 30px auto 0 auto;
-    box-sizing: border-box;
-}
-
-/* 3. Semi-transparent Glass Cards (Letting the image show through) */
-.tooling-card {
-    display: flex;
-    flex-direction: column;
-    background: rgba(20, 20, 20, 0.65); /* 👈 Changed from solid #1e1e1e to transparent glass tint */
-    backdrop-filter: blur(4px); /* Gives a modern frosted-glass look */
-    border-radius: 12px;
-    padding: 25px;
-    box-sizing: border-box;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* 4. Slideshow background matching the transparent cards */
-.slideshow-wrapper {
-    position: relative;
-    width: 100%;
-    height: 240px; 
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    background: rgba(30, 30, 30, 0.5); /* Blends perfectly with the window background */
-}
-
-.slide-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; 
-    border-radius: 8px;
-}
-
-/* 5. Typography, Tags, & Brand Coloring Rules */
-.card-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Green bracketed tags (e.g. [DIAGNOSTIC INTERFACE]) */
 .card-tag {
-    color: #39b54a; /* Match your vibrant brand green color */
+    color: #39b54a; 
     font-weight: 600;
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -1590,54 +1464,56 @@ footer {
     margin-bottom: 8px;
 }
 
-/* Card titles (e.g. AUTEL MAXIIM ARCHITECTURE) */
 .card-content h3 {
-    color: #ffffff; /* Crisp white for clean readability */
+    color: #ffffff; 
     font-size: 1.25rem;
     font-weight: 700;
     margin: 5px 0 10px 0;
     letter-spacing: 0.5px;
 }
 
-/* Content paragraphs */
 .card-content p {
     white-space: normal;  
     word-wrap: break-word;
     line-height: 1.6;
-    color: #dddddd; /* Slightly brighter off-white text color for visibility */
+    color: #dddddd; 
     font-size: 0.95rem;
+    margin-top: 10px;
 }
 
-/* Container for the video preview */
-.video-preview-wrapper {
+/* ==========================================================================
+   UNIFIED VIDEO CARD ALIGNMENT (CARD 2 INSIDE SLIDER REEL)
+   ========================================================================== */
+
+/* Match standard slider container shape */
+.sva-slider-container.video-preview-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 16/9; /* Standard widescreen ratio */
-    border-radius: 12px;
-    overflow: hidden;
+    height: 100%;
+    min-height: 250px; 
     background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
 }
 
-/* Force iframe to fill wrapper cleanly */
+/* Keeps player scaling correctly */
+.video-preview-wrapper #xhorsePlayer,
 .video-preview-wrapper iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none; /* 👈 Blocks initial clicks on YouTube UI so the loop is seamless */
+    width: 100% !important;
+    height: 100% !important;
+    border: none;
 }
 
-/* Transparent Overlay/Glass Shield */
+/* Glass Screen Overlay covering the video loop */
 .video-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.3); /* Slight dim to make overlay readable */
+    background: rgba(10, 10, 10, 0.45); 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1648,106 +1524,36 @@ footer {
 }
 
 .video-overlay:hover {
-    background: rgba(10, 10, 10, 0.5); /* Dims slightly more on hover to invite click */
+    background: rgba(10, 10, 10, 0.6);
 }
 
-/* Play button aesthetic */
 .play-button-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(26, 26, 26, 0.9);
-    border: 2px solid #39b54a; /* Brand green ring */
+    width: 48px;
+    height: 48px;
+    background: rgba(20, 20, 20, 0.9);
+    border: 2px solid var(--accent-green);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .video-overlay:hover .play-button-icon {
     transform: scale(1.1);
-    border-color: #e2b13c; /* Turns golden-yellow on hover */
+    border-color: #e2b13c;
 }
 
 .video-overlay span {
     color: #fff;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.75rem;
+    font-weight: 700;
     letter-spacing: 0.5px;
+    text-transform: uppercase;
     text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-/* CLASS TRIGGERED VIA JAVASCRIPT WHEN USER CLICKS */
 .video-preview-wrapper.activated iframe {
-    pointer-events: auto; /* 👈 Restores normal YouTube player control clicks */
-}
-
-/* Split Layout Style (Matches your top card) */
-.split-card {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: #1e1e1e;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-/* Squeeze the video wrapper to take up exactly the left half */
-.split-card .video-preview-wrapper {
-    width: 50%; /* 👈 Matches the photo width of your top card */
-    aspect-ratio: 16/9;
-    border-radius: 12px 0 0 12px;
-    border: none;
-}
-
-/* Center the text container on the right side */
-.split-card .portfolio-card-content {
-    width: 50%;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-/* Responsive adjustment: Stack them on mobile screens */
-@media (max-width: 768px) {
-    .split-card {
-        flex-direction: column;
-    }
-    .split-card .video-preview-wrapper,
-    .split-card .portfolio-card-content {
-        width: 100%;
-    }
-    .split-card .video-preview-wrapper {
-        border-radius: 12px 12px 0 0;
-    }
-}
-/* FORCE the video wrapper to copy your standard portfolio image layout */
-.portfolio-card .video-preview-wrapper {
-    position: relative;
-    width: 100%; /* Spans full width of the left column */
-    /* Adjust these to match the exact dimensions of the images on your top/bottom cards */
-    height: 220px; 
-    border-radius: 8px;
-    overflow: hidden;
-    background: #111;
-    border: none;
-}
-
-/* Ensure the iframe stays locked inside that same container size */
-.video-preview-wrapper iframe,
-.video-preview-wrapper #xhorsePlayer {
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-/* Make sure the text block on the right matches the spacing of the other cards */
-.portfolio-card .portfolio-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertically centers text next to the video */
+    pointer-events: auto;
 }

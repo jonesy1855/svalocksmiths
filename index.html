@@ -133,7 +133,16 @@
         </div>
     </div>
 
-      <!-- DEALER-LEVEL TOOLING SUITE SECTION -->
+<!-- DEALER-LEVEL TOOLING SUITE SECTION -->
+<section class="dealer-suite-section">
+    <div class="container">
+        
+        <!-- MAIN SECTION HEADING -->
+        <div class="section-title text-center">
+            <h2>DEALER-LEVEL TOOLING SUITE</h2>
+            <div class="heading-line"></div> <!-- Match your green accent line if you use one -->
+        </div>
+
         <div class="dealer-suite-container">
         
             <!-- LEFT CARD: DIAGNOSTIC INTERFACE -->
@@ -166,6 +175,9 @@
             </div>
         
         </div>
+    </div>
+</section>
+
 
 
     <div class="container" id="portfolio" style="border-top: 1px solid var(--border-color); background-color: rgba(255,255,255,0.01);">
@@ -325,19 +337,30 @@
 
                 </div>
 
-                <!-- CARD 2: WORKSHOP TECH -->
-                <div class="video-card">
-                    <div class="video-frame-wrapper">
-                        <div class="img-placeholder" style="height: 100%; border-radius: 0; background: linear-gradient(90deg, #111, #221, #111); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; text-align: center;">
-                            <span style="color: var(--accent-green, #2ecc71); font-weight: bold; letter-spacing: 1px;">⚙️ CASE FILE PACKET IN PRODUCTION</span>
-                            <p style="font-size: 0.8rem; color: #888; margin-top: 5px;">Automated CNC laser tracking in progress</p>
+                <!-- PRECISION KEY CUTTING VIDEO REEL CONTAINER -->
+                <div class="video-preview-wrapper" id="xhorseVideoWrapper">
+                    <!-- Overlay Play Button and text -->
+                    <div class="video-overlay" id="videoOverlay">
+                        <div class="play-button-icon">
+                            <svg viewBox="0 0 24 24" width="36" height="36" fill="#e2b13c">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
                         </div>
+                        <span>Click to Play Full Video with Sound</span>
                     </div>
-                    <div class="video-meta-info">
-                        <span>Workshop Tech</span>
-                        <h3>Precision Cutting a Car Key</h3>
-                    </div>
+                
+                    <!-- YouTube Embed Configured for a Silent Preview Loop -->
+                    <!-- Start at 3:45 (225s) where the actual key cutting start, or leave blank to start from 0 -->
+                    <iframe 
+                        id="xhorseIframe"
+                        src="https://www.youtube.com/embed/LVGqfBbJvG8?autoplay=1&mute=1&controls=0&loop=1&playlist=LVGqfBbJvG8&playsinline=1&rel=0" 
+                        title="Xhorse Dolphin XP005 Key Cutting Preview" 
+                        frameborder="0" 
+                        allow="autoplay; encrypted-media" 
+                        allowfullscreen>
+                    </iframe>
                 </div>
+
 
                 <!-- Card 3: Programming a Transponder Remote with Split Layout -->
                 <div class="card lishi-split-card">
@@ -474,5 +497,6 @@
     </footer>
 
     <script src="assets/js/forms.js"></script>
+
 </body>
 </html>

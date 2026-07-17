@@ -22,3 +22,23 @@ if (videoReel && btnLeft && btnRight) {
         videoReel.scrollBy({ left: getScrollPosition(), behavior: 'smooth' });
     });
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    const videoWrapper = document.getElementById("xhorseVideoWrapper");
+    const videoOverlay = document.getElementById("videoOverlay");
+    const iframe = document.getElementById("xhorseIframe");
+
+    if (videoOverlay && iframe) {
+        videoOverlay.addEventListener("click", function() {
+            // 1. Hide the glass shield overlay
+            videoOverlay.style.display = "none";
+            
+            // 2. Allow pointer events to register on YouTube's player UI
+            videoWrapper.classList.add("activated");
+            
+            // 3. Swap the iframe src to load full controls and remove force-mute
+            iframe.src = "https://www.youtube.com/embed/LVGqfBbJvG8?autoplay=1&controls=1&rel=0";
+        });
+    }
+});
+

@@ -1502,3 +1502,183 @@ footer {
     margin-top: 10px;
     color: #ccc;
 }
+
+/* ==========================================================================
+   UPDATED FIXED-WINDOW LAYOUT & BRAND COLORS
+   ========================================================================== */
+
+/* 1. The Main Section Window Container (Creates the glass window effect) */
+.dealer-suite-section {
+    position: relative;
+    padding: 60px 0;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Use a dark linear overlay + your background image path */
+    background-image: linear-gradient(to right, rgba(10, 10, 10, 0.75), rgba(10, 10, 10, 0.75)), url('../images/who_am_i_back.jpg'); 
+}
+
+/* Section Main Heading Style Override (Adjust to match site fonts) */
+.dealer-suite-section .section-title h2 {
+    color: #e2b13c; /* Match your prominent golden/yellow heading color */
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* 2. Grid spacing adjustments inside the section window */
+.dealer-suite-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto 0 auto;
+    box-sizing: border-box;
+}
+
+/* 3. Semi-transparent Glass Cards (Letting the image show through) */
+.tooling-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(20, 20, 20, 0.65); /* 👈 Changed from solid #1e1e1e to transparent glass tint */
+    backdrop-filter: blur(4px); /* Gives a modern frosted-glass look */
+    border-radius: 12px;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* 4. Slideshow background matching the transparent cards */
+.slideshow-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px; 
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: rgba(30, 30, 30, 0.5); /* Blends perfectly with the window background */
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    border-radius: 8px;
+}
+
+/* 5. Typography, Tags, & Brand Coloring Rules */
+.card-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Green bracketed tags (e.g. [DIAGNOSTIC INTERFACE]) */
+.card-tag {
+    color: #39b54a; /* Match your vibrant brand green color */
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* Card titles (e.g. AUTEL MAXIIM ARCHITECTURE) */
+.card-content h3 {
+    color: #ffffff; /* Crisp white for clean readability */
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 5px 0 10px 0;
+    letter-spacing: 0.5px;
+}
+
+/* Content paragraphs */
+.card-content p {
+    white-space: normal;  
+    word-wrap: break-word;
+    line-height: 1.6;
+    color: #dddddd; /* Slightly brighter off-white text color for visibility */
+    font-size: 0.95rem;
+}
+
+/* Container for the video preview */
+.video-preview-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9; /* Standard widescreen ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Force iframe to fill wrapper cleanly */
+.video-preview-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* 👈 Blocks initial clicks on YouTube UI so the loop is seamless */
+}
+
+/* Transparent Overlay/Glass Shield */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.3); /* Slight dim to make overlay readable */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.video-overlay:hover {
+    background: rgba(10, 10, 10, 0.5); /* Dims slightly more on hover to invite click */
+}
+
+/* Play button aesthetic */
+.play-button-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(26, 26, 26, 0.9);
+    border: 2px solid #39b54a; /* Brand green ring */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.video-overlay:hover .play-button-icon {
+    transform: scale(1.1);
+    border-color: #e2b13c; /* Turns golden-yellow on hover */
+}
+
+.video-overlay span {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* CLASS TRIGGERED VIA JAVASCRIPT WHEN USER CLICKS */
+.video-preview-wrapper.activated iframe {
+    pointer-events: auto; /* 👈 Restores normal YouTube player control clicks */
+}

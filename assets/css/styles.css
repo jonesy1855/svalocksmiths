@@ -106,12 +106,6 @@ nav a:hover {
 /* ==========================================================================
    3. HERO & GLOBAL ACTIONS
    ========================================================================== */
-.hero {
-    padding: 5rem 5%;
-    text-align: center;
-    background: linear-gradient(rgba(26,26,26,0.85), rgba(26,26,26,0.95));
-    border-bottom: 1px solid var(--border-color);
-}
 
 .hero h2 {
     font-size: 2.8rem;
@@ -1677,7 +1671,10 @@ main h2::after {
 }
 
 
-/* 1. The Main Hero Box */
+/* ==========================================================================
+   3. HERO & GLOBAL ACTIONS (CLEANED & DYNAMIC)
+   ========================================================================== */
+/* 1. The Main Hero Box Container */
 .hero {
     position: relative;
     width: 100%;
@@ -1686,7 +1683,9 @@ main h2::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px; /* Gives your text some breathing room */
+    padding: 60px 20px;
+    border-bottom: 1px solid var(--border-color);
+    background: transparent !important; /* Forces out any residual background blockers */
 }
 
 /* 2. Soft dark tint overlay so text is highly readable */
@@ -1697,7 +1696,7 @@ main h2::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.55); /* Tint adjusted for high contrast */
+    background: rgba(0, 0, 0, 0.65); /* Set slightly darker for flawless tactical text contrast */
     z-index: 1;
 }
 
@@ -1720,12 +1719,25 @@ main h2::after {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px; /* Keeps text lengths comfortable to read on big screens */
+    max-width: 800px; /* Kept tight to prevent massive screens from stretching lines */
     text-align: center;
     color: #ffffff;
 }
 
-/* 5. The Animation Loop (Points to your asset folder) */
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-light); /* Swapped from muted to light to stand out on images */
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+/* 5. The Animation Loop (Points precisely to your assets folder) */
 @keyframes heroCrossfade {
     0%, 45% {
         background-image: url('assets/images/sva-hero-bg.png');

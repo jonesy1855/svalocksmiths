@@ -1644,3 +1644,24 @@ footer {
 .stacked-cards-container .card:last-child {
     margin-bottom: 0 !important; /* Prevents extra space at the very bottom of the section */
 }
+/* ==========================================================================
+   SUBPAGE HEADING HARMONY & CENTERING
+   ========================================================================== */
+.services-page h1,
+.services-page h2,
+main h1,
+main h2 {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+    text-transform: uppercase;
+    position: relative;
+    width: 100%;
+}
+
+/* Ensure any decorative green bottom lines look centered beneath the header */
+.services-page h1::after,
+.services-page h2::after,
+main h1::after,
+main h2::after {
+    margin: 10px auto 0 auto !important;
+}

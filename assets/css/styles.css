@@ -1636,3 +1636,11 @@ footer {
     height: 100% !important;
     border: none;
 }
+/* --- Force spacing between the stacked cards --- */
+.stacked-cards-container .card {
+    margin-bottom: 25px !important; /* Forces a perfect gap between each card */
+}
+
+.stacked-cards-container .card:last-child {
+    margin-bottom: 0 !important; /* Prevents extra space at the very bottom of the section */
+}

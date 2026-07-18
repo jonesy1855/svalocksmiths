@@ -42,3 +42,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Simple FAQ Accordion Toggle
+document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        
+        // Toggle the active class to expand/collapse
+        faqItem.classList.toggle('active');
+    });
+});

@@ -1745,6 +1745,16 @@ main h2::after {
     }
 }
 
+.hero-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Matches your image rounding style */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #000000; /* Smooth backdrop while loading */
+}
+
+
 /* PROFILE / INTERVENTION BLOCK */
 .profile-block {
     display: flex;

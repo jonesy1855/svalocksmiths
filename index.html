@@ -45,6 +45,17 @@
     </style>
 </head>
 <body>
+        <!-- DIY COOKIE BANNER -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+            <p><strong>Cookie Preferences</strong><br>We use essential cookies to run this site. With your consent, we use third-party cookies (like Google Maps) to enhance your experience. <a href="legal.html" style="color: var(--accent-green);">Read our policy</a>.</p>
+        </div>
+        <div class="cookie-buttons">
+            <button id="decline-cookies" class="cookie-btn decline-btn">Decline</button>
+            <button id="accept-cookies" class="cookie-btn accept-btn">Accept Maps</button>
+        </div>
+    </div>
+
     <div class="compliance-banner">
             ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
     </div>
@@ -620,6 +631,61 @@
         }
     });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+    const mapIframe = document.getElementById('google-map-iframe');
+    const mapPlaceholder = document.getElementById('map-placeholder');
+    const placeholderAccept = document.getElementById('placeholder-accept');
+
+    // Check if the user has already made a choice
+    let consent = localStorage.getItem('sva_cookie_consent');
+
+    if (!consent) {
+        // If no choice made yet, show the banner
+        banner.style.display = 'flex';
+    } else if (consent === 'accepted') {
+        // If they already accepted previously, load the map instantly
+        loadMap();
+    }
+
+    // Function to load the Google Map
+    function loadMap() {
+        if (mapIframe) {
+            // Swap data-src to src to trigger the map download
+            mapIframe.src = mapIframe.getAttribute('data-src');
+            mapIframe.style.display = 'block';
+            if (mapPlaceholder) mapPlaceholder.style.display = 'none';
+        }
+    }
+
+    // Accept Button Clicked
+    acceptBtn.addEventListener('click', function() {
+        localStorage.setItem('sva_cookie_consent', 'accepted');
+        banner.style.display = 'none';
+        loadMap();
+    });
+
+    // Accept Button Clicked (from the map placeholder box)
+    if (placeholderAccept) {
+        placeholderAccept.addEventListener('click', function() {
+            localStorage.setItem('sva_cookie_consent', 'accepted');
+            banner.style.display = 'none';
+            loadMap();
+        });
+    }
+
+    // Decline Button Clicked
+    declineBtn.addEventListener('click', function() {
+        localStorage.setItem('sva_cookie_consent', 'declined');
+        banner.style.display = 'none';
+        // Map stays blocked
+    });
+});
+</script>
+
 
 </body>
 </html>

@@ -42,6 +42,73 @@
                 font-size: 0.85rem;
             }
         }
+        /* Floating WhatsApp Widget */
+.whatsapp-float-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-float-widget:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-avatar-wrapper {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    border: 2px solid #25D366; /* SVA Green accent */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    background-color: #111;
+}
+
+.whatsapp-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Green "Online" Indicator Badge */
+.whatsapp-status-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: #25D366;
+    border: 3px solid #050505; /* Matches site dark background */
+    border-radius: 50%;
+}
+
+/* Optional subtle pulse animation for the online dot */
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.whatsapp-status-dot {
+    animation: pulse-green 2s infinite;
+}
+
+/* Mobile Tweak: Keep it off screen edge */
+@media (max-width: 600px) {
+    .whatsapp-float-widget {
+        bottom: 20px;
+        right: 20px;
+    }
+    .whatsapp-avatar-wrapper {
+        width: 58px;
+        height: 58px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -686,6 +753,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/447000000000?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+   class="whatsapp-float-widget" 
+   target="_blank" 
+   rel="noopener noreferrer" 
+   aria-label="Chat with SVA Locksmiths on WhatsApp">
+    <div class="whatsapp-avatar-wrapper">
+        <!-- Replace 'profile.jpg' with your actual image file name -->
+        <img src="assets/images/profile.jpg" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+        <span class="whatsapp-status-dot"></span>
+    </div>
+</a>
 
 
 </body>

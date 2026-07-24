@@ -1923,3 +1923,76 @@ main h2::after {
     color: #fff;
     border-color: #fff;
 }
+
+/* Infinite Scrolling Logo Banner */
+.logo-slider-container {
+    background-color: #0a0a0a; /* Slightly lighter than the main black background */
+    padding: 40px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    border-top: 1px solid rgba(37, 211, 102, 0.15); /* SVA Green subtle border */
+    border-bottom: 1px solid rgba(37, 211, 102, 0.15);
+}
+
+/* Faded edges so logos smoothly disappear */
+.logo-slider-container::before,
+.logo-slider-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 15%; /* Adjust for wider or narrower fade */
+    height: 100%;
+    z-index: 2;
+}
+
+.logo-slider-container::before {
+    left: 0;
+    background: linear-gradient(to right, #050505 0%, transparent 100%);
+}
+
+.logo-slider-container::after {
+    right: 0;
+    background: linear-gradient(to left, #050505 0%, transparent 100%);
+}
+
+/* The track that actually moves */
+.logo-track {
+    display: inline-block;
+    animation: scroll-logos 35s linear infinite; /* Adjust 35s for speed */
+}
+
+/* Pause the scrolling when a user hovers over the banner */
+.logo-slider-container:hover .logo-track {
+    animation-play-state: paused;
+}
+
+/* Styling the logos for the dark theme */
+.logo-track img {
+    height: 55px; /* Size of the logos */
+    margin: 0 40px; /* Spacing between logos */
+    vertical-align: middle;
+    filter: grayscale(100%) brightness(200%) opacity(0.6); /* Makes them metallic/silver */
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* Light up in full color on hover */
+.logo-track img:hover {
+    filter: grayscale(0%) brightness(100%) opacity(1);
+    transform: scale(1.1);
+}
+
+/* The infinite animation */
+@keyframes scroll-logos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } 
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .logo-track img {
+        height: 40px;
+        margin: 0 25px;
+    }
+}

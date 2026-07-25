@@ -108,7 +108,83 @@
         height: 58px;
     }
 }
+        /* --- MOBILE RESPONSIVENESS PATCHES --- */
+        
+        /* 1. Prevent the page from scrolling sideways and cutting off text */
+        html, body {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
 
+        /* 2. Ensure padding doesn't force elements wider than the screen */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        /* 3. Fix the stretched/squished Bench Journey images */
+        .bench-img-wrapper {
+            width: 100%;
+            height: 180px; /* Gives the image a nice fixed height */
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .bench-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This is the magic bullet that stops stretching! */
+            display: block;
+        }
+
+        /* 4. Mobile Layout Adjustments */
+        @media (max-width: 768px) {
+            
+            /* Scale down massive headings so they fit on the screen */
+            .section-title h2, h2.section-title {
+                font-size: 1.8rem;
+                line-height: 1.2;
+                word-wrap: break-word;
+                text-align: center;
+                padding: 0 10px;
+            }
+            
+            /* Prevent long words (like ARCHITECTURE) from breaking the container */
+            h3, h4 {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
+            }
+
+            /* Specifically scale down the "Built on Military Discipline" heading */
+            .about-text-content h3 {
+                font-size: 1.6rem !important; 
+            }
+
+            /* Ensure grids collapse into neat single columns with breathing room */
+            .container, 
+            .about-grid, 
+            .bench-grid, 
+            .portfolio-matrix, 
+            .dealer-suite-container,
+            .stacked-cards-container {
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* Ensure individual cards don't push outside the screen */
+            .bench-card, 
+            .job-card, 
+            .tooling-card,
+            .lishi-split-card {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -224,13 +300,6 @@
             </a>
         </div>
     </div>
-
-
-
-    <!-- LOGO SLIDER CONTAINER -->
-    <section class="logo-slider-container" style="margin-top: 40px; margin-bottom: 40px;">
-
-
     <!-- LOGO SLIDER MOVED OUTSIDE AND GIVEN TOP/BOTTOM MARGIN -->
     <section class="logo-slider-container" style="margin-top: 60px; margin-bottom: 40px;">
         <div class="logo-track">

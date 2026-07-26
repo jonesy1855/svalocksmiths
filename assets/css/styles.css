@@ -58,7 +58,8 @@ header {
     position: sticky; 
     top: 0;
     z-index: 100;
-    padding: 1rem 5%;
+    /* We increased the top padding from 1rem to 3rem to make room for the banner */
+    padding: 3rem 5% 1rem 5%; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -140,19 +141,20 @@ nav a:hover {
     filter: brightness(1.1);
 }
 
-/* COMPLIANCE BANNER */
+/* Style the banner to pin to the top of the header */
 .compliance-banner {
-    background-color: #d35400; /* Deep amber warning tone */
-    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d35400; /* Deep orange to grab attention */
+    color: #ffffff;
     text-align: center;
-    padding: 10px 15px;
+    padding: 6px 10px;
+    font-size: 0.85rem;
     font-weight: bold;
-    font-size: 0.9rem;
     letter-spacing: 0.5px;
-    text-transform: uppercase;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-    position: relative;
-    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 /* ==========================================================================
@@ -1994,5 +1996,72 @@ main h2::after {
     .logo-track img {
         height: 40px;
         margin: 0 25px;
+    }
+}
+
+/* --- DESKTOP "BIG SCREEN" EXPANSION --- */
+@media (min-width: 1024px) {
+    /* Widen the main constraint of the website */
+    .container, 
+    .hero-content, 
+    .about-grid {
+        max-width: 1400px; /* Increases from standard 1100px/1200px */
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    /* Force the Services to stretch 4-wide */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    /* Force Portfolio and SVA In Action cards to go 3-wide */
+    .portfolio-matrix, 
+    .stacked-cards-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        align-items: stretch;
+    }
+
+    /* Put the Bench Journey and Text side-by-side */
+    .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+}
+
+/* ==========================================================================
+   MOBILE HEADER PATCh (COMPLIANCE BANNER)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Force enough top padding to clear the taller, wrapped banner */
+    header {
+        padding-top: 4.5rem !important; 
+        align-items: center;
+    }
+
+    /* 2. Shrink the banner text slightly so it fits neater on narrow screens */
+    .compliance-banner {
+        font-size: 0.7rem;
+        padding: 8px 5px;
+        line-height: 1.3;
+    }
+
+    /* 3. Ensure the logo and text don't overflow the remaining space */
+    .logo-container img.logo-img {
+        height: 50px !important; /* Slightly smaller logo for mobile */
+    }
+    
+    .logo-container .brand-name h1 {
+        font-size: 1.1rem !important;
+    }
+    
+    .logo-container .brand-name p {
+        font-size: 0.7rem !important;
     }
 }

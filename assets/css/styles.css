@@ -1013,24 +1013,25 @@ footer {
     z-index: 1;
 }
 
-/* 5. Van Security Card Background Setup */
-.van-security-card {
+/* 5. AC Regassing Card Background Setup */
+.ac-regas-card {
     position: relative;
     background-image: 
         linear-gradient(rgba(38, 38, 38, 0.92), rgba(38, 38, 38, 0.96)), 
-        url('../images/van-deadlock.jpg');
+        url('../images/ac-regas-machine.png'); /* Update this filename when you have the photo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
 }
 
-/* 6. Smooth Hover Transition Upgrades */
-.service-card-link:hover .emergency-lockout-card {
+/* 6. Smooth Hover Transition Upgrades (Update the second block here) */
+.service-card-link:hover .ac-regas-card {
     background-image: 
         linear-gradient(rgba(26, 26, 26, 0.82), rgba(26, 26, 26, 0.92)), 
-        url('../images/vehicle-access-wedges.jpg');
+        url('../images/ac-regas-machine.jpg');
 }
+
 
 .service-card-link:hover .van-security-card {
     background-image: 

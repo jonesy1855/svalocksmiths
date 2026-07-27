@@ -1,0 +1,16 @@
+{
+  "name": "Shropshire Vehicle Access Training",
+  "short_name": "SVA Tech",
+  "start_url": "./preview.html",
+  "display": "standalone",
+  "background_color": "#141414",
+  "theme_color": "#2ecc71",
+  "icons": [
+    {
+      "src": "assets/images/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

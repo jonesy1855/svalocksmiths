@@ -686,14 +686,15 @@ nav a:hover {
     display: block;
 }
 
+/* 1. Lift the input background and brighten the borders */
 .form-group input, .form-group textarea, .form-group select {
-    background: #0b0b0b !important;
+    background: #1e1e1e !important; /* Lifted from the super dark #0b0b0b */
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important; /* Brighter, more visible border */
     border-radius: 4px !important;
     padding: 12px 16px !important;
     font-family: inherit;
-    font-size: 0.9rem !important;
+    font-size: 0.95rem !important; /* Slightly larger text for typing */
     transition: all 0.25s ease-in-out !important;
     width: 100%;
 }
@@ -708,9 +709,11 @@ form.general-form {
     border-top: 3px solid #2ecc71 !important;
 }
 
+/* 3. Remove transparency on labels so they pop */
 form.general-form label {
-    color: rgba(46, 204, 113, 0.7) !important;
+    color: #2ecc71 !important; /* Full opacity green */
 }
+
 
 form.general-form input:focus, form.general-form textarea:focus, form.general-form select:focus {
     border-color: #2ecc71 !important;
@@ -725,7 +728,7 @@ form.emergency-form {
 }
 
 form.emergency-form label {
-    color: rgba(243, 156, 18, 0.7) !important;
+    color: #f39c12 !important; /* Full opacity orange */
 }
 
 form.emergency-form input:focus, form.emergency-form textarea:focus, form.emergency-form select:focus {
@@ -772,9 +775,10 @@ form.emergency-form .submit-btn:hover {
     transform: translateY(-2px);
 }
 
+/* 2. Make the placeholder text highly readable */
 ::placeholder {
-    color: #444 !important;
-    font-size: 0.85rem;
+    color: #a0a0a0 !important; /* Lifted from #444 to a bright grey */
+    font-size: 0.9rem;
 }
 
 /* QUICK CONTACT INTERFACE STRIP */

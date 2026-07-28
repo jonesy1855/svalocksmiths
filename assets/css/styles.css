@@ -898,6 +898,41 @@ footer {
     color: var(--accent-orange);
 }
 
+/* Touch-Friendly Location Grid for Mobile */
+.footer-locations {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on mobile */
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-loc-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    background-color: rgba(77, 72, 72, 0.2);
+    transition: all 0.2s ease;
+}
+
+.footer-loc-link:hover {
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+    background-color: rgba(46, 204, 113, 0.05);
+}
+
+/* Expand to 3 columns on larger screens */
+@media (min-width: 768px) {
+    .footer-locations {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
 /* ==========================================================================
    9. RESPONSIVE DESIGN BREAKPOINTS
    ========================================================================== */
@@ -2007,6 +2042,87 @@ main h2::after {
     .logo-track img {
         height: 40px;
         margin: 0 25px;
+    }
+}
+/* ==========================================================================
+   UNIFIED SERVICE CTA BLOCK
+   ========================================================================== */
+.unified-cta-box {
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cta-title {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.cta-desc {
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    color: #ccc;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Button Layout - Stacked on Mobile */
+.cta-button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Base button styling */
+.action-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+/* The Emergency/Immediate Button */
+.urgent-btn {
+    background-color: #e67e22;
+    color: #fff !important;
+}
+
+.urgent-btn:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+/* The Standard/Passive Button */
+.standard-btn {
+    background-color: #2ecc71;
+    color: #111 !important; /* Dark text against the bright green for sharp contrast */
+}
+
+.standard-btn:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+/* Desktop Expansion: Buttons sit side-by-side */
+@media (min-width: 768px) {
+    .cta-button-group {
+        flex-direction: row;
+    }
+    .cta-button-group .action-btn {
+        flex: 1; /* Forces both buttons to be exactly the same width */
     }
 }
 

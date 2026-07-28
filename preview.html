@@ -8,7 +8,8 @@
     <title>Shropshire Vehicle Access Locksmiths</title>
     <meta property="og:site_name" content="Shropshire Vehicle Access Locksmiths">
     <meta property="og:title" content="Shropshire Vehicle Access Locksmiths">
-    
+    <link rel="manifest" href="manifest.json">
+
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
     
@@ -902,6 +903,20 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }
     </script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js')
+        .then(registration => {
+          console.log('SVA ServiceWorker registered successfully!');
+        })
+        .catch(error => {
+          console.log('ServiceWorker registration failed:', error);
+        });
+    });
+  }
+</script>
 
 
 </body>

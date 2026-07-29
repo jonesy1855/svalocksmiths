@@ -3,16 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SVA Locksmiths (Shropshire Vehicle Access) is a future mobile auto locksmith specialist preparing to serve Shropshire. Currently undergoing training, tool evaluations, and local SEO testing.">
+    
+    <!-- Primary Meta Tags -->
+    <title>Shropshire Vehicle Access | Mobile Auto Locksmith</title>
+    <meta name="title" content="Shropshire Vehicle Access | Mobile Auto Locksmith">
+    <meta name="description" content="Fast, non-destructive emergency vehicle entry, spare key cutting, and dealer-level programming across Shropshire. We come directly to you.">
 
-    <title>Shropshire Vehicle Access Locksmiths</title>
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
     <meta property="og:site_name" content="Shropshire Vehicle Access Locksmiths">
-    <meta property="og:title" content="Shropshire Vehicle Access Locksmiths">
-    <link rel="manifest" href="manifest.json">
+    <meta property="og:url" content="https://sva-locksmiths.co.uk/">
+    <meta property="og:title" content="SVA | 24/7 Mobile Auto Locksmith">
+    <meta property="og:description" content="Locked out? Lost your car keys? Fast mobile roadside assistance across Shropshire.">
+    <!-- IMPORTANT: Open Graph requires a full, absolute URL for images -->
+    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/logo.png">
 
+    <!-- Twitter / X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sva-locksmiths.co.uk/">
+    <meta property="twitter:title" content="SVA | 24/7 Mobile Auto Locksmith">
+    <meta property="twitter:description" content="Locked out? Lost your car keys? Fast mobile roadside assistance across Shropshire.">
+    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/logo.png">
+
+    <!-- Favicon & PWA Manifest -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
+    <link rel="manifest" href="manifest.json">
     
+    <!-- Schema.org Data (SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -21,11 +39,13 @@
       "url": "https://sva-locksmiths.co.uk"
     }
     </script>
-    <link rel="manifest" href="manifest.json">
 
-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
 
+    <!-- Inline Emergency & Layout Styles -->
     <style>
+        /* --- HEADER CTA --- */
         nav .header-cta {
             background-color: #e67e22;
             color: #fff !important;
@@ -35,81 +55,81 @@
             text-decoration: none;
             transition: background 0.2s ease;
         }
+        
         nav .header-cta:hover {
             background-color: #d35400;
         }
+        
         @media (max-width: 768px) {
             nav .header-cta {
                 padding: 4px 8px;
                 font-size: 0.85rem;
             }
         }
-        /* Floating WhatsApp Widget */
-.whatsapp-float-widget {
-    position: fixed;
-    bottom: 30px;
-    right: 25px;
-    z-index: 9999;
-    text-decoration: none;
-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
 
-.whatsapp-float-widget:hover {
-    transform: scale(1.1);
-}
+        /* --- FLOATING WHATSAPP WIDGET --- */
+        .whatsapp-float-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 25px;
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.whatsapp-avatar-wrapper {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 2px solid #25D366; /* SVA Green accent */
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-    background-color: #111;
-}
+        .whatsapp-float-widget:hover {
+            transform: scale(1.1);
+        }
 
-.whatsapp-avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
+        .whatsapp-avatar-wrapper {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #25D366; /* SVA Green accent */
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            background-color: #111;
+        }
 
-/* Green "Online" Indicator Badge */
-.whatsapp-status-dot {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    width: 16px;
-    height: 16px;
-    background-color: #25D366;
-    border: 3px solid #050505; /* Matches site dark background */
-    border-radius: 50%;
-}
+        .whatsapp-avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
 
-/* Optional subtle pulse animation for the online dot */
-@keyframes pulse-green {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-}
+        /* Green "Online" Indicator Badge */
+        .whatsapp-status-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 16px;
+            height: 16px;
+            background-color: #25D366;
+            border: 3px solid #050505; /* Matches site dark background */
+            border-radius: 50%;
+            animation: pulse-green 2s infinite;
+        }
 
-.whatsapp-status-dot {
-    animation: pulse-green 2s infinite;
-}
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
 
-/* Mobile Tweak: Keep it off screen edge */
-@media (max-width: 600px) {
-    .whatsapp-float-widget {
-        bottom: 20px;
-        right: 20px;
-    }
-    .whatsapp-avatar-wrapper {
-        width: 68px;
-        height: 68px;
-    }
-}
+        /* Mobile Tweak: Keep it off screen edge */
+        @media (max-width: 600px) {
+            .whatsapp-float-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-avatar-wrapper {
+                width: 68px;
+                height: 68px;
+            }
+        }
+
         /* --- MOBILE RESPONSIVENESS PATCHES --- */
         
         /* 1. Prevent the page from scrolling sideways and cutting off text */
@@ -126,7 +146,7 @@
         /* 3. Fix the stretched/squished Bench Journey images */
         .bench-img-wrapper {
             width: 100%;
-            height: 180px; /* Gives the image a nice fixed height */
+            height: 180px;
             overflow: hidden;
             position: relative;
         }
@@ -134,7 +154,7 @@
         .bench-img-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* This is the magic bullet that stops stretching! */
+            object-fit: cover;
             display: block;
         }
 
@@ -150,19 +170,19 @@
                 padding: 0 10px;
             }
             
-            /* Prevent long words (like ARCHITECTURE) from breaking the container */
+            /* Prevent long words from breaking the container */
             h3, h4 {
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 hyphens: auto;
             }
 
-            /* Specifically scale down the "Built on Military Discipline" heading */
+            /* Scale down specific headings */
             .about-text-content h3 {
                 font-size: 1.6rem !important; 
             }
 
-            /* Ensure grids collapse into neat single columns with breathing room */
+            /* Ensure grids collapse into neat single columns */
             .container, 
             .about-grid, 
             .bench-grid, 
@@ -189,6 +209,7 @@
         }
     </style>
 </head>
+
 <body>
         <!-- DIY COOKIE BANNER -->
     <div id="cookie-banner" class="cookie-banner">

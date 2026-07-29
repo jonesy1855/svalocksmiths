@@ -10,6 +10,10 @@
     --text-muted: #aaaaaa;
     --border-color: #333333;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 
 * {
     box-sizing: border-box;

@@ -778,221 +778,232 @@
         </div>
     </footer>
 
-
+    <!-- External Script: Form Formatting (If applicable) -->
     <script src="assets/js/forms.js"></script>
-
+    
+    <!-- External Script: YouTube API -->
     <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- Floating WhatsApp Widget -->
+    <a href="https://wa.me/447000000000?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+       class="whatsapp-float-widget" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat with SVA Locksmiths on WhatsApp">
+        <div class="whatsapp-avatar-wrapper">
+            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+            <span class="whatsapp-status-dot"></span>
+        </div>
+    </a>
+
+    <!-- Main Consolidated JavaScript -->
     <script>
-    let player;
-    let previewLoopInterval;
-    const startSeconds = 290; 
-    const endSeconds = 410;  
-  
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('xhorsePlayer', {
-            height: '100%',
-            width: '100%',
-            videoId: 'LVGqfBbJvG8',
-            playerVars: {
-                'autoplay': 1,
-                'mute': 1,
-                'controls': 0,
-                'loop': 1,
-                'playlist': 'LVGqfBbJvG8',
-                'playsinline': 1,
-                'rel': 0,
-                'start': startSeconds
-            },
-            events: {
-                'onReady': onPlayerReady
-            }
-        });
-    }
-    
-
-    function onPlayerReady(event) {
-        event.target.setPlaybackRate(4.0); 
-        event.target.playVideo();
-        
-        previewLoopInterval = setInterval(function() {
-            if (player && typeof player.getCurrentTime === 'function') {
-                let currentTime = player.getCurrentTime();
-                if (currentTime >= endSeconds) {
-                    player.seekTo(startSeconds);
-                }
-            }
-        }, 500);
-    }
-    
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const videoWrapper = document.getElementById("xhorseVideoWrapper");
-        const videoOverlay = document.getElementById("videoOverlay");
-    
-        if (videoOverlay) {
-            videoOverlay.addEventListener("click", function() {
-    
-                clearInterval(previewLoopInterval);
-                
-                videoOverlay.style.display = "none";
-                videoWrapper.classList.add("activated");
-                
-                if (player) {
-                    player.unMute();             
-                    player.setPlaybackRate(1.0);   
-                    player.seekTo(startSeconds);   
-                    player.playVideo();
+        // -----------------------------------------
+        // 1. YouTube Video Player Logic
+        // -----------------------------------------
+        let player;
+        let previewLoopInterval;
+        const startSeconds = 290; 
+        const endSeconds = 410;  
+      
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('xhorsePlayer', {
+                height: '100%',
+                width: '100%',
+                videoId: 'LVGqfBbJvG8',
+                playerVars: {
+                    'autoplay': 1,
+                    'mute': 1,
+                    'controls': 0,
+                    'loop': 1,
+                    'playlist': 'LVGqfBbJvG8',
+                    'playsinline': 1,
+                    'rel': 0,
+                    'start': startSeconds
+                },
+                events: {
+                    'onReady': onPlayerReady
                 }
             });
         }
-    });
-    </script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const declineBtn = document.getElementById('decline-cookies');
-    const mapIframe = document.getElementById('google-map-iframe');
-    const mapPlaceholder = document.getElementById('map-placeholder');
-    const placeholderAccept = document.getElementById('placeholder-accept');
-
-    // Check if the user has already made a choice
-    let consent = localStorage.getItem('sva_cookie_consent');
-
-    if (!consent) {
-        // If no choice made yet, show the banner
-        banner.style.display = 'flex';
-    } else if (consent === 'accepted') {
-        // If they already accepted previously, load the map instantly
-        loadMap();
-    }
-
-    // Function to load the Google Map
-    function loadMap() {
-        if (mapIframe) {
-            // Swap data-src to src to trigger the map download
-            mapIframe.src = mapIframe.getAttribute('data-src');
-            mapIframe.style.display = 'block';
-            if (mapPlaceholder) mapPlaceholder.style.display = 'none';
+        
+        function onPlayerReady(event) {
+            event.target.setPlaybackRate(4.0); 
+            event.target.playVideo();
+            
+            previewLoopInterval = setInterval(function() {
+                if (player && typeof player.getCurrentTime === 'function') {
+                    let currentTime = player.getCurrentTime();
+                    if (currentTime >= endSeconds) {
+                        player.seekTo(startSeconds);
+                    }
+                }
+            }, 500);
         }
-    }
 
-    // Accept Button Clicked
-    acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('sva_cookie_consent', 'accepted');
-        banner.style.display = 'none';
-        loadMap();
-    });
+        // -----------------------------------------
+        // 2. DOMContentLoaded Event Listeners
+        // -----------------------------------------
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            // --- A. Video Overlay Interaction ---
+            const videoWrapper = document.getElementById("xhorseVideoWrapper");
+            const videoOverlay = document.getElementById("videoOverlay");
+        
+            if (videoOverlay) {
+                videoOverlay.addEventListener("click", function() {
+                    clearInterval(previewLoopInterval);
+                    videoOverlay.style.display = "none";
+                    videoWrapper.classList.add("activated");
+                    
+                    if (player) {
+                        player.unMute();             
+                        player.setPlaybackRate(1.0);   
+                        player.seekTo(startSeconds);   
+                        player.playVideo();
+                    }
+                });
+            }
 
-    // Accept Button Clicked (from the map placeholder box)
-    if (placeholderAccept) {
-        placeholderAccept.addEventListener('click', function() {
-            localStorage.setItem('sva_cookie_consent', 'accepted');
-            banner.style.display = 'none';
-            loadMap();
-        });
-    }
+            // --- B. Cookie Consent & Map Loading ---
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            const declineBtn = document.getElementById('decline-cookies');
+            const mapIframe = document.getElementById('google-map-iframe');
+            const mapPlaceholder = document.getElementById('map-placeholder');
+            const placeholderAccept = document.getElementById('placeholder-accept');
 
-    // Decline Button Clicked
-    declineBtn.addEventListener('click', function() {
-        localStorage.setItem('sva_cookie_consent', 'declined');
-        banner.style.display = 'none';
-        // Map stays blocked
-    });
-});
+            let consent = localStorage.getItem('sva_cookie_consent');
 
+            if (!consent && banner) {
+                banner.style.display = 'flex';
+            } else if (consent === 'accepted') {
+                loadMap();
+            }
 
-</script>
+            function loadMap() {
+                if (mapIframe) {
+                    mapIframe.src = mapIframe.getAttribute('data-src');
+                    mapIframe.style.display = 'block';
+                    if (mapPlaceholder) mapPlaceholder.style.display = 'none';
+                }
+            }
 
-<!-- Floating WhatsApp Button -->
-<a href="https://wa.me/447000000000?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
-   class="whatsapp-float-widget" 
-   target="_blank" 
-   rel="noopener noreferrer" 
-   aria-label="Chat with SVA Locksmiths on WhatsApp">
-    <div class="whatsapp-avatar-wrapper">
-        <!-- Replace 'profile.jpg' with your actual image file name -->
-        <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
-        <span class="whatsapp-status-dot"></span>
-    </div>
-</a>
+            if (acceptBtn) {
+                acceptBtn.addEventListener('click', function() {
+                    localStorage.setItem('sva_cookie_consent', 'accepted');
+                    banner.style.display = 'none';
+                    loadMap();
+                });
+            }
 
-    <script>
+            if (placeholderAccept) {
+                placeholderAccept.addEventListener('click', function() {
+                    localStorage.setItem('sva_cookie_consent', 'accepted');
+                    banner.style.display = 'none';
+                    loadMap();
+                });
+            }
+
+            if (declineBtn) {
+                declineBtn.addEventListener('click', function() {
+                    localStorage.setItem('sva_cookie_consent', 'declined');
+                    banner.style.display = 'none';
+                });
+            }
+
+            // --- C. Background Form Submission (AJAX) ---
+            const contactForms = document.querySelectorAll('form[action^="https://formspree.io"]');
+            
+            contactForms.forEach(form => {
+                form.addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    
+                    const statusMessage = form.querySelector('.form-status');
+                    const data = new FormData(form);
+                    
+                    fetch(form.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            form.reset();
+                            if(statusMessage) {
+                                statusMessage.style.display = "block";
+                                statusMessage.style.color = "#2ecc71";
+                                statusMessage.innerHTML = "✅ Thanks! We have received your request and will get back to you ASAP.";
+                            }
+                        } else {
+                            response.json().then(data => {
+                                if (statusMessage) {
+                                    if (Object.hasOwn(data, 'errors')) {
+                                        statusMessage.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                                    } else {
+                                        statusMessage.innerHTML = "Oops! There was a problem submitting your request.";
+                                    }
+                                    statusMessage.style.display = "block";
+                                    statusMessage.style.color = "#e74c3c";
+                                }
+                            });
+                        }
+                    }).catch(error => {
+                        if(statusMessage) {
+                            statusMessage.innerHTML = "Oops! There was a problem submitting your request. Please call us instead.";
+                            statusMessage.style.display = "block";
+                            statusMessage.style.color = "#e74c3c";
+                        }
+                    });
+                });
+            });
+
+            // --- D. Dropdown Menu Toggle Fix (Mobile Sticky Hover Patch) ---
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu'); 
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(event) {
+                    event.preventDefault(); 
+                    
+                    // Check if the menu is currently open
+                    if (dropdownMenu.classList.contains('show')) {
+                        // FORCE CLOSE: Remove class and inject inline CSS to kill the sticky hover
+                        dropdownMenu.classList.remove('show');
+                        dropdownMenu.style.display = 'none'; 
+                    } else {
+                        // OPEN: Add class and ensure it displays
+                        dropdownMenu.classList.add('show');
+                        dropdownMenu.style.display = 'block';
+                    }
+                    
+                    event.stopPropagation(); 
+                });
+
+                // Keep the "tap away to close" feature
+                document.addEventListener('click', function(event) {
+                    if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
+                        dropdownMenu.classList.remove('show');
+                        dropdownMenu.style.display = ''; // Clear inline styles so it resets cleanly
+                    }
+                });
+            }
+
+        // -----------------------------------------
+        // 3. Service Worker Registration (PWA)
+        // -----------------------------------------
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('sw.js')
+                navigator.serviceWorker.register('/sw.js')
                     .then(registration => {
-                        console.log('ServiceWorker registration successful');
+                        console.log('SVA ServiceWorker registered successfully!');
                     })
-                    .catch(err => {
-                        console.log('ServiceWorker registration failed: ', err);
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed:', error);
                     });
             });
         }
     </script>
-
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('SVA ServiceWorker registered successfully!');
-        })
-        .catch(error => {
-          console.log('ServiceWorker registration failed:', error);
-        });
-    });
-  }
-</script>
-
-<script>
-  // Find all forms that send to Formspree
-  const contactForms = document.querySelectorAll('form[action^="https://formspree.io"]');
-
-  contactForms.forEach(form => {
-    form.addEventListener("submit", function(event) {
-      // Stop the browser from leaving the page
-      event.preventDefault();
-      
-      const statusMessage = form.querySelector('.form-status');
-      const data = new FormData(form);
-      
-      // Send the data silently
-      fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          // Success! Clear the form and show the friendly message
-          form.reset();
-          statusMessage.style.display = "block";
-          statusMessage.style.color = "#2ecc71";
-          statusMessage.innerHTML = "✅ Thanks! We have received your request and will get back to you ASAP.";
-        } else {
-          // Handle Formspree-specific errors
-          response.json().then(data => {
-            if (Object.hasOwn(data, 'errors')) {
-              statusMessage.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-            } else {
-              statusMessage.innerHTML = "Oops! There was a problem submitting your request.";
-            }
-            statusMessage.style.display = "block";
-            statusMessage.style.color = "#e74c3c";
-          });
-        }
-      }).catch(error => {
-        // Handle total network failure
-        statusMessage.innerHTML = "Oops! There was a problem submitting your request. Please call us instead.";
-        statusMessage.style.display = "block";
-        statusMessage.style.color = "#e74c3c";
-      });
-    });
-  });
-</script>
-
 </body>
 </html>
-

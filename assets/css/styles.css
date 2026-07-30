@@ -2237,3 +2237,22 @@ main h2::after {
 .nav-link:hover, .dropbtn:hover {
     color: var(--accent-green);
 }
+.dynamic-headline-container {
+    text-align: center;
+    min-height: 80px; /* Adjust this slightly if your font is very large */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.fade-text {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    color: #ffffff; /* Keeps it sharp and white */
+}
+
+/* We will trigger this class with JavaScript */
+.fade-text.hidden {
+    opacity: 0; 
+}

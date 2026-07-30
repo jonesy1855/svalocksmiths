@@ -67,6 +67,25 @@
             }
         }
 
+        /* --- DYNAMIC HEADLINE ROTATOR --- */
+        .dynamic-headline-container {
+            text-align: left;
+            min-height: 70px; 
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .fade-text {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+            color: #2ecc71; /* SVA Green to make it pop */
+        }
+        
+        .fade-text.hidden {
+            opacity: 0; 
+        }
+
         /* --- FLOATING WHATSAPP WIDGET --- */
         .whatsapp-float-widget {
             position: fixed;
@@ -86,7 +105,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            border: 2px solid #25D366; /* SVA Green accent */
+            border: 2px solid #25D366;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
             background-color: #111;
         }
@@ -99,7 +118,6 @@
             display: block;
         }
 
-        /* Green "Online" Indicator Badge */
         .whatsapp-status-dot {
             position: absolute;
             bottom: 2px;
@@ -107,7 +125,7 @@
             width: 16px;
             height: 16px;
             background-color: #25D366;
-            border: 3px solid #050505; /* Matches site dark background */
+            border: 3px solid #050505; 
             border-radius: 50%;
             animation: pulse-green 2s infinite;
         }
@@ -118,7 +136,6 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* Mobile Tweak: Keep it off screen edge */
         @media (max-width: 600px) {
             .whatsapp-float-widget {
                 bottom: 20px;
@@ -128,22 +145,22 @@
                 width: 68px;
                 height: 68px;
             }
+            .dynamic-headline-container {
+                text-align: center;
+                justify-content: center;
+            }
         }
 
         /* --- MOBILE RESPONSIVENESS PATCHES --- */
-        
-        /* 1. Prevent the page from scrolling sideways and cutting off text */
         html, body {
             overflow-x: clip;
             max-width: 100vw;
         }
 
-        /* 2. Ensure padding doesn't force elements wider than the screen */
         *, *::before, *::after {
             box-sizing: border-box;
         }
 
-        /* 3. Fix the stretched/squished Bench Journey images */
         .bench-img-wrapper {
             width: 100%;
             height: 180px;
@@ -158,10 +175,7 @@
             display: block;
         }
 
-        /* 4. Mobile Layout Adjustments */
         @media (max-width: 768px) {
-            
-            /* Scale down massive headings so they fit on the screen */
             .section-title h2, h2.section-title {
                 font-size: 1.8rem;
                 line-height: 1.2;
@@ -170,19 +184,16 @@
                 padding: 0 10px;
             }
             
-            /* Prevent long words from breaking the container */
             h3, h4 {
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 hyphens: auto;
             }
 
-            /* Scale down specific headings */
             .about-text-content h3 {
                 font-size: 1.6rem !important; 
             }
 
-            /* Ensure grids collapse into neat single columns */
             .container, 
             .about-grid, 
             .bench-grid, 
@@ -197,7 +208,6 @@
                 gap: 20px;
             }
 
-            /* Ensure individual cards don't push outside the screen */
             .bench-card, 
             .job-card, 
             .tooling-card,
@@ -211,7 +221,7 @@
 </head>
 
 <body>
-        <!-- DIY COOKIE BANNER -->
+    <!-- DIY COOKIE BANNER -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
             <p><strong>Cookie Preferences</strong><br>We use essential cookies to run this site. With your consent, we use third-party cookies (like Google Maps) to enhance your experience. <a href="legal.html" style="color: var(--accent-green);">Read our policy</a>.</p>
@@ -236,32 +246,28 @@
             </a>
         </div>
 
-<nav class="main-nav">
-    <!-- Existing Links -->
-    <a href="#services" class="nav-link">Services</a>
-    
-    <!-- NEW: Locations Dropdown -->
-    <div class="dropdown">
-        <button class="dropbtn nav-link">Areas We Cover <span>▼</span></button>
-        <div class="dropdown-content">
-            <a href="locksmith-shawbury.html">Shawbury</a>
-            <a href="locksmith-market-drayton.html">Market Drayton</a>
-            <a href="locksmith-shrewsbury.html">Shrewsbury</a>
-            <a href="locksmith-telford.html">Telford</a>
-            <a href="locksmith-oswestry.html">Oswestry</a>
-            <a href="locksmith-whitchurch.html">Whitchurch</a>
-        </div>
-    </div>
+        <nav class="main-nav">
+            <a href="#services" class="nav-link">Services</a>
+            
+            <div class="dropdown">
+                <button class="dropbtn nav-link">Areas We Cover <span>▼</span></button>
+                <div class="dropdown-content">
+                    <a href="locksmith-shawbury.html">Shawbury</a>
+                    <a href="locksmith-market-drayton.html">Market Drayton</a>
+                    <a href="locksmith-shrewsbury.html">Shrewsbury</a>
+                    <a href="locksmith-telford.html">Telford</a>
+                    <a href="locksmith-oswestry.html">Oswestry</a>
+                    <a href="locksmith-whitchurch.html">Whitchurch</a>
+                </div>
+            </div>
 
-    <!-- Existing Links -->
-    <a href="#about" class="nav-link">Who Am I</a>
-</nav>
+            <a href="#about" class="nav-link">Who Am I</a>
+        </nav>
     </header>
 
 
     <section class="hero">
         <div class="hero-content">
-            <!-- Left Side Column: Now holds your video introduction securely -->
             <div class="hero-image-wrapper">
                 <video 
                     src="assets/videos/sva-intro.mp4" 
@@ -274,10 +280,12 @@
                 </video>
             </div>
 
-            <!-- Right Side Column: Holds the messaging -->
             <div class="hero-text-block">
-                <h2>Services available soon!!</h2>
-                <h2>Locked Out? Lost Keys? Roadside, work or driveway Support.</h2>
+                <!-- NEW DYNAMIC HEADLINE -->
+                <div class="dynamic-headline-container">
+                    <h2><span id="changing-text" class="fade-text">LOCKED OUT OF YOUR VEHICLE?</span></h2>
+                </div>
+
                 <p>SVA Locksmiths (Shropshire Vehicle Access) is a future mobile auto locksmith specialist preparing to serve Shropshire. Currently undergoing training, tool evaluations, and local SEO testing. Fast-response mobile automotive locksmith across Shropshire. Non-destructive entry, dealer-level vehicle key programming, and on-site laser key cutting for cars and light commercial vans.</p>
                 <a href="tel:07123123456" class="cta-btn">Book Mobile Callout</a>
             </div>
@@ -290,7 +298,6 @@
             <h2>OUR SERVICES</h2>
         </div>
         <div class="services-grid">
-            <!-- EMERGENCY LOCKOUT ASSISTANCE CARD -->
             <a href="services/emergency-lockout.html" class="service-card-link">
                 <div class="service-card emergency-lockout-card">
                     <h3>🔓 Emergency Lockout Assistance</h3>
@@ -299,7 +306,6 @@
                 </div>
             </a>
                     
-            <!-- SPARE & DUPLICATE KEYS CARD -->
             <a href="services/spare-keys.html" class="service-card-link">
                 <div class="service-card spare-keys-card">
                     <h3>🔑 Spare & Duplicate Keys</h3>
@@ -308,7 +314,6 @@
                 </div>
             </a>
                     
-            <!-- ALL KEYS LOST SOLUTIONS CARD -->
             <a href="services/all-keys-lost.html" class="service-card-link">
                 <div class="service-card all-keys-lost-card">
                     <h3>🚨 All Keys Lost Solutions</h3>
@@ -317,7 +322,6 @@
                 </div>
             </a>
         
-            <!-- AC REGASSING & CLEANING CARD -->
             <a href="services/ac-regassing.html" class="service-card-link">
                 <div class="service-card ac-regas-card">
                     <h3>❄️ AC Regassing & Cleaning</h3>
@@ -325,14 +329,11 @@
                     <span class="read-more">Learn More & Book →</span>
                 </div>
             </a>
-
         </div>
     </div>
-    <!-- LOGO SLIDER MOVED OUTSIDE AND GIVEN TOP/BOTTOM MARGIN -->
+
     <section class="logo-slider-container" style="margin-top: 60px; margin-bottom: 40px;">
         <div class="logo-track">
-            
-            <!-- SET 1: Your Car Logos -->
             <img src="assets/images/ford-logo.png" alt="Ford Auto Locksmith">
             <img src="assets/images/honda.png" alt="Honda Auto Locksmith">
             <img src="assets/images/toyota.png" alt="Toyota Auto Locksmith">
@@ -347,7 +348,6 @@
             <img src="assets/images/mitsubishi.png" alt="Mitsubishi Auto Locksmith">
             <img src="assets/images/jaguar.png" alt="Jaguar Auto Locksmith">
 
-            <!-- SET 2: Exact Duplicate of Set 1 for the infinite loop -->
             <img src="assets/images/ford-logo.png" alt="Ford Auto Locksmith">
             <img src="assets/images/honda.png" alt="Honda Auto Locksmith">
             <img src="assets/images/toyota.png" alt="Toyota Auto Locksmith">
@@ -368,15 +368,13 @@
 <section class="dealer-suite-section">
     <div class="container">
         
-        <!-- MAIN SECTION HEADING -->
         <div class="section-title text-center">
             <h2>DEALER-LEVEL TOOLING SUITE</h2>
-            <div class="heading-line"></div> <!-- Match your green accent line if you use one -->
+            <div class="heading-line"></div> 
         </div>
 
         <div class="dealer-suite-container">
         
-            <!-- LEFT CARD: DIAGNOSTIC INTERFACE -->
             <div class="tooling-card">
                 <div class="slideshow-wrapper">
                     <img src="assets/images/skp-900.png" alt="SKP-900 Diagnostic Tool" class="slide-img">
@@ -391,7 +389,6 @@
                 </div>
             </div>
         
-            <!-- RIGHT CARD: AUTOMATIC KEY CUTTING -->
             <div class="tooling-card">
                 <div class="slideshow-wrapper">
                     <img src="assets/images/xhorse-dolphin-key-cutter.jpg" alt="Xhorse Dolphin Key Cutter" class="slide-img">
@@ -447,14 +444,12 @@
         </div>
     </div>
 
-    <!-- WHO AM I / BENCH JOURNEY SECTION -->
     <section id="about" class="about-bg-section" style="padding: 100px 0;">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Who Am I</h2>
             
             <div class="about-grid">
                 
-                <!-- Left Column: Sleek 2x2 Step-by-Step Bench Journey -->
                 <div class="about-text-content">
                     <div class="badge" style="background: rgba(46, 204, 113, 0.1); color: var(--accent-green, #2ecc71); padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; display: inline-block; margin-bottom: 15px; border: 1px solid rgba(46, 204, 113, 0.2);">
                         EX-FORCES PROFESSIONAL
@@ -476,12 +471,9 @@
                     <a href="tel:07123123456" class="cta-btn" style="text-decoration: none; display: inline-block;">Secure Your Vehicle Today</a>
                 </div>
 
-
-                <!-- Right Column: Narrative Copy -->
-                    <div class="bench-journey-container">
+                <div class="bench-journey-container">
                     <div class="bench-grid">
                         
-                        <!-- Step 1: EEPROM Connection -->
                         <div class="bench-card">
                             <div class="bench-img-wrapper">
                                 <img src="assets/images/hero-lock.jpg" alt="Decoding immobiliser on the bench">
@@ -491,7 +483,6 @@
                             <p>Direct wiring to the board to extract the encrypted security hex data.</p>
                         </div>
     
-                        <!-- Step 2: Writing Key Data -->
                         <div class="bench-card">
                             <div class="bench-img-wrapper">
                                 <img src="assets/images/Writting_key.jpg" alt="Writing data to transponder chip">
@@ -501,7 +492,6 @@
                             <p>Writing fresh cryptographic data directly onto the new transponder chip.</p>
                         </div>
     
-                        <!-- Step 3: Immobiliser Sync -->
                         <div class="bench-card">
                             <div class="bench-img-wrapper">
                                 <img src="assets/images/ews4_ready.jpg" alt="EWS4 immobiliser module ready">
@@ -511,7 +501,6 @@
                             <p>Testing communication loops with the computer module to ensure 100% sync.</p>
                         </div>
     
-                        <!-- Step 4: Final Key Comparison -->
                         <div class="bench-card">
                             <div class="bench-img-wrapper">
                                 <img src="assets/images/New_Old.jpg" alt="Old vs New car key comparison">
@@ -527,13 +516,11 @@
         </div>
     </section>
 
-    <!-- SVA IN ACTION: STACKED LAYOUT -->
     <div class="container video-section" id="vlogs">
         <h2 class="section-title">SVA IN ACTION</h2>
         
         <div class="stacked-cards-container">
             
-            <!-- Card 1: Mr. Li Picks in Action -->
             <div class="card lishi-split-card">
                 <div class="sva-slider-container">
                     <div class="sva-slider">
@@ -554,9 +541,7 @@
                 </div>
             </div>
 
-            <!-- Card 2: Workshop Tech / Precision Key Cutting Video -->
             <div class="card lishi-split-card">
-                <!-- Left Side: Video Wrapper -->
                 <div class="sva-slider-container video-preview-wrapper" id="xhorseVideoWrapper">
                     <div class="video-overlay" id="videoOverlay">
                         <div class="play-button-icon">
@@ -569,7 +554,6 @@
                     <div id="xhorsePlayer"></div>
                 </div>
             
-                <!-- Right Side: Text Content -->
                 <div class="card-content split-content"> 
                     <div class="meta-badge-row">
                         <span class="category-tag">WORKSHOP TECH</span>
@@ -580,14 +564,11 @@
                 </div>
             </div>
 
-            <!-- Card 3: Programming a Transponder Remote -->
             <div class="card lishi-split-card">
-                <!-- Left Side: Action Photo -->
                 <div class="sva-slider-container">
                     <img src="/assets/images/key-programming-bench.png" alt="SVA Locksmith programming transponder key on diagnostic bench" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
             
-                <!-- Right Side: Tech Data & Briefing Text -->
                 <div class="card-content split-content">
                     <div class="meta-badge-row">
                         <span class="category-tag">OBD DIAGNOSTICS</span>
@@ -655,15 +636,11 @@
         </div>
     </section>
 
-
     <!-- CONTACT SECTION -->
     <div class="container" id="service-desk" style="padding: 80px 20px;">
         <h2 class="section-title" style="text-align: center; margin-bottom: 50px;">Need Help? - Contact Us</h2>
         
-
         <div class="service-desk-grid">
-            
-            <!-- General Enquiries -->
             <form class="general-form" action="https://formspree.io/f/mqerzyoj" method="POST">
                 <div class="form-content-wrapper">
                     <h3 class="form-header">Enquiries</h3>
@@ -705,10 +682,8 @@
                     </svg>
                     WHATSAPP CHAT
                 </a>
-
             </div>
         </div>
-
     </div>
 
     <footer>
@@ -716,13 +691,11 @@
             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
             <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
             
-            <!-- Social Links -->
             <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
                 <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
                 <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
             </div>
 
-            <!-- Touch-Friendly Location Grid -->
             <div class="footer-locations">
                 <a href="../locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
                 <a href="../locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
@@ -734,13 +707,9 @@
         </div>
     </footer>
 
-    <!-- External Script: Form Formatting (If applicable) -->
     <script src="assets/js/forms.js"></script>
-    
-    <!-- External Script: YouTube API -->
     <script src="https://www.youtube.com/iframe_api"></script>
 
-    <!-- Floating WhatsApp Widget -->
     <a href="https://wa.me/447000000000?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
        class="whatsapp-float-widget" 
        target="_blank" 
@@ -752,7 +721,6 @@
         </div>
     </a>
 
-    <!-- Main Consolidated JavaScript -->
     <script>
         // -----------------------------------------
         // 1. YouTube Video Player Logic
@@ -924,12 +892,10 @@
                     event.preventDefault(); 
                     
                     if (dropdownMenu.classList.contains('show')) {
-                        // Close it and forcefully kill the sticky mobile hover
                         dropdownMenu.classList.remove('show');
                         dropdownMenu.style.display = 'none';
-                        dropdownToggle.blur(); // <-- This is the magic bullet
+                        dropdownToggle.blur(); 
                     } else {
-                        // Open it
                         dropdownMenu.classList.add('show');
                         dropdownMenu.style.display = 'block';
                     }
@@ -937,7 +903,6 @@
                     event.stopPropagation(); 
                 });
 
-                // Clear everything cleanly if they tap away
                 document.addEventListener('click', function(event) {
                     if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
                         dropdownMenu.classList.remove('show');
@@ -946,13 +911,35 @@
                     }
                 });
                 
-                // Allow the desktop CSS hover to work smoothly by clearing JS styles when mouse leaves
                 dropdownToggle.addEventListener('mouseleave', function() {
                     dropdownMenu.classList.remove('show');
                     dropdownMenu.style.display = '';
                     dropdownToggle.blur();
                 });
             }
+            
+            // --- E. Dynamic Headline Rotator ---
+            const phrases = [
+                "LOCKED OUT OF YOUR VEHICLE?",
+                "BROKEN OR LOST YOUR ONLY KEY?",
+                "NEED A SPARE CUT ON THE ROADSIDE?",
+                "FAST, NON-DESTRUCTIVE ENTRY."
+            ];
+            
+            let currentPhrase = 0;
+            const textElement = document.getElementById("changing-text");
+
+            if (textElement) {
+                setInterval(() => {
+                    textElement.classList.add("hidden");
+                    setTimeout(() => {
+                        currentPhrase = (currentPhrase + 1) % phrases.length;
+                        textElement.innerText = phrases[currentPhrase];
+                        textElement.classList.remove("hidden");
+                    }, 500); 
+                }, 3500); 
+            }
+        }); // <-- THIS BRACKET WAS MISSING!
 
         // -----------------------------------------
         // 3. Service Worker Registration (PWA)

@@ -2237,22 +2237,32 @@ main h2::after {
 .nav-link:hover, .dropbtn:hover {
     color: var(--accent-green);
 }
-.dynamic-headline-container {
-    text-align: center;
-    min-height: 80px; /* Adjust this slightly if your font is very large */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-}
+        /* --- DYNAMIC HEADLINE ROTATOR --- */
+        .dynamic-headline-container {
+            text-align: center; 
+            justify-content: center; /* This pushes flexbox content to the middle */
+            height: 90px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-.fade-text {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 1;
-    color: #ffffff; /* Keeps it sharp and white */
-}
+        
+        .fade-text {
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+            color: #2ecc71; 
+        }
+        
+        .fade-text.hidden {
+            opacity: 0; 
+        }
 
-/* We will trigger this class with JavaScript */
-.fade-text.hidden {
-    opacity: 0; 
-}
+        /* Further down in your CSS, inside your @media (max-width: 600px) block, add/update this: */
+        @media (max-width: 600px) {
+            .dynamic-headline-container {
+                text-align: center;
+                justify-content: center;
+                height: 120px; /* Gives plenty of room for 3 lines of wrapped text on narrow screens */
+            }
+        }

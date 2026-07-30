@@ -669,7 +669,7 @@
             <!-- General Enquiries -->
             <form class="general-form" action="https://formspree.io/f/mqerzyoj" method="POST">
                 <div class="form-content-wrapper">
-                    <h3 class="form-header">General Enquiries</h3>
+                    <h3 class="form-header">Enquiries</h3>
                     
                     <div class="form-group">
                         <label for="name">Your Name</label>
@@ -691,50 +691,9 @@
                         <textarea id="requirements" name="requirements" rows="4" placeholder="Describe the vehicle issue or requirements..." required style="resize: none;"></textarea>
                     </div>
                 </div>
-                
               <button type="submit" class="submit-btn">Submit Request</button>
                         <p class="form-status" style="display: none; color: #2ecc71; margin-top: 15px; font-weight: bold; text-align: center;"></p>
             </form>
-            
-            <!-- Urgent Enquiries -->
-            <form class="emergency-form" action="https://formspree.io/f/maqrwpgv" method="POST">
-                <div class="form-content-wrapper">
-                    <h3 class="form-header" style="color: #f39c12;">Emergency Booking Order</h3>
-                    
-                    <div class="form-group">
-                        <label for="vehicleCategory">Vehicle Category</label>
-                        <select id="vehicleCategory" name="vehicleCategory" required>
-                            <option value="" disabled selected>-- Select Vehicle Class --</option>
-                            <option value="standard-car">Standard Passenger Car</option>
-                            <option value="commercial-van">Commercial Van / Fleet Vehicle</option>
-                            <option value="high-security">Premium / High-Security (BMW, Mercedes, VAG)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="vehicleDetails">Year, Make & Model</label>
-                        <input type="text" id="vehicleDetails" name="vehicleDetails" placeholder="e.g. 2018 Ford Transit or 2020 VW Golf" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="urgency">Urgency Tier</label>
-                        <select id="urgency" name="urgency" required>
-                            <option value="standard">Standard Booking (Spare Key / Duplicate)</option>
-                            <option value="urgent">Urgent Business Down (Stranded Trade Van)</option>
-                            <option value="emergency">Emergency Lockout (Keys Locked Inside / Lost)</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="preciseLocation">Precise Location (What3Words or Postcode)</label>
-                        <input type="text" id="preciseLocation" name="preciseLocation" placeholder="e.g. ///wiped.contracts.blurs or SY5 9XX" required>
-                    </div>
-                </div>
-                
-                <button type="submit" class="submit-btn emergency-submit">Send</button>
-                            <p class="form-status" style="display: none; color: #2ecc71; margin-top: 15px; font-weight: bold; text-align: center;"></p>
-            </form>
-
         </div>
 
         <div class="quick-contact-strip">
@@ -959,7 +918,7 @@
                 });
             });
 
-            // --- D. Dropdown Menu Toggle Fix (Mobile Sticky Hover Patch) ---
+            // --- D. Dropdown Menu Toggle Fix (Mobile Hover Patch) ---
             const dropdownToggle = document.querySelector('.dropdown-toggle');
             const dropdownMenu = document.querySelector('.dropdown-menu'); 
 
@@ -967,13 +926,13 @@
                 dropdownToggle.addEventListener('click', function(event) {
                     event.preventDefault(); 
                     
-                    // Check if the menu is currently open
                     if (dropdownMenu.classList.contains('show')) {
-                        // FORCE CLOSE: Remove class and inject inline CSS to kill the sticky hover
+                        // Close it and forcefully kill the sticky mobile hover
                         dropdownMenu.classList.remove('show');
-                        dropdownMenu.style.display = 'none'; 
+                        dropdownMenu.style.display = 'none';
+                        dropdownToggle.blur(); // <-- This is the magic bullet
                     } else {
-                        // OPEN: Add class and ensure it displays
+                        // Open it
                         dropdownMenu.classList.add('show');
                         dropdownMenu.style.display = 'block';
                     }
@@ -981,12 +940,20 @@
                     event.stopPropagation(); 
                 });
 
-                // Keep the "tap away to close" feature
+                // Clear everything cleanly if they tap away
                 document.addEventListener('click', function(event) {
                     if (!dropdownMenu.contains(event.target) && !dropdownToggle.contains(event.target)) {
                         dropdownMenu.classList.remove('show');
-                        dropdownMenu.style.display = ''; // Clear inline styles so it resets cleanly
+                        dropdownMenu.style.display = ''; 
+                        dropdownToggle.blur();
                     }
+                });
+                
+                // Allow the desktop CSS hover to work smoothly by clearing JS styles when mouse leaves
+                dropdownToggle.addEventListener('mouseleave', function() {
+                    dropdownMenu.classList.remove('show');
+                    dropdownMenu.style.display = '';
+                    dropdownToggle.blur();
                 });
             }
 

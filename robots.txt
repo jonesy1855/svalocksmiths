@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sva-locksmiths.co.uk/sitemap.xml
+

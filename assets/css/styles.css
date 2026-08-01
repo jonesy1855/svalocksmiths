@@ -25,6 +25,7 @@ html {
 body {
     background-color: var(--primary-bg);
     color: var(--text-light);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     padding-top: 20px; 
     line-height: 1.6;
 }
@@ -645,6 +646,8 @@ nav a:hover {
 /* HIGH END BALANCED GRID FORMS */
 .service-desk-grid {
     display: grid;
+    max-width: 700px;
+    margin: 0 auto;
     grid-template-columns: 1fr;
     gap: 30px;
     align-items: stretch;
@@ -669,7 +672,7 @@ nav a:hover {
 .form-header {
     font-size: 1.2rem;
     color: #2ecc71;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inter', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 25px;
@@ -682,12 +685,12 @@ nav a:hover {
 }
 
 .form-group label {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.75rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    color: #888 !important;
-    margin-bottom: 8px !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f0f0f0; /* Switch from thin green to crisp white/grey for contrast */
+    text-transform: none; /* Turn OFF all-caps for form labels so they scan faster */
+    margin-bottom: 6px;
     display: block;
 }
 
@@ -798,9 +801,9 @@ form.emergency-form .submit-btn:hover {
 }
 
 .strip-label {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
-    color: #888;
+    color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 15px;
@@ -914,9 +917,12 @@ footer {
 }
 
 .footer-loc-link {
-    color: var(--text-muted);
-    text-decoration: none;
+    color: #ffffff !important; /* Pure white for maximum contrast & button clarity */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
     padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 4px;
@@ -925,7 +931,7 @@ footer {
 }
 
 .footer-loc-link:hover {
-    color: var(--accent-green);
+    color: #2ecc71 !important;
     border-color: var(--accent-green);
     background-color: rgba(46, 204, 113, 0.05);
 }

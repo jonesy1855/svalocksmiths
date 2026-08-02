@@ -981,7 +981,7 @@ footer {
     .services-grid { grid-template-columns: repeat(2, 1fr); gap: 35px; }
     .portfolio-matrix { gap: 35px; }
     .about-grid { grid-template-columns: 1fr; }
-    .service-desk-grid { grid-template-columns: 1fr 1fr; }
+    .service-desk-grid { grid-template-columns: 1fr; }
     .strip-buttons { flex-direction: row; }
     .service-actions { flex-direction: row; }
     .action-btn { flex: 1; }

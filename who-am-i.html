@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who Am I | Shropshire Vehicle Access - Ex-Forces Auto Locksmith</title>
+    <meta name="description" content="Learn about Steven, the ex-forces professional behind SVA Locksmiths. Built on military discipline, technical precision, and specialized automotive locksmith training across Shropshire.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
+    
+    <style>
+        /* --- WHO AM I PAGE SPECIFIC LAYOUTS --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Compliance Banner */
+        .compliance-banner {
+            background-color: #d35400;
+            color: #fff;
+            text-align: center;
+            padding: 10px 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            width: 100%;
+            letter-spacing: 0.5px;
+        }
+
+        /* Header & Navigation */
+        header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: #08090a;
+        }
+
+        .logo-container {
+            padding: 15px 5%;
+        }
+
+        .logo-container a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav.top-nav {
+            padding: 0 5% 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .back-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        nav .back-link:hover {
+            color: #2ecc71;
+        }
+
+        header nav .header-cta,
+        .header-cta {
+            background-color: #e67e22 !important;
+            color: #ffffff !important;
+            padding: 8px 16px !important;
+            border-radius: 6px !important;
+            font-weight: 700 !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            border: none !important;
+            box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        header nav .header-cta:hover,
+        .header-cta:hover {
+            background-color: #d35400 !important;
+            transform: translateY(-1px);
+        }
+
+        /* About Section Copy */
+        .about-section {
+            padding: 70px 5% 80px;
+        }
+
+        .about-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .badge-military {
+            background: rgba(46, 204, 113, 0.1);
+            color: #2ecc71;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .about-text-content h3 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            color: #fff;
+            margin-bottom: 25px;
+            line-height: 1.25;
+            font-weight: 800;
+        }
+
+        .about-text-content p {
+            color: #aaaaaa;
+            line-height: 1.75;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* --- 4-STEP BENCH JOURNEY GRID --- */
+        .bench-journey-container {
+            margin-top: 60px;
+        }
+
+        .bench-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .bench-card {
+            background: #111316;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .bench-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(46, 204, 113, 0.4);
+        }
+
+        .bench-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            background-color: #1a1c20;
+        }
+
+        .bench-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .step-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(8, 9, 10, 0.85);
+            color: #2ecc71;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+        }
+
+        .bench-card h4 {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin: 18px 18px 8px;
+            font-weight: 700;
+        }
+
+        .bench-card p {
+            font-size: 0.9rem;
+            color: #a0a6ae;
+            margin: 0 18px 20px;
+            line-height: 1.5;
+        }
+
+        /* --- QUICK CONTACT STRIP --- */
+        .quick-contact-strip {
+            background: #0b0d0f;
+            padding: 45px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .strip-label {
+            color: #cccccc;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+
+        .strip-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-strip-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-strip-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .phone-btn {
+            background: #161616;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: #ffffff !important;
+        }
+
+        /* --- FOOTER & TOUCH-FRIENDLY LOCATION GRID --- */
+        footer {
+            padding: 50px 5% 40px;
+            text-align: center;
+            background: #050505;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-socials {
+            margin: 20px 0;
+        }
+
+        .footer-socials a {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-socials a:hover {
+            color: #ffffff;
+        }
+
+        .footer-locations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .footer-loc-link {
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .footer-loc-link:hover {
+            border-color: #2ecc71;
+            color: #2ecc71 !important;
+        }
+
+        /* --- FLOATING WHATSAPP WIDGET --- */
+        .whatsapp-float-widget {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .whatsapp-float-widget:hover {
+            transform: scale(1.08);
+        }
+
+        .whatsapp-avatar-wrapper {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #25d366;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            background-color: #111316;
+            overflow: hidden;
+        }
+
+        .whatsapp-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .whatsapp-status-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 13px;
+            height: 13px;
+            background-color: #2ecc71;
+            border: 2px solid #050505;
+            border-radius: 50%;
+        }
+
+        /* --- MOBILE BREAKPOINTS --- */
+        @media (max-width: 600px) {
+            .about-section {
+                padding: 40px 5% 60px;
+            }
+            .whatsapp-float-widget {
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-avatar-wrapper {
+                width: 56px;
+                height: 56px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COMPLIANCE BANNER -->
+    <div class="compliance-banner">
+        ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+    </div>
+
+    <!-- HEADER & TOP NAVIGATION -->
+    <header>
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height:75px; width:auto; object-fit:contain;">
+                <div class="brand-name">
+                    <h1 style="font-size: 1.4rem; margin: 0;">Shropshire Vehicle Access</h1>
+                    <p style="margin: 0; color: #888; font-size: 0.85rem;">Mobile Car & Van Auto Locksmith</p>
+                </div>
+            </a>
+        </div>
+        
+        <nav class="top-nav">
+            <a href="index.html" class="back-link">← Back Home</a>
+            <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
+        </nav>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 50px; font-size: 2.2rem; font-weight: 800;">Who Am I</h2>
+            
+            <!-- Bio Copy -->
+            <div class="about-text-content">
+                <div class="badge-military">
+                    EX-FORCES PROFESSIONAL
+                </div>
+                <h3>Built on Military Discipline & Technical Precision</h3>
+                
+                <p>
+                    Following a career in the armed forces, I established Shropshire Vehicle Access Locksmiths to bring a disciplined, structured approach to the mobile auto-locksmith trade across Shrewsbury, Telford, and Shropshire.
+                </p>
+                
+                <p>
+                    Every auto-locksmith has a starting point. For me, it began right here on the dining room table, creating a workaround so that I could use the AK90+ to decode and then re-code my own new key and writing transponder data directly to the module (this was the BMW/Mini R53 EWS systems). From this my passion grew.
+                </p>
+
+                <p>
+                    Whether decoding a highly secure vehicle module on my workspace bench or picking open a locked commercial van on a wet roadside, we approach every task with the exact technical accuracy required to secure your vehicle safely.
+                </p>
+                
+                <a href="tel:07123123456" class="header-cta" style="display: inline-block; margin-top: 15px;">Secure Your Vehicle Today</a>
+            </div>
+
+            <!-- 4-Step AK90+ Photo Journey -->
+            <div class="bench-journey-container">
+                <div class="bench-grid">
+                    
+                    <div class="bench-card">
+                        <div class="bench-img-wrapper">
+                            <img src="assets/images/hero-lock.jpg" alt="Decoding immobiliser on the bench">
+                            <span class="step-badge">Step 1</span>
+                        </div>
+                        <h4>EEPROM Hardware Interface</h4>
+                        <p>Direct wiring to the board to extract the encrypted security hex data.</p>
+                    </div>
+
+                    <div class="bench-card">
+                        <div class="bench-img-wrapper">
+                            <img src="assets/images/Writting_key.jpg" alt="Writing data to transponder chip">
+                            <span class="step-badge">Step 2</span>
+                        </div>
+                        <h4>Writing Transponder Code</h4>
+                        <p>Writing fresh cryptographic data directly onto the new transponder chip.</p>
+                    </div>
+
+                    <div class="bench-card">
+                        <div class="bench-img-wrapper">
+                            <img src="assets/images/ews4_ready.jpg" alt="EWS4 immobiliser module ready">
+                            <span class="step-badge">Step 3</span>
+                        </div>
+                        <h4>Module Verification</h4>
+                        <p>Testing communication loops with the computer module to ensure 100% sync.</p>
+                    </div>
+
+                    <div class="bench-card">
+                        <div class="bench-img-wrapper">
+                            <img src="assets/images/New_Old.jpg" alt="Old vs New car key comparison">
+                            <span class="step-badge">Step 4</span>
+                        </div>
+                        <h4>New Key Delivery</h4>
+                        <p>A completely fresh, high-quality replacement key alongside the failed original.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUICK CONTACT STRIP -->
+    <div class="quick-contact-strip">
+        <p class="strip-label">Prefer Direct Communication? Connect Instantly:</p>
+        <div class="strip-buttons">
+            <a href="tel:07123123456" class="contact-strip-btn phone-btn">
+                <span>📞</span> CALL DIRECT
+            </a>
+            <a href="https://wa.me/447123123456" target="_blank" class="contact-strip-btn whatsapp-btn">
+                💬 WHATSAPP CHAT
+            </a>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p style="color: #aaaaaa; font-size: 0.85rem;">&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
+            <p style="margin-top: 10px;"><a href="legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
+            
+            <!-- Social Links -->
+            <div class="footer-socials">
+                <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+
+            <!-- Touch-Friendly Location Grid -->
+            <div class="footer-locations">
+                <a href="locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
+                <a href="locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
+                <a href="locksmith-shrewsbury.html" class="footer-loc-link">Serving Shrewsbury</a>
+                <a href="locksmith-telford.html" class="footer-loc-link">Serving Telford</a>
+                <a href="locksmith-oswestry.html" class="footer-loc-link">Serving Oswestry</a>
+                <a href="locksmith-whitchurch.html" class="footer-loc-link">Serving Whitchurch</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP WIDGET -->
+    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+       class="whatsapp-float-widget" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       aria-label="Chat with SVA Locksmiths on WhatsApp">
+        <div class="whatsapp-avatar-wrapper">
+            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+            <span class="whatsapp-status-dot"></span>
+        </div>
+    </a>
+
+    <!-- SAFE SCRIPTS -->
+    <script src="assets/js/forms.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+        const mapIframe = document.getElementById('google-map-iframe');
+        const mapPlaceholder = document.getElementById('map-placeholder');
+        const placeholderAccept = document.getElementById('placeholder-accept');
+
+        let consent = localStorage.getItem('sva_cookie_consent');
+
+        if (banner && !consent) {
+            banner.style.display = 'flex';
+        } else if (consent === 'accepted') {
+            loadMap();
+        }
+
+        function loadMap() {
+            if (mapIframe) {
+                mapIframe.src = mapIframe.getAttribute('data-src');
+                mapIframe.style.display = 'block';
+                if (mapPlaceholder) mapPlaceholder.style.display = 'none';
+            }
+        }
+
+        // Null-safety checks prevent console errors on pages without maps or banners
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('sva_cookie_consent', 'accepted');
+                if (banner) banner.style.display = 'none';
+                loadMap();
+            });
+        }
+
+        if (placeholderAccept) {
+            placeholderAccept.addEventListener('click', function() {
+                localStorage.setItem('sva_cookie_consent', 'accepted');
+                if (banner) banner.style.display = 'none';
+                loadMap();
+            });
+        }
+
+        if (declineBtn) {
+            declineBtn.addEventListener('click', function() {
+                localStorage.setItem('sva_cookie_consent', 'declined');
+                if (banner) banner.style.display = 'none';
+            });
+        }
+    });
+    </script>
+</body>
+</html>

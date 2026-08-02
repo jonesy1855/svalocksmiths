@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVA Locksmiths | Emergency Vehicle Access & Key Specialist</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- GEMINI ARCHITECTURE STYLES --- */
+        :root {
+            --bg-dark: #08090a;
+            --card-bg: #111316;
+            --card-border: rgba(255, 255, 255, 0.08);
+            --sva-green: #2ecc71;
+            --sva-green-hover: #27ae60;
+            --text-main: #ffffff;
+            --text-muted: #a0a6ae;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Top Training Notice Banner */
+        .status-banner {
+            background: #d35400;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 16px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            border-bottom: 1px solid var(--card-border);
+            background: rgba(8, 9, 10, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .brand-logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo span {
+            color: var(--sva-green);
+        }
+
+        .nav-call-btn {
+            background-color: var(--sva-green);
+            color: #050505;
+            font-weight: 700;
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .nav-call-btn:hover {
+            background-color: var(--sva-green-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section - The Panic Killer */
+        .hero {
+            padding: 80px 5% 60px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--sva-green);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 650px;
+            margin: 0 auto 40px;
+        }
+
+        /* Instant Action Strip (Above The Fold) */
+        .instant-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto 60px;
+        }
+
+        .cta-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cta-primary {
+            background-color: var(--sva-green);
+            color: #050505;
+        }
+
+        .cta-primary:hover {
+            background-color: var(--sva-green-hover);
+            box-shadow: 0 0 25px rgba(46, 204, 113, 0.4);
+        }
+
+        .cta-secondary {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .cta-secondary:hover {
+            border-color: var(--sva-green);
+            background: rgba(46, 204, 113, 0.05);
+        }
+
+        /* Trust Strip */
+        .trust-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 25px 5%;
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            background: #0b0d0f;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-item span {
+            color: var(--sva-green);
+        }
+
+        /* Triage Bento Grid */
+        .triage-section {
+            padding: 80px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .bento-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(46, 204, 113, 0.4);
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .bento-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .bento-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Centered Service Desk Form */
+        .service-desk {
+            padding: 60px 5% 100px;
+            background: #0b0d0f;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .form-container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 40px;
+            border-radius: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f0f0f0;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: #08090a;
+            border: 1px solid var(--card-border);
+            border-radius: 8px;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sva-green);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--sva-green);
+            color: #050505;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--sva-green-hover);
+        }
+
+        /* Footer & Service Area Pills */
+        footer {
+            padding: 60px 5% 40px;
+            text-align: center;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .town-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .town-pill {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .town-pill:hover {
+            border-color: var(--sva-green);
+            color: var(--sva-green);
+        }
+
+        .footer-legal {
+            color: #aaaaaa;
+            font-size: 0.85rem;
+            margin-top: 20px;
+        }
+
+        .footer-legal a {
+            color: #aaaaaa;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer-legal a:hover {
+            color: #ffffff;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #ffffff;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            z-index: 1000;
+            transition: transform 0.2s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        /* Mobile Breakpoints */
+        @media (max-width: 600px) {
+            .hero {
+                padding: 50px 5% 40px;
+            }
+            .form-container {
+                padding: 25px;
+            }
+            .trust-strip {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP DISPATCH NOTICE -->
+    <div class="status-banner">
+        ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+    </div>
+
+    <!-- STICKY TOP NAV -->
+    <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+            SVA <span>LOCKSMITHS</span>
+        </a>
+        <a href="tel:07123123456" class="nav-call-btn">
+            📞 07123 123456
+        </a>
+    </nav>
+
+    <!-- HERO SECTION: THE PANIC KILLER -->
+    <header class="hero">
+        <div class="hero-badge">
+            ⚡ RAPID MOBILE DISPATCH ACROSS SHROPSHIRE
+        </div>
+        <h1>Locked Out? Lost Your Keys? We Come Directly To You.</h1>
+        <p>
+            Professional, non-destructive vehicle entry, roadside key cutting, and dealer-level transponder programming across Shropshire.
+        </p>
+
+        <!-- ZERO-SCROLL INSTANT ACTION STRIP -->
+        <div class="instant-actions">
+            <a href="tel:07123123456" class="cta-btn cta-primary">
+                📞 CALL DIRECT NOW
+            </a>
+            <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+               target="_blank" class="cta-btn cta-secondary">
+                💬 WHATSAPP DISPATCH
+            </a>
+        </div>
+    </header>
+
+    <!-- TRUST & CREDENTIAL STRIP -->
+    <div class="trust-strip">
+        <div class="trust-item"><span>✔</span> 100% Non-Destructive Entry</div>
+        <div class="trust-item"><span>✔</span> Fully Insured Mobile Service</div>
+        <div class="trust-item"><span>✔</span> ID & Ownership Verified</div>
+        <div class="trust-item"><span>✔</span> All Makes & Models Covered</div>
+    </div>
+
+    <!-- SERVICES TRIAGE: THE BENTO GRID -->
+    <section class="triage-section">
+        <div class="section-header">
+            <h2>How Can We Help You Today?</h2>
+        </div>
+        
+        <div class="bento-grid">
+            <div class="bento-card">
+                <div class="card-icon">🔓</div>
+                <h3>Vehicle Lockout</h3>
+                <p>Keys locked inside the cabin or boot? We use specialized Lishi picks to open your door cleanly with zero damage to locks or bodywork.</p>
+            </div>
+            
+            <div class="bento-card">
+                <div class="card-icon">🔑</div>
+                <h3>All Keys Lost</h3>
+                <p>Not a single key left? We decode your locks at the roadside, cut fresh laser key blades, and program IMMO transponders on the spot.</p>
+            </div>
+
+            <div class="bento-card">
+                <div class="card-icon">🚗</div>
+                <h3>Spare Key Cutting</h3>
+                <p>Don't wait for an emergency. We duplicate, cut, and program backup smart keys, remotes, and manual fobs at your home or workplace.</p>
+            </div>
+
+            <div class="bento-card">
+                <div class="card-icon">⚡</div>
+                <h3>Broken Key Extraction</h3>
+                <p>Snapped a blade inside the ignition or door barrel? We safely extract broken fragments and cut an immediate working replacement.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CENTERED SERVICE DESK CONTACT FORM -->
+    <section class="service-desk" id="contact">
+        <div class="section-header">
+            <h2>Need Help? - Contact Us</h2>
+        </div>
+
+        <div class="form-container">
+            <form action="https://formspree.io/f/mqerzyoj" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g. John Evans" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactInfo">Phone / Email</label>
+                    <input type="text" id="contactInfo" name="contactInfo" placeholder="e.g. 07123123456" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location (Town or Parish)</label>
+                    <input type="text" id="location" name="location" placeholder="e.g. Craven Arms, Oswestry" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requirements">Requirements</label>
+                    <textarea id="requirements" name="requirements" rows="4" placeholder="Describe the vehicle make, model, and issue..." required style="resize: none;"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER WITH WHITE LOCATION PILLS -->
+    <footer>
+        <div class="town-pills">
+            <a href="locksmith-shawbury.html" class="town-pill">Serving Shawbury</a>
+            <a href="locksmith-market-drayton.html" class="town-pill">Serving Market Drayton</a>
+            <a href="locksmith-shrewsbury.html" class="town-pill">Serving Shrewsbury</a>
+            <a href="locksmith-telford.html" class="town-pill">Serving Telford</a>
+            <a href="locksmith-oswestry.html" class="town-pill">Serving Oswestry</a>
+            <a href="locksmith-whitchurch.html" class="town-pill">Serving Whitchurch</a>
+        </div>
+
+        <p style="color: #aaaaaa; font-size: 0.85rem;">
+            &copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.
+        </p>
+
+        <div class="footer-legal">
+            <a href="legal.html">Privacy & Terms</a>
+            <span>•</span>
+            <a href="#">Facebook</a>
+            <span>•</span>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Chat on WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
+

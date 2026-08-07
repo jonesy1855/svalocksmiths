@@ -3,83 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lishi Pick Finder | SVA Locksmiths</title>
+    <title>SVA Lishi Pick Finder | Smart Tooling Reference</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
     <style>
-        /* SVA Core Branding */
-        body {
-            background-color: #111;
-            color: #fff;
-            font-family: Arial, sans-serif;
+        :root {
+            --bg-dark: #0a0b0d;
+            --card-bg: #131519;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --sva-green: #2ecc71;
+            --sva-green-dark: #27ae60;
+            --text-main: #ffffff;
+            --text-muted: #8e959f;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 40px 20px;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
+            align-items: flex-start;
+            padding: 20px 15px 60px;
         }
+
         .finder-container {
-            background-color: #1a1a1a;
-            border: 1px solid rgba(46, 204, 113, 0.3);
-            border-radius: 8px;
-            padding: 30px;
-            max-width: 500px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
             width: 100%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            max-width: 580px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
         }
-        .finder-container h2 {
+
+        .app-header {
             text-align: center;
-            margin-top: 0;
-            color: #fff;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #2ecc71;
+            border-bottom: 2px solid var(--sva-green);
             padding-bottom: 15px;
+            margin-bottom: 25px;
         }
+
+        .app-header h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .app-header p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Smart Search Box */
+        .search-box {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 16px;
+            background-color: #08090a;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--sva-green);
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
+        }
+
+        /* Form Controls */
+        .control-group {
+            margin-bottom: 18px;
+        }
+
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #aaa;
-            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+            color: #d1d5db;
+            font-size: 0.8rem;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
+
         select {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            background-color: #0a0a0a;
+            padding: 14px 12px;
+            background-color: #08090a;
             color: #fff;
-            border: 1px solid #333;
-            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             font-size: 1rem;
+            font-family: 'Inter', sans-serif;
             cursor: pointer;
+            transition: border-color 0.2s ease;
         }
+
         select:focus {
             outline: none;
-            border-color: #2ecc71;
+            border-color: var(--sva-green);
         }
-        /* The Result Box - High Contrast */
+
+        select:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        /* Single Result Display Card (Dropdown Mode) */
         .result-box {
-            display: none; /* Hidden until a selection is made */
-            background-color: #2ecc71;
-            color: #000;
+            display: none;
+            background: linear-gradient(135deg, #18281f 0%, #111b15 100%);
+            border: 2px solid var(--sva-green);
+            border-radius: 8px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 25px;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .result-header {
+            font-size: 0.75rem;
+            color: var(--sva-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .lishi-code {
+            font-size: clamp(1.8rem, 6vw, 2.6rem);
+            font-weight: 800;
+            color: #ffffff;
+            margin: 5px 0 10px;
+            letter-spacing: 1px;
+            word-break: break-word;
+        }
+
+        .tool-note {
+            display: inline-block;
+            background-color: rgba(46, 204, 113, 0.15);
+            color: var(--sva-green);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        /* Smart Live Search List Cards */
+        .live-results-container {
+            display: none;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .live-card {
+            background: #181b20;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--sva-green);
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            animation: fadeIn 0.2s ease-out;
+        }
+
+        .live-card-info h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .live-card-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .live-card-tool {
+            background: rgba(46, 204, 113, 0.15);
+            color: var(--sva-green);
+            border: 1px solid rgba(46, 204, 113, 0.4);
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .no-results {
             text-align: center;
             padding: 20px;
-            border-radius: 4px;
-            margin-top: 10px;
-            font-weight: bold;
-            animation: fadeIn 0.5s ease-in;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border: 1px dashed var(--border-color);
+            border-radius: 8px;
         }
-        .result-box h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.2rem;
-            text-transform: uppercase;
+
+        /* Action Buttons */
+        .btn-reset {
+            width: 100%;
+            padding: 12px;
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s ease;
         }
-        .result-box .lishi-code {
-            font-size: 2.5rem;
-            margin: 0;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+
+        .btn-reset:hover {
+            border-color: #e74c3c;
+            color: #e74c3c;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
+            from { opacity: 0; transform: translateY(-6px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -87,479 +257,380 @@
 <body>
 
     <div class="finder-container">
-        <h2>SVA LISHI FINDER</h2>
-        
-        <label for="makeSelect">1. Select Vehicle Make</label>
-        <select id="makeSelect">
-            <option value="">-- Choose Make --</option>
-        </select>
-
-        <label for="modelSelect">2. Select Model</label>
-        <select id="modelSelect" disabled>
-            <option value="">-- Choose Model --</option>
-        </select>
-
-        <label for="yearSelect">3. Select Year</label>
-        <select id="yearSelect" disabled>
-            <option value="">-- Choose Year --</option>
-        </select>
-
-        <div id="resultBox" class="result-box">
-            <h3>Required Lishi Tool:</h3>
-            <p id="lishiResult" class="lishi-code">HU101</p>
+        <div class="app-header">
+            <h1>SVA Lishi Pick Finder</h1>
+            <p>Automotive & Commercial Vehicle Guide</p>
         </div>
+
+        <!-- Smart Search Box -->
+        <div class="search-box">
+            <input type="text" id="filterInput" class="search-input" placeholder="⚡ Try: 'BMW 5 Series 2016' or 'Transit Custom'...">
+        </div>
+
+        <!-- Live Search Results (Appears immediately when typing) -->
+        <div id="liveResults" class="live-results-container" style="display: none;"></div>
+        
+        <!-- Classic Dropdown UI (Hidden while searching) -->
+        <div id="dropdownSection">
+            <div class="control-group">
+                <label for="makeSelect">1. Select Manufacturer</label>
+                <select id="makeSelect">
+                    <option value="">-- Choose Make --</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="modelSelect">2. Select Model / Series</label>
+                <select id="modelSelect" disabled>
+                    <option value="">-- Choose Model --</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label for="yearSelect">3. Select Generation / Year</label>
+                <select id="yearSelect" disabled>
+                    <option value="">-- Choose Year --</option>
+                </select>
+            </div>
+
+            <!-- Single Result Display Block -->
+            <div id="resultBox" class="result-box">
+                <div class="result-header">Required Lishi Pick Tool</div>
+                <div id="lishiResult" class="lishi-code">--</div>
+                <div id="toolNote" class="tool-note" style="display: none;">--</div>
+            </div>
+        </div>
+
+        <button type="button" id="btnReset" class="btn-reset">Reset Lookup</button>
     </div>
 
     <script>
-        // THE DATA ENGINE: This is where you will add your cars over time
-    const carDatabase = {
-        "Alfa Romeo": {
-            "MiTo": {
-                "2008 - 2018": "SIP22"
+        // MASTER SVA DATABASE
+        const carDatabase = {
+            "Alfa Romeo": {
+                "MiTo": { "2008 - 2018": "SIP22" },
+                "Giulietta": { "2010 - 2020": "SIP22" },
+                "Giulia / Stelvio": { "2016+": "SIP22" }
             },
-            "Giulietta": {
-                "2010 - 2020": "SIP22"
+            "Audi": {
+                "A1": { "2010 - 2018 (8X)": "HU66", "2018+ (GB)": "HU162T (9 / 10 Cut)" },
+                "A2": { "1999 - 2005": "HU66" },
+                "A3": { "2003 - 2012 (8P)": "HU66", "2013+ (8V/8Y)": "HU66 / HU162T (9 / 10 Cut)" },
+                "A4": { "2001 - 2008 (B6/B7)": "HU66", "2008+ (B8/B9)": "HU66 / HU162T (9 / 10 Cut)" },
+                "A5": { "2007 - 2016 (8T)": "HU66", "2016+ (F5)": "HU162T (9 / 10 Cut)" },
+                "A6": { "1997 - 2011 (C5/C6)": "HU66", "2011 - 2018 (C7)": "HU66", "2018+ (C8)": "HU162T (9 / 10 Cut)" },
+                "Q3": { "2011 - 2018 (8U)": "HU66", "2018+ (F3)": "HU162T (9 / 10 Cut)" },
+                "Q5": { "2008 - 2017 (8R)": "HU66", "2017+ (FY)": "HU162T (9 / 10 Cut)" },
+                "Q7": { "2005 - 2015 (4L)": "HU66", "2015+ (4M)": "HU162T (9 / 10 Cut)" },
+                "TT": { "1998 - 2014 (8N/8J)": "HU66", "2014+ (8S)": "HU162T (9 / 10 Cut)" }
             },
-            "Giulia / Stelvio": {
-                "2016+": "SIP22"
+            "BMW": {
+                "1 Series": { "2004 - 2011 (E81/E87)": "HU92", "2011 - 2019 (F20/F21)": "HU100R", "2019+ (F40)": "HU100R" },
+                "2 Series": { "2014 - 2021 (F22/F23)": "HU100R", "2021+ (G42)": "HU100R" },
+                "3 Series": { "1998 - 2006 (E46)": "HU92", "2005 - 2012 (E90/E92)": "HU92", "2012 - 2019 (F30)": "HU100R", "2019+ (G20)": "HU100R" },
+                "4 Series": { "2013 - 2020 (F32/F33)": "HU100R", "2020+ (G22)": "HU100R" },
+                "5 Series": { "1995 - 2004 (E39)": "HU92", "2003 - 2010 (E60)": "HU92", "2010 - 2017 (F10)": "HU100R", "2017+ (G30)": "HU100R" },
+                "X1": { "2009 - 2015 (E84)": "HU92 / HU100R", "2015+ (F48)": "HU100R" },
+                "X3": { "2003 - 2010 (E83)": "HU92", "2010 - 2017 (F25)": "HU100R", "2017+ (G01)": "HU100R" },
+                "X5": { "1999 - 2006 (E53)": "HU92", "2006 - 2013 (E70)": "HU92", "2013 - 2018 (F15)": "HU100R", "2018+ (G05)": "HU100R" },
+                "Z4": { "2002 - 2008 (E85/E86)": "HU92", "2009 - 2016 (E89)": "HU92", "2018+ (G29)": "HU100R" }
+            },
+            "BYD": {
+                "Atto 3": { "2022+": "BYD01 / BYD2" },
+                "Dolphin": { "2023+": "BYD01 / BYD2" },
+                "Seal": { "2023+": "BYD01 / BYD2" }
+            },
+            "Chrysler / Dodge / Jeep": {
+                "300C / Charger / Challenger": { "2005+": "CY24" },
+                "Grand Cherokee": { "2005+": "CY24" },
+                "Wrangler": { "2007 - 2018 (JK)": "CY24", "2018+ (JL)": "CY24 / SIP22" },
+                "RAM Trucks (1500/2500/3500)": { "2006 - 2018": "CY24", "2019+": "CY24 / SIP22" }
+            },
+            "DAF (Trucks)": {
+                "CF / XF Series": { "2002 - 2013": "HU83 / DAF Truck Pick", "2013+ (Euro 6)": "HU83 / HU136" },
+                "LF Series": { "2001+": "NE73 / VAC102" }
+            },
+            "Fiat": {
+                "500 / 500L / 500X": { "2007+": "SIP22" },
+                "Ducato": { "2006+": "SIP22" },
+                "Panda": { "2003 - 2011 (MK2)": "SIP22", "2011+ (MK3)": "SIP22" },
+                "Punto": { "1999 - 2005 (MK2)": "GT15", "2005 - 2018 (Grande/Evo)": "SIP22" }
+            },
+            "Ford": {
+                "Transit": { "2000 - 2014 (MK6/MK7)": "FO38", "2014 - 2019 (MK8)": "HU101", "2020+ (Custom/MK8 Facelift)": "HU101 / HU198" },
+                "Transit Connect": { "2002 - 2013": "FO38", "2014+": "HU101" },
+                "Fiesta": { "2008 - 2017": "HU101", "2017+ (MK8)": "HU101" },
+                "Focus": { "2005 - 2011 (MK2)": "HU101", "2011 - 2018 (MK3)": "HU101", "2018+ (MK4)": "HU101" },
+                "Kuga": { "2008 - 2019": "HU101", "2020+": "HU101 / HU198" },
+                "Ranger": { "2011 - 2022": "HU101", "2022+": "HU101 / HU198" }
+            },
+            "Hino (Trucks)": {
+                "300 / 500 / 700 Series": { "2005+": "TOY43 / TOY43AT" }
+            },
+            "Honda": {
+                "Civic": { "2001 - 2005 (MK7)": "HON66", "2006 - 2011 (MK8)": "HON66", "2012 - 2021 (MK9/MK10)": "HON66", "2022+ (MK11)": "HON66" },
+                "CR-V": { "2002 - 2006 (MK2)": "HON66", "2007 - 2012 (MK3)": "HON66", "2012+ (MK4/MK5)": "HON66" },
+                "Jazz": { "2001 - 2008": "HON66", "2008 - 2015": "HON66", "2015+": "HON66" }
+            },
+            "Hyundai": {
+                "i10 / i20 / i30": { "2007 - 2015": "HYN11 / HY15", "2015+": "HY22" },
+                "Tucson / Santa Fe": { "2009 - 2015": "HY15 / HY16", "2015+": "HY22" },
+                "Kona / Ioniq": { "2017+": "HY22" }
+            },
+            "Isuzu (Trucks & Pickups)": {
+                "D-Max / Grafter / N-Series": { "2004 - 2012": "TOY43", "2012+": "TOY43 / ISU5" }
+            },
+            "Iveco (Trucks & Vans)": {
+                "Daily": { "2000 - 2006": "GT15", "2006 - 2014": "SIP22", "2014+": "SIP22" },
+                "Eurocargo / Stralis / Trakker": { "2002+": "SIP22 / IVECO Truck Pick" },
+                "S-Way / X-Way": { "2019+": "SIP22" }
+            },
+            "Jaguar": {
+                "XE / XF / XJ": { "2007 - 2013": "FO38 / HU101", "2013+": "HU101" },
+                "F-Pace / E-Pace / I-Pace": { "2016+": "HU101" }
+            },
+            "Kia": {
+                "Picanto / Rio / Ceed": { "2006 - 2015": "HYN11 / HY15", "2015+": "HY22" },
+                "Sportage / Sorento": { "2010 - 2015": "HYN14R / HY15", "2016+": "HY22" },
+                "Niro / EV6": { "2016+": "HY22" }
+            },
+            "Land Rover": {
+                "Discovery": { "1994 - 2004 (Series II)": "NE38", "2005 - 2016 (LR3/LR4)": "HU101", "2017+ (Discovery 5)": "HU101" },
+                "Discovery Sport": { "2015+": "HU101" },
+                "Range Rover / Sport": { "2005 - 2012": "HU101", "2013+": "HU101" },
+                "Evoque": { "2011 - 2019": "HU101", "2020+": "HU101" },
+                "Defender": { "1995 - 2016": "NE38", "2020+ (New Shape)": "HU101" }
+            },
+            "MAN (Trucks)": {
+                "TGA / TGL / TGM / TGS / TGX": { "2000 - 2020": "HU66 / HU64", "2020+ (New Generation)": "HU162T (Truck Version)" },
+                "TGE (Van)": { "2017+": "HU162T (9 / 10 Cut)" }
+            },
+            "Mazda": {
+                "Mazda 2": { "2007 - 2014": "MAZ24", "2015+": "MAZ24" },
+                "Mazda 3": { "2004 - 2013": "MAZ24", "2014+": "MAZ24" },
+                "Mazda 6": { "2002 - 2012": "MAZ24", "2013+": "MAZ24" },
+                "CX-5": { "2012+": "MAZ24" }
+            },
+            "Mercedes-Benz": {
+                "C-Class": { "2000 - 2007 (W203)": "HU64", "2007 - 2014 (W204)": "HU64", "2014+ (W205)": "HU64" },
+                "E-Class": { "2002 - 2009 (W211)": "HU64", "2009 - 2016 (W212)": "HU64", "2016+ (W213)": "HU64" },
+                "A-Class": { "2004 - 2012 (W169)": "HU64", "2012 - 2018 (W176)": "HU64", "2018+ (W177)": "HU64" },
+                "Sprinter": { "1995 - 2006": "YM15", "2006 - 2018 (W906)": "HU64", "2018+ (W907)": "HU64 / HU136" },
+                "Vito / V-Class": { "2003 - 2014 (W639)": "HU64", "2014+ (W447)": "HU64" },
+                "Actros / Atego / Axor (Trucks)": { "1996 - 2011": "HU39 / HU64", "2011+ (MP4/MP5)": "HU64 / HU136" }
+            },
+            "Mini": {
+                "Hatch / Cooper": { "2001 - 2006 (R50/R53)": "HU92", "2006 - 2013 (R56)": "HU92", "2014+ (F56)": "HU100R" },
+                "Countryman": { "2010 - 2016 (R60)": "HU92", "2017+ (F60)": "HU100R" }
+            },
+            "Mitsubishi": {
+                "L200": { "2006 - 2015": "MIT11", "2015+": "MIT11" },
+                "Outlander": { "2006 - 2012": "MIT11", "2012+": "MIT11" },
+                "Shogun / Pajero": { "2000 - 2006": "MIT11", "2006+": "MIT11" },
+                "Colt": { "2004 - 2013": "MIT11 / HU56" },
+                "Fuso Canter (Truck)": { "2005+": "MIT11" }
+            },
+            "MG": {
+                "MG4 EV": { "2022+": "HU100" },
+                "MG5 EV": { "2020+": "HU100" },
+                "ZS / ZS EV": { "2017+": "HU100" }
+            },
+            "Nissan": {
+                "Qashqai": { "2006 - 2013 (J10)": "NSN14", "2013 - 2021 (J11)": "NSN14", "2021+ (J12)": "DAT17 / NSN14" },
+                "Juke": { "2010 - 2019 (F15)": "NSN14", "2019+ (F16)": "NSN14" },
+                "Micra": { "2002 - 2010 (K12)": "NSN14", "2010 - 2017 (K13)": "NSN14" },
+                "Navara / Pathfinder": { "2005 - 2015 (D40)": "NSN14", "2015+ (D23/NP300)": "NSN14" },
+                "NV200 / NV300 / NV400": { "2009+": "NSN14 / VAC102" }
+            },
+            "Peugeot / Citroen": {
+                "Boxer / Relay": { "2006+": "SIP22" },
+                "Partner / Berlingo": { "2008 - 2018": "HU83 / VA2", "2018+": "HU83 / VA2" },
+                "Dispatch / Expert": { "2007 - 2016": "HU83 / VA2", "2016+": "HU83 / VA2" },
+                "208 / 308 / C3 / C4": { "2012 - 2019": "HU83 / VA2", "2019+": "HU83 / VA2 / HU136" }
+            },
+            "Porsche": {
+                "911 / Boxster / Cayman": { "1998 - 2012": "HU66", "2012+": "HU66 / HU162T" },
+                "Cayenne / Macan / Panamera": { "2003 - 2017": "HU66", "2018+": "HU162T (9 / 10 Cut)" }
+            },
+            "Renault": {
+                "Trafic": { "2001 - 2014": "NE73", "2014+": "VAC102" },
+                "Master": { "2010+": "VAC102" },
+                "Clio": { "2005 - 2012 (MK3)": "VA2", "2012 - 2019 (MK4)": "VAC102" },
+                "Megane": { "2008 - 2016 (MK3)": "VA2", "2016+ (MK4)": "VAC102" },
+                "Kangoo": { "2007 - 2021": "VAC102", "2021+": "VAC102" },
+                "Renault Trucks (T / K / C Series)": { "2013+": "VAC102 / Renault Truck Pick" }
+            },
+            "Scania (Trucks)": {
+                "P / G / R / T Series (4-Series / PRT)": { "1995 - 2016": "NE66 / HU71 / Scania Truck Pick" },
+                "Next Generation (S / R / G / P Series)": { "2016+": "HU162T / HU71 (Scania Laser Profile)" }
+            },
+            "SEAT": {
+                "Ibiza": { "2002 - 2017 (MK3/MK4)": "HU66", "2017+ (MK5)": "HU162T (9 / 10 Cut)" },
+                "Leon": { "2005 - 2012 (MK2)": "HU66", "2013 - 2020 (MK3)": "HU66 / HU162T", "2020+ (MK4)": "HU162T (9 / 10 Cut)" },
+                "Ateca / Arona": { "2016+": "HU162T (9 / 10 Cut)" }
+            },
+            "Skoda": {
+                "Fabia": { "1999 - 2014 (MK1/MK2)": "HU66", "2015 - 2021 (MK3)": "HU66 / HU162T", "2021+ (MK4)": "HU162T (9 / 10 Cut)" },
+                "Octavia": { "2004 - 2013 (MK2)": "HU66", "2013 - 2020 (MK3)": "HU66 / HU162T", "2020+ (MK4)": "HU162T (9 / 10 Cut)" },
+                "Superb / Kodiaq": { "2001 - 2015": "HU66", "2015+": "HU162T (9 / 10 Cut)" }
+            },
+            "Subaru": {
+                "Impreza / Forester / Outback": { "2004 - 2014": "DAT17 / TOY43", "2015+": "DAT17" }
+            },
+            "Suzuki": {
+                "Swift / Vitara / Jimny": { "2005 - 2016": "TOY43 / HU87", "2017+": "HU87 / TOY43" }
+            },
+            "Toyota": {
+                "Yaris": { "1999 - 2005 (MK1)": "TOY41 / TOY43", "2006 - 2020 (MK2/MK3)": "TOY43 / VA2", "2020+ (MK4)": "TOY43 / TOY48" },
+                "Corolla / Auris": { "2000 - 2007 (E120)": "TOY43", "2007 - 2018 (Auris)": "TOY43", "2018+ (E210)": "TOY43 / TOY48" },
+                "Hilux": { "2005 - 2015": "TOY43", "2015+": "TOY43 / TOY48" },
+                "Aygo": { "2005 - 2014": "VA2", "2014 - 2021": "VA2" },
+                "Proace / Proace City": { "2016+": "HU83 / VA2" }
+            },
+            "Vauxhall / Opel": {
+                "Vivaro": { "2001 - 2014": "NE73", "2014 - 2019": "VAC102", "2019+": "HU83 / VA2" },
+                "Corsa": { "2006 - 2014 (D)": "HU100", "2014 - 2019 (E)": "HU100", "2020+ (F)": "HU83 / VA2" },
+                "Astra": { "2004 - 2009 (H)": "HU100", "2009 - 2015 (J)": "HU100", "2015 - 2021 (K)": "HU100" },
+                "Insignia": { "2008 - 2017": "HU100", "2017+": "HU100" },
+                "Mokka": { "2012 - 2019": "HU100", "2020+": "HU83 / VA2" },
+                "Combo": { "2001 - 2011": "YM28 / HU100", "2011 - 2018": "SIP22", "2018+": "HU83 / VA2" },
+                "Movano": { "2010 - 2021": "VAC102", "2021+": "SIP22" }
+            },
+            "Volkswagen": {
+                "Golf": { "2004 - 2014 (MK5/MK6)": "HU66", "2015+ (MK7/MK8)": "HU162T (9 / 10 Cut)" },
+                "Transporter": { "T5 (2003 - 2015)": "HU66", "T6 (2015+)": "HU66 / HU162T" },
+                "Caddy": { "2004 - 2015": "HU66", "2015+": "HU66 / HU162T" },
+                "Crafter": { "2006 - 2017": "HU64", "2017+": "HU162T (9 / 10 Cut)" },
+                "Polo": { "2002 - 2017": "HU66", "2017+": "HU66 / HU162T (9 / 10 Cut)" },
+                "Passat": { "2005 - 2014 (B6/B7)": "HU66", "2015+ (B8)": "HU162T (9 / 10 Cut)" }
+            },
+            "Volvo (Cars)": {
+                "S40 / V50 / C30": { "2004 - 2012": "NE66 / HU56" },
+                "V40 / V60 / S60 / XC60": { "2010 - 2017": "NE66 / HU56", "2018+": "HU101 / HU152" },
+                "XC90 / V90 / S90": { "2002 - 2014": "NE66", "2015+": "HU101 / HU152" }
+            },
+            "Volvo (Trucks)": {
+                "FH / FM / FMX Series": { "1998 - 2012": "NE66 / HU56", "2012+ (Version 4/5)": "HU101 / Volvo Truck Pick (VNL-2024 / NE66)" },
+                "FL / FE Series": { "2006+": "NE66 / VAC102" }
             }
-        },
-        "Audi": {
-            "A1": {
-                "2010 - 2018 (8X)": "HU66",
-                "2018+ (GB)": "HU162T"
-            },
-            "A2": {
-                "1999 - 2005": "HU66"
-            },
-            "A3": {
-                "2003 - 2012 (8P)": "HU66",
-                "2013+ (8V/8Y)": "HU66 / HU162T"
-            },
-            "A4": {
-                "2001 - 2008 (B6/B7)": "HU66",
-                "2008+ (B8/B9)": "HU66 / HU162T"
-            },
-            "A5": {
-                "2007 - 2016 (8T)": "HU66",
-                "2016+ (F5)": "HU162T"
-            },
-            "A6": {
-                "1997 - 2011 (C5/C6)": "HU66",
-                "2011 - 2018 (C7)": "HU66",
-                "2018+ (C8)": "HU162T"
-            },
-            "Q3": {
-                "2011 - 2018 (8U)": "HU66",
-                "2018+ (F3)": "HU162T"
-            },
-            "Q5": {
-                "2008 - 2017 (8R)": "HU66",
-                "2017+ (FY)": "HU162T"
-            },
-            "Q7": {
-                "2005 - 2015 (4L)": "HU66",
-                "2015+ (4M)": "HU162T"
-            },
-            "TT": {
-                "1998 - 2014 (8N/8J)": "HU66",
-                "2014+ (8S)": "HU162T"
-            }
-        },
-        "BMW": {
-            "1 Series": {
-                "2004 - 2011 (E81/E87)": "HU92",
-                "2011 - 2019 (F20/F21)": "HU100R",
-                "2019+ (F40)": "HU100R"
-            },
-            "2 Series": {
-                "2014 - 2021 (F22/F23)": "HU100R",
-                "2021+ (G42)": "HU100R"
-            },
-            "3 Series": {
-                "1998 - 2006 (E46)": "HU92",
-                "2005 - 2012 (E90/E92)": "HU92",
-                "2012 - 2019 (F30)": "HU100R",
-                "2019+ (G20)": "HU100R"
-            },
-            "4 Series": {
-                "2013 - 2020 (F32/F33)": "HU100R",
-                "2020+ (G22)": "HU100R"
-            },
-            "5 Series": {
-                "1995 - 2004 (E39)": "HU92",
-                "2003 - 2010 (E60)": "HU92",
-                "2010 - 2017 (F10)": "HU100R",
-                "2017+ (G30)": "HU100R"
-            },
-            "X1": {
-                "2009 - 2015 (E84)": "HU92 / HU100R",
-                "2015+ (F48)": "HU100R"
-            },
-            "X3": {
-                "2003 - 2010 (E83)": "HU92",
-                "2010 - 2017 (F25)": "HU100R",
-                "2017+ (G01)": "HU100R"
-            },
-            "X5": {
-                "1999 - 2006 (E53)": "HU92",
-                "2006 - 2013 (E70)": "HU92",
-                "2013 - 2018 (F15)": "HU100R",
-                "2018+ (G05)": "HU100R"
-            },
-            "Z4": {
-                "2002 - 2008 (E85/E86)": "HU92",
-                "2009 - 2016 (E89)": "HU92",
-                "2018+ (G29)": "HU100R"
-            }
-        },
-        "Fiat": {
-            "500 / 500L / 500X": {
-                "2007+": "SIP22"
-            },
-            "Ducato": {
-                "2006+": "SIP22"
-            },
-            "Panda": {
-                "2003 - 2011 (MK2)": "SIP22",
-                "2011+ (MK3)": "SIP22"
-            },
-            "Punto": {
-                "1999 - 2005 (MK2)": "GT15",
-                "2005 - 2018 (Grande/Evo)": "SIP22"
-            }
-        },
-        "Ford": {
-            "Transit": {
-                "2000 - 2014 (MK6/MK7)": "FO38",
-                "2014 - 2019 (MK8)": "HU101",
-                "2020+ (Custom/MK8 Facelift)": "HU101 / HU198"
-            },
-            "Transit Connect": {
-                "2002 - 2013": "FO38",
-                "2014+": "HU101"
-            },
-            "Fiesta": {
-                "2008 - 2017": "HU101",
-                "2017+ (MK8)": "HU101"
-            },
-            "Focus": {
-                "2005 - 2011 (MK2)": "HU101",
-                "2011 - 2018 (MK3)": "HU101",
-                "2018+ (MK4)": "HU101"
-            },
-            "Kuga": {
-                "2008 - 2019": "HU101",
-                "2020+": "HU101 / HU198"
-            },
-            "Ranger": {
-                "2011 - 2022": "HU101",
-                "2022+": "HU101 / HU198"
-            }
-        },
-        "Honda": {
-            "Civic": {
-                "2001 - 2005 (MK7)": "HON66",
-                "2006 - 2011 (MK8)": "HON66",
-                "2012 - 2021 (MK9/MK10)": "HON66",
-                "2022+ (MK11)": "HON66"
-            },
-            "CR-V": {
-                "2002 - 2006 (MK2)": "HON66",
-                "2007 - 2012 (MK3)": "HON66",
-                "2012+ (MK4/MK5)": "HON66"
-            },
-            "Jazz": {
-                "2001 - 2008": "HON66",
-                "2008 - 2015": "HON66",
-                "2015+": "HON66"
-            }
-        },
-        "Land Rover": {
-            "Discovery": {
-                "1994 - 2004 (Series II)": "NE38",
-                "2005 - 2016 (LR3/LR4)": "HU101",
-                "2017+ (Discovery 5)": "HU101"
-            },
-            "Discovery Sport": {
-                "2015+":
-                    "HU101",
-            },
-            "Range Rover / Sport": {
-                "2005 - 2012": "HU101",
-                "2013+": "HU101"
-            },
-            "Evoque": {
-                "2011 - 2019": "HU101",
-                "2020+": "HU101"
-            },
-            "Defender": {
-                "1995 - 2016": "NE38",
-                "2020+ (New Shape)": "HU101"
-            }
-        },
-        "Mazda": {
-            "Mazda 2": {
-                "2007 - 2014": "MAZ24",
-                "2015+": "MAZ24"
-            },
-            "Mazda 3": {
-                "2004 - 2013": "MAZ24",
-                "2014+": "MAZ24"
-            },
-            "Mazda 6": {
-                "2002 - 2012": "MAZ24",
-                "2013+": "MAZ24"
-            },
-            "CX-5": {
-                "2012+": "MAZ24"
-            }
-        },
-        "Mercedes-Benz": {
-            "C-Class": {
-                "2000 - 2007 (W203)": "HU64",
-                "2007 - 2014 (W204)": "HU64",
-                "2014+ (W205)": "HU64"
-            },
-            "E-Class": {
-                "2002 - 2009 (W211)": "HU64",
-                "2009 - 2016 (W212)": "HU64",
-                "2016+ (W213)": "HU64"
-            },
-            "Sprinter": {
-                "1995 - 2006": "YM15",
-                "2006 - 2018 (W906)": "HU64",
-                "2018+ (W907)": "HU64 / HU136"
-            },
-            "Vito": {
-                "2003 - 2014 (W639)": "HU64",
-                "2014+ (W447)": "HU64"
-            },
-            "A-Class": {
-                "2004 - 2012 (W169)": "HU64",
-                "2012 - 2018 (W176)": "HU64",
-                "2018+ (W177)": "HU64"
-            }
-        },
-        "Mini": {
-            "Hatch / Cooper / Cooper S": {
-                "2001 - 2006 (R50/R53)": "HU92",
-                "2006 - 2013 (R56)": "HU92",
-                "2014+ (F56)": "HU100R"
-            },
-            "Countryman": {
-                "2010 - 2016 (R60)": "HU92",
-                "2017+ (F60)": "HU100R"
-            }
-        },
-        "SEAT": {
-            "Ibiza": {
-                "2002 - 2017 (MK3/MK4)": "HU66",
-                "2017+ (MK5)": "HU162T"
-            },
-            "Leon": {
-                "2005 - 2012 (MK2)": "HU66",
-                "2013 - 2020 (MK3)": "HU66 / HU162T",
-                "2020+ (MK4)": "HU162T"
-            },
-            "Ateca": {
-                "2016+": "HU162T"
-            }
-        },
-        "Skoda": {
-            "Fabia": {
-                "1999 - 2014 (MK1/MK2)": "HU66",
-                "2015 - 2021 (MK3)": "HU66 / HU162T",
-                "2021+ (MK4)": "HU162T"
-            },
-            "Octavia": {
-                "2004 - 2013 (MK2)": "HU66",
-                "2013 - 2020 (MK3)": "HU66 / HU162T",
-                "2020+ (MK4)": "HU162T"
-            },
-            "Superb": {
-                "2001 - 2015 (MK1/MK2)": "HU66",
-                "2015+ (MK3)": "HU162T"
-            }
-        },
-        "Mitsubishi": {
-            "L200": {
-                "2006 - 2015": "MIT11",
-                "2015+": "MIT11"
-            },
-            "Outlander": {
-                "2006 - 2012": "MIT11",
-                "2012+": "MIT11"
-            },
-            "Shogun / Pajero": {
-                "2000 - 2006": "MIT11",
-                "2006+": "MIT11"
-            },
-            "Colt": {
-                "2004 - 2013": "MIT11 / HU56"
-            }
-        },
-        "Nissan": {
-            "Qashqai": {
-                "2006 - 2013 (J10)": "NSN14",
-                "2013 - 2021 (J11)": "NSN14",
-                "2021+ (J12)": "DAT17 / NSN14"
-            },
-            "Juke": {
-                "2010 - 2019 (F15)": "NSN14",
-                "2019+ (F16)": "NSN14"
-            },
-            "Micra": {
-                "2002 - 2010 (K12)": "NSN14",
-                "2010 - 2017 (K13)": "NSN14"
-            }
-        },
-        "Peugeot / Citroen": {
-            "Boxer / Relay": {
-                "2006+": "SIP22"
-            },
-            "Partner / Berlingo": {
-                "2008 - 2018": "HU83 / VA2",
-                "2018+": "HU83 / VA2"
-            },
-            "Dispatch / Expert": {
-                "2007 - 2016": "HU83 / VA2",
-                "2016+": "HU83 / VA2"
-            },
-            "208 / C3": {
-                "2012 - 2019": "HU83 / VA2",
-                "2019+": "HU83 / VA2"
-            }
-        },
-        "Renault": {
-            "Trafic": {
-                "2001 - 2014": "NE73",
-                "2014+": "VAC102"
-            },
-            "Master": {
-                "2010+": "VAC102"
-            },
-            "Clio": {
-                "2005 - 2012 (MK3)": "VA2",
-                "2012 - 2019 (MK4)": "VAC102"
-            },
-            "Megane": {
-                "2008 - 2016 (MK3)": "VA2",
-                "2016+ (MK4)": "VAC102"
-            },
-            "Kangoo": {
-                "2007 - 2021": "VAC102",
-                "2021+": "VAC102"
-            }
-        },
-        "Toyota": {
-            "Yaris": {
-                "1999 - 2005 (MK1)": "TOY41 / TOY43",
-                "2006 - 2020 (MK2/MK3)": "TOY43 / VA2",
-                "2020+ (MK4)": "TOY43 / TOY48"
-            },
-            "Corolla / Auris": {
-                "2000 - 2007 (E120)": "TOY43",
-                "2007 - 2018 (Auris)": "TOY43",
-                "2018+ (E210)": "TOY43 / TOY48"
-            },
-            "Hilux": {
-                "2005 - 2015": "TOY43",
-                "2015+": "TOY43 / TOY48"
-            },
-            "Aygo": {
-                "2005 - 2014": "VA2",
-                "2014 - 2021": "VA2"
-            }
-        },
-        "Vauxhall": {
-            "Vivaro": {
-                "2001 - 2014": "NE73",
-                "2014 - 2019": "VAC102",
-                "2019+": "HU100"
-            },
-            "Corsa": {
-                "2006 - 2014 (D)": "HU100",
-                "2014 - 2019 (E)": "HU100",
-                "2020+ (F)": "HU83 / VA2"
-            },
-            "Astra": {
-                "2004 - 2009 (H)": "HU100",
-                "2009 - 2015 (J)": "HU100",
-                "2015 - 2021 (K)": "HU100"
-            },
-            "Insignia": {
-                "2008 - 2017": "HU100",
-                "2017+": "HU100"
-            },
-            "Mokka": {
-                "2012 - 2019": "HU100",
-                "2020+": "HU83 / VA2"
-            },
-            "Combo": {
-                "2001 - 2011": "YM28 / HU100",
-                "2011 - 2018": "SIP22",
-                "2018+": "HU83 / VA2"
-            }
-        },
-        "Volkswagen": {
-            "Golf": {
-                "2004 - 2014 (MK5/MK6)": "HU66",
-                "2015+ (MK7/MK8)": "HU162T (9 or 10 Cut)"
-            },
-            "Transporter": {
-                "T5 (2003 - 2015)": "HU66",
-                "T6 (2015+)": "HU66 / HU162T"
-            },
-            "Caddy": {
-                "2004 - 2015": "HU66",
-                "2015+": "HU66 / HU162T"
-            },
-            "Crafter": {
-                "2006 - 2017": "HU64",
-                "2017+": "HU162T"
-            },
-            "Polo": {
-                "2002 - 2017": "HU66",
-                "2017+": "HU66 / HU162T"
-            },
-            "Passat": {
-                "2005 - 2014 (B6/B7)": "HU66",
-                "2015+ (B8)": "HU162T"
-            }
-        }
-    };
+        };
 
-        // Grab the dropdown elements from the HTML
         const makeSelect = document.getElementById('makeSelect');
         const modelSelect = document.getElementById('modelSelect');
         const yearSelect = document.getElementById('yearSelect');
         const resultBox = document.getElementById('resultBox');
         const lishiResult = document.getElementById('lishiResult');
+        const toolNote = document.getElementById('toolNote');
+        const filterInput = document.getElementById('filterInput');
+        const btnReset = document.getElementById('btnReset');
+        const liveResults = document.getElementById('liveResults');
+        const dropdownSection = document.getElementById('dropdownSection');
 
-        // 1. Populate the "Make" dropdown based on our database
-        for (let make in carDatabase) {
-            makeSelect.add(new Option(make, make));
+        // Populate Manufacturers in Dropdown
+        function populateMakes() {
+            makeSelect.innerHTML = '<option value="">-- Choose Make --</option>';
+            Object.keys(carDatabase).sort().forEach(make => {
+                makeSelect.add(new Option(make, make));
+            });
+        }
+        populateMakes();
+
+        // SMART YEAR RANGE MATCHER
+        function smartYearMatch(rangeStr, queryYear) {
+            const yearNum = parseInt(queryYear, 10);
+            if (isNaN(yearNum)) return false;
+
+            // Check "2010 - 2017"
+            const rangeMatch = rangeStr.match(/(\d{4})\s*-\s*(\d{4})/);
+            if (rangeMatch) {
+                return yearNum >= parseInt(rangeMatch[1], 10) && yearNum <= parseInt(rangeMatch[2], 10);
+            }
+
+            // Check "2016+"
+            const plusMatch = rangeStr.match(/(\d{4})\+/);
+            if (plusMatch) {
+                return yearNum >= parseInt(plusMatch[1], 10);
+            }
+
+            // Fallback direct string check
+            return rangeStr.includes(queryYear);
         }
 
-        // 2. When a Make is chosen, populate the "Model" dropdown
+        // SMART LIVE SEARCH ENGINE
+        filterInput.addEventListener('input', function() {
+            const query = this.value.trim().toLowerCase();
+
+            if (!query) {
+                liveResults.style.display = 'none';
+                dropdownSection.style.display = 'block';
+                return;
+            }
+
+            dropdownSection.style.display = 'none';
+            liveResults.style.display = 'flex';
+            liveResults.innerHTML = '';
+
+            const tokens = query.split(/\s+/);
+            let matches = [];
+
+            Object.entries(carDatabase).forEach(([make, models]) => {
+                Object.entries(models).forEach(([model, years]) => {
+                    Object.entries(years).forEach(([yearRange, lishi]) => {
+                        const fullString = `${make} ${model} ${yearRange}`.toLowerCase();
+                        
+                        // Check if all search tokens match either the text OR the year range math
+                        const allTokensMatch = tokens.every(token => {
+                            if (/^\d{4}$/.test(token)) {
+                                return smartYearMatch(yearRange, token) || fullString.includes(token);
+                            }
+                            return fullString.includes(token);
+                        });
+
+                        if (allTokensMatch) {
+                            matches.push({ make, model, yearRange, lishi });
+                        }
+                    });
+                });
+            });
+
+            if (matches.length === 0) {
+                liveResults.innerHTML = `<div class="no-results">No vehicles matching "<b>${this.value}</b>". Try searching by make or model.</div>`;
+                return;
+            }
+
+            // Limit display to top 15 results for speed
+            matches.slice(0, 15).forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'live-card';
+                card.innerHTML = `
+                    <div class="live-card-info">
+                        <h4>${item.make} — ${item.model}</h4>
+                        <p>Years: ${item.yearRange}</p>
+                    </div>
+                    <div class="live-card-tool">${item.lishi}</div>
+                `;
+                liveResults.appendChild(card);
+            });
+        });
+
+        // Handle Make Selection
         makeSelect.addEventListener('change', function() {
             modelSelect.innerHTML = '<option value="">-- Choose Model --</option>';
             yearSelect.innerHTML = '<option value="">-- Choose Year --</option>';
-            resultBox.style.display = 'none';
             yearSelect.disabled = true;
+            resultBox.style.display = 'none';
 
             if (this.value) {
                 modelSelect.disabled = false;
-                for (let model in carDatabase[this.value]) {
+                Object.keys(carDatabase[this.value]).forEach(model => {
                     modelSelect.add(new Option(model, model));
-                }
+                });
             } else {
                 modelSelect.disabled = true;
             }
         });
 
-        // 3. When a Model is chosen, populate the "Year" dropdown
+        // Handle Model Selection
         modelSelect.addEventListener('change', function() {
             yearSelect.innerHTML = '<option value="">-- Choose Year --</option>';
             resultBox.style.display = 'none';
@@ -567,29 +638,51 @@
             if (this.value) {
                 yearSelect.disabled = false;
                 const make = makeSelect.value;
-                for (let year in carDatabase[make][this.value]) {
+                Object.keys(carDatabase[make][this.value]).forEach(year => {
                     yearSelect.add(new Option(year, year));
-                }
+                });
             } else {
                 yearSelect.disabled = true;
             }
         });
 
-        // 4. When the Year is chosen, reveal the bright green result box!
+        // Handle Year Selection & Display Results
         yearSelect.addEventListener('change', function() {
             if (this.value) {
                 const make = makeSelect.value;
                 const model = modelSelect.value;
-                const lishi = carDatabase[make][model][this.value];
+                const rawResult = carDatabase[make][model][this.value];
+
+                const noteMatch = rawResult.match(/\((.*?)\)/);
+                let mainCode = rawResult;
                 
-                lishiResult.textContent = lishi;
+                if (noteMatch) {
+                    mainCode = rawResult.replace(/\s*\(.*?\)/, '');
+                    toolNote.textContent = 'NOTE: ' + noteMatch[1];
+                    toolNote.style.display = 'inline-block';
+                } else {
+                    toolNote.style.display = 'none';
+                }
+                
+                lishiResult.textContent = mainCode;
                 resultBox.style.display = 'block';
             } else {
                 resultBox.style.display = 'none';
             }
         });
-    </script>
 
+        // Reset Button
+        btnReset.addEventListener('click', function() {
+            filterInput.value = '';
+            liveResults.style.display = 'none';
+            dropdownSection.style.display = 'block';
+            populateMakes();
+            modelSelect.innerHTML = '<option value="">-- Choose Model --</option>';
+            modelSelect.disabled = true;
+            yearSelect.innerHTML = '<option value="">-- Choose Year --</option>';
+            yearSelect.disabled = true;
+            resultBox.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
-

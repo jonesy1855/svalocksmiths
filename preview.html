@@ -14,14 +14,14 @@
     <meta property="og:site_name" content="Shropshire Vehicle Access Locksmiths">
     <meta property="og:url" content="https://sva-locksmiths.co.uk/">
     <meta property="og:title" content="SVA | 24/7 Mobile Auto Locksmith">
-    <meta property="og:description" content="Locked out? Lost your car keys? Fast mobile roadside assistance across Shropshire.">
+    <meta property="og:description" content="Locked out of your car or van? Fast mobile auto locksmith providing roadside vehicle entry, key cutting, and transponder programming across Shropshire.">
     <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/logo.png">
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sva-locksmiths.co.uk/">
     <meta property="twitter:title" content="SVA | 24/7 Mobile Auto Locksmith">
-    <meta property="twitter:description" content="Locked out? Lost your car keys? Fast mobile roadside assistance across Shropshire.">
+    <meta property="twitter:description" content="Locked out of your car or van? Fast mobile auto locksmith providing roadside vehicle entry, key cutting, and transponder programming across Shropshire.">
     <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/logo.png">
 
     <!-- Favicon & PWA Manifest -->
@@ -31,13 +31,35 @@
     
     <!-- Schema.org Data (SEO) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Shropshire Vehicle Access Locksmiths",
-      "url": "https://sva-locksmiths.co.uk"
-    }
-    </script>
+{
+  "@context": "https://schema.org",
+  "@type": ["Locksmith", "AutoRepair"],
+  "name": "Shropshire Vehicle Access",
+  "alternateName": "SVA Locksmiths",
+  "url": "https://sva-locksmiths.co.uk/",
+  "logo": "https://sva-locksmiths.co.uk/assets/images/logo.png",
+  "image": "https://sva-locksmiths.co.uk/assets/images/logo.png",
+  "description": "Mobile automotive locksmith providing non-destructive vehicle entry, replacement car key cutting, transponder programming, and roadside assistance across Shropshire.",
+  "telephone": "+44-7123-123456",
+  "priceRange": "££",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Shropshire" },
+    { "@type": "City", "name": "Shrewsbury" },
+    { "@type": "City", "name": "Telford" },
+    { "@type": "City", "name": "Oswestry" },
+    { "@type": "City", "name": "Market Drayton" },
+    { "@type": "City", "name": "Whitchurch" },
+    { "@type": "City", "name": "Bridgnorth" }
+  ],
+  "knowsAbout": [
+    "Car Key Replacement",
+    "Emergency Vehicle Lockout Entry",
+    "Automotive Transponder Key Programming",
+    "Laser Cut Car Keys",
+    "All Keys Lost Vehicle Recovery"
+  ]
+}
+</script>
 
     <!-- Core Stylesheet & Google Fonts -->
     <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
@@ -242,8 +264,8 @@
             <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
                 <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height:75px; width:auto; object-fit:contain;">
                 <div class="brand-name">
-                    <h1>Shropshire Vehicle Access</h1>
-                    <p>Mobile Car & Van Auto Locksmith</p>
+                    <span class="site-title">Shropshire Vehicle Access</span>
+                        <h1 style="font-size: 1rem; margin: 0; font-weight: 600;">Mobile Auto Locksmith & Car Key Specialist Shropshire</h1>
                 </div>
             </a>
         </div>
@@ -297,12 +319,12 @@
     <!-- OUR SERVICES -->
     <div class="container" id="services">
         <div class="section-title">
-            <h2>OUR SERVICES</h2>
+            <h2>Mobile Auto Locksmith Services Across Shropshire</h2>
         </div>
         <div class="services-grid">
             <a href="services/emergency-lockout.html" class="service-card-link">
                 <div class="service-card emergency-lockout-card">
-                    <h3>🔓 Emergency Lockout Assistance</h3>
+                    <h3>🔓 Emergency Vehicle Lockout Entry</h3>
                     <p>Non-destructive entry to vehicles when keys are locked inside or mechanisms fail.</p>
                     <span class="read-more">Learn More & Book →</span>
                 </div>
@@ -823,7 +845,6 @@
             // D. Dropdown Menu Toggle Fix (Mobile Hover Patch)
             const dropdownToggle = document.querySelector('.dropdown-toggle');
             const dropdownMenu = document.querySelector('.dropdown-menu'); 
-
             if (dropdownToggle && dropdownMenu) {
                 dropdownToggle.addEventListener('click', function(event) {
                     event.preventDefault(); 
@@ -858,13 +879,10 @@
             // E. Dynamic Headline Rotator
             const phrases = [
                 "LOCKED OUT OF YOUR VEHICLE?",
-                "BROKEN OR LOST YOUR ONLY KEY?",
+                "BROKEN OR LOST YOUR ONLY VEHICLE KEY?",
                 "NEED A SPARE CUT ON THE ROADSIDE?",
-                "FAST, NON-DESTRUCTIVE ENTRY.",
-                "WE COME TO YOU.",
-                "NEED A QUOTE?",
-                "OR NEED MORE INFORMATION?",
-                "CALL, MESSAGE OR SEND AN ENQUIRY."
+                "FAST, NON-DESTRUCTIVE VEHICLE ENTRY.",
+                "EMERGENCY AUTO LOCKSMITH ROADSIDE RESPONSE."
             ];
             
             let currentPhrase = 0;

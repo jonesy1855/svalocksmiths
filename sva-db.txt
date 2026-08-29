@@ -1,0 +1,2866 @@
+const carDatabase = {
+    "Ford": {
+		"Mondeo": {
+            "2007 - 2014 (MK4)": {
+                lishi: "HU101", silca: "HU101", ic: "Card 1097 / 1098",
+                chip: "ID63 (80-bit) / 4D63 or PCF7953 (Smart)",
+                warning: "Check if vehicle uses standard ignition or Keyless Start. Door lock often seizes from lack of use.",
+                module: "BCM (Body Control Module)",
+                location: "Passenger Footwell — underneath the glovebox.",
+                access: "Remove the felt cover under the glovebox to expose the BCM and fuses.",
+                risk: "LOW RISK — Standard OBD Process",
+                protocol: "Standard OBD key programming. Requires at least 2 keys for an All Keys Lost reset.",
+                acGas: "R134a", acCap: "520g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }
+        },
+        "Focus": {
+            "2004 - 2011 (MK2)": {
+                lishi: "HU101", silca: "HU101", ic: "Card 1098",
+                chip: "ID63 (40-bit or 80-bit) / 4D63",
+                warning: "Cluster soldering issues are common on MK2. If IMMO light flashes rapidly and won't communicate, the cluster may need repair.",
+                module: "Instrument Cluster (HEC)",
+                location: "Driver's Dashboard.",
+                access: "Standard OBD access. No physical removal required unless cluster is dead.",
+                risk: "MODERATE — Cluster Hardware Failure Risk",
+                protocol: "Incode/Outcode or 10-minute bypass via OBD. Minimum 2 keys required if clearing.",
+                acGas: "R134a", acCap: "600g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }
+        },
+        "Transit": {
+            "2006 - 2013 (MK7)": {
+                lishi: "HU101", silca: "HU101", ic: "Card 1098",
+                chip: "ID63 (80-bit) / Blue Remote Battery",
+                warning: "Blue remote fob charges while in the ignition. If remote fails, check the internal rechargeable battery or ignition ring.",
+                module: "BCM",
+                location: "Behind the glovebox / passenger side.",
+                access: "Standard OBD access.",
+                risk: "LOW RISK",
+                protocol: "Standard OBD programming. Ignition cycling required for remote sync.",
+                acGas: "R134a", acCap: "750g ± 15g (Single) / 1100g (Dual)", acOil: "PAG 46", acNote: "Check if vehicle has rear AC (dual system) before filling."
+            }
+        },
+        "Transit Custom / E-Transit Custom": { 
+            "2012 - 2019 (MK1 Custom)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID63 (80-Bit) / 4D83",
+                warning: "High-security 10-cut Tibbe/Laser profile. Standard commercial fleet workhorse.",
+                module: "BCM (Body Control Module) & Keyless Receiver",
+                location: "Passenger Footwell — Behind lower glovebox drop-down trim / fuse panel.",
+                access: "Squeeze glovebox side tabs to drop past dampener stops. BCM is integrated with main interior fuse board.",
+                risk: "MODERATE — Active Alarm Inactive Timer (10-Min Delay)",
+                protocol: "Lishi entry via door. Connect OBD. If active alarm triggers, initiate 10-minute security bypass wait cycle with doors closed before programming.",
+                acGas: "R134a / R1234yf", acCap: "600g ± 25g", acOil: "PAG 46", acNote: "Pre-2016 = R134a; post-2016 = R1234yf. Dual-zone rear A/C option takes 780g fill weight."
+            },
+            "2020 - 2023 (MK1 Facelift)": { 
+                lishi: "HU101 / HU198", silca: "HU101 / HU198", ic: "Card 1450", 
+                chip: "HITAG Pro / 4A Smart",
+                warning: "⚠️ Crossover years! Verify whether keyway is traditional HU101 or internal-track HU198.",
+                module: "BCM & Keyless Gateway",
+                location: "Passenger Footwell fuse panel assembly.",
+                access: "Drop lower glovebox door down.",
+                risk: "MODERATE — 10-Min Alarm Wait & Low Voltage Risk",
+                protocol: "Maintain >13.5V battery voltage. Wait out 10-minute security countdown before adding key or AKL reset.",
+                acGas: "R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. Check high-pressure port near O/S headlight."
+            },
+            "2024+ (MK2 Custom / E-Transit Custom EV)": { 
+                lishi: "HU198", silca: "HU198", ic: "Card 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "⚠️ New Gen architecture! Internal track HU198 keyway standard across all 2024+ vans.",
+                module: "Next-Gen BCM / CAN Gateway",
+                location: "Driver / Passenger Footwell integrated module assembly.",
+                access: "Remove lower dashboard trim shroud.",
+                risk: "HIGH RISK — FDRS Security Gateway Protection",
+                protocol: "Requires active gateway bypass connector or official Ford FDRS server session for OBD key programming.",
+                acGas: "R1234yf", acCap: "580g ± 15g", acOil: "PAG 46 / POE", acNote: "🛑 E-Transit Custom (EV) MUST use non-conductive POE compressor oil! Diesel variants use PAG 46."
+            }
+        },
+        "Transit / E-Transit (Full Size)": { 
+            "2014 - 2019 (MK8 Transit)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098 / 1111", 
+                chip: "ID63 (80-Bit) / 4D83",
+                warning: "Blue self-charging transit remote fob or flip key.",
+                module: "BCM (Body Control Module)",
+                location: "Passenger Footwell — Behind lower glovebox panel.",
+                access: "Release glovebox retention tabs.",
+                risk: "MODERATE — 10-Minute Alarm Timer",
+                protocol: "OBD key programming supported. Initiate 10-minute alarm silence countdown on AKL.",
+                acGas: "R134a / R1234yf", acCap: "750g ± 25g", acOil: "PAG 46", acNote: "Large capacity commercial system. Minibuses with rear A/C take 1100g."
+            },
+            "2020+ (MK8 Facelift / E-Transit EV)": { 
+                lishi: "HU101 / HU198", silca: "HU198", ic: "Card 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "Check internal track HU198 keyway on 2021+ models.",
+                module: "BCM / Gateway",
+                location: "Passenger Footwell fuse assembly.",
+                access: "Drop glovebox door.",
+                risk: "MODERATE / HIGH — Gateway & High Voltage (E-Transit)",
+                protocol: "Standard OBD wait cycle on diesel; E-Transit EV requires stable 12V auxiliary power support.",
+                acGas: "R1234yf", acCap: "700g ± 20g", acOil: "PAG 46 / POE", acNote: "🛑 E-Transit (Full Size EV) requires non-conductive POE oil! Check compressor label."
+            }
+        },
+        "Transit Connect / Courier": { 
+            "2014 - 2022 (Connect MK2 / Courier MK1)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098",
+                chip: "ID63 (80-Bit) / 4D83",
+                module: "BCM / Central Fuse Box",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "LOW / MODERATE — Standard Ford Protocol",
+                protocol: "OBD remote/key programming. 10-minute security delay applies if alarm is active.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2023+ (New Gen Connect / E-Transit Courier EV)": { 
+                lishi: "HU198 / HU162T", silca: "HU198 / HU162T", ic: "Card 1450 / 1412", 
+                chip: "VAG MQB-Evo (Connect) / HITAG Pro (Courier)",
+                warning: "⚠️ Check platform! 2023+ Connect is a VW Caddy twin (HU162T / MQB). Courier is Ford platform (HU198).",
+                module: "MQB Gateway (Connect) OR Ford BCM (Courier)",
+                location: "Behind glovebox / lower dashboard.",
+                access: "Drop glovebox door down.",
+                risk: "HIGH — Check Brand Architecture",
+                protocol: "Connect (VW Twin): Requires VAG SFD unlock token. Courier (Ford): Standard Ford gateway wait cycle.",
+                acGas: "R1234yf", acCap: "480g - 520g", acOil: "PAG 46 / POE", acNote: "E-Transit Courier EV takes POE non-conductive oil."
+            }
+        },
+        "Ranger": { 
+            "2011 - 2022 (T6 / T7 / T8 - MK1/MK2)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID63 (80-Bit) / 4D83",
+                warning: "Standard UK pickup workhorse. Flip key or smart proximity fob.",
+                module: "BCM (Body Control Module) / Smart Key Box",
+                location: "Driver / Passenger Footwell lower dash side panel.",
+                access: "Remove lower knee bolster / kick panel.",
+                risk: "MODERATE — 10-Minute Alarm Timer",
+                protocol: "Lishi HU101 entry. Execute 10-minute security wait window via OBD before adding keys.",
+                acGas: "R134a / R1234yf", acCap: "650g ± 25g", acOil: "PAG 46", acNote: "2017+ models transitioned to R1234yf."
+            },
+            "2022+ (Next-Gen Ranger - P703 / VW Amarok Twin)": { 
+                lishi: "HU101 / HU198", silca: "HU198", ic: "Card 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "⚠️ Shared platform with VW Amarok MK2! Uses Ford HU198 internal track profile.",
+                module: "Next-Gen BCM / Gateway",
+                location: "Passenger Footwell lower fuse panel area.",
+                access: "Remove lower passenger footwell trim shroud.",
+                risk: "HIGH — CAN Gateway Security",
+                protocol: "Requires active gateway bypass connector or official FDRS diagnostics session.",
+                acGas: "R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard across all UK Next-Gen Rangers."
+            }
+        },
+        "Mustang Mach-E (EV)": { 
+            "2020+ (Electric Crossover)": { 
+                lishi: "HU101 / HU198", silca: "HU101TE", ic: "Card 1098 / 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "⚠️ Dedicated EV Platform. Emergency mechanical blade concealed in smart key fob.",
+                module: "BCM & Keyless Vehicle Module",
+                location: "Passenger Footwell — Lower bulkhead behind kick panel / glovebox.",
+                access: "Remove passenger kick panel trim and lower glovebox felt cover.",
+                risk: "HIGH — High Voltage Vehicle & FDRS Gateway Protection",
+                protocol: "Attach 12V auxiliary battery stabilizer. OBD programming requires FDRS server authorization or active gateway bypass cable.",
+                acGas: "R1234yf", acCap: "680g ± 25g", acOil: "POE", acNote: "🛑 100% Electric Vehicle! MUST use non-conductive POE compressor oil to prevent high-voltage short circuits!"
+            }
+        },
+        "Explorer (EV) & Capri (EV)": { 
+            "2024+ (Electric Crossover / Coupe SUV)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "VAG Megamos AES / 4A (VW MEB)",
+                warning: "⚠️ VOLKSWAGEN MEB PLATFORM TWINS! Uses VW HU162T laser profile, NOT Ford HU101/HU198!",
+                module: "VW MEB KESSY Module & Gateway",
+                location: "Passenger Footwell behind glovebox assembly.",
+                access: "Release glovebox retention tabs and lower assembly.",
+                risk: "HIGH RISK — VW SFD Gateway / Component Security",
+                protocol: "🛑 DO NOT use Ford programming protocols! This is a rebadged VW ID.4/ID.5. Requires VAG SFD unlock token / MQB-Evo CS byte extraction to program dealer key.",
+                acGas: "R1234yf", acCap: "550g ± 20g", acOil: "POE", acNote: "🛑 VW MEB Electric Architecture! Strictly POE non-conductive compressor oil only."
+            }
+        },
+        "Puma / Puma Gen-E (EV)": { 
+            "2019+ (MK2 Crossover / Gen-E EV)": { 
+                lishi: "HU101 / HU198", silca: "HU101TE", ic: "Card 1098 / 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "Check keyway profile: standard HU101 vs internal track HU198.",
+                module: "BCM / Keyless Receiver",
+                location: "Passenger Footwell behind glovebox assembly.",
+                access: "Drop glovebox door past dampener stops.",
+                risk: "MODERATE — 10-Minute Security Countdown",
+                protocol: "Maintain >13.0V. Execute 10-minute alarm bypass wait cycle before programming keys.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46 / POE", acNote: "Mild hybrids use PAG 46; 2024+ Puma Gen-E (EV) requires POE non-conductive oil."
+            }
+        },
+        "Kuga": { 
+            "2013 - 2019 (MK2 - C520)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098",
+                chip: "ID63 (80-Bit) / 4D83",
+                module: "BCM (Body Control Module)",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — 10-Minute Alarm Timer",
+                protocol: "Standard OBD key programming. Wait out 10-minute security window on AKL.",
+                acGas: "R134a / R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "2017+ facelift models use R1234yf."
+            },
+            "2020+ (MK3 - CX482 / Kuga PHEV)": { 
+                lishi: "HU101 / HU198", silca: "HU198", ic: "Card 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "Internal track HU198 keyway on latest facelift models.",
+                module: "BCM / Smart Gateway",
+                location: "Passenger Footwell fuse panel.",
+                access: "Drop lower glovebox door.",
+                risk: "MODERATE / HIGH — Gateway Protection",
+                protocol: "OBD wait cycle or gateway bypass harness required.",
+                acGas: "R1234yf", acCap: "550g ± 15g", acOil: "PAG 46 / POE", acNote: "🛑 Kuga PHEV (Plug-in Hybrid) requires POE non-conductive compressor oil! EcoBoost petrol/diesel uses PAG 46."
+            }
+        },
+        "Fiesta": { 
+            "2008 - 2017 (MK7 / MK7.5)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID63 (80-Bit) / 4D83",
+                warning: "Standard UK trade hatchback. 3-button remote blade key or proximity fob.",
+                module: "BCM (Body Control Module)",
+                location: "Passenger Footwell behind glovebox assembly.",
+                access: "Squeeze glovebox sides to drop door down.",
+                risk: "LOW / MODERATE — Standard OBD",
+                protocol: "OBD key programming supported. 10-minute active alarm countdown applies.",
+                acGas: "R134a", acCap: "520g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system. Check high-pressure port near O/S headlight."
+            },
+            "2017 - 2023 (MK8)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "Smart key or flip key options.",
+                module: "BCM & Keyless Module",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Unclip lower footwell felt cover.",
+                risk: "MODERATE — 10-Minute Alarm Bypass Timer",
+                protocol: "Wait out 10-minute security window with doors closed before adding key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across entire MK8 lineup."
+            }
+        },
+        "Focus": { 
+            "2005 - 2011 (MK2 - C307)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098",
+                chip: "ID63 (40-Bit / 80-Bit) / 4D63",
+                module: "GEM / BCM Module",
+                location: "Passenger Footwell lower fuse box.",
+                access: "Drop glovebox or lower footwell shroud.",
+                risk: "LOW",
+                protocol: "Standard OBD key programming. Remote pairs automatically or via 4x ignition turn cycle.",
+                acGas: "R134a", acCap: "600g ± 25g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            },
+            "2011 - 2018 (MK3 - C346)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098",
+                chip: "ID63 (80-Bit) / 4D83",
+                module: "BCM Unit",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — 10-Minute Alarm Timer",
+                protocol: "OBD key learn. 10-minute security delay applies if alarm is sounding.",
+                acGas: "R134a / R1234yf", acCap: "530g ± 20g", acOil: "PAG 46", acNote: "2017+ facelift models use R1234yf."
+            },
+            "2018+ (MK4 - C519)": { 
+                lishi: "HU101 / HU198", silca: "HU101TE", ic: "Card 1098 / 1450",
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                module: "BCM & Gateway",
+                location: "Passenger Footwell fuse carrier.",
+                access: "Drop glovebox door down.",
+                risk: "MODERATE / HIGH — Gateway Protection",
+                protocol: "Standard Ford wait cycle or gateway bypass connector required on 2021+ models.",
+                acGas: "R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard. EcoBoost Hybrid mHEV uses PAG 46."
+            }
+        }
+    },
+    "Volkswagen": {
+        "Golf": { 
+            "2004 - 2014 (MK5 / MK6)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster / IMMO ECU", 
+                location: "Main Dashboard Binnacle (behind steering wheel).", 
+                access: "Pull lower steering column trim shroud to expose 2x T20 Torx base screws. Pull cluster forward.",
+                risk: "LOW / MODERATE — VDO / Micronas Cluster EEPROM", 
+                protocol: "Standard OBD read PIN/CS or precoded Megamos 48 transponder key learn.",
+                acGas: "R134a", acCap: "525g ± 25g", acOil: "PAG 46", acNote: "Standard R134a fill port near O/S headlight."
+            }, 
+            "2015 - 2020 (MK7 / MK7.5 - MQB)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ Side-cut wafers! Verify 9-cut (door) or 10-cut system before picking.",
+                module: "MQB Instrument Cluster & KESSY Module",
+                location: "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                access: "Release 2x top glovebox retention tabs and drop glovebox fully down.",
+                risk: "HIGH RISK — Sync Data / Dealer Key Required",
+                protocol: "Extract 16-byte CS bytes via OBD/bench dump or sync calculation before programming dealer key. 🛑 Johnson Controls clusters (2014–2017) cannot be read via OBD on AKL!",
+                acGas: "R1234yf / R134a", acCap: "500g ± 15g", acOil: "PAG 46 / POE", acNote: "Pre-2017 uses R134a; post-2017 uses R1234yf. Golf GTE Hybrid MUST use POE oil!"
+            },
+            "2020+ (MK8 - MQB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "VAG Megamos AES / 4A (MQB-Evo)",
+                warning: "⚠️ MQB Evo Architecture. VAG Security Gateway (SFD) Protection!",
+                module: "MQB Evo BCM & Gateway Module",
+                location: "Passenger Footwell behind glovebox assembly.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH RISK — SFD Gateway Token & Online Server Sync",
+                protocol: "Requires SFD gateway unlock token and online VAG server token for OBD key programming.",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46 / POE", acNote: "R1234yf standard. eHybrid models require POE non-conductive oil."
+            }
+        },
+        "Polo": { 
+            "2002 - 2009 (MK4 - 9N / 9N3)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster (VDO / Motometer)",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove binnacle plastic surround (2x T20 Torx screws).",
+                risk: "LOW — Standard VAG Transponder",
+                protocol: "OBD PIN read and Megamos 48 key learning.",
+                acGas: "R134a", acCap: "525g ± 25g", acOil: "PAG 46", acNote: "R134a system."
+            },
+            "2009 - 2017 (MK5 - 6R / 6C)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster (NEC 24C32 / 24C64 / Johnson Controls)",
+                location: "Main Dashboard Binnacle.",
+                access: "Pull lower binnacle felt shroud.",
+                risk: "MODERATE — EEPROM Dump on Johnson Controls",
+                protocol: "Read PIN/CS via OBD or bench cluster dump on Johnson Controls panels.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2016+ models transitioned to R1234yf."
+            },
+            "2017+ (MK6 - AW - MQB A0)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412",
+                chip: "MQB Smart Proximity (Megamos AES)",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox stops.",
+                risk: "HIGH — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench before programming dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Passat / CC": { 
+            "2005 - 2014 (B6 / B7 / Passat CC)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "Megamos 48 (Passat CCM Slot Key)",
+                warning: "⚠️ Dash-slot key fob. Immo data lives in Comfort Control Module (CCM), NOT cluster!",
+                module: "CCM (Comfort Control Module) & ELV Steering Lock",
+                location: "Passenger Footwell — Behind lower glovebox compartment (RHD UK Passenger side).",
+                access: "Remove glovebox liner (5x T20 Torx screws). CCM is black module mounted on upper bulkhead.",
+                risk: "HIGH RISK — Bench EEPROM Read (95320) Required on AKL",
+                protocol: "Read CCM 95320 EEPROM on bench (or via OBD) to extract 7-byte CS and PIN. Precode ID48 / Passat slot-key before OBD learning.",
+                acGas: "R134a", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            },
+            "2014 - 2023 (B8 / Passat CC - MQB)": { 
+                lishi: "HU66 / HU162T", silca: "HU162T", ic: "Card 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "MQB smart key system.",
+                module: "MQB Instrument Cluster & KESSY Module",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox door past dampener stops.",
+                risk: "HIGH RISK — MQB Sync Data Required",
+                protocol: "Extract CS bytes via OBD/bench dump before writing dealer key.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46 / POE", acNote: "2017+ models use R1234yf. Passat GTE PHEV MUST use POE oil!"
+            }
+        },
+        "Tiguan": { 
+            "2007 - 2016 (MK1 - 5N)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster / KESSY Module",
+                location: "Main Dashboard / Behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — 24C32 / 24C64 Cluster EEPROM",
+                protocol: "OBD PIN/CS extraction and key learning.",
+                acGas: "R134a", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2016+ (MK2 - AD1 / Allspace - MQB)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ Side-cut wafers! Verify 9-cut vs 10-cut system.",
+                module: "MQB Instrument Cluster & KESSY Module",
+                location: "Behind Glovebox Assembly.",
+                access: "Release glovebox side tabs and drop down.",
+                risk: "HIGH RISK — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench dump before programming dealer key.",
+                acGas: "R1234yf / R134a", acCap: "480g ± 15g", acOil: "PAG 46 / POE", acNote: "Post-2016 models use R1234yf. eHybrid models require POE oil."
+            }
+        },
+        "Transporter / Caravelle / Multivan": { 
+            "2003 - 2015 (T5 / T5.1 Transporter)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "Megamos 48 (ID48 CAN)",
+                warning: "⚠️ High callout UK trade van! T5.1 (2010+) uses 7E0 BCM in driver's footwell.",
+                module: "BCM 7E0 (Body Control Module — 7E0 937 089 / 090)",
+                location: "Driver's Footwell — Mounted vertically above clutch/brake pedal assembly (RHD UK Driver's side).",
+                access: "Remove lower driver knee bolster panel (3x T20 Torx). Unclip BCM frame.",
+                risk: "MODERATE / HIGH — BCM 7E0 EEPROM / OBD PIN Read",
+                protocol: "Read PIN/CS via OBD or bench read BCM 7E0 MCU (NEC 24C64 / 95180). Precode Megamos 48 transponder before OBD key learn.",
+                acGas: "R134a", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "Caravelle / Multivan with dual rear A/C takes 950g fill weight!"
+            },
+            "2015 - 2019 (T6 Transporter)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "Megamos 48 (ID48 CAN)",
+                warning: "BCM 7E0 architecture carried over from T5.1.",
+                module: "BCM 7E0 Unit & Instrument Cluster",
+                location: "Driver's Footwell above pedal box.",
+                access: "Remove lower driver's dash shroud.",
+                risk: "MODERATE — Precoded Key Learn",
+                protocol: "Extract CS/PIN via OBD or bench dump BCM 7E0. Program flip key via OBD.",
+                acGas: "R134a / R1234yf", acCap: "580g ± 20g", acOil: "PAG 46", acNote: "2017+ models transitioned to R1234yf. Dual A/C takes 900g."
+            },
+            "2019 - 2024 (T6.1 Transporter)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ MQB platform upgrade! HU162T side-cut laser keyway.",
+                module: "MQB BCM & Instrument Cluster",
+                location: "Passenger Footwell behind glovebox / driver footwell.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH RISK — MQB Sync Data Required",
+                protocol: "Extract 16-byte CS bytes via OBD/bench before programming dealer key.",
+                acGas: "R1234yf", acCap: "560g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. Dual A/C takes 880g."
+            },
+            "2022+ (T7 Multivan - MQB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412",
+                chip: "VAG Megamos AES / 4A (MQB-Evo)",
+                module: "MQB Evo BCM & Gateway",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox.",
+                risk: "HIGH — VAG Security Gateway (SFD)",
+                protocol: "Requires SFD unlock token / online server authorization.",
+                acGas: "R1234yf", acCap: "550g", acOil: "PAG 46 / POE", acNote: "eHybrid models require POE non-conductive oil."
+            }
+        },
+		"T-Cross / Taigo": { 
+            "2019+ (C11 / CS - MQB A0 Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ MQB A0 Crossover platform (Polo AW twin). Verify 9-cut vs 10-cut ignition system.",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Release glovebox dampener arm and drop assembly past retention tabs.",
+                risk: "HIGH RISK — MQB Component Security",
+                protocol: "Extract 16-byte CS bytes via OBD/bench dump before programming dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across T-Cross & Taigo lineup."
+            }
+        },
+        "T-Roc": { 
+            "2017+ (A11 - MQB A1 Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ Shares Golf MK7.5 / MK8 architecture. SFD gateway protection on 2020+ facelift models.",
+                module: "MQB Instrument Cluster & KESSY (or MQB-Evo BCM)",
+                location: "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH RISK — MQB CS Bytes / SFD Gateway",
+                protocol: "Pre-2020: Extract CS bytes via OBD/bench. 2020+ Facelift: Requires VAG SFD unlock token for OBD programming.",
+                acGas: "R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Crafter (Van)": { 
+            "2006 - 2016 (MK1 - 2F)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971", 
+                chip: "Mercedes BE / BGA Smart Fob (FBS3 IR)",
+                warning: "🛑 MERCEDES SPRINTER W906 TWIN! Uses Mercedes HU64 keyway and FBS3 EZS system, NOT VW HU66/IMMO!",
+                module: "EZS / EIS (Electronic Ignition Switch — Mercedes FBS3 System)",
+                location: "Main Dashboard — Directly behind ignition key slot (RHD UK Driver's side).",
+                access: "Unscrew outer EZS bezel ring using Mercedes Rose lock-ring tool. Lower knee bolster panel.",
+                risk: "MODERATE / HIGH — Mercedes IR Password Calculation Required",
+                protocol: "🛑 DO NOT use VW tools! Connect to EZS via Mercedes IR programmer (G-Box / VVDI MB / IM608). Calculate IR password, generate key file, and write to BE/Smart fob.",
+                acGas: "R134a", acCap: "750g ± 30g", acOil: "PAG 46", acNote: "Large commercial system. Dual rear A/C takes 1100g."
+            },
+            "2017+ (MK2 - SY / SZ)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "Pure VW platform! Uses VW HU162T side-cut laser keyway.",
+                module: "BCM & MQB Gateway",
+                location: "Passenger Footwell behind lower glovebox panel.",
+                access: "Drop glovebox door past dampener stops.",
+                risk: "HIGH RISK — MQB Sync Data Required",
+                protocol: "Extract CS bytes via OBD/bench dump before writing dealer key.",
+                acGas: "R1234yf", acCap: "580g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. Dual A/C option takes 900g."
+            }
+        },
+        "Caddy": { 
+            "2004 - 2015 (MK3 - 2K)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster / IMMO ECU",
+                location: "Main Dashboard Binnacle.",
+                access: "Unclip binnacle trim shroud.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN/CS read and Megamos 48 key learning.",
+                acGas: "R134a", acCap: "525g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2015 - 2020 (MK4 - SA)": { 
+                lishi: "HU66 / HU162T", silca: "HU162T", ic: "Card 1412",
+                chip: "MQB Smart Proximity (Megamos AES)",
+                module: "BCM & Instrument Cluster",
+                location: "Driver / Passenger Footwell.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE / HIGH — CS Byte Extraction",
+                protocol: "Extract CS/PIN via OBD or bench cluster dump.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2020+ (MK5 - SB - MQB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "VAG Megamos AES / 4A (MQB-Evo)",
+                warning: "⚠️ Shared platform with Ford Transit Connect 2023+!",
+                module: "MQB Evo BCM & Gateway",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox.",
+                risk: "HIGH — VAG Security Gateway (SFD)",
+                protocol: "Requires SFD unlock token / online server session for OBD programming.",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Amarok (Pick-up)": { 
+            "2010 - 2022 (MK1 - 2H)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "Megamos 48 (ID48 CAN)",
+                warning: "Uses Transporter T5.1 BCM 7E0 electrical architecture.",
+                module: "BCM 7E0 (Body Control Module)",
+                location: "Driver's Footwell — Mounted vertically above clutch/brake pedal box.",
+                access: "Remove lower driver knee bolster panel (3x T20 Torx).",
+                risk: "MODERATE — BCM 7E0 PIN/CS Extraction",
+                protocol: "Read PIN/CS via OBD or bench dump BCM 7E0 MCU before key learning.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "2017+ V6 models use R1234yf."
+            },
+            "2023+ (MK2 - Shared Ford Ranger Platform)": { 
+                lishi: "HU198 / HU101", silca: "HU198", ic: "Card 1450", 
+                chip: "HITAG Pro (ID49 / 128-Bit)",
+                warning: "🛑 FORD RANGER P703 TWIN! Uses Ford HU198 internal track keyway & Ford BCM, NOT VW HU66/HU162T!",
+                module: "Ford Next-Gen BCM & Gateway",
+                location: "Passenger Footwell lower fuse panel area.",
+                access: "Remove lower passenger footwell trim shroud.",
+                risk: "HIGH — Ford Gateway Security Protection",
+                protocol: "🛑 DO NOT use VW tools! Connect via Ford diagnostic protocol (FDRS / Autel Ford). Execute 10-minute security delay or use gateway bypass connector.",
+                acGas: "R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Up! / e-Up!": { 
+            "2011+ (AA Platform)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster / IMMO ECU",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove cluster shroud screws.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN read and key learning.",
+                acGas: "R134a / R1234yf", acCap: "380g ± 15g", acOil: "PAG 46 / POE", acNote: "🛑 e-Up! (EV) MUST use non-conductive POE compressor oil! Petrol models use PAG 46."
+            }
+        },
+        "ID.3 / ID.4 / ID.5 / ID. Buzz (EV Lineup)": { 
+            "2020+ (MEB Electric Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "VAG Megamos AES / 4A (VW MEB)",
+                warning: "⚠️ VW MEB Electric Architecture! High voltage vehicle & SFD protection.",
+                module: "MEB KESSY Module & Gateway",
+                location: "Passenger Footwell behind glovebox assembly.",
+                access: "Release glovebox retention tabs and lower assembly.",
+                risk: "HIGH RISK — SFD Gateway Token & MEB Component Security",
+                protocol: "Requires active SFD unlock token and online VAG server calculation to program proximity smart fob.",
+                acGas: "R1234yf", acCap: "550g ± 20g", acOil: "POE", acNote: "🛑 100% Electric Vehicles! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "Touareg": { 
+            "2003 - 2010 (MK1 - 7L)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "ID46 / Megamos 13 (KESSY)",
+                warning: "Shared platform with Porsche Cayenne MK1 & Audi Q7.",
+                module: "KESSY Module", location: "Under driver's seat carpet / floor pan.", access: "Unbolt seat tracks (4x M10 Spline) and tip seat back.",
+                risk: "MODERATE — EEPROM 93C86 Dump Needed on AKL", protocol: "Bench read KESSY 93C86 to extract PIN & CS bytes.",
+                acGas: "R134a", acCap: "850g ± 20g", acOil: "PAG 46", acNote: "Dual A/C (4-zone climate) models take 1050g."
+            },
+            "2010 - 2018 (MK2 - 7P)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "Megamos 48 / PCFM (BCM2)",
+                warning: "Emergency blade concealed in smart fob. Door lock under handle cap.",
+                module: "BCM2 (Body Control Module 2)", location: "O/S/R Boot Quarter Panel behind carpet trim.", access: "Unclip boot side lining.",
+                risk: "HIGH RISK — Encrypted BCM2 Data", protocol: "Bench dump BCM2 DataFlash to extract CS bytes.",
+                acGas: "R134a", acCap: "800g", acOil: "PAG 46", acNote: "R134a system."
+            }, 
+            "2018+ (MK3 - CR)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MLB Evo AES Smart Proximity",
+                warning: "⚠️ MLB Evo Platform. Side-cut wafers present!",
+                module: "MLB Evo BCM2 / Immo ECU", location: "O/S/R Boot quarter panel.", access: "Remove boot side lining clips.",
+                risk: "HIGH RISK — Online Sync Server Required", protocol: "Requires dealer server calculation or bench programmer sync.",
+                acGas: "R1234yf", acCap: "750g ± 20g", acOil: "PAG 46", acNote: "R1234yf system."
+            } 
+        },
+        "Scirocco / Arteon": { 
+            "2008 - 2017 (Scirocco - 13)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster (VDO / NEC)",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove binnacle bezel.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN/CS read and Megamos 48 key learn.",
+                acGas: "R134a", acCap: "525g ± 20g", acOil: "PAG 46", acNote: "R134a system."
+            },
+            "2017+ (Arteon - MQB)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412",
+                chip: "MQB Smart Proximity (Megamos AES)",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox.",
+                risk: "HIGH — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench before programming dealer key.",
+                acGas: "R1234yf", acCap: "500g ± 15g", acOil: "PAG 46 / POE", acNote: "eHybrid models require POE oil."
+            }
+        },
+        "Touran / Sharan": { 
+            "2003 - 2015 (Touran MK1 / Sharan MK2)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster / IMMO ECU",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove lower cluster trim panel.",
+                risk: "LOW / MODERATE",
+                protocol: "OBD PIN/CS read and transponder learning.",
+                acGas: "R134a", acCap: "600g ± 25g", acOil: "PAG 46", acNote: "Dual rear A/C models take 850g."
+            },
+            "2015+ (Touran MK2 - MQB)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412",
+                chip: "MQB Smart Proximity (Megamos AES)",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench before writing dealer key.",
+                acGas: "R1234yf / R134a", acCap: "500g ± 20g", acOil: "PAG 46", acNote: "Post-2016 models use R1234yf."
+            }
+        }
+    },
+    "BMW": {
+        "1 Series": { 
+            "2004 - 2011 (E81 / E82 / E87 / E88)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                warning: "2-track internal laser profile. Check if ignition is slot-key CAS3 or turn-key CAS2.",
+                module: "CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals (RHD UK Driver's side, steering column area).",
+                access: "Remove 3x T20 Torx screws holding lower driver's footwell trim panel. Lower panel down. CAS is a rectangular white/black box clipped into a bracket near steering column.",
+                risk: "MODERATE RISK — CAS3+ ISTAP Flash Downgrade Hazard",
+                protocol: "CAS2/CAS3: Standard OBD key learning supported. CAS3+ (ISTAP / 2008+): Requires EEPROM downgrade or flash via OBD/bench. Always back up EEPROM & D-FLASH before writing!",
+                acGas: "R134a", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }, 
+            "2011 - 2019 (F20 / F21)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 FEM/BDC)",
+                warning: "Track 2 picking direction is critical on HU100R locks.",
+                module: "FEM (Front Electronic Module)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side, left foot area).",
+                access: "Remove plastic door sill kick strip. Pull passenger footwell side trim cover (1x T20 Torx and plastic retaining clips). FEM is large black module with multi-colored plugs.",
+                risk: "HIGH RISK — Bench EEPROM Pre-processing Required",
+                protocol: "Remove FEM module. Use programmer (IM608/VVDI) to read 95128/95256 EEPROM on bench, unlock module via OBD/bench harness, and generate dealer key. 🛑 Maintain >13.5V!",
+                acGas: "R134a / R1234yf", acCap: "550g ± 20g", acOil: "PAG 46", acNote: "Pre-2017 models use R134a; 2017+ facelift transitioned to R1234yf."
+            }, 
+            "2019+ (F40 - 1 Series Hatchback)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 BDC2/3)",
+                warning: "Latest UK front-wheel-drive UK platform share.",
+                module: "BDC2 / BDC3 (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove passenger sill strip and A-pillar lower trim panel.",
+                risk: "HIGH RISK — BDC Bench Pre-processing & SW Version Check",
+                protocol: "Check BDC software version via OBD. If locked, remove module for bench EEPROM read (95256) and unlock cycle before OBD key learning.",
+                acGas: "R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across F40 lineup."
+            } 
+        },
+        "2 Series": { 
+            "2014 - 2021 (F22 / F23 / F45 / F46)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 FEM/BDC)",
+                module: "FEM (F22/F23 Coupe) OR BDC (F45/F46 Active Tourer)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove sill cover and passenger footwell kick panel (T20 Torx).",
+                risk: "HIGH RISK — Bench EEPROM Unlock Required",
+                protocol: "Read 95128/95256 EEPROM on bench to pre-process FEM/BDC before adding key or performing AKL.",
+                acGas: "R134a / R1234yf", acCap: "520g - 580g", acOil: "PAG 46", acNote: "2017+ models use R1234yf. Active Tourer takes larger fill volume."
+            }, 
+            "2021+ (G42 / U06)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC3)",
+                module: "BDC3 (Body Domain Controller)",
+                location: "Passenger Footwell lower A-pillar area.",
+                access: "Remove passenger kick panel trim.",
+                risk: "HIGH — Latest BDC3 CAN Architecture",
+                protocol: "Bench read/unlock required. Maintain stable power supply (>13.5V) during BDC coding.",
+                acGas: "R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            } 
+        },
+        "3 Series": { 
+            "1998 - 2006 (E46 - Classic)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID44 / PCF7935 (EWS)",
+                warning: "Classic diamond shape key with rechargeable soldered battery.",
+                module: "EWS3 / EWS4 Immobiliser Unit",
+                location: "Driver's Footwell — behind small drop-down storage cubby to right of steering column (RHD UK Driver's side).",
+                access: "Remove 2x Phillips/T10 screws inside storage cubby or drop lower knee panel. White/grey EWS box clipped to firewall.",
+                risk: "LOW RISK — Rolling Code Sync",
+                protocol: "Read EWS MCU on bench (AK90 / VVDI Prog / IM608) or read via OBD on EWS4. Generate transponder chip (ID44 / PCF7935) directly from dump.",
+                acGas: "R134a", acCap: "740g ± 25g", acOil: "PAG 46", acNote: "High-capacity R134a system."
+            },
+            "2005 - 2012 (E90 / E91 / E92 / E93)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                warning: "Dash slot key fob. Emergency blade slides into top of remote.",
+                module: "CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals (RHD UK Driver's side, steering column area).",
+                access: "Remove 3x T20 Torx screws holding lower driver's footwell trim panel. Lower panel down. CAS is a rectangular white/black box clipped into a bracket near steering column.",
+                risk: "MODERATE RISK — CAS3+ ISTAP Flash Downgrade",
+                protocol: "CAS2/CAS3: OBD key learning supported. CAS3+ (ISTAP / 2008+): Requires EEPROM downgrade or flash via OBD/bench. Always back up CAS EEPROM & D-FLASH before writing!",
+                acGas: "R134a", acCap: "590g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }, 
+            "2012 - 2019 (F30 / F31 / F34)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 FEM)",
+                warning: "Track 2 picking direction critical. Door cylinder under handle cover.",
+                module: "FEM (Front Electronic Module)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side, left foot area).",
+                access: "Remove plastic door sill kick strip. Pull passenger footwell side trim cover (1x T20 Torx and plastic retaining clips). FEM is large black module with multi-colored plugs.",
+                risk: "HIGH RISK — Bench EEPROM Pre-processing Required",
+                protocol: "Remove FEM module. Use programmer (IM608/VVDI) to read 95128/95256 EEPROM on bench, unlock module via OBD/bench harness, and generate dealer key. 🛑 Maintain >13.5V!",
+                acGas: "R134a / R1234yf", acCap: "550g ± 20g", acOil: "PAG 46", acNote: "Pre-2017 uses R134a; post-2017 facelift uses R1234yf. 330e hybrid takes POE oil."
+            }, 
+            "2019+ (G20 / G21)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 BDC2/3)",
+                warning: "Square smart fob with side-slide emergency blade.",
+                module: "BDC2 / BDC3 (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove passenger door sill cover and lower A-pillar trim panel.",
+                risk: "HIGH — BDC3 Software Protection",
+                protocol: "Check SW version via OBD. Bench read 95256 EEPROM to unlock BDC before OBD key learning. Never interrupt programming cycle!",
+                acGas: "R1234yf", acCap: "550g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across G20 lineup. 330e PHEV requires POE non-conductive oil."
+            } 
+        },
+        "4 Series": { 
+            "2013 - 2020 (F32 / F33 / F36 - Coupe / Gran Coupe)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 FEM)",
+                module: "FEM (Front Electronic Module)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove sill cover and passenger kick panel (T20 Torx).",
+                risk: "HIGH RISK — Bench EEPROM Unlock Required",
+                protocol: "Read 95128/95256 EEPROM on bench to pre-process FEM before adding key or performing AKL.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            }, 
+            "2020+ (G22 / G23 / G26)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC3)",
+                module: "BDC3 (Body Domain Controller)",
+                location: "Passenger Footwell lower A-pillar area.",
+                access: "Unclip passenger kick panel trim.",
+                risk: "HIGH — BDC3 Architecture",
+                protocol: "Bench read/unlock required. Keep 30A+ battery charger connected during BDC coding.",
+                acGas: "R1234yf", acCap: "550g", acOil: "PAG 46", acNote: "R1234yf standard. i4 (EV) requires POE compressor oil."
+            } 
+        },
+        "5 Series": { 
+            "1995 - 2004 (E39 - Classic)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851",
+                chip: "ID44 / PCF7935 (EWS)",
+                module: "EWS3 Immobiliser",
+                location: "Driver's Footwell — behind small storage bin / right of steering column.",
+                access: "Remove lower dash trim shroud (Phillips screws). White/grey EWS module.",
+                risk: "LOW RISK — Rolling Code Sync",
+                protocol: "Bench read EWS MCU (0D46J / 2D47J). Write ID44 / PCF7935 transponder directly from dump.",
+                acGas: "R134a", acCap: "1200g ± 25g", acOil: "PAG 46", acNote: "Very large capacity system on classic E39 models!"
+            },
+            "2003 - 2010 (E60 / E61)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                warning: "Early 2003-2005 models use turn-key CAS2; 2006+ use dash-slot CAS3/CAS3+.",
+                module: "CAS2 / CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals (RHD UK Driver's side).",
+                access: "Remove 3x T20 Torx screws on lower driver panel. CAS box clipped to steering column bracket.",
+                risk: "MODERATE — CAS3+ ISTAP Protection",
+                protocol: "CAS2/CAS3: Standard OBD key learn. CAS3+ (ISTAP): Backup EEPROM/D-FLASH before OBD flash downgrade or bench read.",
+                acGas: "R134a", acCap: "700g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }, 
+            "2010 - 2017 (F10 / F11)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "ID49 / PCF7953 (CAS4)",
+                warning: "⚠️ F10 uses CAS4 / CAS4+ (NOT FEM!). Module is located in driver's footwell.",
+                module: "CAS4 / CAS4+ Module (White Box)",
+                location: "Driver's Footwell — Lower A-Pillar / Kick Panel area (RHD UK Driver's right foot side).",
+                access: "Remove driver's door sill trim and lower right kick panel (1x T20 Torx). CAS4 is rectangular white module.",
+                risk: "MODERATE / HIGH — CAS4+ (5M48H / 1N35H MCU) Bench Read Required",
+                protocol: "CAS4 (1L15Y): OBD read supported on early models. CAS4+ (5M48H/1N35H): Remove CAS4 and read MCU D-FLASH/EEPROM on bench via programmer (IM608/VVDI Prog/GODIAG) to extract ISN/key data.",
+                acGas: "R134a / R1234yf", acCap: "850g ± 20g", acOil: "PAG 46", acNote: "2016+ transition models use R1234yf. Check label under bonnet."
+            }, 
+            "2017 - 2023 (G30 / G31)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC2)",
+                module: "BDC2 (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove passenger sill strip and lower A-pillar trim panel.",
+                risk: "HIGH — BDC2 Bench Pre-processing Required",
+                protocol: "Check SW version via OBD. Bench read 95256 EEPROM to unlock BDC before OBD key learning.",
+                acGas: "R1234yf", acCap: "650g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard across G30 lineup. 530e PHEV uses POE oil."
+            } 
+        },
+        "X1": { 
+            "2009 - 2015 (E84)": { 
+                lishi: "HU92 / HU100R", silca: "HU92 / HU100R", ic: "Card 851 / 1324", 
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                warning: "⚠️ Crossover keyway! Early E84 uses HU92; later models use HU100R.",
+                module: "CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals.",
+                access: "Remove 3x T20 Torx screws holding lower driver's footwell trim panel.",
+                risk: "MODERATE — CAS3+ ISTAP Flash Downgrade",
+                protocol: "OBD key learn or EEPROM backup/downgrade if ISTAP protected.",
+                acGas: "R134a", acCap: "580g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }, 
+            "2015 - 2022 (F48)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC)",
+                module: "BDC (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove plastic sill kick strip and passenger side trim cover.",
+                risk: "HIGH RISK — BDC Bench Pre-processing Required",
+                protocol: "Remove BDC module. Read 95256 EEPROM on bench to unlock before OBD key learning.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2022+ (U11 - New X1)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC3)",
+                module: "BDC3 / Gateway",
+                location: "Passenger Footwell lower A-pillar area.",
+                access: "Unclip passenger kick panel trim.",
+                risk: "HIGH — Latest BDC3 CAN Architecture",
+                protocol: "Bench read/unlock required. Maintain stable power supply (>13.5V).",
+                acGas: "R1234yf", acCap: "500g", acOil: "PAG 46", acNote: "R1234yf standard. iX1 (EV) uses POE oil."
+            }
+        },
+        "X3": { 
+            "2003 - 2010 (E83 - Classic X3)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851",
+                chip: "ID44 / PCF7935 (EWS4)",
+                module: "EWS4 OR CAS2 (Model Year Dependent)",
+                location: "Driver's Footwell lower dash area.",
+                access: "Remove lower driver knee panel (T20 Torx). Check if white EWS4 or black/white CAS2.",
+                risk: "LOW / MODERATE",
+                protocol: "EWS4: Bench read MCU via adapter. CAS2: Standard OBD key programming.",
+                acGas: "R134a", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "R134a system."
+            }, 
+            "2010 - 2017 (F25)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "ID49 / PCF7953 (CAS4)",
+                warning: "⚠️ F25 X3 uses CAS4 / CAS4+ (NOT FEM!). Module in driver's right footwell.",
+                module: "CAS4 / CAS4+ Module (White Box)",
+                location: "Driver's Footwell — Lower right A-Pillar kick panel (RHD UK Driver's side).",
+                access: "Remove driver's door sill trim and right side kick panel (1x T20 Torx).",
+                risk: "MODERATE / HIGH — CAS4+ (5M48H / 1N35H MCU) Bench Read Required",
+                protocol: "Remove CAS4 and read MCU D-FLASH/EEPROM on bench via programmer to extract ISN/key data before adding key.",
+                acGas: "R134a / R1234yf", acCap: "650g ± 20g", acOil: "PAG 46", acNote: "2016+ models transitioned to R1234yf."
+            }, 
+            "2017+ (G01 / G08)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC2/3)",
+                module: "BDC2 / BDC3 (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove passenger sill strip and lower A-pillar trim panel.",
+                risk: "HIGH — BDC2 Bench Pre-processing Required",
+                protocol: "Check SW version via OBD. Bench read 95256 EEPROM to unlock BDC before OBD key learning.",
+                acGas: "R1234yf", acCap: "600g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across G01 lineup. iX3 (EV) requires POE oil."
+            } 
+        },
+        "X5": { 
+            "1999 - 2006 (E53 - Classic X5)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851",
+                chip: "ID44 / PCF7935 (EWS)",
+                module: "EWS3 Immobiliser Unit",
+                location: "Driver's Footwell — behind small storage bin / right of steering column.",
+                access: "Remove lower dash trim panel (Phillips screws). White/grey EWS box.",
+                risk: "LOW RISK — Rolling Code Sync",
+                protocol: "Bench read EWS MCU. Generate transponder chip (ID44 / PCF7935) directly from dump.",
+                acGas: "R134a", acCap: "440g - 450g", acOil: "PAG 46", acNote: "Check label; some E53 models take small 440g fill."
+            },
+            "2006 - 2013 (E70)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                warning: "Dash slot fob with emergency blade.",
+                module: "CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals.",
+                access: "Remove 3x T20 Torx screws holding lower driver's footwell trim panel.",
+                risk: "MODERATE — CAS3+ ISTAP Flash Downgrade",
+                protocol: "OBD key learn or EEPROM backup/downgrade if ISTAP protected.",
+                acGas: "R134a", acCap: "700g ± 20g", acOil: "PAG 46", acNote: "4-zone rear climate models take 850g."
+            }, 
+            "2013 - 2018 (F15)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 BDC)",
+                warning: "⚠️ F15 X5 uses BDC (Body Domain Controller — NOT CAS4 or FEM!).",
+                module: "BDC (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side).",
+                access: "Remove plastic door sill kick strip and passenger side trim cover (1x T20 Torx).",
+                risk: "HIGH RISK — BDC Bench Pre-processing Required",
+                protocol: "Remove BDC module. Read 95256 EEPROM on bench to unlock before OBD key learning.",
+                acGas: "R134a / R1234yf", acCap: "750g ± 25g", acOil: "PAG 46", acNote: "Pre-2017 uses R134a; post-2017 facelift uses R1234yf. Rear A/C takes 900g."
+            }, 
+            "2018+ (G05)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324",
+                chip: "HU100R Smart (ID49 / PCF7953 BDC2/3)",
+                module: "BDC2 / BDC3 (Body Domain Controller)",
+                location: "Passenger Footwell lower A-pillar area.",
+                access: "Unclip passenger kick panel trim.",
+                risk: "HIGH — BDC2 Architecture",
+                protocol: "Check SW version via OBD. Bench read 95256 EEPROM to unlock BDC before OBD key learning.",
+                acGas: "R1234yf", acCap: "750g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. X5 xDrive45e PHEV requires POE compressor oil."
+            } 
+        },
+        "Z4": { 
+            "2002 - 2008 (E85 / E86)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851",
+                chip: "ID44 / PCF7935 (EWS) / ID46 (CAS2)",
+                module: "EWS3 OR CAS2 (Model Year Dependent)",
+                location: "Driver's Footwell lower dash area.",
+                access: "Remove lower driver knee panel (T20 Torx).",
+                risk: "LOW / MODERATE",
+                protocol: "EWS3: Bench read MCU. CAS2: Standard OBD key programming.",
+                acGas: "R134a", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "R134a standard."
+            }, 
+            "2009 - 2016 (E89)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851",
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                module: "CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals.",
+                access: "Remove 3x T20 Torx screws on lower driver panel.",
+                risk: "MODERATE — CAS3+ ISTAP Protection",
+                protocol: "Standard OBD key learn or EEPROM backup/downgrade if ISTAP protected.",
+                acGas: "R134a", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }, 
+            "2018+ (G29 - Toyota GR Supra Twin)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 BDC2)",
+                warning: "⚠️ Shared platform with Toyota GR Supra! Uses BMW HU100R keyway and BDC2 module.",
+                module: "BDC2 (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel.",
+                access: "Remove passenger sill strip and lower A-pillar trim panel.",
+                risk: "HIGH — BDC2 Bench Pre-processing Required",
+                protocol: "Check SW version via OBD. Bench read 95256 EEPROM to unlock BDC before OBD key learning.",
+                acGas: "R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            } 
+        }
+    },
+    "Land Rover": {
+        "Range Rover / Sport": { 
+            "2005 - 2012 (L322 / L320)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID46 / PCF7936 (EWS / KVM)",
+                warning: "Early models use BMW-sourced EWS/CAS systems; 2010+ transitioned to KVM.",
+                module: "KVM / SAJ Module or EWS4/CAS (Year Dependent)",
+                location: "O/S/R Boot Quarter Panel behind carpet trim above rear fuse block.",
+                access: "Remove rear boot floor cover and unclip O/S/R carpet access door (2x 10mm nuts). Tools: Trim tool, 10mm socket.",
+                risk: "MODERATE — Keyless Entry Sync Verification",
+                protocol: "2005-2009: Standard OBD key programming or EWS/CAS bench dump. 2010-2012: OBD key learning supported via KVM.",
+                acGas: "R134a", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "Rear climate control models take 900g."
+            },
+            "2013 - 2017 (L405 / L494 - FK72 KVM)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID49 / PCF7953 (FK72 KVM)",
+                warning: "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
+                module: "KVM / RFA (Keyless Vehicle Module — FK72)",
+                location: "O/S/R Boot Quarter Panel behind side trim carpet panel above rear fuse box.",
+                access: "Drop side carpet panel. Module is mounted to inner wing bracket (2x 10mm nuts).",
+                risk: "HIGH RISK — Locked KVM MC9S12XEQ384 MCU",
+                protocol: "Bench read required for AKL on locked KVMs. Decode D-Flash via programmer clip/solder adapter, generate key, and rewrite.",
+                acGas: "R134a / R1234yf", acCap: "850g ± 20g", acOil: "PAG 46", acNote: "2017 transition year: check under-bonnet label for R1234yf."
+            },
+            "2018+ (L405 / L494 / L460 - JPLA / DoIP)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "JLR Smart / RFA (JPLA / DoIP)",
+                warning: "⚠️ JPLA/K8D2 KVM architecture. Requires specialist DoIP unlock or Pathfinder session.",
+                module: "KVM / RFA (JPLA Smart Key System) & BCM",
+                location: "O/S/R Boot Quarter Panel behind side trim.",
+                access: "Remove boot side trim panel. Ensure external 30A+ power supply is connected before touching connectors.",
+                risk: "HIGH RISK — BCM / RFA Sync Loss & CAN Gateway Security",
+                protocol: "Requires authorized DoIP server token, Pathfinder/SDDD bypass, or replacing RFA with virgin/unlocked module on bench.",
+                acGas: "R1234yf", acCap: "800g ± 25g", acOil: "PAG 46", acNote: "R1234yf standard across all UK/EU models."
+            }
+        },
+        "Evoque / Discovery Sport": { 
+            "2011 - 2019 (L538 / L550)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID49 / PCF7953 (FK72 / KVM)",
+                warning: "⚠️ Check KVM location: boot quarter vs. rear roof headliner!",
+                module: "KVM / RFA (Keyless Vehicle Module)",
+                location: "N/S/R Boot (Passenger side rear quarter) OR Upper tailgate roof lining behind rear seats.",
+                access: "Early models (2011-2014): N/S/R boot trim behind luggage loop. Later models (2015+): Drop rear roof headliner slightly at tailgate edge; KVM is bolted to roof rib.",
+                risk: "HIGH RISK — Locked MCU on 2015+ Facelift & Boot Deadlock Hazard",
+                protocol: "Check wiring loom label. If 2015+ locked KVM, remove module for bench EEPROM read/write. Manually trip tailgate latch open before stripping trim!",
+                acGas: "R134a / R1234yf", acCap: "650g ± 20g", acOil: "PAG 46", acNote: "Post-2016 models use R1234yf."
+            },
+            "2020+ (L551 / New Discovery Sport)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "JLR Smart / RFA (JPLA / DoIP)",
+                warning: "JPLA / DoIP electrical architecture.",
+                module: "RFA / BCM Gateway",
+                location: "O/S/R Boot Quarter Panel / Rear Junction Box.",
+                access: "Remove O/S/R luggage compartment side trim.",
+                risk: "HIGH RISK — Online Gateway Authorization Required",
+                protocol: "OBD programming requires OEM Pathfinder session or active DoIP gateway bypass cable.",
+                acGas: "R1234yf", acCap: "600g", acOil: "PAG 46", acNote: "PHEV hybrid models require POE non-conductive oil."
+            }
+        },
+        "Discovery": { 
+            "2004 - 2016 (Discovery 3 & 4 - L319)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098",
+                chip: "ID46 / PCF7936 (CJB)",
+                module: "CJB (Central Junction Box / BCM)",
+                location: "Passenger Footwell — Behind lower glovebox drop-down panel.",
+                access: "Drop glovebox fully down. CJB is the large fuse/relay box assembly.",
+                risk: "MODERATE — CJB Corruption on Low Voltage",
+                protocol: "Maintain >13.5V battery voltage. Standard OBD remote/key learning supported.",
+                acGas: "R134a", acCap: "900g ± 25g", acOil: "PAG 46", acNote: "Rear A/C models take 1150g fill weight."
+            },
+            "2017+ (Discovery 5 - L462)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID49 (FK72) / JPLA Smart (DoIP)",
+                warning: "Locked FK72 / JPLA KVM architecture.",
+                module: "KVM / RFA Module",
+                location: "O/S/R Boot Quarter Panel.",
+                access: "Remove rear boot side access panel (10mm fasteners).",
+                risk: "HIGH RISK — Locked D-Flash / DoIP Security",
+                protocol: "Bench read required for FK72; DoIP unlock/replacement required for JPLA 2018+ models.",
+                acGas: "R1234yf", acCap: "800g", acOil: "PAG 46", acNote: "4-zone climate control takes 1000g."
+            }
+        },
+        "Defender": { 
+            "1995 - 2016 (Classic Series / Td5 / TDCi)": { 
+                lishi: "NE38", silca: "NE38", ic: "Card 552", 
+                chip: "ID33 / Lucas 10AS PLIP",
+                warning: "Classic Lucas 10AS Alarm / Immobiliser System.",
+                module: "Lucas 10AS Alarm Unit",
+                location: "Behind driver's instrument cluster or lower dashboard bulkhead.",
+                access: "Remove 4x screws holding instrument binnacle and pull forward.",
+                risk: "LOW / MODERATE — 10AS Sync Pairing Required",
+                protocol: "Read/program via OBD or EEPROM dump of 10AS box to sync remote fob and PLIP immobiliser chip.",
+                acGas: "R134a", acCap: "650g", acOil: "PAG 46", acNote: "Aftermarket/dealer-fit aircon systems vary; check compressor label."
+            },
+            "2020+ (New Defender - L663)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "JLR Smart / RFA (JPLA / DoIP)",
+                warning: "Latest JLR DoIP Security Gateway architecture.",
+                module: "RFA (Remote Function Actuator) & BCM",
+                location: "O/S/R Boot Quarter Panel behind structural trim.",
+                access: "Remove rear side trim clips. Requires trim tools and 10mm socket.",
+                risk: "HIGH RISK — OEM Pathfinder / Gateway Security",
+                protocol: "Requires OEM server token authorization or specialized DoIP bench replacement kit.",
+                acGas: "R1234yf", acCap: "700g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        }
+    },
+    "Jaguar": {
+        "XE / XF / XJ": { 
+            "2007 - 2012 (XF - X250 Early)": { 
+                lishi: "FO38 / HU101", silca: "HU101TE", ic: "Card 1098",
+                chip: "ID46 / PCF7936 (KVM)",
+                module: "KVM / CJB",
+                location: "O/S/R Boot Quarter Panel behind carpet lining.",
+                access: "Pull back O/S/R boot lining. Mounted near fuse carrier.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD key programming supported via KVM.",
+                acGas: "R134a", acCap: "700g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2013 - 2018 (XE / XF / XJ - FK72 KVM)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID49 / PCF7953 (FK72 KVM)",
+                warning: "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
+                module: "KVM / RFA (Keyless Vehicle Module)",
+                location: "O/S/R Boot Quarter Panel behind side carpet trim.",
+                access: "Drop side boot carpet trim. Module bolted to inner wing frame near auxiliary battery.",
+                risk: "HIGH RISK — Locked MC9S12XEQ384 MCU",
+                protocol: "Bench read required for AKL on locked FK72 KVMs. Solder/clip MCU to read D-Flash.",
+                acGas: "R134a / R1234yf", acCap: "650g", acOil: "PAG 46", acNote: "2016+ XE models transitioned to R1234yf."
+            },
+            "2018+ (XE / XF - JPLA / DoIP)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "JLR Smart / RFA (JPLA / DoIP)",
+                warning: "JPLA Smart Key System. Specialized DoIP bypass required.",
+                module: "RFA / BCM",
+                location: "O/S/R Boot Quarter Panel.",
+                access: "Remove O/S/R luggage trim. Keep 30A+ battery stabilizer attached.",
+                risk: "HIGH RISK — BCM Sync Loss Hazard",
+                protocol: "Requires authorized server token or bench replacement of RFA module.",
+                acGas: "R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "F-Pace / E-Pace / I-Pace": { 
+            "2016+ (X761 / X540 / X590)": { 
+                lishi: "HU101", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID49 (FK72) / JPLA Smart (DoIP)",
+                warning: "Check KVM part number (FK72 vs JPLA).",
+                module: "KVM / RFA Module",
+                location: "O/S/R Boot Quarter Panel behind trim carpet.",
+                access: "Release boot side lining clips (2x 10mm retaining nuts).",
+                risk: "HIGH RISK — Locked MCU / DoIP Architecture",
+                protocol: "FK72: Bench read D-Flash. JPLA: DoIP server session or virgin RFA exchange.",
+                acGas: "R1234yf", acCap: "650g ± 25g", acOil: "PAG 46", acNote: "I-Pace (EV) requires POE non-conductive compressor oil."
+            }
+        }
+    },
+    "Peugeot": {
+        "208 / e-208": { 
+            "2012 - 2019 (MK1 - A9)": { 
+                lishi: "HU83 / VA2", silca: "HU83 / VA2", ic: "Card 1030 / 1310", 
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                warning: "Check if keyway has HU83 side grooves or is plain VA2.",
+                module: "BSI (Built-in Systems Interface — Valeo / Continental)",
+                location: "Passenger / Driver Footwell Fuse Box (behind lower dash panel).",
+                access: "Drop lower fuse box panel / unclip glovebox assembly. BSI is main multi-plug fuse board.",
+                risk: "MODERATE — Security PIN Extraction Needed",
+                protocol: "Read 4-digit Security PIN via OBD or read EEPROM (95128 / 95256 / NEC) on bench. Program transponder via OBD.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 15g", acOil: "PAG 46", acNote: "Pre-2016 uses R134a; post-2016 uses R1234yf."
+            },
+            "2019+ (MK2 / e-208 - CMP Platform)": { 
+                lishi: "HU83 / VA2 / HU136", silca: "VA2 / HU83", ic: "Card 1310 / 1030", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Latest Stellantis CMP platform. Supports mechanical fob blade.",
+                module: "Stellantis BSI / Delphi Unit",
+                location: "Driver's Footwell lower fuse box area (RHD UK Driver's side).",
+                access: "Remove 2x turn-clips on lower dash fuse cover.",
+                risk: "MODERATE / HIGH — CAN Gateway Protection & Eco Mode Hazard",
+                protocol: "🛑 Ensure Economy Mode is NOT active! Keep hazard lights blinking or charger attached during OBD PIN read.",
+                acGas: "R1234yf", acCap: "430g ± 15g", acOil: "PAG 46", acNote: "e-208 (EV) uses POE non-conductive oil."
+            }
+        },
+        "308 / 308 SW": { 
+            "2007 - 2013 (T7)": { 
+                lishi: "HU83 / VA2", silca: "HU83 / VA2", ic: "Card 1030 / 1310",
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                module: "BSI (Johnson Controls / Valeo)",
+                location: "Passenger Footwell Fuse Box behind glovebox.",
+                access: "Drop glovebox door fully down.",
+                risk: "MODERATE — PIN Code Extraction via OBD",
+                protocol: "OBD PIN reading supported. Program remote via OBD.",
+                acGas: "R134a", acCap: "450g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            },
+            "2013 - 2021 (T9 - EMP2 Platform)": { 
+                lishi: "HU83 / VA2", silca: "HU83 / VA2", ic: "Card 1030 / 1310",
+                chip: "ID46 (PCF7941) / HITAG AES",
+                module: "BSI (Valeo / Continental)",
+                location: "Passenger Footwell lower fuse panel.",
+                access: "Remove felt footwell cover (2x push clips).",
+                risk: "MODERATE — Economy Mode Sleep Hazard",
+                protocol: "Extract 4-digit PIN via OBD. If vehicle drops to Economy Mode, turn hazard lights on to keep CAN awake.",
+                acGas: "R1234yf / R134a", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2021+ (MK3 - Stellantis EMP2 V3)": { 
+                lishi: "HU83 / VA2 / HU136", silca: "VA2", ic: "Card 1310",
+                chip: "HITAG AES / 4A Smart",
+                module: "Stellantis BSI & Gateway",
+                location: "Driver's Footwell lower dash fuse carrier.",
+                access: "Unclip lower steering column trim panel.",
+                risk: "HIGH — Stellantis Security Gateway",
+                protocol: "Requires Security Gateway bypass harness or online diagnostics token for OBD programming.",
+                acGas: "R1234yf", acCap: "450g", acOil: "PAG 46", acNote: "PHEV models use POE oil."
+            }
+        },
+        "3008 / 5008": { 
+            "2008 - 2016 (MK1)": { 
+                lishi: "HU83 / VA2", silca: "HU83 / VA2", ic: "Card 1030 / 1310",
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                module: "BSI Unit",
+                location: "Passenger Footwell behind glovebox panel.",
+                access: "Drop glovebox door past dampener stops.",
+                risk: "MODERATE — PIN Extraction via OBD",
+                protocol: "Extract 4-digit PIN via OBD; program transponder/remote.",
+                acGas: "R134a", acCap: "450g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2016 - 2023 (MK2 - EMP2)": { 
+                lishi: "HU83 / VA2", silca: "VA2 / HU83", ic: "Card 1310 / 1030", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Concealed emergency blade inside PEUGEOT smart card fob.",
+                module: "BSI / Smart Key Receiver",
+                location: "Passenger Footwell fuse box / lower dash assembly.",
+                access: "Remove lower passenger felt cover.",
+                risk: "MODERATE — Economy Mode Lockout Hazard",
+                protocol: "OBD PIN read supported. Connect battery charger to prevent Eco Mode cutoff during key learning.",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Partner / Rifter / Expert / Boxer": { 
+            "2008 - 2018 (Partner MK2 / Expert MK2)": { 
+                lishi: "HU83 / VA2", silca: "HU83 / VA2", ic: "Card 1030 / 1310",
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                module: "BSI Unit",
+                location: "Passenger Footwell lower glovebox fuse block.",
+                access: "Open glovebox and pull fuse access cover.",
+                risk: "MODERATE",
+                protocol: "Standard OBD PIN extraction and key programming.",
+                acGas: "R134a", acCap: "450g - 550g", acOil: "PAG 46", acNote: "Check compressor label under bonnet."
+            },
+            "2018+ (Partner MK3 / Rifter / Expert MK3)": { 
+                lishi: "HU83 / VA2", silca: "VA2 / HU83", ic: "Card 1310 / 1030",
+                chip: "HITAG AES / 4A Smart",
+                module: "Stellantis BSI",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox down. BSI is multi-plug Valeo/Continental unit.",
+                risk: "MODERATE — Eco Mode Protection",
+                protocol: "Maintain >13.0V voltage. Read PIN via OBD and pair remote fob.",
+                acGas: "R1234yf", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "R1234yf system standard."
+            },
+            "2006+ (Boxer Van - Fiat Ducato Twin)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "ID46 (PCF7936 / Megamos 48 Precode)",
+                warning: "⚠️ Fiat Ducato platform twin! Uses Fiat SIP22 keyway and Delphi/Marelli BSI.",
+                module: "BSI (Delphi / Marelli Body Computer)",
+                location: "Driver's Footwell — integrated into main interior fuse box (RHD UK Driver's knee area).",
+                access: "Remove 2x plastic thumbscrews on lower dashboard fuse cover (2x 10mm frame bolts).",
+                risk: "HIGH RISK — Precoding Transponder Required",
+                protocol: "Fiat keys CANNOT be programmed raw! Read BSI EEPROM via bench/OBD to extract PIN and 6-byte component key. Precode ID46/Megamos 48 chip before OBD learning.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            }
+        }
+    },
+    "Citroen": {
+        "C1": { 
+            "2005 - 2022 (MK1 / MK2)": { 
+                lishi: "VA2", silca: "VA2", ic: "Card 1310", 
+                chip: "4D67 / ID4E (Toyota IMMO)",
+                warning: "Toyota Aygo / Peugeot 108 platform twin. Toyota IMMO architecture!",
+                module: "Immobiliser ECU / Toyota IMMO Box",
+                location: "Behind instrument binnacle or upper dashboard panel.",
+                access: "Remove instrument cluster shroud.",
+                risk: "LOW — Toyota ID4D / ID4E System",
+                protocol: "Standard OBD key programming (Toyota protocol) or EEPROM reset on early AKL.",
+                acGas: "R134a / R1234yf", acCap: "400g ± 15g", acOil: "PAG 46", acNote: "Small capacity system; do not overfill."
+            }
+        },
+        "C3 / C3 Aircross / C4 / C5 Aircross": { 
+            "2010 - 2017 (C3 MK2 / C4 MK2)": { 
+                lishi: "HU83 / VA2", silca: "VA2 / HU83", ic: "Card 1310 / 1030",
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                module: "BSI Unit",
+                location: "Passenger Footwell Fuse Box behind glovebox.",
+                access: "Drop glovebox door down.",
+                risk: "MODERATE — PSA PIN Read via OBD",
+                protocol: "Extract 4-digit PIN via OBD; program remote fob.",
+                acGas: "R134a", acCap: "450g", acOil: "PAG 46", acNote: "R134a standard."
+            },
+            "2017+ (C3 MK3 / C3 Aircross / C5 Aircross)": { 
+                lishi: "HU83 / VA2 / HU136", silca: "VA2", ic: "Card 1310",
+                chip: "HITAG AES / 4A Smart",
+                module: "Stellantis BSI",
+                location: "Passenger Footwell lower dash fuse carrier.",
+                access: "Unclip footwell felt cover.",
+                risk: "MODERATE — Economy Mode Sleep Hazard",
+                protocol: "Read PIN via OBD. Attach charger to keep CAN awake during learning cycle.",
+                acGas: "R1234yf", acCap: "450g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across latest lineup."
+            }
+        },
+        "Berlingo / Dispatch / Relay": { 
+            "2008 - 2018 (Berlingo MK2 / Dispatch MK2)": { 
+                lishi: "HU83 / VA2", silca: "VA2 / HU83", ic: "Card 1310 / 1030",
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                module: "BSI Unit",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Pull fuse cover inside glovebox.",
+                risk: "MODERATE",
+                protocol: "OBD PIN reading and transponder programming.",
+                acGas: "R134a", acCap: "450g - 550g", acOil: "PAG 46", acNote: "Check compressor label."
+            },
+            "2018+ (Berlingo MK3 / Dispatch MK3)": { 
+                lishi: "HU83 / VA2", silca: "VA2", ic: "Card 1310",
+                chip: "HITAG AES / 4A Smart",
+                module: "Stellantis BSI",
+                location: "Passenger Footwell behind lower trim.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — Eco Mode Protection",
+                protocol: "Maintain >13.0V. Read PIN via OBD and pair key.",
+                acGas: "R1234yf", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard."
+            },
+            "2006+ (Relay Van - Fiat Ducato Twin)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "ID46 (PCF7936 / Megamos 48 Precode)",
+                warning: "⚠️ Fiat Ducato platform twin! Uses Fiat SIP22 keyway and Delphi/Marelli BSI.",
+                module: "BSI (Delphi / Marelli Body Computer)",
+                location: "Driver's Footwell interior fuse box (RHD UK Driver's knee area).",
+                access: "Remove 2x thumbscrews on lower dash fuse cover (2x 10mm bolts).",
+                risk: "HIGH RISK — Precoding Transponder Required",
+                protocol: "Fiat keys CANNOT be programmed raw! Read BSI EEPROM to extract PIN and 6-byte component key. Precode ID46/Megamos 48 chip before OBD learning.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            }
+        }
+    },
+    "Fiat": {
+        "500 / 500L / 500X / Panda / Punto": { 
+            "2007+ (500 / 500L / Panda / Punto)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "ID46 (PCF7936 / Megamos 48 Precode)",
+                warning: "⚠️ Fiat Delphi / Marelli BSI Architecture. Transponder precoding required!",
+                module: "BSI (Body Computer Module — Delphi / Marelli)",
+                location: "Driver's Footwell — integrated into main interior fuse box (RHD UK Driver's knee area).",
+                access: "Remove 2x plastic thumbscrews on lower dashboard fuse cover. Unscrew 2x 10mm bolts holding BSI frame.",
+                risk: "HIGH RISK — Precoding Transponder Required",
+                protocol: "Read BSI EEPROM (93C86 / 95160 / 70F3556 / Marelli MCU) via bench or OBD to extract Security PIN and 6-byte component key. Precode ID46 / Megamos 48 chip on programmer before performing OBD key learn.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "Pre-2016 uses R134a; 2016+ uses R1234yf."
+            },
+            "2015+ (500X - Jeep Renegade Platform Twin)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Stellantis / Chrysler RFHUB Keyless Architecture.",
+                module: "RFHUB / BSI Module",
+                location: "Behind rear quarter trim OR Driver's footwell fuse carrier.",
+                access: "Drop lower driver's dash panel.",
+                risk: "MODERATE / HIGH — 5-Digit PIN Required",
+                protocol: "Read PIN via OBD (Chrysler/Fiat protocol). Precode smart key if required by programmer prompt, then learn via OBD.",
+                acGas: "R1234yf", acCap: "450g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Ducato": { 
+            "2006 - 2021 (MK3 - Euro 4 / 5 / 6)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "ID46 (PCF7936 / Megamos 48 Precode)",
+                warning: "⚠️ Standard UK trade fleet van. Peugeot Boxer / Citroen Relay twin.",
+                module: "BSI (Delphi / Marelli Body Computer)",
+                location: "Driver's Footwell — main interior fuse box (RHD UK Driver's knee area).",
+                access: "Remove lower dashboard fuse cover (2x thumbscrews) and 10mm BSI retention bolts.",
+                risk: "HIGH RISK — Precoding ID46 / Megamos 48 Transponder Required",
+                protocol: "Read BSI EEPROM via bench/OBD to extract PIN and 6-byte component key. Precode ID46/Megamos 48 chip before performing OBD key learn.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2021+ (Series 8 / New Ducato - FCA / Stellantis)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Latest Stellantis electrical architecture. Smart Key & Flip Key options.",
+                module: "New Gen Delphi BSI / Gateway",
+                location: "Driver's Footwell fuse box assembly.",
+                access: "Remove lower steering column / fuse trim cover.",
+                risk: "HIGH — Stellantis Security Gateway (SGW)",
+                protocol: "Requires 12+8 SGW bypass adapter or online diagnostics token before reading PIN/learning keys via OBD.",
+                acGas: "R1234yf", acCap: "550g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        }
+    },
+	"Mitsubishi": {
+		"L200 (Triton)": {
+            "2006 - 2015 (Series 4)": {
+                lishi: "MIT11R", silca: "MIT11R", ic: "Card 772",
+                chip: "ID46 / PCF7936",
+                warning: "Very common trade vehicle. Ignition barrel gets heavy abuse and wafers can jam. If Lishi feels completely stuck, flush the lock heavily with GT85.",
+                module: "Immobiliser Box",
+                location: "Behind the ignition barrel / lower driver's steering column shroud.",
+                access: "Remove the lower steering column plastics if direct access is needed, but OBD is standard.",
+                risk: "LOW RISK",
+                protocol: "Standard OBD PIN-less transponder programming. Remote programs manually via diagnostic tool or on-board procedure.",
+                acGas: "R134a", acCap: "520g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2015 - 2019 (Series 5)": {
+                lishi: "MIT11R / HU87", silca: "MIT11R / HU133R", ic: "Card 772 / 996",
+                chip: "ID46 (PCF7936) or ID47 / 8A Smart",
+                warning: "Check the blade carefully! Some Series 5 models transitioned to the HU87/HU133R profile (similar to Suzuki).",
+                module: "KOS (Keyless Operation System) / ETACS",
+                location: "Behind the glovebox on the passenger side.",
+                access: "Standard OBD access.",
+                risk: "MODERATE",
+                protocol: "Extract PIN/Password via OBD. If it's a smart key, keep the fob inside the cabin during the learning cycle.",
+                acGas: "R134a / R1234yf", acCap: "520g ± 20g", acOil: "PAG 46", acNote: "2017+ models generally use R1234yf."
+            }
+        },
+        "Shogun / Pajero": {
+            "2006 - 2019 (MK4)": {
+                lishi: "MIT11R", silca: "MIT11R", ic: "Card 772",
+                chip: "ID46 / PCF7936",
+                warning: "Solid, old-school system. Keys are often two-button remotes with the transponder chip separated inside the plastic casing.",
+                module: "Immobiliser Box",
+                location: "Driver's side dashboard / around the ignition cylinder.",
+                access: "Standard OBD access.",
+                risk: "LOW RISK",
+                protocol: "OBD PIN-less programming. If OBD fails, check the diagnostic fuses.",
+                acGas: "R134a", acCap: "650g ± 20g (Single) / 850g (Dual)", acOil: "PAG 46", acNote: "Check if the vehicle has rear A/C (dual system) before filling; capacities differ significantly."
+            }
+        },
+        "Outlander / Outlander PHEV": {
+            "2013 - 2021 (MK3)": {
+                lishi: "MIT11R", silca: "MIT11R", ic: "Card 772",
+                chip: "ID46 / PCF7952 (Smart Proximity)",
+                warning: "🛑 HIGH VOLTAGE HYBRID (PHEV models). Twist-start or push-button. Emergency blade is concealed inside the smart fob.",
+                module: "KOS ECU (Smart System)",
+                location: "Deep behind the glovebox / passenger A-pillar.",
+                access: "Standard OBD access.",
+                risk: "MODERATE — KOS Syncing",
+                protocol: "Standard OBD programming for smart keys. Ensure vehicle is completely powered down (not in 'Ready' mode) before initiating comms.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 20g", acOil: "ND-Oil 11 (POE)", acNote: "🛑 PHEV STRICTLY REQUIRES POE NON-CONDUCTIVE OIL! When a compressor is installed at the factory, it contains 70 mL of compressor oil. Do not use PAG oil, or it will short the high-voltage compressor!"
+            }
+        },
+        "ASX": {
+            "2010 - 2021": {
+                lishi: "MIT11R", silca: "MIT11R", ic: "Card 772",
+                chip: "ID46 / PCF7936 (Blade) or PCF7952 (Smart)",
+                warning: "Shared architecture with the Outlander. Very straightforward system.",
+                module: "ETACS / KOS",
+                location: "Driver's side lower dashboard / passenger glovebox.",
+                access: "Standard OBD access.",
+                risk: "LOW RISK",
+                protocol: "OBD programming. Smart key models use a slot in the glovebox or require holding the fob to the start button if the battery is dead.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            }
+        },
+        "Colt": {
+            "2004 - 2012 (MK6)": {
+                lishi: "MIT11R", silca: "MIT11R", ic: "Card 772",
+                chip: "ID46 / PCF7936",
+                warning: "Very simple system, but ensure you have the correct MIT11R profile blade, not the standard MIT8.",
+                module: "Immobiliser Box",
+                location: "Around the ignition barrel / lower driver dashboard.",
+                access: "Standard OBD access.",
+                risk: "LOW RISK",
+                protocol: "Standard OBD PIN-less or default PIN transponder programming.",
+                acGas: "R134a", acCap: "430g ± 20g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            }
+        },
+        "Outlander": {
+            "2007 - 2012 (MK2)": {
+                lishi: "MIT11R", silca: "MIT11R", ic: "Card 772",
+                chip: "ID46 / PCF7936 (Blade) or PCF7952 (Smart)",
+                warning: "Twist-start ignition on smart key models. Emergency blade concealed in fob.",
+                module: "KOS (Keyless Operation System)",
+                location: "Behind glovebox or lower passenger dashboard.",
+                access: "Standard OBD access.",
+                risk: "LOW RISK",
+                protocol: "Standard OBD programming for both standard transponder and KOS smart keys.",
+                acGas: "R134a", acCap: "500g ± 20g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            }
+        }
+    },
+    "Vauxhall / Opel": {
+        "Corsa": { 
+            "2006 - 2019 (Corsa D / Corsa E - GM Platform)": { 
+                lishi: "HU100", silca: "HU100", ic: "Card 1097", 
+                chip: "ID46 (PCF7937 / GM 46)",
+                warning: "GM 8-cut 2-track laser profile.",
+                module: "BCM (Body Control Module — GM)",
+                location: "Driver's Footwell behind light switch panel OR Passenger Glovebox area.",
+                access: "Remove lower dash trim shroud (3x T20 Torx). BCM is integrated with main interior fuse board.",
+                risk: "LOW / MODERATE — 4-Digit Security Code Required",
+                protocol: "Read 4-digit Security PIN via OBD (Autel / OBDSTAR / G-Scan) or read EEPROM (24C16 / 95160) from BCM/IPC dump. Program remote key via OBD.",
+                acGas: "R134a / R1234yf", acCap: "420g ± 20g", acOil: "PAG 46", acNote: "2016+ Corsa E uses R1234yf."
+            },
+            "2020+ (Corsa F - Stellantis CMP Platform)": { 
+                lishi: "HU83 / VA2", silca: "VA2", ic: "Card 1310", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "⚠️ Stellantis transition! Uses French HU83/VA2 keyway and PSA BSI, NOT GM HU100.",
+                module: "Stellantis BSI / Delphi Unit",
+                location: "Driver's Footwell lower fuse box area.",
+                access: "Remove lower dash fuse cover turn-clips.",
+                risk: "MODERATE / HIGH — Economy Mode & CAN Gateway Protection",
+                protocol: "Ensure Economy Mode is OFF. Read 4-digit PSA PIN via OBD and pair remote fob.",
+                acGas: "R1234yf", acCap: "430g ± 15g", acOil: "PAG 46", acNote: "Corsa-e (EV) requires POE oil."
+            }
+        },
+        "Astra / Insignia / Mokka": { 
+            "2009 - 2021 (Astra J / Astra K / Insignia / Mokka X - GM)": { 
+                lishi: "HU100", silca: "HU100", ic: "Card 1097",
+                chip: "ID46 (PCF7937 / GM 46)",
+                module: "BCM (Body Control Module — GM)",
+                location: "Passenger Footwell lower side kick panel / under glovebox.",
+                access: "Unclip passenger kick panel trim. Multi-plug GM BCM.",
+                risk: "MODERATE — 4-Digit Security PIN & 30-Min Lockout Timer",
+                protocol: "Extract 4-digit PIN via OBD. 🛑 If wrong PIN is entered 3 times, BCM enters a 30-minute security lock timer!",
+                acGas: "R134a / R1234yf", acCap: "500g - 600g", acOil: "PAG 46", acNote: "Post-2016 Astra K / Insignia B use R1234yf."
+            },
+            "2021+ (Astra L / Mokka MK2 - Stellantis EMP2/CMP)": { 
+                lishi: "HU83 / VA2 / HU136", silca: "VA2", ic: "Card 1310", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Stellantis platform share (Peugeot 308 / 2008 twin).",
+                module: "Stellantis BSI & Gateway",
+                location: "Driver's Footwell lower dash fuse carrier.",
+                access: "Unclip lower column trim.",
+                risk: "HIGH — Stellantis Security Gateway",
+                protocol: "Requires active Security Gateway bypass harness or token for OBD key programming.",
+                acGas: "R1234yf", acCap: "450g", acOil: "PAG 46", acNote: "PHEV/EV models use POE oil."
+            }
+        },
+		"Zafira": {
+            "2005 - 2014 (Zafira B)": {
+                lishi: "HU100", silca: "HU100", ic: "Card 1097",
+                chip: "ID46 / PCF7941",
+                warning: "Older GM HU100 lock. Prone to wafer wear. Requires 4-digit Security PIN.",
+                module: "CIM (Column Integration Module)",
+                location: "Behind the steering wheel.",
+                access: "Standard OBD access. PIN pull possible via OBD from display or CIM.",
+                risk: "LOW RISK",
+                protocol: "Extract PIN via OBD, then program keys. Remote syncs automatically during programming.",
+                acGas: "R134a", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2011 - 2019 (Zafira Tourer C)": {
+                lishi: "HU100", silca: "HU100", ic: "Card 1097",
+                chip: "ID46 (PCF7941) or ID47 (Smart)",
+                warning: "GM Global A Platform. Do not use second-hand keys unless unlocked.",
+                module: "BCM",
+                location: "Passenger Footwell / Centre Console Area.",
+                access: "Standard OBD access.",
+                risk: "MODERATE — 10 Minute Wait Time",
+                protocol: "Extract PIN via OBD. Programming may require a 10 to 12-minute security wait.",
+                acGas: "R134a / R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "Pre-2016 usually R134a, 2016+ uses R1234yf."
+            }
+		},
+        "Vivaro / Combo / Movano": { 
+            "2001 - 2014 (Vivaro A - Renault Trafic MK2 Twin)": { 
+                lishi: "NE73", silca: "NE73", ic: "Card 584",
+                chip: "ID46 (PCF7936 / Renault)",
+                module: "UCH (Under Dash Control Unit — Renault)",
+                location: "Driver's Footwell lower dashboard near steering column.",
+                access: "Remove lower dash trim panel (T20 Torx).",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN read and key programming.",
+                acGas: "R134a", acCap: "700g", acOil: "PAG 46", acNote: "R134a standard."
+            },
+            "2014 - 2019 (Vivaro B - Renault Trafic MK3 Twin)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240",
+                chip: "ID46 / PCF7961 (Renault Hands-Free)",
+                module: "UCH / Hands-Free Module",
+                location: "Passenger Footwell behind upper glovebox / fuse block.",
+                access: "Remove glovebox liner (4x T20 Torx).",
+                risk: "HIGH RISK — ISK PIN & All Keys Erased Hazard",
+                protocol: "🛑 ALL existing keys/cards are erased during key learning! Ensure all spare keys are present before programming.",
+                acGas: "R134a / R1234yf", acCap: "550g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2019+ (Vivaro C / Combo E / Movano C - Stellantis Platform)": { 
+                lishi: "HU83 / VA2 / SIP22", silca: "VA2 / SIP22", ic: "Card 1310 / 1137", 
+                chip: "HITAG AES / 4A Smart (Vivaro/Combo) / ID46 Precode (Movano)",
+                warning: "⚠️ Vivaro/Combo use PSA HU83/VA2. Movano C (2021+) is a Fiat Ducato twin (SIP22)!",
+                module: "Stellantis BSI (Vivaro/Combo) OR Delphi BSI (Movano C)",
+                location: "Passenger Footwell (Vivaro/Combo) OR Driver's Footwell (Movano C).",
+                access: "Drop glovebox (PSA) or remove lower driver's fuse cover (Fiat).",
+                risk: "MODERATE / HIGH — Check Brand Architecture",
+                protocol: "Vivaro/Combo: PSA OBD PIN read. Movano C: Fiat transponder precoding required before OBD learn!",
+                acGas: "R1234yf", acCap: "450g - 550g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        }
+    },
+    "Alfa Romeo": {
+        "Giulia / Stelvio": { 
+            "2016+ (952 / 949)": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137", 
+                chip: "HITAG AES / 4A Smart Proximity",
+                warning: "Check emergency blade concealed in smart key fob.",
+                module: "BSI / RFHUB Keyless Module",
+                location: "Passenger Footwell kick panel / under glovebox.",
+                access: "Remove passenger footwell kick panel trim.",
+                risk: "MODERATE / HIGH — FCA Security Gateway (2018+)",
+                protocol: "2018+ models require 12+8 Security Gateway bypass cable connected to BSI/SGW loom before OBD PIN read/programming.",
+                acGas: "R1234yf", acCap: "500g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Giulietta / MiTo": { 
+            "2008 - 2020": { 
+                lishi: "SIP22", silca: "SIP22", ic: "Card 1137",
+                chip: "ID46 (PCF7936 / Megamos 48 Precode)",
+                module: "BSI (Delphi / Marelli Body Computer)",
+                location: "Driver's Footwell interior fuse box.",
+                access: "Remove lower dashboard fuse cover.",
+                risk: "HIGH RISK — Precoding Transponder Required",
+                protocol: "Read BSI EEPROM via bench/OBD to extract PIN and 6-byte component key. Precode ID46 transponder before OBD learning.",
+                acGas: "R134a", acCap: "450g - 500g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }
+        },
+        "Tonale / Junior": { 
+            "2022+ (EV & Hybrid - Stellantis Platform)": { 
+                lishi: "SIP22 / HU83", silca: "SIP22", ic: "Card 1137", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Stellantis platform share—check SIP22 vs French HU83 keyway.",
+                module: "Stellantis BSI / Gateway",
+                location: "Driver's Footwell lower fuse carrier.",
+                access: "Remove lower column trim.",
+                risk: "HIGH — Stellantis Security Gateway",
+                protocol: "Requires active SGW bypass or token for OBD key programming.",
+                acGas: "R1234yf", acCap: "450g", acOil: "PAG 46", acNote: "Hybrid/EV models use POE non-conductive oil."
+            }
+        }
+    },
+    "DS Automobiles": {
+        "DS 3 / DS 3 Crossback / DS 7 Crossback": { 
+            "2010 - 2018 (DS 3 Classic - PSA)": { 
+                lishi: "HU83 / VA2", silca: "VA2 / HU83", ic: "Card 1310 / 1030",
+                chip: "ID46 (PCF7936 / PCF7941 PSA)",
+                module: "BSI (Valeo / Johnson Controls)",
+                location: "Passenger Footwell Fuse Box behind glovebox.",
+                access: "Drop glovebox door down.",
+                risk: "MODERATE",
+                protocol: "Standard OBD PIN extraction and key programming.",
+                acGas: "R134a", acCap: "450g", acOil: "PAG 46", acNote: "R134a standard."
+            },
+            "2018+ (DS 3 Crossback / DS 7 / DS 9 - Stellantis EMP2/CMP)": { 
+                lishi: "HU83 / VA2 / HU136", silca: "VA2", ic: "Card 1310", 
+                chip: "HITAG AES / 4A Smart",
+                warning: "Emergency blade concealed in luxury smart key fob.",
+                module: "Stellantis BSI & Gateway",
+                location: "Driver's Footwell lower dash fuse carrier.",
+                access: "Unclip lower steering column trim panel.",
+                risk: "MODERATE / HIGH — Eco Mode & Gateway Protection",
+                protocol: "Keep battery voltage >13.0V. Read PIN via OBD and pair smart fob.",
+                acGas: "R1234yf", acCap: "450g ± 15g", acOil: "PAG 46", acNote: "E-Tense PHEV/EV models use POE oil."
+            }
+        }
+    },
+    "Toyota": {
+        "Yaris": { 
+            "2006 - 2020 (MK2 / MK3)": { 
+                lishi: "TOY43 / VA2", silca: "TOY43", ic: "Card 802", 
+                chip: "4D67 / 4D70 / 4G (80-Bit)",
+                warning: "Check if keyway is standard 8-cut TOY43 or French VA2 profile.",
+                module: "Steering Column / Dash IMMO Box",
+                location: "Behind steering column shroud or lower dashboard trim.",
+                access: "Remove 3x screws holding steering column plastic covers.",
+                risk: "LOW / MODERATE — 4D / 4G Transponder System",
+                protocol: "Standard OBD key programming (4D / 4G chip). EEPROM reset required on early AKL if programmer cannot bypass.",
+                acGas: "R134a / R1234yf", acCap: "370g ± 30g", acOil: "PAG 46", acNote: "Small capacity system—do not overfill!"
+            },
+            "2020+ (MK4 - TNGA Platform)": { 
+                lishi: "TOY48 / Toyota 2018+", silca: "TOY48", ic: "Card 1122", 
+                chip: "8A / 4A Smart Proximity (TNGA)",
+                warning: "⚠️ TNGA Platform (4A / AA Smart System). Security Gateway (SGW) Protection!",
+                module: "Smart Key ECU (Certification Box)",
+                location: "Behind Glovebox Assembly — mounted vertically on passenger firewall.",
+                access: "Drop glovebox door fully down (release dampener arm) to expose Smart ECU.",
+                risk: "HIGH RISK — Security Gateway (SGW) Bypass Harness Required",
+                protocol: "Connect dedicated Toyota SGW bypass cable directly to Smart Key ECU before attempting OBD key learn or AKL reset.",
+                acGas: "R1234yf", acCap: "410g", acOil: "PAG 46 / POE", acNote: "Yaris Hybrid models require POE non-conductive compressor oil!"
+            }
+        },
+        "Corolla / Auris": { 
+            "2007 - 2018 (Auris / Corolla E150 / E180)": { 
+                lishi: "TOY43", silca: "TOY43", ic: "Card 802",
+                chip: "4D67 / 4G / 8A Smart Proximity",
+                module: "Smart Key ECU / IMMO Module",
+                location: "Behind Glovebox Assembly / Centre Stack.",
+                access: "Unclip glovebox dampener arm and drop door down.",
+                risk: "MODERATE — 8A Smart Key Architecture",
+                protocol: "OBD reset via master key emulator or PIN calculation. Pair proximity fob.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 30g", acOil: "PAG 46 / POE", acNote: "Hybrid models require POE oil."
+            },
+            "2018+ (Corolla E210 - TNGA)": { 
+                lishi: "TOY43 / TOY48", silca: "TOY48", ic: "Card 950 / 1122", 
+                chip: "8A / 4A Smart Proximity (TNGA)",
+                warning: "⚠️ TNGA Platform. Dedicated SGW Bypass Harness Required!",
+                module: "Smart Key ECU (Cert Box)",
+                location: "Behind Glovebox Assembly on upper passenger bulkhead.",
+                access: "Drop glovebox assembly and unclip lower passenger knee trim.",
+                risk: "HIGH RISK — 8A / 4A Smart System SGW Protection",
+                protocol: "Attach SGW bypass harness directly to Smart ECU plugs. Execute OBD smart key add/reset.",
+                acGas: "R1234yf", acCap: "470g ± 15g", acOil: "POE", acNote: "All UK Corolla Hybrids require POE oil."
+            }
+        },
+        "RAV4": { 
+            "2013 - 2018 (XA40)": { 
+                lishi: "TOY48", silca: "TOY48", ic: "Card 950",
+                chip: "8A Smart Proximity",
+                module: "Smart Key ECU",
+                location: "Behind Glovebox Assembly.",
+                access: "Unclip glovebox dampener arm.",
+                risk: "MODERATE — 8A Smart System",
+                protocol: "OBD reset via master key emulator.",
+                acGas: "R134a / R1234yf", acCap: "570g", acOil: "PAG 46 / POE", acNote: "Hybrid models require POE oil."
+            },
+            "2018+ (XA50 - TNGA)": { 
+                lishi: "Toyota 2018+ / TOY48", silca: "TOY48", ic: "Card 1122", 
+                chip: "8A / 4A Smart Proximity (TNGA)",
+                warning: "TNGA Platform smart key system.",
+                module: "Smart Key ECU (Cert Box)",
+                location: "Behind Glovebox / Upper Passenger Dash.",
+                access: "Drop glovebox and lower passenger trim shroud.",
+                risk: "HIGH RISK — Gateway Security Protection",
+                protocol: "Attach SGW bypass cable to Smart ECU before running OBD key programming.",
+                acGas: "R1234yf", acCap: "500g", acOil: "POE", acNote: "PHEV / Hybrid models use POE compressor oil."
+            }
+        },
+        "Hilux": { 
+            "2005 - 2015 (MK6 / MK7)": { 
+                lishi: "TOY43", silca: "TOY43", ic: "Card 802",
+                chip: "4D67 / 4D70 / 4G (80-Bit)",
+                module: "IMMO Box",
+                location: "Behind heater core / centre dashboard stack.",
+                access: "Remove lower dashboard trim panels.",
+                risk: "LOW / MODERATE",
+                protocol: "OBD key learn (4D / 4G chip).",
+                acGas: "R134a", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2015+ (MK8 / MK9)": { 
+                lishi: "TOY43 / TOY48", silca: "TOY48", ic: "Card 950",
+                chip: "8A / 4A Smart Proximity",
+                module: "Smart Key ECU / BCM",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox door.",
+                risk: "MODERATE — 8A Blade & Smart Fob Options",
+                protocol: "OBD key learn or smart key reset.",
+                acGas: "R134a / R1234yf", acCap: "580g", acOil: "PAG 46", acNote: "2017+ models transitioned to R1234yf."
+            }
+        },
+        "Aygo": { 
+            "2005 - 2021 (MK1 / MK2)": { 
+                lishi: "VA2", silca: "VA2", ic: "Card 1310", 
+                chip: "4D67 / ID4E (Toyota IMMO)",
+                warning: "⚠️ Citroen C1 / Peugeot 108 platform twin! Toyota IMMO architecture.",
+                module: "Immobiliser Box (Toyota ID4D / ID4E System)",
+                location: "Behind instrument binnacle / upper dashboard binnacle.",
+                access: "Remove 2x Torx screws holding instrument cluster shroud.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD Toyota key learn or EEPROM dump reset on AKL.",
+                acGas: "R134a / R1234yf", acCap: "400g ± 15g", acOil: "PAG 46", acNote: "Small capacity system."
+            }
+        }
+    },
+	"Lexus": {
+        "IS / GS / RX": {
+            "2005 - 2013": {
+                lishi: "TOY48 / TOY40", silca: "TOY48", ic: "Card 1122",
+                chip: "4D68 / Toyota 71 / Toyota 94 (Smart)",
+                warning: "High-security 4-track laser key. Older locks can be heavily worn.",
+                module: "Smart Key ECU / Certification ECU",
+                location: "Passenger side, often high up behind the glovebox or deep in the boot on some RX models.",
+                access: "OBD access is standard. Smart reset requires a 16-minute wait.",
+                risk: "MODERATE — 16 Minute Immobiliser Reset",
+                protocol: "If all keys lost, perform OBD Smart ECU reset (16 minutes). Add key requires one working master key.",
+                acGas: "R134a", acCap: "450g - 600g (Model Dependant)", acOil: "ND-Oil 8 (PAG) / ND-Oil 11 (POE)", acNote: "🛑 HYBRID MODELS (RX400h/RX450h) MUST USE POE NON-CONDUCTIVE OIL!"
+            }
+        },
+        "CT200h": {
+            "2011 - 2020": {
+                lishi: "TOY48 / TOY2", silca: "TOY48", ic: "Card 1122",
+                chip: "8A / Toyota H (Smart) or Page 1 98",
+                warning: "🛑 Hybrid vehicle! High voltage systems active. TOY2 Lishi may be required for late models.",
+                module: "Smart Key ECU",
+                location: "Behind the glovebox assembly.",
+                access: "Drop the glovebox for direct access if gateway bypass is needed on 2018+.",
+                risk: "MODERATE — Hybrid Architecture",
+                protocol: "OBD programming. Hold logo of the smart fob to the Start/Stop button when prompted.",
+                acGas: "R134a / R1234yf", acCap: "470g ± 15g", acOil: "ND-Oil 11 (POE)", acNote: "🛑 STRICTLY POE NON-CONDUCTIVE OIL ONLY! Using PAG oil will destroy the high-voltage hybrid compressor."
+            }
+        }
+    },
+    "Nissan": {
+        "Qashqai": { 
+            "2006 - 2013 (J10)": { 
+                lishi: "NSN14", silca: "NSN14", ic: "Card 890", 
+                chip: "ID46 (PCF7936 / Nissan)",
+                warning: "4-digit BCM PIN conversion required.",
+                module: "BCM (Body Control Module)",
+                location: "Passenger Footwell — Behind glovebox fuse box area.",
+                access: "Drop glovebox assembly.",
+                risk: "LOW / MODERATE — 4-Digit BCM PIN Code",
+                protocol: "Convert BCM serial/barcode to 4-digit PIN, program remote/smart key via OBD.",
+                acGas: "R134a", acCap: "500g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2013 - 2021 (J11)": { 
+                lishi: "NSN14", silca: "NSN14", ic: "Card 890", 
+                chip: "HITAG AES / 4A Proximity (Nissan)",
+                warning: "20-digit rolling PIN code required for smart key learning.",
+                module: "BCM / Hands-Free Unit",
+                location: "Passenger Footwell upper kick panel.",
+                access: "Unclip passenger lower felt cover.",
+                risk: "MODERATE / HIGH — 20-Digit Rolling PIN Code",
+                protocol: "Calculate 20-digit PIN via OBD token/online server, pair smart fob.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 15g", acOil: "PAG 46", acNote: "2016+ models use R1234yf. Check high-pressure port near O/S headlight."
+            },
+            "2021+ (J12)": { 
+                lishi: "DAT17 / NSN14", silca: "NSN14", ic: "Card 890 / 1350", 
+                chip: "HITAG AES / 4A Proximity (SGW)",
+                warning: "⚠️ Nissan / Renault CMF-C Platform. Security Gateway (SGW) Protected!",
+                module: "BCM & Gateway Module",
+                location: "Driver / Passenger Footwell integrated module.",
+                access: "Remove lower dashboard trim shroud.",
+                risk: "HIGH RISK — Nissan Security Gateway (SGW)",
+                protocol: "Requires 16+32 SGW bypass adapter connected to BCM loom or active Nissan server token for OBD programming.",
+                acGas: "R1234yf", acCap: "430g ± 15g", acOil: "PAG 46 / POE", acNote: "e-POWER Hybrid models require POE non-conductive oil!"
+            }
+        },
+        "Juke": { 
+            "2010 - 2019 (F15)": { 
+                lishi: "NSN14", silca: "NSN14", ic: "Card 890",
+                chip: "ID46 (PCF7936 / Nissan)",
+                module: "BCM / Intelligent Key ECU",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — 4-Digit / 20-Digit PIN",
+                protocol: "OBD PIN extraction and smart key programming.",
+                acGas: "R134a / R1234yf", acCap: "475g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2019+ (F16)": { 
+                lishi: "NSN14", silca: "NSN14", ic: "Card 890",
+                chip: "HITAG AES / 4A Proximity",
+                module: "BCM & Gateway",
+                location: "Passenger Footwell upper trim.",
+                access: "Remove lower dash trim cover.",
+                risk: "HIGH — Gateway Security",
+                protocol: "OBD token PIN read with SGW bypass adapter.",
+                acGas: "R1234yf", acCap: "430g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Navara": { 
+            "2005 - 2015 (D40)": { 
+                lishi: "NSN14", silca: "NSN14", ic: "Card 890",
+                chip: "ID46 (PCF7936 / Nissan)",
+                module: "BCM",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox.",
+                risk: "LOW / MODERATE — 4-Digit PIN",
+                protocol: "Convert BCM barcode to PIN and program via OBD.",
+                acGas: "R134a", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "High-capacity truck system."
+            },
+            "2015+ (NP300 / D23)": { 
+                lishi: "NSN14", silca: "NSN14", ic: "Card 890",
+                chip: "HITAG AES / 4A Proximity",
+                module: "BCM / Smart Unit",
+                location: "Behind lower glovebox.",
+                access: "Drop glovebox.",
+                risk: "MODERATE — 20-Digit PIN Code",
+                protocol: "Read PIN via OBD and program blade/smart key.",
+                acGas: "R134a / R1234yf", acCap: "550g", acOil: "PAG 46", acNote: "R1234yf on post-2017 models."
+            }
+        }
+    },
+    "Hyundai": {
+        "i10 / Grand i10": { 
+            "2007 - 2013 (MK1)": { 
+                lishi: "HYN11 / HY15", silca: "HY15", ic: "Card 1136",
+                chip: "ID46 (PCF7936 / Hyundai)",
+                module: "Immobiliser Box", location: "Behind steering column.", access: "Unclip lower column shroud.",
+                risk: "LOW", protocol: "Standard OBD key programming.",
+                acGas: "R134a", acCap: "450g", acOil: "PAG 46", acNote: "R134a system."
+            },
+            "2013 - 2019 (MK2)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "ID46 / 60-Bit / 8A Smart",
+                module: "Smart Key / Immo Box",
+                location: "Behind steering column / lower dash.",
+                access: "Remove lower knee bolster trim (2x T20 Torx, plastic clips).",
+                risk: "LOW / MODERATE — 6-Digit PIN Code Required",
+                protocol: "Read 6-digit PIN via OBD or VIN lookup. Program remote key via OBD.",
+                acGas: "R134a / R1234yf", acCap: "400g ± 25g", acOil: "PAG 46", acNote: "Post-2017 models use R1234yf."
+            },
+            "2019+ (MK3)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                module: "BCM / Smart Key Unit",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox stops.",
+                risk: "MODERATE — 6-Digit PIN Code",
+                protocol: "Read PIN via OBD and pair remote/smart fob.",
+                acGas: "R1234yf", acCap: "380g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "i30 / i30 N": { 
+            "2012 - 2016 (GD)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "ID46 / 60-Bit / 8A Smart",
+                module: "Smart Key Unit (SMK) / Immo Box",
+                location: "Behind centre console / lower dash.",
+                access: "Remove lower driver knee trim.",
+                risk: "MODERATE — 6-Digit PIN Code",
+                protocol: "OBD PIN extraction and key learn.",
+                acGas: "R134a", acCap: "500g", acOil: "PAG 46", acNote: "R134a system."
+            },
+            "2017+ (PD)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                module: "Smart Key Unit (SMK)",
+                location: "Behind centre console stack.",
+                access: "Unclip lower dash side trim.",
+                risk: "MODERATE — 6-Digit PIN Code",
+                protocol: "Read PIN via OBD; hold smart fob against Start/Stop button during pairing cycle.",
+                acGas: "R1234yf", acCap: "480g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Kona / Ioniq": { 
+            "2017 - 2023": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200", 
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                warning: "Emergency blade concealed in key fob.",
+                module: "Smart Key Unit (SMK) / BCM",
+                location: "Behind glovebox / lower centre dash.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — 6-Digit PIN Code Required",
+                protocol: "Read PIN via OBD. Hold smart fob logo directly against Start/Stop button during pairing.",
+                acGas: "R1234yf", acCap: "450g ± 20g", acOil: "PAG 46 / POE", acNote: "Kona EV / Ioniq EV/PHEV models require POE non-conductive oil!"
+            }
+        },
+        "Tucson / Tuscon / ix35": { 
+            "2004 - 2009 (MK1 - JM)": { 
+                lishi: "HYN11", silca: "HY15 / HYN11", ic: "Card 1136", 
+                chip: "ID46 (PCF7936 / Hyundai)",
+                warning: "Classic 8-cut edge profile.",
+                module: "Immobiliser Box", location: "Behind ignition barrel / lower dash.", access: "Unclip steering column shroud.",
+                risk: "LOW", protocol: "Standard OBD key programming.",
+                acGas: "R134a", acCap: "510g", acOil: "PAG 46", acNote: "R134a system."
+            }, 
+            "2010 - 2015 (MK2 - LM / ix35)": { 
+                lishi: "HYN14R / HY15", silca: "HY15", ic: "Card 1136", 
+                chip: "ID46 / 60-Bit / 8A Smart",
+                warning: "Badged as ix35 in UK/Europe. Flat 8-cut profile.",
+                module: "Smart Key ECU / Immobiliser", location: "Behind centre console / glovebox.", access: "Drop glovebox assembly.",
+                risk: "LOW / MODERATE — 6-Digit PIN Required", protocol: "Extract PIN via OBD or VIN lookup.",
+                acGas: "R134a", acCap: "510g ± 25g", acOil: "PAG 46", acNote: "R134a system."
+            }, 
+            "2015 - 2020 (MK3 - TL)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200", 
+                chip: "8A Smart Proximity",
+                warning: "High-security laser track (Lishi K5 / KK10 compatible).",
+                module: "Smart Key Unit (SMK) / BCM", location: "Behind lower dashboard / centre stack.", access: "Remove lower knee bolster trim.",
+                risk: "MODERATE — 6-Digit PIN Code Required", protocol: "OBD PIN read, hold smart key logo directly against Start/Stop button.",
+                acGas: "R1234yf / R134a", acCap: "550g ± 25g", acOil: "PAG 46", acNote: "Transition years 2016-2017. Verify bonnet label."
+            }, 
+            "2021+ (MK4 - NX4)": { 
+                lishi: "HY22 / K9 V4", silca: "HY22", ic: "Card 1200", 
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                warning: "⚠️ Emergency blade in smart fob. Check for K9 V4 / KK12 internal track.",
+                module: "Integrated BCM / Smart Key Unit", location: "Behind glovebox / centre console.", access: "Drop glovebox assembly.",
+                risk: "MODERATE / HIGH — Latest Gen Smart Keyway", protocol: "OBD PIN read or online calculation, proximity inductive pairing.",
+                acGas: "R1234yf", acCap: "560g", acOil: "PAG 46", acNote: "R1234yf system standard."
+            } 
+        }
+    },
+    "Kia": {
+        "Sportage": { 
+            "2010 - 2015 (SL)": { 
+                lishi: "HYN14R / HY15", silca: "HY15", ic: "Card 1136",
+                chip: "ID46 / 60-Bit / 8A Smart",
+                module: "Smart Key ECU / Immo Box",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox stops.",
+                risk: "LOW / MODERATE — 6-Digit PIN Code",
+                protocol: "Extract PIN via OBD or VIN lookup.",
+                acGas: "R134a", acCap: "510g ± 25g", acOil: "PAG 46", acNote: "R134a system."
+            },
+            "2016 - 2021 (QL)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "8A Smart Proximity",
+                module: "Smart Key Unit (SMK)",
+                location: "Behind centre stack / lower dash.",
+                access: "Remove lower knee bolster trim.",
+                risk: "MODERATE — 6-Digit PIN Code Required",
+                protocol: "OBD PIN read; hold smart key directly against Start/Stop button during pairing.",
+                acGas: "R1234yf / R134a", acCap: "550g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2021+ (NQ5)": { 
+                lishi: "HY22 / K9 V4", silca: "HY22", ic: "Card 1200", 
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                warning: "⚠️ Emergency blade in smart fob. Check for K9 V4 internal track profile.",
+                module: "Integrated BCM / Smart Key Unit",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE / HIGH — Latest Gen Smart System",
+                protocol: "OBD PIN read, proximity inductive pairing against Start/Stop button.",
+                acGas: "R1234yf", acCap: "560g", acOil: "PAG 46", acNote: "R1234yf system standard."
+            }
+        },
+        "Ceed / XCeed": { 
+            "2012 - 2018 (JD)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "ID46 / 60-Bit / 8A Smart",
+                module: "Smart Key Unit / Immo Box",
+                location: "Behind glovebox panel.",
+                access: "Drop glovebox stops.",
+                risk: "MODERATE — 6-Digit PIN Code",
+                protocol: "OBD PIN read and key learn.",
+                acGas: "R134a", acCap: "500g", acOil: "PAG 46", acNote: "R134a system."
+            },
+            "2018+ (CD)": { 
+                lishi: "HY22", silca: "HY22", ic: "Card 1200",
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                module: "Smart Key Unit",
+                location: "Behind lower knee bolster trim.",
+                access: "Remove lower driver trim (2x 10mm bolts).",
+                risk: "MODERATE — 6-Digit PIN Code",
+                protocol: "OBD PIN read; inductive pairing against Start button.",
+                acGas: "R1234yf", acCap: "480g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "EV6 / EV9": { 
+            "2021+": { 
+                lishi: "HY22 / K9 V4", silca: "HY22", ic: "Card 1200", 
+                chip: "8A Smart Proximity (HITAG 3 / AES)",
+                warning: "Latest Gen E-GMP Electric Platform. Uses HY22/K9 internal profile.",
+                module: "Smart Key Unit / IBU",
+                location: "Behind lower centre dashboard stack.",
+                access: "Remove lower dash side trim panel.",
+                risk: "MODERATE / HIGH — 6-Digit PIN & Inductive Pairing",
+                protocol: "OBD PIN read, hold smart key fob against Start/Stop button during pairing cycle.",
+                acGas: "R1234yf", acCap: "550g ± 20g", acOil: "POE", acNote: "🛑 Electric Vehicle! MUST use non-conductive POE compressor oil!"
+            }
+        }
+    },
+    "Mercedes-Benz": {
+        "C-Class": { 
+            "2007 - 2014 (W204)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971", 
+                chip: "BE / BGA Smart Fob (FBS3 IR)",
+                warning: "FBS3 Electronic Ignition Switch (EIS/EZS). IR password calculation required.",
+                module: "EZS / EIS (Electronic Ignition Switch — FBS3)",
+                location: "Main Dashboard — directly behind ignition key slot.",
+                access: "Unscrew outer EZS bezel ring using Mercedes Rose lock-ring tool. Remove lower driver knee bolster trim panel (3x T20 Torx).",
+                risk: "MODERATE — Password Calculation via IR / Bench Adapter",
+                protocol: "Connect to bench adapter (G-Box / VVDI MB / IM608). Perform IR password calculation, save EIS data, generate key file, and write to BE/Smart fob.",
+                acGas: "R134a", acCap: "590g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2014 - 2021 (W205)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971", 
+                chip: "FBS4 Dealer / Virgin Smart Fob",
+                warning: "⚠️ FBS4 Architecture! CANNOT be calculated on bench or OBD for All Keys Lost!",
+                module: "EZS / EIS (FBS4 System)",
+                location: "Main Dashboard behind ignition key slot.",
+                access: "Remove driver lower knee bolster and EZS outer retaining ring.",
+                risk: "HIGH RISK — FBS4 Dealer Lockout",
+                protocol: "🛑 FBS4 AKL requires ordering a factory-coded replacement key/EIS through authorized channels or specialist ECU/ISM cloning.",
+                acGas: "R134a / R1234yf", acCap: "630g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf. Check bonnet label."
+            }
+        },
+        "E-Class": { 
+            "2009 - 2016 (W212)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971",
+                chip: "BE / BGA Smart Fob (FBS3 IR)",
+                module: "EZS / EIS (FBS3 System)",
+                location: "Main Dashboard behind ignition key slot.",
+                access: "Release outer EZS bezel ring and lower dash trim shroud.",
+                risk: "MODERATE — FBS3 IR Password Calculation",
+                protocol: "Bench or OBD IR password reading supported. Generate key dump and personalize key via IR.",
+                acGas: "R134a", acCap: "590g ± 20g", acOil: "PAG 46", acNote: "4-zone rear climate models take 800g."
+            },
+            "2016 - 2023 (W213)": { 
+                lishi: "HU64 / HU136", silca: "HU64", ic: "Card 971 / 1420", 
+                chip: "FBS4 Dealer / Virgin Smart Fob",
+                warning: "FBS4 security architecture across all W213 models.",
+                module: "EZS / EIS (FBS4 System)",
+                location: "Main Dashboard behind Start/Stop button assembly.",
+                access: "Remove instrument/dash trim bezel.",
+                risk: "HIGH — FBS4 Security Lockout",
+                protocol: "No aftermarket AKL password calculation supported. Spare key addition requires working master key or dealer server authorization.",
+                acGas: "R1234yf", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. E300de PHEV models require POE non-conductive oil."
+            }
+        },
+        "A-Class / CLA / GLA": { 
+            "2012 - 2018 (W176 / C117 / X156 - FBS3 / FBS4)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971", 
+                chip: "BE Smart Fob (FBS3) / FBS4 Dealer",
+                warning: "⚠️ Transition models! Pre-2015 = FBS3 (Programmable). Post-2015 facelift = FBS4 (Locked).",
+                module: "EZS / EIS",
+                location: "Main Dashboard behind ignition slot.",
+                access: "Remove driver knee airbag / bolster panel.",
+                risk: "MODERATE / HIGH — Verify FBS Version First",
+                protocol: "Check EIS hash via OBD. If FBS3: extract IR password and program key. If FBS4: abort AKL unless dealer-authorized.",
+                acGas: "R134a / R1234yf", acCap: "650g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2018+ (W177 / C118 / H247 - New Shape)": { 
+                lishi: "HU64 / HU136", silca: "HU64", ic: "Card 971 / 1420",
+                chip: "FBS4 Dealer / Virgin Smart Fob",
+                module: "FBS4 EZS / BDC Gateway",
+                location: "Behind dashboard screen assembly.",
+                access: "Remove lower steering column shroud.",
+                risk: "HIGH — FBS4 & Security Gateway",
+                protocol: "Dealer or OEM-authorized token access required.",
+                acGas: "R1234yf", acCap: "580g ± 15g", acOil: "PAG 46", acNote: "A250e PHEV models require POE oil."
+            }
+        },
+        "Sprinter (Van)": { 
+            "2006 - 2018 (W906 - MK2 Sprinter)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971", 
+                chip: "BE / BGA Smart Fob (FBS3 IR)",
+                warning: "UK commercial fleet workhorse. Runs FBS3 EIS system.",
+                module: "EZS / EIS (Electronic Ignition Switch — FBS3)",
+                location: "Main Dashboard behind ignition key slot (RHD UK Driver's side).",
+                access: "Unscrew outer retaining bezel ring. Reach up from lower footwell pedal area to release EIS box.",
+                risk: "MODERATE — FBS3 Password Extraction",
+                protocol: "OBD IR password read supported on most W906 Sprinters. Bench read via G-Box/adapter if OBD password extraction times out.",
+                acGas: "R134a", acCap: "800g ± 30g", acOil: "PAG 46", acNote: "Dual-evaporator rear A/C models take 1190g fill weight!"
+            },
+            "2018+ (W907 / W910 - MK3 Sprinter)": { 
+                lishi: "HU64 / HU136", silca: "HU64", ic: "Card 971 / 1420", 
+                chip: "FBS4 Dealer / Virgin Smart Fob",
+                warning: "⚠️ FBS4 Architecture! Push-button start & slot-key variants.",
+                module: "FBS4 EZS / BCM",
+                location: "Main Dashboard behind ignition control panel.",
+                access: "Remove lower dashboard trim panels.",
+                risk: "HIGH — FBS4 Commercial Lockout",
+                protocol: "No direct OBD AKL programming. Spare keys require working key or OEM server commissioning.",
+                acGas: "R134a / R1234yf", acCap: "750g ± 25g", acOil: "PAG 46", acNote: "2019+ UK models use R1234yf. Check compressor label."
+            }
+        },
+        "Vito / V-Class (Van)": { 
+            "2003 - 2014 (W639 - MK2 Vito)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971",
+                chip: "BE / BGA Smart Fob (FBS3 IR)",
+                module: "EZS / EIS (FBS3 System)",
+                location: "Dashboard behind key slot.",
+                access: "Remove lower driver trim shroud.",
+                risk: "MODERATE — FBS3 Password Read",
+                protocol: "Extract IR password via OBD or bench adapter; program BE transponder fob.",
+                acGas: "R134a", acCap: "840g ± 20g", acOil: "PAG 46", acNote: "Rear climate control models take 1050g."
+            },
+            "2014+ (W447 - MK3 Vito / V-Class)": { 
+                lishi: "HU64", silca: "HU64", ic: "Card 971", 
+                chip: "BE Smart Fob (FBS3) / FBS4 Dealer",
+                warning: "⚠️ Early W447 (2014-2015) = FBS3. Post-2015 = FBS4 architecture.",
+                module: "EZS / EIS",
+                location: "Dashboard behind key slot.",
+                access: "Remove outer bezel ring and lower driver trim panel.",
+                risk: "MODERATE / HIGH — Verify FBS System",
+                protocol: "If FBS3: extract IR password and program key. If FBS4: dealer ordering or ECU/EIS cloning required.",
+                acGas: "R134a / R1234yf", acCap: "700g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf. eVito (EV) requires POE oil."
+            }
+        }
+    },
+    "Renault": {
+        "Trafic (Van)": { 
+            "2001 - 2014 (MK2 - X83)": { 
+                lishi: "NE73", silca: "NE73", ic: "Card 584", 
+                chip: "ID46 (PCF7936 / Renault)",
+                warning: "Shared British/French commercial platform (Vauxhall Vivaro A / Nissan Primastar).",
+                module: "UCH (Under Dash Control Unit)",
+                location: "Driver's Footwell — Lower dashboard near steering column (RHD UK Driver's side).",
+                access: "Remove lower steering column shroud and lower fuse box trim panel (T20 Torx).",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN extraction and key programming. Remote pairs automatically with transponder.",
+                acGas: "R134a", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "Standard R134a commercial system."
+            },
+            "2014 - 2023 (MK3 - X82)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240", 
+                chip: "ID46 / PCF7961 (Renault Hands-Free)",
+                warning: "⚠️ Vauxhall Vivaro B / Nissan NV300 twin platform. Runs Renault Hands-Free / Blade UCH.",
+                module: "UCH / Hands-Free Card Receiver",
+                location: "Passenger Footwell — behind upper glovebox / fuse block.",
+                access: "Remove glovebox liner (4x T20 Torx screws). Module mounted vertically.",
+                risk: "HIGH RISK — ISK PIN & All Keys Erased Hazard",
+                protocol: "🛑 ALL existing keys/cards are erased during key learning! Extract 20-digit ISK / PIN via OBD. Ensure all spare keys are on site before starting.",
+                acGas: "R134a / R1234yf", acCap: "550g ± 20g", acOil: "PAG 46", acNote: "2016+ UK models use R1234yf. Rear A/C takes 850g."
+            }
+        },
+        "Master (Van)": { 
+            "2010 - 2023 (MK3 - X62)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240", 
+                chip: "ID46 / PCF7961 (Renault Precode)",
+                warning: "Vauxhall Movano B / Nissan NV400 twin platform.",
+                module: "UCH (Under Dash Control Unit)",
+                location: "Driver's Footwell behind lower dashboard fuse cover.",
+                access: "Unclip fuse cover below steering wheel. Multi-plug UCH box.",
+                risk: "MODERATE — Precoding Remote Blade Key",
+                protocol: "Read PIN/ISK via OBD. Precode PCF7961 / ID46 transponder remote before learning.",
+                acGas: "R134a / R1234yf", acCap: "650g ± 20g", acOil: "PAG 46", acNote: "2017+ models transitioned to R1234yf."
+            }
+        },
+        "Clio": { 
+            "2005 - 2012 (MK3)": { 
+                lishi: "VA2", silca: "VA2", ic: "Card 1310",
+                chip: "ID46 (PCF7936 / PCF7941 Renault)",
+                module: "UCH / Steering Column Lock (ESL)",
+                location: "Passenger Footwell behind glovebox area.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — ESL Pairing",
+                protocol: "Extract PIN via OBD. Program 3-button remote card or blade key.",
+                acGas: "R134a", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2012 - 2019 (MK4 - X98)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240", 
+                chip: "ID46 / PCF7952 (Renault Smart Card)",
+                warning: "Slot-in Hands-Free Smart Card system.",
+                module: "HFM (Hands-Free Module) / UCH",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Remove glovebox liner (T20 Torx).",
+                risk: "HIGH — Card Erasure on Programming",
+                protocol: "Extract ISK via OBD token calculation. Precode aftermarket card to ISK before learning. All absent cards will be deleted!",
+                acGas: "R134a / R1234yf", acCap: "430g ± 15g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2019+ (MK5 - CMF-B Platform)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240",
+                chip: "HITAG AES / 4A Smart Card",
+                module: "New Gen HFM / Security Gateway",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH — Gateway Protection & ISK Server Token",
+                protocol: "Requires SGW bypass adapter or official Renault server token to read ISK/PIN.",
+                acGas: "R1234yf", acCap: "430g ± 15g", acOil: "PAG 46", acNote: "E-Tech hybrid models use POE non-conductive oil."
+            }
+        },
+        "Megane / Scenic": { 
+            "2008 - 2016 (MK3 - X95)": { 
+                lishi: "VA2", silca: "VA2", ic: "Card 1310",
+                chip: "ID46 / PCF7952 (Renault Smart Card)",
+                module: "UCH / Hands-Free Slot",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Remove glovebox retaining screws.",
+                risk: "MODERATE — Card Precoding Required",
+                protocol: "Extract ISK via OBD, precode ID46 card, execute OBD key learn.",
+                acGas: "R134a", acCap: "500g ± 25g", acOil: "PAG 46", acNote: "R134a standard."
+            },
+            "2016 - 2023 (MK4 - XFB)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240",
+                chip: "ID46 / PCF7953 (Renault Smart Card)",
+                module: "HFM (Hands-Free Module)",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Remove glovebox assembly.",
+                risk: "HIGH — ISK Calculation & Card Erasure",
+                protocol: "Extract 32-character PIN/ISK. All spare cards must be programmed in the same session.",
+                acGas: "R1234yf", acCap: "480g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Captur / Kadjar": { 
+            "2013 - 2019 (Captur MK1 / Kadjar)": { 
+                lishi: "VAC102 / VA2", silca: "VAC102", ic: "Card 1240 / 1310", 
+                chip: "ID46 / PCF7952 (Renault Smart Card)",
+                warning: "Kadjar is a Nissan Qashqai J11 platform twin!",
+                module: "HFM / UCH Module",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox door down.",
+                risk: "MODERATE / HIGH — Card Erasure Hazard",
+                protocol: "OBD ISK read and smart card precoding. Keep battery voltage >13.0V.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 15g", acOil: "PAG 46", acNote: "Post-2016 models use R1234yf."
+            }
+        }
+    },
+    "Dacia": {
+        "Duster": { 
+            "2010 - 2017 (MK1 - HS)": { 
+                lishi: "VA2", silca: "VA2", ic: "Card 1310",
+                chip: "ID46 (PCF7936 / Renault)",
+                module: "UCH (Under Dash Control Unit)",
+                location: "Driver's Footwell lower dashboard near steering column.",
+                access: "Unclip lower steering column shroud.",
+                risk: "LOW",
+                protocol: "Standard OBD PIN read and ID46 remote blade programming.",
+                acGas: "R134a", acCap: "480g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2018+ (MK2 - HM)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240",
+                chip: "ID46 (PCF7961) / Renault Smart Card",
+                module: "UCH / Hands-Free Unit",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Remove glovebox compartment liner.",
+                risk: "MODERATE — Blade & Smart Card Options",
+                protocol: "Extract ISK/PIN via OBD. Precode transponder/card before learning.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across MK2 lineup."
+            }
+        },
+        "Sandero / Logan": { 
+            "2013 - 2020 (MK2 - B8)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240",
+                chip: "ID46 (PCF7936 / Renault)",
+                module: "UCH Unit",
+                location: "Driver's Footwell behind lower fuse panel.",
+                access: "Remove fuse access door.",
+                risk: "LOW / MODERATE",
+                protocol: "OBD PIN read and transponder learning.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2021+ (MK3 - CMF-B Platform)": { 
+                lishi: "VAC102", silca: "VAC102", ic: "Card 1240", 
+                chip: "HITAG AES / 4A Smart Card",
+                warning: "Shares Renault Clio MK5 electronic architecture.",
+                module: "UCH & Security Gateway",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH — Gateway Protection",
+                protocol: "Requires SGW bypass cable or server token to read ISK.",
+                acGas: "R1234yf", acCap: "430g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        }
+    },
+    "Audi": {
+        "A1": { 
+            "2010 - 2018 (8X - PQ25 Platform)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster / IMMO Box",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove cluster trim bezel and 2x T20 Torx retaining screws.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN/CS read and transponder precoding.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2016+ models transitioned to R1234yf."
+            },
+            "2018+ (GB - MQB A0 Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ Side-cut wafers! Verify 9-cut (door) vs 10-cut ignition system.",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "KESSY Module: Behind Glovebox Assembly.",
+                access: "Drop glovebox fully down past retention tabs.",
+                risk: "HIGH RISK — MQB Sync Data Required",
+                protocol: "Extract CS bytes via OBD/bench dump or sync calculation before generating dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "A3 / Q3": { 
+            "2003 - 2012 (A3 8P / Q3 8U Early)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster (VDO / Micronas)",
+                location: "Main Dashboard Binnacle.",
+                access: "Pull lower steering column shroud to expose cluster base screws.",
+                risk: "MODERATE — CAN Instrument Cluster",
+                protocol: "Read CS/PIN via OBD. Backup EEPROM before adding key.",
+                acGas: "R134a", acCap: "525g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2013 - 2020 (A3 8V / Q3 F3 - MQB Platform)": { 
+                lishi: "HU66 / HU162T (9 / 10 Cut)", silca: "HU66 / HU162T", ic: "Card 813 / 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ 2013-2014 transition: verify whether keyway is HU66 or HU162T laser profile.",
+                module: "MQB Instrument Cluster & KESSY Module",
+                location: "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                access: "Release 2x top glovebox tabs and lower assembly.",
+                risk: "HIGH RISK — Johnson Controls / VDO Cluster Sync",
+                protocol: "Extract 16-byte CS and PIN. 🛑 Johnson Controls clusters (2014-2017) cannot be read via OBD on AKL; requires bench dump or specialist token.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2017+ models use R1234yf. A3 e-tron hybrid requires POE oil."
+            },
+            "2020+ (A3 8Y / Q3 Facelift - MQB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412",
+                chip: "VAG Megamos AES / 4A (MQB-Evo)",
+                module: "MQB Evo BCM & Gateway",
+                location: "Behind glovebox assembly / driver footwell.",
+                access: "Drop glovebox stops.",
+                risk: "HIGH — VAG Security Gateway (SFD)",
+                protocol: "Requires SFD unlock token / online server authorization for OBD programming.",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard. TFSI e hybrid takes POE oil."
+            }
+        },
+        "A4 / A5 / Q5": { 
+            "2007 - 2015 (B8 Platform - 8K / 8T / 8R)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813", 
+                chip: "8E / Megamos 48 (BCM2 Slot Key)",
+                warning: "Smart slot key fob. Emergency blade concealed inside remote body.",
+                module: "BCM2 (Body Control Module 2)",
+                location: "O/S/R Boot Quarter Panel (Driver's side rear boot) — behind carpet lining near auxiliary fuse box.",
+                access: "Remove boot floor cover. Unclip O/S/R side carpet access door. BCM2 held by 2x plastic tabs and 10mm earth stud. Tools: Trim tool, 10mm socket.",
+                risk: "HIGH RISK — Encrypted BCM2 (Data Corruption Hazard)",
+                protocol: "Check BCM2 part number & MCU (D70F3379 / D70F3634). Unlocked versions read via OBD. Locked versions (2013+) require bench read via programmer (IM608/VVDI) to extract Immo Data before generating dealer key.",
+                acGas: "R134a", acCap: "600g ± 20g", acOil: "PAG 46", acNote: "3-zone climate models take 650g."
+            },
+            "2016+ (B9 Platform - 8W / F5 / FY - MLB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "MLB Evo AES Smart Proximity",
+                warning: "⚠️ MLB Evo Platform. 9-Cut or 10-Cut side-wafer pick required.",
+                module: "MLB Evo BCM2 / Immo Gateway",
+                location: "O/S/R Boot Quarter Panel behind side carpeting trim.",
+                access: "Release O/S/R boot lining clips. Multi-plug BCM2 unit.",
+                risk: "HIGH RISK — Online Dealer Server Sync Required",
+                protocol: "Requires VAG dealer server calculation or bench programmer sync data calculation.",
+                acGas: "R1234yf", acCap: "580g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. PHEV models require POE oil."
+            }
+        },
+        "A6 / A7 / A8 / Q7": { 
+            "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "ID46 / Megamos 13 (KESSY / J518)",
+                module: "EZS / KESSY OR Steering Column Lock (J518)",
+                location: "J518: Bolted to steering column. Q7 KESSY: Under driver's seat floor carpet.",
+                access: "Q7: Unbolt seat tracks (4x M10 Spline) and tip seat back.",
+                risk: "MODERATE / HIGH — 93C86 EEPROM / 1L59W MCU Dump Needed",
+                protocol: "Bench dump required on AKL to extract 7-byte CS and PIN.",
+                acGas: "R134a", acCap: "700g - 850g", acOil: "PAG 46", acNote: "Q7 4-zone rear climate takes 1050g."
+            },
+            "2011 - 2018 (C7 / 4G / 4H)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 / PCFM (BCM2)",
+                module: "BCM2 (Body Control Module 2)",
+                location: "O/S/R Boot Quarter Panel behind carpet side trim.",
+                access: "Remove boot side lining. Unplug 5x multi-pin connectors from BCM2 housing.",
+                risk: "HIGH RISK — ELV / Engine ECU Sync Required",
+                protocol: "Extract BCM2 Immo Data on bench via MCU dump. Requires 5th/6th byte sync or working key dump to calculate 12-byte CS. Program dealer key via OBD.",
+                acGas: "R134a / R1234yf", acCap: "580g - 650g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2018+ (C8 / 4M / D5 - MLB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "MLB Evo AES Smart Proximity",
+                warning: "MLB Evo security architecture across all C8/4M models.",
+                module: "MLB Evo BCM2 & Gateway",
+                location: "O/S/R Boot Quarter Panel.",
+                access: "Release boot trim clips.",
+                risk: "HIGH RISK — Online Server Authorization",
+                protocol: "Requires active VAG server session or specialist bench programmer calculation.",
+                acGas: "R1234yf", acCap: "620g ± 20g", acOil: "PAG 46", acNote: "R1234yf standard. PHEV hybrids take POE oil."
+            }
+        }
+    },
+    "Skoda": {
+        "Fabia": { 
+            "2007 - 2014 (MK2 - 5J)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster (VDO / NEC)",
+                location: "Main Dashboard Binnacle.",
+                access: "Unclip lower cluster bezel (2x T20 Torx).",
+                risk: "LOW / MODERATE",
+                protocol: "OBD PIN/CS read and transponder learning.",
+                acGas: "R134a", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2015 - 2021 (MK3 - NJ - PQ26)": { 
+                lishi: "HU66 / HU162T", silca: "HU66 / HU162T", ic: "Card 813 / 1412", 
+                chip: "Megamos 48 (ID48 CAN)",
+                warning: "Check keyway! Transitioned from HU66 to HU162T during MK3 lifecycle.",
+                module: "PQ26 Instrument Cluster / KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox stops.",
+                risk: "MODERATE — CS/PIN Extraction",
+                protocol: "OBD read IMMO data or bench cluster dump on AKL.",
+                acGas: "R134a / R1234yf", acCap: "470g ± 15g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2021+ (MK4 - MQB A0)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413",
+                chip: "MQB Smart Proximity (Megamos AES)",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox / Dashboard.",
+                access: "Drop glovebox assembly.",
+                risk: "HIGH — MQB Dealer Key Sync",
+                protocol: "Extract CS bytes via OBD/bench before programming dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+		"Kamiq / Scala": { 
+            "2019+ (NW - MQB A0 Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "Skoda Fabia MK4 / VW T-Cross platform share.",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox stops.",
+                risk: "HIGH — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench before writing dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Octavia": { 
+            "2004 - 2013 (MK2 - 1Z)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster (VDO / Micronas)",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove lower cluster trim shroud.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN/CS read and precoded transponder programming.",
+                acGas: "R134a", acCap: "525g ± 25g", acOil: "PAG 46", acNote: "R134a standard."
+            },
+            "2013 - 2020 (MK3 - 5E - MQB Platform)": { 
+                lishi: "HU66 / HU162T", silca: "HU66 / HU162T", ic: "Card 813 / 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ MQB Platform. Check HU66 vs HU162T keyway on 2013-2015 models.",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                access: "Release glovebox side tabs and drop door down.",
+                risk: "HIGH RISK — MQB Component Security",
+                protocol: "Extract 16-byte CS and PIN. Generate dealer key before OBD programming.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2020+ (MK4 - NX - MQB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413",
+                chip: "VAG Megamos AES / 4A (MQB-Evo)",
+                module: "MQB Evo BCM & Gateway",
+                location: "Behind glovebox assembly.",
+                access: "Drop glovebox.",
+                risk: "HIGH — VAG Security Gateway (SFD)",
+                protocol: "Requires SFD unlock token / online server session.",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard. iV PHEV models take POE oil."
+            }
+        },
+        "Superb / Kodiaq": { 
+            "2008 - 2015 (Superb MK2 - 3T)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster / KESSY",
+                location: "Main Dashboard / Behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE",
+                protocol: "OBD PIN/CS extraction and key programming.",
+                acGas: "R134a", acCap: "525g - 600g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2015+ (Superb MK3 / Kodiaq - MQB Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ Side-cut wafers present. Verify 9-cut vs 10-cut system.",
+                module: "MQB Instrument Cluster & KESSY Module",
+                location: "Behind Glovebox Assembly.",
+                access: "Release glovebox dampener arm and drop assembly down.",
+                risk: "HIGH RISK — MQB Sync Data / Dealer Key Required",
+                protocol: "Extract CS bytes via OBD/bench dump before programming dealer key.",
+                acGas: "R1234yf / R134a", acCap: "500g ± 20g", acOil: "PAG 46", acNote: "Post-2016 models use R1234yf. Kodiaq 3-zone climate takes 580g."
+            }
+        }
+    },
+    "SEAT / Cupra": {
+        "Ibiza": { 
+            "2008 - 2017 (MK4 - 6J)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48 CAN)",
+                module: "Instrument Cluster (VDO / NEC)",
+                location: "Main Dashboard Binnacle.",
+                access: "Remove lower cluster trim shroud.",
+                risk: "LOW / MODERATE",
+                protocol: "OBD PIN/CS read and transponder learning.",
+                acGas: "R134a", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2017+ (MK5 - 6F - MQB A0)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413",
+                chip: "MQB Smart Proximity (Megamos AES)",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox door fully down.",
+                risk: "HIGH — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench before programming dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+		"Arona": { 
+            "2017+ (KJ7 - MQB A0 Platform)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "SEAT Ibiza MK5 crossover twin.",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox door fully down.",
+                risk: "HIGH — MQB Component Security",
+                protocol: "Extract CS bytes via OBD/bench before programming dealer key.",
+                acGas: "R1234yf", acCap: "460g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard."
+            }
+        },
+        "Leon / Cupra Leon / Formentor": { 
+            "2005 - 2012 (Leon MK2 - 1P)": { 
+                lishi: "HU66", silca: "HU66", ic: "Card 813",
+                chip: "Megamos 48 (ID48)",
+                module: "Instrument Cluster (VDO / Micronas)",
+                location: "Main Dashboard Binnacle.",
+                access: "Unclip lower steering column shroud.",
+                risk: "LOW / MODERATE",
+                protocol: "OBD PIN/CS read and precoded key learning.",
+                acGas: "R134a", acCap: "525g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2013 - 2020 (Leon MK3 - 5F - MQB Platform)": { 
+                lishi: "HU66 / HU162T", silca: "HU66 / HU162T", ic: "Card 813 / 1412", 
+                chip: "MQB Smart Proximity (Megamos AES)",
+                warning: "⚠️ MQB Platform. Check HU66 vs HU162T keyway on 2013-2015 models.",
+                module: "MQB Instrument Cluster & KESSY",
+                location: "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                access: "Release glovebox side tabs and drop door down.",
+                risk: "HIGH RISK — MQB Component Security",
+                protocol: "Extract 16-byte CS and PIN. Generate dealer key before OBD programming.",
+                acGas: "R134a / R1234yf", acCap: "500g ± 15g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2020+ (Leon MK4 / Cupra Formentor / Ateca - MQB Evo)": { 
+                lishi: "HU162T (9 / 10 Cut)", silca: "HU162T", ic: "Card 1412 / 1413", 
+                chip: "VAG Megamos AES / 4A (MQB-Evo)",
+                warning: "⚠️ Side-cut wafers! Verify 9-cut (door) vs 10-cut ignition system.",
+                module: "MQB Evo BCM & Gateway",
+                location: "Behind glovebox assembly / lower dash.",
+                access: "Drop glovebox stops.",
+                risk: "HIGH — VAG Security Gateway (SFD)",
+                protocol: "Requires SFD unlock token / online server authorization for OBD programming.",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46 / POE", acNote: "R1234yf standard. e-Hybrid PHEV models take POE oil."
+            }
+        }
+    },
+    "Honda": {
+        "Civic": { 
+            "2006 - 2011 (MK8 - FN / FK)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998", 
+                chip: "ID46 / PCF7936 (Honda Rolling)",
+                warning: "4-track laser profile. All wafers must be picked cleanly in both directions.",
+                module: "MICU (Multiplex Integrated Control Unit / BCM)",
+                location: "Driver's Footwell — integrated into main interior fuse box (RHD UK Driver's right knee area).",
+                access: "Remove lower dashboard fuse cover thumbscrews.",
+                risk: "LOW / MODERATE — Rolling Code Sync",
+                protocol: "Standard OBD key programming. Add key or All Keys Lost supported via OBD without module removal.",
+                acGas: "R134a", acCap: "450g ± 25g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2012 - 2017 (MK9 - FK)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998", 
+                chip: "ID46 / PCF7952 (Smart Proximity) or PCF7936 (Blade)",
+                warning: "Check if vehicle uses turn-blade ignition or Smart Start/Stop button.",
+                module: "Smart Keyless Unit / MICU",
+                location: "Passenger Footwell behind lower glovebox panel.",
+                access: "Drop lower glovebox door.",
+                risk: "MODERATE — Smart Key Pairing",
+                protocol: "OBD key learning supported. Ensure battery voltage remains >13.0V during smart key pairing.",
+                acGas: "R134a / R1234yf", acCap: "420g ± 20g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2017+ (MK10 / MK11 - FC / FK / FL)": { 
+                lishi: "HON66 / HON58", silca: "HON66", ic: "Card 998", 
+                chip: "8A / 4A Smart Proximity (HITAG AES)",
+                warning: "⚠️ Latest Honda Smart Key architecture. Inductive start button pairing required.",
+                module: "Smart Keyless Unit & Gateway",
+                location: "Behind Glovebox Assembly / upper passenger bulkhead.",
+                access: "Drop glovebox assembly past dampener arm.",
+                risk: "MODERATE / HIGH — CAN Gateway & Inductive Pairing",
+                protocol: "Read IMMO data via OBD. Hold smart key logo directly against Start/Stop button when prompted by programmer.",
+                acGas: "R1234yf", acCap: "420g ± 15g", acOil: "PAG 46 / POE", acNote: "R1234yf standard. e:HEV Hybrid models MUST use POE non-conductive oil!"
+            }
+        },
+        "Jazz / HR-V": { 
+            "2008 - 2015 (Jazz MK2 / HR-V Early)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998",
+                chip: "ID46 (PCF7936 / Honda)",
+                module: "MICU / Immobiliser Receiver",
+                location: "Driver's Footwell interior fuse box.",
+                access: "Unclip lower steering column / fuse shroud.",
+                risk: "LOW",
+                protocol: "Standard OBD PIN-less transponder programming.",
+                acGas: "R134a", acCap: "400g ± 20g", acOil: "PAG 46", acNote: "Small capacity system."
+            },
+            "2015+ (Jazz MK3/MK4 / HR-V MK2)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998", 
+                chip: "ID47 / 8A Smart Proximity",
+                warning: "Smart proximity fob with emergency internal HON66 blade.",
+                module: "Smart Key ECU",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox assembly down.",
+                risk: "MODERATE — 8A Smart System",
+                protocol: "OBD smart key programming supported. Keep smart key inside vehicle cabin during learn cycle.",
+                acGas: "R1234yf / R134a", acCap: "420g ± 15g", acOil: "PAG 46 / POE", acNote: "2017+ models use R1234yf. Jazz/HR-V e:HEV hybrids require POE compressor oil."
+            }
+        },
+        "CR-V": { 
+            "2007 - 2012 (MK3)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998",
+                chip: "ID46 / PCF7936 (Honda)",
+                module: "MICU Unit",
+                location: "Driver's Footwell fuse carrier.",
+                access: "Remove lower driver knee panel.",
+                risk: "LOW",
+                protocol: "Standard OBD key programming.",
+                acGas: "R134a", acCap: "480g ± 20g", acOil: "PAG 46", acNote: "Standard R134a system."
+            },
+            "2012 - 2018 (MK4)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998",
+                chip: "ID46 / PCF7952 (Smart) or ID46 Blade",
+                module: "Smart Keyless Unit",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox door down.",
+                risk: "MODERATE",
+                protocol: "OBD key learn for blade or smart proximity fob.",
+                acGas: "R134a / R1234yf", acCap: "450g ± 20g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2018+ (MK5 / MK6)": { 
+                lishi: "HON66", silca: "HON66", ic: "Card 998", 
+                chip: "8A / 4A Smart Proximity",
+                warning: "High-security smart key architecture.",
+                module: "Smart Key ECU & Gateway",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE / HIGH — Inductive Pairing",
+                protocol: "OBD smart key learn. Hold fob against Start/Stop button during registration.",
+                acGas: "R1234yf", acCap: "450g", acOil: "PAG 46 / POE", acNote: "R1234yf standard. Hybrid e:HEV models require POE non-conductive oil."
+            }
+        }
+    },
+    "Mazda": {
+        "Mazda 2 / Mazda 3 / Mazda 6": { 
+            "2008 - 2014 (2nd Gen - Ford Platform Shared)": { 
+                lishi: "MAZ24R / FO38", silca: "MAZ24R", ic: "Card 791", 
+                chip: "ID63 (40-Bit / 80-Bit) / 4D63",
+                warning: "Shared Ford/Mazda electrical architecture. Check MAZ24R vs FO38 blade.",
+                module: "Instrument Cluster / BCM",
+                location: "Passenger Footwell behind lower glovebox panel.",
+                access: "Drop glovebox assembly down.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD key programming (Ford/Mazda protocol). Minimum 2 keys required on All Keys Lost reset!",
+                acGas: "R134a", acCap: "500g ± 25g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            },
+            "2014 - 2019 (SkyActiv 3rd Gen)": { 
+                lishi: "MAZ24R / MAZ2014", silca: "MAZ24R", ic: "Card 1345", 
+                chip: "ID49 / 6D Smart Proximity",
+                warning: "⚠️ Transitioned to Mazda 2014+ (10-Cut / Lishi K5) internal track laser profile on latest shapes.",
+                module: "Smart Start Unit (SSU) / BCM",
+                location: "Passenger Footwell lower A-pillar kick panel.",
+                access: "Remove plastic sill strip and lower passenger kick panel trim.",
+                risk: "MODERATE — Smart Key Reset & Incodes",
+                protocol: "OBD smart key programming supported. May require Outcode/Incode calculation on select 2017+ models.",
+                acGas: "R134a / R1234yf", acCap: "470g ± 20g", acOil: "PAG 46", acNote: "2017+ facelift models use R1234yf."
+            },
+            "2019+ (4th Gen - BP / GL - Latest SkyActiv)": { 
+                lishi: "MAZ2014 (10-Cut) / K5", silca: "MAZ2014", ic: "Card 1345", 
+                chip: "8A / 4A Smart Proximity (HITAG AES)",
+                warning: "⚠️ Latest Mazda 10-Cut laser keyway. Slim emergency blade inside smart fob.",
+                module: "New Gen SSU / Gateway",
+                location: "Behind Glovebox Assembly / lower A-pillar.",
+                access: "Drop glovebox door past dampener arm.",
+                risk: "HIGH RISK — Security Gateway Protection",
+                protocol: "Requires active online server calculation or gateway bypass adapter for OBD key programming.",
+                acGas: "R1234yf", acCap: "450g ± 15g", acOil: "PAG 46", acNote: "R1234yf standard across entire SkyActiv-X lineup."
+            }
+        },
+        "CX-3 / CX-5 / CX-30": { 
+            "2012 - 2017 (CX-5 KE / CX-3 Early)": { 
+                lishi: "MAZ24R", silca: "MAZ24R", ic: "Card 791 / 1345",
+                chip: "ID49 / 6D Smart Proximity",
+                module: "Smart Start Unit (SSU)",
+                location: "Passenger Footwell lower A-pillar kick panel.",
+                access: "Unclip passenger kick panel trim.",
+                risk: "MODERATE",
+                protocol: "Standard OBD smart key programming.",
+                acGas: "R134a / R1234yf", acCap: "490g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            },
+            "2017+ (CX-5 KF / CX-30 - SkyActiv)": { 
+                lishi: "MAZ2014 (10-Cut) / K5", silca: "MAZ2014", ic: "Card 1345", 
+                chip: "8A / 4A Smart Proximity (HITAG AES)",
+                warning: "10-Cut laser keyway standard across all latest CX SUVs.",
+                module: "SSU & Smart Gateway",
+                location: "Behind Glovebox Assembly / lower A-pillar.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE / HIGH — Gateway Protection",
+                protocol: "OBD smart key programming; maintain stable auxiliary power (>13.5V).",
+                acGas: "R1234yf", acCap: "480g ± 15g", acOil: "PAG 46 / POE", acNote: "R1234yf standard. CX-60 PHEV models require POE oil."
+            }
+        }
+    },
+    "MG (SAIC Motor)": {
+        "MG ZS / MG ZS EV": { 
+            "2017+ (UK Compact SUV Lineup)": { 
+                lishi: "HU100 / HU101 / HU162T", silca: "HU100 / HU101", ic: "Card 1097 / 1098", 
+                chip: "ID46 (PCF7936 / SAIC) or 4A Smart Proximity",
+                warning: "⚠️ High UK fleet callout! Blade keys typically use GM HU100 or Ford HU101 profile; Smart keys use concealed emergency blade.",
+                module: "SAIC BCM / Smart Keyless Receiver",
+                location: "Driver's Footwell — lower dashboard fuse panel area (RHD UK Driver's side).",
+                access: "Remove lower dashboard trim panel below steering column.",
+                risk: "MODERATE — Security PIN Extraction via OBD",
+                protocol: "OBD programming supported. Programmer reads security PIN directly from BCM before learning flip keys or proximity smart fobs.",
+                acGas: "R134a / R1234yf", acCap: "480g ± 20g", acOil: "PAG 46 / POE", acNote: "🛑 MG ZS EV (100% Electric) MUST use non-conductive POE compressor oil! Petrol 1.5/1.0T models use standard PAG 46."
+            }
+        },
+        "MG HS / MG4 EV / MG5 EV": { 
+            "2019+ (HS SUV / MG4 EV / MG5 EV)": { 
+                lishi: "HU100 / HU162T", silca: "HU100", ic: "Card 1097", 
+                chip: "4A Smart Proximity (HITAG AES / SAIC)",
+                warning: "⚠️ Dedicated EV / PHEV architecture. Emergency blade concealed inside modern MG smart fob.",
+                module: "SAIC BCM / PEPS Keyless Module",
+                location: "Passenger Footwell behind lower glovebox / centre console stack.",
+                access: "Drop glovebox door past retention stops.",
+                risk: "HIGH RISK — High Voltage Vehicle & PEPS Sync",
+                protocol: "Connect 12V auxiliary battery charger. OBD PIN reading and proximity fob learning supported via SAIC diagnostic software.",
+                acGas: "R1234yf", acCap: "520g ± 20g", acOil: "POE", acNote: "🛑 100% Electric / PHEV Lineup! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "MG3": { 
+            "2013 - 2023 (MK2 - 2nd Gen)": { 
+                lishi: "HU100", silca: "HU100", ic: "Card 1097",
+                chip: "ID46 / PCF7936 (SAIC)",
+                module: "BCM Unit",
+                location: "Driver's Footwell lower fuse box.",
+                access: "Remove fuse access panel.",
+                risk: "LOW / MODERATE",
+                protocol: "Standard OBD PIN read and flip key learning.",
+                acGas: "R134a / R1234yf", acCap: "450g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            }
+        }
+    },
+    "Suzuki": {
+        "Swift": { 
+            "2004 - 2010 (MK2 - RS)": { 
+                lishi: "TOY43 / HU87", silca: "HU87 / TOY43", ic: "Card 802 / 996",
+                chip: "ID46 / PCF7936 (Suzuki)",
+                module: "BCM / Immobiliser Box",
+                location: "Behind steering column / driver footwell.",
+                access: "Remove lower steering column shroud.",
+                risk: "LOW",
+                protocol: "Standard OBD PIN-less transponder programming.",
+                acGas: "R134a", acCap: "400g ± 20g", acOil: "PAG 46", acNote: "R134a standard."
+            },
+            "2010 - 2017 (MK3 - AZG)": { 
+                lishi: "HU87 / HU133R", silca: "HU133R", ic: "Card 996",
+                chip: "ID46 / PCF7952 (Smart Proximity) or ID46 Blade",
+                module: "BCM / Keyless Start Module",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox assembly.",
+                risk: "MODERATE — 4-Digit / 8-Digit PIN Code",
+                protocol: "Read PIN via OBD or VIN calculation; program blade/smart key.",
+                acGas: "R134a / R1234yf", acCap: "370g ± 15g", acOil: "PAG 46", acNote: "2016+ models use R1234yf."
+            },
+            "2017+ (MK4 - A2L - BoosterJet / Hybrid)": { 
+                lishi: "HU87 / HU133R / TOY43", silca: "HU133R", ic: "Card 996", 
+                chip: "8A Smart Proximity / ID46",
+                warning: "Check emergency blade profile. Smart proximity fob inductive pairing required.",
+                module: "BCM & Keyless Unit",
+                location: "Behind Glovebox Assembly.",
+                access: "Drop glovebox door past dampener stops.",
+                risk: "MODERATE — Smart Proximity Pairing",
+                protocol: "OBD PIN read and smart fob registration against Start/Stop button.",
+                acGas: "R1234yf", acCap: "370g ± 15g", acOil: "PAG 46 / POE", acNote: "R1234yf standard. BoosterJet SHVS Mild Hybrids use PAG 46; full EV/HEV use POE."
+            }
+        },
+        "Vitara / SX4 S-Cross": { 
+            "2015+ (LY Series)": { 
+                lishi: "HU87 / HU133R", silca: "HU133R", ic: "Card 996", 
+                chip: "ID46 (PCF7952) / 8A Smart Proximity",
+                warning: "Standard UK crossover. Emergency blade concealed inside smart remote.",
+                module: "BCM / Keyless Start Unit",
+                location: "Passenger Footwell behind glovebox.",
+                access: "Drop glovebox assembly down.",
+                risk: "MODERATE",
+                protocol: "OBD PIN read and key learning supported.",
+                acGas: "R134a / R1234yf", acCap: "420g ± 20g", acOil: "PAG 46", acNote: "2017+ models use R1234yf."
+            }
+        },
+        "Swace / Across": { 
+            "2020+ (Toyota Corolla / RAV4 Rebadged Twins)": { 
+                lishi: "TOY43 / TOY48", silca: "TOY48", ic: "Card 1122", 
+                chip: "8A / 4A Smart Proximity (TNGA)",
+                warning: "🛑 TOYOTA TNGA PLATFORM TWINS! Uses Toyota 8A/4A Smart architecture & Security Gateway (SGW) protection!",
+                module: "Smart Key ECU (Certification Box)",
+                location: "Behind Glovebox Assembly on upper passenger bulkhead.",
+                access: "Drop glovebox assembly and unclip lower passenger knee trim.",
+                risk: "HIGH RISK — Toyota SGW Bypass Harness Required",
+                protocol: "🛑 DO NOT use Suzuki programming protocols! Connect Toyota SGW bypass cable directly to Smart Key ECU before attempting OBD key learn.",
+                acGas: "R1234yf", acCap: "470g ± 15g", acOil: "POE", acNote: "🛑 Rebadged Toyota Hybrids! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        }
+    },
+    "MINI": {
+        "Hatch / Clubman / Convertible (1st & 2nd Gen)": { 
+            "2001 - 2006 (R50 / R52 / R53 - 1st Gen)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID44 / PCF7935 (EWS3) or ID46 (Late 2005+)",
+                warning: "1st Gen BMW architecture. Two-button clamshell or three-button winged key.",
+                module: "EWS3 Immobiliser / BC1",
+                location: "Driver's Footwell — lower bulkhead near bonnet release handle (RHD UK Driver's side).",
+                access: "Remove lower driver knee bolster panel (Phillips/Torx screws). White/grey EWS box.",
+                risk: "LOW RISK — Bench EWS MCU Read",
+                protocol: "Bench read EWS3 MCU (0D46J/2D47J) using AK90/VVDI Prog. Write transponder chip directly from dump.",
+                acGas: "R134a", acCap: "415g ± 25g", acOil: "PAG 46", acNote: "Standard R134a fill."
+            },
+            "2006 - 2014 (R55 / R56 / R57 / R58 / R60 - 2nd Gen)": { 
+                lishi: "HU92", silca: "HU92", ic: "Card 851", 
+                chip: "ID46 / PCF7936 / PCF7945 (CAS3)",
+                warning: "⚠️ Round dash-slot key fob (CAS3 / CAS3+ system). Emergency blade slides into top of remote.",
+                module: "CAS3 / CAS3+ Module",
+                location: "Driver's Footwell — Lower Dashboard Trim above pedals near steering column.",
+                access: "Remove 3x T20 Torx screws holding lower driver's footwell trim panel. Lower panel down. CAS is a rectangular white/black box clipped into a bracket.",
+                risk: "MODERATE RISK — CAS3+ ISTAP Flash Downgrade Hazard",
+                protocol: "CAS3: Standard OBD key learning supported. CAS3+ (ISTAP / 2008+): Requires EEPROM downgrade or flash via OBD/bench. Always back up CAS EEPROM & D-FLASH before writing!",
+                acGas: "R134a", acCap: "490g ± 15g", acOil: "PAG 46", acNote: "Standard R134a system."
+            }
+        },
+        "Hatch / Clubman / Countryman (3rd Gen - F-Series)": { 
+            "2014 - 2023 (F54 / F55 / F56 / F57 / F60 - BDC Platform)": { 
+                lishi: "HU100R", silca: "HU100R", ic: "Card 1324", 
+                chip: "HU100R Smart (ID49 / PCF7953 BDC)",
+                warning: "⚠️ 3rd Gen BMW UKL platform! Uses BMW HU100R keyway and BDC (Body Domain Controller), NOT CAS!",
+                module: "BDC / BDC2 (Body Domain Controller)",
+                location: "Passenger Footwell — Lower A-Pillar Kick Panel (RHD UK Passenger side, left foot area).",
+                access: "Remove plastic door sill kick strip and pull passenger footwell side trim cover (1x T20 Torx and plastic retaining clips). Large black module with multi-colored plugs.",
+                risk: "HIGH RISK — Bench EEPROM Pre-processing Required",
+                protocol: "Remove BDC module. Use programmer (IM608/VVDI) to read 95256 EEPROM on bench, unlock module via OBD/bench harness, and generate dealer key. 🛑 Maintain >13.5V battery voltage!",
+                acGas: "R134a / R1234yf", acCap: "500g ± 20g", acOil: "PAG 46 / POE", acNote: "Pre-2017 uses R134a; 2017+ facelift uses R1234yf. 🛑 MINI Electric (F56 SE) & Countryman PHEV require POE non-conductive compressor oil!"
+            }
+        }
+    },
+    "Volvo (Cars)": {
+        "V40 / S60 / V60 / XC60 (P3 Platform)": { 
+            "2010 - 2018 (P3 Architecture - Ford EUCD Shared)": { 
+                lishi: "HU101 / HU56", silca: "HU101TE", ic: "Card 1098", 
+                chip: "ID46 / 4D63 (Volvo P3 Smart)",
+                warning: "Smart slot fob. Emergency blade slides into remote body.",
+                module: "CEM (Central Electronic Module) / KVM",
+                location: "CEM: Passenger Footwell — Upper Bulkhead under glovebox against firewall.",
+                access: "Remove passenger footwell kick panel and pull carpet down. CEM mounted vertically with locking lever connectors.",
+                risk: "MODERATE / HIGH — CEM Bench Read Required on AKL",
+                protocol: "Add Key: OBD programming supported via working key. AKL: Remove CEM and read microcontroller/EEPROM on bench to extract 32-byte IMMO code.",
+                acGas: "R134a / R1234yf", acCap: "700g ± 25g", acOil: "PAG 46", acNote: "Pre-2016 uses R134a; post-2016 uses R1234yf."
+            }
+        },
+        "XC40 / XC60 / XC90 / V90 (SPA & CMA Platform)": { 
+            "2016+ (SPA / CMA Architecture - Modern Keyless)": { 
+                lishi: "HU101 / HU152", silca: "HU101TE", ic: "Card 1098", 
+                chip: "HITAG Pro / ID49 (Volvo SPA Smart)",
+                warning: "⚠️ Square luxury smart key. Door lock cylinder concealed under handle cap.",
+                module: "CEM (Central Electronic Module) & KVM",
+                location: "CEM: Passenger Footwell — Upper Bulkhead under glovebox. KVM: O/S/R Boot trim (on Keyless models).",
+                access: "Remove passenger footwell kick panel and pull carpet down. CEM is mounted vertically against the firewall with locking lever connectors.",
+                risk: "HIGH RISK — CEM Bench Read Required for 32-Byte AKL PIN",
+                protocol: "For All Keys Lost, remove CEM and read microcontroller/EEPROM on bench (or via specialized Volvo OBD harness) to extract 32-byte IMMO security code. 🛑 Disconnect main battery before unplugging CEM to prevent SRS airbag faults!",
+                acGas: "R1234yf", acCap: "650g - 750g", acOil: "PAG 46 / POE", acNote: "R1234yf standard across SPA lineup. T8 Twin Engine / PHEV / EV models require POE non-conductive oil!"
+            }
+        }
+    }
+};

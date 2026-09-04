@@ -227,423 +227,80 @@
     </footer>
 
 <script>
-    const carDatabase = {
-        "Alfa Romeo": {
-            "MiTo": {
-                "2008 - 2018": "SIP22"
-            },
-            "Giulietta": {
-                "2010 - 2020": "SIP22"
-            },
-            "Giulia / Stelvio": {
-                "2016+": "SIP22"
+    let carDatabase = {};
+
+    const makeSelect = document.getElementById('makeSelect');
+    const modelSelect = document.getElementById('modelSelect');
+    const yearSelect = document.getElementById('yearSelect');
+    const resultBox = document.getElementById('resultBox');
+    const lishiResult = document.getElementById('lishiResult');
+
+    // Fetch the external JSON file located one level up
+    async function loadCarDatabase() {
+        try {
+            const response = await fetch('../sva-db.json');
+            if (!response.ok) {
+                throw new Error('Failed to load vehicle database.');
             }
-        },
-        "Audi": {
-            "A1": {
-                "2010 - 2018 (8X)": "HU66",
-                "2018+ (GB)": "HU162T"
-            },
-            "A2": {
-                "1999 - 2005": "HU66"
-            },
-            "A3": {
-                "2003 - 2012 (8P)": "HU66",
-                "2013+ (8V/8Y)": "HU66 / HU162T"
-            },
-            "A4": {
-                "2001 - 2008 (B6/B7)": "HU66",
-                "2008+ (B8/B9)": "HU66 / HU162T"
-            },
-            "A5": {
-                "2007 - 2016 (8T)": "HU66",
-                "2016+ (F5)": "HU162T"
-            },
-            "A6": {
-                "1997 - 2011 (C5/C6)": "HU66",
-                "2011 - 2018 (C7)": "HU66",
-                "2018+ (C8)": "HU162T"
-            },
-            "Q3": {
-                "2011 - 2018 (8U)": "HU66",
-                "2018+ (F3)": "HU162T"
-            },
-            "Q5": {
-                "2008 - 2017 (8R)": "HU66",
-                "2017+ (FY)": "HU162T"
-            },
-            "Q7": {
-                "2005 - 2015 (4L)": "HU66",
-                "2015+ (4M)": "HU162T"
-            },
-            "TT": {
-                "1998 - 2014 (8N/8J)": "HU66",
-                "2014+ (8S)": "HU162T"
+            carDatabase = await response.json();
+
+            // Populate the initial Make dropdown once data is loaded
+            for (let make in carDatabase) {
+                makeSelect.add(new Option(make, make));
             }
-        },
-        "BMW": {
-            "1 Series": {
-                "2004 - 2011 (E81/E87)": "HU92",
-                "2011 - 2019 (F20/F21)": "HU100R",
-                "2019+ (F40)": "HU100R"
-            },
-            "2 Series": {
-                "2014 - 2021 (F22/F23)": "HU100R",
-                "2021+ (G42)": "HU100R"
-            },
-            "3 Series": {
-                "1998 - 2006 (E46)": "HU92",
-                "2005 - 2012 (E90/E92)": "HU92",
-                "2012 - 2019 (F30)": "HU100R",
-                "2019+ (G20)": "HU100R"
-            },
-            "4 Series": {
-                "2013 - 2020 (F32/F33)": "HU100R",
-                "2020+ (G22)": "HU100R"
-            },
-            "5 Series": {
-                "1995 - 2004 (E39)": "HU92",
-                "2003 - 2010 (E60)": "HU92",
-                "2010 - 2017 (F10)": "HU100R",
-                "2017+ (G30)": "HU100R"
-            },
-            "X1": {
-                "2009 - 2015 (E84)": "HU92 / HU100R",
-                "2015+ (F48)": "HU100R"
-            },
-            "X3": {
-                "2003 - 2010 (E83)": "HU92",
-                "2010 - 2017 (F25)": "HU100R",
-                "2017+ (G01)": "HU100R"
-            },
-            "X5": {
-                "1999 - 2006 (E53)": "HU92",
-                "2006 - 2013 (E70)": "HU92",
-                "2013 - 2018 (F15)": "HU100R",
-                "2018+ (G05)": "HU100R"
-            },
-            "Z4": {
-                "2002 - 2008 (E85/E86)": "HU92",
-                "2009 - 2016 (E89)": "HU92",
-                "2018+ (G29)": "HU100R"
-            }
-        },
-        "Fiat": {
-            "500 / 500L / 500X": {
-                "2007+": "SIP22"
-            },
-            "Ducato": {
-                "2006+": "SIP22"
-            },
-            "Panda": {
-                "2003 - 2011 (MK2)": "SIP22",
-                "2011+ (MK3)": "SIP22"
-            },
-            "Punto": {
-                "1999 - 2005 (MK2)": "GT15",
-                "2005 - 2018 (Grande/Evo)": "SIP22"
-            }
-        },
-        "Ford": {
-            "Transit": {
-                "2000 - 2014 (MK6/MK7)": "FO38",
-                "2014 - 2019 (MK8)": "HU101",
-                "2020+ (Custom/MK8 Facelift)": "HU101 / HU198"
-            },
-            "Transit Connect": {
-                "2002 - 2013": "FO38",
-                "2014+": "HU101"
-            },
-            "Fiesta": {
-                "2008 - 2017": "HU101",
-                "2017+ (MK8)": "HU101"
-            },
-            "Focus": {
-                "2005 - 2011 (MK2)": "HU101",
-                "2011 - 2018 (MK3)": "HU101",
-                "2018+ (MK4)": "HU101"
-            },
-            "Kuga": {
-                "2008 - 2019": "HU101",
-                "2020+": "HU101 / HU198"
-            },
-            "Ranger": {
-                "2011 - 2022": "HU101",
-                "2022+": "HU101 / HU198"
-            }
-        },
-        "Honda": {
-            "Civic": {
-                "2001 - 2005 (MK7)": "HON66",
-                "2006 - 2011 (MK8)": "HON66",
-                "2012 - 2021 (MK9/MK10)": "HON66",
-                "2022+ (MK11)": "HON66"
-            },
-            "CR-V": {
-                "2002 - 2006 (MK2)": "HON66",
-                "2007 - 2012 (MK3)": "HON66",
-                "2012+ (MK4/MK5)": "HON66"
-            },
-            "Jazz": {
-                "2001 - 2008": "HON66",
-                "2008 - 2015": "HON66",
-                "2015+": "HON66"
-            }
-        },
-        "Land Rover": {
-            "Discovery": {
-                "1994 - 2004 (Series II)": "NE38",
-                "2005 - 2016 (LR3/LR4)": "HU101",
-                "2017+ (Discovery 5)": "HU101"
-            },
-            "Discovery Sport": {
-                "2015+":
-                    "HU101",
-            },
-            "Range Rover / Sport": {
-                "2005 - 2012": "HU101",
-                "2013+": "HU101"
-            },
-            "Evoque": {
-                "2011 - 2019": "HU101",
-                "2020+": "HU101"
-            },
-            "Defender": {
-                "1995 - 2016": "NE38",
-                "2020+ (New Shape)": "HU101"
-            }
-        },
-        "Mazda": {
-            "Mazda 2": {
-                "2007 - 2014": "MAZ24",
-                "2015+": "MAZ24"
-            },
-            "Mazda 3": {
-                "2004 - 2013": "MAZ24",
-                "2014+": "MAZ24"
-            },
-            "Mazda 6": {
-                "2002 - 2012": "MAZ24",
-                "2013+": "MAZ24"
-            },
-            "CX-5": {
-                "2012+": "MAZ24"
-            }
-        },
-        "Mercedes-Benz": {
-            "C-Class": {
-                "2000 - 2007 (W203)": "HU64",
-                "2007 - 2014 (W204)": "HU64",
-                "2014+ (W205)": "HU64"
-            },
-            "E-Class": {
-                "2002 - 2009 (W211)": "HU64",
-                "2009 - 2016 (W212)": "HU64",
-                "2016+ (W213)": "HU64"
-            },
-            "Sprinter": {
-                "1995 - 2006": "YM15",
-                "2006 - 2018 (W906)": "HU64",
-                "2018+ (W907)": "HU64 / HU136"
-            },
-            "Vito": {
-                "2003 - 2014 (W639)": "HU64",
-                "2014+ (W447)": "HU64"
-            },
-            "A-Class": {
-                "2004 - 2012 (W169)": "HU64",
-                "2012 - 2018 (W176)": "HU64",
-                "2018+ (W177)": "HU64"
-            }
-        },
-        "Mini": {
-            "Hatch / Cooper": {
-                "2001 - 2006 (R50/R53)": "HU92",
-                "2006 - 2013 (R56)": "HU92",
-                "2014+ (F56)": "HU100R"
-            },
-            "Countryman": {
-                "2010 - 2016 (R60)": "HU92",
-                "2017+ (F60)": "HU100R"
-            }
-        },
-        "SEAT": {
-            "Ibiza": {
-                "2002 - 2017 (MK3/MK4)": "HU66",
-                "2017+ (MK5)": "HU162T"
-            },
-            "Leon": {
-                "2005 - 2012 (MK2)": "HU66",
-                "2013 - 2020 (MK3)": "HU66 / HU162T",
-                "2020+ (MK4)": "HU162T"
-            },
-            "Ateca": {
-                "2016+": "HU162T"
-            }
-        },
-        "Skoda": {
-            "Fabia": {
-                "1999 - 2014 (MK1/MK2)": "HU66",
-                "2015 - 2021 (MK3)": "HU66 / HU162T",
-                "2021+ (MK4)": "HU162T"
-            },
-            "Octavia": {
-                "2004 - 2013 (MK2)": "HU66",
-                "2013 - 2020 (MK3)": "HU66 / HU162T",
-                "2020+ (MK4)": "HU162T"
-            },
-            "Superb": {
-                "2001 - 2015 (MK1/MK2)": "HU66",
-                "2015+ (MK3)": "HU162T"
-            }
-        },
-        "Mitsubishi": {
-            "L200": {
-                "2006 - 2015": "MIT11",
-                "2015+": "MIT11"
-            },
-            "Outlander": {
-                "2006 - 2012": "MIT11",
-                "2012+": "MIT11"
-            },
-            "Shogun / Pajero": {
-                "2000 - 2006": "MIT11",
-                "2006+": "MIT11"
-            },
-            "Colt": {
-                "2004 - 2013": "MIT11 / HU56"
-            }
-        },
-        "Nissan": {
-            "Qashqai": {
-                "2006 - 2013 (J10)": "NSN14",
-                "2013 - 2021 (J11)": "NSN14",
-                "2021+ (J12)": "DAT17 / NSN14"
-            },
-            "Juke": {
-                "2010 - 2019 (F15)": "NSN14",
-                "2019+ (F16)": "NSN14"
-            },
-            "Micra": {
-                "2002 - 2010 (K12)": "NSN14",
-                "2010 - 2017 (K13)": "NSN14"
-            }
-        },
-        "Peugeot / Citroen": {
-            "Boxer / Relay": {
-                "2006+": "SIP22"
-            },
-            "Partner / Berlingo": {
-                "2008 - 2018": "HU83 / VA2",
-                "2018+": "HU83 / VA2"
-            },
-            "Dispatch / Expert": {
-                "2007 - 2016": "HU83 / VA2",
-                "2016+": "HU83 / VA2"
-            },
-            "208 / C3": {
-                "2012 - 2019": "HU83 / VA2",
-                "2019+": "HU83 / VA2"
-            }
-        },
-        "Renault": {
-            "Trafic": {
-                "2001 - 2014": "NE73",
-                "2014+": "VAC102"
-            },
-            "Master": {
-                "2010+": "VAC102"
-            },
-            "Clio": {
-                "2005 - 2012 (MK3)": "VA2",
-                "2012 - 2019 (MK4)": "VAC102"
-            },
-            "Megane": {
-                "2008 - 2016 (MK3)": "VA2",
-                "2016+ (MK4)": "VAC102"
-            },
-            "Kangoo": {
-                "2007 - 2021": "VAC102",
-                "2021+": "VAC102"
-            }
-        },
-        "Toyota": {
-            "Yaris": {
-                "1999 - 2005 (MK1)": "TOY41 / TOY43",
-                "2006 - 2020 (MK2/MK3)": "TOY43 / VA2",
-                "2020+ (MK4)": "TOY43 / TOY48"
-            },
-            "Corolla / Auris": {
-                "2000 - 2007 (E120)": "TOY43",
-                "2007 - 2018 (Auris)": "TOY43",
-                "2018+ (E210)": "TOY43 / TOY48"
-            },
-            "Hilux": {
-                "2005 - 2015": "TOY43",
-                "2015+": "TOY43 / TOY48"
-            },
-            "Aygo": {
-                "2005 - 2014": "VA2",
-                "2014 - 2021": "VA2"
-            }
-        },
-        "Vauxhall": {
-            "Vivaro": {
-                "2001 - 2014": "NE73",
-                "2014 - 2019": "VAC102",
-                "2019+": "HU100"
-            },
-            "Corsa": {
-                "2006 - 2014 (D)": "HU100",
-                "2014 - 2019 (E)": "HU100",
-                "2020+ (F)": "HU83 / VA2"
-            },
-            "Astra": {
-                "2004 - 2009 (H)": "HU100",
-                "2009 - 2015 (J)": "HU100",
-                "2015 - 2021 (K)": "HU100"
-            },
-            "Insignia": {
-                "2008 - 2017": "HU100",
-                "2017+": "HU100"
-            },
-            "Mokka": {
-                "2012 - 2019": "HU100",
-                "2020+": "HU83 / VA2"
-            },
-            "Combo": {
-                "2001 - 2011": "YM28 / HU100",
-                "2011 - 2018": "SIP22",
-                "2018+": "HU83 / VA2"
-            }
-        },
-        "Volkswagen": {
-            "Golf": {
-                "2004 - 2014 (MK5/MK6)": "HU66",
-                "2015+ (MK7/MK8)": "HU162T (9 or 10 Cut)"
-            },
-            "Transporter": {
-                "T5 (2003 - 2015)": "HU66",
-                "T6 (2015+)": "HU66 / HU162T"
-            },
-            "Caddy": {
-                "2004 - 2015": "HU66",
-                "2015+": "HU66 / HU162T"
-            },
-            "Crafter": {
-                "2006 - 2017": "HU64",
-                "2017+": "HU162T"
-            },
-            "Polo": {
-                "2002 - 2017": "HU66",
-                "2017+": "HU66 / HU162T"
-            },
-            "Passat": {
-                "2005 - 2014 (B6/B7)": "HU66",
-                "2015+ (B8)": "HU162T"
-            }
+        } catch (error) {
+            console.error('Error fetching database:', error);
+            makeSelect.innerHTML = '<option value="">Error loading database</option>';
         }
-    };
+    }
+
+    // Initialize data load
+    loadCarDatabase();
+
+    makeSelect.addEventListener('change', function() {
+        modelSelect.innerHTML = '<option value="">-- Choose Model --</option>';
+        yearSelect.innerHTML = '<option value="">-- Choose Year --</option>';
+        resultBox.style.display = 'none';
+        yearSelect.disabled = true;
+
+        if (this.value) {
+            modelSelect.disabled = false;
+            for (let model in carDatabase[this.value]) {
+                modelSelect.add(new Option(model, model));
+            }
+        } else {
+            modelSelect.disabled = true;
+        }
+    });
+
+    modelSelect.addEventListener('change', function() {
+        yearSelect.innerHTML = '<option value="">-- Choose Year --</option>';
+        resultBox.style.display = 'none';
+
+        if (this.value) {
+            yearSelect.disabled = false;
+            const make = makeSelect.value;
+            for (let year in carDatabase[make][this.value]) {
+                yearSelect.add(new Option(year, year));
+            }
+        } else {
+            yearSelect.disabled = true;
+        }
+    });
+
+    yearSelect.addEventListener('change', function() {
+        if (this.value) {
+            const make = makeSelect.value;
+            const model = modelSelect.value;
+            const lishi = carDatabase[make][model][this.value];
+            
+            lishiResult.textContent = lishi;
+            resultBox.style.display = 'block';
+        } else {
+            resultBox.style.display = 'none';
+        }
+    });
+
 
     const makeSelect = document.getElementById('makeSelect');
     const modelSelect = document.getElementById('modelSelect');

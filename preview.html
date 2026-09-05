@@ -59,6 +59,8 @@
     "All Keys Lost Vehicle Recovery"
   ]
 }
+
+
 </script>
 
     <!-- Core Stylesheet & Google Fonts -->
@@ -238,6 +240,26 @@
                 margin-left: 0;
                 margin-right: 0;
             }
+        }
+        /* --- FOOTER POLICY LINKS FIX --- */
+        .footer-policy-links {
+            margin: 15px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-policy-links a {
+            color: #bababa;
+            text-decoration: underline;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-policy-links a:hover {
+            color: #2ecc71; /* Matches your accent green on hover */
         }
     </style>
 </head>
@@ -644,14 +666,17 @@
     </div>
 
     <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured | DBS checked Mobile Auto Locksmith Services.</p>
-            <p style="margin-top: 5px;">
-                <a href="who-am-i.html" style="color: #bababa; text-decoration: underline; font-size: 0.85rem; margin-right: 15px;">Who Am I</a>
-                <a href="legal.html" style="color: #bababa; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a>
-                <a href="pricing.html" style="color: #bababa; text-decoration: underline; font-size: 0.85rem;">Pricing</a>
-            </p>
+            
+            <!-- Updated Policy Links with a dedicated class -->
+            <div class="footer-policy-links">
+                <a href="who-am-i.html">Who Am I</a>
+                <a href="legal.html">Privacy & Terms</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
             
             <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
                 <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
@@ -668,6 +693,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- FLOATING WHATSAPP BUTTON -->
     <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 

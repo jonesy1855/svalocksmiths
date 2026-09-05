@@ -6,6 +6,15 @@
     <title>Pricing | Shropshire Vehicle Access</title>
     <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
     <style>
+        :root {
+            --sva-green: #2ecc71;
+            --sva-green-hover: #27ae60;
+            --card-bg: #14171f;
+            --border-color: #222730;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+        }
+
         body {
             background-color: #0d0d0d;
             color: #d1d5db;
@@ -20,7 +29,7 @@
             text-align: center;
             padding: 10px 15px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -29,9 +38,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
-            border-bottom: 1px solid #222;
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
             background-color: #111;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .logo-container a {
@@ -39,7 +50,7 @@
             color: inherit;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo-img {
@@ -55,179 +66,323 @@
             font-weight: 700;
         }
 
-        nav a.back-link {
-            color: #2ecc71;
+        nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--sva-green);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        nav a.back-link:hover {
-            color: #27ae60;
-            text-decoration: underline;
-        }
-
-        .policy-container {
-            max-width: 820px;
-            margin: 0 auto;
-            padding: 40px 20px 60px;
-            line-height: 1.8;
-        }
-
-        .policy-container h2.section-title {
-            color: #fff;
-            font-size: 1.85rem;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            text-align: left;
-            border-left: 4px solid #2ecc71;
-            padding-left: 12px;
-        }
-
-        .policy-container h3 {
-            color: #e5e7eb;
-            font-size: 1.2rem;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-
-        .policy-container p, .policy-container li {
-            color: #9ca3af;
-            font-size: 0.98rem;
-        }
-
-        .policy-container ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .policy-container li {
-            margin-bottom: 8px;
-        }
-
-        .policy-container a {
-            color: #2ecc71;
-            text-decoration: underline;
-        }
-
-        .date-badge {
-            color: #2ecc71;
-            font-weight: 600;
             font-size: 0.9rem;
+        }
+
+        .header-cta {
+            background: var(--sva-green);
+            color: #000 !important;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700 !important;
+        }
+
+        /* Pricing Page Specific Layout */
+        .pricing-container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 30px 16px 50px;
+        }
+
+        .section-header {
+            text-align: center;
             margin-bottom: 30px;
         }
 
-        .divider {
-            border: 0;
-            border-top: 1px solid #262626;
-            margin: 50px 0;
+        .section-header h2 {
+            color: var(--text-main);
+            font-size: 1.6rem;
+            margin-bottom: 8px;
         }
 
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Cards */
+        .price-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: border-color 0.2s ease;
+        }
+
+        .price-card:hover {
+            border-color: rgba(46, 204, 113, 0.4);
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--sva-green);
+        }
+
+        .badge-featured {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--sva-green);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .price-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .price-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin: 0;
+        }
+
+        .price-amount {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--sva-green);
+        }
+
+        .price-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 16px 0;
+        }
+
+        .price-features li {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .price-features li::before {
+            content: "✓";
+            color: var(--sva-green);
+            font-weight: bold;
+        }
+
+        .card-cta {
+            display: block;
+            text-align: center;
+            background: rgba(46, 204, 113, 0.1);
+            color: var(--sva-green);
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .card-cta:hover {
+            background: var(--sva-green);
+            color: #000;
+        }
+
+        .notice-box {
+            background: #11141a;
+            border-left: 4px solid #f39c12;
+            padding: 14px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .notice-box strong {
+            color: #fff;
+        }
+
+        /* Footer Styles */
         footer {
             text-align: center;
-            border-top: 1px solid #222;
+            border-top: 1px solid var(--border-color);
             padding: 30px 20px;
             background-color: #0b0b0b;
         }
 
         footer p {
             color: #6b7280;
-            font-size: 0.88rem;
+            font-size: 0.82rem;
             margin: 0;
         }
 
+        .footer-links {
+            margin: 10px 0;
+        }
+
+        .footer-links a {
+            color: #bababa;
+            text-decoration: underline;
+            font-size: 0.82rem;
+            margin: 0 8px;
+        }
+
         .footer-socials {
-            margin-top: 12px;
+            margin: 15px 0;
         }
 
         .footer-socials a {
-            color: #2ecc71;
+            color: var(--sva-green);
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin: 0 10px;
         }
 
-        .footer-socials a:hover {
-            text-decoration: underline;
+        .footer-locations {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .footer-loc-link {
+            background: #14171f;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     
-  <header>
-        <div class="compliance-banner">
+    <header>
+        <div class="compliance-banner" style="width: 100%;">
             ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
         </div>
         <div class="logo-container">
-            <a href="preview.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
-                <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height:75px; width:auto; object-fit:contain;">
+            <a href="preview.html">
+                <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img">
                 <div class="brand-name">
-                    <h1 style="font-size: 1.4rem; margin: 0;">Shropshire Vehicle Access</h1>
-                    <p style="margin: 0; color: #888; font-size: 0.85rem;">Mobile Car & Van Auto Locksmith</p>
+                    <h1>Shropshire Vehicle Access</h1>
+                    <p style="margin: 0; color: #888; font-size: 0.75rem;">Mobile Car & Van Auto Locksmith</p>
                 </div>
             </a>
         </div>
-
-
         <nav>
             <a href="preview.html">← Back Home</a>
             <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
         </nav>
     </header>
 
-        <main>
-            <!-- CENTRALIZED PRICING SECTION -->
-<section id="services" style="text-align: center; max-width: 800px; margin: 0 auto; padding: 40px 20px;">
-    <h2 class="section-title">Car Key Replacement Pricing Guide</h2>
-    <p>We like to offer the best prices. A final price will be given when the vehicle details have been checked and the requirements verfied.</p>
-    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-        <li style="margin-bottom: 15px;">
-            <strong style="color: var(--accent-green);">Simple basic key blade: From £95</strong><br> Standard blade cut | basic transponder coding | compatable remotes supplied | On site service.
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong style="color: var(--accent-green);">Remote Keys: From £149</strong><br> Remote fob programmed | Emergency key blade cut | OEM level electroincs | On site service.
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong style="color: var(--accent-green);">Smart or Proximity Key: From £249</strong><br> Smart key programmed | Module adaptation and data reading | Proximity and push start system | High level encryption coding equipment used.
-        </li>
-        <li style="margin-bottom: 15px;">
-            <strong style="color: var(--accent-green);">Finsl price agreed before any work commences.</strong><br> Emergency callout and long distance may incur surcharge.
-        </li>
-    </ul>
-</section>
-            
-    
-    
-        </main>
+    <main class="pricing-container">
+        <div class="section-header">
+            <h2>Transparent Pricing Guide</h2>
+            <p>We pride ourselves on honest, upfront pricing. Final quotes are confirmed only after vehicle details and specific security requirements are verified.</p>
+        </div>
 
-<!-- FOOTER -->
+        <!-- Tier 1: Basic Key -->
+        <div class="price-card">
+            <div class="price-header">
+                <h3 class="price-title">Simple Basic Key Blade</h3>
+                <span class="price-amount">From £95</span>
+            </div>
+            <ul class="price-features">
+                <li>Standard precision blade cutting</li>
+                <li>Basic transponder chip coding</li>
+                <li>Compatible remote options available</li>
+                <li>Convenient mobile on-site service</li>
+            </ul>
+            <a href="tel:07123123456" class="card-cta">Enquire About This Service</a>
+        </div>
+
+        <!-- Tier 2: Remote Keys (Featured) -->
+        <div class="price-card featured">
+            <span class="badge-featured">Most Popular</span>
+            <div class="price-header">
+                <h3 class="price-title">Remote Fob Keys</h3>
+                <span class="price-amount">From £149</span>
+            </div>
+            <ul class="price-features">
+                <li>Complete remote fob programming</li>
+                <li>Emergency mechanical blade cutting</li>
+                <li>OEM-level electronic components</li>
+                <li>Mobile on-site service at your location</li>
+            </ul>
+            <a href="tel:07123123456" class="card-cta">Enquire About This Service</a>
+        </div>
+
+        <!-- Tier 3: Smart / Proximity -->
+        <div class="price-card">
+            <div class="price-header">
+                <h3 class="price-title">Smart / Proximity Key</h3>
+                <span class="price-amount">From £249</span>
+            </div>
+            <ul class="price-features">
+                <li>Smart key programming & pairing</li>
+                <li>Module data reading & adaptation</li>
+                <li>Proximity & push-to-start system support</li>
+                <li>High-level advanced encryption coding</li>
+            </ul>
+            <a href="tel:07123123456" class="card-cta">Enquire About This Service</a>
+        </div>
+
+        <!-- Important Notice Box -->
+        <div class="notice-box">
+            <strong>Important Note:</strong> Final pricing is always agreed upon before any work commences. Emergency callouts, all-keys-lost (AKL) scenarios, or long-distance travel outside standard coverage zones may incur a reasonable surcharge.
+        </div>
+    </main>
+
+    <!-- FOOTER -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured | DBS checked Mobile Auto Locksmith Services.</p>
-            <p style="margin-top: 5px;">
-                <a href="who-am-i.html" style="color: #bababa; text-decoration: underline; font-size: 0.85rem; margin-right: 15px;">Who Am I</a>
-                <a href="legal.html" style="color: #bababa; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a>
-                <a href="pricing.html" style="color: #bababa; text-decoration: underline; font-size: 0.85rem;">Pricing</a>
-            </p>
+            <div class="footer-links">
+                <a href="who-am-i.html">Who Am I</a> | 
+                <a href="legal.html">Privacy & Terms</a> | 
+                <a href="pricing.html">Pricing</a>
+            </div>
             
-            <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
-                <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
-                <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+            <div class="footer-socials">
+                <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
 
             <div class="footer-locations">
-                <a href="locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
-                <a href="locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
-                <a href="locksmith-shrewsbury.html" class="footer-loc-link">Serving Shrewsbury</a>
-                <a href="locksmith-telford.html" class="footer-loc-link">Serving Telford</a>
-                <a href="locksmith-oswestry.html" class="footer-loc-link">Serving Oswestry</a>
-                <a href="locksmith-whitchurch.html" class="footer-loc-link">Serving Whitchurch</a>
+                <a href="locksmith-shawbury.html" class="footer-loc-link">Shawbury</a>
+                <a href="locksmith-market-drayton.html" class="footer-loc-link">Market Drayton</a>
+                <a href="locksmith-shrewsbury.html" class="footer-loc-link">Shrewsbury</a>
+                <a href="locksmith-telford.html" class="footer-loc-link">Telford</a>
+                <a href="locksmith-oswestry.html" class="footer-loc-link">Oswestry</a>
+                <a href="locksmith-whitchurch.html" class="footer-loc-link">Whitchurch</a>
             </div>
         </div>
     </footer>
-
 
 </body>
 </html>

@@ -34,22 +34,30 @@
             background-color: #d35400;
             color: #fff;
             text-align: center;
-            padding: 10px 15px;
+            padding: 8px 15px;
             font-weight: 700;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             width: 100%;
             letter-spacing: 0.5px;
         }
 
-        /* Header & Navigation */
+        /* Standardized Header */
         header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            background-color: #08090a;
+            background-color: #111;
+            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        .logo-container {
-            padding: 15px 5%;
+        .header-main-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 20px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo-container a {
@@ -60,42 +68,35 @@
             gap: 12px;
         }
 
-        nav.top-nav {
-            padding: 0 5% 20px;
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-name {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
         }
 
-        nav .back-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        nav .back-link:hover {
-            color: #2ecc71;
-        }
-
-        header nav .header-cta,
         .header-cta {
-            background-color: #e67e22 !important;
-            color: #ffffff !important;
-            padding: 8px 16px !important;
+            background-color: #2ecc71 !important;
+            color: #000 !important;
+            padding: 6px 12px !important;
             border-radius: 6px !important;
             font-weight: 700 !important;
             text-decoration: none !important;
-            display: inline-block !important;
+            font-size: 0.85rem !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 4px !important;
+            white-space: nowrap !important;
             border: none !important;
-            box-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
-            transition: background 0.2s ease, transform 0.2s ease;
+            transition: transform 0.2s ease, background 0.2s ease;
         }
 
-        header nav .header-cta:hover,
         .header-cta:hover {
-            background-color: #d35400 !important;
+            background-color: #27ae60 !important;
             transform: translateY(-1px);
         }
 
@@ -364,27 +365,30 @@
 </head>
 <body>
 
-    <!-- COMPLIANCE BANNER -->
-    <div class="compliance-banner">
-        ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
-    </div>
-
     <!-- HEADER & TOP NAVIGATION -->
     <header>
-        <div class="logo-container">
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height:75px; width:auto; object-fit:contain;">
-                <div class="brand-name">
-                    <h1 style="font-size: 1.4rem; margin: 0;">Shropshire Vehicle Access</h1>
-                    <p style="margin: 0; color: #888; font-size: 0.85rem;">Mobile Car & Van Auto Locksmith</p>
-                </div>
-            </a>
+        <div class="compliance-banner">
+            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
         </div>
         
-        <nav class="top-nav">
-            <a href="index.html" class="back-link">← Back Home</a>
-            <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
-        </nav>
+        <div class="header-main-content">
+            <!-- Logo & Brand Title -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img">
+                    <div class="brand-name">
+                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
+                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav style="display: flex; align-items: center; gap: 10px;">
+                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+                <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
+            </nav>
+        </div>
     </header>
 
     <!-- ABOUT SECTION -->
@@ -511,55 +515,5 @@
 
     <!-- SAFE SCRIPTS -->
     <script src="assets/js/forms.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const banner = document.getElementById('cookie-banner');
-        const acceptBtn = document.getElementById('accept-cookies');
-        const declineBtn = document.getElementById('decline-cookies');
-        const mapIframe = document.getElementById('google-map-iframe');
-        const mapPlaceholder = document.getElementById('map-placeholder');
-        const placeholderAccept = document.getElementById('placeholder-accept');
-
-        let consent = localStorage.getItem('sva_cookie_consent');
-
-        if (banner && !consent) {
-            banner.style.display = 'flex';
-        } else if (consent === 'accepted') {
-            loadMap();
-        }
-
-        function loadMap() {
-            if (mapIframe) {
-                mapIframe.src = mapIframe.getAttribute('data-src');
-                mapIframe.style.display = 'block';
-                if (mapPlaceholder) mapPlaceholder.style.display = 'none';
-            }
-        }
-
-        // Null-safety checks prevent console errors on pages without maps or banners
-        if (acceptBtn) {
-            acceptBtn.addEventListener('click', function() {
-                localStorage.setItem('sva_cookie_consent', 'accepted');
-                if (banner) banner.style.display = 'none';
-                loadMap();
-            });
-        }
-
-        if (placeholderAccept) {
-            placeholderAccept.addEventListener('click', function() {
-                localStorage.setItem('sva_cookie_consent', 'accepted');
-                if (banner) banner.style.display = 'none';
-                loadMap();
-            });
-        }
-
-        if (declineBtn) {
-            declineBtn.addEventListener('click', function() {
-                localStorage.setItem('sva_cookie_consent', 'declined');
-                if (banner) banner.style.display = 'none';
-            });
-        }
-    });
-    </script>
 </body>
 </html>

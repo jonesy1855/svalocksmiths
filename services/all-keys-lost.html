@@ -90,25 +90,33 @@
     </style>
 </head>
 <body>
-    <header>
-        <div class="compliance-banner">
-        ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+    <header style="background-color: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000;">
+        <div class="compliance-banner" style="background-color: #d35400; color: #fff; text-align: center; padding: 8px 15px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">
+            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
         </div>
-        <div class="logo-container">
-            <a href="../index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
-                <img src="../assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height:75px; width:auto; object-fit:contain;">
-                <div class="brand-name">
-                    <h1>Shropshire Vehicle Access</h1>
-                    <p>Mobile Car & Van Auto Locksmith</p>
-                </div>
-            </a>
+        
+        <div class="header-main-content" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 15px;">
+            
+            <!-- Logo & Brand Title -->
+            <div class="logo-container">
+                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+                    <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height: 50px; width: auto; object-fit: contain;">
+                    <div class="brand-name" style="display: flex; flex-direction: column;">
+                        <!-- Main Title in SVA Green and Larger -->
+                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
+                        <!-- Subtitle smaller underneath -->
+                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav style="display: flex; align-items: center; gap: 10px;">
+                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+                <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; white-space: nowrap;">📞 Call Now</a>
+            </nav>
+
         </div>
-
-
-        <nav>
-            <a href="../index.html">← Back Home</a>
-            <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
-        </nav>
     </header>
 
    <!-- MAIN CONTENT GRID -->

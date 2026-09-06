@@ -10172,7 +10172,7 @@ const carDatabase = {
                                 <span style="background: #2ecc71; color: #000; font-weight: 800; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${data.lishi || 'N/A'}</span>
                             </div>
 
-                            <!-- Codes & Transponders Grid (Mapped to silca, ic, chip, xhorse) -->
+                            <!-- Codes & Transponders Grid -->
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; background: #0f1117; padding: 12px; border-radius: 6px; border: 1px solid #222;">
                                 <div>
                                     <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700;">Silca Blank</div>
@@ -10188,7 +10188,7 @@ const carDatabase = {
                                 </div>
                             </div>
 
-                            <!-- Warning / Risk Box (If present in DB) -->
+                            <!-- Warning / Risk Box -->
                             ${data.warning ? `
                             <div style="background: rgba(231, 76, 60, 0.08); border-left: 3px solid #e74c3c; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-bottom: 10px; font-size: 0.82rem; color: #f1c40f;">
                                 ${data.warning}
@@ -10214,17 +10214,28 @@ const carDatabase = {
                     `;
                 } else {
                     // ==========================================
-                    // LOGGED-OUT VIEW (Paywall Teaser Card)
+                    // LOGGED-OUT VIEW (Paywall Teaser Card with Stripe Links)
                     // ==========================================
                     lockedDataSection.innerHTML = `
                         <div style="background: #14171f; border: 1px dashed #e67e22; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
                             <div style="font-size: 1.5rem; margin-bottom: 6px;">🔒</div>
                             <h4 style="color: #fff; margin: 0 0 6px 0; font-size: 1rem;">Required Lishi: <span style="color: #2ecc71;">${data.lishi || 'N/A'}</span></h4>
                             <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
-                                Sign in to view complete Instacode references, transponder chip data, CEM module locations, and A/C capacities for this vehicle.
+                                Unlock complete specs, Instacode references, and module locations for <strong>${make}</strong>.
                             </p>
-                            <a href="../login/login.html" style="display: inline-block; background-color: #2ecc71; color: #000; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.85rem; text-decoration: none;">
-                                🔐 Sign In to Unlock Full Specs
+                            
+                            <!-- Stripe Payment Buttons -->
+                            <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
+                                <a href="https://buy.stripe.com/cNi4gscMD3nL88VcMLeUU02" target="_blank" style="background-color: #3498db; color: #fff; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
+                                    🔓 Unlock All ${make} Models (£4.99)
+                                </a>
+                                <a href="https://buy.stripe.com/3cIbIU27Z4rPah3287eUU01" target="_blank" style="background-color: #2ecc71; color: #000; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
+                                    ⚡ Unlock Full Database Pro (£19.99)
+                                  </a>
+                            </div>
+
+                            <a href="../services/login.html" style="color: #9ca3af; font-size: 0.75rem; text-decoration: underline;">
+                                Already purchased? Sign in here
                             </a>
                         </div>
                     `;
@@ -10232,7 +10243,6 @@ const carDatabase = {
             }
         });
     }
-
 </script>
 
 

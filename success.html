@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activating Pro Access - SVA FieldMate Pro</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body style="background: #0b0e14; color: #fff; font-family: sans-serif; text-align: center; padding-top: 50px;">
+    <h2>⚡ Activating Your Pro License...</h2>
+    <p>Please wait while we sync your payment with your account.</p>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
+            authDomain: "sva-auth.firebaseapp.com",
+            projectId: "sva-auth",
+            storageBucket: "sva-auth.firebasestorage.app",
+            messagingSenderId: "778693286501",
+            appId: "1:778693286501:web:594b3f4618c542ee0b848c"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (user) {
+                try {
+                    // Automatically upgrade their Firestore document to Pro!
+                    await firebase.firestore().collection('users').doc(user.uid).set({
+                        tier: 'pro_unlimited',
+                        email: user.email,
+                        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                    }, { merge: true });
+
+                    document.querySelector('h2').textContent = "✅ Pro Access Activated!";
+                    document.querySelector('p').textContent = "Redirecting you back to the field workspace...";
+                    
+                    setTimeout(() => {
+                        window.location.href = "preview.html";
+                    }, 2000);
+                } catch (err) {
+                    console.error("Error updating tier:", err);
+                    document.querySelector('p').textContent = "Error syncing tier. Please contact support.";
+                }
+            } else {
+                // If they weren't logged in during payment, prompt them to sign in
+                document.querySelector('h2').textContent = "🔒 Please Sign In";
+                document.querySelector('p').innerHTML = 'Please <a href="services/login.html" style="color: #2ecc71;">sign in with your account</a> to claim your Pro pass.';
+            }
+        });
+    </script>
+</body>
+</html>

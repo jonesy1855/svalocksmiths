@@ -235,24 +235,29 @@
         errorDiv.style.display = 'none';
 
         if (isSignupMode) {
-firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-        const user = userCredential.user;
-        
-        // Create their free tier document in Firestore
-        return firebase.firestore().collection('users').doc(user.uid).set({
-            email: user.email,
-            tier: 'free',
-            unlockedMakes: [],
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-        });
-    })
-    .then(() => {
-        window.location.href = "../preview.html";
-    })
-    .catch((error) => {
-        // Error handling...
-    });
+            // Register New User & Create Free Tier Firestore Document
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    
+                    return firebase.firestore().collection('users').doc(user.uid).set({
+                        email: user.email,
+                        tier: 'free',
+                        unlockedMakes: [],
+                        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    }).catch(err => {
+                        console.log("Firestore doc creation deferred:", err);
+                    });
+                })
+                .then(() => {
+                    window.location.href = "../preview.html"; 
+                })
+                .catch((error) => {
+                    submitBtn.textContent = "Register Account";
+                    submitBtn.disabled = false;
+                    alert("Registration Error: " + error.message);
+                });
+
         } else {
             // Sign In Existing User
             firebase.auth().signInWithEmailAndPassword(email, password)
@@ -268,6 +273,7 @@ firebase.auth().createUserWithEmailAndPassword(email, password)
         }
     }
 </script>
+
 
 </body>
 </html>

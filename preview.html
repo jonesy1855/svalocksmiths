@@ -755,14 +755,15 @@
         firebase.initializeApp(firebaseConfig);
     }
 
-    // Listen for Auth State Changes to Toggle Paywall vs Unlocked Data
+    // Global Auth State Tracker (Handles Navbar UI Only)
+    let currentUser = null;
+
     firebase.auth().onAuthStateChanged((user) => {
-        const lockedDataSection = document.getElementById('lockedDataSection');
+        currentUser = user;
         const authNavLink = document.getElementById('authNavLink');
 
         if (user) {
             // --- USER IS LOGGED IN ---
-            // 1. Change the header link to say "Pro Account" or provide a "Log Out" option
             if (authNavLink) {
                 authNavLink.innerHTML = "👤 Pro Active";
                 authNavLink.style.color = "#2ecc71";
@@ -773,23 +774,8 @@
                     }
                 };
             }
-
-            // 2. Transform the locked paywall box into the Unlocked Pro Data box!
-            if (lockedDataSection) {
-                lockedDataSection.innerHTML = `
-                    <div style="background: rgba(46,204,113,0.1); border: 1px solid #2ecc71; border-radius: 6px; padding: 15px; text-align: left;">
-                        <h4 style="color: #2ecc71; margin: 0 0 5px 0; font-size: 0.95rem;">🔓 Pro Trade Data Unlocked</h4>
-                        <p style="color: #d1d5db; font-size: 0.85rem; margin: 0 0 8px 0; line-height: 1.4;">
-                            <strong>Security & Deadlock Notice:</strong> Ensure module voltage is stabilized before OBD key programming on this platform. Check central locking motor fuses prior to forced entry triage.
-                        </p>
-                        <span style="font-size: 0.75rem; color: #9ca3af;">Authenticated as: ${user.email}</span>
-                    </div>
-                `;
-            }
-
         } else {
             // --- USER IS LOGGED OUT ---
-            // Keep the sign-in prompt visible in the paywall box
             if (authNavLink) {
                 authNavLink.innerHTML = "🔐 Sign In";
                 authNavLink.style.color = "#e67e22";
@@ -798,6 +784,7 @@
         }
     });
 </script>
+
 
 
     <script>

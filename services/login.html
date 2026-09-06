@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Pro Trade Login | Shropshire Vehicle Access</title>
+    <title>Pro Trade Portal | Shropshire Vehicle Access</title>
     <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
     
     <!-- Firebase App & Auth Compat SDKs -->
@@ -49,9 +49,33 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
         }
 
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #222730;
+        }
+
+        .auth-tab {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: #9ca3af;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: color 0.2s;
+        }
+
+        .auth-tab.active {
+            color: #2ecc71;
+            border-bottom: 2px solid #2ecc71;
+        }
+
         .login-card h2 {
             color: #fff;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             margin-top: 0;
             margin-bottom: 6px;
             text-align: center;
@@ -59,19 +83,19 @@
 
         .login-card p {
             color: #9ca3af;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
             color: #aaa;
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             margin-bottom: 6px;
@@ -93,7 +117,7 @@
             border-color: #2ecc71;
         }
 
-        .login-btn {
+        .action-btn {
             width: 100%;
             background-color: #2ecc71;
             color: #000;
@@ -107,7 +131,7 @@
             margin-top: 10px;
         }
 
-        .login-btn:hover {
+        .action-btn:hover {
             background-color: #27ae60;
         }
 
@@ -125,7 +149,7 @@
             text-decoration: underline;
         }
 
-        #loginError {
+        #authError {
             color: #e74c3c;
             font-size: 0.82rem;
             text-align: center;
@@ -143,10 +167,16 @@
 
     <div class="login-wrapper">
         <div class="login-card">
-            <h2>Pro Trade Sign In</h2>
-            <p>Access locked vehicle data, security warnings, and advanced bypass notes.</p>
+            <!-- Mode Selector Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="tabLogin" onclick="switchMode('login')">Sign In</button>
+                <button class="auth-tab" id="tabSignup" onclick="switchMode('signup')">Register</button>
+            </div>
+
+            <h2 id="formTitle">Pro Trade Sign In</h2>
+            <p id="formSubtitle">Access locked vehicle data and professional security specs.</p>
             
-            <form id="loginForm" onsubmit="handleLogin(event)">
+            <form id="authForm" onsubmit="handleAuth(event)">
                 <div class="form-group">
                     <label for="email">Trade Email</label>
                     <input type="email" id="email" required placeholder="name@yourlocksmithbusiness.co.uk">
@@ -157,9 +187,9 @@
                     <input type="password" id="password" required placeholder="••••••••••••">
                 </div>
 
-                <div id="loginError">Invalid email or password.</div>
+                <div id="authError"></div>
 
-                <button type="submit" class="login-btn">Sign In</button>
+                <button type="submit" id="submitBtn" class="action-btn">Sign In</button>
             </form>
 
             <a href="../preview.html" class="back-home">Return to Field Workspace</a>
@@ -167,7 +197,7 @@
     </div>
 
 <script>
-    // 1. Your Firebase Configuration
+    // Firebase Configuration
     const firebaseConfig = {
         apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
         authDomain: "sva-auth.firebaseapp.com",
@@ -178,34 +208,57 @@
         measurementId: "G-5GWZJKDN36"
     };
 
-    // Initialize Firebase (Compat SDK style)
     firebase.initializeApp(firebaseConfig);
 
-    // 2. Handle Login Submission
-    function handleLogin(event) {
+    let isSignupMode = false;
+
+    function switchMode(mode) {
+        isSignupMode = (mode === 'signup');
+        document.getElementById('tabLogin').classList.toggle('active', !isSignupMode);
+        document.getElementById('tabSignup').classList.toggle('active', isSignupMode);
+        
+        document.getElementById('formTitle').textContent = isSignupMode ? 'Create Pro Account' : 'Pro Trade Sign In';
+        document.getElementById('formSubtitle').textContent = isSignupMode ? 'Register a new trade credential to access live database specs.' : 'Access locked vehicle data and professional security specs.';
+        document.getElementById('submitBtn').textContent = isSignupMode ? 'Register Account' : 'Sign In';
+        document.getElementById('authError').style.display = 'none';
+    }
+
+    function handleAuth(event) {
         event.preventDefault();
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
-        const errorDiv = document.getElementById('loginError');
-        const submitBtn = document.querySelector('.login-btn');
+        const errorDiv = document.getElementById('authError');
+        const submitBtn = document.getElementById('submitBtn');
 
-        // Give visual feedback that it's working
-        submitBtn.textContent = "Authenticating...";
+        submitBtn.textContent = isSignupMode ? "Creating Account..." : "Authenticating...";
         submitBtn.disabled = true;
         errorDiv.style.display = 'none';
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                // Success! Redirect back to your app workspace
-                window.location.href = "../preview.html"; 
-            })
-            .catch((error) => {
-                // Handle errors cleanly 
-                submitBtn.textContent = "Sign In";
-                submitBtn.disabled = false;
-                errorDiv.textContent = "Access Denied: Check your email or password.";
-                errorDiv.style.display = 'block';
-            });
+        if (isSignupMode) {
+            // Register New User
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    window.location.href = "../preview.html";
+                })
+                .catch((error) => {
+                    submitBtn.textContent = "Register Account";
+                    submitBtn.disabled = false;
+                    errorDiv.textContent = error.message;
+                    errorDiv.style.display = 'block';
+                });
+        } else {
+            // Sign In Existing User
+            firebase.auth().signInWithEmailAndPassword(email, password)
+                .then((userCredential) => {
+                    window.location.href = "../preview.html";
+                })
+                .catch((error) => {
+                    submitBtn.textContent = "Sign In";
+                    submitBtn.disabled = false;
+                    errorDiv.textContent = "Access Denied: Check your email or password.";
+                    errorDiv.style.display = 'block';
+                });
+        }
     }
 </script>
 

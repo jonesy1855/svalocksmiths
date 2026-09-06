@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Pro Trade Login | Shropshire Vehicle Access</title>
     <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
-    <!-- Firebase App (Compat SDKs make integration straightforward in static pages) -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    
+    <!-- Firebase App & Auth Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
 
     <style>
         body {
@@ -166,40 +167,46 @@
     </div>
 
 <script>
-    // Your web app's Firebase configuration
+    // 1. Your Firebase Configuration
     const firebaseConfig = {
-  apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
-  authDomain: "sva-auth.firebaseapp.com",
-  projectId: "sva-auth",
-  storageBucket: "sva-auth.firebasestorage.app",
-  messagingSenderId: "778693286501",
-  appId: "1:778693286501:web:594b3f4618c542ee0b848c",
-  measurementId: "G-5GWZJKDN36"
-};
+        apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
+        authDomain: "sva-auth.firebaseapp.com",
+        projectId: "sva-auth",
+        storageBucket: "sva-auth.firebasestorage.app",
+        messagingSenderId: "778693286501",
+        appId: "1:778693286501:web:594b3f4618c542ee0b848c",
+        measurementId: "G-5GWZJKDN36"
+    };
 
-    // Initialize Firebase
+    // Initialize Firebase (Compat SDK style)
     firebase.initializeApp(firebaseConfig);
 
+    // 2. Handle Login Submission
     function handleLogin(event) {
         event.preventDefault();
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const errorDiv = document.getElementById('loginError');
+        const submitBtn = document.querySelector('.login-btn');
+
+        // Give visual feedback that it's working
+        submitBtn.textContent = "Authenticating...";
+        submitBtn.disabled = true;
+        errorDiv.style.display = 'none';
 
         firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                // Signed in successfully
-                localStorage.setItem('sva_logged_in', 'true');
-                window.location.href = "preview.html"; // Redirect back to app
+                // Success! Redirect back to your app workspace
+                window.location.href = "../preview.html"; 
             })
             .catch((error) => {
-                // Handle errors (e.g., wrong password, user not found)
-                errorDiv.textContent = error.message;
+                // Handle errors cleanly 
+                submitBtn.textContent = "Sign In";
+                submitBtn.disabled = false;
+                errorDiv.textContent = "Access Denied: Check your email or password.";
                 errorDiv.style.display = 'block';
             });
     }
-    const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 </script>
 
 </body>

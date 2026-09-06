@@ -303,7 +303,7 @@
 
             <!-- Navigation Links -->
             <nav class="main-nav" style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
-                <a href="index.html#services" class="nav-link" style="color: #d1d5db; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Services</a>
+                <a href="#services" class="nav-link" style="color: #d1d5db; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Services</a>
                 
                 <!-- Dropdown for Areas -->
                 <div class="dropdown" style="position: relative; display: inline-block;">
@@ -321,8 +321,13 @@
                 </div>
 
                 <a href="who-am-i.html" class="nav-link" style="color: #d1d5db; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Who Am I</a>
+                
+                <!-- NEW PRO LOGIN LINK -->
+                <a href="services/login.html" id="authNavLink" style="color: #e67e22; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 4px;">🔐 Sign In</a>
+
                 <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 8px 14px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">📞 Call Now</a>
             </nav>
+
         </div>
     </header>
 
@@ -733,28 +738,67 @@
         </div>
     </a>
 
-    <!-- SCRIPTS -->
-    <script src="assets/js/forms.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-<script>
-firebase.initializeApp(firebaseConfig);
 
-firebase.auth().onAuthStateChanged((user) => {
-    const lockedSections = document.querySelectorAll('.locked-data-section');
-    
-    if (user) {
-        // User is signed in! Unlock the pro data fields across the app
-        lockedSections.forEach(section => {
-            section.style.display = 'block'; // or remove the paywall overlay
-        });
-    } else {
-        // User is logged out, keep pro data locked
-        lockedSections.forEach(section => {
-            section.style.display = 'none';
-        });
+
+<script>
+    // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
+        authDomain: "sva-auth.firebaseapp.com",
+        projectId: "sva-auth",
+        storageBucket: "sva-auth.firebasestorage.app",
+        messagingSenderId: "778693286501",
+        appId: "1:778693286501:web:594b3f4618c542ee0b848c",
+        measurementId: "G-5GWZJKDN36"
+    };
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
     }
-});
+
+    // Listen for Auth State Changes to Toggle Paywall vs Unlocked Data
+    firebase.auth().onAuthStateChanged((user) => {
+        const lockedDataSection = document.getElementById('lockedDataSection');
+        const authNavLink = document.getElementById('authNavLink');
+
+        if (user) {
+            // --- USER IS LOGGED IN ---
+            // 1. Change the header link to say "Pro Account" or provide a "Log Out" option
+            if (authNavLink) {
+                authNavLink.innerHTML = "👤 Pro Active";
+                authNavLink.style.color = "#2ecc71";
+                authNavLink.href = "#";
+                authNavLink.onclick = () => {
+                    if(confirm("Do you want to log out of your Pro account?")) {
+                        firebase.auth().signOut().then(() => window.location.reload());
+                    }
+                };
+            }
+
+            // 2. Transform the locked paywall box into the Unlocked Pro Data box!
+            if (lockedDataSection) {
+                lockedDataSection.innerHTML = `
+                    <div style="background: rgba(46,204,113,0.1); border: 1px solid #2ecc71; border-radius: 6px; padding: 15px; text-align: left;">
+                        <h4 style="color: #2ecc71; margin: 0 0 5px 0; font-size: 0.95rem;">🔓 Pro Trade Data Unlocked</h4>
+                        <p style="color: #d1d5db; font-size: 0.85rem; margin: 0 0 8px 0; line-height: 1.4;">
+                            <strong>Security & Deadlock Notice:</strong> Ensure module voltage is stabilized before OBD key programming on this platform. Check central locking motor fuses prior to forced entry triage.
+                        </p>
+                        <span style="font-size: 0.75rem; color: #9ca3af;">Authenticated as: ${user.email}</span>
+                    </div>
+                `;
+            }
+
+        } else {
+            // --- USER IS LOGGED OUT ---
+            // Keep the sign-in prompt visible in the paywall box
+            if (authNavLink) {
+                authNavLink.innerHTML = "🔐 Sign In";
+                authNavLink.style.color = "#e67e22";
+                authNavLink.href = "services/login.html";
+            }
+        }
+    });
 </script>
+
 
     <script>
         // 1. YouTube Video Player Logic

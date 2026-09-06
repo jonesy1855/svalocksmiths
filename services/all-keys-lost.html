@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Keys Lost Solutions | Shropshire Vehicle Access Locksmiths</title>
     <link rel="stylesheet" href="../assets/css/styles.css?=v1.1">
+    
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
     <style>
         /* Service Page Specific Layouts */
         .service-hero {
@@ -112,9 +116,14 @@
 
             <!-- Navigation Links -->
             <nav style="display: flex; align-items: center; gap: 10px;">
-                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+                <a href="../preview.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+                
+                <!-- PRO SIGN IN LINK -->
+                <a href="../services/login.html" id="authNavLink" style="color: #e67e22; text-decoration: none; font-weight: 700; font-size: 0.85rem; white-space: nowrap;">🔐 Sign In</a>
+
                 <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; white-space: nowrap;">📞 Call Now</a>
             </nav>
+
 
         </div>
     </header>
@@ -207,7 +216,7 @@
             <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
                 Sign in to view specific door deadlocking risks, ignition pick directions, wafer counts, and specialized bypass notes for this model.
             </p>
-            <a href="login.html" style="display: inline-block; background-color: #e67e22; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s;">
+            <a href="../services/login.html" style="display: inline-block; background-color: #e67e22; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s;">
                 🔐 Sign In to Unlock Vehicle Data
             </a>
         </div>
@@ -10094,6 +10103,65 @@ const carDatabase = {
     });
 
 </script>
+
+
+
+<script>
+    // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
+        authDomain: "sva-auth.firebaseapp.com",
+        projectId: "sva-auth",
+        storageBucket: "sva-auth.firebasestorage.app",
+        messagingSenderId: "778693286501",
+        appId: "1:778693286501:web:594b3f4618c542ee0b848c",
+        measurementId: "G-5GWZJKDN36"
+    };
+    if (!firebase.apps.length) {
+        firebase.initializeApp(firebaseConfig);
+    }
+
+    // Real-time Auth Listener for Sub-Pages
+    firebase.auth().onAuthStateChanged((user) => {
+        const lockedDataSection = document.getElementById('lockedDataSection');
+        const authNavLink = document.getElementById('authNavLink');
+
+        if (user) {
+            // --- USER IS LOGGED IN ---
+            if (authNavLink) {
+                authNavLink.innerHTML = "👤 Pro Active";
+                authNavLink.style.color = "#2ecc71";
+                authNavLink.href = "#";
+                authNavLink.onclick = () => {
+                    if(confirm("Do you want to log out of your Pro account?")) {
+                        firebase.auth().signOut().then(() => window.location.reload());
+                    }
+                };
+            }
+
+            // Unlock the page's restricted trade data/warnings
+            if (lockedDataSection) {
+                lockedDataSection.innerHTML = `
+                    <div style="background: rgba(46,204,113,0.1); border: 1px solid #2ecc71; border-radius: 6px; padding: 15px; text-align: left;">
+                        <h4 style="color: #2ecc71; margin: 0 0 5px 0; font-size: 0.95rem;">🔓 Pro All-Keys-Lost Technical Notes Unlocked</h4>
+                        <p style="color: #d1d5db; font-size: 0.85rem; margin: 0; line-height: 1.4;">
+                            <strong>EEPROM / Bench Notice:</strong> Ensure backup hex file is verified before writing transponder data. Check cluster and BCM synchronization protocols for this model year.
+                        </p>
+                    </div>
+                `;
+            }
+
+        } else {
+            // --- USER IS LOGGED OUT ---
+            if (authNavLink) {
+                authNavLink.innerHTML = "🔐 Sign In";
+                authNavLink.style.color = "#e67e22";
+                authNavLink.href = "../services/login.html";
+            }
+        }
+    });
+</script>
+
 
 </body>
 </html>

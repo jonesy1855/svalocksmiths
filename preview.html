@@ -62,6 +62,10 @@
 
 
 </script>
+<!-- Firebase App (Compat SDKs make integration straightforward in static pages) -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
 
     <!-- Core Stylesheet & Google Fonts -->
     <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
@@ -732,6 +736,25 @@
     <!-- SCRIPTS -->
     <script src="assets/js/forms.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
+<script>
+firebase.initializeApp(firebaseConfig);
+
+firebase.auth().onAuthStateChanged((user) => {
+    const lockedSections = document.querySelectorAll('.locked-data-section');
+    
+    if (user) {
+        // User is signed in! Unlock the pro data fields across the app
+        lockedSections.forEach(section => {
+            section.style.display = 'block'; // or remove the paywall overlay
+        });
+    } else {
+        // User is logged out, keep pro data locked
+        lockedSections.forEach(section => {
+            section.style.display = 'none';
+        });
+    }
+});
+</script>
 
     <script>
         // 1. YouTube Video Player Logic

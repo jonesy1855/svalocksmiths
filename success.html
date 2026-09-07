@@ -57,38 +57,45 @@
             document.querySelector('p').textContent = "Database synced successfully. Redirecting to workspace...";
             
             setTimeout(() => {
-                window.location.href = "../all-keys-lost.html";
+                window.location.href = "all-keys-lost.html";
             }, 1800);
         }
 
-
-        // Use Firebase Auth observer with built-in safety check
-        firebase.auth().onAuthStateChanged(async (user) => {
-            if (user) {
-                try {
-                    await processFulfillment(user);
-                } catch (err) {
-                    console.error("Firestore error:", err);
-                    document.querySelector('h2').textContent = "⚠️ Sync Error";
-                    document.querySelector('p').textContent = "Payment successful, but database update failed. Please refresh.";
-                }
-            } else {
-                // Fallback if auth state is still initializing during redirect
-                setTimeout(async () => {
-                    const currentUser = firebase.auth().currentUser;
-                    if (currentUser) {
-                        try {
-                            await processFulfillment(currentUser);
-                        } catch (err) {
-                            console.error("Fallback error:", err);
-                        }
-                    } else {
-                        document.querySelector('h2').textContent = "🔒 Sign In Required";
-                        document.querySelector('p').innerHTML = 'Please <a href="../login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
+        // Grab user immediately if already cached, or use robust auth observer
+        const initialUser = firebase.auth().currentUser;
+        if (initialUser) {
+            processFulfillment(initialUser);
+        } else {
+            firebase.auth().onAuthStateChanged(async (user) => {
+                if (user) {
+                    try {
+                        await processFulfillment(user);
+                    } catch (err) {
+                        console.error("Firestore error:", err);
+                        document.querySelector('h2').textContent = "⚠️ Sync Error";
+                        document.querySelector('p').textContent = "Payment successful, but database update failed. Please refresh.";
                     }
-                }, 1500);
-            }
-        });
+                } else {
+                    // Fallback if auth state is still initializing during redirect
+                    setTimeout(async () => {
+                        const currentUser = firebase.auth().currentUser;
+                        if (currentUser) {
+                            try {
+                                await processFulfillment(currentUser);
+                            } catch (err) {
+                                console.error("Fallback error:", err);
+                            }
+                        } else {
+                            document.querySelector('h2').textContent = "🔒 Sign In Required";
+                            document.querySelector('p').innerHTML = 'Please <a href="login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
+                        }
+                    }, 1500);
+                }
+            });
+        }
     </script>
+</body>
+</html>
+
 </body>
 </html>

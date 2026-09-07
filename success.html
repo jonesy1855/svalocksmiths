@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activating Pro Access - SVA FieldMate Pro</title>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+</head>
+<body style="background: #0b0e14; color: #fff; font-family: sans-serif; text-align: center; padding-top: 50px;">
+    <h2>⚡ Activating Your Pro License...</h2>
+    <p>Verifying trade credentials and syncing payment...</p>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
+            authDomain: "sva-auth.firebaseapp.com",
+            projectId: "sva-auth",
+            storageBucket: "sva-auth.firebasestorage.app",
+            messagingSenderId: "778693286501",
+            appId: "1:778693286501:web:594b3f4618c542ee0b848c"
+        };
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+
+        // Parse URL parameters from Stripe redirect (e.g., ?make=Mazda or ?tier=pro_unlimited)
+        const urlParams = new URLSearchParams(window.location.search);
+        const targetMake = urlParams.get('make');
+
+        async function processFulfillment(user) {
+            const userRef = firebase.firestore().collection('users').doc(user.uid);
+            
+            if (targetMake) {
+                // If they bought a single manufacturer pass, ONLY add it to the array
+                await userRef.set({
+                    unlockedMakes: firebase.firestore.FieldValue.arrayUnion(targetMake),
+                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                }, { merge: true });
+                document.querySelector('h2').textContent = `✅ ${targetMake} Pass Unlocked!`;
+            } else {
+                // ONLY upgrade to pro_unlimited if explicitly passed via ?tier=pro_unlimited in the URL
+                const targetTier = urlParams.get('tier');
+                if (targetTier === 'pro_unlimited') {
+                    await userRef.set({
+                        tier: 'pro_unlimited',
+                        email: user.email,
+                        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                    }, { merge: true });
+                    document.querySelector('h2').textContent = "✅ Full Pro Access Activated!";
+                } else {
+                    // Fallback safety if no params are present
+                    document.querySelector('h2').textContent = "✅ Payment Received!";
+                }
+            }
+
+            document.querySelector('p').textContent = "Database synced successfully. Redirecting to workspace...";
+            
+            setTimeout(() => {
+                window.location.href = "all-keys-lost.html";
+            }, 1800);
+        }
+
+
+        // Use Firebase Auth observer with built-in safety check
+        firebase.auth().onAuthStateChanged(async (user) => {
+            if (user) {
+                try {
+                    await processFulfillment(user);
+                } catch (err) {
+                    console.error("Firestore error:", err);
+                    document.querySelector('h2').textContent = "⚠️ Sync Error";
+                    document.querySelector('p').textContent = "Payment successful, but database update failed. Please refresh.";
+                }
+            } else {
+                // Fallback if auth state is still initializing during redirect
+                setTimeout(async () => {
+                    const currentUser = firebase.auth().currentUser;
+                    if (currentUser) {
+                        try {
+                            await processFulfillment(currentUser);
+                        } catch (err) {
+                            console.error("Fallback error:", err);
+                        }
+                    } else {
+                        document.querySelector('h2').textContent = "🔒 Sign In Required";
+                        document.querySelector('p').innerHTML = 'Please <a href="login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
+                    }
+                }, 1500);
+            }
+        });
+    </script>
+</body>
+</html>

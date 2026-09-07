@@ -10234,33 +10234,44 @@ if (yearSelect) {
                 </div>
             `;
         } else {
-            // ==========================================
-            // PAYWALL TEASER VIEW
-            // ==========================================
-            lockedDataSection.innerHTML = `
-                <div style="background: #14171f; border: 1px dashed #e67e22; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
-                    <div style="font-size: 1.5rem; margin-bottom: 6px;">🔒</div>
-                    <h4 style="color: #fff; margin: 0 0 6px 0; font-size: 1rem;">Required Lishi: <span style="color: #2ecc71;">${data.lishi || 'N/A'}</span></h4>
-                    <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
-                        Unlock complete specs, Instacode references, and module locations for <strong>${make}</strong>.
-                    </p>
-                    
-                    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
-                        <a href="https://buy.stripe.com/cNi4gscMD3nL88VcMLeUU02" target="_blank" style="background-color: #3498db; color: #fff; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
-                            🔓 Unlock All ${make} Models (£4.99)
-                        </a>
-                        <a href="https://buy.stripe.com/3cIbIU27Z4rPah3287eUU01" target="_blank" style="background-color: #2ecc71; color: #000; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
-                            ⚡ Unlock Full Database Pro (£19.99)
-                        </a>
-                    </div>
+// 1. Define your Stripe links for each make
+const stripeMakeLinks = {
+    "BMW": "https://buy.stripe.com/evq9AMdQH7E1dtf5kje...", // Your new BMW link
+    "Mazda": "https://buy.stripe.com/MAZDA_LINK_HERE",         // Your future Mazda link
+    "Ford": "https://buy.stripe.com/FORD_LINK_HERE",           // Your future Ford link
+    "Default": "https://buy.stripe.com/cNi4gscMD3nL88VcMLeUU02" // Fallback generic link
+};
 
-                    <a href="../services/login.html" style="color: #9ca3af; font-size: 0.75rem; text-decoration: underline;">
-                        Already purchased? Sign in here
-                    </a>
-                </div>
-            `;
-        }
-    });
+// 2. Pick the correct link based on the selected make (falls back to default if not listed yet)
+const specificStripeUrl = stripeMakeLinks[make] || stripeMakeLinks["Default"];
+
+// ==========================================
+// PAYWALL TEASER VIEW
+// ==========================================
+lockedDataSection.innerHTML = `
+    <div style="background: #14171f; border: 1px dashed #e67e22; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
+        <div style="font-size: 1.5rem; margin-bottom: 6px;">🔒</div>
+        <h4 style="color: #fff; margin: 0 0 6px 0; font-size: 1rem;">Required Lishi: <span style="color: #2ecc71;">${data.lishi || 'N/A'}</span></h4>
+        <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
+            Unlock complete specs, Instacode references, and module locations for <strong>${make}</strong>.
+        </p>
+        
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
+            <!-- Uses the dynamic link matched to the selected make -->
+            <a href="${specificStripeUrl}" target="_blank" style="background-color: #3498db; color: #fff; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
+                🔓 Unlock All ${make} Models (£4.99)
+            </a>
+            <a href="https://buy.stripe.com/3cIbIU27Z4rPah3287eUU01" target="_blank" style="background-color: #2ecc71; color: #000; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
+                ⚡ Unlock Full Database Pro (£19.99)
+            </a>
+        </div>
+
+        <a href="../services/login.html" style="color: #9ca3af; font-size: 0.75rem; text-decoration: underline;">
+            Already purchased? Sign in here
+        </a>
+    </div>
+`;
+
 }
 
 </script>

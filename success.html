@@ -32,20 +32,26 @@
             const userRef = firebase.firestore().collection('users').doc(user.uid);
             
             if (targetMake) {
-                // If they bought a single manufacturer pass
+                // If they bought a single manufacturer pass, ONLY add it to the array
                 await userRef.set({
                     unlockedMakes: firebase.firestore.FieldValue.arrayUnion(targetMake),
                     updatedAt: firebase.firestore.FieldValue.serverTimestamp()
                 }, { merge: true });
                 document.querySelector('h2').textContent = `✅ ${targetMake} Pass Unlocked!`;
             } else {
-                // Default fallback: Full Database Pro Pass (£19.99)
-                await userRef.set({
-                    tier: 'pro_unlimited',
-                    email: user.email,
-                    updatedAt: firebase.firestore.FieldValue.serverTimestamp()
-                }, { merge: true });
-                document.querySelector('h2').textContent = "✅ Full Pro Access Activated!";
+                // ONLY upgrade to pro_unlimited if explicitly passed via ?tier=pro_unlimited in the URL
+                const targetTier = urlParams.get('tier');
+                if (targetTier === 'pro_unlimited') {
+                    await userRef.set({
+                        tier: 'pro_unlimited',
+                        email: user.email,
+                        updatedAt: firebase.firestore.FieldValue.serverTimestamp()
+                    }, { merge: true });
+                    document.querySelector('h2').textContent = "✅ Full Pro Access Activated!";
+                } else {
+                    // Fallback safety if no params are present
+                    document.querySelector('h2').textContent = "✅ Payment Received!";
+                }
             }
 
             document.querySelector('p').textContent = "Database synced successfully. Redirecting to workspace...";
@@ -54,6 +60,7 @@
                 window.location.href = "services/all-keys-lost.html";
             }, 1800);
         }
+
 
         // Use Firebase Auth observer with built-in safety check
         firebase.auth().onAuthStateChanged(async (user) => {

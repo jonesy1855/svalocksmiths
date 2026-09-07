@@ -10141,133 +10141,128 @@ const carDatabase = {
         });
     }
 
-    // 6. Secure Tier-Checked Year Selection Event
-    if (yearSelect) {
-        yearSelect.addEventListener('change', async function() {
-            if (!this.value) {
-                if (resultBox) resultBox.style.display = 'none';
-                if (lockedDataSection) lockedDataSection.style.display = 'none';
-                return;
-            }
-
-            const make = makeSelect.value;
-            const model = modelSelect.value;
-            const year = this.value;
-            const data = carDatabase[make][model][year];
-
+// 6. Secure Tier-Checked Year Selection Event
+if (yearSelect) {
+    yearSelect.addEventListener('change', async function() {
+        if (!this.value) {
             if (resultBox) resultBox.style.display = 'none';
-            if (!lockedDataSection) return;
+            if (lockedDataSection) lockedDataSection.style.display = 'none';
+            return;
+        }
 
-            lockedDataSection.style.display = 'block';
+        const make = makeSelect.value;
+        const model = modelSelect.value;
+        const year = this.value;
+        const data = carDatabase[make][model][year];
 
-            // Default access flag
-            let hasProAccess = false;
+        if (resultBox) resultBox.style.display = 'none';
+        if (!lockedDataSection) return;
 
-            if (currentUser) {
-                try {
-                    // Check Firestore database for actual purchased tier or unlocked make
-                    const userDoc = await firebase.firestore().collection('users').doc(currentUser.uid).get();
-                    if (userDoc.exists) {
-                        const userData = userDoc.data();
-                        const tier = userData.tier || 'free';
-                        const unlockedMakes = userData.unlockedMakes || [];
+        lockedDataSection.style.display = 'block';
 
-                        if (tier === 'pro_unlimited' || unlockedMakes.includes(make)) {
-                            hasProAccess = true;
-                        }
+        // Directly check Firebase auth state right now
+        const activeUser = firebase.auth().currentUser;
+        let hasProAccess = false;
+
+        if (activeUser) {
+            try {
+                // Fetch real-time tier/purchases from Firestore using the live UID
+                const userDoc = await firebase.firestore().collection('users').doc(activeUser.uid).get();
+                if (userDoc.exists) {
+                    const userData = userDoc.data();
+                    const tier = userData.tier || 'free';
+                    const unlockedMakes = userData.unlockedMakes || [];
+
+                    if (tier === 'pro_unlimited' || unlockedMakes.includes(make)) {
+                        hasProAccess = true;
                     }
-                } catch (e) {
-                    console.error("Error verifying user tier:", e);
                 }
+            } catch (e) {
+                console.error("Error fetching user tier:", e);
             }
+        }
 
-            if (hasProAccess) {
-                // ==========================================
-                // LOGGED-IN & PAID/PRO VIEW (Full Details Card)
-                // ==========================================
-                lockedDataSection.innerHTML = `
-                    <div style="background: #14171f; border: 1px solid #2ecc71; border-radius: 10px; padding: 18px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-top: 15px;">
-                        
-                        <!-- Header & Lishi Badge -->
-                        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222730; padding-bottom: 10px; margin-bottom: 14px;">
-                            <div>
-                                <h3 style="color: #fff; margin: 0; font-size: 1.1rem;">${make} — ${model}</h3>
-                                <span style="color: #9ca3af; font-size: 0.75rem;">Years: ${year}</span>
-                            </div>
-                            <span style="background: #2ecc71; color: #000; font-weight: 800; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${data.lishi || 'N/A'}</span>
+        if (hasProAccess) {
+            // ==========================================
+            // LOGGED-IN & PAID/PRO VIEW (Full Details Card)
+            // ==========================================
+            lockedDataSection.innerHTML = `
+                <div style="background: #14171f; border: 1px solid #2ecc71; border-radius: 10px; padding: 18px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-top: 15px;">
+                    
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222730; padding-bottom: 10px; margin-bottom: 14px;">
+                        <div>
+                            <h3 style="color: #fff; margin: 0; font-size: 1.1rem;">${make} — ${model}</h3>
+                            <span style="color: #9ca3af; font-size: 0.75rem;">Years: ${year}</span>
                         </div>
-
-                        <!-- Codes & Transponders Grid -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; background: #0f1117; padding: 12px; border-radius: 6px; border: 1px solid #222;">
-                            <div>
-                                <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700;">Silca Blank</div>
-                                <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">${data.silca || 'N/A'}</div>
-                                <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700; margin-top: 6px;">Transponder / Chip</div>
-                                <div style="color: #2ecc71; font-weight: 700; font-size: 0.85rem;">${data.chip || 'N/A'}</div>
-                            </div>
-                            <div>
-                                <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700;">Instacode</div>
-                                <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">${data.ic || 'N/A'}</div>
-                                <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700; margin-top: 6px;">Xhorse / Remote</div>
-                                <div style="color: #2ecc71; font-weight: 700; font-size: 0.8rem; word-break: break-word;">${data.xhorse || 'Standard'}</div>
-                            </div>
-                        </div>
-
-                        <!-- Warning / Risk Box -->
-                        ${data.warning ? `
-                        <div style="background: rgba(231, 76, 60, 0.08); border-left: 3px solid #e74c3c; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-bottom: 10px; font-size: 0.82rem; color: #f1c40f;">
-                            ${data.warning}
-                        </div>` : ''}
-
-                        <!-- Module Location & Access Box -->
-                        <div style="background: rgba(230, 126, 34, 0.08); border-left: 3px solid #e67e22; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-bottom: 10px; font-size: 0.82rem;">
-                            <strong style="color: #e67e22; display: block; margin-bottom: 3px;">📍 ${data.module || 'Module Location'}</strong>
-                            <div style="color: #fff; margin-bottom: 2px;">${data.location || ''}</div>
-                            <div style="color: #d1d5db; margin-bottom: 4px;"><strong>Access:</strong> ${data.access || ''}</div>
-                            ${data.risk ? `<div style="color: #e74c3c; font-weight: 700; margin-top: 4px;">Risk: ${data.risk}</div>` : ''}
-                            ${data.protocol ? `<div style="color: #f39c12; margin-top: 2px;">Protocol: ${data.protocol}</div>` : ''}
-                        </div>
-
-                        <!-- A/C Workshop Specs Box -->
-                        <div style="background: rgba(52, 152, 219, 0.08); border-left: 3px solid #3498db; padding: 10px 12px; border-radius: 0 6px 6px 0; font-size: 0.82rem;">
-                            <strong style="color: #3498db; display: block; margin-bottom: 3px;">❄️ Vehicle A/C Workshop Specs</strong>
-                            <div style="color: #d1d5db;">Gas: ${data.acGas || 'R134a'} | Capacity: ${data.acCap || 'Check label'} | Oil: ${data.acOil || 'Standard'}</div>
-                            ${data.acNote ? `<div style="color: #3498db; margin-top: 3px; font-style: italic;">Note: ${data.acNote}</div>` : ''}
-                        </div>
-
+                        <span style="background: #2ecc71; color: #000; font-weight: 800; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem;">${data.lishi || 'N/A'}</span>
                     </div>
-                `;
-            } else {
-                // ==========================================
-                // PAYWALL TEASER VIEW (Free User or Logged Out)
-                // ==========================================
-                lockedDataSection.innerHTML = `
-                    <div style="background: #14171f; border: 1px dashed #e67e22; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
-                        <div style="font-size: 1.5rem; margin-bottom: 6px;">🔒</div>
-                        <h4 style="color: #fff; margin: 0 0 6px 0; font-size: 1rem;">Required Lishi: <span style="color: #2ecc71;">${data.lishi || 'N/A'}</span></h4>
-                        <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
-                            Unlock complete specs, Instacode references, and module locations for <strong>${make}</strong>.
-                        </p>
-                        
-                        <!-- Stripe Payment Buttons -->
-                        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
-                            <a href="https://buy.stripe.com/cNi4gscMD3nL88VcMLeUU02" target="_blank" style="background-color: #3498db; color: #fff; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
-                                🔓 Unlock All ${make} Models (£4.99)
-                            </a>
-                            <a href="https://buy.stripe.com/3cIbIU27Z4rPah3287eUU01" target="_blank" style="background-color: #2ecc71; color: #000; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
-                                ⚡ Unlock Full Database Pro (£19.99)
-                            </a>
-                        </div>
 
-                        ${!currentUser ? `
-                        <a href="../services/login.html" style="color: #9ca3af; font-size: 0.75rem; text-decoration: underline;">
-                            Already purchased? Sign in here
-                        </a>` : ''}
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; background: #0f1117; padding: 12px; border-radius: 6px; border: 1px solid #222;">
+                        <div>
+                            <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700;">Silca Blank</div>
+                            <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">${data.silca || 'N/A'}</div>
+                            <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700; margin-top: 6px;">Transponder / Chip</div>
+                            <div style="color: #2ecc71; font-weight: 700; font-size: 0.85rem;">${data.chip || 'N/A'}</div>
+                        </div>
+                        <div>
+                            <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700;">Instacode</div>
+                            <div style="color: #fff; font-weight: 700; font-size: 0.9rem;">${data.ic || 'N/A'}</div>
+                            <div style="color: #9ca3af; font-size: 0.68rem; text-transform: uppercase; font-weight: 700; margin-top: 6px;">Xhorse / Remote</div>
+                            <div style="color: #2ecc71; font-weight: 700; font-size: 0.8rem; word-break: break-word;">${data.xhorse || 'Standard'}</div>
+                        </div>
                     </div>
-                `;
-            }
-        });
-    }
+
+                    ${data.warning ? `
+                    <div style="background: rgba(231, 76, 60, 0.08); border-left: 3px solid #e74c3c; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-bottom: 10px; font-size: 0.82rem; color: #f1c40f;">
+                        ${data.warning}
+                    </div>` : ''}
+
+                    <div style="background: rgba(230, 126, 34, 0.08); border-left: 3px solid #e67e22; padding: 10px 12px; border-radius: 0 6px 6px 0; margin-bottom: 10px; font-size: 0.82rem;">
+                        <strong style="color: #e67e22; display: block; margin-bottom: 3px;">📍 ${data.module || 'Module Location'}</strong>
+                        <div style="color: #fff; margin-bottom: 2px;">${data.location || ''}</div>
+                        <div style="color: #d1d5db; margin-bottom: 4px;"><strong>Access:</strong> ${data.access || ''}</div>
+                        ${data.risk ? `<div style="color: #e74c3c; font-weight: 700; margin-top: 4px;">Risk: ${data.risk}</div>` : ''}
+                        ${data.protocol ? `<div style="color: #f39c12; margin-top: 2px;">Protocol: ${data.protocol}</div>` : ''}
+                    </div>
+
+                    <div style="background: rgba(52, 152, 219, 0.08); border-left: 3px solid #3498db; padding: 10px 12px; border-radius: 0 6px 6px 0; font-size: 0.82rem;">
+                        <strong style="color: #3498db; display: block; margin-bottom: 3px;">❄️ Vehicle A/C Workshop Specs</strong>
+                        <div style="color: #d1d5db;">Gas: ${data.acGas || 'R134a'} | Capacity: ${data.acCap || 'Check label'} | Oil: ${data.acOil || 'Standard'}</div>
+                        ${data.acNote ? `<div style="color: #3498db; margin-top: 3px; font-style: italic;">Note: ${data.acNote}</div>` : ''}
+                    </div>
+
+                </div>
+            `;
+        } else {
+            // ==========================================
+            // PAYWALL TEASER VIEW
+            // ==========================================
+            lockedDataSection.innerHTML = `
+                <div style="background: #14171f; border: 1px dashed #e67e22; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
+                    <div style="font-size: 1.5rem; margin-bottom: 6px;">🔒</div>
+                    <h4 style="color: #fff; margin: 0 0 6px 0; font-size: 1rem;">Required Lishi: <span style="color: #2ecc71;">${data.lishi || 'N/A'}</span></h4>
+                    <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
+                        Unlock complete specs, Instacode references, and module locations for <strong>${make}</strong>.
+                    </p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
+                        <a href="https://buy.stripe.com/cNi4gscMD3nL88VcMLeUU02" target="_blank" style="background-color: #3498db; color: #fff; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
+                            🔓 Unlock All ${make} Models (£4.99)
+                        </a>
+                        <a href="https://buy.stripe.com/3cIbIU27Z4rPah3287eUU01" target="_blank" style="background-color: #2ecc71; color: #000; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
+                            ⚡ Unlock Full Database Pro (£19.99)
+                        </a>
+                    </div>
+
+                    <a href="../services/login.html" style="color: #9ca3af; font-size: 0.75rem; text-decoration: underline;">
+                        Already purchased? Sign in here
+                    </a>
+                </div>
+            `;
+        }
+    });
+}
+
 </script>
 
 

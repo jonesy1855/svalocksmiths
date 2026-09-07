@@ -57,7 +57,7 @@
             document.querySelector('p').textContent = "Database synced successfully. Redirecting to workspace...";
             
             setTimeout(() => {
-                window.location.href = "/services/all-keys-lost.html";
+                window.location.href = "../services/all-keys-lost.html";
             }, 1800);
         }
 
@@ -87,7 +87,7 @@
                             }
                         } else {
                             document.querySelector('h2').textContent = "🔒 Sign In Required";
-                            document.querySelector('p').innerHTML = 'Please <a href="/services/login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
+                            document.querySelector('p').innerHTML = 'Please <a href="../services/login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
                         }
                     }, 1500);
                 }

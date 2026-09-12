@@ -1,0 +1,592 @@
+From 4cc650c061aa70c78313089972aa8c46ce1ab794 Mon Sep 17 00:00:00 2001
+From: jonesy1855 <jonesy1855@msn.com>
+Date: Sat, 12 Sep 2026 21:24:31 +0000
+Subject: [PATCH] Add floating call/WhatsApp buttons, trust strip, and perf
+ polish
+
+---
+ app.html                        |   3 +-
+ assets/css/styles.css           |  52 ++++++++++++++++
+ gemini.html                     |   1 +
+ index.html                      |   1 +
+ legal.html                      |   1 +
+ lishi-finder.html               |   1 +
+ locksmith-market-drayton.html   |   1 +
+ locksmith-oswestry.html         |   1 +
+ locksmith-shawbury.html         |   1 +
+ locksmith-shrewsbury.html       |   1 +
+ locksmith-telford.html          |   1 +
+ locksmith-whitchurch.html       |   1 +
+ offline.html                    |   1 +
+ preview.html                    | 102 ++++++++++++++++++--------------
+ pricing.html                    |   1 +
+ services/ac-regassing.html      |   3 +-
+ services/all-keys-lost.html     |   3 +-
+ services/emergency-lockout.html |   3 +-
+ services/spare-keys.html        |   3 +-
+ services/van-security.html      |   3 +-
+ sva-app.html                    |   1 +
+ who-am-i.html                   |   1 +
+ 22 files changed, 134 insertions(+), 52 deletions(-)
+
+diff --git a/app.html b/app.html
+index baa2152..78ee554 100644
+--- a/app.html
++++ b/app.html
+@@ -18,7 +18,7 @@
+     <meta name="twitter:title" content="Get the SVA Lishi Picker App">
+     <meta name="twitter:description" content="Offline Lishi tool finder + DVLA lookup for Android — no internet required.">
+     <meta name="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.5">
+     <script type="application/ld+json">
+     {
+         "@context": "https://schema.org",
+@@ -204,5 +204,6 @@
+             </div>
+         </div>
+     </footer>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/assets/css/styles.css b/assets/css/styles.css
+index d2f0411..4d18e69 100644
+--- a/assets/css/styles.css
++++ b/assets/css/styles.css
+@@ -2960,3 +2960,55 @@ body.service-page .svc-subhead {
+     font-weight: 600;
+     margin: 0 0 14px;
+ }
++
++/* ------------------------------------------------------------------ */
++/* Floating call / WhatsApp actions + trust strip                      */
++/* ------------------------------------------------------------------ */
++.floating-cta {
++    position: fixed;
++    right: 14px;
++    bottom: 14px;
++    z-index: 9999;
++    display: flex;
++    flex-direction: column;
++    align-items: flex-end;
++    gap: 10px;
++}
++.floating-cta a {
++    display: inline-flex;
++    align-items: center;
++    gap: 8px;
++    padding: 12px 18px;
++    border-radius: 999px;
++    font-weight: 700;
++    font-size: 0.9rem;
++    text-decoration: none;
++    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
++    transition: transform 0.15s ease;
++}
++.floating-cta a:hover { transform: translateY(-2px); }
++.floating-cta .fc-call { background: #2ecc71; color: #000; }
++.floating-cta .fc-wa { background: #25d366; color: #0b141a; }
++@media (min-width: 768px) {
++    .floating-cta { flex-direction: row; align-items: center; }
++}
++
++.trust-strip {
++    display: flex;
++    flex-wrap: wrap;
++    justify-content: center;
++    gap: 10px 28px;
++    padding: 18px 20px;
++    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
++    background: rgba(255, 255, 255, 0.02);
++}
++.trust-item {
++    display: inline-flex;
++    align-items: center;
++    gap: 8px;
++    color: #9ca3af;
++    font-size: 0.85rem;
++    font-weight: 600;
++    letter-spacing: 0.3px;
++}
++.trust-item strong { color: #e2e8f0; }
+diff --git a/gemini.html b/gemini.html
+index f4f049c..334fd4a 100644
+--- a/gemini.html
++++ b/gemini.html
+@@ -548,6 +548,7 @@
+         💬
+     </a>
+ 
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/index.html b/index.html
+index f8e1835..6b94409 100644
+--- a/index.html
++++ b/index.html
+@@ -222,5 +222,6 @@
+ 
+     </div>
+ 
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
+ </body>
+ </html>
+diff --git a/legal.html b/legal.html
+index afaf2ec..7346643 100644
+--- a/legal.html
++++ b/legal.html
+@@ -247,5 +247,6 @@
+         </div>
+     </footer>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+diff --git a/lishi-finder.html b/lishi-finder.html
+index 2cfbc40..609e26e 100644
+--- a/lishi-finder.html
++++ b/lishi-finder.html
+@@ -478,5 +478,6 @@
+             resultBox.style.display = 'none';
+         });
+     </script>
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
+ </body>
+ </html>
+diff --git a/locksmith-market-drayton.html b/locksmith-market-drayton.html
+index 9ff25eb..a53cb37 100644
+--- a/locksmith-market-drayton.html
++++ b/locksmith-market-drayton.html
+@@ -363,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-oswestry.html b/locksmith-oswestry.html
+index 449b213..b3e6ee3 100644
+--- a/locksmith-oswestry.html
++++ b/locksmith-oswestry.html
+@@ -363,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-shawbury.html b/locksmith-shawbury.html
+index b1ec0c9..c4a6cb9 100644
+--- a/locksmith-shawbury.html
++++ b/locksmith-shawbury.html
+@@ -400,6 +400,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-shrewsbury.html b/locksmith-shrewsbury.html
+index 763d0c0..93fe519 100644
+--- a/locksmith-shrewsbury.html
++++ b/locksmith-shrewsbury.html
+@@ -363,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-telford.html b/locksmith-telford.html
+index b66d144..c8c1f4d 100644
+--- a/locksmith-telford.html
++++ b/locksmith-telford.html
+@@ -363,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-whitchurch.html b/locksmith-whitchurch.html
+index f441017..7d19390 100644
+--- a/locksmith-whitchurch.html
++++ b/locksmith-whitchurch.html
+@@ -365,6 +365,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/offline.html b/offline.html
+index 4a4b989..10c1dca 100644
+--- a/offline.html
++++ b/offline.html
+@@ -61,5 +61,6 @@
+     <!-- Swap this placeholder number with your actual dispatch number -->
+     <a href="tel:07123123456" class="emergency-btn">📞 Call Dispatch Now</a>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+diff --git a/preview.html b/preview.html
+index ba4494f..08914a8 100644
+--- a/preview.html
++++ b/preview.html
+@@ -29,6 +29,7 @@
+     <link rel="icon" type="image/png" href="assets/images/logo.png">
+     <link rel="apple-touch-icon" href="assets/images/logo.png">
+     <link rel="manifest" href="manifest.json">
++    <meta name="theme-color" content="#2ecc71">
+     
+     <!-- Schema.org Data (SEO) -->
+     <script type="application/ld+json">
+@@ -73,7 +74,7 @@
+ 
+ 
+     <!-- Core Stylesheet & Google Fonts -->
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.3">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.5">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+@@ -171,6 +172,14 @@
+         </div>
+     </section>
+ 
++    <!-- TRUST STRIP -->
++    <section class="trust-strip" aria-label="Our guarantees">
++        <div class="trust-item"><span aria-hidden="true">🛡️</span> <strong>Fully Insured</strong> &amp; DBS Checked</div>
++        <div class="trust-item"><span aria-hidden="true">🚐</span> <strong>Mobile Units</strong> Across Shropshire</div>
++        <div class="trust-item"><span aria-hidden="true">🔑</span> <strong>OEM-Level</strong> Key Tooling</div>
++        <div class="trust-item"><span aria-hidden="true">⭐</span> <strong>Local Reviews</strong> — Coming Soon</div>
++    </section>
++
+     <!-- OUR SERVICES -->
+     <div class="container" id="services">
+         <div class="section-title">
+@@ -180,7 +189,7 @@
+             <a href="services/emergency-lockout.html" class="service-card-link">
+                 <div class="service-card emergency-lockout-card">
+                     <div class="service-card-photo">
+-                        <img src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi pick tools used for non-destructive emergency entry">
++                        <img loading="lazy" src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi pick tools used for non-destructive emergency entry">
+                         <div class="service-card-icon" aria-hidden="true">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="15.5" r="1.5"/></svg>
+                         </div>
+@@ -196,7 +205,7 @@
+             <a href="services/spare-keys.html" class="service-card-link">
+                 <div class="service-card spare-keys-card">
+                     <div class="service-card-photo">
+-                        <img src="assets/images/key-programming-bench.png" alt="Transponder key programming at the workbench">
++                        <img loading="lazy" src="assets/images/key-programming-bench.png" alt="Transponder key programming at the workbench">
+                         <div class="service-card-icon" aria-hidden="true">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="16" r="4"/><path d="M11 13l9-9"/><path d="M16 8l3 3"/><path d="M13.5 10.5l2 2"/></svg>
+                         </div>
+@@ -212,7 +221,7 @@
+             <a href="services/all-keys-lost.html" class="service-card-link">
+                 <div class="service-card all-keys-lost-card">
+                     <div class="service-card-photo">
+-                        <img src="assets/images/key-cutting-1.png" alt="Cutting a brand new vehicle key on site">
++                        <img loading="lazy" src="assets/images/key-cutting-1.png" alt="Cutting a brand new vehicle key on site">
+                         <div class="service-card-icon" aria-hidden="true">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="16" r="4"/><path d="M11 13l9-9"/><path d="M17 6v6"/><path d="M14 9h6"/></svg>
+                         </div>
+@@ -228,7 +237,7 @@
+             <a href="services/ac-regassing.html" class="service-card-link">
+                 <div class="service-card ac-regas-card">
+                     <div class="service-card-photo">
+-                        <img src="assets/images/ac-regas-machine.png" alt="Mobile air conditioning re-gassing machine">
++                        <img loading="lazy" src="assets/images/ac-regas-machine.png" alt="Mobile air conditioning re-gassing machine">
+                         <div class="service-card-icon" aria-hidden="true">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M4 12h16"/><path d="M6.3 6.3l11.4 11.4"/><path d="M6.3 17.7l11.4-11.4"/></svg>
+                         </div>
+@@ -259,7 +268,7 @@
+                 <span style="display: block; color: #6b7280; font-size: 0.76rem; margin-top: 6px;">Free · 9.1 MB · Android 6.0+</span>
+             </div>
+             <div style="flex: 0 0 220px; text-align: center;">
+-                <img src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi tool being used on a vehicle door lock" style="width: 100%; max-width: 220px; border-radius: 8px; border: 2px solid rgba(46,204,113,0.3);">
++                <img loading="lazy" src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi tool being used on a vehicle door lock" style="width: 100%; max-width: 220px; border-radius: 8px; border: 2px solid rgba(46,204,113,0.3);">
+             </div>
+         </div>
+     </section>
+@@ -267,33 +276,33 @@
+     <!-- LOGO SLIDER SECTION -->
+     <section class="logo-slider-container" style="margin-top: 60px; margin-bottom: 40px;">
+         <div class="logo-track">
+-            <img src="assets/images/ford-logo.png" alt="Ford Auto Locksmith">
+-            <img src="assets/images/honda.png" alt="Honda Auto Locksmith">
+-            <img src="assets/images/toyota.png" alt="Toyota Auto Locksmith">
+-            <img src="assets/images/audi.png" alt="Audi Auto Locksmith">
+-            <img src="assets/images/bmw.png" alt="BMW Auto Locksmith">
+-            <img src="assets/images/mercedes.png" alt="Mercedes Auto Locksmith">
+-            <img src="assets/images/renault.png" alt="Renault Auto Locksmith">
+-            <img src="assets/images/landrover-logo.png" alt="Landrover Auto Locksmith">
+-            <img src="assets/images/mazda.png" alt="Mazda Auto Locksmith">
+-            <img src="assets/images/citroen.png" alt="Citroen Auto Locksmith">
+-            <img src="assets/images/mini.png" alt="Mini Auto Locksmith">
+-            <img src="assets/images/mitsubishi.png" alt="Mitsubishi Auto Locksmith">
+-            <img src="assets/images/jaguar.png" alt="Jaguar Auto Locksmith">
+-
+-            <img src="assets/images/ford-logo.png" alt="Ford Auto Locksmith">
+-            <img src="assets/images/honda.png" alt="Honda Auto Locksmith">
+-            <img src="assets/images/toyota.png" alt="Toyota Auto Locksmith">
+-            <img src="assets/images/audi.png" alt="Audi Auto Locksmith">
+-            <img src="assets/images/bmw.png" alt="BMW Auto Locksmith">
+-            <img src="assets/images/mercedes.png" alt="Mercedes Auto Locksmith">
+-            <img src="assets/images/renault.png" alt="Renault Auto Locksmith">
+-            <img src="assets/images/landrover-logo.png" alt="Landrover Auto Locksmith">
+-            <img src="assets/images/mazda.png" alt="Mazda Auto Locksmith">
+-            <img src="assets/images/citroen.png" alt="Citroen Auto Locksmith">
+-            <img src="assets/images/mini.png" alt="Mini Auto Locksmith">
+-            <img src="assets/images/mitsubishi.png" alt="Mitsubishi Auto Locksmith">
+-            <img src="assets/images/jaguar.png" alt="Jaguar Auto Locksmith">
++            <img loading="lazy" src="assets/images/ford-logo.png" alt="Ford Auto Locksmith">
++            <img loading="lazy" src="assets/images/honda.png" alt="Honda Auto Locksmith">
++            <img loading="lazy" src="assets/images/toyota.png" alt="Toyota Auto Locksmith">
++            <img loading="lazy" src="assets/images/audi.png" alt="Audi Auto Locksmith">
++            <img loading="lazy" src="assets/images/bmw.png" alt="BMW Auto Locksmith">
++            <img loading="lazy" src="assets/images/mercedes.png" alt="Mercedes Auto Locksmith">
++            <img loading="lazy" src="assets/images/renault.png" alt="Renault Auto Locksmith">
++            <img loading="lazy" src="assets/images/landrover-logo.png" alt="Landrover Auto Locksmith">
++            <img loading="lazy" src="assets/images/mazda.png" alt="Mazda Auto Locksmith">
++            <img loading="lazy" src="assets/images/citroen.png" alt="Citroen Auto Locksmith">
++            <img loading="lazy" src="assets/images/mini.png" alt="Mini Auto Locksmith">
++            <img loading="lazy" src="assets/images/mitsubishi.png" alt="Mitsubishi Auto Locksmith">
++            <img loading="lazy" src="assets/images/jaguar.png" alt="Jaguar Auto Locksmith">
++
++            <img loading="lazy" src="assets/images/ford-logo.png" alt="Ford Auto Locksmith">
++            <img loading="lazy" src="assets/images/honda.png" alt="Honda Auto Locksmith">
++            <img loading="lazy" src="assets/images/toyota.png" alt="Toyota Auto Locksmith">
++            <img loading="lazy" src="assets/images/audi.png" alt="Audi Auto Locksmith">
++            <img loading="lazy" src="assets/images/bmw.png" alt="BMW Auto Locksmith">
++            <img loading="lazy" src="assets/images/mercedes.png" alt="Mercedes Auto Locksmith">
++            <img loading="lazy" src="assets/images/renault.png" alt="Renault Auto Locksmith">
++            <img loading="lazy" src="assets/images/landrover-logo.png" alt="Landrover Auto Locksmith">
++            <img loading="lazy" src="assets/images/mazda.png" alt="Mazda Auto Locksmith">
++            <img loading="lazy" src="assets/images/citroen.png" alt="Citroen Auto Locksmith">
++            <img loading="lazy" src="assets/images/mini.png" alt="Mini Auto Locksmith">
++            <img loading="lazy" src="assets/images/mitsubishi.png" alt="Mitsubishi Auto Locksmith">
++            <img loading="lazy" src="assets/images/jaguar.png" alt="Jaguar Auto Locksmith">
+         </div>
+     </section>
+ 
+@@ -308,10 +317,10 @@
+             <div class="dealer-suite-container">
+                 <div class="tooling-card">
+                     <div class="slideshow-wrapper">
+-                        <img src="assets/images/skp-900.png" alt="SKP-900 Diagnostic Tool" class="slide-img">
+-                        <img src="assets/images/Autel-IM508.png" alt="Autel IM508 Key Programmer" class="slide-img">
+-                        <img src="assets/images/xhorse-key-tool-plus.jpg" alt="Xhorse Key Tool Plus" class="slide-img">
+-                        <img src="assets/images/xhorse-key-tool-plus-1.png" alt="Xhorse Key Tool Plus alternate view" class="slide-img">
++                        <img loading="lazy" src="assets/images/skp-900.png" alt="SKP-900 Diagnostic Tool" class="slide-img">
++                        <img loading="lazy" src="assets/images/Autel-IM508.png" alt="Autel IM508 Key Programmer" class="slide-img">
++                        <img loading="lazy" src="assets/images/xhorse-key-tool-plus.jpg" alt="Xhorse Key Tool Plus" class="slide-img">
++                        <img loading="lazy" src="assets/images/xhorse-key-tool-plus-1.png" alt="Xhorse Key Tool Plus alternate view" class="slide-img">
+                     </div>
+                     <div class="card-content">
+                         <span class="card-tag">[DIAGNOSTIC INTERFACE]</span>
+@@ -322,9 +331,9 @@
+             
+                 <div class="tooling-card">
+                     <div class="slideshow-wrapper">
+-                        <img src="assets/images/xhorse-dolphin-key-cutter.jpg" alt="Xhorse Dolphin Key Cutter" class="slide-img">
+-                        <img src="assets/images/an-san-junior.png" alt="An-San Junior Key Cutter" class="slide-img">
+-                        <img src="assets/images/gymkana-994.png" alt="Gymkana 994 Key Machine" class="slide-img">
++                        <img loading="lazy" src="assets/images/xhorse-dolphin-key-cutter.jpg" alt="Xhorse Dolphin Key Cutter" class="slide-img">
++                        <img loading="lazy" src="assets/images/an-san-junior.png" alt="An-San Junior Key Cutter" class="slide-img">
++                        <img loading="lazy" src="assets/images/gymkana-994.png" alt="Gymkana 994 Key Machine" class="slide-img">
+                     </div>
+                     <div class="card-content">
+                         <span class="card-tag">[AUTOMATIC KEY CUTTING]</span>
+@@ -385,10 +394,10 @@
+             <div class="card lishi-split-card">
+                 <div class="sva-slider-container">
+                     <div class="sva-slider">
+-                        <img src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi pick decoding lock" class="slide">
+-                        <img src="assets/images/lishi-pick-entry-2.jpg" alt="SVA locksmith using Genuine Lishi" class="slide">
+-                        <img src="assets/images/lishi-pick-entry-3.jpg" alt="Non-destructive vehicle entry" class="slide">
+-                        <img src="assets/images/lishi-pick-entry-4.jpg" alt="Lock picking demonstration" class="slide">
++                        <img loading="lazy" src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi pick decoding lock" class="slide">
++                        <img loading="lazy" src="assets/images/lishi-pick-entry-2.jpg" alt="SVA locksmith using Genuine Lishi" class="slide">
++                        <img loading="lazy" src="assets/images/lishi-pick-entry-3.jpg" alt="Non-destructive vehicle entry" class="slide">
++                        <img loading="lazy" src="assets/images/lishi-pick-entry-4.jpg" alt="Lock picking demonstration" class="slide">
+                     </div>
+                 </div>
+             
+@@ -427,7 +436,7 @@
+ 
+             <div class="card lishi-split-card">
+                 <div class="sva-slider-container">
+-                    <img src="assets/images/key-programming-bench.png" alt="SVA Locksmith programming transponder key on diagnostic bench" style="width: 100%; height: 100%; object-fit: cover;">
++                    <img loading="lazy" src="assets/images/key-programming-bench.png" alt="SVA Locksmith programming transponder key on diagnostic bench" style="width: 100%; height: 100%; object-fit: cover;">
+                 </div>
+             
+                 <div class="card-content split-content">
+@@ -588,7 +597,7 @@
+        rel="noopener noreferrer" 
+        aria-label="Chat with SVA Locksmiths on WhatsApp">
+         <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
++            <img loading="lazy" src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+             <span class="whatsapp-status-dot"></span>
+         </div>
+     </a>
+@@ -873,5 +882,6 @@
+     </script>
+     <!-- Core UI Interactions (FAQ accordion, video overlay, slider) -->
+     <script src="assets/js/forms.js"></script>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+diff --git a/pricing.html b/pricing.html
+index 3c3982f..d133d06 100644
+--- a/pricing.html
++++ b/pricing.html
+@@ -384,5 +384,6 @@
+         </div>
+     </footer>
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+diff --git a/services/ac-regassing.html b/services/ac-regassing.html
+index b846c6f..04a31ba 100644
+--- a/services/ac-regassing.html
++++ b/services/ac-regassing.html
+@@ -38,7 +38,7 @@
+         "areaServed": { "@type": "Place", "name": "Shropshire" }
+     }
+     </script>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -201,5 +201,6 @@
+             </div>
+         </div>
+     </footer>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/services/all-keys-lost.html b/services/all-keys-lost.html
+index 082cb95..965b14d 100644
+--- a/services/all-keys-lost.html
++++ b/services/all-keys-lost.html
+@@ -45,7 +45,7 @@
+ <!-- THIS LINE: Firebase Firestore -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+ 
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -528,6 +528,7 @@ const specificStripeUrl = stripeMakeLinks[make] || stripeMakeLinks["Default"];
+ 
+ 
+ 
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+ 
+diff --git a/services/emergency-lockout.html b/services/emergency-lockout.html
+index a4aad28..884e3ec 100644
+--- a/services/emergency-lockout.html
++++ b/services/emergency-lockout.html
+@@ -38,7 +38,7 @@
+         "areaServed": { "@type": "Place", "name": "Shropshire" }
+     }
+     </script>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -178,5 +178,6 @@
+             </div>
+         </div>
+     </footer>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/services/spare-keys.html b/services/spare-keys.html
+index 629cd74..a66ddd4 100644
+--- a/services/spare-keys.html
++++ b/services/spare-keys.html
+@@ -38,7 +38,7 @@
+         "areaServed": { "@type": "Place", "name": "Shropshire" }
+     }
+     </script>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -164,5 +164,6 @@
+             </div>
+         </div>
+     </footer>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/services/van-security.html b/services/van-security.html
+index 88666e0..c4397f9 100644
+--- a/services/van-security.html
++++ b/services/van-security.html
+@@ -18,7 +18,7 @@
+     <meta name="twitter:title" content="Van Security Systems &amp; Upgrades | SVA Locksmiths">
+     <meta name="twitter:description" content="Protect your commercial fleet with deadlocks, slamlocks and shielding plates across Shropshire.">
+     <meta name="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
+     <script type="application/ld+json">
+     {
+         "@context": "https://schema.org",
+@@ -180,5 +180,6 @@
+             </div>
+         </div>
+     </footer>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/sva-app.html b/sva-app.html
+index 5b95161..286971f 100644
+--- a/sva-app.html
++++ b/sva-app.html
+@@ -7390,5 +7390,6 @@ const carDatabase = {
+         }
+ 
+     </script>
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/who-am-i.html b/who-am-i.html
+index 115306f..044a346 100644
+--- a/who-am-i.html
++++ b/who-am-i.html
+@@ -515,5 +515,6 @@
+ 
+     <!-- SAFE SCRIPTS -->
+     <script src="assets/js/forms.js"></script>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+ </body>
+ </html>
+-- 
+2.17.1
+

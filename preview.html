@@ -8,6 +8,7 @@
     <title>Shropshire Vehicle Access | Mobile Auto Locksmith</title>
     <meta name="title" content="Shropshire Vehicle Access | Auto Locksmith">
     <meta name="description" content="Fast, non-destructive emergency vehicle entry, spare key cutting, and dealer-level programming across Shropshire. We come directly to you.">
+    <link rel="canonical" href="https://sva-locksmiths.co.uk/preview.html">
 
     <!-- Open Graph / Facebook / WhatsApp -->
     <meta property="og:type" content="website">
@@ -15,14 +16,14 @@
     <meta property="og:url" content="https://sva-locksmiths.co.uk/">
     <meta property="og:title" content="SVA | 24/7 Auto Locksmith">
     <meta property="og:description" content="Locked out of your car or van? Fast local auto locksmith providing roadside vehicle entry, key cutting, and transponder programming across Shropshire.">
-    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/logo.png">
+    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
 
     <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://sva-locksmiths.co.uk/">
     <meta property="twitter:title" content="SVA | 24/7 Auto Locksmith">
     <meta property="twitter:description" content="Locked out of your car or van? Fast local auto locksmith providing roadside vehicle entry, key cutting, and transponder programming across Shropshire.">
-    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/logo.png">
+    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
 
     <!-- Favicon & PWA Manifest -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
@@ -72,207 +73,14 @@
 
 
     <!-- Core Stylesheet & Google Fonts -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Inline Emergency & Layout Styles -->
-    <style>
-        /* --- HEADER CTA --- */
-        nav .header-cta {
-            background-color: #e67e22;
-            color: #fff !important;
-            padding: 6px 14px;
-            border-radius: 4px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.2s ease;
-            display: inline-block;
-        }
-        
-        nav .header-cta:hover {
-            background-color: #d35400;
-        }
-        
-        @media (max-width: 768px) {
-            nav .header-cta {
-                padding: 5px 10px;
-                font-size: 0.85rem;
-            }
-        }
-
-        /* --- DYNAMIC HEADLINE ROTATOR --- */
-        .dynamic-headline-container {
-            text-align: left;
-            min-height: 70px; 
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-        
-        .fade-text {
-            transition: opacity 0.5s ease-in-out;
-            opacity: 1;
-            color: #2ecc71;
-        }
-        
-        .fade-text.hidden {
-            opacity: 0; 
-        }
-
-        /* --- FLOATING WHATSAPP WIDGET --- */
-        .whatsapp-float-widget {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 9999;
-            text-decoration: none;
-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .whatsapp-float-widget:hover {
-            transform: scale(1.08);
-        }
-
-        .whatsapp-avatar-wrapper {
-            position: relative;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: 2px solid #25D366;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-            background-color: #111;
-            overflow: hidden;
-        }
-
-        .whatsapp-avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .whatsapp-status-dot {
-            position: absolute;
-            bottom: 2px;
-            right: 2px;
-            width: 13px;
-            height: 13px;
-            background-color: #25D366;
-            border: 2px solid #050505; 
-            border-radius: 50%;
-            animation: pulse-green 2s infinite;
-        }
-
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        @media (max-width: 600px) {
-            .whatsapp-float-widget {
-                bottom: 20px;
-                right: 20px;
-            }
-            .whatsapp-avatar-wrapper {
-                width: 56px;
-                height: 56px;
-            }
-            .dynamic-headline-container {
-                text-align: center;
-                justify-content: center;
-            }
-        }
-
-        /* --- MOBILE RESPONSIVENESS PATCHES --- */
-        html, body {
-            overflow-x: clip;
-            max-width: 100vw;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        .bench-img-wrapper {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .bench-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .section-title h2, h2.section-title {
-                font-size: 1.8rem;
-                line-height: 1.2;
-                word-wrap: break-word;
-                text-align: center;
-                padding: 0 10px;
-            }
-            
-            h3, h4 {
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                hyphens: auto;
-            }
-
-            .container, 
-            .about-grid, 
-            .bench-grid, 
-            .portfolio-matrix, 
-            .dealer-suite-container,
-            .stacked-cards-container {
-                width: 100%;
-                padding-left: 15px;
-                padding-right: 15px;
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .bench-card, 
-            .job-card, 
-            .tooling-card,
-            .lishi-split-card {
-                width: 100%;
-                margin-left: 0;
-                margin-right: 0;
-            }
-        }
-        /* --- FOOTER POLICY LINKS FIX --- */
-        .footer-policy-links {
-            margin: 15px 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .footer-policy-links a {
-            color: #bababa;
-            text-decoration: underline;
-            font-size: 0.85rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-policy-links a:hover {
-            color: #2ecc71; /* Matches your accent green on hover */
-        }
-    </style>
 </head>
 
-<body>
+<body class="preview-page">
     <!-- DIY COOKIE BANNER -->
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
@@ -335,16 +143,6 @@
         </div>
     </header>
 
-    <!-- Optional CSS for Dropdown Hover effect if not already in your stylesheet -->
-    <style>
-        .dropdown:hover .dropdown-content {
-            display: block !important;
-        }
-        .dropdown-content a:hover {
-            background-color: rgba(46, 204, 113, 0.1);
-            color: #2ecc71 !important;
-        }
-    </style>
 
 
     <!-- HERO SECTION -->
@@ -383,7 +181,7 @@
                 <div class="service-card emergency-lockout-card">
                     <h3>🔓 Emergency Vehicle Lockout Entry</h3>
                     <p>Non-destructive entry to vehicles when keys are locked inside or mechanisms fail.</p>
-                    <span class="read-more">Learn More & Book →</span>
+                    <span class="read-more">Learn More & Book Emergency Lockout Entry →</span>
                 </div>
             </a>
                     
@@ -391,7 +189,7 @@
                 <div class="service-card spare-keys-card">
                     <h3>🔑 Spare & Duplicate Keys</h3>
                     <p>Transponder programming and laser key cutting on the bench or roadside.</p>
-                    <span class="read-more">Learn More & Book →</span>
+                    <span class="read-more">Learn More & Book Spare & Duplicate Keys →</span>
                 </div>
             </a>
                     
@@ -399,7 +197,7 @@
                 <div class="service-card all-keys-lost-card">
                     <h3>🚨 All Keys Lost Solutions</h3>
                     <p>Complete key creation from scratch, including ECU programming and lock decoding.</p>
-                    <span class="read-more">Learn More & Book →</span>
+                    <span class="read-more">Learn More & Book All Keys Lost Solutions →</span>
                 </div>
             </a>
         
@@ -407,7 +205,7 @@
                 <div class="service-card ac-regas-card">
                     <h3>❄️ AC Regassing & Cleaning</h3>
                     <p>Mobile air conditioning re-gassing, system leak testing, and antibacterial vent cleaning.</p>
-                    <span class="read-more">Learn More & Book →</span>
+                    <span class="read-more">Learn More & Book AC Re-Gassing & Cleaning →</span>
                 </div>
             </a>
         </div>
@@ -599,50 +397,50 @@
             
             <div class="faq-grid">
                 <div class="faq-item">
-                    <button class="faq-question">Do you damage the vehicle or lock to get in?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">Do you damage the vehicle or lock to get in?</button>
+                    <div class="faq-answer" id="faq-answer-1">
                         <p>No. We specialise in non-destructive vehicle entry. Using specialised precision tools like manual Lishi picks, we decode and pick the lock safely, leaving your vehicle, door mechanisms, and paintwork completely undamaged.</p>
                     </div>
                 </div>
     
                 <div class="faq-item">
-                    <button class="faq-question">Can you program transponder keys at the roadside?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">Can you program transponder keys at the roadside?</button>
+                    <div class="faq-answer" id="faq-answer-2">
                         <p>Yes. Our mobile workshop is equipped with dealer-level diagnostic and key programming machinery. We can cut keys and program new transponder chips directly from the van, whether you are on your driveway, at work or stranded at the roadside.</p>
                     </div>
                 </div>
     
                 <div class="faq-item">
-                    <button class="faq-question">What areas across Shropshire do you cover?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">What areas across Shropshire do you cover?</button>
+                    <div class="faq-answer" id="faq-answer-3">
                         <p>SVA Locksmiths will serve the wider Shropshire area, including Shrewsbury, Telford, Oswestry, Market Drayton, Bridgnorth and Whitchurch. Because we are fully mobile, we come directly to your where you need us.</p>
                     </div>
                 </div>
     
                 <div class="faq-item">
-                    <button class="faq-question">I've lost all the keys to my car?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">I've lost all the keys to my car?</button>
+                    <div class="faq-answer" id="faq-answer-4">
                         <p>Don't worry. An "All Keys Lost" scenario is completely manageable. We bypass the vehicle security, decode the lock profile to cut a brand new blade pattern, and then program a fresh chip into your car's ECU/Immobilizer module on-site.</p>
                     </div>
                 </div>
                                 
                 <div class="faq-item">
-                    <button class="faq-question">Do you cut and duplicate domestic house keys as well?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">Do you cut and duplicate domestic house keys as well?</button>
+                    <div class="faq-answer" id="faq-answer-5">
                         <p>Yes, absolutely. While our primary focus is automotive security, our mobile workshop is also fully equipped to cut and duplicate standard domestic house, cylinder, and mortice keys right on your driveway. If you need spare keys for your home, garage, or business while we are on-site, just let us know.</p>
                     </div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Do I need to prove I own the vehicle before you unlock it?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">Do I need to prove I own the vehicle before you unlock it?</button>
+                    <div class="faq-answer" id="faq-answer-6">
                         <p>Yes. To maintain the highest standards of security, we must verify ownership before any work begins. Please ensure you have a valid photo ID and proof of vehicle connection—such as the V5C logbook or current insurance policy documents.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">Do you need to remove panels?</button>
-                    <div class="faq-answer">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">Do you need to remove panels?</button>
+                    <div class="faq-answer" id="faq-answer-7">
                         <p>On some occasions and depending on the make, model and year of the car, we may need to remove modules from the car to enable us to decode and recode your brand new keys.</p>
                     </div>
                 </div>
@@ -1020,5 +818,7 @@
             });
         }
     </script>
+    <!-- Core UI Interactions (FAQ accordion, video overlay, slider) -->
+    <script src="assets/js/forms.js"></script>
 </body>
 </html>

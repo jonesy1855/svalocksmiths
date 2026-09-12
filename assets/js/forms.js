@@ -42,12 +42,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-// Simple FAQ Accordion Toggle
-document.querySelectorAll('.faq-question').forEach(button => {
+// Simple FAQ Accordion Toggle (with ARIA expanded/controls state)
+document.querySelectorAll('.faq-question').forEach((button, index) => {
+    const faqItem = button.parentElement;
+    const answer = faqItem.querySelector('.faq-answer');
+
+    // Auto-wire aria-controls/id for any page that has not set them statically
+    if (answer && !answer.id) {
+        answer.id = 'faq-answer-' + (index + 1);
+    }
+    if (answer) {
+        button.setAttribute('aria-controls', answer.id);
+    }
+    button.setAttribute('aria-expanded', faqItem.classList.contains('active') ? 'true' : 'false');
+
     button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        
-        // Toggle the active class to expand/collapse
-        faqItem.classList.toggle('active');
+        const isActive = faqItem.classList.toggle('active');
+        button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
     });
 });

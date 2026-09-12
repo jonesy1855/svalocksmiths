@@ -2273,3 +2273,212 @@ main h2::after {
                 height: 120px; /* Gives plenty of room for 3 lines of wrapped text on narrow screens */
             }
         }
+
+
+/* ==========================================================================
+   PREVIEW / HOME PAGE OVERRIDES
+   Moved out of preview.html inline <style> blocks.
+   Scoped to body.preview-page so the shared stylesheet does NOT affect the
+   locksmith-*.html, who-am-i.html, or pricing.html pages (they carry their
+   own inline copies of these styles).
+   ========================================================================== */
+
+html, body {
+    overflow-x: clip;
+    max-width: 100vw;
+}
+
+/* --- HEADER CTA --- */
+body.preview-page nav .header-cta {
+    background-color: #e67e22;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s ease;
+    display: inline-block;
+}
+
+body.preview-page nav .header-cta:hover {
+    background-color: #d35400;
+}
+
+@media (max-width: 768px) {
+    body.preview-page nav .header-cta {
+        padding: 5px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* --- DYNAMIC HEADLINE ROTATOR --- */
+body.preview-page .dynamic-headline-container {
+    text-align: left;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+body.preview-page .fade-text {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+    color: #2ecc71;
+}
+
+body.preview-page .fade-text.hidden {
+    opacity: 0;
+}
+
+/* --- FLOATING WHATSAPP WIDGET --- */
+body.preview-page .whatsapp-float-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body.preview-page .whatsapp-float-widget:hover {
+    transform: scale(1.08);
+}
+
+body.preview-page .whatsapp-avatar-wrapper {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #25D366;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    background-color: #111;
+    overflow: hidden;
+}
+
+body.preview-page .whatsapp-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+body.preview-page .whatsapp-status-dot {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 13px;
+    height: 13px;
+    background-color: #25D366;
+    border: 2px solid #050505;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 600px) {
+    body.preview-page .whatsapp-float-widget {
+        bottom: 20px;
+        right: 20px;
+    }
+    body.preview-page .whatsapp-avatar-wrapper {
+        width: 56px;
+        height: 56px;
+    }
+    body.preview-page .dynamic-headline-container {
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* --- MOBILE RESPONSIVENESS PATCHES --- */
+body.preview-page .bench-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+body.preview-page .bench-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    body.preview-page .section-title h2,
+    body.preview-page h2.section-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    body.preview-page h3,
+    body.preview-page h4 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    body.preview-page .container,
+    body.preview-page .about-grid,
+    body.preview-page .bench-grid,
+    body.preview-page .portfolio-matrix,
+    body.preview-page .dealer-suite-container,
+    body.preview-page .stacked-cards-container {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    body.preview-page .bench-card,
+    body.preview-page .job-card,
+    body.preview-page .tooling-card,
+    body.preview-page .lishi-split-card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* --- FOOTER POLICY LINKS --- */
+body.preview-page .footer-policy-links {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+body.preview-page .footer-policy-links a {
+    color: #bababa;
+    text-decoration: underline;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+body.preview-page .footer-policy-links a:hover {
+    color: #2ecc71;
+}
+
+/* --- NAV DROPDOWN (second inline block, was after the header) --- */
+body.preview-page .dropdown:hover .dropdown-content {
+    display: block !important;
+}
+
+body.preview-page .dropdown-content a:hover {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71 !important;
+}

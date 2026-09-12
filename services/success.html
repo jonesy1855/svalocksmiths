@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activating Pro Access - SVA FieldMate Pro</title>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
@@ -57,7 +58,7 @@
             document.querySelector('p').textContent = "Database synced successfully. Redirecting to workspace...";
             
             setTimeout(() => {
-                window.location.href = "services/all-keys-lost.html";
+                window.location.href = "all-keys-lost.html";
             }, 1800);
         }
 
@@ -84,7 +85,7 @@
                         }
                     } else {
                         document.querySelector('h2').textContent = "🔒 Sign In Required";
-                        document.querySelector('p').innerHTML = 'Please <a href="services/login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
+                        document.querySelector('p').innerHTML = 'Please <a href="login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
                     }
                 }, 1500);
             }

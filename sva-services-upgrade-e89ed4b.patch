@@ -1,0 +1,2182 @@
+From e89ed4b032e260a599d7e43a0c1bba0ba423fed9 Mon Sep 17 00:00:00 2001
+From: jonesy1855 <jonesy1855@msn.com>
+Date: Sat, 12 Sep 2026 12:27:12 +0000
+Subject: [PATCH] Rebuild service pages with shared styling and SEO
+
+---
+ assets/css/styles.css           | 353 ++++++++++++++++++++++++++++++++
+ services/ac-regassing.html      | 351 +++++++++++++++----------------
+ services/all-keys-lost.html     | 317 ++++++++++++++--------------
+ services/emergency-lockout.html | 314 +++++++++++++---------------
+ services/login.html             |   2 +-
+ services/spare-keys.html        | 291 ++++++++++++--------------
+ services/success.html           |   5 +-
+ services/van-security.html      | 281 +++++++++++++------------
+ 8 files changed, 1104 insertions(+), 810 deletions(-)
+
+diff --git a/assets/css/styles.css b/assets/css/styles.css
+index e74f122..d2f0411 100644
+--- a/assets/css/styles.css
++++ b/assets/css/styles.css
+@@ -2603,7 +2603,360 @@ body.preview-page .service-card-link:hover .read-more {
+     filter: brightness(1.12);
+ }
+ 
++body.preview-page .emergency-lockout-card { --svc-accent: #2ecc71; }
++body.preview-page .spare-keys-card { --svc-accent: #1abc9c; }
++body.preview-page .all-keys-lost-card { --svc-accent: #e67e22; }
+ body.preview-page .emergency-lockout-card { --svc-accent: #2ecc71; }
+ body.preview-page .spare-keys-card { --svc-accent: #1abc9c; }
+ body.preview-page .all-keys-lost-card { --svc-accent: #e67e22; }
+ body.preview-page .ac-regas-card { --svc-accent: #3498db; }
++
++/* ==========================================================================
++   SERVICE PAGES (.service-page): HEADER / HERO / PANELS / LISTS
++   Shared by services/emergency-lockout.html, spare-keys.html,
++   all-keys-lost.html, ac-regassing.html, van-security.html.
++   Scoped to body.service-page so the rest of the site is unaffected.
++   ========================================================================== */
++
++body.service-page {
++    --svc-green: #2ecc71;
++    --svc-orange: #e67e22;
++    --svc-red: #e74c3c;
++    --svc-amber: #f39c12;
++    --svc-panel: rgba(22, 22, 22, 0.92);
++}
++
++body.service-page .svc-banner {
++    background-color: #d35400;
++    color: #fff;
++    text-align: center;
++    padding: 8px 15px;
++    font-weight: bold;
++    font-size: 0.78rem;
++    text-transform: uppercase;
++    letter-spacing: 0.5px;
++}
++
++body.service-page .svc-header {
++    background-color: #111;
++    border-bottom: 1px solid #222;
++    position: sticky;
++    top: 0;
++    z-index: 1000;
++}
++
++body.service-page .svc-header-inner {
++    display: flex;
++    justify-content: space-between;
++    align-items: center;
++    gap: 15px;
++    padding: 10px 20px;
++    max-width: 1200px;
++    margin: 0 auto;
++    flex-wrap: wrap;
++}
++
++body.service-page .svc-logo-link {
++    text-decoration: none;
++    color: inherit;
++    display: flex;
++    align-items: center;
++    gap: 12px;
++}
++
++body.service-page .svc-logo-img {
++    height: 46px;
++    width: auto;
++    object-fit: contain;
++}
++
++body.service-page .svc-brand-main {
++    color: var(--svc-green);
++    font-size: 1.05rem;
++    font-weight: 800;
++    letter-spacing: 0.3px;
++    line-height: 1.2;
++    display: block;
++}
++
++body.service-page .svc-brand-sub {
++    color: #9ca3af;
++    font-size: 0.66rem;
++    font-weight: 500;
++    text-transform: uppercase;
++    letter-spacing: 0.5px;
++    display: block;
++}
++
++body.service-page .svc-nav {
++    display: flex;
++    align-items: center;
++    gap: 10px;
++    flex-wrap: wrap;
++}
++
++body.service-page .svc-nav-back {
++    color: var(--svc-green);
++    text-decoration: none;
++    font-weight: 600;
++    font-size: 0.85rem;
++    white-space: nowrap;
++    transition: color 0.2s ease;
++}
++
++body.service-page .svc-nav-back:hover {
++    color: #fff;
++}
++
++body.service-page .svc-cta-tel {
++    background: var(--svc-green);
++    color: #000;
++    padding: 6px 12px;
++    border-radius: 6px;
++    font-weight: 700;
++    text-decoration: none;
++    font-size: 0.85rem;
++    display: inline-flex;
++    align-items: center;
++    gap: 4px;
++    white-space: nowrap;
++    transition: filter 0.2s ease;
++}
++
++body.service-page .svc-cta-tel:hover {
++    filter: brightness(1.1);
++}
++
++body.service-page .svc-cta-tel.orange {
++    background: var(--svc-orange);
++    color: #fff;
++}
++
++body.service-page .svc-hero {
++    background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.98) 100%);
++    border-bottom: 1px solid rgba(46, 204, 113, 0.15);
++}
++
++body.service-page .svc-hero-inner {
++    display: grid;
++    gap: 2.5rem;
++    align-items: center;
++    padding: clamp(2rem, 6vw, 4rem) 0;
++}
++
++@media (min-width: 900px) {
++    body.service-page .svc-hero-inner {
++        grid-template-columns: 1.15fr 0.85fr;
++    }
++}
++
++body.service-page .svc-eyebrow {
++    display: inline-block;
++    background-color: rgba(46, 204, 113, 0.12);
++    color: var(--svc-green);
++    border: 1px solid rgba(46, 204, 113, 0.35);
++    padding: 4px 12px;
++    border-radius: 999px;
++    font-size: 0.75rem;
++    font-weight: 700;
++    text-transform: uppercase;
++    letter-spacing: 0.6px;
++    margin-bottom: 16px;
++}
++
++body.service-page .svc-hero h1 {
++    color: #fff;
++    font-size: clamp(1.8rem, 4.5vw, 2.7rem);
++    line-height: 1.15;
++    margin: 0 0 16px;
++}
++
++body.service-page .svc-hero-lede {
++    color: var(--text-muted);
++    font-size: 1.05rem;
++    line-height: 1.7;
++    margin: 0 0 24px;
++    max-width: 560px;
++}
++
++body.service-page .svc-hero-lede strong {
++    color: var(--text-light);
++}
++
++body.service-page .svc-hero-actions {
++    display: flex;
++    flex-wrap: wrap;
++    gap: 12px;
++}
++
++body.service-page .svc-hero-photo {
++    border-radius: 16px;
++    overflow: hidden;
++    border: 1px solid rgba(255, 255, 255, 0.08);
++    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
++}
++
++body.service-page .svc-hero-photo img {
++    width: 100%;
++    height: auto;
++    display: block;
++    object-fit: cover;
++    aspect-ratio: 4 / 3;
++}
++
++body.service-page .svc-main {
++    padding: clamp(2.2rem, 5vw, 3.6rem) 0 clamp(3rem, 6vw, 5rem);
++}
++
++body.service-page .svc-grid {
++    display: grid;
++    grid-template-columns: 1fr;
++    gap: clamp(2rem, 4vw, 3rem);
++}
++
++@media (min-width: 992px) {
++    body.service-page .svc-grid {
++        grid-template-columns: 1.2fr 0.8fr;
++    }
++}
++
++body.service-page .svc-copy h2 {
++    color: var(--svc-green);
++    font-size: 1.35rem;
++    margin: 1.6rem 0 0.6rem;
++}
++
++body.service-page .svc-copy h2:first-child {
++    margin-top: 0;
++}
++
++body.service-page .svc-copy p {
++    color: var(--text-muted);
++    line-height: 1.7;
++    margin: 0 0 1rem;
++}
++
++body.service-page .svc-copy strong {
++    color: var(--text-light);
++}
++
++body.service-page .svc-panel {
++    background-color: var(--svc-panel);
++    border: 1px solid rgba(255, 255, 255, 0.06);
++    border-top: 3px solid var(--svc-green);
++    border-radius: 14px;
++    padding: 28px;
++    box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.7);
++}
++
++body.service-page .svc-panel .svc-panel-title {
++    color: var(--svc-green);
++    text-transform: uppercase;
++    letter-spacing: 0.5px;
++    font-size: 0.9rem;
++    margin: 0 0 20px;
++    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
++    padding-bottom: 10px;
++}
++
++body.service-page .svc-list {
++    list-style: none;
++    padding: 0;
++    margin: 0;
++}
++
++body.service-page .svc-list li {
++    display: flex;
++    gap: 12px;
++    margin-bottom: 18px;
++    align-items: flex-start;
++}
++
++body.service-page .svc-list li:last-child {
++    margin-bottom: 0;
++}
++
++body.service-page .svc-list-icon {
++    flex: 0 0 auto;
++    width: 36px;
++    height: 36px;
++    border-radius: 10px;
++    display: flex;
++    align-items: center;
++    justify-content: center;
++    color: var(--svc-green);
++    background: rgba(46, 204, 113, 0.1);
++    border: 1px solid rgba(46, 204, 113, 0.3);
++}
++
++body.service-page .svc-list-icon svg {
++    width: 19px;
++    height: 19px;
++}
++
++body.service-page .svc-list-text {
++    display: flex;
++    flex-direction: column;
++    gap: 2px;
++}
++
++body.service-page .svc-list-text strong {
++    color: var(--text-light);
++    font-size: 0.95rem;
++}
++
++body.service-page .svc-list-text span {
++    color: var(--text-muted);
++    font-size: 0.88rem;
++    line-height: 1.5;
++}
++
++body.service-page .svc-callout {
++    border-left: 4px solid var(--svc-amber);
++    background-color: rgba(243, 156, 18, 0.06);
++    padding: 18px 20px;
++    border-radius: 0 8px 8px 0;
++    margin: 0 0 28px;
++}
++
++body.service-page .svc-callout.green {
++    border-left-color: var(--svc-green);
++    background-color: rgba(46, 204, 113, 0.05);
++}
++
++body.service-page .svc-callout.red {
++    border-left-color: var(--svc-red);
++    background-color: rgba(231, 76, 60, 0.05);
++}
++
++body.service-page .svc-callout strong {
++    display: block;
++    margin-bottom: 4px;
++}
++
++body.service-page .svc-callout.amber strong { color: var(--svc-amber); }
++body.service-page .svc-callout.green strong { color: var(--svc-green); }
++body.service-page .svc-callout.red strong { color: var(--svc-red); }
++
++body.service-page .svc-callout span {
++    color: var(--text-muted);
++    font-size: 0.95rem;
++    line-height: 1.6;
++}
++
++body.service-page .svc-section-label {
++    color: var(--svc-green);
++    text-transform: uppercase;
++    letter-spacing: 0.5px;
++    font-size: 0.75rem;
++    font-weight: 700;
++    margin: 0 0 8px;
++}
++
++body.service-page .svc-subhead {
++    color: var(--text-light);
++    font-size: 1.15rem;
++    line-height: 1.5;
++    font-weight: 600;
++    margin: 0 0 14px;
++}
+diff --git a/services/ac-regassing.html b/services/ac-regassing.html
+index bc85fb8..b846c6f 100644
+--- a/services/ac-regassing.html
++++ b/services/ac-regassing.html
+@@ -3,182 +3,182 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Mobile AC Regassing & Cleaning | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="../assets/css/styles.css?=v1.1">
+-    
+-    <style>
+-        /* Service Page Specific Layouts */
+-        .service-hero {
+-            background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.98) 100%);
+-            padding: 60px 20px;
+-            text-align: center;
+-            border-bottom: 1px solid rgba(46, 204, 113, 0.15);
+-        }
+-        .service-hero h2 {
+-            color: #fff;
+-            font-size: 2.4rem;
+-            margin-bottom: 15px;
+-            text-transform: uppercase;
+-        }
+-        .badge-alert {
+-            background-color: #c0392b;
+-            color: #fff;
+-            padding: 5px 12px;
+-            border-radius: 4px;
+-            font-size: 0.85rem;
+-            font-weight: bold;
+-            display: inline-block;
+-            margin-bottom: 15px;
+-            text-transform: uppercase;
+-            letter-spacing: 0.5px;
+-        }
+-        .grid-split {
+-            display: grid;
+-            grid-template-columns: 1fr;
+-            gap: 40px;
+-            margin-top: 40px;
+-            margin-bottom: 60px;
+-        }
+-        @media (min-width: 992px) {
+-            .grid-split {
+-                grid-template-columns: 1.2fr 0.8fr;
+-            }
+-        }
+-        .tech-spec-box {
+-            background-color: #161616;
+-            border: 1px solid rgba(255,255,255,0.04);
+-            border-radius: 8px;
+-            padding: 30px;
+-        }
+-        .tech-spec-box h3 {
+-            color: var(--accent-green, #2ecc71);
+-            margin-bottom: 20px;
+-            border-bottom: 1px solid rgba(255,255,255,0.05);
+-            padding-bottom: 10px;
+-            text-transform: uppercase;
+-        }
+-        .spec-list {
+-            list-style: none;
+-            padding: 0;
+-        }
+-        .spec-list li {
+-            margin-bottom: 15px;
+-            padding-left: 25px;
+-            position: relative;
+-            color: #ccc;
+-        }
+-        .spec-list li::before {
+-            content: "⚡";
+-            position: absolute;
+-            left: 0;
+-            top: 0;
+-        }
+-        nav .header-cta {
+-            background-color: #e67e22;
+-            color: #fff !important;
+-            padding: 6px 14px;
+-            border-radius: 4px;
+-            font-weight: bold;
+-            text-decoration: none;
+-        }
+-        /* Top compliance banner to match index */
+-        .compliance-banner {
+-            background-color: #d35400;
+-            color: #fff;
+-            text-align: center;
+-            padding: 10px 15px;
+-            font-weight: bold;
+-            font-size: 0.9rem;
+-            text-transform: uppercase;
+-            width: 100%;
+-        }
+-    </style>
++    <title>Mobile AC Regassing &amp; Cleaning | Shropshire Vehicle Access</title>
++    <meta name="description" content="Mobile air conditioning re-gassing, leak testing, and antibacterial vent cleaning across Shropshire. F-Gas certified technicians. Book mobile AC regas — call 07123 123 456.">
++    <link rel="canonical" href="https://sva-locksmiths.co.uk/services/ac-regassing.html">
++    <link rel="icon" type="image/png" href="../assets/images/logo.png">
++    <meta property="og:title" content="Mobile AC Regassing &amp; Cleaning | Shropshire Vehicle Access">
++    <meta property="og:description" content="Dealer-level air conditioning re-gassing and system diagnostics on your driveway, performed by certified technicians across Shropshire.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://sva-locksmiths.co.uk/services/ac-regassing.html">
++    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <meta property="twitter:card" content="summary_large_image">
++    <meta property="twitter:title" content="Mobile AC Regassing &amp; Cleaning | SVA Locksmiths">
++    <meta property="twitter:description" content="F-Gas certified mobile AC re-gassing and leak testing across Shropshire.">
++    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <script type="application/ld+json">
++    {
++        "@context": "https://schema.org",
++        "@type": "Service",
++        "name": "Mobile AC Regassing and Cleaning",
++        "serviceType": "Automotive air conditioning service",
++        "url": "https://sva-locksmiths.co.uk/services/ac-regassing.html",
++        "provider": {
++            "@type": "LocalBusiness",
++            "name": "Shropshire Vehicle Access",
++            "url": "https://sva-locksmiths.co.uk/preview.html",
++            "telephone": "+447123123456",
++            "image": "https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png",
++            "sameAs": [
++                "https://facebook.com/svalocksmiths",
++                "https://instagram.com/svalocksmiths"
++            ],
++            "areaServed": ["Shropshire", "Shrewsbury", "Telford", "Oswestry", "Whitchurch", "Market Drayton", "Shawbury"]
++        },
++        "areaServed": { "@type": "Place", "name": "Shropshire" }
++    }
++    </script>
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
+ </head>
+-<body>
+-    <header style="background-color: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000;">
+-        <div class="compliance-banner" style="background-color: #d35400; color: #fff; text-align: center; padding: 8px 15px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">
+-            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+-        </div>
+-        
+-        <div class="header-main-content" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 15px;">
+-            
+-            <!-- Logo & Brand Title -->
+-            <div class="logo-container">
+-                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+-                    <img src="../assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height: 50px; width: auto; object-fit: contain;">
+-                    <div class="brand-name" style="display: flex; flex-direction: column;">
+-                        <!-- Main Title in SVA Green and Larger -->
+-                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
+-                        <!-- Subtitle smaller underneath -->
+-                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
+-                    </div>
+-                </a>
+-            </div>
++<body class="service-page">
++    <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+ 
+-            <!-- Navigation Links -->
+-            <nav style="display: flex; align-items: center; gap: 10px;">
+-                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+-                <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; white-space: nowrap;">📞 Call Now</a>
++    <header class="svc-header">
++        <div class="svc-header-inner">
++            <a href="../preview.html" class="svc-logo-link">
++                <img src="../assets/images/logo.png" alt="Shropshire Vehicle Access logo" class="svc-logo-img">
++                <span class="svc-brand-name">
++                    <span class="svc-brand-main">Shropshire Vehicle Access</span>
++                    <span class="svc-brand-sub">Auto Locksmith &amp; Key Specialist</span>
++                </span>
++            </a>
++            <nav class="svc-nav" aria-label="Page navigation">
++                <a href="../preview.html" class="svc-nav-back">← Back Home</a>
++                <a class="svc-cta-tel" href="tel:07123123456">📞 Call Now</a>
+             </nav>
+-
+         </div>
+     </header>
+ 
+-
+-    <!-- HERO SECTION -->
+-    <section class="service-hero">
+-        <div class="container" style="padding: 0;">
+-            <span class="badge-alert">Mobile Service</span>
+-            <h2>AC Regassing & Climate Control</h2>
+-            <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+-                Fully automated, dealer-level air conditioning re-gassing and system diagnostics performed directly on your driveway or at your workplace.
+-            </p>
++    <!-- HERO -->
++    <section class="svc-hero">
++        <div class="container svc-hero-inner">
++            <div>
++                <span class="svc-eyebrow">Mobile Service</span>
++                <h1>AC Regassing &amp; Climate Control</h1>
++                <p class="svc-hero-lede">
++                    Fully automated, dealer-level air conditioning re-gassing and system diagnostics performed <strong>directly on your driveway</strong> or at your workplace.
++                </p>
++                <div class="svc-hero-actions">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Book Mobile AC Regas</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
++                </div>
++            </div>
++            <div class="svc-hero-photo">
++                <img src="../assets/images/ac-regas-machine.png" alt="Mobile air conditioning re-gassing machine">
++            </div>
+         </div>
+     </section>
+ 
+-    <!-- MAIN CONTENT GRID -->
+-    <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+-        <div class="grid-split">
+-            
+-            <!-- LEFT COLUMN: FAQs & Details -->
+-            <div class="service-details">
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">My Air Con hasn't worked for a while, can you fix it?</h3>
+-                <p style="margin-bottom: 25px; color: #ccc;">Every AC service begins with a complete vacuum phase and diagnostic pressure test. If the system has a minor leak, our UV dye detection will locate it. If there is a major mechanical failure (such as a seized compressor), we will advise on the exact issue so you can consult a mechanical garage without wasting money on lost refrigerant.</p>
+-                
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Are you certified to handle refrigerant?</h3>
+-                <p style="margin-bottom: 25px; color: #ccc;">Absolutely. Handling automotive refrigerant requires strict environmental compliance. Our technicians hold the mandatory F-Gas certification (City & Guilds), operating to the highest disciplined standards to safely recover, handle, and recharge both older and modern vehicle systems.</p>
+-                
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Vehicles We Service Across Shropshire</h3>
+-                <ul style="color: #ccc; padding-left: 20px; margin-bottom: 25px;">
+-                    <li style="margin-bottom: 10px;"><strong>Passenger Cars:</strong> Full AC coverage for domestic hatchbacks, saloons, and SUVs.</li>
+-                    <li style="margin-bottom: 10px;"><strong>Commercial Vehicles:</strong> Fleet vans, light commercial, and trade vehicles covered to keep you comfortable on the job.</li>
+-                </ul>
+-            </div>
++    <!-- MAIN CONTENT -->
++    <main class="svc-main">
++        <div class="container">
++            <div class="svc-grid">
++                <div class="svc-copy">
++                    <h2>My Air Con hasn't worked for a while, can you fix it?</h2>
++                    <p>
++                        Every AC service begins with a complete vacuum phase and diagnostic pressure test. If the system has a minor leak, our UV dye detection will locate it. If there is a major mechanical failure (such as a seized compressor), we will advise on the exact issue so you can consult a mechanical garage without wasting money on lost refrigerant.
++                    </p>
+ 
+-            <!-- RIGHT COLUMN: Tech Specs Box -->
+-            <div class="tech-spec-box">
+-                <h3>System Diagnostics</h3>
+-                <ul class="spec-list">
+-                    <li><strong>Old Gas Recovery:</strong> Safe extraction of depleted or contaminated refrigerant.</li>
+-                    <li><strong>Vacuum Leak Test:</strong> 20-minute deep vacuum cycle to remove moisture and test system integrity.</li>
+-                    <li><strong>PAG Oil & UV Dye:</strong> Fresh compressor oil and UV dye injected to trace future micro-leaks.</li>
+-                    <li><strong>Precision Recharge:</strong> System recharged to exact factory weight specifications.</li>
+-                    <li><strong>Anti-Bacterial Clean:</strong> Optional vent bomb to destroy mold and bacteria causing damp smells in the cabin.</li>
+-                </ul>
+-            </div>
++                    <h2>Are you certified to handle refrigerant?</h2>
++                    <p>
++                        Absolutely. Handling automotive refrigerant requires strict environmental compliance. Our technicians hold the mandatory <strong>F-Gas certification (City &amp; Guilds)</strong>, operating to the highest disciplined standards to safely recover, handle, and recharge both older and modern vehicle systems.
++                    </p>
+ 
+-        </div>
++                    <h2>Vehicles We Service Across Shropshire</h2>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14"/><path d="M5 17a1.5 1.5 0 0 1-1.5-1.5V12L6 8a2 2 0 0 1 1.8-1h8.4A2 2 0 0 1 18 8l2.5 4v3.5A1.5 1.5 0 0 1 19 17"/><circle cx="8" cy="16.5" r="1.5"/><circle cx="16" cy="16.5" r="1.5"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Passenger Cars</strong>
++                                <span>Full AC coverage for domestic hatchbacks, saloons, and SUVs.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.4"/><circle cx="17" cy="17" r="1.4"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Commercial Vehicles</strong>
++                                <span>Fleet vans, light commercial, and trade vehicles covered to keep you comfortable on the job.</span>
++                            </span>
++                        </li>
++                    </ul>
++                </div>
++
++                <aside class="svc-panel">
++                    <h3 class="svc-panel-title">System Diagnostics</h3>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Old Gas Recovery</strong>
++                                <span>Safe extraction of depleted or contaminated refrigerant.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Vacuum Leak Test</strong>
++                                <span>20-minute deep vacuum cycle to remove moisture and test system integrity.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>PAG Oil &amp; UV Dye</strong>
++                                <span>Fresh compressor oil and UV dye injected to trace future micro-leaks.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M4 12h16"/><path d="M6.3 6.3l11.4 11.4"/><path d="M6.3 17.7l11.4-11.4"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Precision Recharge</strong>
++                                <span>System recharged to exact factory weight specifications.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M12 8a4 4 0 0 1 4 4"/><circle cx="12" cy="12" r="4"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Anti-Bacterial Clean</strong>
++                                <span>Optional vent bomb to destroy mold and bacteria causing damp smells in the cabin.</span>
++                            </span>
++                        </li>
++                    </ul>
++                </aside>
++            </div>
+ 
+-        <!-- ACTION BANNER -->
+-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0 0 40px 0;">
++            <!-- ACTIVE BANNER -->
++            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 0 40px 0;">
+ 
+-        <div style="background-color: rgba(255,255,255,0.02); border: 1px solid var(--border-color); padding: 40px; border-radius: 8px; text-align: center;">
+-            <h3 style="color: var(--accent-orange); margin-bottom: 15px; font-size: 1.8rem; text-transform: uppercase;">Summer Ready?</h3>
+-            <p style="margin-bottom: 30px; font-size: 1.1rem; color: #ccc;">Don't wait for a heatwave to find out your AC is blowing warm. Get your system vacuumed, tested, and recharged today.</p>
+-            
+-            <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; margin: 0 auto;">
+-                <a href="tel:07123123456" class="action-btn call-now-btn" style="padding: 15px; font-size: 1.1rem; border-radius: 6px;">📞 Book Mobile AC Regas</a>
+-                <a href="../index.html#contact" class="action-btn message-btn" style="padding: 15px; font-size: 1.1rem; border-radius: 6px;">📅 Return to Service Desk</a>
++            <div class="unified-cta-box">
++                <h3 class="cta-title" style="color: var(--accent-orange);">Summer Ready?</h3>
++                <p class="cta-desc">Don't wait for a heatwave to find out your AC is blowing warm. Get your system vacuumed, tested, and recharged today.</p>
++                <div class="cta-button-group">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Book Mobile AC Regas</a>
++                    <a href="../preview.html#contact" class="action-btn standard-btn">Request a Free Quote</a>
++                </div>
+             </div>
+         </div>
+     </main>
+@@ -186,19 +186,20 @@
+     <footer>
+         <div class="footer-content">
+             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
+-            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
+-            <div class="footer-socials" style="margin-top: 15px;">
+-                <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link" style="margin-right: 15px; color: var(--accent-green); text-decoration: none; font-weight: bold;">Facebook</a>
+-                <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link" style="color: var(--accent-green); text-decoration: none; font-weight: bold;">Instagram</a>
+-                <a href="../locksmith-shawbury.html" class="social-link">Serving Shawbury</a>
+-                <a href="../locksmith-market-drayton.html" class="social-link">Serving Market Drayton</a>
+-                <a href="../locksmith-shrewsbury.html" class="social-link">Serving Shrewsbury</a>
+-                <a href="../locksmith-telford.html" class="social-link">Serving Telford</a>
+-                <a href="../locksmith-oswestry.html" class="social-link">Serving Oswestry</a>
+-                <a href="../locksmith-whitchurch.html" class="social-link">Serving Whitchurch</a>
++            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy &amp; Terms</a></p>
++            <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
++                <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
++                <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
++            </div>
++            <div class="footer-locations">
++                <a href="../locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
++                <a href="../locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
++                <a href="../locksmith-shrewsbury.html" class="footer-loc-link">Serving Shrewsbury</a>
++                <a href="../locksmith-telford.html" class="footer-loc-link">Serving Telford</a>
++                <a href="../locksmith-oswestry.html" class="footer-loc-link">Serving Oswestry</a>
++                <a href="../locksmith-whitchurch.html" class="footer-loc-link">Serving Whitchurch</a>
+             </div>
+         </div>
+     </footer>
+-
+ </body>
+-</html>
++</html>
+\ No newline at end of file
+diff --git a/services/all-keys-lost.html b/services/all-keys-lost.html
+index 7c3a1a8..ec0de24 100644
+--- a/services/all-keys-lost.html
++++ b/services/all-keys-lost.html
+@@ -4,183 +4,174 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>All Keys Lost Solutions | Shropshire Vehicle Access Locksmiths</title>
+-    <link rel="stylesheet" href="../assets/css/styles.css?=v1.1">
+-    
++    <meta name="description" content="All keys lost? We decode the lock, CNC-cut a new key, and program the transponder on site across Shropshire. No towing, no dealership. Call 07123 123 456.">
++    <link rel="canonical" href="https://sva-locksmiths.co.uk/services/all-keys-lost.html">
++    <link rel="icon" type="image/png" href="../assets/images/logo.png">
++    <meta property="og:title" content="All Keys Lost Solutions | Shropshire Vehicle Access">
++    <meta property="og:description" content="Complete key creation from scratch — lock decoding, precision milling, and transponder programming — delivered on site across Shropshire.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://sva-locksmiths.co.uk/services/all-keys-lost.html">
++    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <meta property="twitter:card" content="summary_large_image">
++    <meta property="twitter:title" content="All Keys Lost Solutions | SVA Locksmiths">
++    <meta property="twitter:description" content="Complete key creation from scratch across Shropshire. No towing, no dealership.">
++    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <script type="application/ld+json">
++    {
++        "@context": "https://schema.org",
++        "@type": "Service",
++        "name": "All Keys Lost Replacement",
++        "serviceType": "Automotive key replacement from scratch",
++        "url": "https://sva-locksmiths.co.uk/services/all-keys-lost.html",
++        "provider": {
++            "@type": "LocalBusiness",
++            "name": "Shropshire Vehicle Access",
++            "url": "https://sva-locksmiths.co.uk/preview.html",
++            "telephone": "+447123123456",
++            "image": "https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png",
++            "sameAs": [
++                "https://facebook.com/svalocksmiths",
++                "https://instagram.com/svalocksmiths"
++            ],
++            "areaServed": ["Shropshire", "Shrewsbury", "Telford", "Oswestry", "Whitchurch", "Market Drayton", "Shawbury"]
++        },
++        "areaServed": { "@type": "Place", "name": "Shropshire" }
++    }
++    </script>
+ <!-- Firebase App (The core Firebase SDK) -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+ <!-- Firebase Auth -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+-<!-- ADD THIS LINE: Firebase Firestore -->
++<!-- THIS LINE: Firebase Firestore -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+ 
+-    <style>
+-        /* Service Page Specific Layouts */
+-        .service-hero {
+-            background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.98) 100%);
+-            padding: 60px 20px;
+-            text-align: center;
+-            border-bottom: 1px solid rgba(46, 204, 113, 0.15);
+-        }
+-        .service-hero h2 {
+-            color: #fff;
+-            font-size: 2.4rem;
+-            margin-bottom: 15px;
+-        }
+-        .badge-alert {
+-            background-color: #c0392b;
+-            color: #fff;
+-            padding: 5px 12px;
+-            border-radius: 4px;
+-            font-size: 0.85rem;
+-            font-weight: bold;
+-            display: inline-block;
+-            margin-bottom: 15px;
+-            text-transform: uppercase;
+-            letter-spacing: 0.5px;
+-        }
+-        .grid-split {
+-            display: grid;
+-            grid-template-columns: 1fr;
+-            gap: 40px;
+-            margin-top: 40px;
+-            margin-bottom: 60px;
+-        }
+-        @media (min-width: 992px) {
+-            .grid-split {
+-                grid-template-columns: 1.2fr 0.8fr;
+-            }
+-        }
+-        .tech-spec-box {
+-            background-color: #161616;
+-            border: 1px solid rgba(255,255,255,0.04);
+-            border-radius: 8px;
+-            padding: 30px;
+-        }
+-        .tech-spec-box h3 {
+-            color: var(--accent-green, #2ecc71);
+-            margin-bottom: 20px;
+-            border-bottom: 1px solid rgba(255,255,255,0.05);
+-            padding-bottom: 10px;
+-        }
+-        .spec-list {
+-            list-style: none;
+-            padding: 0;
+-        }
+-        .spec-list li {
+-            margin-bottom: 15px;
+-            padding-left: 25px;
+-            position: relative;
+-        }
+-        .spec-list li::before {
+-            content: "⚡";
+-            position: absolute;
+-            left: 0;
+-            top: 0;
+-        }
+-        nav .header-cta {
+-            background-color: #e67e22;
+-            color: #fff !important;
+-            padding: 6px 14px;
+-            border-radius: 4px;
+-            font-weight: bold;
+-            text-decoration: none;
+-        }
+-        /* Top compliance banner to match index */
+-        .compliance-banner {
+-            background-color: #d35400;
+-            color: #fff;
+-            text-align: center;
+-            padding: 10px 15px;
+-            font-weight: bold;
+-            font-size: 0.9rem;
+-            text-transform: uppercase;
+-        }
+-    </style>
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
+ </head>
+-<body>
+-    <header style="background-color: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000;">
+-        <div class="compliance-banner" style="background-color: #d35400; color: #fff; text-align: center; padding: 8px 15px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">
+-            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+-        </div>
+-        
+-        <div class="header-main-content" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 15px;">
+-            
+-            <!-- Logo & Brand Title -->
+-            <div class="logo-container">
+-                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+-                    <img src="../assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height: 50px; width: auto; object-fit: contain;">
+-                    <div class="brand-name" style="display: flex; flex-direction: column;">
+-                        <!-- Main Title in SVA Green and Larger -->
+-                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
+-                        <!-- Subtitle smaller underneath -->
+-                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
+-                    </div>
+-                </a>
+-            </div>
+-
+-            <!-- Navigation Links -->
+-            <nav style="display: flex; align-items: center; gap: 10px;">
+-                <a href="../preview.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+-                
+-                <!-- PRO SIGN IN LINK -->
+-                <a href="../services/login.html" id="authNavLink" style="color: #e67e22; text-decoration: none; font-weight: 700; font-size: 0.85rem; white-space: nowrap;">🔐 Sign In</a>
+-
+-                <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; white-space: nowrap;">📞 Call Now</a>
++<body class="service-page">
++    <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
++
++    <header class="svc-header">
++        <div class="svc-header-inner">
++            <a href="../preview.html" class="svc-logo-link">
++                <img src="../assets/images/logo.png" alt="Shropshire Vehicle Access logo" class="svc-logo-img">
++                <span class="svc-brand-name">
++                    <span class="svc-brand-main">Shropshire Vehicle Access</span>
++                    <span class="svc-brand-sub">Auto Locksmith &amp; Key Specialist</span>
++                </span>
++            </a>
++            <nav class="svc-nav" aria-label="Page navigation">
++                <a href="../preview.html" class="svc-nav-back">← Back Home</a>
++                <a href="login.html" id="authNavLink" style="color:#e67e22;" class="svc-nav-back">🔐 Sign In</a>
++                <a class="svc-cta-tel" href="tel:07123123456">📞 Call Now</a>
+             </nav>
+-
+-
+         </div>
+     </header>
+ 
+-   <!-- MAIN CONTENT GRID -->
+-    <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+-        <h2 class="section-title">All Keys Lost Solutions</h2>
+-    
+-        <div class="grid-split">
+-            
+-            <!-- LEFT COLUMN: Bite-Sized Service Details -->
+-            <div class="service-details">
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Our Mobile Recovery Sequence</h3>
+-                <p style="margin-bottom: 15px; color: #ccc;">
+-                    An "All Keys Lost" situation requires a precise blend of physical lock decoding and software-level EEPROM manipulation. Here is exactly how we generate replacement keys right where the vehicle sits:
++    <!-- HERO -->
++    <section class="svc-hero">
++        <div class="container svc-hero-inner">
++            <div>
++                <span class="svc-eyebrow">On-Site Key Recovery</span>
++                <h1>All Keys Lost Solutions</h1>
++                <p class="svc-hero-lede">
++                    An "All Keys Lost" situation requires a precise blend of physical lock decoding and software-level EEPROM manipulation. We generate <strong>replacement keys right where the vehicle sits</strong> — no towing, no dealership.
+                 </p>
+-                
+-                <ul style="color: #ccc; margin-bottom: 25px; padding-left: 20px; line-height: 1.6;">
+-                    <li style="margin-bottom: 10px;"><strong>1. Non-Destructive Decoding:</strong> We manipulate the internal door lock wafers to decode the mechanical cut code without a single scratch.</li>
+-                    <li style="margin-bottom: 10px;"><strong>2. Precision Milling:</strong> The decoded code is entered into our automated CNC machine to laser-cut a brand-new factory-standard key blade.</li>
+-                    <li><strong>3. Transceiver Linking:</strong> We interface with the OBD diagnostic port to extract pin-codes and pair the new transponder chip to the engine.</li>
+-                </ul>
+-
+-                <div style="background-color: rgba(231, 76, 60, 0.05); border-left: 4px solid #e74c3c; padding: 20px; border-radius: 4px; margin-bottom: 30px;">
+-                    <strong style="color: #e74c3c; display: block; margin-bottom: 5px;">🚨 Security De-Authorisation</strong>
+-                    <span style="color: #ccc; font-size: 0.95rem;">Worried someone found your keys? As part of the programming sequence, we completely delete the missing or stolen keys from the vehicle's memory database, rendering them useless.</span>
++                <div class="svc-hero-actions">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Call for Immediate Dispatch</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
+                 </div>
+             </div>
+-
+-            <!-- RIGHT COLUMN: Iconography List -->
+-            <div class="tech-spec-box">
+-                <h3>Technical Capabilities</h3>
+-                <ul class="custom-icon-list">
+-                    <li data-icon="🔓">
+-                        <strong>Mechanical Decoding</strong>
+-                        <span>Full picking configurations for HU66, HU101, HU162T, and NSN14 keyways.</span>
+-                    </li>
+-                    <li data-icon="💻">
+-                        <strong>Transponder Matching</strong>
+-                        <span>Support for ID46, ID48, Megamos Crypto, and DST-AES electronic configurations.</span>
+-                    </li>
+-                    <li data-icon="🚐">
+-                        <strong>Commercial Fleets</strong>
+-                        <span>Specialized field workflows tailored for Ford Transit Custom, VW Transporter, and Vauxhall Vivaro.</span>
+-                    </li>
+-                    <li data-icon="🚫">
+-                        <strong>No Dealership Towing</strong>
+-                        <span>We perform the entire procedure on-site, saving you expensive recovery fees.</span>
+-                    </li>
+-                </ul>
++            <div class="svc-hero-photo">
++                <img src="../assets/images/key-cutting-1.png" alt="Brand new vehicle key blade cut with a precision CNC machine">
+             </div>
++        </div>
++    </section>
++
++    <!-- MAIN CONTENT -->
++    <main class="svc-main">
++        <div class="container">
++            <div class="svc-grid">
++            
++            <div class="svc-copy">
++                    <h2>Our Mobile Recovery Sequence</h2>
++                    <p>
++                        An "All Keys Lost" situation requires a precise blend of physical lock decoding and software-level EEPROM manipulation. Here is exactly how we generate replacement keys right where the vehicle sits:
++                    </p>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true"><span style="font-size:1.05rem; font-weight:700;">1</span></span>
++                            <span class="svc-list-text">
++                                <strong>Non-Destructive Decoding</strong>
++                                <span>We manipulate the internal door lock wafers to decode the mechanical cut code without a single scratch.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true"><span style="font-size:1.05rem; font-weight:700;">2</span></span>
++                            <span class="svc-list-text">
++                                <strong>Precision Milling</strong>
++                                <span>The decoded code is entered into our automated CNC machine to laser-cut a brand-new factory-standard key blade.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true"><span style="font-size:1.05rem; font-weight:700;">3</span></span>
++                            <span class="svc-list-text">
++                                <strong>Transceiver Linking</strong>
++                                <span>We interface with the OBD diagnostic port to extract pin-codes and pair the new transponder chip to the engine.</span>
++                            </span>
++                        </li>
++                    </ul>
++
++                    <div class="svc-callout red">
++                        <strong>Security De-Authorisation</strong>
++                        <span>Worried someone found your keys? As part of the programming sequence, we completely delete the missing or stolen keys from the vehicle's memory database, rendering them useless.</span>
++                    </div>
++                </div>
++
++                <aside class="svc-panel">
++                    <h3 class="svc-panel-title">Technical Capabilities</h3>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="16" r="4"/><path d="M11 13l9-9"/><path d="M16 8l3 3"/><path d="M13.5 10.5l2 2"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Mechanical Decoding</strong>
++                                <span>Full picking configurations for HU66, HU101, HU162T, and NSN14 keyways.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.6"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Transponder Matching</strong>
++                                <span>Support for ID46, ID48, Megamos Crypto, and DST-AES electronic configurations.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.4"/><circle cx="17" cy="17" r="1.4"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Commercial Fleets</strong>
++                                <span>Specialized field workflows tailored for Ford Transit Custom, VW Transporter, and Vauxhall Vivaro.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5.5 5.5l13 13"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>No Dealership Towing</strong>
++                                <span>We perform the entire procedure on-site, saving you expensive recovery fees.</span>
++                            </span>
++                        </li>
++                    </ul>
++                </aside>
+ 
+         </div>
++    </div>
++
+ <div class="container" style="margin-top: 40px; margin-bottom: 40px;">
+     <div class="finder-container" style="margin: 0 auto; max-width: 600px; background-color: #1a1a1a; border: 1px solid rgba(46, 204, 113, 0.3); border-radius: 8px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+         
+@@ -220,7 +211,7 @@
+             <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
+                 Sign in to view specific door deadlocking risks, ignition pick directions, wafer counts, and specialized bypass notes for this model.
+             </p>
+-            <a href="../services/login.html" style="display: inline-block; background-color: #e67e22; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s;">
++            <a href="login.html" style="display: inline-block; background-color: #e67e22; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s;">
+                 🔐 Sign In to Unlock Vehicle Data
+             </a>
+         </div>
+@@ -240,7 +231,7 @@
+             
+             <div class="cta-button-group">
+                 <a href="tel:07123123456" class="action-btn urgent-btn">📞 Call for Immediate Dispatch</a>
+-                <a href="../index.html#contact" class="action-btn standard-btn">📅 Return to Service Desk</a>
++                <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
+             </div>
+         </div>
+ 
+@@ -310,7 +301,7 @@
+             if (authNavLink) {
+                 authNavLink.innerHTML = "🔐 Sign In";
+                 authNavLink.style.color = "#e67e22";
+-                authNavLink.href = "../services/login.html";
++                authNavLink.href = "login.html";
+             }
+         }
+     });
+diff --git a/services/emergency-lockout.html b/services/emergency-lockout.html
+index 0c59d23..a4aad28 100644
+--- a/services/emergency-lockout.html
++++ b/services/emergency-lockout.html
+@@ -4,200 +4,170 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Emergency Non-Destructive Vehicle Entry | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="../assets/css/styles.css?=v1.1">
+-    <style>
+-        /* Service Page Specific Layouts */
+-        .service-hero {
+-            background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.98) 100%);
+-            padding: 60px 20px;
+-            text-align: center;
+-            border-bottom: 1px solid rgba(46, 204, 113, 0.15);
+-        }
+-        .service-hero h2 {
+-            color: #fff;
+-            font-size: 2.4rem;
+-            margin-bottom: 15px;
+-        }
+-        .badge-alert {
+-            background-color: #c0392b;
+-            color: #fff;
+-            padding: 5px 12px;
+-            border-radius: 4px;
+-            font-size: 0.85rem;
+-            font-weight: bold;
+-            display: inline-block;
+-            margin-bottom: 15px;
+-            text-transform: uppercase;
+-            letter-spacing: 0.5px;
+-        }
+-        .grid-split {
+-            display: grid;
+-            grid-template-columns: 1fr;
+-            gap: 40px;
+-            margin-top: 40px;
+-            margin-bottom: 60px;
+-        }
+-        @media (min-width: 992px) {
+-            .grid-split {
+-                grid-template-columns: 1.2fr 0.8fr;
+-            }
+-        }
+-        .tech-spec-box {
+-            background-color: #161616;
+-            border: 1px solid rgba(255,255,255,0.04);
+-            border-radius: 8px;
+-            padding: 30px;
+-        }
+-        .tech-spec-box h3 {
+-            color: var(--accent-green, #2ecc71);
+-            margin-bottom: 20px;
+-            border-bottom: 1px solid rgba(255,255,255,0.05);
+-            padding-bottom: 10px;
+-        }
+-        .spec-list {
+-            list-style: none;
+-            padding: 0;
+-        }
+-        .spec-list li {
+-            margin-bottom: 15px;
+-            padding-left: 25px;
+-            position: relative;
+-        }
+-        .spec-list li::before {
+-            content: "⚡";
+-            position: absolute;
+-            left: 0;
+-            top: 0;
+-        }
+-        nav .header-cta {
+-            background-color: #e67e22;
+-            color: #fff !important;
+-            padding: 6px 14px;
+-            border-radius: 4px;
+-            font-weight: bold;
+-            text-decoration: none;
+-        }
+-        /* Top compliance banner to match index */
+-        .compliance-banner {
+-            background-color: #d35400;
+-            color: #fff;
+-            text-align: center;
+-            padding: 10px 15px;
+-            font-weight: bold;
+-            font-size: 0.9rem;
+-            text-transform: uppercase;
+-        }
+-    </style>
++    <meta name="description" content="Emergency non-destructive vehicle lockout entry across Shropshire. Lishi pick decoding with zero damage to your car, van, or boot lock. Mobile rapid dispatch. Call 07123 123 456.">
++    <link rel="canonical" href="https://sva-locksmiths.co.uk/services/emergency-lockout.html">
++    <link rel="icon" type="image/png" href="../assets/images/logo.png">
++    <meta property="og:title" content="Emergency Non-Destructive Vehicle Entry | Shropshire Vehicle Access">
++    <meta property="og:description" content="Non-destructive emergency lockout entry across Shropshire using precision Lishi decoding. No damage, no towing. Mobile rapid dispatch.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://sva-locksmiths.co.uk/services/emergency-lockout.html">
++    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <meta property="twitter:card" content="summary_large_image">
++    <meta property="twitter:title" content="Emergency Non-Destructive Vehicle Entry | SVA Locksmiths">
++    <meta property="twitter:description" content="Non-destructive emergency lockout entry across Shropshire. No damage, no towing.">
++    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <script type="application/ld+json">
++    {
++        "@context": "https://schema.org",
++        "@type": "Service",
++        "name": "Emergency Vehicle Lockout Entry",
++        "serviceType": "Non-destructive vehicle opening",
++        "url": "https://sva-locksmiths.co.uk/services/emergency-lockout.html",
++        "provider": {
++            "@type": "LocalBusiness",
++            "name": "Shropshire Vehicle Access",
++            "url": "https://sva-locksmiths.co.uk/preview.html",
++            "telephone": "+447123123456",
++            "image": "https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png",
++            "sameAs": [
++                "https://facebook.com/svalocksmiths",
++                "https://instagram.com/svalocksmiths"
++            ],
++            "areaServed": ["Shropshire", "Shrewsbury", "Telford", "Oswestry", "Whitchurch", "Market Drayton", "Shawbury"]
++        },
++        "areaServed": { "@type": "Place", "name": "Shropshire" }
++    }
++    </script>
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
+ </head>
+-<body>
+-    <header style="background-color: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000;">
+-        <div class="compliance-banner" style="background-color: #d35400; color: #fff; text-align: center; padding: 8px 15px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">
+-            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+-        </div>
+-        
+-        <div class="header-main-content" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 15px;">
+-            
+-            <!-- Logo & Brand Title -->
+-            <div class="logo-container">
+-                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+-                    <img src="../assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height: 50px; width: auto; object-fit: contain;">
+-                    <div class="brand-name" style="display: flex; flex-direction: column;">
+-                        <!-- Main Title in SVA Green and Larger -->
+-                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
+-                        <!-- Subtitle smaller underneath -->
+-                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
+-                    </div>
+-                </a>
+-            </div>
++<body class="service-page">
++    <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+ 
+-            <!-- Navigation Links -->
+-            <nav style="display: flex; align-items: center; gap: 10px;">
+-                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+-                <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; white-space: nowrap;">📞 Call Now</a>
++    <header class="svc-header">
++        <div class="svc-header-inner">
++            <a href="../preview.html" class="svc-logo-link">
++                <img src="../assets/images/logo.png" alt="Shropshire Vehicle Access logo" class="svc-logo-img">
++                <span class="svc-brand-name">
++                    <span class="svc-brand-main">Shropshire Vehicle Access</span>
++                    <span class="svc-brand-sub">Auto Locksmith &amp; Key Specialist</span>
++                </span>
++            </a>
++            <nav class="svc-nav" aria-label="Page navigation">
++                <a href="../preview.html" class="svc-nav-back">← Back Home</a>
++                <a class="svc-cta-tel" href="tel:07123123456">📞 Call Now</a>
+             </nav>
+-
+         </div>
+     </header>
+ 
+-
+-    <!-- MAIN CONTENT GRID -->
+-    <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+-        <h2 class="section-title" style="text-align: left;">Non-Destructive Vehicle Opening</h2>
+-        <div class="grid-split">
+-            
+-            <!-- LEFT COLUMN: Bite-Sized Service Details -->
+-            <div class="service-details">
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">What is "Non-Destructive" Entry?</h3>
+-                <p style="margin-bottom: 25px; color: #ccc;">
+-                    Gaining access to your vehicle <strong>without causing physical damage</strong> to the lock cylinder, bodywork, or glass. We strictly avoid crude force, pry bars, or generic wire hangers that ruin weather seals.
+-                </p>
+-                
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">How We Work: Technical Precision</h3>
+-                <p style="margin-bottom: 15px; color: #ccc;">
+-                    Instead of forcing the door, we decode and pick the lock mechanically using <strong>precision diagnostic tools (Lishi picks)</strong>.
++    <!-- HERO -->
++    <section class="svc-hero">
++        <div class="container svc-hero-inner">
++            <div>
++                <span class="svc-eyebrow">24/7 Emergency Response</span>
++                <h1>Emergency Vehicle Lockout Entry</h1>
++                <p class="svc-hero-lede">
++                    Locked out at the roadside? We gain access to your vehicle <strong>without causing physical damage</strong> to the lock cylinder, bodywork, or glass — strictly no crude force, pry bars, or wire hangers that ruin weather seals.
+                 </p>
+-                <p style="margin-bottom: 25px; color: #ccc;">
+-                    By inserting these specialist picks directly into the keyway, we manipulate the internal wafers one by one—exactly as a real laser-cut key would. Once all wafers align, the lock rotates cleanly, leaving the mechanism in <strong>perfect working order</strong>.
+-                </p>
+-
+-                <div style="background-color: rgba(243, 156, 18, 0.05); border-left: 4px solid #f39c12; padding: 20px; border-radius: 4px; margin-bottom: 30px;">
+-                    <strong style="color: #f39c12; display: block; margin-bottom: 5px;">⚠️ Note on Deadlocked Vehicles</strong>
+-                    <span style="color: #ccc; font-size: 0.95rem;">Modern cars and commercial vans use "double-locking". Pulling interior handles or pushing dashboard buttons will not unlock it. Mechanical picking via the driver's door is the <strong>only safe way</strong> to bypass a deadlock state.</span>
++                <div class="svc-hero-actions">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Call for Immediate Dispatch</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
+                 </div>
+             </div>
+-
+-            <!-- RIGHT COLUMN: Iconography List -->
+-            <div class="tech-spec-box">
+-                <h3>Vehicles We Service</h3>
+-                <ul class="custom-icon-list">
+-                    <li data-icon="🚗">
+-                        <strong>Passenger Cars</strong>
+-                        <span>Full lock coverage for domestic hatchbacks, saloons, and SUVs.</span>
+-                    </li>
+-                    <li data-icon="🚐">
+-                        <strong>Commercial Vans</strong>
+-                        <span>Fast dispatch for stranded delivery vans and fleet transits.</span>
+-                    </li>
+-                    <li data-icon="🧰">
+-                        <strong>Trunk & Boot Lockouts</strong>
+-                        <span>Specialized entry when keys are dropped inside the luggage compartment.</span>
+-                    </li>
+-                    <li data-icon="⏱️">
+-                        <strong>Rapid Dispatch</strong>
+-                        <span>Emergency roadside response across all of Shropshire.</span>
+-                    </li>
+-                </ul>
++            <div class="svc-hero-photo">
++                <img src="../assets/images/lishi-pick-entry-2.jpg" alt="Precision Lishi pick inserted into a car door lock cylinder">
+             </div>
+-
+         </div>
++    </section>
++
++    <!-- MAIN CONTENT -->
++    <main class="svc-main">
++        <div class="container">
++            <div class="svc-grid">
++                <div class="svc-copy">
++                    <h2>What is "Non-Destructive" Entry?</h2>
++                    <p>
++                        Gaining access to your vehicle <strong>without causing physical damage</strong> to the lock cylinder, bodywork, or glass. We strictly avoid crude force, pry bars, or generic wire hangers that ruin weather seals.
++                    </p>
+ 
+-                <!-- UNIFIED ACTION BANNER -->
+-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0 0 40px 0;">
++                    <h2>How We Work: Technical Precision</h2>
++                    <p>
++                        Instead of forcing the door, we decode and pick the lock mechanically using <strong>precision diagnostic tools (Lishi picks)</strong>.
++                    </p>
++                    <p>
++                        By inserting these specialist picks directly into the keyway, we manipulate the internal wafers one by one — exactly as a real laser-cut key would. Once all wafers align, the lock rotates cleanly, leaving the mechanism in <strong>perfect working order</strong>.
++                    </p>
+ 
+-        <div class="unified-cta-box">
+-            <h3 class="cta-title">Require Mobile Assistance?</h3>
+-            <p class="cta-desc">Whether you are stranded at the roadside or just need a routine service, we dispatch directly to your location across Shropshire.</p>
+-            
+-            <div class="cta-button-group">
+-                <a href="tel:07123123456" class="action-btn urgent-btn">📞 Call for Immediate Dispatch</a>
+-                <a href="../index.html#contact" class="action-btn standard-btn">📅 Return to Service Desk</a>
++                    <div class="svc-callout amber">
++                        <strong>Note on Deadlocked Vehicles</strong>
++                        <span>Modern cars and commercial vans use "double-locking". Pulling interior handles or pushing dashboard buttons will not unlock it. Mechanical picking via the driver's door is the <strong>only safe way</strong> to bypass a deadlock state.</span>
++                    </div>
++                </div>
++
++                <aside class="svc-panel">
++                    <h3 class="svc-panel-title">Vehicles We Service</h3>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14"/><path d="M5 17a1.5 1.5 0 0 1-1.5-1.5V12L6 8a2 2 0 0 1 1.8-1h8.4A2 2 0 0 1 18 8l2.5 4v3.5A1.5 1.5 0 0 1 19 17"/><circle cx="8" cy="16.5" r="1.5"/><circle cx="16" cy="16.5" r="1.5"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Passenger Cars</strong>
++                                <span>Full lock coverage for domestic hatchbacks, saloons, and SUVs.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v8H3z"/><path d="M14 10h4l3 3v2h-7"/><circle cx="7" cy="17" r="1.4"/><circle cx="17" cy="17" r="1.4"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Commercial Vans</strong>
++                                <span>Fast dispatch for stranded delivery vans and fleet transits.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v11H3z"/><path d="M7 6V4h10v2"/><path d="M7 11h10"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Trunk &amp; Boot Lockouts</strong>
++                                <span>Specialized entry when keys are dropped inside the luggage compartment.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2"/><path d="M9 2h6"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Rapid Dispatch</strong>
++                                <span>Emergency roadside response across all of Shropshire.</span>
++                            </span>
++                        </li>
++                    </ul>
++                </aside>
+             </div>
+-        </div>
+ 
++            <!-- UNIFIED ACTION BANNER -->
++            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 0 40px 0;">
++
++            <div class="unified-cta-box">
++                <h3 class="cta-title">Require Mobile Assistance?</h3>
++                <p class="cta-desc">Whether you are stranded at the roadside or just need a routine service, we dispatch directly to your location across Shropshire.</p>
++                <div class="cta-button-group">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Call for Immediate Dispatch</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
++                </div>
++            </div>
++        </div>
+     </main>
+ 
+     <footer>
+         <div class="footer-content">
+             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
+-            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
+-            
+-            <!-- Social Links -->
++            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy &amp; Terms</a></p>
+             <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
+                 <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+                 <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+             </div>
+-
+-            <!-- Touch-Friendly Location Grid -->
+             <div class="footer-locations">
+                 <a href="../locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
+                 <a href="../locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
+@@ -208,7 +178,5 @@
+             </div>
+         </div>
+     </footer>
+-
+-
+ </body>
+-</html>
++</html>
+\ No newline at end of file
+diff --git a/services/login.html b/services/login.html
+index eebc958..71e2161 100644
+--- a/services/login.html
++++ b/services/login.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <title>Pro Trade Portal | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
+     
+ <!-- Firebase App (The core Firebase SDK) -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+diff --git a/services/spare-keys.html b/services/spare-keys.html
+index 92d7e5c..629cd74 100644
+--- a/services/spare-keys.html
++++ b/services/spare-keys.html
+@@ -3,190 +3,157 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Spare & Duplicate Car Keys | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="../assets/css/styles.css?=v1.1">
+-    <style>
+-        /* Service Page Specific Layouts */
+-        .service-hero {
+-            background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.98) 100%);
+-            padding: 60px 20px;
+-            text-align: center;
+-            border-bottom: 1px solid rgba(46, 204, 113, 0.15);
+-        }
+-        .service-hero h2 {
+-            color: #fff;
+-            font-size: 2.4rem;
+-            margin-bottom: 15px;
+-        }
+-        .badge-alert {
+-            background-color: #c0392b;
+-            color: #fff;
+-            padding: 5px 12px;
+-            border-radius: 4px;
+-            font-size: 0.85rem;
+-            font-weight: bold;
+-            display: inline-block;
+-            margin-bottom: 15px;
+-            text-transform: uppercase;
+-            letter-spacing: 0.5px;
+-        }
+-        .grid-split {
+-            display: grid;
+-            grid-template-columns: 1fr;
+-            gap: 40px;
+-            margin-top: 40px;
+-            margin-bottom: 60px;
+-        }
+-        @media (min-width: 992px) {
+-            .grid-split {
+-                grid-template-columns: 1.2fr 0.8fr;
+-            }
+-        }
+-        .tech-spec-box {
+-            background-color: #161616;
+-            border: 1px solid rgba(255,255,255,0.04);
+-            border-radius: 8px;
+-            padding: 30px;
+-        }
+-        .tech-spec-box h3 {
+-            color: var(--accent-green, #2ecc71);
+-            margin-bottom: 20px;
+-            border-bottom: 1px solid rgba(255,255,255,0.05);
+-            padding-bottom: 10px;
+-        }
+-        .spec-list {
+-            list-style: none;
+-            padding: 0;
+-        }
+-        .spec-list li {
+-            margin-bottom: 15px;
+-            padding-left: 25px;
+-            position: relative;
+-        }
+-        .spec-list li::before {
+-            content: "⚡";
+-            position: absolute;
+-            left: 0;
+-            top: 0;
+-        }
+-        nav .header-cta {
+-            background-color: #e67e22;
+-            color: #fff !important;
+-            padding: 6px 14px;
+-            border-radius: 4px;
+-            font-weight: bold;
+-            text-decoration: none;
+-        }
+-        /* Top compliance banner to match index */
+-        .compliance-banner {
+-            background-color: #d35400;
+-            color: #fff;
+-            text-align: center;
+-            padding: 10px 15px;
+-            font-weight: bold;
+-            font-size: 0.9rem;
+-            text-transform: uppercase;
+-        }
+-    </style>
++    <title>Spare &amp; Duplicate Car Keys | Shropshire Vehicle Access</title>
++    <meta name="description" content="Mobile spare and duplicate car key cutting and transponder programming across Shropshire. Laser key cutting and remote fob syncing at your home or workplace. Call 07123 123 456.">
++    <link rel="canonical" href="https://sva-locksmiths.co.uk/services/spare-keys.html">
++    <link rel="icon" type="image/png" href="../assets/images/logo.png">
++    <meta property="og:title" content="Spare &amp; Duplicate Car Keys | Shropshire Vehicle Access">
++    <meta property="og:description" content="Spare key cutting, transponder programming, and remote fob syncing delivered to your home or workplace across Shropshire.">
++    <meta property="og:type" content="website">
++    <meta property="og:url" content="https://sva-locksmiths.co.uk/services/spare-keys.html">
++    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <meta property="twitter:card" content="summary_large_image">
++    <meta property="twitter:title" content="Spare &amp; Duplicate Car Keys | SVA Locksmiths">
++    <meta property="twitter:description" content="Mobile spare key cutting and transponder programming across Shropshire.">
++    <meta property="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <script type="application/ld+json">
++    {
++        "@context": "https://schema.org",
++        "@type": "Service",
++        "name": "Spare and Duplicate Car Keys",
++        "serviceType": "Automotive key duplication and transponder programming",
++        "url": "https://sva-locksmiths.co.uk/services/spare-keys.html",
++        "provider": {
++            "@type": "LocalBusiness",
++            "name": "Shropshire Vehicle Access",
++            "url": "https://sva-locksmiths.co.uk/preview.html",
++            "telephone": "+447123123456",
++            "image": "https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png",
++            "sameAs": [
++                "https://facebook.com/svalocksmiths",
++                "https://instagram.com/svalocksmiths"
++            ],
++            "areaServed": ["Shropshire", "Shrewsbury", "Telford", "Oswestry", "Whitchurch", "Market Drayton", "Shawbury"]
++        },
++        "areaServed": { "@type": "Place", "name": "Shropshire" }
++    }
++    </script>
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
+ </head>
+-<body>
+-        
+-    <header style="background-color: #111; border-bottom: 1px solid #222; position: sticky; top: 0; z-index: 1000;">
+-        <div class="compliance-banner" style="background-color: #d35400; color: #fff; text-align: center; padding: 8px 15px; font-weight: bold; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px;">
+-            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+-        </div>
+-        
+-        <div class="header-main-content" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 15px;">
+-            
+-            <!-- Logo & Brand Title -->
+-            <div class="logo-container">
+-                <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+-                    <img src="../assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height: 50px; width: auto; object-fit: contain;">
+-                    <div class="brand-name" style="display: flex; flex-direction: column;">
+-                        <!-- Main Title in SVA Green and Larger -->
+-                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
+-                        <!-- Subtitle smaller underneath -->
+-                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
+-                    </div>
+-                </a>
+-            </div>
++<body class="service-page">
++    <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+ 
+-            <!-- Navigation Links -->
+-            <nav style="display: flex; align-items: center; gap: 10px;">
+-                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+-                <a class="header-cta" href="tel:07123123456" style="background: #2ecc71; color: #000; padding: 6px 12px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; display: flex; align-items: center; gap: 4px; white-space: nowrap;">📞 Call Now</a>
++    <header class="svc-header">
++        <div class="svc-header-inner">
++            <a href="../preview.html" class="svc-logo-link">
++                <img src="../assets/images/logo.png" alt="Shropshire Vehicle Access logo" class="svc-logo-img">
++                <span class="svc-brand-name">
++                    <span class="svc-brand-main">Shropshire Vehicle Access</span>
++                    <span class="svc-brand-sub">Auto Locksmith &amp; Key Specialist</span>
++                </span>
++            </a>
++            <nav class="svc-nav" aria-label="Page navigation">
++                <a href="../preview.html" class="svc-nav-back">← Back Home</a>
++                <a class="svc-cta-tel" href="tel:07123123456">📞 Call Now</a>
+             </nav>
+-
+         </div>
+     </header>
+ 
+-    <!-- MAIN CONTENT GRID -->
+-    <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+-        <h2 class="section-title" style="text-align: left;">Spare & Duplicate Key Cloning</h2>
+-        <div class="grid-split">
+-            
+-            <!-- LEFT COLUMN: Bite-Sized Service Details -->
+-            <div class="service-details">
+-                <h3 style="font-size: 1.5rem; margin-bottom: 15px;">Don't Wait for an Emergency</h3>
+-                <p style="margin-bottom: 15px; color: #ccc;">
+-                    Are you down to your last key? Losing it completely turns a simple duplicate job into an expensive, time-consuming total-loss situation.
+-                </p>
+-                <p style="margin-bottom: 25px; color: #ccc;">
+-                    We cut and program spare keys directly at your home or workplace. Modern vehicle keys are highly secure mini-computers; getting a spare requires much more than just cutting a piece of metal. 
++    <!-- HERO -->
++    <section class="svc-hero">
++        <div class="container svc-hero-inner">
++            <div>
++                <span class="svc-eyebrow">Spare Keys On Your Driveway</span>
++                <h1>Spare &amp; Duplicate Car Keys</h1>
++                <p class="svc-hero-lede">
++                    We cut and program spare keys <strong>directly at your home or workplace</strong>. Modern vehicle keys are highly secure mini-computers — getting a spare requires much more than cutting a piece of metal.
+                 </p>
+-
+-                <div style="background-color: rgba(46, 204, 113, 0.05); border-left: 4px solid #2ecc71; padding: 20px; border-radius: 4px; margin-bottom: 30px;">
+-                    <strong style="color: #2ecc71; display: block; margin-bottom: 5px;">🛡️ The ECU Match</strong>
+-                    <span style="color: #ccc; font-size: 0.95rem;">The internal transponder chip must be precision-matched and digitally introduced to your vehicle's Engine Control Unit (ECU) before the engine immobiliser will allow the car to start.</span>
++                <div class="svc-hero-actions">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Talk to a Locksmith Now</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
+                 </div>
+             </div>
++            <div class="svc-hero-photo">
++                <img src="../assets/images/key-programming-bench.png" alt="Transponder key programmed on a mobile programming bench">
++            </div>
++        </div>
++    </section>
++
++    <!-- MAIN CONTENT -->
++    <main class="svc-main">
++        <div class="container">
++            <div class="svc-grid">
++                <div class="svc-copy">
++                    <h2>Don't Wait for an Emergency</h2>
++                    <p>
++                        Are you down to your last key? Losing it completely turns a simple duplicate job into an expensive, time-consuming total-loss situation.
++                    </p>
++                    <p>
++                        We cut and program spare keys directly at your home or workplace. Modern vehicle keys are highly secure mini-computers; getting a spare requires much more than just cutting a piece of metal.
++                    </p>
+ 
+-            <!-- RIGHT COLUMN: Iconography List -->
+-            <div class="tech-spec-box">
+-                <h3>Precision Execution</h3>
+-                <ul class="custom-icon-list">
+-                    <li data-icon="⚙️">
+-                        <strong>Laser Key Cutting</strong>
+-                        <span>We decode your original blade using digital hardware to cut a new profile down to fractions of a millimeter.</span>
+-                    </li>
+-                    <li data-icon="💻">
+-                        <strong>Transponder Programming</strong>
+-                        <span>Using advanced OBD diagnostics, we safely code the new security chip to bypass the factory immobiliser.</span>
+-                    </li>
+-                    <li data-icon="📡">
+-                        <strong>Remote Fob Syncing</strong>
+-                        <span>Central locking buttons and proximity smart keys are fully synchronized on-site to perform exactly like a dealership key.</span>
+-                    </li>
+-                </ul>
++                    <div class="svc-callout green">
++                        <strong>The ECU Match</strong>
++                        <span>The internal transponder chip must be precision-matched and digitally introduced to your vehicle's Engine Control Unit (ECU) before the engine immobiliser will allow the car to start.</span>
++                    </div>
++                </div>
++
++                <aside class="svc-panel">
++                    <h3 class="svc-panel-title">Precision Execution</h3>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="16" r="4"/><path d="M11 13l9-9"/><path d="M16 8l3 3"/><path d="M13.5 10.5l2 2"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Laser Key Cutting</strong>
++                                <span>We decode your original blade using digital hardware to cut a new profile down to fractions of a millimeter.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/><circle cx="12" cy="12" r="1.6"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Transponder Programming</strong>
++                                <span>Using advanced OBD diagnostics, we safely code the new security chip to bypass the factory immobiliser.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/><path d="M3 3l4 4M21 3l-4 4"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Remote Fob Syncing</strong>
++                                <span>Central locking buttons and proximity smart keys are fully synchronized on-site to perform exactly like a dealership key.</span>
++                            </span>
++                        </li>
++                    </ul>
++                </aside>
+             </div>
+ 
+-        </div>
++            <!-- UNIFIED ACTION BANNER -->
++            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 0 0 40px 0;">
+ 
+-        <!-- UNIFIED ACTION BANNER -->
+-        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0 0 40px 0;">
+-        <div class="unified-cta-box">
+-            <h3 class="cta-title">Need a Spare Key Quote?</h3>
+-            <p class="cta-desc">Drop your vehicle details into our booking system, and we will get back to you with a fixed competitive pricing structure.</p>
+-            <div class="cta-button-group">
+-                <a href="tel:07123123456" class="action-btn urgent-btn">📞 Talk to a Locksmith Now</a>
+-                <a href="../index.html#contact" class="action-btn standard-btn">📅 Request a Free Quote</a>
++            <div class="unified-cta-box">
++                <h3 class="cta-title">Need a Spare Key Quote?</h3>
++                <p class="cta-desc">Drop your vehicle details into our booking system, and we will get back to you with a fixed competitive pricing structure.</p>
++                <div class="cta-button-group">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Talk to a Locksmith Now</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
++                </div>
+             </div>
+         </div>
+     </main>
+ 
+-
+     <footer>
+         <div class="footer-content">
+             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
+-            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
+-            
+-            <!-- Social Links -->
++            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy &amp; Terms</a></p>
+             <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
+                 <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+                 <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+             </div>
+-
+-            <!-- Touch-Friendly Location Grid -->
+             <div class="footer-locations">
+                 <a href="../locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
+                 <a href="../locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
+@@ -197,7 +164,5 @@
+             </div>
+         </div>
+     </footer>
+-
+-
+ </body>
+-</html>
++</html>
+\ No newline at end of file
+diff --git a/services/success.html b/services/success.html
+index ba69ee3..46901cd 100644
+--- a/services/success.html
++++ b/services/success.html
+@@ -2,6 +2,7 @@
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
++    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Activating Pro Access - SVA FieldMate Pro</title>
+     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+@@ -57,7 +58,7 @@
+             document.querySelector('p').textContent = "Database synced successfully. Redirecting to workspace...";
+             
+             setTimeout(() => {
+-                window.location.href = "services/all-keys-lost.html";
++                window.location.href = "all-keys-lost.html";
+             }, 1800);
+         }
+ 
+@@ -84,7 +85,7 @@
+                         }
+                     } else {
+                         document.querySelector('h2').textContent = "🔒 Sign In Required";
+-                        document.querySelector('p').innerHTML = 'Please <a href="services/login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
++                        document.querySelector('p').innerHTML = 'Please <a href="login.html" style="color: #2ecc71;">sign in to your account</a> to claim your pass.';
+                     }
+                 }, 1500);
+             }
+diff --git a/services/van-security.html b/services/van-security.html
+index eef3959..88666e0 100644
+--- a/services/van-security.html
++++ b/services/van-security.html
+@@ -3,156 +3,173 @@
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+-    <title>Van Security Systems & Upgrades | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="../assets/css/styles.css?=v1.1">
+-        <style>
+-        /* Service Page Specific Layouts */
+-        .service-hero {
+-            background: linear-gradient(180deg, rgba(20,20,20,0.9) 0%, rgba(10,10,10,0.98) 100%);
+-            padding: 60px 20px;
+-            text-align: center;
+-            border-bottom: 1px solid rgba(46, 204, 113, 0.15);
+-        }
+-        .service-hero h2 {
+-            color: #fff;
+-            font-size: 2.4rem;
+-            margin-bottom: 15px;
+-        }
+-        .badge-alert {
+-            background-color: #c0392b;
+-            color: #fff;
+-            padding: 5px 12px;
+-            border-radius: 4px;
+-            font-size: 0.85rem;
+-            font-weight: bold;
+-            display: inline-block;
+-            margin-bottom: 15px;
+-            text-transform: uppercase;
+-            letter-spacing: 0.5px;
+-        }
+-        .grid-split {
+-            display: grid;
+-            grid-template-columns: 1fr;
+-            gap: 40px;
+-            margin-top: 40px;
+-            margin-bottom: 60px;
+-        }
+-        @media (min-width: 992px) {
+-            .grid-split {
+-                grid-template-columns: 1.2fr 0.8fr;
++    <title>Van Security Systems &amp; Upgrades | Shropshire Vehicle Access</title>
++    <meta name="description" content="Upgrade your commercial van with heavy-duty deadlocks, slamlocks and internal shielding plates across Shropshire. Protecting tradesmen's tools and livelihoods with SVA Locksmiths.">
++    <link rel="canonical" href="https://sva-locksmiths.co.uk/services/van-security.html">
++    <link rel="apple-touch-icon" href="../assets/images/logo.png">
++    <link rel="icon" href="../assets/images/logo.png" type="image/png">
++    <meta property="og:type" content="website">
++    <meta property="og:title" content="Van Security Systems &amp; Upgrades | Shropshire Vehicle Access">
++    <meta property="og:description" content="High-security deadlocks, slamlocks and internal shielding plates for commercial vans across Telford, Shrewsbury, Market Drayton and Shropshire.">
++    <meta property="og:url" content="https://sva-locksmiths.co.uk/services/van-security.html">
++    <meta property="og:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <meta property="og:site_name" content="Shropshire Vehicle Access">
++    <meta name="twitter:card" content="summary_large_image">
++    <meta name="twitter:title" content="Van Security Systems &amp; Upgrades | SVA Locksmiths">
++    <meta name="twitter:description" content="Protect your commercial fleet with deadlocks, slamlocks and shielding plates across Shropshire.">
++    <meta name="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <script type="application/ld+json">
++    {
++        "@context": "https://schema.org",
++        "@type": "Service",
++        "name": "Van Security Systems & Upgrades",
++        "serviceType": "Commercial Van Locking & Security Upgrades",
++        "description": "High-security mechanical deadlocks, slamlocks and internal shielding plates fitted to commercial vans on-site across Shropshire.",
++        "provider": {
++            "@type": "AutoLocksmith",
++            "name": "Shropshire Vehicle Access",
++            "image": "https://sva-locksmiths.co.uk/assets/images/logo.png",
++            "telephone": "+447123123456",
++            "url": "https://sva-locksmiths.co.uk/",
++            "sameAs": [
++                "https://facebook.com/svalocksmiths",
++                "https://instagram.com/svalocksmiths"
++            ],
++            "address": {
++                "@type": "PostalAddress",
++                "addressRegion": "Shropshire",
++                "addressCountry": "GB"
+             }
+-        }
+-        .tech-spec-box {
+-            background-color: #161616;
+-            border: 1px solid rgba(255,255,255,0.04);
+-            border-radius: 8px;
+-            padding: 30px;
+-        }
+-        .tech-spec-box h3 {
+-            color: var(--accent-green, #2ecc71);
+-            margin-bottom: 20px;
+-            border-bottom: 1px solid rgba(255,255,255,0.05);
+-            padding-bottom: 10px;
+-        }
+-        .spec-list {
+-            list-style: none;
+-            padding: 0;
+-        }
+-        .spec-list li {
+-            margin-bottom: 15px;
+-            padding-left: 25px;
+-            position: relative;
+-        }
+-        .spec-list li::before {
+-            content: "⚡";
+-            position: absolute;
+-            left: 0;
+-            top: 0;
+-        }
+-        nav .header-cta {
+-            background-color: #e67e22;
+-            color: #fff !important;
+-            padding: 6px 14px;
+-            border-radius: 4px;
+-            font-weight: bold;
+-            text-decoration: none;
+-        }
+-        /* Top compliance banner to match index */
+-        .compliance-banner {
+-            background-color: #d35400;
+-            color: #fff;
+-            text-align: center;
+-            padding: 10px 15px;
+-            font-weight: bold;
+-            font-size: 0.9rem;
+-            text-transform: uppercase;
+-        }
+-    </style>
++        },
++        "areaServed": [
++            { "@type": "Place", "name": "Shrewsbury" },
++            { "@type": "Place", "name": "Telford" },
++            { "@type": "Place", "name": "Market Drayton" },
++            { "@type": "Place", "name": "Oswestry" },
++            { "@type": "Place", "name": "Whitchurch" },
++            { "@type": "Place", "name": "Shawbury" }
++        ]
++    }
++    </script>
+ </head>
+-<body>
+-        
+-    <header>
+-        <div class="compliance-banner">
+-        ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+-        </div>
+-        <div class="logo-container">
+-            <a href="../index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+-                <img src="../assets/images/logo.png" alt="SVA Logo" class="logo-img" style="height:75px; width:auto; object-fit:contain;">
+-                <div class="brand-name">
+-                    <h1>Shropshire Vehicle Access</h1>
+-                    <p>Mobile Car & Van Auto Locksmith</p>
+-                </div>
++<body class="service-page">
++    <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
++
++    <header class="svc-header">
++        <div class="svc-header-inner">
++            <a href="../preview.html" class="svc-logo-link">
++                <img src="../assets/images/logo.png" alt="Shropshire Vehicle Access logo" class="svc-logo-img">
++                <span class="svc-brand-name">
++                    <span class="svc-brand-main">Shropshire Vehicle Access</span>
++                    <span class="svc-brand-sub">Auto Locksmith &amp; Key Specialist</span>
++                </span>
+             </a>
++            <nav class="svc-nav" aria-label="Page navigation">
++                <a href="../preview.html" class="svc-nav-back">← Back Home</a>
++                <a class="svc-cta-tel" href="tel:07123123456">📞 Call Now</a>
++            </nav>
+         </div>
+-        <nav>
+-            <a href="../index.html">← Back Home</a>
+-            <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
+-        </nav>
+     </header>
+ 
+-    <main class="container" style="padding-top: 40px; padding-bottom: 60px;">
+-        <h2 class="section-title" style="text-align: left;">Commercial Van Security & Upgrades</h2>
+-        
+-        <div style="max-width: 800px; margin: 0 auto; line-height: 1.8;">
+-            <p style="font-size: 1.2rem; color: var(--accent-orange); font-weight: bold; margin-bottom: 25px;">
+-                🛡️ Service Pipeline Upgrade: High-Security Deadlocks & Slamlocks Coming Soon.
+-            </p>
+-            
+-            <h3>Securing Local Shropshire Tradesmen</h3>
+-            <p>Factory-fitted van locks are continuously targeted by sophisticated thieves using methods like 'peel and steal' or specialized skeleton keys. Upgrading your commercial fleet with secondary mechanical locks is the only true way to protect your livelihood and tool inventory.</p>
+-            
+-            <h3>What We Are Fleshing Out:</h3>
+-            <ul>
+-                <li><strong>Heavy Duty Deadlocks:</strong> Brass-cylinder mechanical hookbolts installed directly into the door chassis, acting entirely independent of the vehicle's electrical central locking network.</li>
+-                <li><strong>Slamlocks:</strong> Ideal for multi-drop delivery drivers, automatically locking the commercial door securely shut the second you swing it closed.</li>
+-                <li><strong>Internal Shielding Plates:</strong> Outer skin reinforcing structural steel plates designed to physically stop thieves piercing panels to clip internal locking rods.</li>
+-            </ul>
+-
+-            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 40px 0;">
++    <!-- HERO -->
++    <section class="svc-hero">
++        <div class="container svc-hero-inner">
++            <div>
++                <span class="svc-eyebrow">Commercial Fleet Protection</span>
++                <h1>Van Security Systems &amp; Upgrades</h1>
++                <p class="svc-hero-lede">
++                    Factory-fitted van locks are targeted by thieves using <strong>"peel and steal"</strong> attacks and specialised skeleton keys. Upgrading your commercial fleet with secondary mechanical locks is the only true way to protect your livelihood and tool inventory.
++                </p>
++                <div class="svc-hero-actions">
++                    <a href="tel:07123123456" class="action-btn urgent-btn">📞 Call for Immediate Dispatch</a>
++                    <a href="../preview.html#services" class="action-btn standard-btn">View All Services</a>
++                </div>
++            </div>
++            <div class="svc-hero-photo">
++                <img src="../assets/images/key-programming-bench.png" alt="Professional locksmith tooling bench prepared for van security installs">
++            </div>
++        </div>
++    </section>
+ 
+-            <div style="background-color: rgba(255,255,255,0.01); border: 1px solid var(--accent-orange); padding: 35px; border-radius: 6px; text-align: center;">
+-                <h3 style="color: #fff; margin-bottom: 10px;">Want to join our security priority waitlist?</h3>
+-                <p style="margin-bottom: 25px;">We are currently finalizing our mechanical van upgrade tooling and certifications. Drop us a line if you'd like to be contacted as soon as our van security bay officially opens.</p>
+-                
+-                <div style="display: flex; flex-direction: column; gap: 15px;">
+-                    <a href="../index.html#contact" class="action-btn message-btn" style="border-color: var(--accent-orange); color: var(--accent-orange);">📝 Register Future Interest via Service Desk</a>
++    <!-- MAIN CONTENT -->
++    <main class="svc-main">
++        <div class="container">
++            <div class="svc-grid">
++                <div class="svc-copy">
++                    <span class="svc-section-label">Upgrade Pipeline</span>
++                    <h2>Securing Local Shropshire Tradesmen</h2>
++                    <p>
++                        Vans carrying expensive tools and equipment are a high-value target. Our mechanical upgrades work entirely independently of your van's electrical central locking network, giving you a physical backstop that thieves cannot bypass electronically.
++                    </p>
++                    <p>
++                        We are currently finalising our mechanical van upgrade tooling and the necessary trade certifications. Expect on-site fitting across the whole of Shropshire — including Telford, Shrewsbury, Market Drayton, Oswestry, Whitchurch and Shawbury.
++                    </p>
++                    <div class="svc-callout">
++                        <strong>Service Pipeline Upgrade</strong>
++                        <span>High-security deadlocks &amp; slamlocks are coming soon. Register your interest now and we'll contact you the moment our van security bay officially opens.</span>
++                    </div>
+                 </div>
++
++                <aside class="svc-panel">
++                    <h3 class="svc-panel-title">What We Are Fleshing Out</h3>
++                    <ul class="svc-list">
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 11V8a5 5 0 0 1 10 0v3"/><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M12 15v3"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Heavy Duty Deadlocks</strong>
++                                <span>Brass-cylinder mechanical hookbolts installed directly into the door chassis, acting entirely independent of the central locking network.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M12 3v1"/><path d="M6 17v4M18 17v4"/><path d="M9 20h6"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Slamlocks</strong>
++                                <span>Ideal for multi-drop delivery drivers, automatically locking the commercial door securely shut the second you swing it closed.</span>
++                            </span>
++                        </li>
++                        <li>
++                            <span class="svc-list-icon" aria-hidden="true">
++                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V4h16v17"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>
++                            </span>
++                            <span class="svc-list-text">
++                                <strong>Internal Shielding Plates</strong>
++                                <span>Outer-skin reinforcing structural steel plates designed to physically stop thieves piercing panels to clip internal locking rods.</span>
++                            </span>
++                        </li>
++                    </ul>
++                </aside>
+             </div>
+         </div>
+     </main>
+ 
++    <!-- UNIFIED ACTION BANNER -->
++    <div class="container">
++        <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0 0 40px 0;">
++        <div class="unified-cta-box">
++            <h3 class="cta-title">Want to Join Our Security Priority Waitlist?</h3>
++            <p class="cta-desc">We are currently finalizing our mechanical van upgrade tooling and certifications. Drop us a line if you'd like to be contacted as soon as our van security bay officially opens.</p>
++            <div class="cta-button-group">
++                <a href="../preview.html#contact" class="action-btn urgent-btn">📝 Register Future Interest</a>
++                <a href="tel:07123123456" class="action-btn standard-btn">📞 Speak to a Locksmith</a>
++            </div>
++        </div>
++    </div>
++
+     <footer>
+         <div class="footer-content">
+             <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
+-            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
+-            
+-            <!-- Social Links -->
++            <p style="margin-top: 5px;"><a href="../legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy &amp; Terms</a></p>
++
+             <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
+                 <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+                 <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+             </div>
+ 
+-            <!-- Touch-Friendly Location Grid -->
+             <div class="footer-locations">
+                 <a href="../locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
+                 <a href="../locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
+@@ -163,7 +180,5 @@
+             </div>
+         </div>
+     </footer>
+-
+-
+ </body>
+-</html>
++</html>
+\ No newline at end of file
+-- 
+2.17.1
+

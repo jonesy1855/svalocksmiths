@@ -2606,4 +2606,357 @@ body.preview-page .service-card-link:hover .read-more {
 body.preview-page .emergency-lockout-card { --svc-accent: #2ecc71; }
 body.preview-page .spare-keys-card { --svc-accent: #1abc9c; }
 body.preview-page .all-keys-lost-card { --svc-accent: #e67e22; }
+body.preview-page .emergency-lockout-card { --svc-accent: #2ecc71; }
+body.preview-page .spare-keys-card { --svc-accent: #1abc9c; }
+body.preview-page .all-keys-lost-card { --svc-accent: #e67e22; }
 body.preview-page .ac-regas-card { --svc-accent: #3498db; }
+
+/* ==========================================================================
+   SERVICE PAGES (.service-page): HEADER / HERO / PANELS / LISTS
+   Shared by services/emergency-lockout.html, spare-keys.html,
+   all-keys-lost.html, ac-regassing.html, van-security.html.
+   Scoped to body.service-page so the rest of the site is unaffected.
+   ========================================================================== */
+
+body.service-page {
+    --svc-green: #2ecc71;
+    --svc-orange: #e67e22;
+    --svc-red: #e74c3c;
+    --svc-amber: #f39c12;
+    --svc-panel: rgba(22, 22, 22, 0.92);
+}
+
+body.service-page .svc-banner {
+    background-color: #d35400;
+    color: #fff;
+    text-align: center;
+    padding: 8px 15px;
+    font-weight: bold;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+body.service-page .svc-header {
+    background-color: #111;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body.service-page .svc-header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+body.service-page .svc-logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+body.service-page .svc-logo-img {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+}
+
+body.service-page .svc-brand-main {
+    color: var(--svc-green);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    line-height: 1.2;
+    display: block;
+}
+
+body.service-page .svc-brand-sub {
+    color: #9ca3af;
+    font-size: 0.66rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+}
+
+body.service-page .svc-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+body.service-page .svc-nav-back {
+    color: var(--svc-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+body.service-page .svc-nav-back:hover {
+    color: #fff;
+}
+
+body.service-page .svc-cta-tel {
+    background: var(--svc-green);
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    transition: filter 0.2s ease;
+}
+
+body.service-page .svc-cta-tel:hover {
+    filter: brightness(1.1);
+}
+
+body.service-page .svc-cta-tel.orange {
+    background: var(--svc-orange);
+    color: #fff;
+}
+
+body.service-page .svc-hero {
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.9) 0%, rgba(10, 10, 10, 0.98) 100%);
+    border-bottom: 1px solid rgba(46, 204, 113, 0.15);
+}
+
+body.service-page .svc-hero-inner {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+    padding: clamp(2rem, 6vw, 4rem) 0;
+}
+
+@media (min-width: 900px) {
+    body.service-page .svc-hero-inner {
+        grid-template-columns: 1.15fr 0.85fr;
+    }
+}
+
+body.service-page .svc-eyebrow {
+    display: inline-block;
+    background-color: rgba(46, 204, 113, 0.12);
+    color: var(--svc-green);
+    border: 1px solid rgba(46, 204, 113, 0.35);
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 16px;
+}
+
+body.service-page .svc-hero h1 {
+    color: #fff;
+    font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+    line-height: 1.15;
+    margin: 0 0 16px;
+}
+
+body.service-page .svc-hero-lede {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin: 0 0 24px;
+    max-width: 560px;
+}
+
+body.service-page .svc-hero-lede strong {
+    color: var(--text-light);
+}
+
+body.service-page .svc-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+body.service-page .svc-hero-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+}
+
+body.service-page .svc-hero-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+}
+
+body.service-page .svc-main {
+    padding: clamp(2.2rem, 5vw, 3.6rem) 0 clamp(3rem, 6vw, 5rem);
+}
+
+body.service-page .svc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 992px) {
+    body.service-page .svc-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+    }
+}
+
+body.service-page .svc-copy h2 {
+    color: var(--svc-green);
+    font-size: 1.35rem;
+    margin: 1.6rem 0 0.6rem;
+}
+
+body.service-page .svc-copy h2:first-child {
+    margin-top: 0;
+}
+
+body.service-page .svc-copy p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin: 0 0 1rem;
+}
+
+body.service-page .svc-copy strong {
+    color: var(--text-light);
+}
+
+body.service-page .svc-panel {
+    background-color: var(--svc-panel);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 3px solid var(--svc-green);
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 14px 34px -18px rgba(0, 0, 0, 0.7);
+}
+
+body.service-page .svc-panel .svc-panel-title {
+    color: var(--svc-green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    margin: 0 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 10px;
+}
+
+body.service-page .svc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+body.service-page .svc-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    align-items: flex-start;
+}
+
+body.service-page .svc-list li:last-child {
+    margin-bottom: 0;
+}
+
+body.service-page .svc-list-icon {
+    flex: 0 0 auto;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--svc-green);
+    background: rgba(46, 204, 113, 0.1);
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+body.service-page .svc-list-icon svg {
+    width: 19px;
+    height: 19px;
+}
+
+body.service-page .svc-list-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+body.service-page .svc-list-text strong {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+body.service-page .svc-list-text span {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+body.service-page .svc-callout {
+    border-left: 4px solid var(--svc-amber);
+    background-color: rgba(243, 156, 18, 0.06);
+    padding: 18px 20px;
+    border-radius: 0 8px 8px 0;
+    margin: 0 0 28px;
+}
+
+body.service-page .svc-callout.green {
+    border-left-color: var(--svc-green);
+    background-color: rgba(46, 204, 113, 0.05);
+}
+
+body.service-page .svc-callout.red {
+    border-left-color: var(--svc-red);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+body.service-page .svc-callout strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+body.service-page .svc-callout.amber strong { color: var(--svc-amber); }
+body.service-page .svc-callout.green strong { color: var(--svc-green); }
+body.service-page .svc-callout.red strong { color: var(--svc-red); }
+
+body.service-page .svc-callout span {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+body.service-page .svc-section-label {
+    color: var(--svc-green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+body.service-page .svc-subhead {
+    color: var(--text-light);
+    font-size: 1.15rem;
+    line-height: 1.5;
+    font-weight: 600;
+    margin: 0 0 14px;
+}

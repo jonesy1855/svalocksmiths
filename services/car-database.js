@@ -3,6 +3,7 @@ const carDatabase = {
         "147": {
             "2000 - 2010": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID48 (Early) / ID46 (Late - PCF7946)",
@@ -21,6 +22,7 @@ const carDatabase = {
         "156": {
             "1997 - 2005": {
                 "lishi": "SIP22", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID48 Megamos",
@@ -39,6 +41,7 @@ const carDatabase = {
         "159": {
             "2005 - 2011": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 PCF7941 (Slot Key / Smart Fob)",
@@ -58,6 +61,7 @@ const carDatabase = {
         "166": {
             "1998 - 2007": {
                 "lishi": "SIP22", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID48 Megamos / ID44",
@@ -76,6 +80,7 @@ const carDatabase = {
         "Giulia": { 
             "2016+ (952)": { 
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "HITAG AES / 4A Smart Proximity",
@@ -95,6 +100,7 @@ const carDatabase = {
         "Giulietta": { 
             "2010 - 2020": { 
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7946 / PCF7936 Precode)",
@@ -113,6 +119,7 @@ const carDatabase = {
         "MiTo": {
             "2008 - 2018": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7946 Precode)",
@@ -131,6 +138,7 @@ const carDatabase = {
         "Spider": {
             "2006 - 2010 (939)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 PCF7941 (Slot Key)",
@@ -150,6 +158,7 @@ const carDatabase = {
         "Stelvio": {
             "2017+ (949)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
@@ -168,6 +177,7 @@ const carDatabase = {
         "Tonale": { 
             "2022+": { 
                 "lishi": "SIP22 / HU83", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "HITAG AES / 4A Smart",
@@ -190,6 +200,7 @@ const carDatabase = {
         "A1": { 
             "2010 - 2018 (8X - PQ25 Platform)": { 
                 "lishi": "HU66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66", 
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -206,6 +217,7 @@ const carDatabase = {
             },
             "2018+ (GB - MQB A0 Platform)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T", 
                 "ic": "Card 1412 / 1413", 
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -225,6 +237,7 @@ const carDatabase = {
         "A3 / Q3": { 
             "2003 - 2012 (A3 8P / Q3 8U Early)": { 
                 "lishi": "HU66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66", 
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -241,6 +254,7 @@ const carDatabase = {
             },
             "2013 - 2020 (A3 8V / Q3 F3 - MQB Platform)": { 
                 "lishi": "HU66 / HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66 / HU162T", 
                 "ic": "Card 813 / 1412", 
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -258,6 +272,7 @@ const carDatabase = {
             },
             "2020+ (A3 8Y / Q3 Facelift - MQB Evo)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1412",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -276,6 +291,7 @@ const carDatabase = {
         "A4 / A5 / Q5": { 
             "2007 - 2015 (B8 Platform - 8K / 8T / 8R)": { 
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 813", 
                 "chip": "8E / Megamos 48 (BCM2 Slot Key)",
@@ -293,6 +309,7 @@ const carDatabase = {
             },
             "2016+ (B9 Platform - 8W / F5 / FY - MLB Evo)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1412", 
                 "chip": "MLB Evo AES Smart Proximity",
@@ -312,6 +329,7 @@ const carDatabase = {
         "RS Series (RS3/RS4/RS5/RS6)": {
             "2015+ (MQB / MLB Evo)": {
                 "lishi": "HU162T (8/9/10 Cut)", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU162T", 
                 "ic": "Varies",
                 "chip": "Megamos AES (MQB) / HITAG PRO (MLB)",
@@ -331,6 +349,7 @@ const carDatabase = {
         "TT": {
             "2015 - 2023 (Mk3 / 8S)": {
                 "lishi": "HU162T (8 or 9 Cut)", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T", 
                 "ic": "Card 1445",
                 "chip": "Megamos AES (MQB Smart Key)",
@@ -349,6 +368,7 @@ const carDatabase = {
         "R8": {
             "2015+ (Type 4S)": {
                 "lishi": "HU162T (9/10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1445",
                 "chip": "Megamos AES / Smart Key",
@@ -367,6 +387,7 @@ const carDatabase = {
         "A6 / A7 / A8 / Q7": { 
             "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": { 
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 813",
                 "chip": "ID46 / Megamos 13 (KESSY / J518)",
@@ -383,6 +404,7 @@ const carDatabase = {
             },
             "2011 - 2018 (C7 / 4G / 4H)": { 
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 813",
                 "chip": "Megamos 48 / PCFM (BCM2)",
@@ -399,6 +421,7 @@ const carDatabase = {
             },
             "2018+ (C8 / 4M / D5 - MLB Evo)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1412", 
                 "chip": "MLB Evo AES Smart Proximity",
@@ -422,6 +445,7 @@ const carDatabase = {
         "1 Series": {
             "2004 - 2011 (E81 / E82 / E87 / E88)": {
                 "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -439,6 +463,7 @@ const carDatabase = {
             },
             "2011 - 2019 (F20 / F21)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 FEM/BDC)",
@@ -456,6 +481,7 @@ const carDatabase = {
             },
             "2019+ (F40 - 1 Series Hatchback)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2/3)",
@@ -475,6 +501,7 @@ const carDatabase = {
         "2 Series": {
             "2014 - 2021 (F22 / F23 / F45 / F46)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 FEM/BDC)",
@@ -491,6 +518,7 @@ const carDatabase = {
             },
             "2021+ (G42 / U06)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC3)",
@@ -509,6 +537,7 @@ const carDatabase = {
         "3 Series": {
             "1998 - 2006 (E46 - Classic)": {
                 "lishi": "HU92",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS)",
@@ -526,6 +555,7 @@ const carDatabase = {
             },
             "2005 - 2012 (E90 / E91 / E92 / E93)": {
                 "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -543,6 +573,7 @@ const carDatabase = {
             },
             "2012 - 2019 (F30 / F31 / F34)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 FEM)",
@@ -560,6 +591,7 @@ const carDatabase = {
             },
             "2019+ (G20 / G21)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2/3)",
@@ -579,6 +611,7 @@ const carDatabase = {
         "4 Series": {
             "2013 - 2020 (F32 / F33 / F36 - Coupe / Gran Coupe)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 FEM)",
@@ -595,6 +628,7 @@ const carDatabase = {
             },
             "2020+ (G22 / G23 / G26)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC3)",
@@ -613,6 +647,7 @@ const carDatabase = {
         "5 Series": {
             "1995 - 2004 (E39 - Classic)": {
                 "lishi": "HU92",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS)",
@@ -629,6 +664,7 @@ const carDatabase = {
             },
             "2003 - 2010 (E60 / E61)": {
                 "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -646,6 +682,7 @@ const carDatabase = {
             },
             "2010 - 2017 (F10 / F11)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "ID49 / PCF7953 (CAS4)",
@@ -663,6 +700,7 @@ const carDatabase = {
             },
             "2017 - 2023 (G30 / G31)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2)",
@@ -681,6 +719,7 @@ const carDatabase = {
         "6 Series": {
             "2011 - 2018 (F06/F12/F13)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1243",
                 "chip": "PCF7953 (CAS4 / CAS4+)",
@@ -699,6 +738,7 @@ const carDatabase = {
         "7 Series": {
             "2015 - 2022 (G11/G12)": {
                 "lishi": "HU100R",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU100R",
                 "ic": "Card 1243",
                 "chip": "HITAG Pro (BDC)",
@@ -718,6 +758,7 @@ const carDatabase = {
         "8 Series": {
             "2018+ (G14/G15/G16)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1243",
                 "chip": "HITAG Pro (BDC3)",
@@ -736,6 +777,7 @@ const carDatabase = {
         "iX Series (iX / iX1 / iX3)": {
             "2020+ (Electric)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU100R",
                 "ic": "Card 1243",
                 "chip": "Smart NFC / UWB Key",
@@ -755,6 +797,7 @@ const carDatabase = {
         "X1": {
             "2009 - 2015 (E84)": {
                 "lishi": "HU92 / HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92 / HU100R",
                 "ic": "Card 851 / 1324",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -772,6 +815,7 @@ const carDatabase = {
             },
             "2015 - 2022 (F48)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
@@ -788,6 +832,7 @@ const carDatabase = {
             },
             "2022+ (U11 - New X1)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC3)",
@@ -806,6 +851,7 @@ const carDatabase = {
         "X3": {
             "2003 - 2010 (E83 - Classic X3)": {
                 "lishi": "HU92",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS4)",
@@ -822,6 +868,7 @@ const carDatabase = {
             },
             "2010 - 2017 (F25)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "ID49 / PCF7953 (CAS4)",
@@ -839,6 +886,7 @@ const carDatabase = {
             },
             "2017+ (G01 / G08)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2/3)",
@@ -857,6 +905,7 @@ const carDatabase = {
         "X5": {
             "1999 - 2006 (E53 - Classic X5)": {
                 "lishi": "HU92",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS)",
@@ -873,6 +922,7 @@ const carDatabase = {
             },
             "2006 - 2013 (E70)": {
                 "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -890,6 +940,7 @@ const carDatabase = {
             },
             "2013 - 2018 (F15)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
@@ -907,6 +958,7 @@ const carDatabase = {
             },
             "2018+ (G05)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2/3)",
@@ -925,6 +977,7 @@ const carDatabase = {
         "X6": {
             "2014 - 2019 (F16)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1243",
                 "chip": "PCF7953 (BDC / CAS4+)",
@@ -943,6 +996,7 @@ const carDatabase = {
         "X7": {
             "2019+ (G07)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1243",
                 "chip": "HITAG Pro (BDC3)",
@@ -961,6 +1015,7 @@ const carDatabase = {
         "Z Series": {
             "1996 - 2002 (Z3)": {
                 "lishi": "HU58 / HU92",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU58",
                 "ic": "Card 49",
                 "chip": "ID44 (EWS3)",
@@ -977,6 +1032,7 @@ const carDatabase = {
             },
             "2002 - 2008 (Z4 E85 / E86)": {
                 "lishi": "HU92",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS) / ID46 (CAS2)",
@@ -993,6 +1049,7 @@ const carDatabase = {
             },
             "2009 - 2016 (Z4 E89)": {
                 "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92",
                 "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -1009,6 +1066,7 @@ const carDatabase = {
             },
             "2018+ (Z4 G29 - Toyota GR Supra Twin)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2)",
@@ -1031,6 +1089,7 @@ const carDatabase = {
         "Berlingo": { 
             "2008 - 2018 (MK2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -1047,6 +1106,7 @@ const carDatabase = {
             },
             "2018+ (MK3 - Stellantis)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -1065,6 +1125,7 @@ const carDatabase = {
         "C1": { 
             "2005 - 2022 (MK1 / MK2)": { 
                 "lishi": "VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310", 
                 "chip": "4D67 / ID4E (Toyota IMMO)",
@@ -1084,6 +1145,7 @@ const carDatabase = {
         "C2": {
             "2003 - 2009": {
                 "lishi": "VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7936)",
@@ -1102,6 +1164,7 @@ const carDatabase = {
         "C3": { 
             "2010 - 2017 (MK2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -1118,6 +1181,7 @@ const carDatabase = {
             },
             "2017+ (MK3 / Aircross)": { 
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -1136,6 +1200,7 @@ const carDatabase = {
         "C4": { 
             "2010 - 2018 (MK2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -1152,6 +1217,7 @@ const carDatabase = {
             },
             "2020+ (MK3)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -1170,6 +1236,7 @@ const carDatabase = {
         "C5": {
             "2008 - 2017": {
                 "lishi": "HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7941)",
@@ -1186,6 +1253,7 @@ const carDatabase = {
             },
             "2017+ (Aircross)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -1204,6 +1272,7 @@ const carDatabase = {
         "C6": {
             "2005 - 2012": {
                 "lishi": "HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46",
@@ -1222,6 +1291,7 @@ const carDatabase = {
         "C8": {
             "2002 - 2014 (Ulysse / 807 Twin)": {
                 "lishi": "HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46",
@@ -1240,6 +1310,7 @@ const carDatabase = {
         "Dispatch": { 
             "2007 - 2016 (MK2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -1256,6 +1327,7 @@ const carDatabase = {
             },
             "2016+ (MK3)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -1274,6 +1346,7 @@ const carDatabase = {
         "DS3": {
             "2010 - 2019": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7941)",
@@ -1292,6 +1365,7 @@ const carDatabase = {
         "DS4": {
             "2011 - 2018": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7941)",
@@ -1310,6 +1384,7 @@ const carDatabase = {
         "Jumper": {
             "2006+ (Fiat Ducato / Relay Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Megamos 48 Precode)",
@@ -1329,6 +1404,7 @@ const carDatabase = {
         "Jumpy": {
             "2007+ (Dispatch EU Name)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46 / HITAG AES",
@@ -1347,6 +1423,7 @@ const carDatabase = {
         "Nemo": {
             "2008 - 2017 (Fiat Fiorino Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1366,6 +1443,7 @@ const carDatabase = {
         "Picasso": {
             "2006 - 2018 (C3 / C4 Picasso)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7941) / Smart",
@@ -1384,6 +1462,7 @@ const carDatabase = {
         "Relay": {
             "2006+ (Fiat Ducato Twin)": { 
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
@@ -1406,6 +1485,7 @@ const carDatabase = {
         "Duster": { 
             "2010 - 2017 (MK1 - HS)": { 
                 "lishi": "VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7936 / Renault)",
@@ -1422,6 +1502,7 @@ const carDatabase = {
             },
             "2018+ (MK2 - HM)": { 
                 "lishi": "VAC102", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "ID46 (PCF7961) / Renault Smart Card",
@@ -1440,6 +1521,7 @@ const carDatabase = {
         "Sandero / Logan": { 
             "2013 - 2020 (MK2 - B8)": { 
                 "lishi": "VAC102", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "ID46 (PCF7936 / Renault)",
@@ -1456,6 +1538,7 @@ const carDatabase = {
             },
             "2021+ (MK3 - CMF-B Platform)": { 
                 "lishi": "VAC102", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VAC102", 
                 "ic": "Card 1240", 
                 "chip": "HITAG AES / 4A Smart Card",
@@ -1479,6 +1562,7 @@ const carDatabase = {
         "DS 3 / DS 3 Crossback / DS 7 Crossback": { 
             "2010 - 2018 (DS 3 Classic - PSA)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -1495,6 +1579,7 @@ const carDatabase = {
             },
             "2018+ (DS 3 Crossback / DS 7 / DS 9 - Stellantis EMP2/CMP)": { 
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310", 
                 "chip": "HITAG AES / 4A Smart",
@@ -1517,6 +1602,7 @@ const carDatabase = {
         "500": { 
             "2007+": { 
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
@@ -1536,6 +1622,7 @@ const carDatabase = {
         "500L": {
             "2012+": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1554,6 +1641,7 @@ const carDatabase = {
         "500X": {
             "2015+ (Jeep Renegade Twin)": { 
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "HITAG AES / 4A Smart",
@@ -1573,6 +1661,7 @@ const carDatabase = {
         "Bravo": {
             "2007 - 2014": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1591,6 +1680,7 @@ const carDatabase = {
         "Daily": {
             "2006+ (Iveco Daily)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1609,6 +1699,7 @@ const carDatabase = {
         "Doblo": {
             "2010+ (Vauxhall Combo Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1627,6 +1718,7 @@ const carDatabase = {
         "Ducato": { 
             "2006 - 2021 (MK3)": { 
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
@@ -1644,6 +1736,7 @@ const carDatabase = {
             },
             "2021+ (Series 8)": { 
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "HITAG AES / 4A Smart",
@@ -1662,6 +1755,7 @@ const carDatabase = {
         "Fiorino": {
             "2007+ (Citroen Nemo Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1680,6 +1774,7 @@ const carDatabase = {
         "Fullback": {
             "2016 - 2019 (Mitsubishi L200 Twin)": {
                 "lishi": "MIT11", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MIT11", 
                 "ic": "Card 1007",
                 "chip": "ID46 / 4D36 / Smart",
@@ -1699,6 +1794,7 @@ const carDatabase = {
         "Grande Punto": {
             "2005 - 2018": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1717,6 +1813,7 @@ const carDatabase = {
         "Idea": {
             "2003 - 2012": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID48 (Precode)",
@@ -1735,6 +1832,7 @@ const carDatabase = {
         "Panda": {
             "2012+ (MK3)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1753,6 +1851,7 @@ const carDatabase = {
         "Punto": {
             "2012 - 2018 (Evo / Punto)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1771,6 +1870,7 @@ const carDatabase = {
         "Qubo": {
             "2008+ (Fiorino Passenger Variant)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -1789,6 +1889,7 @@ const carDatabase = {
         "Scudo": {
             "2007 - 2016 (Citroen Dispatch Twin)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID46",
@@ -1808,6 +1909,7 @@ const carDatabase = {
         "Seicento": {
             "1998 - 2010": {
                 "lishi": "GT15R / SIP22", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "GT15R", 
                 "ic": "Card 103",
                 "chip": "ID11 / ID48",
@@ -1826,6 +1928,7 @@ const carDatabase = {
         "Stilo": {
             "2001 - 2007": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID48 (Precode)",
@@ -1844,6 +1947,7 @@ const carDatabase = {
         "Talento": {
             "2016 - 2020 (Renault Trafic Twin)": {
                 "lishi": "VAC102", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961",
@@ -1863,6 +1967,7 @@ const carDatabase = {
         "Tipo": {
             "2015+": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
@@ -1881,6 +1986,7 @@ const carDatabase = {
         "Ulysee": {
             "2002 - 2010 (Citroen C8 Twin)": {
                 "lishi": "HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46",
@@ -1903,6 +2009,7 @@ const carDatabase = {
         "B-Max": {
             "2012 - 2017": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83 / Smart",
@@ -1922,6 +2029,7 @@ const carDatabase = {
         "C-Max": {
             "2003 - 2010 (MK1 - C214)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (40-Bit / 80-Bit) / 4D63",
@@ -1939,6 +2047,7 @@ const carDatabase = {
             },
             "2010 - 2019 (MK2 - C344)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -1957,6 +2066,7 @@ const carDatabase = {
         "Ecosport": {
             "2013 - 2022 (BK)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / HITAG Pro (ID49)",
@@ -1976,6 +2086,7 @@ const carDatabase = {
         "Edge": {
             "2015 - 2021 (CD4 Platform)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -1995,6 +2106,7 @@ const carDatabase = {
         "Escape": {
             "2008 - 2019 (US / Import Kuga Twin)": {
                 "lishi": "H75 / HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "FO38R / HU101",
                 "ic": "Card 840 / 1098",
                 "chip": "4D63 (80-Bit) / 8A Smart",
@@ -2013,6 +2125,7 @@ const carDatabase = {
         "Fiesta": {
             "2008 - 2017 (MK7 / MK7.5)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2030,6 +2143,7 @@ const carDatabase = {
             },
             "2017 - 2023 (MK8)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2049,6 +2163,7 @@ const carDatabase = {
         "Focus": {
             "2005 - 2011 (MK2 - C307)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (40-Bit / 80-Bit) / 4D63",
@@ -2066,6 +2181,7 @@ const carDatabase = {
             },
             "2011 - 2018 (MK3 - C346)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2082,6 +2198,7 @@ const carDatabase = {
             },
             "2018+ (MK4 - C519)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE / HU198",
                 "ic": "Card 1098 / 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2100,6 +2217,7 @@ const carDatabase = {
         "Galaxy": {
             "2006 - 2015 (MK3 - CD340)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D63 / Smart",
@@ -2116,6 +2234,7 @@ const carDatabase = {
             },
             "2015 - 2023 (MK4 - CD390)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2134,6 +2253,7 @@ const carDatabase = {
         "Ka": {
             "1996 - 2008 (MK1)": {
                 "lishi": "FO21 (Tibbe)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "FO21",
                 "ic": "Card 74",
                 "chip": "ID4C (Glass) / ID4D (60/63 40-Bit)",
@@ -2151,6 +2271,7 @@ const carDatabase = {
             },
             "2008 - 2016 (MK2 - Fiat 500 Twin)": {
                 "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
@@ -2168,6 +2289,7 @@ const carDatabase = {
             },
             "2016 - 2020 (Ka+ MK3 - Global B Platform)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / HITAG Pro",
@@ -2187,6 +2309,7 @@ const carDatabase = {
         "Kuga": {
             "2013 - 2019 (MK2 - C520)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2203,6 +2326,7 @@ const carDatabase = {
             },
             "2020+ (MK3 - CX482 / Kuga PHEV)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2222,6 +2346,7 @@ const carDatabase = {
         "Maverick": {
             "2001 - 2007 (MK2 - Mazda Tribute Twin)": {
                 "lishi": "FO38R / H75",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "FO38R",
                 "ic": "Card 840",
                 "chip": "4D63 (40-Bit) Transponder",
@@ -2241,6 +2366,7 @@ const carDatabase = {
         "Mondeo": {
             "2000 - 2007 (MK3)": {
                 "lishi": "FO21 (Tibbe)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "FO21",
                 "ic": "Card 74",
                 "chip": "4D60 (Glass) / 4D63 (40-Bit)",
@@ -2258,6 +2384,7 @@ const carDatabase = {
             },
             "2007 - 2014 (MK4)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D63 or PCF7953 (Smart)",
@@ -2275,6 +2402,7 @@ const carDatabase = {
             },
             "2014 - 2022 (MK5)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2294,6 +2422,7 @@ const carDatabase = {
         "Mustang": {
             "2015 - 2023 (S550 - UK RHD / US)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2311,6 +2440,7 @@ const carDatabase = {
             },
             "2024+ (S650 / Dark Horse)": {
                 "lishi": "HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit Next-Gen)",
@@ -2330,6 +2460,7 @@ const carDatabase = {
         "Probe": {
             "1993 - 1997 (Mazda MX-6 Twin)": {
                 "lishi": "MZ24 / FO38R",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "MZ24",
                 "ic": "Card 57",
                 "chip": "Non-Transponder / Mechanical or ID33",
@@ -2349,6 +2480,7 @@ const carDatabase = {
         "Puma": {
             "2019+ (MK2 Crossover / Gen-E EV)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE / HU198",
                 "ic": "Card 1098 / 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2368,6 +2500,7 @@ const carDatabase = {
         "Ranger": {
             "2011 - 2022 (T6 / T7 / T8 - MK1/MK2)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2385,6 +2518,7 @@ const carDatabase = {
             },
             "2022+ (Next-Gen Ranger - P703 / VW Amarok Twin)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2404,6 +2538,7 @@ const carDatabase = {
         "S-Max": {
             "2006 - 2015 (MK1 - CD340)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D63 / Smart",
@@ -2420,6 +2555,7 @@ const carDatabase = {
             },
             "2015 - 2023 (MK2 - CD390)": {
                 "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2438,6 +2574,7 @@ const carDatabase = {
         "Tourneo": {
             "2014 - 2023 (Custom / Courier / Connect Passenger)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE",
                 "ic": "Card 1098 / 1450",
                 "chip": "ID63 (80-Bit) / HITAG Pro (ID49)",
@@ -2457,6 +2594,7 @@ const carDatabase = {
         "Transit": {
             "2006 - 2014 (MK7)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / Blue Remote Battery",
@@ -2474,6 +2612,7 @@ const carDatabase = {
             },
             "2014 - 2019 (MK8 Transit)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098 / 1111",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2491,6 +2630,7 @@ const carDatabase = {
             },
             "2020+ (MK8 Facelift / E-Transit EV)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2510,6 +2650,7 @@ const carDatabase = {
         "Transit Connect": {
             "2002 - 2013 (MK1)": {
                 "lishi": "FO21 (Tibbe)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "FO21",
                 "ic": "Card 74",
                 "chip": "4D60 / ID63 (40-Bit)",
@@ -2527,6 +2668,7 @@ const carDatabase = {
             },
             "2014 - 2022 (MK2)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2543,6 +2685,7 @@ const carDatabase = {
             },
             "2023+ (MK3 - VW Caddy Twin)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "VAG MQB-Evo (Megamos AES)",
@@ -2562,6 +2705,7 @@ const carDatabase = {
         "Transit Courier": {
             "2014 - 2023 (MK1)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2578,6 +2722,7 @@ const carDatabase = {
             },
             "2024+ (MK2 / E-Transit Courier EV)": {
                 "lishi": "HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2597,6 +2742,7 @@ const carDatabase = {
         "Transit Custom": {
             "2012 - 2019 (MK1 Custom)": {
                 "lishi": "HU101",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID63 (80-Bit) / 4D83",
@@ -2614,6 +2760,7 @@ const carDatabase = {
             },
             "2020 - 2023 (MK1 Facelift)": {
                 "lishi": "HU101 / HU198",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101 / HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro / 4A Smart",
@@ -2631,6 +2778,7 @@ const carDatabase = {
             },
             "2024+ (MK2 Custom / E-Transit Custom EV)": {
                 "lishi": "HU198",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -2653,6 +2801,7 @@ const carDatabase = {
         "Accord": {
             "2003 - 2008 (MK7 - CL / CM)": {
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos) / ID46 (PCF7936)",
@@ -2669,6 +2818,7 @@ const carDatabase = {
             },
             "2008 - 2015 (MK8 - CU / CW)": {
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
@@ -2685,6 +2835,7 @@ const carDatabase = {
             },
             "2018+ (MK10 / MK11)": {
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "8A / 4A Smart Proximity",
@@ -2703,6 +2854,7 @@ const carDatabase = {
         "CR-V": { 
             "2007 - 2012 (MK3)": { 
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
@@ -2719,6 +2871,7 @@ const carDatabase = {
             },
             "2012 - 2018 (MK4)": { 
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7952 (Smart) or ID46 Blade",
@@ -2735,6 +2888,7 @@ const carDatabase = {
             },
             "2018+ (MK5 / MK6)": { 
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998", 
                 "chip": "8A / 4A Smart Proximity",
@@ -2754,6 +2908,7 @@ const carDatabase = {
         "Civic": {
             "2001 - 2005 (MK7 - EP / EU)": {
                 "lishi": "HON66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
@@ -2770,6 +2925,7 @@ const carDatabase = {
             },
             "2006 - 2011 (MK8 - FN / FK)": { 
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998", 
                 "chip": "ID46 / PCF7936 (Honda Rolling)",
@@ -2787,6 +2943,7 @@ const carDatabase = {
             },
             "2012 - 2017 (MK9 - FK)": { 
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998", 
                 "chip": "ID46 / PCF7952 (Smart Proximity) or PCF7936 (Blade)",
@@ -2803,6 +2960,7 @@ const carDatabase = {
             },
             "2017+ (MK10 / MK11 - FC / FK / FL)": { 
                 "lishi": "HON66 / HON58", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HON66", 
                 "ic": "Card 998", 
                 "chip": "8A / 4A Smart Proximity (HITAG AES)",
@@ -2822,6 +2980,7 @@ const carDatabase = {
         "Element": {
             "2003 - 2011": {
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
@@ -2840,6 +2999,7 @@ const carDatabase = {
         "HR-V": {
             "1999 - 2006 (MK1)": {
                 "lishi": "HON66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
@@ -2856,6 +3016,7 @@ const carDatabase = {
             },
             "2015 - 2021 (MK2)": {
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID47 / 8A Smart Proximity",
@@ -2872,6 +3033,7 @@ const carDatabase = {
             },
             "2022+ (MK3 / ZR-V Twin)": {
                 "lishi": "HON66 / HON58", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "4A / 8A Smart Proximity",
@@ -2890,6 +3052,7 @@ const carDatabase = {
         "Insight": {
             "2009 - 2014 (ZE2)": {
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
@@ -2908,6 +3071,7 @@ const carDatabase = {
         "Jazz / Fit": { 
             "2002 - 2008 (GD)": {
                 "lishi": "HON66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
@@ -2924,6 +3088,7 @@ const carDatabase = {
             },
             "2008 - 2015 (GE)": { 
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 (PCF7936 / Honda)",
@@ -2940,6 +3105,7 @@ const carDatabase = {
             },
             "2015+ (GK / GR)": { 
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998", 
                 "chip": "ID47 / 8A / 4A Smart Proximity",
@@ -2959,6 +3125,7 @@ const carDatabase = {
         "Most Models": {
             "General Honda Reference": {
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID48 / ID46 / ID47 / 8A / 4A",
@@ -2978,6 +3145,7 @@ const carDatabase = {
         "Pilot": {
             "2009 - 2015": {
                 "lishi": "HON66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID46 (PCF7936)",
@@ -2994,6 +3162,7 @@ const carDatabase = {
             },
             "2016+": {
                 "lishi": "HON66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID47 / 8A Smart Proximity",
@@ -3012,6 +3181,7 @@ const carDatabase = {
         "S2000": {
             "1999 - 2009 (AP1 / AP2)": {
                 "lishi": "HON66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HON66", 
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
@@ -3033,6 +3203,7 @@ const carDatabase = {
         "Ioniq": {
             "2017+": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "8A Smart / Hitag 3",
@@ -3052,6 +3223,7 @@ const carDatabase = {
         "Kona": {
             "2018+": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "8A Smart Key",
@@ -3070,6 +3242,7 @@ const carDatabase = {
         "Palisade": {
             "2019+": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "8A / 4A Smart",
@@ -3088,6 +3261,7 @@ const carDatabase = {
         "Sante Fe": {
             "2018+": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "8A / Hitag 3 Smart",
@@ -3106,6 +3280,7 @@ const carDatabase = {
         "Sonata": {
             "2019+ (DN8)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "8A Smart Key",
@@ -3124,6 +3299,7 @@ const carDatabase = {
         "Tucson": {
             "2015 - 2021 (TL)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "ID46 / 8A Smart",
@@ -3142,6 +3318,7 @@ const carDatabase = {
         "Veloster": {
             "2011 - 2017": {
                 "lishi": "HY20 / HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "ID46 / Hitag Pro",
@@ -3160,6 +3337,7 @@ const carDatabase = {
         "Yeudong": {
             "2008+ (Elantra/Avante Variant)": {
                 "lishi": "HYN14R / HY20", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HYN14", 
                 "ic": "Card 964",
                 "chip": "ID46 Transponder",
@@ -3178,6 +3356,7 @@ const carDatabase = {
         "i10": {
             "2013 - 2020": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "ID46 / ID47 (Hitag3)",
@@ -3196,6 +3375,7 @@ const carDatabase = {
         "i20": {
             "2014 - 2020": {
                 "lishi": "HY22 / HYN14R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "ID47 / 8A Smart",
@@ -3214,6 +3394,7 @@ const carDatabase = {
         "i30": {
             "2017+ (PD)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "8A Smart Proximity / ID47",
@@ -3232,6 +3413,7 @@ const carDatabase = {
         "ix35": {
             "2010 - 2015": {
                 "lishi": "HY20 / HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1238",
                 "chip": "ID46 (PCF7936) / Smart Key",
@@ -3253,6 +3435,7 @@ const carDatabase = {
         "F-Pace / E-Pace / I-Pace": { 
             "2016+ (X761 / X540 / X590)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID49 (FK72) / JPLA Smart (DoIP)",
@@ -3272,6 +3455,7 @@ const carDatabase = {
         "XE / XF / XJ": { 
             "2007 - 2012 (XF - X250 Early)": { 
                 "lishi": "FO38 / HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46 / PCF7936 (KVM)",
@@ -3288,6 +3472,7 @@ const carDatabase = {
             },
             "2013 - 2018 (XE / XF / XJ - FK72 KVM)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID49 / PCF7953 (FK72 KVM)",
@@ -3305,6 +3490,7 @@ const carDatabase = {
             },
             "2018+ (XE / XF - JPLA / DoIP)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
@@ -3327,6 +3513,7 @@ const carDatabase = {
         "Cherokee": {
             "2014 - 2023 (KL)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
@@ -3346,6 +3533,7 @@ const carDatabase = {
         "Compass": {
             "2007 - 2016 (MK49)": {
                 "lishi": "CY24", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "CY24", 
                 "ic": "Card 1083",
                 "chip": "ID46 (PCF7936 / PCF7941)",
@@ -3362,6 +3550,7 @@ const carDatabase = {
             },
             "2017+ (MP)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
@@ -3381,6 +3570,7 @@ const carDatabase = {
         "Grand Cherokee": {
             "2005 - 2010 (WK)": {
                 "lishi": "CY24", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "CY24", 
                 "ic": "Card 1083",
                 "chip": "ID46 / Fobik",
@@ -3397,6 +3587,7 @@ const carDatabase = {
             },
             "2011 - 2021 (WK2)": {
                 "lishi": "CY24 / SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "CY24 / SIP22", 
                 "ic": "Card 1083 / 1137",
                 "chip": "HITAG AES / ID46",
@@ -3414,6 +3605,7 @@ const carDatabase = {
             },
             "2021+ (WL)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
@@ -3432,6 +3624,7 @@ const carDatabase = {
         "Renegade": {
             "2015+ (BU)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart / ID46 Precode",
@@ -3451,6 +3644,7 @@ const carDatabase = {
         "Wrangler": {
             "2007 - 2018 (JK)": {
                 "lishi": "CY24", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "CY24", 
                 "ic": "Card 1083",
                 "chip": "ID46 / PCF7941",
@@ -3467,6 +3661,7 @@ const carDatabase = {
             },
             "2018+ (JL)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
@@ -3489,6 +3684,7 @@ const carDatabase = {
         "Amanti": {
             "2004 - 2009": {
                 "lishi": "HYN14R / KIA3R", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HYN14", 
                 "ic": "Card 964",
                 "chip": "ID46 / 4D60",
@@ -3507,6 +3703,7 @@ const carDatabase = {
         "Borrego": {
             "2008 - 2011 (HM)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart Proximity",
@@ -3526,6 +3723,7 @@ const carDatabase = {
         "Ceed": { 
             "2012 - 2018 (JD)": { 
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 60-Bit / 8A Smart",
@@ -3542,6 +3740,7 @@ const carDatabase = {
             },
             "2018+ (CD - Includes ProCeed / XCeed)": { 
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
@@ -3560,6 +3759,7 @@ const carDatabase = {
         "Cerato": {
             "2013 - 2018 (YD)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
@@ -3577,6 +3777,7 @@ const carDatabase = {
             },
             "2019+ (BD)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3595,6 +3796,7 @@ const carDatabase = {
         "EV Series (EV3 / EV6 / EV9)": { 
             "2021+": { 
                 "lishi": "HY22 / K9 V4", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200", 
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
@@ -3614,6 +3816,7 @@ const carDatabase = {
         "Forte": {
             "2011 - 2018 (TD / YD)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
@@ -3631,6 +3834,7 @@ const carDatabase = {
             },
             "2019+ (BD)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3649,6 +3853,7 @@ const carDatabase = {
         "Mohave": {
             "2008 - 2019 (HM)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart Proximity",
@@ -3666,6 +3871,7 @@ const carDatabase = {
             },
             "2019+ (HM Facelift)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3684,6 +3890,7 @@ const carDatabase = {
         "Niro": {
             "2016 - 2022 (DE)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3700,6 +3907,7 @@ const carDatabase = {
             },
             "2022+ (SG2)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3718,6 +3926,7 @@ const carDatabase = {
         "Optima": {
             "2010 - 2015 (TF)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
@@ -3734,6 +3943,7 @@ const carDatabase = {
             },
             "2015 - 2020 (JF)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3752,6 +3962,7 @@ const carDatabase = {
         "Picanto": {
             "2011 - 2017 (TA)": {
                 "lishi": "HYN14R / HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
@@ -3768,6 +3979,7 @@ const carDatabase = {
             },
             "2017+ (JA)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity / ID46",
@@ -3786,6 +3998,7 @@ const carDatabase = {
         "Rio": {
             "2011 - 2017 (UB)": {
                 "lishi": "HY22 / HYN14R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
@@ -3802,6 +4015,7 @@ const carDatabase = {
             },
             "2017+ (YB)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity / ID46",
@@ -3820,6 +4034,7 @@ const carDatabase = {
         "Seltos": {
             "2019+ (SP2)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3838,6 +4053,7 @@ const carDatabase = {
         "Sorento": {
             "2009 - 2015 (XM)": {
                 "lishi": "HYN14R / HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
@@ -3854,6 +4070,7 @@ const carDatabase = {
             },
             "2015 - 2020 (UM)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3870,6 +4087,7 @@ const carDatabase = {
             },
             "2020+ (MQ4)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
@@ -3888,6 +4106,7 @@ const carDatabase = {
         "Sportage": { 
             "2010 - 2015 (SL)": { 
                 "lishi": "HYN14R / HY15 / HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY15", 
                 "ic": "Card 1136",
                 "chip": "ID46 / 60-Bit / 8A Smart",
@@ -3904,6 +4123,7 @@ const carDatabase = {
             },
             "2016 - 2021 (QL)": { 
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3920,6 +4140,7 @@ const carDatabase = {
             },
             "2021+ (NQ5)": { 
                 "lishi": "HY22 / K9 V4", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200", 
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
@@ -3939,6 +4160,7 @@ const carDatabase = {
         "Stinger": {
             "2017 - 2023 (CK)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
@@ -3957,6 +4179,7 @@ const carDatabase = {
         "Stonic": {
             "2017+ (YB)": {
                 "lishi": "HY22", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HY22", 
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity / ID46",
@@ -3978,6 +4201,7 @@ const carDatabase = {
         "Defender": { 
             "1995 - 2016 (Classic Series / Td5 / TDCi)": { 
                 "lishi": "NE38", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "NE38", 
                 "ic": "Card 552", 
                 "chip": "ID33 / Lucas 10AS PLIP",
@@ -3995,6 +4219,7 @@ const carDatabase = {
             },
             "2020+ (New Defender - L663)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
@@ -4014,6 +4239,7 @@ const carDatabase = {
         "Discovery": { 
             "2004 - 2016 (Discovery 3 & 4 - L319)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46 / PCF7936 (CJB)",
@@ -4030,6 +4256,7 @@ const carDatabase = {
             },
             "2017+ (Discovery 5 - L462)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID49 (FK72) / JPLA Smart (DoIP)",
@@ -4049,6 +4276,7 @@ const carDatabase = {
         "Evoque / Discovery Sport": { 
             "2011 - 2019 (L538 / L550)": { 
                 "lishi": "HU101", 
+                "price": "Std key £180-£230 | AKL from £450",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID49 / PCF7953 (FK72 / KVM)",
@@ -4066,6 +4294,7 @@ const carDatabase = {
             },
             "2020+ (L551 / New Discovery Sport)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
@@ -4085,6 +4314,7 @@ const carDatabase = {
         "Range Rover / Sport": { 
             "2005 - 2012 (L322 / L320)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID46 / PCF7936 (EWS / KVM)",
@@ -4102,6 +4332,7 @@ const carDatabase = {
             },
             "2013 - 2017 (L405 / L494 - FK72 KVM)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID49 / PCF7953 (FK72 KVM)",
@@ -4119,6 +4350,7 @@ const carDatabase = {
             },
             "2018+ (L405 / L494 / L460 - JPLA / DoIP)": { 
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
@@ -4141,6 +4373,7 @@ const carDatabase = {
         "Altezza": {
             "1998 - 2005 (SXE10 - JDM IS Twin)": {
                 "lishi": "TOY48 / TOY40",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY48",
                 "ic": "Card 851",
                 "chip": "ID4C / 4D67 Transponder",
@@ -4160,6 +4393,7 @@ const carDatabase = {
         "CT200h": {
             "2011 - 2020": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / Toyota H (Smart) or Page 1 98",
@@ -4179,6 +4413,7 @@ const carDatabase = {
         "Celsior": {
             "1997 - 2006 (UCF20 / UCF30 - JDM LS Twin)": {
                 "lishi": "TOY40 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY40 / TOY48",
                 "ic": "Card 851",
                 "chip": "ID4C (Early) / 4D68 (Late)",
@@ -4198,6 +4433,7 @@ const carDatabase = {
         "ES300": {
             "1997 - 2003 (XV20 / XV30)": {
                 "lishi": "TOY40 / TOY48",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40 / TOY48",
                 "ic": "Card 851",
                 "chip": "ID4C (Early) / 4D68 (Late)",
@@ -4216,6 +4452,7 @@ const carDatabase = {
         "GS300": {
             "1998 - 2005 (S160)": {
                 "lishi": "TOY40 / TOY48",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40 / TOY48",
                 "ic": "Card 851",
                 "chip": "ID4C / 4D68 Transponder",
@@ -4232,6 +4469,7 @@ const carDatabase = {
             },
             "2005 - 2012 (S190)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "4D68 / Toyota 94 (Smart)",
@@ -4251,6 +4489,7 @@ const carDatabase = {
         "GS400": {
             "1998 - 2000 (S160 V8)": {
                 "lishi": "TOY40",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40",
                 "ic": "Card 851",
                 "chip": "ID4C Transponder",
@@ -4269,6 +4508,7 @@ const carDatabase = {
         "GS430": {
             "2001 - 2007 (S160 / S190)": {
                 "lishi": "TOY40 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY40 / TOY48",
                 "ic": "Card 851 / 1122",
                 "chip": "4D68 / Toyota 94 (Smart)",
@@ -4287,6 +4527,7 @@ const carDatabase = {
         "GX470": {
             "2003 - 2009 (J120 - Land Cruiser Prado Twin)": {
                 "lishi": "TOY48 / TOY43",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY48",
                 "ic": "Card 851",
                 "chip": "4D68 (40-Bit) / 4D67",
@@ -4305,6 +4546,7 @@ const carDatabase = {
         "IS": {
             "2013 - 2020 (XE30)": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A Smart Proximity",
@@ -4322,6 +4564,7 @@ const carDatabase = {
             },
             "2021+ (XE30 Facelift / Latest)": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity",
@@ -4340,6 +4583,7 @@ const carDatabase = {
         "IS200": {
             "1999 - 2005 (XE10)": {
                 "lishi": "TOY48 / TOY40",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY48",
                 "ic": "Card 851",
                 "chip": "ID4C / 4D68 Transponder",
@@ -4359,6 +4603,7 @@ const carDatabase = {
         "IS300": {
             "2001 - 2005 (XE10)": {
                 "lishi": "TOY48 / TOY40",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY48",
                 "ic": "Card 851",
                 "chip": "4D68 Transponder",
@@ -4375,6 +4620,7 @@ const carDatabase = {
             },
             "2005 - 2013 (XE20)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "4D68 / Toyota 94 (Smart)",
@@ -4393,6 +4639,7 @@ const carDatabase = {
         "LS400": {
             "1990 - 2000 (UCF10 / UCF20)": {
                 "lishi": "TOY40",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40",
                 "ic": "Card 851",
                 "chip": "ID4C Transponder (1997+)",
@@ -4412,6 +4659,7 @@ const carDatabase = {
         "LX450": {
             "1996 - 1997 (J80 - Land Cruiser Twin)": {
                 "lishi": "TR47 / TOY43",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TR47",
                 "ic": "Card 38",
                 "chip": "ID4C / Mechanical Blade",
@@ -4431,6 +4679,7 @@ const carDatabase = {
         "Land Cruiser": {
             "General Lexus LX Series Reference": {
                 "lishi": "TOY48 / TOY43",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950 / 1122",
                 "chip": "4D68 / 8A Smart Proximity",
@@ -4449,6 +4698,7 @@ const carDatabase = {
         "Most Models": {
             "General Lexus Reference": {
                 "lishi": "TOY48 / TOY40 / TOY2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "4C / 4D68 / 8A / 4A Smart",
@@ -4468,6 +4718,7 @@ const carDatabase = {
         "NX": {
             "2014 - 2021 (AZ10)": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A Smart Proximity",
@@ -4484,6 +4735,7 @@ const carDatabase = {
             },
             "2022+ (AZ20 - TNGA-K)": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -4503,6 +4755,7 @@ const carDatabase = {
         "RX": {
             "2003 - 2008 (XU30)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 851 / 1122",
                 "chip": "4D68 Transponder / Toyota 94 (Smart)",
@@ -4519,6 +4772,7 @@ const carDatabase = {
             },
             "2009 - 2015 (AL10)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A Smart Proximity",
@@ -4535,6 +4789,7 @@ const carDatabase = {
             },
             "2015 - 2022 (AL20)": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A Smart Proximity",
@@ -4551,6 +4806,7 @@ const carDatabase = {
             },
             "2023+ (ALA10 - TNGA-K)": {
                 "lishi": "TOY48 / TOY2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -4570,6 +4826,7 @@ const carDatabase = {
         "SC300": {
             "1991 - 2000 (Z30)": {
                 "lishi": "TOY40 / TR47",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40",
                 "ic": "Card 851",
                 "chip": "ID4C Transponder (1998+)",
@@ -4589,6 +4846,7 @@ const carDatabase = {
         "SC400": {
             "1991 - 2000 (Z30 V8)": {
                 "lishi": "TOY40",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40",
                 "ic": "Card 851",
                 "chip": "ID4C Transponder (1997+)",
@@ -4610,6 +4868,7 @@ const carDatabase = {
         "MG ZS / MG ZS EV": { 
             "2017+ (UK Compact SUV Lineup)": { 
                 "lishi": "HU100 / HU101 / HU162T", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100 / HU101", 
                 "ic": "Card 1097 / 1098", 
                 "chip": "ID46 (PCF7936 / SAIC) or 4A Smart Proximity",
@@ -4629,6 +4888,7 @@ const carDatabase = {
         "MG HS / MG4 EV / MG5 EV": { 
             "2019+ (HS SUV / MG4 EV / MG5 EV)": { 
                 "lishi": "HU100 / HU162T", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100", 
                 "ic": "Card 1097", 
                 "chip": "4A Smart Proximity (HITAG AES / SAIC)",
@@ -4648,6 +4908,7 @@ const carDatabase = {
         "MG3": { 
             "2013 - 2023 (MK2 - 2nd Gen)": { 
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 / PCF7936 (SAIC)",
@@ -4669,6 +4930,7 @@ const carDatabase = {
         "Mazda 2 / Mazda 3 / Mazda 6": { 
             "2008 - 2014 (2nd Gen - Ford Platform Shared)": { 
                 "lishi": "MAZ24R / FO38", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "MAZ24R", 
                 "ic": "Card 791", 
                 "chip": "ID63 (40-Bit / 80-Bit) / 4D63",
@@ -4686,6 +4948,7 @@ const carDatabase = {
             },
             "2014 - 2019 (SkyActiv 3rd Gen)": { 
                 "lishi": "MAZ24R / MAZ2014", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MAZ24R", 
                 "ic": "Card 1345", 
                 "chip": "ID49 / 6D Smart Proximity",
@@ -4703,6 +4966,7 @@ const carDatabase = {
             },
             "2019+ (4th Gen - BP / GL - Latest SkyActiv)": { 
                 "lishi": "MAZ2014 (10-Cut) / K5", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "MAZ2014", 
                 "ic": "Card 1345", 
                 "chip": "8A / 4A Smart Proximity (HITAG AES)",
@@ -4722,6 +4986,7 @@ const carDatabase = {
         "CX-3 / CX-5 / CX-30": { 
             "2012 - 2017 (CX-5 KE / CX-3 Early)": { 
                 "lishi": "MAZ24R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MAZ24R", 
                 "ic": "Card 791 / 1345",
                 "chip": "ID49 / 6D Smart Proximity",
@@ -4738,6 +5003,7 @@ const carDatabase = {
             },
             "2017+ (CX-5 KF / CX-30 - SkyActiv)": { 
                 "lishi": "MAZ2014 (10-Cut) / K5", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "MAZ2014", 
                 "ic": "Card 1345", 
                 "chip": "8A / 4A Smart Proximity (HITAG AES)",
@@ -4761,6 +5027,7 @@ const carDatabase = {
         "A-Class": { 
             "2012 - 2018 (W176)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971", 
                 "chip": "BE Smart Fob (FBS3) / FBS4 Dealer",
@@ -4778,6 +5045,7 @@ const carDatabase = {
             },
             "2018+ (W177 - New Shape)": { 
                 "lishi": "HU64 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU64", 
                 "ic": "Card 971 / 1420",
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
@@ -4796,6 +5064,7 @@ const carDatabase = {
         "B-Class": {
             "2011 - 2018 (W246)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3) / FBS4 Dealer",
@@ -4813,6 +5082,7 @@ const carDatabase = {
             },
             "2019+ (W247)": {
                 "lishi": "HU64 / HU136", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS4 Dealer / Virgin Smart",
@@ -4831,6 +5101,7 @@ const carDatabase = {
         "C-Class": { 
             "2007 - 2014 (W204)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971", 
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
@@ -4848,6 +5119,7 @@ const carDatabase = {
             },
             "2014 - 2021 (W205)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971", 
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
@@ -4865,6 +5137,7 @@ const carDatabase = {
             },
             "2021+ (W206 - New Shape)": {
                 "lishi": "HU136 / HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 1420",
                 "chip": "FBS4 Proximity Smart",
@@ -4884,6 +5157,7 @@ const carDatabase = {
         "CL": {
             "1999 - 2006 (C215)": {
                 "lishi": "HU64", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS2b / Early FBS3",
@@ -4900,6 +5174,7 @@ const carDatabase = {
             },
             "2006 - 2014 (C216)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
@@ -4918,6 +5193,7 @@ const carDatabase = {
         "CLK": {
             "1997 - 2003 (W208)": {
                 "lishi": "HU64", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS2b / FBS3",
@@ -4934,6 +5210,7 @@ const carDatabase = {
             },
             "2003 - 2010 (W209)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
@@ -4952,6 +5229,7 @@ const carDatabase = {
         "Citan": {
             "2012 - 2021 (W415 - Renault Kangoo Twin)": {
                 "lishi": "VAC102 / HU136", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "ID46 (Renault PCF7936)",
@@ -4969,6 +5247,7 @@ const carDatabase = {
             },
             "2021+ (W420 - Renault Kangoo III Twin)": {
                 "lishi": "HU136 / VA2", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -4987,6 +5266,7 @@ const carDatabase = {
         "E-Class": { 
             "2009 - 2016 (W212)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
@@ -5003,6 +5283,7 @@ const carDatabase = {
             },
             "2016 - 2023 (W213)": { 
                 "lishi": "HU64 / HU136", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971 / 1420", 
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
@@ -5020,6 +5301,7 @@ const carDatabase = {
             },
             "2023+ (W214)": {
                 "lishi": "HU136", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 1420",
                 "chip": "FBS4 Next-Gen Smart",
@@ -5038,6 +5320,7 @@ const carDatabase = {
         "M-Class": {
             "2005 - 2011 (W164)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
@@ -5054,6 +5337,7 @@ const carDatabase = {
             },
             "2011 - 2015 (W166)": {
                 "lishi": "HU64", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS3 / FBS4 Transition",
@@ -5073,6 +5357,7 @@ const carDatabase = {
         "S-Class": {
             "2006 - 2013 (W221)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
@@ -5089,6 +5374,7 @@ const carDatabase = {
             },
             "2014 - 2020 (W222)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS4 Dealer Smart",
@@ -5106,6 +5392,7 @@ const carDatabase = {
             },
             "2021+ (W223)": {
                 "lishi": "HU136", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 1420",
                 "chip": "FBS4 Next-Gen Smart",
@@ -5124,6 +5411,7 @@ const carDatabase = {
         "SL-Class": {
             "2001 - 2011 (R230)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
@@ -5140,6 +5428,7 @@ const carDatabase = {
             },
             "2012 - 2020 (R231)": {
                 "lishi": "HU64", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS3 / FBS4 Transition",
@@ -5158,6 +5447,7 @@ const carDatabase = {
         "SLK": {
             "2004 - 2010 (R171)": {
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
@@ -5174,6 +5464,7 @@ const carDatabase = {
             },
             "2011 - 2020 (R172 / SLC)": {
                 "lishi": "HU64", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "FBS3 / FBS4 Transition",
@@ -5192,6 +5483,7 @@ const carDatabase = {
         "Smart": {
             "2007 - 2014 (Fortwo W451)": {
                 "lishi": "HU64 / YM15", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "ID46 / PCF7941",
@@ -5209,6 +5501,7 @@ const carDatabase = {
             },
             "2014 - 2019 (Fortwo / Forfour W453 - Renault Twingo Twin)": {
                 "lishi": "VAC102 / HU136", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "HITAG AES / ID4A",
@@ -5228,6 +5521,7 @@ const carDatabase = {
         "Sprinter": { 
             "2006 - 2018 (W906 - MK2 Sprinter)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971", 
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
@@ -5245,6 +5539,7 @@ const carDatabase = {
             },
             "2018+ (W907 / W910 - MK3 Sprinter)": { 
                 "lishi": "HU64 / HU136", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971 / 1420", 
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
@@ -5264,6 +5559,7 @@ const carDatabase = {
         "Vito": { 
             "2003 - 2014 (W639 - MK2 Vito)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971",
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
@@ -5280,6 +5576,7 @@ const carDatabase = {
             },
             "2014+ (W447 - MK3 Vito / V-Class)": { 
                 "lishi": "HU64", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64", 
                 "ic": "Card 971", 
                 "chip": "BE Smart Fob (FBS3) / FBS4 Dealer",
@@ -5302,6 +5599,7 @@ const carDatabase = {
         "Hatch (3-Door & 5-Door)": { 
             "2001 - 2006 (R50 / R53 - Gen 1 One / Cooper / Cooper S)": { 
                 "lishi": "HU92", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU92", 
                 "ic": "Card 851", 
                 "chip": "ID44 / PCF7935 (EWS3) or ID46 (Late 2005+)",
@@ -5319,6 +5617,7 @@ const carDatabase = {
             },
             "2006 - 2014 (R56 - Gen 2 Hatch)": { 
                 "lishi": "HU92", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92", 
                 "ic": "Card 851", 
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -5336,6 +5635,7 @@ const carDatabase = {
             },
             "2014 - 2024 (F55 5-Door / F56 3-Door - Gen 3 / MINI Electric)": { 
                 "lishi": "HU100R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R", 
                 "ic": "Card 1324", 
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
@@ -5353,6 +5653,7 @@ const carDatabase = {
             },
             "2024+ (J01 EV / F66 ICE - Gen 4 New Generation)": {
                 "lishi": "HU100R", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU100R", 
                 "ic": "Card 1324",
                 "chip": "ID49 Smart (BDC3 / Security Gateway)",
@@ -5372,6 +5673,7 @@ const carDatabase = {
         "Clubman": {
             "2007 - 2014 (R55 - Gen 2 Estate)": {
                 "lishi": "HU92", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92", 
                 "ic": "Card 851", 
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
@@ -5389,6 +5691,7 @@ const carDatabase = {
             },
             "2015 - 2024 (F54 - Gen 3 Estate)": {
                 "lishi": "HU100R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R", 
                 "ic": "Card 1324", 
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
@@ -5407,6 +5710,7 @@ const carDatabase = {
         "Countryman / Paceman": {
             "2010 - 2016 (R60 Countryman / R61 Paceman - Gen 2 Crossover)": {
                 "lishi": "HU92", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92", 
                 "ic": "Card 851", 
                 "chip": "ID46 / PCF7945 (CAS3+)",
@@ -5424,6 +5728,7 @@ const carDatabase = {
             },
             "2017 - 2024 (F60 Countryman - Gen 3 / Cooper S E PHEV)": {
                 "lishi": "HU100R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R", 
                 "ic": "Card 1324", 
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
@@ -5440,6 +5745,7 @@ const carDatabase = {
             },
             "2024+ (U25 Countryman - Gen 4 / Countryman Electric)": {
                 "lishi": "HU100R", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU100R", 
                 "ic": "Card 1324",
                 "chip": "ID49 Smart (BDC3 / Security Gateway)",
@@ -5459,6 +5765,7 @@ const carDatabase = {
         "Coupe / Roadster / Convertible": {
             "2004 - 2008 (R52 Convertible - Gen 1)": {
                 "lishi": "HU92", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU92", 
                 "ic": "Card 851", 
                 "chip": "ID44 / PCF7935 (EWS3)",
@@ -5475,6 +5782,7 @@ const carDatabase = {
             },
             "2008 - 2015 (R57 Convertible / R58 Coupe / R59 Roadster - Gen 2)": {
                 "lishi": "HU92", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU92", 
                 "ic": "Card 851", 
                 "chip": "ID46 / PCF7945 (CAS3+)",
@@ -5491,6 +5799,7 @@ const carDatabase = {
             },
             "2016+ (F57 Convertible - Gen 3)": {
                 "lishi": "HU100R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R", 
                 "ic": "Card 1324", 
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
@@ -5512,6 +5821,7 @@ const carDatabase = {
         "ASX": {
             "2010 - 2021": {
                 "lishi": "MIT11R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MIT11R", 
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936 (Blade) or PCF7952 (Smart)",
@@ -5531,6 +5841,7 @@ const carDatabase = {
         "Colt": {
             "2004 - 2012 (MK6)": {
                 "lishi": "MIT11R", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "MIT11R", 
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936",
@@ -5550,6 +5861,7 @@ const carDatabase = {
         "L200 (Triton)": {
             "2006 - 2015 (Series 4)": {
                 "lishi": "MIT11R", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "MIT11R", 
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936",
@@ -5567,6 +5879,7 @@ const carDatabase = {
             },
             "2015 - 2019 (Series 5)": {
                 "lishi": "MIT11R / HU87", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MIT11R / HU133R", 
                 "ic": "Card 772 / 996",
                 "chip": "ID46 (PCF7936) or ID47 / 8A Smart",
@@ -5586,6 +5899,7 @@ const carDatabase = {
         "Outlander": {
             "2007 - 2012 (MK2)": {
                 "lishi": "MIT11R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MIT11R", 
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936 (Blade) or PCF7952 (Smart)",
@@ -5605,6 +5919,7 @@ const carDatabase = {
         "Outlander / Outlander PHEV": {
             "2013 - 2021 (MK3)": {
                 "lishi": "MIT11R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "MIT11R", 
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7952 (Smart Proximity)",
@@ -5624,6 +5939,7 @@ const carDatabase = {
         "Shogun / Pajero": {
             "2006 - 2019 (MK4)": {
                 "lishi": "MIT11R", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "MIT11R", 
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936",
@@ -5646,6 +5962,7 @@ const carDatabase = {
         "Juke": { 
             "2010 - 2019 (F15)": { 
                 "lishi": "NSN14", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "NSN14", 
                 "ic": "Card 890",
                 "chip": "ID46 (PCF7936 / Nissan)",
@@ -5662,6 +5979,7 @@ const carDatabase = {
             },
             "2019+ (F16)": { 
                 "lishi": "NSN14", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "NSN14", 
                 "ic": "Card 890",
                 "chip": "HITAG AES / 4A Proximity",
@@ -5680,6 +5998,7 @@ const carDatabase = {
         "Navara": { 
             "2005 - 2015 (D40)": { 
                 "lishi": "NSN14", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "NSN14", 
                 "ic": "Card 890",
                 "chip": "ID46 (PCF7936 / Nissan)",
@@ -5696,6 +6015,7 @@ const carDatabase = {
             },
             "2015+ (NP300 / D23)": { 
                 "lishi": "NSN14", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "NSN14", 
                 "ic": "Card 890",
                 "chip": "HITAG AES / 4A Proximity",
@@ -5714,6 +6034,7 @@ const carDatabase = {
         "Qashqai": { 
             "2006 - 2013 (J10)": { 
                 "lishi": "NSN14", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "NSN14", 
                 "ic": "Card 890", 
                 "chip": "ID46 (PCF7936 / Nissan)",
@@ -5731,6 +6052,7 @@ const carDatabase = {
             },
             "2013 - 2021 (J11)": { 
                 "lishi": "NSN14", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "NSN14", 
                 "ic": "Card 890", 
                 "chip": "HITAG AES / 4A Proximity (Nissan)",
@@ -5748,6 +6070,7 @@ const carDatabase = {
             },
             "2021+ (J12)": { 
                 "lishi": "DAT17 / NSN14", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "NSN14", 
                 "ic": "Card 890 / 1350", 
                 "chip": "HITAG AES / 4A Proximity (SGW)",
@@ -5770,6 +6093,7 @@ const carDatabase = {
         "107": {
             "2005 - 2014": {
                 "lishi": "VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "4D67 / 4D70 (Toyota IMMO)",
@@ -5789,6 +6113,7 @@ const carDatabase = {
         "108": {
             "2014 - 2021": {
                 "lishi": "VA2 / TOY48", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "ID4E (4D67) / 8A Smart Proximity",
@@ -5808,6 +6133,7 @@ const carDatabase = {
         "206": {
             "1998 - 2009 (Includes 206+)": {
                 "lishi": "NE78 / HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "NE78", 
                 "ic": "Card 584",
                 "chip": "ID45 (Early) / ID46 (PCF7936 Late)",
@@ -5827,6 +6153,7 @@ const carDatabase = {
         "207": {
             "2006 - 2014": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -5846,6 +6173,7 @@ const carDatabase = {
         "208": { 
             "2012 - 2019 (MK1 - A9)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310", 
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -5863,6 +6191,7 @@ const carDatabase = {
             },
             "2019+ (MK2 / e-208 - CMP Platform)": { 
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030", 
                 "chip": "HITAG AES / 4A Smart",
@@ -5882,6 +6211,7 @@ const carDatabase = {
         "307": {
             "2001 - 2008": {
                 "lishi": "NE73 / HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7936 / PCF7941)",
@@ -5901,6 +6231,7 @@ const carDatabase = {
         "308": { 
             "2007 - 2013 (T7)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -5917,6 +6248,7 @@ const carDatabase = {
             },
             "2013 - 2021 (T9 - EMP2 Platform)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7941) / HITAG AES",
@@ -5933,6 +6265,7 @@ const carDatabase = {
             },
             "2021+ (MK3 - Stellantis EMP2 V3)": { 
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -5951,6 +6284,7 @@ const carDatabase = {
         "407": {
             "2004 - 2011": {
                 "lishi": "HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7941)",
@@ -5969,6 +6303,7 @@ const carDatabase = {
         "508": {
             "2011 - 2018 (MK1)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7941) / Smart Proximity",
@@ -5985,6 +6320,7 @@ const carDatabase = {
             },
             "2018+ (MK2 - EMP2)": {
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -6003,6 +6339,7 @@ const carDatabase = {
         "806": {
             "1994 - 2002 (Eurovan Platform)": {
                 "lishi": "NE73 / SX9", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "NE73", 
                 "ic": "Card 584",
                 "chip": "ID33 / ID48 / CPH Box",
@@ -6022,6 +6359,7 @@ const carDatabase = {
         "807": {
             "2002 - 2014": {
                 "lishi": "HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83", 
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7941)",
@@ -6040,6 +6378,7 @@ const carDatabase = {
         "1007": {
             "2005 - 2009": {
                 "lishi": "VA2 / HU83", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -6059,6 +6398,7 @@ const carDatabase = {
         "2008": {
             "2013 - 2019 (MK1 - A94)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7941) / HITAG AES",
@@ -6075,6 +6415,7 @@ const carDatabase = {
             },
             "2019+ (MK2 / e-2008 - CMP Platform)": {
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -6094,6 +6435,7 @@ const carDatabase = {
         "3008": { 
             "2008 - 2016 (MK1)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -6110,6 +6452,7 @@ const carDatabase = {
             },
             "2016 - 2023 (MK2 - EMP2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030", 
                 "chip": "HITAG AES / 4A Smart",
@@ -6127,6 +6470,7 @@ const carDatabase = {
             },
             "2024+ (MK3 / e-3008 - STLA Medium)": {
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart Proximity",
@@ -6145,6 +6489,7 @@ const carDatabase = {
         "Bipper": {
             "2008 - 2017 (Fiat Fiorino Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
@@ -6164,6 +6509,7 @@ const carDatabase = {
         "Boxer": { 
             "2006 - 2021 (MK3 - Fiat Ducato Twin)": { 
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137", 
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
@@ -6181,6 +6527,7 @@ const carDatabase = {
             },
             "2021+ (Series 8 / New Boxer - FCA / Stellantis)": {
                 "lishi": "SIP22", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
@@ -6200,6 +6547,7 @@ const carDatabase = {
         "Expert": { 
             "2007 - 2016 (MK2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -6216,6 +6564,7 @@ const carDatabase = {
             },
             "2016+ (MK3 / e-Expert)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "HITAG AES / 4A Smart",
@@ -6234,6 +6583,7 @@ const carDatabase = {
         "Partner": { 
             "1996 - 2008 (MK1)": {
                 "lishi": "NE73 / SX9 / HU83", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "NE73", 
                 "ic": "Card 584",
                 "chip": "ID33 / ID46",
@@ -6250,6 +6600,7 @@ const carDatabase = {
             },
             "2008 - 2018 (MK2)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU83 / VA2", 
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
@@ -6266,6 +6617,7 @@ const carDatabase = {
             },
             "2018+ (MK3 / Rifter / e-Partner)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2 / HU83", 
                 "ic": "Card 1310 / 1030",
                 "chip": "HITAG AES / 4A Smart",
@@ -6284,6 +6636,7 @@ const carDatabase = {
         "Ranch": {
             "1997 - 2008 (Partner Utility Variant)": {
                 "lishi": "NE73 / SX9 / HU83", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "NE73", 
                 "ic": "Card 584",
                 "chip": "ID33 / ID46",
@@ -6306,6 +6659,7 @@ const carDatabase = {
         "911": {
             "1997 - 2005 (996 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "ID48 (Megamos Crypto)",
@@ -6323,6 +6677,7 @@ const carDatabase = {
             },
             "2005 - 2012 (997 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7947 / PAS Unit)",
@@ -6340,6 +6695,7 @@ const carDatabase = {
             },
             "2012 - 2019 (991 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 / 128-Bit Smart Key)",
@@ -6357,6 +6713,7 @@ const carDatabase = {
             },
             "2019+ (992 Generation)": {
                 "lishi": "HU162T (9/10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1412",
                 "chip": "Megamos AES / Smart Proximity",
@@ -6376,6 +6733,7 @@ const carDatabase = {
         "Boxster": {
             "1996 - 2004 (986 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "ID48 (Megamos Crypto)",
@@ -6392,6 +6750,7 @@ const carDatabase = {
             },
             "2005 - 2012 (987 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7947)",
@@ -6408,6 +6767,7 @@ const carDatabase = {
             },
             "2012 - 2016 (981 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 Smart Key)",
@@ -6424,6 +6784,7 @@ const carDatabase = {
             },
             "2016+ (718 Boxster / 982)": {
                 "lishi": "HU66 / HU162T", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "HITAG Pro / Megamos AES Smart",
@@ -6442,6 +6803,7 @@ const carDatabase = {
         "Cayenne": {
             "2002 - 2010 (9PA / 955 / 957 - Touareg Twin)": {
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7936 / PCF7946 / KESSY)",
@@ -6459,6 +6821,7 @@ const carDatabase = {
             },
             "2010 - 2017 (92A / 958 Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 Smart Key)",
@@ -6475,6 +6838,7 @@ const carDatabase = {
             },
             "2018+ (9YA / PO536 - MLB Evo Platform)": {
                 "lishi": "HU162T (9/10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T", 
                 "ic": "Card 1412",
                 "chip": "Megamos AES (MLB-Evo Smart Key)",
@@ -6494,6 +6858,7 @@ const carDatabase = {
         "Cayman": {
             "2005 - 2012 (987c Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7947 / PAS Unit)",
@@ -6510,6 +6875,7 @@ const carDatabase = {
             },
             "2013 - 2016 (981c Generation)": {
                 "lishi": "HU66", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 Smart Key)",
@@ -6526,6 +6892,7 @@ const carDatabase = {
             },
             "2016+ (718 Cayman / 982c)": {
                 "lishi": "HU66 / HU162T", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "HITAG Pro / Megamos AES Smart",
@@ -6544,6 +6911,7 @@ const carDatabase = {
         "Macan": {
             "2014 - 2024 (95B - Audi Q5 Platform)": {
                 "lishi": "HU66 / HU162T", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66", 
                 "ic": "Card 688",
                 "chip": "Megamos 48 / HITAG Pro (BCM2)",
@@ -6561,6 +6929,7 @@ const carDatabase = {
             },
             "2024+ (Macan EV - PPE Platform)": {
                 "lishi": "HU162T", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1412",
                 "chip": "Smart UWB / NFC Key",
@@ -6583,6 +6952,7 @@ const carDatabase = {
         "Captur": {
             "2013 - 2019 (MK1 - J87)": {
                 "lishi": "VAC102 / VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102",
                 "ic": "Card 1240 / 1310",
                 "chip": "ID46 / PCF7952 (Renault Smart Card)",
@@ -6600,6 +6970,7 @@ const carDatabase = {
             },
             "2019+ (MK2 - JB/JE - CMF-B)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A Smart Card",
@@ -6619,6 +6990,7 @@ const carDatabase = {
         "Clio": {
             "2005 - 2012 (MK3 - BR/CR)": {
                 "lishi": "VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 / PCF7947)",
@@ -6636,6 +7008,7 @@ const carDatabase = {
             },
             "2012 - 2019 (MK4 - BH/KH - X98)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7952 (Renault Smart Card)",
@@ -6653,6 +7026,7 @@ const carDatabase = {
             },
             "2019+ (MK5 - BF - CMF-B)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A Smart Card",
@@ -6672,6 +7046,7 @@ const carDatabase = {
         "Espace": {
             "2002 - 2014 (MK4 - JK)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7947 / PCF7946 Smart Card)",
@@ -6689,6 +7064,7 @@ const carDatabase = {
             },
             "2015 - 2023 (MK5 - JR - CMF-CD)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A Smart Card",
@@ -6708,6 +7084,7 @@ const carDatabase = {
         "Kadjar": {
             "2015 - 2022 (HA/HL - CMF-CD)": {
                 "lishi": "VAC102 / NSN14",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102 / NSN14",
                 "ic": "Card 1240 / 1221",
                 "chip": "HITAG AES / 4A Smart Card",
@@ -6727,6 +7104,7 @@ const carDatabase = {
         "Kangoo": {
             "2008 - 2021 (MK2 - FW/KW)": {
                 "lishi": "VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7946 / PCF7947)",
@@ -6744,6 +7122,7 @@ const carDatabase = {
             },
             "2021+ (MK3 - CMF-CD)": {
                 "lishi": "VA2 / VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2 / VAC102",
                 "ic": "Card 1310 / 1240",
                 "chip": "HITAG AES / 4A Smart Key / Card",
@@ -6763,6 +7142,7 @@ const carDatabase = {
         "Laguna": {
             "2001 - 2007 (MK2 - X74)": {
                 "lishi": "NE72 / VAC102",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "NE72",
                 "ic": "Card 584",
                 "chip": "ID46 (PCF7947 / PCF7936 Smart Card)",
@@ -6780,6 +7160,7 @@ const carDatabase = {
             },
             "2007 - 2015 (MK3 - X91)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7952 / PCF7943 Smart Card)",
@@ -6799,6 +7180,7 @@ const carDatabase = {
         "Master": {
             "2010 - 2023 (MK3 - X62)": {
                 "lishi": "VAC102",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961 (Renault Precode)",
@@ -6816,6 +7198,7 @@ const carDatabase = {
             },
             "2024+ (MK4 - XDD)": {
                 "lishi": "VA2 / VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2",
                 "ic": "Card 1310 / 1240",
                 "chip": "HITAG AES / 4A Smart Key",
@@ -6835,6 +7218,7 @@ const carDatabase = {
         "Megane": {
             "2002 - 2008 (MK2 - X84)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7947 Smart Card)",
@@ -6852,6 +7236,7 @@ const carDatabase = {
             },
             "2008 - 2016 (MK3 - X95)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 / PCF7952 (Renault Smart Card)",
@@ -6868,6 +7253,7 @@ const carDatabase = {
             },
             "2016 - 2023 (MK4 - XFB)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A (Renault Smart Card)",
@@ -6884,6 +7270,7 @@ const carDatabase = {
             },
             "2022+ (E-Tech EV - BCB)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A Smart Card",
@@ -6903,6 +7290,7 @@ const carDatabase = {
         "Modus": {
             "2004 - 2012 (J77 / F77)": {
                 "lishi": "VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7946 / PCF7947)",
@@ -6922,6 +7310,7 @@ const carDatabase = {
         "Scenic": {
             "2003 - 2009 (MK2 - JM)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7947 Smart Card)",
@@ -6939,6 +7328,7 @@ const carDatabase = {
             },
             "2009 - 2016 (MK3 - JZ)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 / PCF7952 (Renault Smart Card)",
@@ -6955,6 +7345,7 @@ const carDatabase = {
             },
             "2016 - 2023 (MK4 - J95)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A (Renault Smart Card)",
@@ -6973,6 +7364,7 @@ const carDatabase = {
         "Trafic": {
             "2001 - 2014 (MK2 - X83)": {
                 "lishi": "NE73",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "NE73",
                 "ic": "Card 584",
                 "chip": "ID46 (PCF7936 / Renault)",
@@ -6990,6 +7382,7 @@ const carDatabase = {
             },
             "2014 - 2023 (MK3 - X82)": {
                 "lishi": "VAC102",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961 (Renault Hands-Free / Blade)",
@@ -7007,6 +7400,7 @@ const carDatabase = {
             },
             "2024+ (MK3 Facelift / E-Tech EV)": {
                 "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / 4A Smart Card / Blade Key",
@@ -7026,6 +7420,7 @@ const carDatabase = {
         "Twingo": {
             "2007 - 2014 (MK2 - CN0)": {
                 "lishi": "VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7946 / PCF7936)",
@@ -7043,6 +7438,7 @@ const carDatabase = {
             },
             "2014 - 2024 (MK3 - BCM Platform)": {
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A (Smart Fortwo W453 twin)",
@@ -7065,6 +7461,7 @@ const carDatabase = {
         "9-3": {
             "1998 - 2002 (OG 9-3)": {
                 "lishi": "YM30 / WT47T",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "YM30",
                 "ic": "Card 584",
                 "chip": "ID46 / Megamos 48 / T5 (Glass)",
@@ -7081,6 +7478,7 @@ const carDatabase = {
             },
             "2003 - 2011 (NG 9-3)": {
                 "lishi": "WT47T / YM30",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "WT47T",
                 "ic": "Card 920",
                 "chip": "ID46 (PCF7936 Smart Slot Fob)",
@@ -7100,6 +7498,7 @@ const carDatabase = {
         "9-5": {
             "1997 - 2010 (OG 9-5)": {
                 "lishi": "YM30 / WT47T",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "YM30",
                 "ic": "Card 584",
                 "chip": "ID46 (PCF7936)",
@@ -7117,6 +7516,7 @@ const carDatabase = {
             },
             "2010 - 2012 (NG 9-5 - GM Insignia Platform Twin)": {
                 "lishi": "HU100",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM Global A)",
@@ -7139,6 +7539,7 @@ const carDatabase = {
         "Arona": { 
             "2017+ (KJ7 - MQB A0 Platform)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T", 
                 "ic": "Card 1412", 
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7158,6 +7559,7 @@ const carDatabase = {
         "Ibiza": { 
             "2008 - 2017 (MK4 - 6J)": { 
                 "lishi": "HU66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66", 
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7174,6 +7576,7 @@ const carDatabase = {
             },
             "2017+ (MK5 - 6F - MQB A0)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T", 
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7192,6 +7595,7 @@ const carDatabase = {
         "Leon / Cupra Leon / Formentor": { 
             "2005 - 2012 (Leon MK2 - 1P)": { 
                 "lishi": "HU66", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66", 
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -7208,6 +7612,7 @@ const carDatabase = {
             },
             "2013 - 2020 (Leon MK3 - 5F - MQB Platform)": { 
                 "lishi": "HU66 / HU162T", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66 / HU162T", 
                 "ic": "Card 813 / 1412", 
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7225,6 +7630,7 @@ const carDatabase = {
             },
             "2020+ (Leon MK4 / Cupra Formentor / Ateca - MQB Evo)": { 
                 "lishi": "HU162T (9 / 10 Cut)", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T", 
                 "ic": "Card 1412 / 1413", 
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -7248,6 +7654,7 @@ const carDatabase = {
         "Citigo": {
             "2012 - 2020 (AA / PQ12 Platform)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7266,6 +7673,7 @@ const carDatabase = {
         "Enyaq": {
             "2020+ (MEB Platform / Enyaq iV)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES / 4A)",
@@ -7284,6 +7692,7 @@ const carDatabase = {
         "Fabia": {
             "1999 - 2007 (MK1 - 6Y)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -7299,6 +7708,7 @@ const carDatabase = {
             },
             "2007 - 2014 (MK2 - 5J)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7314,6 +7724,7 @@ const carDatabase = {
             },
             "2015 - 2021 (MK3 - NJ - PQ26)": {
                 "lishi": "HU66 / HU162T",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66 / HU162T",
                 "ic": "Card 813 / 1412",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7330,6 +7741,7 @@ const carDatabase = {
             },
             "2021+ (MK4 - MQB A0)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7347,6 +7759,7 @@ const carDatabase = {
         "Kamiq": {
             "2019+ (NW4 - MQB A0 Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7364,6 +7777,7 @@ const carDatabase = {
         "Karoq": {
             "2017+ (NU7 - MQB Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7382,6 +7796,7 @@ const carDatabase = {
         "Kodiaq": {
             "2016 - 2023 (MK1 - NS7 - MQB)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7398,6 +7813,7 @@ const carDatabase = {
             },
             "2024+ (MK2 - PS7 - MQB Evo)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £90-£150 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -7416,6 +7832,7 @@ const carDatabase = {
         "Octavia": {
             "1996 - 2004 (MK1 - 1U)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -7431,6 +7848,7 @@ const carDatabase = {
             },
             "2004 - 2013 (MK2 - 1Z)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7446,6 +7864,7 @@ const carDatabase = {
             },
             "2013 - 2020 (MK3 - 5E - MQB)": {
                 "lishi": "HU66 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66 / HU162T",
                 "ic": "Card 813 / 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7462,6 +7881,7 @@ const carDatabase = {
             },
             "2020+ (MK4 - NX - MQB Evo)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £90-£150 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -7479,6 +7899,7 @@ const carDatabase = {
         "Rapid": {
             "2012 - 2019 (NH3 / NH1 Platform)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7496,6 +7917,7 @@ const carDatabase = {
         "Roomster": {
             "2006 - 2015 (5J Platform)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7514,6 +7936,7 @@ const carDatabase = {
         "Scala": {
             "2019+ (NW1 - MQB A0 Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7531,6 +7954,7 @@ const carDatabase = {
         "Superb": {
             "2001 - 2008 (MK1 - 3U)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -7547,6 +7971,7 @@ const carDatabase = {
             },
             "2008 - 2015 (MK2 - 3T)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7562,6 +7987,7 @@ const carDatabase = {
             },
             "2015 - 2023 (MK3 - 3V - MQB)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -7577,6 +8003,7 @@ const carDatabase = {
             },
             "2024+ (MK4 - 3N - MQB Evo)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £90-£150 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -7595,6 +8022,7 @@ const carDatabase = {
         "Yeti": {
             "2009 - 2017 (5L Platform)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -7615,6 +8043,7 @@ const carDatabase = {
         "Swift": { 
             "2004 - 2010 (MK2 - RS)": { 
                 "lishi": "TOY43 / HU87", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU87 / TOY43", 
                 "ic": "Card 802 / 996",
                 "chip": "ID46 (PCF7936 / Suzuki)",
@@ -7631,6 +8060,7 @@ const carDatabase = {
             },
             "2010 - 2017 (MK3 - AZG)": { 
                 "lishi": "HU87 / HU133R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU133R", 
                 "ic": "Card 996",
                 "chip": "ID46 / PCF7952 (Smart Proximity) or ID46 Blade",
@@ -7647,6 +8077,7 @@ const carDatabase = {
             },
             "2017+ (MK4 - A2L - BoosterJet / Hybrid)": { 
                 "lishi": "HU87 / HU133R / TOY43", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU133R", 
                 "ic": "Card 996", 
                 "chip": "8A Smart Proximity / ID46",
@@ -7666,6 +8097,7 @@ const carDatabase = {
         "Vitara / SX4 S-Cross": { 
             "2015+ (LY Series)": { 
                 "lishi": "HU87 / HU133R", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU133R", 
                 "ic": "Card 996", 
                 "chip": "ID46 (PCF7952) / 8A Smart Proximity",
@@ -7685,6 +8117,7 @@ const carDatabase = {
         "Swace / Across": { 
             "2020+ (Toyota Corolla / RAV4 Rebadged Twins)": { 
                 "lishi": "TOY43 / TOY48", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48", 
                 "ic": "Card 1122", 
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -7708,6 +8141,7 @@ const carDatabase = {
         "4-Runner": {
             "2010 - 2023 (N280)": {
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43 / TOY48",
                 "ic": "Card 802 / 950",
                 "chip": "4D67 / 4G (80-Bit) / 8A Smart",
@@ -7726,6 +8160,7 @@ const carDatabase = {
         "86": {
             "2012 - 2021 (GT86 - Subaru BRZ Twin)": {
                 "lishi": "TOY48 / DAT17",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A Smart Proximity (Subaru System)",
@@ -7743,6 +8178,7 @@ const carDatabase = {
             },
             "2022+ (GR86 - Subaru Twin)": {
                 "lishi": "TOY48 / SUB2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A Smart Proximity",
@@ -7761,6 +8197,7 @@ const carDatabase = {
         "Auris": { 
             "2007 - 2018 (E150 / E180)": { 
                 "lishi": "TOY43",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 / 4G / 8A Smart Proximity",
@@ -7779,6 +8216,7 @@ const carDatabase = {
         "Avalon": {
             "2013 - 2018 (XX40)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A Smart Proximity",
@@ -7795,6 +8233,7 @@ const carDatabase = {
             },
             "2018+ (XX50 - TNGA)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -7814,6 +8253,7 @@ const carDatabase = {
         "Avensis": {
             "2003 - 2008 (T250)": {
                 "lishi": "TOY43",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 (40-Bit)",
@@ -7830,6 +8270,7 @@ const carDatabase = {
             },
             "2009 - 2018 (T270)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "4G (80-Bit) / 8A Smart",
@@ -7848,6 +8289,7 @@ const carDatabase = {
         "Aygo": { 
             "2005 - 2021 (MK1 / MK2)": { 
                 "lishi": "VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310", 
                 "chip": "4D67 / ID4E (Toyota IMMO)",
@@ -7865,6 +8307,7 @@ const carDatabase = {
             },
             "2022+ (Aygo X - TNGA Platform)": {
                 "lishi": "TOY48 / VA2",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity",
@@ -7883,6 +8326,7 @@ const carDatabase = {
         "C-HR": {
             "2016 - 2023 (AX10 - TNGA)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -7900,6 +8344,7 @@ const carDatabase = {
             },
             "2024+ (AX20 - New C-HR)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "4A / AA Smart Proximity",
@@ -7918,6 +8363,7 @@ const carDatabase = {
         "Camry": {
             "2006 - 2017 (XV40 / XV50)": {
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43 / TOY48",
                 "ic": "Card 802 / 950",
                 "chip": "4D67 / 4G / 8A Smart",
@@ -7934,6 +8380,7 @@ const carDatabase = {
             },
             "2018+ (XV70 - TNGA)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -7952,6 +8399,7 @@ const carDatabase = {
         "Celica": {
             "1999 - 2006 (T230)": {
                 "lishi": "TOY43",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "ID4C (Early) / 4D67 (Late)",
@@ -7970,6 +8418,7 @@ const carDatabase = {
         "Corolla": { 
             "2007 - 2018 (E150 / E180)": { 
                 "lishi": "TOY43",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 / 4G / 8A Smart Proximity",
@@ -7986,6 +8435,7 @@ const carDatabase = {
             },
             "2018+ (E210 - TNGA)": { 
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950 / 1122", 
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -8005,6 +8455,7 @@ const carDatabase = {
         "Highlander": {
             "2014 - 2019 (XU50)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A Smart Proximity",
@@ -8021,6 +8472,7 @@ const carDatabase = {
             },
             "2020+ (XU70 - TNGA)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -8039,6 +8491,7 @@ const carDatabase = {
         "Hilux": { 
             "2005 - 2015 (MK6 / MK7)": { 
                 "lishi": "TOY43",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 / 4D70 / 4G (80-Bit)",
@@ -8055,6 +8508,7 @@ const carDatabase = {
             },
             "2015+ (MK8 / MK9)": { 
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A / 4A Smart Proximity",
@@ -8073,6 +8527,7 @@ const carDatabase = {
         "Land Cruiser": {
             "2007 - 2021 (J200 / Prado J150)": {
                 "lishi": "TOY48 / TOY43",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "4D67 / 8A Smart Proximity",
@@ -8089,6 +8544,7 @@ const carDatabase = {
             },
             "2022+ (J300 / Land Cruiser 250)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA-F)",
@@ -8107,6 +8563,7 @@ const carDatabase = {
         "Most Models": {
             "General Toyota Reference": {
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43 / TOY48",
                 "ic": "Card 802 / 950",
                 "chip": "4C / 4D67 / 4G (80-Bit) / 8A / 4A",
@@ -8126,6 +8583,7 @@ const carDatabase = {
         "Prius": {
             "2004 - 2009 (XW20)": {
                 "lishi": "TOY43",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "ID4C / ID4D (Slot Key)",
@@ -8143,6 +8601,7 @@ const carDatabase = {
             },
             "2009 - 2015 (XW30)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A Smart Proximity",
@@ -8159,6 +8618,7 @@ const carDatabase = {
             },
             "2015+ (XW50 / XW60 - TNGA)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -8177,6 +8637,7 @@ const carDatabase = {
         "Proace": {
             "2013 - 2016 (MK1 - Citroen Dispatch Twin)": {
                 "lishi": "HU83 / VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PSA)",
@@ -8194,6 +8655,7 @@ const carDatabase = {
             },
             "2016+ (MK2 / City - Stellantis Twin)": {
                 "lishi": "HU83 / VA2",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -8213,6 +8675,7 @@ const carDatabase = {
         "Progress": {
             "1998 - 2007 (JDM Progrès)": {
                 "lishi": "TOY40 / TOY48",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TOY40",
                 "ic": "Card 802",
                 "chip": "ID4C / 4D67",
@@ -8232,6 +8695,7 @@ const carDatabase = {
         "RAV4": { 
             "2013 - 2018 (XA40)": { 
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A Smart Proximity",
@@ -8248,6 +8712,7 @@ const carDatabase = {
             },
             "2018+ (XA50 - TNGA)": { 
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
                 "ic": "Card 1122", 
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -8267,6 +8732,7 @@ const carDatabase = {
         "Sequoia": {
             "2008 - 2022 (XK60)": {
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 / 4G / 8A Smart",
@@ -8283,6 +8749,7 @@ const carDatabase = {
             },
             "2023+ (XK80 - TNGA-F)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity",
@@ -8301,6 +8768,7 @@ const carDatabase = {
         "Sienna": {
             "2010 - 2020 (XL30)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "4G / 8A Smart Proximity",
@@ -8317,6 +8785,7 @@ const carDatabase = {
             },
             "2021+ (XL40 - TNGA-K)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity",
@@ -8335,6 +8804,7 @@ const carDatabase = {
         "Solara": {
             "2004 - 2008 (Camry Solara)": {
                 "lishi": "TOY43",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 (40-Bit)",
@@ -8353,6 +8823,7 @@ const carDatabase = {
         "Supra": {
             "2019+ (A90 / GR Supra - BMW Z4 Twin)": {
                 "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC2)",
@@ -8372,6 +8843,7 @@ const carDatabase = {
         "T100 Pickup": {
             "1993 - 1998": {
                 "lishi": "TR47 / TOY43",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "TR47",
                 "ic": "Card 38",
                 "chip": "Non-Transponder / Mechanical Key",
@@ -8391,6 +8863,7 @@ const carDatabase = {
         "Tacoma": {
             "2005 - 2015 (N200)": {
                 "lishi": "TOY43",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 / 4G (80-Bit)",
@@ -8407,6 +8880,7 @@ const carDatabase = {
             },
             "2016 - 2023 (N300)": {
                 "lishi": "TOY48 / TOY43",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 950",
                 "chip": "8A Smart Proximity",
@@ -8425,6 +8899,7 @@ const carDatabase = {
         "Tundra": {
             "2007 - 2021 (XK50)": {
                 "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43",
                 "ic": "Card 802",
                 "chip": "4D67 / 4G / 8A Smart",
@@ -8441,6 +8916,7 @@ const carDatabase = {
             },
             "2022+ (XK70 - TNGA-F)": {
                 "lishi": "TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
                 "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity",
@@ -8459,6 +8935,7 @@ const carDatabase = {
         "Yaris": { 
             "2006 - 2020 (MK2 / MK3)": { 
                 "lishi": "TOY43 / VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
                 "ic": "Card 802", 
                 "chip": "4D67 / 4D70 / 4G (80-Bit)",
@@ -8476,6 +8953,7 @@ const carDatabase = {
             },
             "2020+ (MK4 - TNGA Platform)": { 
                 "lishi": "TOY48 / Toyota 2018+",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
                 "ic": "Card 1122", 
                 "chip": "8A / 4A Smart Proximity (TNGA)",
@@ -8493,11 +8971,12 @@ const carDatabase = {
             }
         }
     },
-      
+
     "Vauxhall / Opel": {
         "Adam": {
             "2013 - 2019": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
@@ -8516,6 +8995,7 @@ const carDatabase = {
         "Agila": {
             "2008 - 2014 (Agila B - Suzuki Splash Twin)": {
                 "lishi": "HU87", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU87", 
                 "ic": "Card 929",
                 "chip": "ID46 (PCF7936)",
@@ -8535,6 +9015,7 @@ const carDatabase = {
         "Antara": {
             "2006 - 2015": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7936)",
@@ -8553,6 +9034,7 @@ const carDatabase = {
         "Astra": { 
             "2009 - 2015 (Astra J - GM)": { 
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
@@ -8569,6 +9051,7 @@ const carDatabase = {
             },
             "2015 - 2021 (Astra K - GM)": {
                 "lishi": "HU100", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 / GM Smart",
@@ -8585,6 +9068,7 @@ const carDatabase = {
             },
             "2022+ (Astra L - Stellantis EMP2)": { 
                 "lishi": "HU83 / VA2 / HU136", 
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "VA2", 
                 "ic": "Card 1310", 
                 "chip": "HITAG AES / 4A Smart",
@@ -8604,6 +9088,7 @@ const carDatabase = {
         "Cascada": {
             "2013 - 2019": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937)",
@@ -8622,6 +9107,7 @@ const carDatabase = {
         "Combo": {
             "2012 - 2018 (Combo D - Fiat Doblo Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
@@ -8639,6 +9125,7 @@ const carDatabase = {
             },
             "2019+ (Combo E - Stellantis)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -8657,6 +9144,7 @@ const carDatabase = {
         "Corsa": { 
             "2006 - 2019 (Corsa D / E - GM Platform)": { 
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097", 
                 "chip": "ID46 (PCF7937 / GM 46)",
@@ -8673,6 +9161,7 @@ const carDatabase = {
             },
             "2020+ (Corsa F - Stellantis CMP)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310", 
                 "chip": "HITAG AES / 4A Smart",
@@ -8692,6 +9181,7 @@ const carDatabase = {
         "Crossland X": {
             "2017+ (Stellantis Platform)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -8710,6 +9200,7 @@ const carDatabase = {
         "Frontera": {
             "1998 - 2004 (Frontera B)": {
                 "lishi": "HU43", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "YM28", 
                 "ic": "Card 342",
                 "chip": "ID33 / ID40",
@@ -8728,6 +9219,7 @@ const carDatabase = {
         "Grandland X": {
             "2017+ (Stellantis Platform)": {
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
@@ -8746,6 +9238,7 @@ const carDatabase = {
         "Insignia": {
             "2008 - 2017 (Insignia A)": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937)",
@@ -8762,6 +9255,7 @@ const carDatabase = {
             },
             "2017 - 2022 (Insignia B)": {
                 "lishi": "HU100", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "GM Smart",
@@ -8780,6 +9274,7 @@ const carDatabase = {
         "Meriva": {
             "2010 - 2017 (Meriva B)": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937)",
@@ -8798,6 +9293,7 @@ const carDatabase = {
         "Mokka": { 
             "2012 - 2019 (Mokka / Mokka X - GM)": { 
                 "lishi": "HU100", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
@@ -8814,6 +9310,7 @@ const carDatabase = {
             },
             "2021+ (Mokka MK2 - Stellantis)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310", 
                 "chip": "HITAG AES / 4A Smart",
@@ -8832,6 +9329,7 @@ const carDatabase = {
         "Movano": {
             "2010 - 2021 (Movano B - Renault Twin)": {
                 "lishi": "VAC102", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961",
@@ -8848,6 +9346,7 @@ const carDatabase = {
             },
             "2021+ (Movano C - Fiat Twin)": {
                 "lishi": "SIP22", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "SIP22", 
                 "ic": "Card 1137",
                 "chip": "ID46 Precode",
@@ -8867,6 +9366,7 @@ const carDatabase = {
         "Tigra": {
             "2004 - 2009 (Tigra TwinTop)": {
                 "lishi": "HU100", 
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID40",
@@ -8885,6 +9385,7 @@ const carDatabase = {
         "Vectra": {
             "2002 - 2008 (Vectra C)": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7946)",
@@ -8903,6 +9404,7 @@ const carDatabase = {
         "Vivaro": { 
             "2001 - 2014 (Vivaro A - Renault Twin)": { 
                 "lishi": "NE73", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "NE73", 
                 "ic": "Card 584",
                 "chip": "ID46 (PCF7936 / Renault)",
@@ -8919,6 +9421,7 @@ const carDatabase = {
             },
             "2014 - 2019 (Vivaro B - Renault Twin)": { 
                 "lishi": "VAC102", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "VAC102", 
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961",
@@ -8935,6 +9438,7 @@ const carDatabase = {
             },
             "2019+ (Vivaro C - Stellantis)": { 
                 "lishi": "HU83 / VA2", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2", 
                 "ic": "Card 1310", 
                 "chip": "HITAG AES / 4A Smart",
@@ -8954,6 +9458,7 @@ const carDatabase = {
         "Zafira": {
             "2005 - 2014 (Zafira B)": {
                 "lishi": "HU100", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 / PCF7941",
@@ -8971,6 +9476,7 @@ const carDatabase = {
             },
             "2011 - 2019 (Zafira Tourer C)": {
                 "lishi": "HU100", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU100", 
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7941) or ID47 (Smart)",
@@ -8992,6 +9498,7 @@ const carDatabase = {
         "Amarok (Pick-up)": {
             "2010 - 2022 (MK1 - 2H)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -9009,6 +9516,7 @@ const carDatabase = {
             },
             "2023+ (MK2 - Shared Ford Ranger Platform)": {
                 "lishi": "HU198 / HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU198",
                 "ic": "Card 1450",
                 "chip": "HITAG Pro (ID49 / 128-Bit)",
@@ -9028,6 +9536,7 @@ const carDatabase = {
         "Caddy": {
             "2004 - 2015 (MK3 - 2K)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -9044,6 +9553,7 @@ const carDatabase = {
             },
             "2015 - 2020 (MK4 - SA)": {
                 "lishi": "HU66 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9060,6 +9570,7 @@ const carDatabase = {
             },
             "2020+ (MK5 - SB - MQB Evo)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -9079,6 +9590,7 @@ const carDatabase = {
         "Crafter (Van)": {
             "2006 - 2016 (MK1 - 2F)": {
                 "lishi": "HU64",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "Mercedes BE / BGA Smart Fob (FBS3 IR)",
@@ -9096,6 +9608,7 @@ const carDatabase = {
             },
             "2017+ (MK2 - SY / SZ)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9115,6 +9628,7 @@ const carDatabase = {
         "Golf": {
             "2004 - 2014 (MK5 / MK6)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -9131,6 +9645,7 @@ const carDatabase = {
             },
             "2015 - 2020 (MK7 / MK7.5 - MQB)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9148,6 +9663,7 @@ const carDatabase = {
             },
             "2020+ (MK8 - MQB Evo)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -9167,6 +9683,7 @@ const carDatabase = {
         "ID.3 / ID.4 / ID.5 / ID. Buzz (EV Lineup)": {
             "2020+ (MEB Electric Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "VAG Megamos AES / 4A (VW MEB)",
@@ -9186,6 +9703,7 @@ const carDatabase = {
         "Passat / CC": {
             "2005 - 2014 (B6 / B7 / Passat CC)": {
                 "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (Passat CCM Slot Key)",
@@ -9203,6 +9721,7 @@ const carDatabase = {
             },
             "2014 - 2023 (B8 / Passat CC - MQB)": {
                 "lishi": "HU66 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9222,6 +9741,7 @@ const carDatabase = {
         "Polo": {
             "2002 - 2009 (MK4 - 9N / 9N3)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -9238,6 +9758,7 @@ const carDatabase = {
             },
             "2009 - 2017 (MK5 - 6R / 6C)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -9254,6 +9775,7 @@ const carDatabase = {
             },
             "2017+ (MK6 - AW - MQB A0)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9272,6 +9794,7 @@ const carDatabase = {
         "Scirocco / Arteon": {
             "2008 - 2017 (Scirocco - 13)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -9288,6 +9811,7 @@ const carDatabase = {
             },
             "2017+ (Arteon - MQB)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9306,6 +9830,7 @@ const carDatabase = {
         "T-Cross / Taigo": {
             "2019+ (C11 / CS - MQB A0 Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9325,6 +9850,7 @@ const carDatabase = {
         "T-Roc": {
             "2017+ (A11 - MQB A1 Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9344,6 +9870,7 @@ const carDatabase = {
         "Tiguan": {
             "2007 - 2016 (MK1 - 5N)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -9360,6 +9887,7 @@ const carDatabase = {
             },
             "2016+ (MK2 - AD1 / Allspace - MQB)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9379,6 +9907,7 @@ const carDatabase = {
         "Touareg": {
             "2003 - 2010 (MK1 - 7L)": {
                 "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "ID46 / Megamos 13 (KESSY)",
@@ -9396,6 +9925,7 @@ const carDatabase = {
             },
             "2010 - 2018 (MK2 - 7P)": {
                 "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 / PCFM (BCM2)",
@@ -9413,6 +9943,7 @@ const carDatabase = {
             },
             "2018+ (MK3 - CR)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MLB Evo AES Smart Proximity",
@@ -9432,6 +9963,7 @@ const carDatabase = {
         "Touran / Sharan": {
             "2003 - 2015 (Touran MK1 / Sharan MK2)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -9448,6 +9980,7 @@ const carDatabase = {
             },
             "2015+ (Touran MK2 - MQB)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9466,6 +9999,7 @@ const carDatabase = {
         "Transporter / Caravelle / Multivan": {
             "2003 - 2015 (T5 / T5.1 Transporter)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -9483,6 +10017,7 @@ const carDatabase = {
             },
             "2015 - 2019 (T6 Transporter)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
@@ -9500,6 +10035,7 @@ const carDatabase = {
             },
             "2019 - 2024 (T6.1 Transporter)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
@@ -9517,6 +10053,7 @@ const carDatabase = {
             },
             "2022+ (T7 Multivan - MQB Evo)": {
                 "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
@@ -9535,6 +10072,7 @@ const carDatabase = {
         "Up! / e-Up!": {
             "2011+ (AA Platform)": {
                 "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
@@ -9556,6 +10094,7 @@ const carDatabase = {
         "C30": {
             "2006 - 2013 (P1 Platform)": {
                 "lishi": "HU101", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46 (PCF7936)",
@@ -9574,6 +10113,7 @@ const carDatabase = {
         "S40": {
             "2004 - 2012 (P1 Platform)": {
                 "lishi": "HU101", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46",
@@ -9592,6 +10132,7 @@ const carDatabase = {
         "S60": {
             "2010 - 2018 (P3 Architecture)": { 
                 "lishi": "HU101 / HU56", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID46 / 4D63 (Volvo P3 Smart)",
@@ -9609,6 +10150,7 @@ const carDatabase = {
             },
             "2019+ (SPA Architecture)": {
                 "lishi": "HU152", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU152", 
                 "ic": "Card 1098",
                 "chip": "HITAG Pro / ID49",
@@ -9627,6 +10169,7 @@ const carDatabase = {
         "S80": {
             "2006 - 2016 (P3 Platform)": {
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46 / Smart",
@@ -9645,6 +10188,7 @@ const carDatabase = {
         "V40": {
             "2012 - 2019 (P3 Architecture)": { 
                 "lishi": "HU101 / HU56", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID46 / 4D63",
@@ -9663,6 +10207,7 @@ const carDatabase = {
         "V50": {
             "2004 - 2012 (P1 Platform)": {
                 "lishi": "HU101", 
+                "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46",
@@ -9670,7 +10215,7 @@ const carDatabase = {
                 "module": "CEM",
                 "location": "Passenger footwell.",
                 "access": "OBD.",
-                risk: "MODERATE",
+                "risk": "MODERATE",
                 "protocol": "OBD add key. AKL requires CEM bench read.",
                 "acGas": "R134a", 
                 "acCap": "530g", 
@@ -9681,6 +10226,7 @@ const carDatabase = {
         "V70": {
             "2007 - 2016 (P3 Platform)": {
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46 / Smart",
@@ -9699,6 +10245,7 @@ const carDatabase = {
         "XC60": {
             "2008 - 2017 (P3 Architecture)": { 
                 "lishi": "HU101 / HU56", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "ID46 / 4D63 (Volvo P3 Smart)",
@@ -9715,6 +10262,7 @@ const carDatabase = {
             },
             "2018+ (SPA Architecture)": { 
                 "lishi": "HU152", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU152", 
                 "ic": "Card 1098", 
                 "chip": "HITAG Pro / ID49",
@@ -9733,6 +10281,7 @@ const carDatabase = {
         "XC70": {
             "2007 - 2016 (P3 Platform)": {
                 "lishi": "HU101", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098",
                 "chip": "ID46 / Smart",
@@ -9751,6 +10300,7 @@ const carDatabase = {
         "XC90": {
             "2015+ (SPA Architecture)": { 
                 "lishi": "HU101 / HU152", 
+                "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "HU101TE", 
                 "ic": "Card 1098", 
                 "chip": "HITAG Pro / ID49",
@@ -9765,6 +10315,774 @@ const carDatabase = {
                 "acCap": "750g", 
                 "acOil": "PAG 46 / POE", 
                 "acNote": "T8 Twin Engine / PHEV requires POE non-conductive oil!"
+            }
+        }
+    },
+    "Abarth": {
+        "500 / 595 / 695": {
+            "2008+": {
+                "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SIP22",
+                "ic": "Card 1137",
+                "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
+                "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XT27A Transponder",
+                "warning": "⚠️ Fiat / Marelli BSI Architecture. Transponder precoding required!",
+                "module": "BSI (Marelli)",
+                "location": "Driver's Footwell — integrated into main interior fuse box.",
+                "access": "Remove 2x plastic thumbscrews on lower dashboard fuse cover.",
+                "risk": "HIGH RISK — Precoding Transponder Required",
+                "protocol": "Read BSI EEPROM via bench or OBD to extract Security PIN and 6-byte component key. Precode chip before OBD key learn.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Pre-2016 uses R134a; 2016+ uses R1234yf."
+            }
+        },
+        "Punto / Grande Punto": {
+            "2007 - 2018 (Fiat Twin)": {
+                "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SIP22",
+                "ic": "Card 1137",
+                "chip": "ID46 (Precode)",
+                "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
+                "module": "BSI (Marelli)",
+                "location": "Driver's Footwell.",
+                "access": "OBD.",
+                "risk": "HIGH",
+                "protocol": "Precode ID46 chip before learning.",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Standard."
+            }
+        },
+        "124 Spider": {
+            "2016 - 2019 (Mazda MX-5 ND Twin)": {
+                "lishi": "Verify Mazda MX-5 (ND) keyway",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "Verify — MX-5 ND profile",
+                "ic": "N/A",
+                "chip": "Verify Mazda MX-5 immobiliser (ND)",
+                "xhorse": "OEM Key Only (verify)",
+                "warning": "⚠️ NOT a Fiat lock — this is a Mazda ND MX-5 twin. Do NOT use SIP22!",
+                "module": "Mazda BCM",
+                "location": "Passenger Footwell.",
+                "access": "OBD.",
+                "risk": "MODERATE — Verify platform first",
+                "protocol": "Treat as Mazda MX-5 (ND). Read PIN via OBD per Mazda protocol.",
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Abarth 124 uses Mazda switchgear — confirm before starting."
+            }
+        }
+    },
+    "Bentley": {
+        "Continental GT / Flying Spur": {
+            "2003 - 2018 (VAG-Derived)": {
+                "lishi": "HU66 (Verify keyway)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48) / 4A Smart",
+                "xhorse": "OEM Bentley Key / VAG-Type Smart Key (verify)",
+                "warning": "⚠️ Bentley is VAG-hardened. Verify the specific keyway before picking — most later cars are keyless.",
+                "module": "VAG BCM / KESSY",
+                "location": "Driver's Kick Panel / Boot Quarter.",
+                "access": "Remove trim panel — Bentley hides modules behind leather-trimmed covers.",
+                "risk": "HIGH RISK — VAG Security (SFD-Type)",
+                "protocol": "Treat as VAG Group: read PIN/CS via OBD or bench. Bentley dealer server may be required for AKL.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "540g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "W12 and Flying Spur dual-climate models vary; verify from under-bonnet label."
+            },
+            "2018+ (Continental GT III / Flying Spur)": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Keyless — 4A / AES (verify)",
+                "xhorse": "OEM Dealer Key Only",
+                "warning": "⚠️ No conventional door cylinder to Lishi. Use non-destructive opening / OBD AKL.",
+                "module": "VAG MQB-Evo / MLB-Evo Gateway",
+                "location": "Driver's Footwell / behind glovebox.",
+                "access": "Drop glovebox stops.",
+                "risk": "HIGH — Online Dealer Server Sync Required",
+                "protocol": "SFD-style security gate. Requires manufacturer-level server token for key programming.",
+                "acGas": "R1234yf",
+                "acCap": "540g",
+                "acOil": "PAG 46",
+                "acNote": "Verify exact charge from boot/under-bonnet label."
+            }
+        }
+    },
+    "BYD": {
+        "F3 / F6 / S6 / G6": {
+            "2008 - 2016 (Legacy Sedans)": {
+                "lishi": "BYD01 / BYD01R (Verify)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "Verify BYD01 keyway",
+                "ic": "N/A",
+                "chip": "ID46 / ID48 (verify on disassembly)",
+                "xhorse": "OEM / Aftermarket BYD Remote (verify)",
+                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "module": "Body Control Module / Remote Receiver",
+                "location": "Behind Glovebox / Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Standard PIN read via OBD; AKL may require BCM bench read.",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Verify refrigerant from badge; early models varied."
+            }
+        },
+        "Atto 3 / Dolphin / Seal / Han": {
+            "2021+ (e-Platform 3.0)": {
+                "lishi": "N/A — Keyless / NFC Only",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital Key (no conventional transponder)",
+                "xhorse": "OEM BYD NFC Card / Phone Key Only",
+                "warning": "⚠️ No conventional door cylinder to pick. Use non-destructive opening; phone key / NFC card is the only backup.",
+                "module": "VCU / NFC Receiver",
+                "location": "Front Centre Console NFC Pad / Driver Door Handle Area.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Only Architecture",
+                "protocol": "No mechanical key generation possible. For AKL contact BYD / dealer or use approved diagnostic with cloud token.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV — strictly POE oil, never PAG."
+            }
+        }
+    },
+    "Chrysler": {
+        "300C / 300 / 200": {
+            "2005 - 2010 (300C / 300 LX)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 / T5 (verify on model)",
+                "xhorse": "OEM Chrysler Fob / Xhorse Chrysler Remote (verify)",
+                "warning": "⚠️ HU64 covers Chrysler, Dodge, Mercedes & VW — confirm keyway before picking.",
+                "module": "BCM / RFHUB",
+                "location": "Driver's Kick Panel / Behind Fuse Block.",
+                "access": "Remove lower driver's dash panel.",
+                "risk": "MODERATE / HIGH",
+                "protocol": "Read 5-digit PIN via OBD (Chrysler/Stellantis protocol) for AKL. Precode chip if HITAG2.",
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2011 - 2017 (300 / 200 LD / RF)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 / 4A Smart (verify)",
+                "xhorse": "OEM / Xhorse Chrysler Smart Key (verify)",
+                "warning": "⚠️ Keyless cars: flat emergency blade, door cylinder concealed. Verify before picking.",
+                "module": "RFHUB (Keyless) / BCM",
+                "location": "Behind Rear Quarter Trim OR Driver's Footwell.",
+                "access": "Drop lower dash panel / rear trim access.",
+                "risk": "HIGH — RFHUB Keyless",
+                "protocol": "PIN via OBD; AKL on keyless requires RFHUB bench read.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "2015+ uses R1234yf."
+            }
+        },
+        "Voyager / Grand Voyager / Town & Country": {
+            "2008 - 2016 (RT Platform)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 (verify)",
+                "xhorse": "OEM Chrysler Fob (verify)",
+                "module": "BCM / RFHUB",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "PIN via OBD; HITAG2 precode where required.",
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2017+ (EU — Rebadged Peugeot Traveller)": {
+                "lishi": "HU83 / VA2 (PSA)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310",
+                "chip": "HITAG AES / 4A Smart",
+                "xhorse": "XEKB01EN (PSA Super Remote) / XSKF21EN (Smart Prox)",
+                "warning": "⚠️ NOT Chrysler HU64! EU Voyager is a rebadged Peugeot Traveller — use PSA van data (see Peugeot Expert / Citroen Jumpy).",
+                "module": "Stellantis BSI",
+                "location": "Passenger Footwell behind glovebox.",
+                "access": "Drop glovebox assembly.",
+                "risk": "MODERATE — Eco Mode Protection",
+                "protocol": "Maintain >13.0V voltage. Read PIN via OBD and pair remote fob.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "e-Voyager / EV variants strictly POE non-conductive oil."
+            }
+        }
+    },
+    "Isuzu": {
+        "D-Max / MU-X": {
+            "2002 - 2012 (RA/RD)": {
+                "lishi": "N/A (verify TOY43R-type keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "Verify",
+                "ic": "N/A",
+                "chip": "ID46 (verify — GM-derived)",
+                "xhorse": "OEM Isuzu Remote (verify)",
+                "warning": "⚠️ Some D-Max/Ascender locks use a Toyota 43R-style profile (TOY43R tool) — confirm blade before picking.",
+                "module": "BCM / Immobiliser Box",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "PIN via OBD; GM/Isuzu protocol. Precode where required.",
+                "acGas": "R134a",
+                "acCap": "520g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2012 - 2021 (RG / RC)": {
+                "lishi": "N/A — Flat Emergency Blade (Keyless)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — ID46 / 4A (keyless)",
+                "xhorse": "OEM Isuzu Smart / Flip Key (verify)",
+                "warning": "⚠️ Keyless: door cylinder concealed under cap, flat emergency blade. No practical Lishi pick.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "AKL on keyless requires BCM read (bench or advanced OBD tool).",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2021+ (D-Max RZ4 / New MU-X)": {
+                "lishi": "N/A — Keyless Only",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "4A / AES Smart (verify)",
+                "xhorse": "OEM Dealer Key Only",
+                "warning": "⚠️ Keyless with concealed cylinder — non-destructive opening only.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD / benchmark.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Advanced diagnostic or BCM bench read for AKL.",
+                "acGas": "R1234yf",
+                "acCap": "580g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            }
+        }
+    },
+    "Maxus": {
+        "V80 / V90 / D90": {
+            "2012 - 2020 (LDV-Maxus / SAIC)": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — transponder present in flip key",
+                "xhorse": "OEM Maxus Flip Key (verify)",
+                "warning": "⚠️ No Lishi coverage. Vans are keyless with concealed cylinder — use non-destructive opening.",
+                "module": "BCM / Remote Receiver",
+                "location": "Driver's Kick Panel / Behind Fuse Box.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL requires BCM read or dealer tooling.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2021+ (V90 / eDeliver 3 / eDeliver 9)": {
+                "lishi": "N/A — Keyless / EV",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital or 4A Smart (verify)",
+                "xhorse": "OEM Only",
+                "warning": "⚠️ No mechanical lock mechanism to pick. EV / keyless architecture.",
+                "module": "VCU / Keyless Module",
+                "location": "Behind Glovebox / Centre Console.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Architecture",
+                "protocol": "No mechanical key generation. Contact dealer / approved diagnostic with cloud token for AKL.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV vans — strictly POE oil, never PAG."
+            }
+        }
+    },
+    "Polestar": {
+        "1 / 2": {
+            "2020+ (SPA / CMA — Volvo-Based)": {
+                "lishi": "N/A — Concealed Cylinder",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "HITAG Pro / ID49 (Volvo SPA)",
+                "xhorse": "Dedicated Volvo SPA Smart Key / OEM Only",
+                "warning": "⚠️ Door lock cylinder concealed under handle cap (as Volvo SPA). No practical Lishi pick.",
+                "module": "CEM & KVM",
+                "location": "CEM: Passenger Footwell — Upper Bulkhead under glovebox.",
+                "access": "Remove passenger footwell kick panel and pull carpet down.",
+                "risk": "HIGH RISK — CEM Bench Read",
+                "protocol": "For AKL, remove CEM and read on bench to extract 32-byte IMMO code. 🛑 Disconnect main battery before unplugging CEM!",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 Polestar 1 via Volvo VM; 2 is BEV — strictly POE oil, never PAG."
+            }
+        }
+    },
+    "Smart": {
+        "fortwo (450)": {
+            "1998 - 2006": {
+                "lishi": "MB39 / YM23 (8-Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MB39 / YM23",
+                "ic": "N/A",
+                "chip": "ID46 / ID48 (verify on disassembly)",
+                "xhorse": "OEM Smart Key (verify) / Smart Wallbox Key",
+                "warning": "⚠️ MB39/YM23 8-cut is the correct Lishi for the 450 fortwo. Chip type varies by year — verify before programming.",
+                "module": "SAM (Signal Acquisition Module)",
+                "location": "Under Front Bonnet / Behind Battery Box.",
+                "access": "Open front bonnet; SAM near the windscreen wiper motor.",
+                "risk": "MODERATE — SAM Coding",
+                "protocol": "Read SAM EEPROM for immo data (bench) or use OBD where supported.",
+                "acGas": "R134a",
+                "acCap": "430g",
+                "acOil": "PAG 46",
+                "acNote": "Small-capacity system — verify charge label."
+            }
+        },
+        "fortwo / forfour (451)": {
+            "2007 - 2015": {
+                "lishi": "MB39 / YM23 (8-Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MB39 / YM23",
+                "ic": "N/A",
+                "chip": "4A / ID48 Smart (verify)",
+                "xhorse": "OEM Smart Flip Key (verify)",
+                "warning": "⚠️ Lishi MB39/YM23 covers the 451 fortwo (2008-2015). Keyless cars use a flat emergency blade — confirm before picking.",
+                "module": "SAM / BCM",
+                "location": "Under Front Bonnet / Passenger Footwell.",
+                "access": "Front bonnet SAM access or passenger footwell cover.",
+                "risk": "MODERATE / HIGH — Keyless AKL",
+                "protocol": "Keyless AKL requires SAM/BCM bench read or approved diagnostic.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "2012+ may run R1234yf."
+            }
+        },
+        "fortwo / forfour (453)": {
+            "2015+": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "4A / AES Smart (verify)",
+                "xhorse": "OEM Smart Key (verify)",
+                "warning": "⚠️ Renault-based (453 is a rebadged Renault Twingo platform). Keyless flat blade — no Lishi pick.",
+                "module": "BCM / Keyless Module",
+                "location": "Passenger Footwell.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL via BCM read or dealer tooling.",
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Essence (EV) is strictly POE oil."
+            }
+        }
+    },
+    "SsangYong": {
+        "Musso / Rexton": {
+            "1999 - 2007 (Mercedes-Derived)": {
+                "lishi": "HU64 (Verify keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "N/A",
+                "chip": "Verify transponder on disassembly",
+                "xhorse": "OEM SsangYong Remote (verify)",
+                "warning": "⚠️ Early Musso/Rexton share Mercedes W163-derived architecture — HU64 may fit, but ALWAYS verify the keyway before picking.",
+                "module": "Immo Box / BCM",
+                "location": "Behind Instrument Cluster / Under Steering Column.",
+                "access": "Remove cluster trim bezel.",
+                "risk": "MODERATE — Verify Platform",
+                "protocol": "Standard immo box read / OBD PIN. Confirm immo type first.",
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            }
+        },
+        "Korando / Tivoli / New Rexton": {
+            "2011+": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — 4A Smart / transponder keyless",
+                "xhorse": "OEM SsangYong Key (verify)",
+                "warning": "⚠️ No dedicated Lishi for modern SsangYong. Keyless flat blade — non-destructive opening only.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL via BCM read or dealer tooling.",
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
+                "acNote": "Korando e-Motion (EV) strictly POE oil."
+            }
+        }
+    },
+    "Subaru": {
+        "Impreza / WRX": {
+            "1998 - 2007": {
+                "lishi": "TOY48 / SUB2 (verify keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SUB2",
+                "ic": "N/A — verify blank",
+                "chip": "4D / Hitag (verify per year)",
+                "xhorse": "SRC rolling remote — OEM (verify)",
+                "module": "Immo / BCM",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE — SRC rolling remote",
+                "protocol": "Key learn via OBD; remote must sync to the rolling code.",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Standard."
+            }
+        },
+        "Outback / Legacy (Bluetooth)": {
+            "2010+": {
+                "lishi": "N/A — verify (blade keyway)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "4D-62/63 (verify)",
+                "xhorse": "OEM Smart / Prox (verify)",
+                "module": "Keyless / Smart Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via smart module / tooling.",
+                "acGas": "R1234yf",
+                "acCap": "500g (verify label)",
+                "acOil": "PAG 46",
+                "acNote": "Verify condensate & labels before regas."
+            }
+        }
+    },
+    "Tesla": {
+        "Model 3 / Model Y": {
+            "2019+ (M3/MY)": {
+                "lishi": "N/A — Keyless (no ignition barrel)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Keyless — Phone Key / NFC Card",
+                "xhorse": "OEM phone key — no physical unit",
+                "module": "NFC BCM (door / side-handle)",
+                "location": "Front side-handle NFC reader.",
+                "access": "Owner phone key / service account.",
+                "risk": "— (no mechanical key on most)",
+                "protocol": "Keyless entry & start; NFC card for driver door + BMS start.",
+                "acGas": "R1234yf",
+                "acCap": "Verify under-bonnet label (~450g)",
+                "acOil": "POE (electric compressor)",
+                "acNote": "EV — POE oil only. No engine runs; valet/tow modes matter."
+            }
+        },
+        "Model S / Model X": {
+            "2016+": {
+                "lishi": "N/A — Keyless (flat emergency blade, some markets)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Keyless — Phone Key / FOB",
+                "xhorse": "OEM FOB (verify)",
+                "module": "NFC / Keyless Module",
+                "location": "Door handle / charge-port area.",
+                "access": "Service account or owner phone key.",
+                "risk": "— (keyless)",
+                "protocol": "Keyless learn via service tooling.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "POE",
+                "acNote": "EV only."
+            }
+        }
+    },
+    "ORA (GWM)": {
+        "ORA 03 (Funky Cat)": {
+            "2022+": {
+                "lishi": "N/A — Keyless / NFC (EV)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Smart keyless — NFC / BT",
+                "xhorse": "OEM (verify)",
+                "module": "Keyless Module (GWM)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "— (keyless)",
+                "protocol": "Keyless learn via GWM tool / dealer.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "POE",
+                "acNote": "EV only."
+            }
+        }
+    },
+    "Iveco": {
+        "Daily": {
+            "2006 - 2014": {
+                "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SIP22",
+                "ic": "Card 1137",
+                "chip": "ID46 (Precode)",
+                "xhorse": "XEFT01EN (Fiat Super Remote) / XT27A Transponder",
+                "module": "BSI (Marelli Body Computer)",
+                "location": "Driver's Footwell / Centre Console.",
+                "access": "OBD.",
+                "risk": "MODERATE — Precoding required",
+                "protocol": "Precode ID46 chip before learning.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g (verify label)",
+                "acOil": "PAG 46",
+                "acNote": "Same platform family as Fiat Ducato BSI."
+            }
+        },
+        "Daily Euro VI": {
+            "2014+": {
+                "lishi": "N/A — verify (new keyway)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID46 / Smart (verify)",
+                "xhorse": "OEM (verify)",
+                "module": "BCM / Keyless (verify)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "MODERATE — verify PIN",
+                "protocol": "Key learn via OBD with PIN.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "Verify coding path before committing."
+            }
+        }
+    },
+    "Chevrolet": {
+        "Spark / Matiz": {
+            "2005 - 2015": {
+                "lishi": "N/A — verify (GM / Daewoo keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID44 / ID46 (verify)",
+                "xhorse": "OEM RKE (verify)",
+                "module": "Immobiliser ECU (GM)",
+                "location": "Under dash / glove box.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Key learn via OBD (PIN or 2-key method).",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Verify keyway before blanking."
+            }
+        },
+        "Corvette / US Imports": {
+            "C5 - C7": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "Transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "BCM / Immobiliser",
+                "location": "Driver's side / under dash.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Sentry key learn via OBD (2-key method).",
+                "acGas": "R134a (older) / R1234yf",
+                "acCap": "850g",
+                "acOil": "PAG 46",
+                "acNote": "US-spec radios/tools — verify region."
+            }
+        }
+    },
+    "Dodge": {
+        "Challenger / Charger / RAM (Import)": {
+            "2008+": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA rolling transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "SKIM / NFR (FCA)",
+                "location": "Under dash / column.",
+                "access": "OBD.",
+                "risk": "MODERATE — SKIM PIN",
+                "protocol": "Sentry Immobiliser key learn via OBD (SKIM PIN).",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify keys/region."
+            }
+        }
+    },
+    "GMC": {
+        "Yukon / Sierra (Import)": {
+            "2007+": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID / GM transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "BCM (GM)",
+                "location": "Under dash / driver's kick.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Key learn via OBD (2-key method).",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify region."
+            }
+        }
+    },
+    "Lotus": {
+        "Elise / Exige": {
+            "2000 - 2011": {
+                "lishi": "N/A — verify (Renault-sourced keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "4D / ID46 (verify by year)",
+                "xhorse": "OEM (verify)",
+                "module": "Immo — varies (Renault-based)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Key learn via OBD.",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Verify platform — Elise varies by year."
+            }
+        },
+        "Evora / Emira": {
+            "2011+": {
+                "lishi": "N/A — verify (Toyota-sourced keyway)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "Smart keyless (verify)",
+                "xhorse": "OEM (verify)",
+                "module": "Keyless Module (Toyota-based)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via module/tool.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "Verify year/platform."
+            }
+        }
+    },
+    "Maserati": {
+        "Ghibli / Quattroporte / Levante": {
+            "2014+": {
+                "lishi": "N/A — verify (FCA keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA rolling transponder (verify)",
+                "xhorse": "FCA FOB (verify)",
+                "module": "NFR / BCM (FCA)",
+                "location": "Under dash / footwell.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via BCM / tooling.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "FCA platform — verify engine variant."
+            }
+        },
+        "GranTurismo": {
+            "2008 - 2019": {
+                "lishi": "N/A — verify (FCA / older keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA transponder (verify)",
+                "xhorse": "FCA FOB (verify)",
+                "module": "BCM (FCA)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Key learn via OBD.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "Verify year."
+            }
+        }
+    },
+    "Rover": {
+        "400 / 600 / 75": {
+            "1990 - 2005": {
+                "lishi": "N/A — verify (Rover keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID44-style (verify)",
+                "xhorse": "OEM RKE (verify)",
+                "module": "Body ECU / 5AS Immo",
+                "location": "Under dash / behind kick.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Immobiliser key sync (2-key method).",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Early 200s ran without an immobiliser — verify before charging."
             }
         }
     }

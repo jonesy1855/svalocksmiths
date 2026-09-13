@@ -396,12 +396,15 @@
             matches.slice(0, 15).forEach(item => {
                 const card = document.createElement('div');
                 card.className = 'live-card';
+                const toolCode = (item.lishi && typeof item.lishi === 'object')
+                    ? (item.lishi.lishi || item.lishi.warning || 'Details Available')
+                    : (item.lishi || 'Details Available');
                 card.innerHTML = `
                     <div class="live-card-info">
                         <h4>${item.make} — ${item.model}</h4>
                         <p>Years: ${item.yearRange}</p>
                     </div>
-                    <div class="live-card-tool">${item.lishi}</div>
+                    <div class="live-card-tool">${toolCode}</div>
                 `;
                 liveResults.appendChild(card);
             });
@@ -445,17 +448,23 @@
             if (this.value) {
                 const make = makeSelect.value;
                 const model = modelSelect.value;
-                const rawResult = carDatabase[make][model][this.value];
+                const data = carDatabase[make][model][this.value];
 
-                const noteMatch = rawResult.match(/\((.*?)\)/);
-                let mainCode = rawResult;
-                
-                if (noteMatch) {
-                    mainCode = rawResult.replace(/\s*\(.*?\)/, '');
-                    toolNote.textContent = 'NOTE: ' + noteMatch[1];
-                    toolNote.style.display = 'inline-block';
+                let mainCode;
+                if (data && typeof data === 'object') {
+                    mainCode = data.lishi || data.silca || data.price || '';
+                    toolNote.textContent = data.warning || '';
+                    toolNote.style.display = data.warning ? 'inline-block' : 'none';
                 } else {
-                    toolNote.style.display = 'none';
+                    const noteMatch = (data || '').match(/\((.*?)\)/);
+                    mainCode = data || '';
+                    if (noteMatch) {
+                        mainCode = data.replace(/\s*\(.*?\)/, '');
+                        toolNote.textContent = 'NOTE: ' + noteMatch[1];
+                        toolNote.style.display = 'inline-block';
+                    } else {
+                        toolNote.style.display = 'none';
+                    }
                 }
                 
                 lishiResult.textContent = mainCode;

@@ -1,0 +1,1254 @@
+diff --git a/app.html b/app.html
+index 78ee554..717c43d 100644
+--- a/app.html
++++ b/app.html
+@@ -18,7 +18,7 @@
+     <meta name="twitter:title" content="Get the SVA Lishi Picker App">
+     <meta name="twitter:description" content="Offline Lishi tool finder + DVLA lookup for Android — no internet required.">
+     <meta name="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     <script type="application/ld+json">
+     {
+         "@context": "https://schema.org",
+@@ -204,6 +204,6 @@
+             </div>
+         </div>
+     </footer>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/assets/css/styles.css b/assets/css/styles.css
+index 4d18e69..c7aaffa 100644
+--- a/assets/css/styles.css
++++ b/assets/css/styles.css
+@@ -2330,66 +2330,7 @@ body.preview-page .fade-text.hidden {
+     opacity: 0;
+ }
+ 
+-/* --- FLOATING WHATSAPP WIDGET --- */
+-body.preview-page .whatsapp-float-widget {
+-    position: fixed;
+-    bottom: 25px;
+-    right: 25px;
+-    z-index: 9999;
+-    text-decoration: none;
+-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-}
+-
+-body.preview-page .whatsapp-float-widget:hover {
+-    transform: scale(1.08);
+-}
+-
+-body.preview-page .whatsapp-avatar-wrapper {
+-    position: relative;
+-    width: 60px;
+-    height: 60px;
+-    border-radius: 50%;
+-    border: 2px solid #25D366;
+-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-    background-color: #111;
+-    overflow: hidden;
+-}
+-
+-body.preview-page .whatsapp-avatar {
+-    width: 100%;
+-    height: 100%;
+-    border-radius: 50%;
+-    object-fit: cover;
+-    display: block;
+-}
+-
+-body.preview-page .whatsapp-status-dot {
+-    position: absolute;
+-    bottom: 2px;
+-    right: 2px;
+-    width: 13px;
+-    height: 13px;
+-    background-color: #25D366;
+-    border: 2px solid #050505;
+-    border-radius: 50%;
+-    animation: pulse-green 2s infinite;
+-}
+-
+-@keyframes pulse-green {
+-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-    70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-}
+-
+ @media (max-width: 600px) {
+-    body.preview-page .whatsapp-float-widget {
+-        bottom: 20px;
+-        right: 20px;
+-    }
+-    body.preview-page .whatsapp-avatar-wrapper {
+-        width: 56px;
+-        height: 56px;
+-    }
+     body.preview-page .dynamic-headline-container {
+         text-align: center;
+         justify-content: center;
+@@ -2989,6 +2930,35 @@ body.service-page .svc-subhead {
+ .floating-cta a:hover { transform: translateY(-2px); }
+ .floating-cta .fc-call { background: #2ecc71; color: #000; }
+ .floating-cta .fc-wa { background: #25d366; color: #0b141a; }
++.floating-cta .fc-wa-face {
++    position: relative;
++    display: block;
++    width: 58px;
++    height: 58px;
++    padding: 0;
++    border-radius: 50%;
++    background: #25d366;
++    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
++}
++.floating-cta .fc-wa-face img {
++    display: block;
++    width: 100%;
++    height: 100%;
++    object-fit: cover;
++    border-radius: 50%;
++    border: 3px solid #25d366;
++    background: #fff;
++}
++.floating-cta .fc-status {
++    position: absolute;
++    right: -1px;
++    bottom: -1px;
++    width: 14px;
++    height: 14px;
++    border-radius: 50%;
++    background: #25d366;
++    border: 2px solid #fff;
++}
+ @media (min-width: 768px) {
+     .floating-cta { flex-direction: row; align-items: center; }
+ }
+diff --git a/gemini.html b/gemini.html
+index 334fd4a..cf6543a 100644
+--- a/gemini.html
++++ b/gemini.html
+@@ -364,30 +364,6 @@
+             color: #ffffff;
+         }
+ 
+-        /* Floating WhatsApp Button */
+-        .whatsapp-float {
+-            position: fixed;
+-            bottom: 25px;
+-            right: 25px;
+-            background-color: #25d366;
+-            color: #ffffff;
+-            width: 58px;
+-            height: 58px;
+-            border-radius: 50%;
+-            display: flex;
+-            align-items: center;
+-            justify-content: center;
+-            font-size: 1.8rem;
+-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+-            text-decoration: none;
+-            z-index: 1000;
+-            transition: transform 0.2s ease;
+-        }
+-
+-        .whatsapp-float:hover {
+-            transform: scale(1.08);
+-        }
+-
+         /* Mobile Breakpoints */
+         @media (max-width: 600px) {
+             .hero {
+@@ -539,16 +515,7 @@
+         </div>
+     </footer>
+ 
+-    <!-- FLOATING WHATSAPP BUTTON -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float" 
+-       target="_blank" 
+-       rel="noopener noreferrer"
+-       aria-label="Chat on WhatsApp">
+-        💬
+-    </a>
+-
+-<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp" style="position:relative;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.45);background:#25d366;"><img src="assets/images/profile.png" alt="Chat on WhatsApp" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #25d366;background:#fff;"><span style="position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#25d366;border:2px solid #fff;"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/index.html b/index.html
+index 6b94409..e718925 100644
+--- a/index.html
++++ b/index.html
+@@ -132,73 +132,6 @@
+             p { font-size: 1rem; }
+             body { background-size: 90%; } /* Makes the logo a bit more visible on mobile */
+         }
+-        /* Floating WhatsApp Widget */
+-.whatsapp-float-widget {
+-    position: fixed;
+-    bottom: 25px;
+-    right: 25px;
+-    z-index: 9999;
+-    text-decoration: none;
+-    transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-}
+-
+-.whatsapp-float-widget:hover {
+-    transform: scale(1.1);
+-}
+-
+-.whatsapp-avatar-wrapper {
+-    position: relative;
+-    width: 65px;
+-    height: 65px;
+-    border-radius: 50%;
+-    border: 2px solid #25D366; /* SVA Green accent */
+-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-    background-color: #111;
+-}
+-
+-.whatsapp-avatar {
+-    width: 100%;
+-    height: 100%;
+-    border-radius: 50%;
+-    object-fit: cover;
+-    display: block;
+-}
+-
+-/* Green "Online" Indicator Badge */
+-.whatsapp-status-dot {
+-    position: absolute;
+-    bottom: 2px;
+-    right: 2px;
+-    width: 16px;
+-    height: 16px;
+-    background-color: #25D366;
+-    border: 3px solid #050505; /* Matches site dark background */
+-    border-radius: 50%;
+-}
+-
+-/* Optional subtle pulse animation for the online dot */
+-@keyframes pulse-green {
+-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-    70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-}
+-
+-.whatsapp-status-dot {
+-    animation: pulse-green 2s infinite;
+-}
+-
+-/* Mobile Tweak: Keep it off screen edge */
+-@media (max-width: 600px) {
+-    .whatsapp-float-widget {
+-        bottom: 20px;
+-        right: 20px;
+-    }
+-    .whatsapp-avatar-wrapper {
+-        width: 58px;
+-        height: 58px;
+-    }
+-}
+-
+     </style>
+ </head>
+ <body>
+@@ -222,6 +155,6 @@
+ 
+     </div>
+ 
+-<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp" style="position:relative;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.45);background:#25d366;"><img src="assets/images/profile.png" alt="Chat on WhatsApp" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #25d366;background:#fff;"><span style="position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#25d366;border:2px solid #fff;"></span></a></div>
+ </body>
+ </html>
+diff --git a/legal.html b/legal.html
+index 7346643..4abae86 100644
+--- a/legal.html
++++ b/legal.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Privacy Policy & Terms of Service | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     <style>
+         body {
+             background-color: #0d0d0d;
+@@ -247,6 +247,6 @@
+         </div>
+     </footer>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+diff --git a/lishi-finder.html b/lishi-finder.html
+index 609e26e..e2f8671 100644
+--- a/lishi-finder.html
++++ b/lishi-finder.html
+@@ -478,6 +478,6 @@
+             resultBox.style.display = 'none';
+         });
+     </script>
+-<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp" style="position:relative;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.45);background:#25d366;"><img src="assets/images/profile.png" alt="Chat on WhatsApp" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #25d366;background:#fff;"><span style="position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#25d366;border:2px solid #fff;"></span></a></div>
+ </body>
+ </html>
+diff --git a/locksmith-market-drayton.html b/locksmith-market-drayton.html
+index a53cb37..a45901e 100644
+--- a/locksmith-market-drayton.html
++++ b/locksmith-market-drayton.html
+@@ -22,7 +22,7 @@
+     }
+     </script>
+     
+-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     <style>
+         nav .header-cta {
+             background-color: #e67e22; /* Fallback accent orange */
+@@ -42,65 +42,7 @@
+                 font-size: 0.85rem;
+             }
+         }
+-                /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 30px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.1);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 80px;
+-            height: 80px;
+-            border-radius: 50%;
+-            border: 2px solid #25D366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-            background-color: #111;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            border-radius: 50%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 16px;
+-            height: 16px;
+-            background-color: #25D366;
+-            border: 3px solid #050505; 
+-            border-radius: 50%;
+-            animation: pulse-green 2s infinite;
+-        }
+-
+-        @keyframes pulse-green {
+-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-        }
+-
+         @media (max-width: 600px) {
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 68px;
+-                height: 68px;
+-            }
+             .dynamic-headline-container {
+                 text-align: center;
+                 justify-content: center;
+@@ -296,17 +238,6 @@
+             </div>
+         </div>
+     </footer>
+-    <!-- Floating WhatsApp Widget -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+     <script src="assets/js/forms.js"></script>
+     <script>
+ document.addEventListener("DOMContentLoaded", function() {
+@@ -363,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-oswestry.html b/locksmith-oswestry.html
+index b3e6ee3..03df652 100644
+--- a/locksmith-oswestry.html
++++ b/locksmith-oswestry.html
+@@ -21,7 +21,7 @@
+       "url": "https://sva-locksmiths.co.uk"
+     }
+     </script>
+-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+ 
+     <style>
+         nav .header-cta {
+@@ -42,65 +42,7 @@
+                 font-size: 0.85rem;
+             }
+         }
+-                /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 30px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.1);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 80px;
+-            height: 80px;
+-            border-radius: 50%;
+-            border: 2px solid #25D366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-            background-color: #111;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            border-radius: 50%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 16px;
+-            height: 16px;
+-            background-color: #25D366;
+-            border: 3px solid #050505; 
+-            border-radius: 50%;
+-            animation: pulse-green 2s infinite;
+-        }
+-
+-        @keyframes pulse-green {
+-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-        }
+-
+         @media (max-width: 600px) {
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 68px;
+-                height: 68px;
+-            }
+             .dynamic-headline-container {
+                 text-align: center;
+                 justify-content: center;
+@@ -296,17 +238,6 @@
+             </div>
+         </div>
+     </footer>
+-    <!-- Floating WhatsApp Widget -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+     <script src="assets/js/forms.js"></script>
+     <script>
+ document.addEventListener("DOMContentLoaded", function() {
+@@ -363,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-shawbury.html b/locksmith-shawbury.html
+index c4a6cb9..70a1e7b 100644
+--- a/locksmith-shawbury.html
++++ b/locksmith-shawbury.html
+@@ -22,7 +22,7 @@
+     }
+     </script>
+     
+-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+ 
+     <style>
+         nav .header-cta {
+@@ -43,65 +43,7 @@
+                 font-size: 0.85rem;
+             }
+         }
+-                /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 30px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.1);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 80px;
+-            height: 80px;
+-            border-radius: 50%;
+-            border: 2px solid #25D366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-            background-color: #111;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            border-radius: 50%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 16px;
+-            height: 16px;
+-            background-color: #25D366;
+-            border: 3px solid #050505; 
+-            border-radius: 50%;
+-            animation: pulse-green 2s infinite;
+-        }
+-
+-        @keyframes pulse-green {
+-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-        }
+-
+         @media (max-width: 600px) {
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 68px;
+-                height: 68px;
+-            }
+             .dynamic-headline-container {
+                 text-align: center;
+                 justify-content: center;
+@@ -333,17 +275,6 @@
+             </div>
+         </div>
+     </footer>
+-    <!-- Floating WhatsApp Widget -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+     <script src="assets/js/forms.js"></script>
+     <script>
+ document.addEventListener("DOMContentLoaded", function() {
+@@ -400,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-shrewsbury.html b/locksmith-shrewsbury.html
+index 93fe519..d2ab5a1 100644
+--- a/locksmith-shrewsbury.html
++++ b/locksmith-shrewsbury.html
+@@ -22,7 +22,7 @@
+     }
+     </script>
+     
+-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+ 
+     <style>
+         nav .header-cta {
+@@ -43,65 +43,7 @@
+                 font-size: 0.85rem;
+             }
+         }
+-                /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 30px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.1);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 80px;
+-            height: 80px;
+-            border-radius: 50%;
+-            border: 2px solid #25D366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-            background-color: #111;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            border-radius: 50%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 16px;
+-            height: 16px;
+-            background-color: #25D366;
+-            border: 3px solid #050505; 
+-            border-radius: 50%;
+-            animation: pulse-green 2s infinite;
+-        }
+-
+-        @keyframes pulse-green {
+-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-        }
+-
+         @media (max-width: 600px) {
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 68px;
+-                height: 68px;
+-            }
+             .dynamic-headline-container {
+                 text-align: center;
+                 justify-content: center;
+@@ -296,17 +238,6 @@
+             </div>
+         </div>
+     </footer>
+-    <!-- Floating WhatsApp Widget -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+     <script src="assets/js/forms.js"></script>
+     <script>
+ document.addEventListener("DOMContentLoaded", function() {
+@@ -363,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-telford.html b/locksmith-telford.html
+index c8c1f4d..28c2468 100644
+--- a/locksmith-telford.html
++++ b/locksmith-telford.html
+@@ -22,7 +22,7 @@
+     }
+     </script>
+     
+-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+ 
+     <style>
+         nav .header-cta {
+@@ -43,65 +43,7 @@
+                 font-size: 0.85rem;
+             }
+         }
+-                /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 30px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.1);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 80px;
+-            height: 80px;
+-            border-radius: 50%;
+-            border: 2px solid #25D366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-            background-color: #111;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            border-radius: 50%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 16px;
+-            height: 16px;
+-            background-color: #25D366;
+-            border: 3px solid #050505; 
+-            border-radius: 50%;
+-            animation: pulse-green 2s infinite;
+-        }
+-
+-        @keyframes pulse-green {
+-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-        }
+-
+         @media (max-width: 600px) {
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 68px;
+-                height: 68px;
+-            }
+             .dynamic-headline-container {
+                 text-align: center;
+                 justify-content: center;
+@@ -296,17 +238,6 @@
+             </div>
+         </div>
+     </footer>
+-    <!-- Floating WhatsApp Widget -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+     <script src="assets/js/forms.js"></script>
+     <script>
+ document.addEventListener("DOMContentLoaded", function() {
+@@ -363,7 +294,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/locksmith-whitchurch.html b/locksmith-whitchurch.html
+index 7d19390..bf101e0 100644
+--- a/locksmith-whitchurch.html
++++ b/locksmith-whitchurch.html
+@@ -22,7 +22,7 @@
+     }
+     </script>
+     
+-    <link rel="stylesheet" href="assets/css/styles.css?=v1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+ 
+     <style>
+         nav .header-cta {
+@@ -43,65 +43,7 @@
+                 font-size: 0.85rem;
+             }
+         }
+-                /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 30px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.1);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 80px;
+-            height: 80px;
+-            border-radius: 50%;
+-            border: 2px solid #25D366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+-            background-color: #111;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            border-radius: 50%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 16px;
+-            height: 16px;
+-            background-color: #25D366;
+-            border: 3px solid #050505; 
+-            border-radius: 50%;
+-            animation: pulse-green 2s infinite;
+-        }
+-
+-        @keyframes pulse-green {
+-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+-            70% { box-shadow: 0 0 0 8px rgba(37, 211, 102, 0); }
+-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+-        }
+-
+         @media (max-width: 600px) {
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 68px;
+-                height: 68px;
+-            }
+             .dynamic-headline-container {
+                 text-align: center;
+                 justify-content: center;
+@@ -298,17 +240,6 @@
+             </div>
+         </div>
+     </footer>
+-    <!-- Floating WhatsApp Widget -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+     <script src="assets/js/forms.js"></script>
+     <script>
+ document.addEventListener("DOMContentLoaded", function() {
+@@ -365,7 +296,7 @@ document.addEventListener("DOMContentLoaded", function() {
+ });
+ </script>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/offline.html b/offline.html
+index 10c1dca..7ad6fd1 100644
+--- a/offline.html
++++ b/offline.html
+@@ -5,7 +5,7 @@
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Offline | SVA Locksmith</title>
+     <!-- We still try to load your main stylesheet -->
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.2">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     
+     <!-- Emergency Inline Styles (Failsafe) -->
+     <style>
+@@ -61,6 +61,6 @@
+     <!-- Swap this placeholder number with your actual dispatch number -->
+     <a href="tel:07123123456" class="emergency-btn">📞 Call Dispatch Now</a>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+diff --git a/preview.html b/preview.html
+index 08914a8..f117e80 100644
+--- a/preview.html
++++ b/preview.html
+@@ -74,7 +74,7 @@
+ 
+ 
+     <!-- Core Stylesheet & Google Fonts -->
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+@@ -590,19 +590,6 @@
+     </footer>
+ 
+ 
+-    <!-- FLOATING WHATSAPP BUTTON -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img loading="lazy" src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+-
+-
+ 
+ <script>
+     // Initialize Firebase
+@@ -882,6 +869,6 @@
+     </script>
+     <!-- Core UI Interactions (FAQ accordion, video overlay, slider) -->
+     <script src="assets/js/forms.js"></script>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+diff --git a/pricing.html b/pricing.html
+index d133d06..e368ac6 100644
+--- a/pricing.html
++++ b/pricing.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Pricing | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     <style>
+         :root {
+             --sva-green: #2ecc71;
+@@ -384,6 +384,6 @@
+         </div>
+     </footer>
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+diff --git a/services/ac-regassing.html b/services/ac-regassing.html
+index 04a31ba..a2b39cd 100644
+--- a/services/ac-regassing.html
++++ b/services/ac-regassing.html
+@@ -38,7 +38,7 @@
+         "areaServed": { "@type": "Place", "name": "Shropshire" }
+     }
+     </script>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.6">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -201,6 +201,6 @@
+             </div>
+         </div>
+     </footer>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/services/all-keys-lost.html b/services/all-keys-lost.html
+index 965b14d..da886be 100644
+--- a/services/all-keys-lost.html
++++ b/services/all-keys-lost.html
+@@ -45,7 +45,7 @@
+ <!-- THIS LINE: Firebase Firestore -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+ 
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.6">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -528,7 +528,7 @@ const specificStripeUrl = stripeMakeLinks[make] || stripeMakeLinks["Default"];
+ 
+ 
+ 
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+ 
+diff --git a/services/emergency-lockout.html b/services/emergency-lockout.html
+index 884e3ec..cdc6ccb 100644
+--- a/services/emergency-lockout.html
++++ b/services/emergency-lockout.html
+@@ -38,7 +38,7 @@
+         "areaServed": { "@type": "Place", "name": "Shropshire" }
+     }
+     </script>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.6">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -178,6 +178,6 @@
+             </div>
+         </div>
+     </footer>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/services/login.html b/services/login.html
+index 71e2161..8f3b470 100644
+--- a/services/login.html
++++ b/services/login.html
+@@ -4,7 +4,7 @@
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+     <title>Pro Trade Portal | Shropshire Vehicle Access</title>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.4">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.6">
+     
+ <!-- Firebase App (The core Firebase SDK) -->
+ <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+diff --git a/services/spare-keys.html b/services/spare-keys.html
+index a66ddd4..b4e4e28 100644
+--- a/services/spare-keys.html
++++ b/services/spare-keys.html
+@@ -38,7 +38,7 @@
+         "areaServed": { "@type": "Place", "name": "Shropshire" }
+     }
+     </script>
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.6">
+ </head>
+ <body class="service-page">
+     <div class="svc-banner">⚠️ Currently Under Training – Services &amp; Dispatch Not Active Yet</div>
+@@ -164,6 +164,6 @@
+             </div>
+         </div>
+     </footer>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/services/van-security.html b/services/van-security.html
+index c4397f9..fd3034d 100644
+--- a/services/van-security.html
++++ b/services/van-security.html
+@@ -18,7 +18,7 @@
+     <meta name="twitter:title" content="Van Security Systems &amp; Upgrades | SVA Locksmiths">
+     <meta name="twitter:description" content="Protect your commercial fleet with deadlocks, slamlocks and shielding plates across Shropshire.">
+     <meta name="twitter:image" content="https://sva-locksmiths.co.uk/assets/images/locksmith-at-work.png">
+-    <link rel="stylesheet" href="../assets/css/styles.css?v=1.5">
++    <link rel="stylesheet" href="../assets/css/styles.css?v=1.6">
+     <script type="application/ld+json">
+     {
+         "@context": "https://schema.org",
+@@ -180,6 +180,6 @@
+             </div>
+         </div>
+     </footer>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/sva-app.html b/sva-app.html
+index 286971f..deb703c 100644
+--- a/sva-app.html
++++ b/sva-app.html
+@@ -7390,6 +7390,6 @@ const carDatabase = {
+         }
+ 
+     </script>
+-<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#0b141a;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">WhatsApp</a></div>
++<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp" style="position:relative;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.45);background:#25d366;"><img src="assets/images/profile.png" alt="Chat on WhatsApp" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #25d366;background:#fff;"><span style="position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#25d366;border:2px solid #fff;"></span></a></div>
+ </body>
+ </html>
+\ No newline at end of file
+diff --git a/who-am-i.html b/who-am-i.html
+index 044a346..323cb48 100644
+--- a/who-am-i.html
++++ b/who-am-i.html
+@@ -12,7 +12,7 @@
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+     
+     <!-- Main Stylesheet -->
+-    <link rel="stylesheet" href="assets/css/styles.css?v=1.1">
++    <link rel="stylesheet" href="assets/css/styles.css?v=1.6">
+     
+     <style>
+         /* --- WHO AM I PAGE SPECIFIC LAYOUTS --- */
+@@ -304,62 +304,11 @@
+             color: #2ecc71 !important;
+         }
+ 
+-        /* --- FLOATING WHATSAPP WIDGET --- */
+-        .whatsapp-float-widget {
+-            position: fixed;
+-            bottom: 25px;
+-            right: 25px;
+-            z-index: 9999;
+-            text-decoration: none;
+-            transition: transform 0.2s ease;
+-        }
+-
+-        .whatsapp-float-widget:hover {
+-            transform: scale(1.08);
+-        }
+-
+-        .whatsapp-avatar-wrapper {
+-            position: relative;
+-            width: 60px;
+-            height: 60px;
+-            border-radius: 50%;
+-            border: 2px solid #25d366;
+-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+-            background-color: #111316;
+-            overflow: hidden;
+-        }
+-
+-        .whatsapp-avatar {
+-            width: 100%;
+-            height: 100%;
+-            object-fit: cover;
+-            display: block;
+-        }
+-
+-        .whatsapp-status-dot {
+-            position: absolute;
+-            bottom: 2px;
+-            right: 2px;
+-            width: 13px;
+-            height: 13px;
+-            background-color: #2ecc71;
+-            border: 2px solid #050505;
+-            border-radius: 50%;
+-        }
+-
+         /* --- MOBILE BREAKPOINTS --- */
+         @media (max-width: 600px) {
+             .about-section {
+                 padding: 40px 5% 60px;
+             }
+-            .whatsapp-float-widget {
+-                bottom: 20px;
+-                right: 20px;
+-            }
+-            .whatsapp-avatar-wrapper {
+-                width: 56px;
+-                height: 56px;
+-            }
+         }
+     </style>
+ </head>
+@@ -501,20 +450,8 @@
+         </div>
+     </footer>
+ 
+-    <!-- FLOATING WHATSAPP WIDGET -->
+-    <a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." 
+-       class="whatsapp-float-widget" 
+-       target="_blank" 
+-       rel="noopener noreferrer" 
+-       aria-label="Chat with SVA Locksmiths on WhatsApp">
+-        <div class="whatsapp-avatar-wrapper">
+-            <img src="assets/images/profile.png" alt="SVA Locksmiths Support" class="whatsapp-avatar">
+-            <span class="whatsapp-status-dot"></span>
+-        </div>
+-    </a>
+-
+     <!-- SAFE SCRIPTS -->
+     <script src="assets/js/forms.js"></script>
+-<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa" href="https://wa.me/447123123456" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
++<div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+ </body>
+ </html>

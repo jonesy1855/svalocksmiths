@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SVA Locksmiths - Premier automotive locksmith and vehicle access services coming soon to Shropshire.">
+    <meta name="keywords" content="auto locksmith shropshire, vehicle locksmith, car key replacement, coming soon">
+    
+    <title>SVA Locksmiths | Automotive Access Services</title>
+
+    <style>
+        /* CSS Variables - Matching your brand palette */
+        :root {
+            --bg-black: #050505;
+            --text-main: #f4f4f4;
+            --text-muted: #888888;
+            --accent-green: #25D366; /* SVA signature green */
+            --accent-amber: #ff9900;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            /* The Watermark Background Setup */
+            background-color: var(--bg-black);
+            background-image: 
+                /* This gradient creates the "subdued" dark tint over the image */
+                linear-gradient(rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.68)), 
+                /* The actual logo image */
+                url('assets/images/logo.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            /* Adjust this percentage to make the logo larger or smaller in the background */
+            background-size: 60%; 
+            background-attachment: fixed;
+            
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Container Layout */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px 20px;
+            /* We make the container slightly transparent so the watermark shows through */
+            background: rgba(5, 5, 5, 0.6); 
+            border-top: 4px solid var(--accent-green);
+            border-radius: 4px;
+            /* Adds a soft shadow to lift the text off the background */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(2px); /* Gives a slight frosted glass effect */
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--accent-green);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(255, 153, 0, 0.1);
+            color: var(--accent-amber);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 153, 0, 0.3);
+            margin-bottom: 40px;
+        }
+
+        /* Footer / Contact */
+        .footer-note {
+            font-size: 0.9rem;
+            color: #777;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        .contact-link {
+            color: var(--accent-green);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1rem; }
+            p { font-size: 1rem; }
+            body { background-size: 90%; } /* Makes the logo a bit more visible on mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>SVA Locksmiths</h1>
+        <h2>Shropshire Vehicle Access</h2>
+        
+        <div class="status-badge">
+            <span style="display:inline-block; margin-right: 5px;">🚧</span> Site Under Construction
+        </div>
+
+        <p>We are currently building the digital infrastructure for Shropshire's premier mobile auto locksmith service.</p>
+        
+        <p>Premium non-destructive entry, transponder programming, and "All Keys Lost" solutions—coming soon to Shrewsbury, Telford, Market Drayton, and the surrounding rural areas.</p>
+
+        <div class="footer-note">
+            For operational enquiries or trade correspondence:<br>
+            <a href="mailto:info@svalocksmiths.co.uk" class="contact-link">info@svalocksmiths.co.uk</a>
+        </div>
+
+    </div>
+
+<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp" style="position:relative;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.45);background:#25d366;"><img src="assets/images/profile.png" alt="Chat on WhatsApp" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #25d366;background:#fff;"><span style="position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#25d366;border:2px solid #fff;"></span></a></div>
+</body>
+</html>

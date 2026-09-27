@@ -2,9 +2,9 @@ const carDatabase = {
     "Alfa Romeo": {
         "147": {
             "2000 - 2010": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID48 (Early) / ID46 (Late - PCF7946)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn) / XT27A Transponder",
@@ -13,17 +13,17 @@ const carDatabase = {
                 "access": "Remove lower dashboard cover.",
                 "risk": "MODERATE — Precoding required for ID46",
                 "protocol": "Read BSI EEPROM via OBD/bench for PIN and precode data. Precode transponder before programming.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
         "156": {
             "1997 - 2005": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID48 Megamos",
                 "xhorse": "VVDI XT27A Super Chip / XEFT01EN",
@@ -32,17 +32,17 @@ const carDatabase = {
                 "access": "Remove lower column shrouds.",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN read and key programming.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "159": {
             "2005 - 2011": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 PCF7941 (Slot Key / Smart Fob)",
                 "xhorse": "Dedicated Alfa 159 TEG Smart Slot Key / OEM Only",
@@ -52,17 +52,17 @@ const carDatabase = {
                 "access": "Dashboard insertion slot.",
                 "risk": "HIGH — Dealer Key Precoding",
                 "protocol": "Requires reading BSI for 6-byte component security to precode the dealer key before OBD learning.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
         "166": {
             "1998 - 2007": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID48 Megamos / ID44",
                 "xhorse": "VVDI XT27A Super Chip",
@@ -71,18 +71,18 @@ const carDatabase = {
                 "access": "Remove lower dash plastics.",
                 "risk": "LOW",
                 "protocol": "OBD programming or EEPROM cloning from Immo box.",
-                "acGas": "R134a", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Larger capacity."
             }
         },
-        "Giulia": { 
-            "2016+ (952)": { 
-                "lishi": "SIP22", 
+        "Giulia": {
+            "2016+ (952)": {
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
                 "xhorse": "XSFT01EN / Dedicated Alfa Giulia Smart Key",
                 "warning": "Check emergency blade concealed in smart key fob.",
@@ -91,17 +91,17 @@ const carDatabase = {
                 "access": "Remove passenger footwell kick panel trim.",
                 "risk": "MODERATE / HIGH — FCA Security Gateway (2018+)",
                 "protocol": "2018+ models require 12+8 Security Gateway bypass cable connected to BSI/SGW loom before OBD PIN read/programming.",
-                "acGas": "R1234yf", 
-                "acCap": "500g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "Giulietta": { 
-            "2010 - 2020": { 
-                "lishi": "SIP22", 
+        "Giulietta": {
+            "2010 - 2020": {
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7946 / PCF7936 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -110,17 +110,17 @@ const carDatabase = {
                 "access": "Remove lower dashboard fuse cover.",
                 "risk": "HIGH RISK — Precoding Transponder Required",
                 "protocol": "Read BSI EEPROM via bench/OBD to extract PIN and 6-byte component key. Precode ID46 transponder before OBD learning.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
         "MiTo": {
             "2008 - 2018": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7946 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -129,17 +129,17 @@ const carDatabase = {
                 "access": "Behind OBD port panel.",
                 "risk": "HIGH RISK — Precoding Required",
                 "protocol": "Read PIN and CS via OBD. Precode ID46 dealer key prior to programming.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Spider": {
             "2006 - 2010 (939)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 PCF7941 (Slot Key)",
                 "xhorse": "Dedicated Alfa Spider/Brera TEG Smart Slot Key / OEM Only",
@@ -149,17 +149,17 @@ const carDatabase = {
                 "access": "Insert fob into dash.",
                 "risk": "HIGH",
                 "protocol": "BSI read for CS and PIN to precode slot key.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Stelvio": {
             "2017+ (949)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
                 "xhorse": "XSFT01EN / Dedicated Alfa Stelvio Smart Key",
@@ -168,18 +168,18 @@ const carDatabase = {
                 "access": "FCA 12+8 cable required for 2018+.",
                 "risk": "HIGH — FCA SGW",
                 "protocol": "SGW bypass required. Read PIN and add smart key via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
-        "Tonale": { 
-            "2022+": { 
-                "lishi": "SIP22 / HU83", 
+        "Tonale": {
+            "2022+": {
+                "lishi": "SIP22 / HU83",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSFT01EN / XSKF21EN (Smart Key 4A)",
                 "warning": "Stellantis platform share.",
@@ -188,20 +188,19 @@ const carDatabase = {
                 "access": "Remove lower column trim.",
                 "risk": "HIGH — Stellantis Security Gateway",
                 "protocol": "Requires active SGW bypass or token for OBD key programming.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Hybrid/EV models use POE non-conductive oil."
             }
         }
     },
-
     "Audi": {
-        "A1": { 
-            "2010 - 2018 (8X - PQ25 Platform)": { 
-                "lishi": "HU66", 
+        "A1": {
+            "2010 - 2018 (8X - PQ25 Platform)": {
+                "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
                 "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN / XT27A Transponder",
@@ -210,16 +209,16 @@ const carDatabase = {
                 "access": "Remove cluster trim bezel and 2x T20 Torx retaining screws.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Standard OBD PIN/CS read and transponder precoding.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models transitioned to R1234yf."
             },
-            "2018+ (GB - MQB A0 Platform)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+            "2018+ (GB - MQB A0 Platform)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU162T", 
-                "ic": "Card 1412 / 1413", 
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
                 "warning": "⚠️ Side-cut wafers! Verify 9-cut (door) vs 10-cut ignition system.",
@@ -228,17 +227,17 @@ const carDatabase = {
                 "access": "Drop glovebox fully down past retention tabs.",
                 "risk": "HIGH RISK — MQB Sync Data Required",
                 "protocol": "Extract CS bytes via OBD/bench dump or sync calculation before generating dealer key.",
-                "acGas": "R1234yf", 
-                "acCap": "460g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "460g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "A3 / Q3": { 
-            "2003 - 2012 (A3 8P / Q3 8U Early)": { 
-                "lishi": "HU66", 
+        "A3": {
+            "2003 - 2012 (A3 8P / Q3 8U Early)": {
+                "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
                 "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN",
@@ -247,16 +246,16 @@ const carDatabase = {
                 "access": "Pull lower steering column shroud to expose cluster base screws.",
                 "risk": "MODERATE — CAN Instrument Cluster",
                 "protocol": "Read CS/PIN via OBD. Backup EEPROM before adding key.",
-                "acGas": "R134a", 
-                "acCap": "525g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "525g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2013 - 2020 (A3 8V / Q3 F3 - MQB Platform)": { 
-                "lishi": "HU66 / HU162T (9 / 10 Cut)", 
+            "2013 - 2020 (A3 8V / Q3 F3 - MQB Platform)": {
+                "lishi": "HU66 / HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66 / HU162T", 
-                "ic": "Card 813 / 1412", 
+                "silca": "HU66 / HU162T",
+                "ic": "Card 813 / 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
                 "warning": "⚠️ 2013-2014 transition: verify whether keyway is HU66 or HU162T laser profile.",
@@ -265,15 +264,15 @@ const carDatabase = {
                 "access": "Release 2x top glovebox tabs and lower assembly.",
                 "risk": "HIGH RISK — Johnson Controls / VDO Cluster Sync",
                 "protocol": "Extract 16-byte CS and PIN. 🛑 Johnson Controls clusters (2014-2017) cannot be read via OBD on AKL; requires bench dump or specialist token.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf. A3 e-tron hybrid requires POE oil."
             },
-            "2020+ (A3 8Y / Q3 Facelift - MQB Evo)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+            "2020+ (A3 8Y / Q3 Facelift - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key",
@@ -282,18 +281,72 @@ const carDatabase = {
                 "access": "Drop glovebox stops.",
                 "risk": "HIGH — VAG Security Gateway (SFD)",
                 "protocol": "Requires SFD unlock token / online server authorization for OBD programming.",
-                "acGas": "R1234yf", 
-                "acCap": "480g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard. TFSI e hybrid takes POE oil."
             }
         },
-        "A4 / A5 / Q5": { 
-            "2007 - 2015 (B8 Platform - 8K / 8T / 8R)": { 
-                "lishi": "HU66", 
+        "Q3": {
+            "2003 - 2012 (A3 8P / Q3 8U Early)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48)",
+                "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN",
+                "module": "Instrument Cluster (VDO / Micronas)",
+                "location": "Main Dashboard Binnacle.",
+                "access": "Pull lower steering column shroud to expose cluster base screws.",
+                "risk": "MODERATE — CAN Instrument Cluster",
+                "protocol": "Read CS/PIN via OBD. Backup EEPROM before adding key.",
+                "acGas": "R134a",
+                "acCap": "525g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2013 - 2020 (A3 8V / Q3 F3 - MQB Platform)": {
+                "lishi": "HU66 / HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
-                "ic": "Card 813", 
+                "silca": "HU66 / HU162T",
+                "ic": "Card 813 / 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
+                "warning": "⚠️ 2013-2014 transition: verify whether keyway is HU66 or HU162T laser profile.",
+                "module": "MQB Instrument Cluster & KESSY Module",
+                "location": "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                "access": "Release 2x top glovebox tabs and lower assembly.",
+                "risk": "HIGH RISK — Johnson Controls / VDO Cluster Sync",
+                "protocol": "Extract 16-byte CS and PIN. 🛑 Johnson Controls clusters (2014-2017) cannot be read via OBD on AKL; requires bench dump or specialist token.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf. A3 e-tron hybrid requires POE oil."
+            },
+            "2020+ (A3 8Y / Q3 Facelift - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "VAG Megamos AES / 4A (MQB-Evo)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key",
+                "module": "MQB Evo BCM & Gateway",
+                "location": "Behind glovebox assembly / driver footwell.",
+                "access": "Drop glovebox stops.",
+                "risk": "HIGH — VAG Security Gateway (SFD)",
+                "protocol": "Requires SFD unlock token / online server authorization for OBD programming.",
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. TFSI e hybrid takes POE oil."
+            }
+        },
+        "A4": {
+            "2007 - 2015 (B8 Platform - 8K / 8T / 8R)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
                 "chip": "8E / Megamos 48 (BCM2 Slot Key)",
                 "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3-Btn 868MHz/433MHz) / Dedicated B8 Slot Key",
                 "warning": "Smart slot key fob. Emergency blade concealed inside remote body.",
@@ -302,16 +355,16 @@ const carDatabase = {
                 "access": "Remove boot floor cover. Unclip O/S/R side carpet access door. BCM2 held by 2x plastic tabs and 10mm earth stud. Tools: Trim tool, 10mm socket.",
                 "risk": "HIGH RISK — Encrypted BCM2 (Data Corruption Hazard)",
                 "protocol": "Check BCM2 part number & MCU (D70F3379 / D70F3634). Unlocked versions read via OBD. Locked versions (2013+) require bench read via programmer (IM608/VVDI) to extract Immo Data before generating dealer key.",
-                "acGas": "R134a", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "3-zone climate models take 650g."
             },
-            "2016+ (B9 Platform - 8W / F5 / FY - MLB Evo)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+            "2016+ (B9 Platform - 8W / F5 / FY - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
-                "ic": "Card 1412", 
+                "silca": "HU162T",
+                "ic": "Card 1412",
                 "chip": "MLB Evo AES Smart Proximity",
                 "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
                 "warning": "⚠️ MLB Evo Platform. 9-Cut or 10-Cut side-wafer pick required.",
@@ -320,17 +373,93 @@ const carDatabase = {
                 "access": "Release O/S/R boot lining clips. Multi-plug BCM2 unit.",
                 "risk": "HIGH RISK — Online Dealer Server Sync Required",
                 "protocol": "Requires VAG dealer server calculation or bench programmer sync data calculation.",
-                "acGas": "R1234yf", 
-                "acCap": "580g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "580g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. PHEV models require POE oil."
+            }
+        },
+        "A5": {
+            "2007 - 2015 (B8 Platform - 8K / 8T / 8R)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "8E / Megamos 48 (BCM2 Slot Key)",
+                "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3-Btn 868MHz/433MHz) / Dedicated B8 Slot Key",
+                "warning": "Smart slot key fob. Emergency blade concealed inside remote body.",
+                "module": "BCM2 (Body Control Module 2)",
+                "location": "O/S/R Boot Quarter Panel (Driver's side rear boot) — behind carpet lining near auxiliary fuse box.",
+                "access": "Remove boot floor cover. Unclip O/S/R side carpet access door. BCM2 held by 2x plastic tabs and 10mm earth stud. Tools: Trim tool, 10mm socket.",
+                "risk": "HIGH RISK — Encrypted BCM2 (Data Corruption Hazard)",
+                "protocol": "Check BCM2 part number & MCU (D70F3379 / D70F3634). Unlocked versions read via OBD. Locked versions (2013+) require bench read via programmer (IM608/VVDI) to extract Immo Data before generating dealer key.",
+                "acGas": "R134a",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "3-zone climate models take 650g."
+            },
+            "2016+ (B9 Platform - 8W / F5 / FY - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MLB Evo AES Smart Proximity",
+                "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
+                "warning": "⚠️ MLB Evo Platform. 9-Cut or 10-Cut side-wafer pick required.",
+                "module": "MLB Evo BCM2 / Immo Gateway",
+                "location": "O/S/R Boot Quarter Panel behind side carpeting trim.",
+                "access": "Release O/S/R boot lining clips. Multi-plug BCM2 unit.",
+                "risk": "HIGH RISK — Online Dealer Server Sync Required",
+                "protocol": "Requires VAG dealer server calculation or bench programmer sync data calculation.",
+                "acGas": "R1234yf",
+                "acCap": "580g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. PHEV models require POE oil."
+            }
+        },
+        "Q5": {
+            "2007 - 2015 (B8 Platform - 8K / 8T / 8R)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "8E / Megamos 48 (BCM2 Slot Key)",
+                "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3-Btn 868MHz/433MHz) / Dedicated B8 Slot Key",
+                "warning": "Smart slot key fob. Emergency blade concealed inside remote body.",
+                "module": "BCM2 (Body Control Module 2)",
+                "location": "O/S/R Boot Quarter Panel (Driver's side rear boot) — behind carpet lining near auxiliary fuse box.",
+                "access": "Remove boot floor cover. Unclip O/S/R side carpet access door. BCM2 held by 2x plastic tabs and 10mm earth stud. Tools: Trim tool, 10mm socket.",
+                "risk": "HIGH RISK — Encrypted BCM2 (Data Corruption Hazard)",
+                "protocol": "Check BCM2 part number & MCU (D70F3379 / D70F3634). Unlocked versions read via OBD. Locked versions (2013+) require bench read via programmer (IM608/VVDI) to extract Immo Data before generating dealer key.",
+                "acGas": "R134a",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "3-zone climate models take 650g."
+            },
+            "2016+ (B9 Platform - 8W / F5 / FY - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MLB Evo AES Smart Proximity",
+                "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
+                "warning": "⚠️ MLB Evo Platform. 9-Cut or 10-Cut side-wafer pick required.",
+                "module": "MLB Evo BCM2 / Immo Gateway",
+                "location": "O/S/R Boot Quarter Panel behind side carpeting trim.",
+                "access": "Release O/S/R boot lining clips. Multi-plug BCM2 unit.",
+                "risk": "HIGH RISK — Online Dealer Server Sync Required",
+                "protocol": "Requires VAG dealer server calculation or bench programmer sync data calculation.",
+                "acGas": "R1234yf",
+                "acCap": "580g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard. PHEV models require POE oil."
             }
         },
         "RS Series (RS3/RS4/RS5/RS6)": {
             "2015+ (MQB / MLB Evo)": {
-                "lishi": "HU162T (8/9/10 Cut)", 
+                "lishi": "HU162T (8/9/10 Cut)",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Varies",
                 "chip": "Megamos AES (MQB) / HITAG PRO (MLB)",
                 "xhorse": "XSMQB1EN (MQB / RS3) / XSADJ1GL (MLB / RS4/RS5/RS6) / OEM Dealer Key",
@@ -340,17 +469,17 @@ const carDatabase = {
                 "access": "Depends on generation (MQB via dash cluster, MLB via BCM2).",
                 "risk": "EXTREME — Sync Data Required",
                 "protocol": "Requires dealer sync data or advanced bench reads for AKL. Add key possible if original key present and sync data retrievable.",
-                "acGas": "R1234yf", 
-                "acCap": "Varies 500-700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "Varies 500-700g",
+                "acOil": "PAG 46",
                 "acNote": "Always check under hood sticker."
             }
         },
         "TT": {
             "2015 - 2023 (Mk3 / 8S)": {
-                "lishi": "HU162T (8 or 9 Cut)", 
+                "lishi": "HU162T (8 or 9 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1445",
                 "chip": "Megamos AES (MQB Smart Key)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn)",
@@ -359,17 +488,17 @@ const carDatabase = {
                 "access": "Standard OBD.",
                 "risk": "HIGH",
                 "protocol": "MQB platform. Immo data required for dealer key prep.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Virtual cockpit specific module setup."
             }
         },
         "R8": {
             "2015+ (Type 4S)": {
-                "lishi": "HU162T (9/10 Cut)", 
+                "lishi": "HU162T (9/10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1445",
                 "chip": "Megamos AES / Smart Key",
                 "xhorse": "XSMQB1EN / Dedicated R8 Smart Key / OEM Dealer Key Only",
@@ -378,17 +507,17 @@ const carDatabase = {
                 "access": "Complex access, mostly OBD for add key.",
                 "risk": "EXTREME",
                 "protocol": "Advanced programming. Online token or sync data calculation usually required for AKL.",
-                "acGas": "R1234yf", 
-                "acCap": "800g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "800g",
+                "acOil": "PAG 46",
                 "acNote": "Supercar AC capacities vary."
             }
         },
-        "A6 / A7 / A8 / Q7": { 
-            "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": { 
-                "lishi": "HU66", 
+        "A6": {
+            "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": {
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "ID46 / Megamos 13 (KESSY / J518)",
                 "xhorse": "XEVW01EN (Super Remote Flip) / Dedicated Audi C6/Q7 Smart Fob",
@@ -397,15 +526,15 @@ const carDatabase = {
                 "access": "Q7: Unbolt seat tracks (4x M10 Spline) and tip seat back.",
                 "risk": "MODERATE / HIGH — 93C86 EEPROM / 1L59W MCU Dump Needed",
                 "protocol": "Bench dump required on AKL to extract 7-byte CS and PIN.",
-                "acGas": "R134a", 
-                "acCap": "700g - 850g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g - 850g",
+                "acOil": "PAG 46",
                 "acNote": "Q7 4-zone rear climate takes 1050g."
             },
-            "2011 - 2018 (C7 / 4G / 4H)": { 
-                "lishi": "HU66", 
+            "2011 - 2018 (C7 / 4G / 4H)": {
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 / PCFM (BCM2)",
                 "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3/4-Btn)",
@@ -414,16 +543,16 @@ const carDatabase = {
                 "access": "Remove boot side lining. Unplug 5x multi-pin connectors from BCM2 housing.",
                 "risk": "HIGH RISK — ELV / Engine ECU Sync Required",
                 "protocol": "Extract BCM2 Immo Data on bench via MCU dump. Requires 5th/6th byte sync or working key dump to calculate 12-byte CS. Program dealer key via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "580g - 650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g - 650g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
-            "2018+ (C8 / 4M / D5 - MLB Evo)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+            "2018+ (C8 / 4M / D5 - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
-                "ic": "Card 1412", 
+                "silca": "HU162T",
+                "ic": "Card 1412",
                 "chip": "MLB Evo AES Smart Proximity",
                 "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
                 "warning": "MLB Evo security architecture across all C8/4M models.",
@@ -432,15 +561,175 @@ const carDatabase = {
                 "access": "Release boot trim clips.",
                 "risk": "HIGH RISK — Online Server Authorization",
                 "protocol": "Requires active VAG server session or specialist bench programmer calculation.",
-                "acGas": "R1234yf", 
-                "acCap": "620g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "620g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. PHEV hybrids take POE oil."
+            }
+        },
+        "A7": {
+            "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "ID46 / Megamos 13 (KESSY / J518)",
+                "xhorse": "XEVW01EN (Super Remote Flip) / Dedicated Audi C6/Q7 Smart Fob",
+                "module": "EZS / KESSY OR Steering Column Lock (J518)",
+                "location": "J518: Bolted to steering column. Q7 KESSY: Under driver's seat floor carpet.",
+                "access": "Q7: Unbolt seat tracks (4x M10 Spline) and tip seat back.",
+                "risk": "MODERATE / HIGH — 93C86 EEPROM / 1L59W MCU Dump Needed",
+                "protocol": "Bench dump required on AKL to extract 7-byte CS and PIN.",
+                "acGas": "R134a",
+                "acCap": "700g - 850g",
+                "acOil": "PAG 46",
+                "acNote": "Q7 4-zone rear climate takes 1050g."
+            },
+            "2011 - 2018 (C7 / 4G / 4H)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 / PCFM (BCM2)",
+                "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3/4-Btn)",
+                "module": "BCM2 (Body Control Module 2)",
+                "location": "O/S/R Boot Quarter Panel behind carpet side trim.",
+                "access": "Remove boot side lining. Unplug 5x multi-pin connectors from BCM2 housing.",
+                "risk": "HIGH RISK — ELV / Engine ECU Sync Required",
+                "protocol": "Extract BCM2 Immo Data on bench via MCU dump. Requires 5th/6th byte sync or working key dump to calculate 12-byte CS. Program dealer key via OBD.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g - 650g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2018+ (C8 / 4M / D5 - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MLB Evo AES Smart Proximity",
+                "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
+                "warning": "MLB Evo security architecture across all C8/4M models.",
+                "module": "MLB Evo BCM2 & Gateway",
+                "location": "O/S/R Boot Quarter Panel.",
+                "access": "Release boot trim clips.",
+                "risk": "HIGH RISK — Online Server Authorization",
+                "protocol": "Requires active VAG server session or specialist bench programmer calculation.",
+                "acGas": "R1234yf",
+                "acCap": "620g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. PHEV hybrids take POE oil."
+            }
+        },
+        "A8": {
+            "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "ID46 / Megamos 13 (KESSY / J518)",
+                "xhorse": "XEVW01EN (Super Remote Flip) / Dedicated Audi C6/Q7 Smart Fob",
+                "module": "EZS / KESSY OR Steering Column Lock (J518)",
+                "location": "J518: Bolted to steering column. Q7 KESSY: Under driver's seat floor carpet.",
+                "access": "Q7: Unbolt seat tracks (4x M10 Spline) and tip seat back.",
+                "risk": "MODERATE / HIGH — 93C86 EEPROM / 1L59W MCU Dump Needed",
+                "protocol": "Bench dump required on AKL to extract 7-byte CS and PIN.",
+                "acGas": "R134a",
+                "acCap": "700g - 850g",
+                "acOil": "PAG 46",
+                "acNote": "Q7 4-zone rear climate takes 1050g."
+            },
+            "2011 - 2018 (C7 / 4G / 4H)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 / PCFM (BCM2)",
+                "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3/4-Btn)",
+                "module": "BCM2 (Body Control Module 2)",
+                "location": "O/S/R Boot Quarter Panel behind carpet side trim.",
+                "access": "Remove boot side lining. Unplug 5x multi-pin connectors from BCM2 housing.",
+                "risk": "HIGH RISK — ELV / Engine ECU Sync Required",
+                "protocol": "Extract BCM2 Immo Data on bench via MCU dump. Requires 5th/6th byte sync or working key dump to calculate 12-byte CS. Program dealer key via OBD.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g - 650g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2018+ (C8 / 4M / D5 - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MLB Evo AES Smart Proximity",
+                "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
+                "warning": "MLB Evo security architecture across all C8/4M models.",
+                "module": "MLB Evo BCM2 & Gateway",
+                "location": "O/S/R Boot Quarter Panel.",
+                "access": "Release boot trim clips.",
+                "risk": "HIGH RISK — Online Server Authorization",
+                "protocol": "Requires active VAG server session or specialist bench programmer calculation.",
+                "acGas": "R1234yf",
+                "acCap": "620g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. PHEV hybrids take POE oil."
+            }
+        },
+        "Q7": {
+            "2004 - 2010 (C6 / 4L - Classic Q7 / A6)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "ID46 / Megamos 13 (KESSY / J518)",
+                "xhorse": "XEVW01EN (Super Remote Flip) / Dedicated Audi C6/Q7 Smart Fob",
+                "module": "EZS / KESSY OR Steering Column Lock (J518)",
+                "location": "J518: Bolted to steering column. Q7 KESSY: Under driver's seat floor carpet.",
+                "access": "Q7: Unbolt seat tracks (4x M10 Spline) and tip seat back.",
+                "risk": "MODERATE / HIGH — 93C86 EEPROM / 1L59W MCU Dump Needed",
+                "protocol": "Bench dump required on AKL to extract 7-byte CS and PIN.",
+                "acGas": "R134a",
+                "acCap": "700g - 850g",
+                "acOil": "PAG 46",
+                "acNote": "Q7 4-zone rear climate takes 1050g."
+            },
+            "2011 - 2018 (C7 / 4G / 4H)": {
+                "lishi": "HU66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 / PCFM (BCM2)",
+                "xhorse": "XSAU01EN (Audi BCM2 Smart Key 3/4-Btn)",
+                "module": "BCM2 (Body Control Module 2)",
+                "location": "O/S/R Boot Quarter Panel behind carpet side trim.",
+                "access": "Remove boot side lining. Unplug 5x multi-pin connectors from BCM2 housing.",
+                "risk": "HIGH RISK — ELV / Engine ECU Sync Required",
+                "protocol": "Extract BCM2 Immo Data on bench via MCU dump. Requires 5th/6th byte sync or working key dump to calculate 12-byte CS. Program dealer key via OBD.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g - 650g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2018+ (C8 / 4M / D5 - MLB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MLB Evo AES Smart Proximity",
+                "xhorse": "XSADJ1GL (Audi MLB Smart Key) / OEM Dealer Key Only",
+                "warning": "MLB Evo security architecture across all C8/4M models.",
+                "module": "MLB Evo BCM2 & Gateway",
+                "location": "O/S/R Boot Quarter Panel.",
+                "access": "Release boot trim clips.",
+                "risk": "HIGH RISK — Online Server Authorization",
+                "protocol": "Requires active VAG server session or specialist bench programmer calculation.",
+                "acGas": "R1234yf",
+                "acCap": "620g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard. PHEV hybrids take POE oil."
             }
         }
     },
-
-
     "BMW": {
         "1 Series": {
             "2004 - 2011 (E81 / E82 / E87 / E88)": {
@@ -774,7 +1063,67 @@ const carDatabase = {
                 "acNote": "Standard."
             }
         },
-        "iX Series (iX / iX1 / iX3)": {
+        "iX Series": {
+            "2020+ (Electric)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU100R",
+                "ic": "Card 1243",
+                "chip": "Smart NFC / UWB Key",
+                "xhorse": "OEM Smart Key / Digital Card Only (No Universal)",
+                "warning": "High Voltage system. Do not probe unknown wires. Secure Gateway active.",
+                "module": "BDC / BCM",
+                "location": "Passenger kick panel / Dashboard.",
+                "access": "Requires Secure Gateway unlock.",
+                "risk": "EXTREME",
+                "protocol": "Dealer-level online diagnostic tools only for latest models.",
+                "acGas": "R1234yf",
+                "acCap": "Varies",
+                "acOil": "POE 68",
+                "acNote": "CRITICAL: Must use non-conductive POE oil for electric compressors!"
+            }
+        },
+        "iX Series (iX)": {
+            "2020+ (Electric)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU100R",
+                "ic": "Card 1243",
+                "chip": "Smart NFC / UWB Key",
+                "xhorse": "OEM Smart Key / Digital Card Only (No Universal)",
+                "warning": "High Voltage system. Do not probe unknown wires. Secure Gateway active.",
+                "module": "BDC / BCM",
+                "location": "Passenger kick panel / Dashboard.",
+                "access": "Requires Secure Gateway unlock.",
+                "risk": "EXTREME",
+                "protocol": "Dealer-level online diagnostic tools only for latest models.",
+                "acGas": "R1234yf",
+                "acCap": "Varies",
+                "acOil": "POE 68",
+                "acNote": "CRITICAL: Must use non-conductive POE oil for electric compressors!"
+            }
+        },
+        "iX Series (iX1)": {
+            "2020+ (Electric)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU100R",
+                "ic": "Card 1243",
+                "chip": "Smart NFC / UWB Key",
+                "xhorse": "OEM Smart Key / Digital Card Only (No Universal)",
+                "warning": "High Voltage system. Do not probe unknown wires. Secure Gateway active.",
+                "module": "BDC / BCM",
+                "location": "Passenger kick panel / Dashboard.",
+                "access": "Requires Secure Gateway unlock.",
+                "risk": "EXTREME",
+                "protocol": "Dealer-level online diagnostic tools only for latest models.",
+                "acGas": "R1234yf",
+                "acCap": "Varies",
+                "acOil": "POE 68",
+                "acNote": "CRITICAL: Must use non-conductive POE oil for electric compressors!"
+            }
+        },
+        "iX Series (iX3)": {
             "2020+ (Electric)": {
                 "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £550-£800",
@@ -1084,13 +1433,12 @@ const carDatabase = {
             }
         }
     },
-    
     "Citroen": {
-        "Berlingo": { 
-            "2008 - 2018 (MK2)": { 
-                "lishi": "HU83 / VA2", 
+        "Berlingo": {
+            "2008 - 2018 (MK2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote Flip 3-Btn)",
@@ -1099,15 +1447,15 @@ const carDatabase = {
                 "access": "Pull fuse cover inside glovebox.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN reading and transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "450g - 550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g - 550g",
+                "acOil": "PAG 46",
                 "acNote": "Check compressor label."
             },
-            "2018+ (MK3 - Stellantis)": { 
-                "lishi": "HU83 / VA2", 
+            "2018+ (MK3 - Stellantis)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
@@ -1116,18 +1464,18 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE — Eco Mode Protection",
                 "protocol": "Maintain >13.0V. Read PIN via OBD and pair key.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "C1": { 
-            "2005 - 2022 (MK1 / MK2)": { 
-                "lishi": "VA2", 
+        "C1": {
+            "2005 - 2022 (MK1 / MK2)": {
+                "lishi": "VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
-                "ic": "Card 1310", 
+                "silca": "VA2",
+                "ic": "Card 1310",
                 "chip": "4D67 / ID4E (Toyota IMMO)",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN (Blade) / XSTO01EN (Smart Prox)",
                 "warning": "Toyota Aygo / Peugeot 108 platform twin. Toyota IMMO architecture!",
@@ -1136,17 +1484,17 @@ const carDatabase = {
                 "access": "Remove instrument cluster shroud.",
                 "risk": "LOW — Toyota ID4D / ID4E System",
                 "protocol": "Standard OBD key programming (Toyota protocol) or EEPROM reset on early AKL.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "400g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "400g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity system."
             }
         },
         "C2": {
             "2003 - 2009": {
-                "lishi": "VA2", 
+                "lishi": "VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7936)",
                 "xhorse": "XEKB01EN (PSA Super Remote Flip 2-Btn)",
@@ -1155,17 +1503,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Read 4-digit PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
-        "C3": { 
-            "2010 - 2017 (MK2)": { 
-                "lishi": "HU83 / VA2", 
+        "C3": {
+            "2010 - 2017 (MK2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn)",
@@ -1174,15 +1522,15 @@ const carDatabase = {
                 "access": "Drop glovebox door down.",
                 "risk": "MODERATE — PSA PIN Read via OBD",
                 "protocol": "Extract 4-digit PIN via OBD; program remote fob.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "R134a standard."
             },
-            "2017+ (MK3 / Aircross)": { 
-                "lishi": "HU83 / VA2 / HU136", 
+            "2017+ (MK3 / Aircross)": {
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
@@ -1191,17 +1539,17 @@ const carDatabase = {
                 "access": "Unclip footwell felt cover.",
                 "risk": "MODERATE — Economy Mode Sleep Hazard",
                 "protocol": "Read PIN via OBD. Attach charger to keep CAN awake during learning cycle.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "C4": { 
-            "2010 - 2018 (MK2)": { 
-                "lishi": "HU83 / VA2", 
+        "C4": {
+            "2010 - 2018 (MK2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn)",
@@ -1210,15 +1558,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Extract 4-digit PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
-            "2020+ (MK3)": { 
-                "lishi": "HU83 / VA2", 
+            "2020+ (MK3)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN (Smart Key 4A) / OEM Proximity Key",
@@ -1227,17 +1575,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Read PIN via OBD. Charger required.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "e-C4 strictly requires POE non-conductive oil."
             }
         },
         "C5": {
             "2008 - 2017": {
-                "lishi": "HU83", 
+                "lishi": "HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7941)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn Flip)",
@@ -1246,15 +1594,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Extract PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "525g - 625g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "525g - 625g",
+                "acOil": "PAG 46",
                 "acNote": "Check under-bonnet label."
             },
-            "2017+ (Aircross)": { 
-                "lishi": "HU83 / VA2", 
+            "2017+ (Aircross)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN (Smart Key 4A) / XEKB01EN",
@@ -1263,17 +1611,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Read PIN via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "C6": {
             "2005 - 2012": {
-                "lishi": "HU83", 
+                "lishi": "HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn)",
@@ -1282,17 +1630,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Read PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "C8": {
             "2002 - 2014 (Ulysse / 807 Twin)": {
-                "lishi": "HU83", 
+                "lishi": "HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46",
                 "xhorse": "XEKB01EN (PSA Super Remote 4-Btn Slider)",
@@ -1301,17 +1649,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "PSA PIN read via OBD.",
-                "acGas": "R134a", 
-                "acCap": "675g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "675g",
+                "acOil": "PAG 46",
                 "acNote": "Large capacity."
             }
         },
-        "Dispatch": { 
-            "2007 - 2016 (MK2)": { 
-                "lishi": "HU83 / VA2", 
+        "Dispatch": {
+            "2007 - 2016 (MK2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn Flip)",
@@ -1320,15 +1668,15 @@ const carDatabase = {
                 "access": "Pull fuse cover inside glovebox.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN reading and transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
-            "2016+ (MK3)": { 
-                "lishi": "HU83 / VA2", 
+            "2016+ (MK3)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote) / XSKF21EN (Smart Prox)",
@@ -1337,17 +1685,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Read PIN via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "R1234yf standard. e-Dispatch strictly requires POE oil."
             }
         },
         "DS3": {
             "2010 - 2019": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7941)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn Flip)",
@@ -1356,17 +1704,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and learn.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             }
         },
         "DS4": {
             "2011 - 2018": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7941)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn Flip)",
@@ -1375,17 +1723,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and learn.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             }
         },
         "Jumper": {
             "2006+ (Fiat Ducato / Relay Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Megamos 48 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1395,17 +1743,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode chip before learning via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             }
         },
         "Jumpy": {
             "2007+ (Dispatch EU Name)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 / HITAG AES",
                 "xhorse": "XEKB01EN (PSA Super Remote) / XSKF21EN (Smart Prox)",
@@ -1414,17 +1762,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Standard PSA PIN read via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Nemo": {
             "2008 - 2017 (Fiat Fiorino Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XT27A Transponder",
@@ -1434,17 +1782,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Picasso": {
             "2006 - 2018 (C3 / C4 Picasso)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7941) / Smart",
                 "xhorse": "XEKB01EN (Super Remote) / XSKF21EN (Smart Prox)",
@@ -1453,18 +1801,18 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and learn.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             }
         },
         "Relay": {
-            "2006+ (Fiat Ducato Twin)": { 
-                "lishi": "SIP22", 
+            "2006+ (Fiat Ducato Twin)": {
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
                 "warning": "⚠️ Fiat Ducato platform twin! Uses Fiat SIP22 keyway and Delphi/Marelli BSI.",
@@ -1473,20 +1821,19 @@ const carDatabase = {
                 "access": "Remove 2x thumbscrews on lower dash fuse cover.",
                 "risk": "HIGH RISK — Precoding Transponder Required",
                 "protocol": "Fiat keys CANNOT be programmed raw! Read BSI EEPROM to extract PIN and 6-byte component key. Precode ID46/Megamos 48 chip before OBD learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             }
         }
     },
-
     "Dacia": {
-        "Duster": { 
-            "2010 - 2017 (MK1 - HS)": { 
-                "lishi": "VA2", 
+        "Duster": {
+            "2010 - 2017 (MK1 - HS)": {
+                "lishi": "VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46 (PCF7936 / Renault)",
                 "xhorse": "XERN01EN (Renault Super Remote Flip 2/3-Btn) / XT27A Transponder",
@@ -1495,15 +1842,15 @@ const carDatabase = {
                 "access": "Unclip lower steering column shroud.",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN read and ID46 remote blade programming.",
-                "acGas": "R134a", 
-                "acCap": "480g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "480g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2018+ (MK2 - HM)": { 
-                "lishi": "VAC102", 
+            "2018+ (MK2 - HM)": {
+                "lishi": "VAC102",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 (PCF7961) / Renault Smart Card",
                 "xhorse": "XERN01EN (Flip Blade) / XSCS00EN (Hands-Free Smart Card)",
@@ -1512,17 +1859,17 @@ const carDatabase = {
                 "access": "Remove glovebox compartment liner.",
                 "risk": "MODERATE — Blade & Smart Card Options",
                 "protocol": "Extract ISK/PIN via OBD. Precode transponder/card before learning.",
-                "acGas": "R1234yf", 
-                "acCap": "460g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "460g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard across MK2 lineup."
             }
         },
-        "Sandero / Logan": { 
-            "2013 - 2020 (MK2 - B8)": { 
-                "lishi": "VAC102", 
+        "Sandero": {
+            "2013 - 2020 (MK2 - B8)": {
+                "lishi": "VAC102",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 (PCF7936 / Renault)",
                 "xhorse": "XERN01EN (Renault Super Remote Flip 2/3-Btn) / XT27A Transponder",
@@ -1531,16 +1878,16 @@ const carDatabase = {
                 "access": "Remove fuse access door.",
                 "risk": "LOW / MODERATE",
                 "protocol": "OBD PIN read and transponder learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2021+ (MK3 - CMF-B Platform)": { 
-                "lishi": "VAC102", 
+            "2021+ (MK3 - CMF-B Platform)": {
+                "lishi": "VAC102",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VAC102", 
-                "ic": "Card 1240", 
+                "silca": "VAC102",
+                "ic": "Card 1240",
                 "chip": "HITAG AES / 4A Smart Card",
                 "xhorse": "Dedicated Dacia/Renault 4A Smart Card / OEM Card Only",
                 "warning": "Shares Renault Clio MK5 electronic architecture.",
@@ -1549,21 +1896,56 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "HIGH — Gateway Protection",
                 "protocol": "Requires SGW bypass cable or server token to read ISK.",
-                "acGas": "R1234yf", 
-                "acCap": "430g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "430g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard."
+            }
+        },
+        "Logan": {
+            "2013 - 2020 (MK2 - B8)": {
+                "lishi": "VAC102",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "VAC102",
+                "ic": "Card 1240",
+                "chip": "ID46 (PCF7936 / Renault)",
+                "xhorse": "XERN01EN (Renault Super Remote Flip 2/3-Btn) / XT27A Transponder",
+                "module": "UCH Unit",
+                "location": "Driver's Footwell behind lower fuse panel.",
+                "access": "Remove fuse access door.",
+                "risk": "LOW / MODERATE",
+                "protocol": "OBD PIN read and transponder learning.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2016+ models use R1234yf."
+            },
+            "2021+ (MK3 - CMF-B Platform)": {
+                "lishi": "VAC102",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "VAC102",
+                "ic": "Card 1240",
+                "chip": "HITAG AES / 4A Smart Card",
+                "xhorse": "Dedicated Dacia/Renault 4A Smart Card / OEM Card Only",
+                "warning": "Shares Renault Clio MK5 electronic architecture.",
+                "module": "UCH & Security Gateway",
+                "location": "Behind glovebox assembly.",
+                "access": "Drop glovebox assembly.",
+                "risk": "HIGH — Gateway Protection",
+                "protocol": "Requires SGW bypass cable or server token to read ISK.",
+                "acGas": "R1234yf",
+                "acCap": "430g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         }
     },
-
-
     "DS Automobiles": {
-        "DS 3 / DS 3 Crossback / DS 7 Crossback": { 
-            "2010 - 2018 (DS 3 Classic - PSA)": { 
-                "lishi": "HU83 / VA2", 
+        "DS 3": {
+            "2010 - 2018 (DS 3 Classic - PSA)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote Flip 3-Btn)",
@@ -1572,16 +1954,16 @@ const carDatabase = {
                 "access": "Drop glovebox door down.",
                 "risk": "MODERATE",
                 "protocol": "Standard OBD PIN extraction and key programming.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "R134a standard."
             },
-            "2018+ (DS 3 Crossback / DS 7 / DS 9 - Stellantis EMP2/CMP)": { 
-                "lishi": "HU83 / VA2 / HU136", 
+            "2018+ (DS 3 Crossback / DS 7 / DS 9 - Stellantis EMP2/CMP)": {
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
-                "ic": "Card 1310", 
+                "silca": "VA2",
+                "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A) / OEM DS Smart Fob",
                 "warning": "Emergency blade concealed in luxury smart key fob.",
@@ -1590,21 +1972,94 @@ const carDatabase = {
                 "access": "Unclip lower steering column trim panel.",
                 "risk": "MODERATE / HIGH — Eco Mode & Gateway Protection",
                 "protocol": "Keep battery voltage >13.0V. Read PIN via OBD and pair smart fob.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "E-Tense PHEV/EV models use POE oil."
+            }
+        },
+        "DS 3 Crossback": {
+            "2010 - 2018 (DS 3 Classic - PSA)": {
+                "lishi": "HU83 / VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310 / 1030",
+                "chip": "ID46 (PCF7936 / PCF7941 PSA)",
+                "xhorse": "XEKB01EN (PSA Super Remote Flip 3-Btn)",
+                "module": "BSI (Valeo / Johnson Controls)",
+                "location": "Passenger Footwell Fuse Box behind glovebox.",
+                "access": "Drop glovebox door down.",
+                "risk": "MODERATE",
+                "protocol": "Standard OBD PIN extraction and key programming.",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "R134a standard."
+            },
+            "2018+ (DS 3 Crossback / DS 7 / DS 9 - Stellantis EMP2/CMP)": {
+                "lishi": "HU83 / VA2 / HU136",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "VA2",
+                "ic": "Card 1310",
+                "chip": "HITAG AES / 4A Smart",
+                "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A) / OEM DS Smart Fob",
+                "warning": "Emergency blade concealed in luxury smart key fob.",
+                "module": "Stellantis BSI & Gateway",
+                "location": "Driver's Footwell lower dash fuse carrier.",
+                "access": "Unclip lower steering column trim panel.",
+                "risk": "MODERATE / HIGH — Eco Mode & Gateway Protection",
+                "protocol": "Keep battery voltage >13.0V. Read PIN via OBD and pair smart fob.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "E-Tense PHEV/EV models use POE oil."
+            }
+        },
+        "DS 7 Crossback": {
+            "2010 - 2018 (DS 3 Classic - PSA)": {
+                "lishi": "HU83 / VA2",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310 / 1030",
+                "chip": "ID46 (PCF7936 / PCF7941 PSA)",
+                "xhorse": "XEKB01EN (PSA Super Remote Flip 3-Btn)",
+                "module": "BSI (Valeo / Johnson Controls)",
+                "location": "Passenger Footwell Fuse Box behind glovebox.",
+                "access": "Drop glovebox door down.",
+                "risk": "MODERATE",
+                "protocol": "Standard OBD PIN extraction and key programming.",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "R134a standard."
+            },
+            "2018+ (DS 3 Crossback / DS 7 / DS 9 - Stellantis EMP2/CMP)": {
+                "lishi": "HU83 / VA2 / HU136",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "VA2",
+                "ic": "Card 1310",
+                "chip": "HITAG AES / 4A Smart",
+                "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A) / OEM DS Smart Fob",
+                "warning": "Emergency blade concealed in luxury smart key fob.",
+                "module": "Stellantis BSI & Gateway",
+                "location": "Driver's Footwell lower dash fuse carrier.",
+                "access": "Unclip lower steering column trim panel.",
+                "risk": "MODERATE / HIGH — Eco Mode & Gateway Protection",
+                "protocol": "Keep battery voltage >13.0V. Read PIN via OBD and pair smart fob.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "E-Tense PHEV/EV models use POE oil."
             }
         }
     },
-
     "Fiat": {
-        "500": { 
-            "2007+": { 
-                "lishi": "SIP22", 
+        "500": {
+            "2007+": {
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XT27A Transponder",
                 "warning": "⚠️ Fiat Delphi / Marelli BSI Architecture. Transponder precoding required!",
@@ -1613,17 +2068,17 @@ const carDatabase = {
                 "access": "Remove 2x plastic thumbscrews on lower dashboard fuse cover.",
                 "risk": "HIGH RISK — Precoding Transponder Required",
                 "protocol": "Read BSI EEPROM via bench or OBD to extract Security PIN and 6-byte component key. Precode chip before OBD key learn.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Pre-2016 uses R134a; 2016+ uses R1234yf."
             }
         },
         "500L": {
             "2012+": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1632,18 +2087,18 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode chip before learning via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "500X": {
-            "2015+ (Jeep Renegade Twin)": { 
-                "lishi": "SIP22", 
+            "2015+ (Jeep Renegade Twin)": {
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSFT01EN (Fiat Smart Prox) / XEFT01EN (Flip Blade)",
                 "warning": "Stellantis / Chrysler RFHUB Keyless Architecture.",
@@ -1652,17 +2107,17 @@ const carDatabase = {
                 "access": "Drop lower driver's dash panel.",
                 "risk": "MODERATE / HIGH",
                 "protocol": "Read 5-Digit PIN via OBD (Chrysler/Fiat protocol).",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "Bravo": {
             "2007 - 2014": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1671,17 +2126,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Daily": {
             "2006+ (Iveco Daily)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Super Remote) / XT27A Transponder",
@@ -1690,17 +2145,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             }
         },
         "Doblo": {
             "2010+ (Vauxhall Combo Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1709,18 +2164,18 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
-        "Ducato": { 
-            "2006 - 2021 (MK3)": { 
-                "lishi": "SIP22", 
+        "Ducato": {
+            "2006 - 2021 (MK3)": {
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
                 "warning": "Peugeot Boxer / Citroen Relay twin.",
@@ -1729,16 +2184,16 @@ const carDatabase = {
                 "access": "Remove lower dashboard fuse cover.",
                 "risk": "HIGH RISK — Precoding Required",
                 "protocol": "Read BSI EEPROM via bench/OBD. Precode ID46/Megamos 48 chip.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             },
-            "2021+ (Series 8)": { 
-                "lishi": "SIP22", 
+            "2021+ (Series 8)": {
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSFT01EN (Fiat Smart Prox) / XEFT01EN",
                 "module": "Delphi BSI / Gateway",
@@ -1746,17 +2201,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH — SGW",
                 "protocol": "Requires 12+8 SGW bypass adapter.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "Fiorino": {
             "2007+ (Citroen Nemo Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1765,17 +2220,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Fullback": {
             "2016 - 2019 (Mitsubishi L200 Twin)": {
-                "lishi": "MIT11", 
+                "lishi": "MIT11",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MIT11", 
+                "silca": "MIT11",
                 "ic": "Card 1007",
                 "chip": "ID46 / 4D36 / Smart",
                 "xhorse": "XEMOB0EN (Super Remote) / XSMQB1EN / XT27A Transponder",
@@ -1785,17 +2240,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Program as Mitsubishi L200 via OBD.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Mitsubishi standard."
             }
         },
         "Grande Punto": {
             "2005 - 2018": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1804,17 +2259,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Idea": {
             "2003 - 2012": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID48 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote) / XT27A Transponder",
@@ -1823,17 +2278,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID48 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Panda": {
             "2012+ (MK3)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1842,17 +2297,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Punto": {
             "2012 - 2018 (Evo / Punto)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1861,17 +2316,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Qubo": {
             "2008+ (Fiorino Passenger Variant)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -1880,17 +2335,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID46 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Scudo": {
             "2007 - 2016 (Citroen Dispatch Twin)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID46",
                 "xhorse": "XEKB01EN (PSA Super Remote Flip 3-Btn)",
@@ -1900,17 +2355,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "PSA PIN read via OBD.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Seicento": {
             "1998 - 2010": {
-                "lishi": "GT15R / SIP22", 
+                "lishi": "GT15R / SIP22",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "GT15R", 
+                "silca": "GT15R",
                 "ic": "Card 103",
                 "chip": "ID11 / ID48",
                 "xhorse": "VVDI XT27A Super Chip / Mechanical Cut Blade",
@@ -1919,17 +2374,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Older OBD protocol or EEPROM read.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Stilo": {
             "2001 - 2007": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID48 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote) / XT27A Transponder",
@@ -1938,17 +2393,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode ID48 chip before learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Talento": {
             "2016 - 2020 (Renault Trafic Twin)": {
-                "lishi": "VAC102", 
+                "lishi": "VAC102",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961",
                 "xhorse": "XERN01EN (Renault Super Remote Flip) / XSCS00EN (Smart Card)",
@@ -1958,17 +2413,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH — All Keys Erased Hazard",
                 "protocol": "Program as Renault Trafic. ALL keys erased during learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             }
         },
         "Tipo": {
             "2015+": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEFT01EN (Super Remote Flip) / XSFT01EN (Smart Prox)",
@@ -1977,17 +2432,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Precode chip before learning via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Ulysee": {
             "2002 - 2010 (Citroen C8 Twin)": {
-                "lishi": "HU83", 
+                "lishi": "HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46",
                 "xhorse": "XEKB01EN (PSA Super Remote 4-Btn Slider)",
@@ -1997,14 +2452,13 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "PSA PIN read via OBD.",
-                "acGas": "R134a", 
-                "acCap": "675g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "675g",
+                "acOil": "PAG 46",
                 "acNote": "Large capacity."
             }
         }
     },
-
     "Ford": {
         "B-Max": {
             "2012 - 2017": {
@@ -2796,13 +3250,12 @@ const carDatabase = {
             }
         }
     },
-
     "Honda": {
         "Accord": {
             "2003 - 2008 (MK7 - CL / CM)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos) / ID46 (PCF7936)",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 2/3-Btn) / XT27A Transponder",
@@ -2811,15 +3264,15 @@ const carDatabase = {
                 "access": "Remove lower dash trim.",
                 "risk": "LOW",
                 "protocol": "Standard OBD key programming.",
-                "acGas": "R134a", 
-                "acCap": "500g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2008 - 2015 (MK8 - CU / CW)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 3-Btn)",
@@ -2828,15 +3281,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "OBD key learn. Add key and AKL supported.",
-                "acGas": "R134a", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2018+ (MK10 / MK11)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "8A / 4A Smart Proximity",
                 "xhorse": "XSHD01EN (Honda Smart Prox 3/4-Btn)",
@@ -2845,17 +3298,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Inductive start button pairing required during OBD learn.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "Hybrid models strictly require POE non-conductive oil."
             }
         },
-        "CR-V": { 
-            "2007 - 2012 (MK3)": { 
-                "lishi": "HON66", 
+        "CR-V": {
+            "2007 - 2012 (MK3)": {
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 2/3-Btn)",
@@ -2864,15 +3317,15 @@ const carDatabase = {
                 "access": "Remove lower driver knee panel.",
                 "risk": "LOW",
                 "protocol": "Standard OBD key programming.",
-                "acGas": "R134a", 
-                "acCap": "480g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "480g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2012 - 2018 (MK4)": { 
-                "lishi": "HON66", 
+            "2012 - 2018 (MK4)": {
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7952 (Smart) or ID46 Blade",
                 "xhorse": "XEHD01EN (Super Remote Flip) / XSHD01EN (Smart Prox 3-Btn)",
@@ -2881,16 +3334,16 @@ const carDatabase = {
                 "access": "Drop glovebox door down.",
                 "risk": "MODERATE",
                 "protocol": "OBD key learn for blade or smart proximity fob.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2018+ (MK5 / MK6)": { 
-                "lishi": "HON66", 
+            "2018+ (MK5 / MK6)": {
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
-                "ic": "Card 998", 
+                "silca": "HON66",
+                "ic": "Card 998",
                 "chip": "8A / 4A Smart Proximity",
                 "xhorse": "XSHD01EN (Honda Smart Prox 3/4-Btn)",
                 "warning": "High-security smart key architecture.",
@@ -2899,17 +3352,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE / HIGH — Inductive Pairing",
                 "protocol": "OBD smart key learn. Hold fob against Start/Stop button during registration.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "R1234yf standard. Hybrid e:HEV models require POE non-conductive oil."
             }
         },
         "Civic": {
             "2001 - 2005 (MK7 - EP / EU)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
                 "xhorse": "VVDI XT27A Super Chip / XEHD01EN",
@@ -2918,16 +3371,16 @@ const carDatabase = {
                 "access": "Remove steering column shroud.",
                 "risk": "LOW",
                 "protocol": "Standard OBD learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
-            "2006 - 2011 (MK8 - FN / FK)": { 
-                "lishi": "HON66", 
+            "2006 - 2011 (MK8 - FN / FK)": {
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
-                "ic": "Card 998", 
+                "silca": "HON66",
+                "ic": "Card 998",
                 "chip": "ID46 / PCF7936 (Honda Rolling)",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 2/3-Btn)",
                 "warning": "4-track laser profile. All wafers must be picked cleanly in both directions.",
@@ -2936,16 +3389,16 @@ const carDatabase = {
                 "access": "Remove lower dashboard fuse cover thumbscrews.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Standard OBD key programming. Add key or AKL supported via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2012 - 2017 (MK9 - FK)": { 
-                "lishi": "HON66", 
+            "2012 - 2017 (MK9 - FK)": {
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
-                "ic": "Card 998", 
+                "silca": "HON66",
+                "ic": "Card 998",
                 "chip": "ID46 / PCF7952 (Smart Proximity) or PCF7936 (Blade)",
                 "xhorse": "XEHD01EN (Super Remote Flip) / XSHD01EN (Smart Prox 3-Btn)",
                 "module": "Smart Keyless Unit / MICU",
@@ -2953,16 +3406,16 @@ const carDatabase = {
                 "access": "Drop lower glovebox door.",
                 "risk": "MODERATE",
                 "protocol": "OBD key learning supported. Ensure battery voltage remains >13.0V.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "420g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "420g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2017+ (MK10 / MK11 - FC / FK / FL)": { 
-                "lishi": "HON66 / HON58", 
+            "2017+ (MK10 / MK11 - FC / FK / FL)": {
+                "lishi": "HON66 / HON58",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HON66", 
-                "ic": "Card 998", 
+                "silca": "HON66",
+                "ic": "Card 998",
                 "chip": "8A / 4A Smart Proximity (HITAG AES)",
                 "xhorse": "XSHD01EN (Honda Smart Prox 3/4-Btn)",
                 "warning": "⚠️ Latest Honda Smart Key architecture. Inductive start button pairing required.",
@@ -2971,17 +3424,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly past dampener arm.",
                 "risk": "MODERATE / HIGH — CAN Gateway & Inductive Pairing",
                 "protocol": "Read IMMO data via OBD. Hold smart key logo directly against Start/Stop button when prompted.",
-                "acGas": "R1234yf", 
-                "acCap": "420g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "420g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "e:HEV Hybrid models MUST use POE non-conductive oil!"
             }
         },
         "Element": {
             "2003 - 2011": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip) / XT27A Transponder",
@@ -2990,17 +3443,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD transponder learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "US Import model commonly found in UK."
             }
         },
         "HR-V": {
             "1999 - 2006 (MK1)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
                 "xhorse": "VVDI XT27A Super Chip / Mechanical Blade Cut",
@@ -3009,15 +3462,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD learning.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2015 - 2021 (MK2)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID47 / 8A Smart Proximity",
                 "xhorse": "XEHD01EN (Blade) / XSHD01EN (Smart Prox 3-Btn)",
@@ -3026,15 +3479,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD smart key programming. Hold fob against button to pair.",
-                "acGas": "R1234yf / R134a", 
-                "acCap": "420g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf / R134a",
+                "acCap": "420g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ transitioned to R1234yf."
             },
             "2022+ (MK3 / ZR-V Twin)": {
-                "lishi": "HON66 / HON58", 
+                "lishi": "HON66 / HON58",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "4A / 8A Smart Proximity",
                 "xhorse": "XSHD01EN / Dedicated Honda 4A Smart Key",
@@ -3043,17 +3496,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Latest Honda architecture. OBD learn with inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "POE",
                 "acNote": "e:HEV models strictly require POE oil."
             }
         },
         "Insight": {
             "2009 - 2014 (ZE2)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 3-Btn)",
@@ -3062,17 +3515,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "POE", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "POE",
                 "acNote": "Hybrid IMA system requires POE oil."
             }
         },
-        "Jazz / Fit": { 
+        "Jazz": {
             "2002 - 2008 (GD)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
                 "xhorse": "VVDI XT27A Super Chip / XEHD01EN",
@@ -3081,15 +3534,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD learning.",
-                "acGas": "R134a", 
-                "acCap": "400g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "400g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
-            "2008 - 2015 (GE)": { 
-                "lishi": "HON66", 
+            "2008 - 2015 (GE)": {
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 (PCF7936 / Honda)",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 2/3-Btn)",
@@ -3098,16 +3551,16 @@ const carDatabase = {
                 "access": "Unclip lower steering column / fuse shroud.",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN-less transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "400g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "400g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity system."
             },
-            "2015+ (GK / GR)": { 
-                "lishi": "HON66", 
+            "2015+ (GK / GR)": {
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
-                "ic": "Card 998", 
+                "silca": "HON66",
+                "ic": "Card 998",
                 "chip": "ID47 / 8A / 4A Smart Proximity",
                 "xhorse": "XEHD01EN (Blade) / XSHD01EN (Smart Prox 3-Btn)",
                 "warning": "Smart proximity fob with emergency internal HON66 blade.",
@@ -3116,17 +3569,71 @@ const carDatabase = {
                 "access": "Drop glovebox assembly down.",
                 "risk": "MODERATE — Smart System Pairing",
                 "protocol": "OBD smart key programming supported. Keep smart key inside vehicle cabin during learn cycle.",
-                "acGas": "R1234yf / R134a", 
-                "acCap": "420g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf / R134a",
+                "acCap": "420g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "2017+ models use R1234yf. e:HEV hybrids require POE compressor oil."
+            }
+        },
+        "Fit": {
+            "2002 - 2008 (GD)": {
+                "lishi": "HON66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "HON66",
+                "ic": "Card 998",
+                "chip": "ID48 (Megamos)",
+                "xhorse": "VVDI XT27A Super Chip / XEHD01EN",
+                "module": "Immobiliser Box",
+                "location": "Under steering column.",
+                "access": "OBD.",
+                "risk": "LOW",
+                "protocol": "Standard OBD learning.",
+                "acGas": "R134a",
+                "acCap": "400g",
+                "acOil": "PAG 46",
+                "acNote": "Standard."
+            },
+            "2008 - 2015 (GE)": {
+                "lishi": "HON66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HON66",
+                "ic": "Card 998",
+                "chip": "ID46 (PCF7936 / Honda)",
+                "xhorse": "XEHD01EN (Honda Super Remote Flip 2/3-Btn)",
+                "module": "MICU / Immobiliser Receiver",
+                "location": "Driver's Footwell interior fuse box.",
+                "access": "Unclip lower steering column / fuse shroud.",
+                "risk": "LOW",
+                "protocol": "Standard OBD PIN-less transponder programming.",
+                "acGas": "R134a",
+                "acCap": "400g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Small capacity system."
+            },
+            "2015+ (GK / GR)": {
+                "lishi": "HON66",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HON66",
+                "ic": "Card 998",
+                "chip": "ID47 / 8A / 4A Smart Proximity",
+                "xhorse": "XEHD01EN (Blade) / XSHD01EN (Smart Prox 3-Btn)",
+                "warning": "Smart proximity fob with emergency internal HON66 blade.",
+                "module": "Smart Key ECU",
+                "location": "Behind Glovebox Assembly.",
+                "access": "Drop glovebox assembly down.",
+                "risk": "MODERATE — Smart System Pairing",
+                "protocol": "OBD smart key programming supported. Keep smart key inside vehicle cabin during learn cycle.",
+                "acGas": "R1234yf / R134a",
+                "acCap": "420g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "2017+ models use R1234yf. e:HEV hybrids require POE compressor oil."
             }
         },
         "Most Models": {
             "General Honda Reference": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID48 / ID46 / ID47 / 8A / 4A",
                 "xhorse": "XEHD01EN (Super Remote) / XSHD01EN (Smart Prox) / XT27A Transponder",
@@ -3136,17 +3643,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "VARIABLE",
                 "protocol": "Standard OBD programming across all modern Hondas.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "400g - 550g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "400g - 550g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "Always verify hybrid status (POE oil)."
             }
         },
         "Pilot": {
             "2009 - 2015": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID46 (PCF7936)",
                 "xhorse": "XEHD01EN (Honda Super Remote Flip 4-Btn)",
@@ -3155,15 +3662,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD programming.",
-                "acGas": "R134a", 
-                "acCap": "650g - 750g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g - 750g",
+                "acOil": "PAG 46",
                 "acNote": "Dual zone AC requires larger fill."
             },
             "2016+": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID47 / 8A Smart Proximity",
                 "xhorse": "XSHD01EN (Honda Smart Prox 4/5-Btn)",
@@ -3172,17 +3679,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD smart key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "S2000": {
             "1999 - 2009 (AP1 / AP2)": {
-                "lishi": "HON66", 
+                "lishi": "HON66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HON66", 
+                "silca": "HON66",
                 "ic": "Card 998",
                 "chip": "ID48 (Megamos)",
                 "xhorse": "VVDI XT27A Super Chip / Mechanical Cut Blade",
@@ -3191,20 +3698,19 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD key learning.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             }
         }
     },
-
     "Hyundai": {
         "Ioniq": {
             "2017+": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "8A Smart / Hitag 3",
                 "xhorse": "XSHY00EN (Hyundai/Kia Smart Prox 3/4-Btn)",
@@ -3214,17 +3720,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Standard OBD smart key programming. PIN extraction supported by most tools.",
-                "acGas": "R1234yf", 
-                "acCap": "600g", 
-                "acOil": "POE 68", 
+                "acGas": "R1234yf",
+                "acCap": "600g",
+                "acOil": "POE 68",
                 "acNote": "CRITICAL: Electric AC compressor requires POE oil."
             }
         },
         "Kona": {
             "2018+": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "8A Smart Key",
                 "xhorse": "XSHY00EN (Hyundai/Kia Smart Prox 3/4-Btn)",
@@ -3233,17 +3739,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "OBD PIN read and smart key learn.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46 (ICE) / POE 68 (EV)", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 (ICE) / POE 68 (EV)",
                 "acNote": "Use POE oil ONLY for the EV models."
             }
         },
         "Palisade": {
             "2019+": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "8A / 4A Smart",
                 "xhorse": "XSHY00EN / Dedicated Hyundai 4A Smart Key",
@@ -3252,17 +3758,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "PIN read via OBD, followed by proximity learn.",
-                "acGas": "R1234yf", 
-                "acCap": "800g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "800g",
+                "acOil": "PAG 46",
                 "acNote": "Dual climate control."
             }
         },
         "Sante Fe": {
             "2018+": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "8A / Hitag 3 Smart",
                 "xhorse": "XSHY00EN (Hyundai/Kia Smart Prox 3/4-Btn)",
@@ -3271,17 +3777,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "OBD PIN read. 2 smart keys usually required for AKL.",
-                "acGas": "R1234yf", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Sonata": {
             "2019+ (DN8)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "8A Smart Key",
                 "xhorse": "XSHY00EN (Hyundai/Kia Smart Prox 4-Btn)",
@@ -3290,17 +3796,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "OBD PIN read and program.",
-                "acGas": "R1234yf", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Tucson": {
             "2015 - 2021 (TL)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -3309,17 +3815,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard PIN extraction via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Refrigerant changed mid-cycle, check label."
             }
         },
         "Veloster": {
             "2011 - 2017": {
-                "lishi": "HY20 / HY22", 
+                "lishi": "HY20 / HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "ID46 / Hitag Pro",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -3328,17 +3834,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "VIN to PIN or OBD read.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Yeudong": {
             "2008+ (Elantra/Avante Variant)": {
-                "lishi": "HYN14R / HY20", 
+                "lishi": "HYN14R / HY20",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HYN14", 
+                "silca": "HYN14",
                 "ic": "Card 964",
                 "chip": "ID46 Transponder",
                 "xhorse": "VVDI XT27A Super Chip / XEHY01EN (Super Remote)",
@@ -3347,17 +3853,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Use standard Hyundai VIN to PIN calculator (6 digit). Program via OBD.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Asian domestic market specific model."
             }
         },
         "i10": {
             "2013 - 2020": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "ID46 / ID47 (Hitag3)",
                 "xhorse": "XEHY01EN (Super Remote Flip 3-Btn) / XSHY00EN (Smart Prox)",
@@ -3366,17 +3872,17 @@ const carDatabase = {
                 "access": "Standard OBD.",
                 "risk": "LOW",
                 "protocol": "Read PIN via OBD using 8A/46 bypass or VIN to PIN calc. Program via OBD.",
-                "acGas": "R134a", 
-                "acCap": "400g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "400g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity system."
             }
         },
         "i20": {
             "2014 - 2020": {
-                "lishi": "HY22 / HYN14R", 
+                "lishi": "HY22 / HYN14R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "ID47 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -3385,17 +3891,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Read PIN from BCM/SMK via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "i30": {
             "2017+ (PD)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "8A Smart Proximity / ID47",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox 3-Btn)",
@@ -3404,17 +3910,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Pin code bypass often supported by Autel/Xhorse via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "ix35": {
             "2010 - 2015": {
-                "lishi": "HY20 / HY22", 
+                "lishi": "HY20 / HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1238",
                 "chip": "ID46 (PCF7936) / Smart Key",
                 "xhorse": "XEHY01EN (Super Remote Flip 3-Btn) / XSHY00EN (Smart Prox)",
@@ -3423,21 +3929,20 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "OBD PIN read and key learning.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         }
     },
-
     "Jaguar": {
-        "F-Pace / E-Pace / I-Pace": { 
-            "2016+ (X761 / X540 / X590)": { 
-                "lishi": "HU101", 
+        "F-Pace": {
+            "2016+ (X761 / X540 / X590)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID49 (FK72) / JPLA Smart (DoIP)",
                 "xhorse": "XSJL01EN (JLR Smart Key 5-Btn) / OEM JLR Smart Prox",
                 "warning": "Check KVM part number (FK72 vs JPLA).",
@@ -3446,17 +3951,57 @@ const carDatabase = {
                 "access": "Release boot side lining clips (2x 10mm retaining nuts).",
                 "risk": "HIGH RISK — Locked MCU / DoIP Architecture",
                 "protocol": "FK72: Bench read D-Flash. JPLA: DoIP server session or virgin RFA exchange.",
-                "acGas": "R1234yf", 
-                "acCap": "650g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "650g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "I-Pace (EV) requires POE non-conductive compressor oil."
             }
         },
-        "XE / XF / XJ": { 
-            "2007 - 2012 (XF - X250 Early)": { 
-                "lishi": "FO38 / HU101", 
+        "E-Pace": {
+            "2016+ (X761 / X540 / X590)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID49 (FK72) / JPLA Smart (DoIP)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn) / OEM JLR Smart Prox",
+                "warning": "Check KVM part number (FK72 vs JPLA).",
+                "module": "KVM / RFA Module",
+                "location": "O/S/R Boot Quarter Panel behind trim carpet.",
+                "access": "Release boot side lining clips (2x 10mm retaining nuts).",
+                "risk": "HIGH RISK — Locked MCU / DoIP Architecture",
+                "protocol": "FK72: Bench read D-Flash. JPLA: DoIP server session or virgin RFA exchange.",
+                "acGas": "R1234yf",
+                "acCap": "650g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "I-Pace (EV) requires POE non-conductive compressor oil."
+            }
+        },
+        "I-Pace": {
+            "2016+ (X761 / X540 / X590)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID49 (FK72) / JPLA Smart (DoIP)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn) / OEM JLR Smart Prox",
+                "warning": "Check KVM part number (FK72 vs JPLA).",
+                "module": "KVM / RFA Module",
+                "location": "O/S/R Boot Quarter Panel behind trim carpet.",
+                "access": "Release boot side lining clips (2x 10mm retaining nuts).",
+                "risk": "HIGH RISK — Locked MCU / DoIP Architecture",
+                "protocol": "FK72: Bench read D-Flash. JPLA: DoIP server session or virgin RFA exchange.",
+                "acGas": "R1234yf",
+                "acCap": "650g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "I-Pace (EV) requires POE non-conductive compressor oil."
+            }
+        },
+        "XE": {
+            "2007 - 2012 (XF - X250 Early)": {
+                "lishi": "FO38 / HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46 / PCF7936 (KVM)",
                 "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
@@ -3465,16 +4010,16 @@ const carDatabase = {
                 "access": "Pull back O/S/R boot lining. Mounted near fuse carrier.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Standard OBD key programming supported via KVM.",
-                "acGas": "R134a", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2013 - 2018 (XE / XF / XJ - FK72 KVM)": { 
-                "lishi": "HU101", 
+            "2013 - 2018 (XE / XF / XJ - FK72 KVM)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID49 / PCF7953 (FK72 KVM)",
                 "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
                 "warning": "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
@@ -3483,16 +4028,16 @@ const carDatabase = {
                 "access": "Drop side boot carpet trim. Module bolted to inner wing frame near auxiliary battery.",
                 "risk": "HIGH RISK — Locked MC9S12XEQ384 MCU",
                 "protocol": "Bench read required for AKL on locked FK72 KVMs. Solder/clip MCU to read D-Flash.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ XE models transitioned to R1234yf."
             },
-            "2018+ (XE / XF - JPLA / DoIP)": { 
-                "lishi": "HU101", 
+            "2018+ (XE / XF - JPLA / DoIP)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
                 "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
                 "warning": "JPLA Smart Key System. Specialized DoIP bypass required.",
@@ -3501,20 +4046,129 @@ const carDatabase = {
                 "access": "Remove O/S/R luggage trim. Keep 30A+ battery stabilizer attached.",
                 "risk": "HIGH RISK — BCM Sync Loss Hazard",
                 "protocol": "Requires authorized server token or bench replacement of RFA module.",
-                "acGas": "R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard."
+            }
+        },
+        "XF": {
+            "2007 - 2012 (XF - X250 Early)": {
+                "lishi": "FO38 / HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID46 / PCF7936 (KVM)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
+                "module": "KVM / CJB",
+                "location": "O/S/R Boot Quarter Panel behind carpet lining.",
+                "access": "Pull back O/S/R boot lining. Mounted near fuse carrier.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD key programming supported via KVM.",
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2013 - 2018 (XE / XF / XJ - FK72 KVM)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID49 / PCF7953 (FK72 KVM)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
+                "warning": "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
+                "module": "KVM / RFA (Keyless Vehicle Module)",
+                "location": "O/S/R Boot Quarter Panel behind side carpet trim.",
+                "access": "Drop side boot carpet trim. Module bolted to inner wing frame near auxiliary battery.",
+                "risk": "HIGH RISK — Locked MC9S12XEQ384 MCU",
+                "protocol": "Bench read required for AKL on locked FK72 KVMs. Solder/clip MCU to read D-Flash.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
+                "acNote": "2016+ XE models transitioned to R1234yf."
+            },
+            "2018+ (XE / XF - JPLA / DoIP)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "JLR Smart / RFA (JPLA / DoIP)",
+                "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
+                "warning": "JPLA Smart Key System. Specialized DoIP bypass required.",
+                "module": "RFA / BCM",
+                "location": "O/S/R Boot Quarter Panel.",
+                "access": "Remove O/S/R luggage trim. Keep 30A+ battery stabilizer attached.",
+                "risk": "HIGH RISK — BCM Sync Loss Hazard",
+                "protocol": "Requires authorized server token or bench replacement of RFA module.",
+                "acGas": "R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard."
+            }
+        },
+        "XJ": {
+            "2007 - 2012 (XF - X250 Early)": {
+                "lishi": "FO38 / HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID46 / PCF7936 (KVM)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
+                "module": "KVM / CJB",
+                "location": "O/S/R Boot Quarter Panel behind carpet lining.",
+                "access": "Pull back O/S/R boot lining. Mounted near fuse carrier.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD key programming supported via KVM.",
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2013 - 2018 (XE / XF / XJ - FK72 KVM)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID49 / PCF7953 (FK72 KVM)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
+                "warning": "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
+                "module": "KVM / RFA (Keyless Vehicle Module)",
+                "location": "O/S/R Boot Quarter Panel behind side carpet trim.",
+                "access": "Drop side boot carpet trim. Module bolted to inner wing frame near auxiliary battery.",
+                "risk": "HIGH RISK — Locked MC9S12XEQ384 MCU",
+                "protocol": "Bench read required for AKL on locked FK72 KVMs. Solder/clip MCU to read D-Flash.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
+                "acNote": "2016+ XE models transitioned to R1234yf."
+            },
+            "2018+ (XE / XF - JPLA / DoIP)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "JLR Smart / RFA (JPLA / DoIP)",
+                "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
+                "warning": "JPLA Smart Key System. Specialized DoIP bypass required.",
+                "module": "RFA / BCM",
+                "location": "O/S/R Boot Quarter Panel.",
+                "access": "Remove O/S/R luggage trim. Keep 30A+ battery stabilizer attached.",
+                "risk": "HIGH RISK — BCM Sync Loss Hazard",
+                "protocol": "Requires authorized server token or bench replacement of RFA module.",
+                "acGas": "R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         }
     },
-
     "Jeep": {
         "Cherokee": {
             "2014 - 2023 (KL)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
                 "xhorse": "XSXP01EN / XSCH01EN (Chrysler/Jeep Smart Key)",
@@ -3524,17 +4178,17 @@ const carDatabase = {
                 "access": "Standard OBD or SGW bypass access.",
                 "risk": "MODERATE / HIGH — SGW Protection",
                 "protocol": "2018+ models require 12+8 Security Gateway (SGW) bypass harness before OBD key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "Compass": {
             "2007 - 2016 (MK49)": {
-                "lishi": "CY24", 
+                "lishi": "CY24",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "CY24", 
+                "silca": "CY24",
                 "ic": "Card 1083",
                 "chip": "ID46 (PCF7936 / PCF7941)",
                 "xhorse": "XEYB00EN (Super Remote) / XKKF21EN (Wire Remote)",
@@ -3543,15 +4197,15 @@ const carDatabase = {
                 "access": "Remove steering column shrouds.",
                 "risk": "LOW",
                 "protocol": "Standard Chrysler OBD key programming and PIN read.",
-                "acGas": "R134a", 
-                "acCap": "510g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "510g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2017+ (MP)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSXP01EN / XSCH01EN (Jeep Smart Key 3/4-Btn)",
@@ -3561,17 +4215,17 @@ const carDatabase = {
                 "access": "OBD / Gateway bypass.",
                 "risk": "HIGH — SGW Protection",
                 "protocol": "2018+ requires FCA 12+8 SGW bypass for OBD PIN read and key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "4xe PHEV Hybrid strictly requires POE oil."
             }
         },
         "Grand Cherokee": {
             "2005 - 2010 (WK)": {
-                "lishi": "CY24", 
+                "lishi": "CY24",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "CY24", 
+                "silca": "CY24",
                 "ic": "Card 1083",
                 "chip": "ID46 / Fobik",
                 "xhorse": "XEFB00EN (Fobik Super Remote) / XKFB01EN",
@@ -3580,15 +4234,15 @@ const carDatabase = {
                 "access": "Remove trim for OBD/module access.",
                 "risk": "LOW",
                 "protocol": "Standard OBD key programming.",
-                "acGas": "R134a", 
-                "acCap": "680g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "680g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2011 - 2021 (WK2)": {
-                "lishi": "CY24 / SIP22", 
+                "lishi": "CY24 / SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "CY24 / SIP22", 
+                "silca": "CY24 / SIP22",
                 "ic": "Card 1083 / 1137",
                 "chip": "HITAG AES / ID46",
                 "xhorse": "XSCH01EN / XSXP01EN (Jeep Smart Key Prox)",
@@ -3598,15 +4252,15 @@ const carDatabase = {
                 "access": "Remove boot side trim.",
                 "risk": "MODERATE / HIGH — SGW (2018+)",
                 "protocol": "2018+ models require FCA 12+8 SGW bypass for OBD key programming.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "680g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "680g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models transitioned to R1234yf."
             },
             "2021+ (WL)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSXP01EN / OEM Jeep Smart Key Only",
@@ -3615,17 +4269,17 @@ const carDatabase = {
                 "access": "OBD / SGW.",
                 "risk": "HIGH — SGW Protection",
                 "protocol": "Requires 12+8 SGW bypass or CAN Star bus connection.",
-                "acGas": "R1234yf", 
-                "acCap": "650g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "4xe PHEV Hybrid strictly requires POE non-conductive oil."
             }
         },
         "Renegade": {
             "2015+ (BU)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart / ID46 Precode",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XSFT01EN (Smart Prox)",
@@ -3635,17 +4289,17 @@ const carDatabase = {
                 "access": "Remove lower dash fuse cover.",
                 "risk": "HIGH RISK — SGW & Precoding",
                 "protocol": "2018+ requires 12+8 SGW bypass. May require transponder precoding on non-smart variants.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "4xe PHEV Hybrid strictly requires POE non-conductive oil."
             }
         },
         "Wrangler": {
             "2007 - 2018 (JK)": {
-                "lishi": "CY24", 
+                "lishi": "CY24",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "CY24", 
+                "silca": "CY24",
                 "ic": "Card 1083",
                 "chip": "ID46 / PCF7941",
                 "xhorse": "XEYB00EN (Super Remote) / XKKF21EN (Wire Remote)",
@@ -3654,15 +4308,15 @@ const carDatabase = {
                 "access": "Remove steering column shrouds.",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN read and key programming.",
-                "acGas": "R134a", 
-                "acCap": "510g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "510g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2018+ (JL)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart Proximity",
                 "xhorse": "XSXP01EN / XSCH01EN (Jeep Smart Key 3/4-Btn)",
@@ -3672,20 +4326,19 @@ const carDatabase = {
                 "access": "Drop glovebox to connect ADC2011 to green CAN Star block, or remove driver knee panel for 12+8 bypass.",
                 "risk": "HIGH RISK — Security Gateway",
                 "protocol": "Connect bypass cable to SGW or CAN Star connector to enable OBD PIN read and smart key learn.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "4xe PHEV Hybrid strictly requires POE non-conductive compressor oil."
             }
         }
     },
-
     "Kia": {
         "Amanti": {
             "2004 - 2009": {
-                "lishi": "HYN14R / KIA3R", 
+                "lishi": "HYN14R / KIA3R",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HYN14", 
+                "silca": "HYN14",
                 "ic": "Card 964",
                 "chip": "ID46 / 4D60",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN",
@@ -3694,17 +4347,17 @@ const carDatabase = {
                 "access": "Standard OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD key programming.",
-                "acGas": "R134a", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Borrego": {
             "2008 - 2011 (HM)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart Proximity",
                 "xhorse": "XSHY00EN (Hyundai/Kia Smart Prox) / XEHY01EN",
@@ -3714,17 +4367,17 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Extract 6-digit PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
-        "Ceed": { 
-            "2012 - 2018 (JD)": { 
-                "lishi": "HY22", 
+        "Ceed": {
+            "2012 - 2018 (JD)": {
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 60-Bit / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip 3-Btn) / XSHY00EN (Smart Prox)",
@@ -3733,15 +4386,15 @@ const carDatabase = {
                 "access": "Drop glovebox stops.",
                 "risk": "MODERATE — 6-Digit PIN Code",
                 "protocol": "OBD PIN read and key learn.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models may use R1234yf."
             },
-            "2018+ (CD - Includes ProCeed / XCeed)": { 
-                "lishi": "HY22", 
+            "2018+ (CD - Includes ProCeed / XCeed)": {
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -3750,17 +4403,17 @@ const carDatabase = {
                 "access": "Remove lower driver trim (2x 10mm bolts).",
                 "risk": "MODERATE — 6-Digit PIN Code",
                 "protocol": "OBD PIN read; inductive pairing against Start button.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "PHEV models strictly require POE oil."
             }
         },
         "Cerato": {
             "2013 - 2018 (YD)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -3770,15 +4423,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "6-digit PIN extraction via OBD.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2019+ (BD)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -3787,18 +4440,18 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
-        "EV Series (EV3 / EV6 / EV9)": { 
-            "2021+": { 
-                "lishi": "HY22 / K9 V4", 
+        "EV Series": {
+            "2021+": {
+                "lishi": "HY22 / K9 V4",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
-                "ic": "Card 1200", 
+                "silca": "HY22",
+                "ic": "Card 1200",
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
                 "xhorse": "XSHY00EN / Dedicated Kia EV Smart Key",
                 "warning": "Latest Gen E-GMP Electric Platform. Uses HY22/K9 internal profile.",
@@ -3807,17 +4460,77 @@ const carDatabase = {
                 "access": "Remove lower dash side trim panel.",
                 "risk": "MODERATE / HIGH — 6-Digit PIN & Inductive Pairing",
                 "protocol": "OBD PIN read, hold smart key fob against Start/Stop button during pairing cycle.",
-                "acGas": "R1234yf", 
-                "acCap": "750g - 850g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "750g - 850g",
+                "acOil": "POE",
+                "acNote": "🛑 Electric Vehicle! MUST use non-conductive POE compressor oil!"
+            }
+        },
+        "EV Series (EV3)": {
+            "2021+": {
+                "lishi": "HY22 / K9 V4",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HY22",
+                "ic": "Card 1200",
+                "chip": "8A Smart Proximity (HITAG 3 / AES)",
+                "xhorse": "XSHY00EN / Dedicated Kia EV Smart Key",
+                "warning": "Latest Gen E-GMP Electric Platform. Uses HY22/K9 internal profile.",
+                "module": "Smart Key Unit / IBU",
+                "location": "Behind lower centre dashboard stack.",
+                "access": "Remove lower dash side trim panel.",
+                "risk": "MODERATE / HIGH — 6-Digit PIN & Inductive Pairing",
+                "protocol": "OBD PIN read, hold smart key fob against Start/Stop button during pairing cycle.",
+                "acGas": "R1234yf",
+                "acCap": "750g - 850g",
+                "acOil": "POE",
+                "acNote": "🛑 Electric Vehicle! MUST use non-conductive POE compressor oil!"
+            }
+        },
+        "EV Series (EV6)": {
+            "2021+": {
+                "lishi": "HY22 / K9 V4",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HY22",
+                "ic": "Card 1200",
+                "chip": "8A Smart Proximity (HITAG 3 / AES)",
+                "xhorse": "XSHY00EN / Dedicated Kia EV Smart Key",
+                "warning": "Latest Gen E-GMP Electric Platform. Uses HY22/K9 internal profile.",
+                "module": "Smart Key Unit / IBU",
+                "location": "Behind lower centre dashboard stack.",
+                "access": "Remove lower dash side trim panel.",
+                "risk": "MODERATE / HIGH — 6-Digit PIN & Inductive Pairing",
+                "protocol": "OBD PIN read, hold smart key fob against Start/Stop button during pairing cycle.",
+                "acGas": "R1234yf",
+                "acCap": "750g - 850g",
+                "acOil": "POE",
+                "acNote": "🛑 Electric Vehicle! MUST use non-conductive POE compressor oil!"
+            }
+        },
+        "EV Series (EV9)": {
+            "2021+": {
+                "lishi": "HY22 / K9 V4",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HY22",
+                "ic": "Card 1200",
+                "chip": "8A Smart Proximity (HITAG 3 / AES)",
+                "xhorse": "XSHY00EN / Dedicated Kia EV Smart Key",
+                "warning": "Latest Gen E-GMP Electric Platform. Uses HY22/K9 internal profile.",
+                "module": "Smart Key Unit / IBU",
+                "location": "Behind lower centre dashboard stack.",
+                "access": "Remove lower dash side trim panel.",
+                "risk": "MODERATE / HIGH — 6-Digit PIN & Inductive Pairing",
+                "protocol": "OBD PIN read, hold smart key fob against Start/Stop button during pairing cycle.",
+                "acGas": "R1234yf",
+                "acCap": "750g - 850g",
+                "acOil": "POE",
                 "acNote": "🛑 Electric Vehicle! MUST use non-conductive POE compressor oil!"
             }
         },
         "Forte": {
             "2011 - 2018 (TD / YD)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -3827,15 +4540,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "6-digit PIN extraction via OBD.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2019+ (BD)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -3844,17 +4557,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Mohave": {
             "2008 - 2019 (HM)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart Proximity",
                 "xhorse": "XSHY00EN (Hyundai/Kia Smart Prox) / XEHY01EN",
@@ -3864,15 +4577,15 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Extract 6-digit PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2019+ (HM Facelift)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox)",
@@ -3881,17 +4594,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Niro": {
             "2016 - 2022 (DE)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -3900,15 +4613,15 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "POE",
                 "acNote": "🛑 Hybrid / EV system! POE oil mandatory."
             },
             "2022+ (SG2)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox)",
@@ -3917,17 +4630,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "750g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "750g",
+                "acOil": "POE",
                 "acNote": "🛑 Hybrid / EV system! POE oil mandatory."
             }
         },
         "Optima": {
             "2010 - 2015 (TF)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -3936,15 +4649,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW / MODERATE",
                 "protocol": "6-digit PIN extraction via OBD.",
-                "acGas": "R134a", 
-                "acCap": "550g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "Hybrid models require POE oil."
             },
             "2015 - 2020 (JF)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -3953,17 +4666,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "PHEV models require POE oil."
             }
         },
         "Picanto": {
             "2011 - 2017 (TA)": {
-                "lishi": "HYN14R / HY22", 
+                "lishi": "HYN14R / HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip 3-Btn) / XSHY00EN",
@@ -3972,15 +4685,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "6-digit PIN extraction via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity."
             },
             "2017+ (JA)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity / ID46",
                 "xhorse": "XEHY01EN (Super Remote) / XSHY00EN (Smart Prox)",
@@ -3989,17 +4702,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "400g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "400g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Rio": {
             "2011 - 2017 (UB)": {
-                "lishi": "HY22 / HYN14R", 
+                "lishi": "HY22 / HYN14R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip 3-Btn) / XSHY00EN",
@@ -4008,15 +4721,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "6-digit PIN extraction via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2017+ (YB)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity / ID46",
                 "xhorse": "XEHY01EN (Super Remote) / XSHY00EN (Smart Prox)",
@@ -4025,17 +4738,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Seltos": {
             "2019+ (SP2)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -4044,17 +4757,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Sorento": {
             "2009 - 2015 (XM)": {
-                "lishi": "HYN14R / HY22", 
+                "lishi": "HYN14R / HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "ID46 / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip) / XSHY00EN (Smart Prox)",
@@ -4063,15 +4776,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW / MODERATE",
                 "protocol": "6-digit PIN extraction via OBD.",
-                "acGas": "R134a", 
-                "acCap": "600g - 750g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g - 750g",
+                "acOil": "PAG 46",
                 "acNote": "Rear AC takes 750g."
             },
             "2015 - 2020 (UM)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -4080,15 +4793,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "650g - 800g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g - 800g",
+                "acOil": "PAG 46",
                 "acNote": "Dual zone AC requires larger fill."
             },
             "2020+ (MQ4)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
                 "xhorse": "XSHY00EN / Dedicated MQ4 Smart Key",
@@ -4097,17 +4810,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "OBD PIN read, inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "575g - 800g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "575g - 800g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 Hybrid/PHEV models strictly require POE non-conductive oil!"
             }
         },
-        "Sportage": { 
-            "2010 - 2015 (SL)": { 
-                "lishi": "HYN14R / HY15 / HY22", 
+        "Sportage": {
+            "2010 - 2015 (SL)": {
+                "lishi": "HYN14R / HY15 / HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY15", 
+                "silca": "HY15",
                 "ic": "Card 1136",
                 "chip": "ID46 / 60-Bit / 8A Smart",
                 "xhorse": "XEHY01EN (Super Remote Flip 3-Btn) / XSHY00EN (Smart Prox)",
@@ -4116,15 +4829,15 @@ const carDatabase = {
                 "access": "Drop glovebox stops.",
                 "risk": "LOW / MODERATE — 6-Digit PIN Code",
                 "protocol": "Extract PIN via OBD or VIN lookup.",
-                "acGas": "R134a", 
-                "acCap": "510g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "510g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "R134a system."
             },
-            "2016 - 2021 (QL)": { 
-                "lishi": "HY22", 
+            "2016 - 2021 (QL)": {
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XEHY01EN (Flip Blade) / XSHY00EN (Smart Prox 3-Btn)",
@@ -4133,16 +4846,16 @@ const carDatabase = {
                 "access": "Remove lower knee bolster trim.",
                 "risk": "MODERATE — 6-Digit PIN Code Required",
                 "protocol": "OBD PIN read; hold smart key directly against Start/Stop button during pairing.",
-                "acGas": "R1234yf / R134a", 
-                "acCap": "600g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf / R134a",
+                "acCap": "600g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
-            "2021+ (NQ5)": { 
-                "lishi": "HY22 / K9 V4", 
+            "2021+ (NQ5)": {
+                "lishi": "HY22 / K9 V4",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
-                "ic": "Card 1200", 
+                "silca": "HY22",
+                "ic": "Card 1200",
                 "chip": "8A Smart Proximity (HITAG 3 / AES)",
                 "xhorse": "XSHY00EN / Dedicated NQ5 Smart Key",
                 "warning": "⚠️ Emergency blade in smart fob. Check for K9 V4 internal track profile.",
@@ -4151,17 +4864,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE / HIGH — Latest Gen Smart System",
                 "protocol": "OBD PIN read, proximity inductive pairing against Start/Stop button.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 25g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 25g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "R1234yf system standard. HEV models require POE oil."
             }
         },
         "Stinger": {
             "2017 - 2023 (CK)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity",
                 "xhorse": "XSHY00EN (Kia Smart Prox 3/4-Btn)",
@@ -4170,17 +4883,17 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and inductive pairing.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Stonic": {
             "2017+ (YB)": {
-                "lishi": "HY22", 
+                "lishi": "HY22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HY22", 
+                "silca": "HY22",
                 "ic": "Card 1200",
                 "chip": "8A Smart Proximity / ID46",
                 "xhorse": "XEHY01EN (Super Remote) / XSHY00EN (Smart Prox)",
@@ -4189,21 +4902,20 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         }
     },
-
     "Land Rover": {
-        "Defender": { 
-            "1995 - 2016 (Classic Series / Td5 / TDCi)": { 
-                "lishi": "NE38", 
+        "Defender": {
+            "1995 - 2016 (Classic Series / Td5 / TDCi)": {
+                "lishi": "NE38",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "NE38", 
-                "ic": "Card 552", 
+                "silca": "NE38",
+                "ic": "Card 552",
                 "chip": "ID33 / Lucas 10AS PLIP",
                 "xhorse": "VVDI XT27A Super Chip / Dedicated Lucas 10AS Remote Fob",
                 "warning": "Classic Lucas 10AS Alarm / Immobiliser System.",
@@ -4212,16 +4924,16 @@ const carDatabase = {
                 "access": "Remove 4x screws holding instrument binnacle and pull forward.",
                 "risk": "LOW / MODERATE — 10AS Sync Pairing Required",
                 "protocol": "Read/program via OBD or EEPROM dump of 10AS box to sync remote fob and PLIP immobiliser chip.",
-                "acGas": "R134a", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "Aftermarket/dealer-fit aircon systems vary; check compressor label."
             },
-            "2020+ (New Defender - L663)": { 
-                "lishi": "HU101", 
+            "2020+ (New Defender - L663)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
                 "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
                 "warning": "Latest JLR DoIP Security Gateway architecture.",
@@ -4230,17 +4942,17 @@ const carDatabase = {
                 "access": "Remove rear side trim clips. Requires trim tools and 10mm socket.",
                 "risk": "HIGH RISK — OEM Pathfinder / Gateway Security",
                 "protocol": "Requires OEM server token authorization or specialized DoIP bench replacement kit.",
-                "acGas": "R1234yf", 
-                "acCap": "700g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "700g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "Discovery": { 
-            "2004 - 2016 (Discovery 3 & 4 - L319)": { 
-                "lishi": "HU101", 
+        "Discovery": {
+            "2004 - 2016 (Discovery 3 & 4 - L319)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46 / PCF7936 (CJB)",
                 "xhorse": "XELND0EN (Land Rover Super Remote Flip) / XSJL01EN (D4 Prox)",
@@ -4249,16 +4961,16 @@ const carDatabase = {
                 "access": "Drop glovebox fully down. CJB is the large fuse/relay box assembly.",
                 "risk": "MODERATE — CJB Corruption on Low Voltage",
                 "protocol": "Maintain >13.5V battery voltage. Standard OBD remote/key learning supported.",
-                "acGas": "R134a", 
-                "acCap": "900g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "900g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Rear A/C models take 1150g fill weight."
             },
-            "2017+ (Discovery 5 - L462)": { 
-                "lishi": "HU101", 
+            "2017+ (Discovery 5 - L462)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID49 (FK72) / JPLA Smart (DoIP)",
                 "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
                 "warning": "Locked FK72 / JPLA KVM architecture.",
@@ -4267,18 +4979,18 @@ const carDatabase = {
                 "access": "Remove rear boot side access panel (10mm fasteners).",
                 "risk": "HIGH RISK — Locked D-Flash / DoIP Security",
                 "protocol": "Bench read required for FK72; DoIP unlock/replacement required for JPLA 2018+ models.",
-                "acGas": "R1234yf", 
-                "acCap": "800g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "800g",
+                "acOil": "PAG 46",
                 "acNote": "4-zone climate control takes 1000g."
             }
         },
-        "Evoque / Discovery Sport": { 
-            "2011 - 2019 (L538 / L550)": { 
-                "lishi": "HU101", 
+        "Evoque": {
+            "2011 - 2019 (L538 / L550)": {
+                "lishi": "HU101",
                 "price": "Std key £180-£230 | AKL from £450",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID49 / PCF7953 (FK72 / KVM)",
                 "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
                 "warning": "⚠️ Check KVM location: boot quarter vs. rear roof headliner!",
@@ -4287,16 +4999,16 @@ const carDatabase = {
                 "access": "Early models (2011-2014): N/S/R boot trim behind luggage loop. Later models (2015+): Drop rear roof headliner slightly at tailgate edge; KVM is bolted to roof rib.",
                 "risk": "HIGH RISK — Locked MCU on 2015+ Facelift & Boot Deadlock Hazard",
                 "protocol": "Check wiring loom label. If 2015+ locked KVM, remove module for bench EEPROM read/write. Manually trip tailgate latch open before stripping trim!",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "650g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Post-2016 models use R1234yf."
             },
-            "2020+ (L551 / New Discovery Sport)": { 
-                "lishi": "HU101", 
+            "2020+ (L551 / New Discovery Sport)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
                 "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
                 "warning": "JPLA / DoIP electrical architecture.",
@@ -4305,18 +5017,56 @@ const carDatabase = {
                 "access": "Remove O/S/R luggage compartment side trim.",
                 "risk": "HIGH RISK — Online Gateway Authorization Required",
                 "protocol": "OBD programming requires OEM Pathfinder session or active DoIP gateway bypass cable.",
-                "acGas": "R1234yf", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "PHEV hybrid models require POE non-conductive oil."
             }
         },
-        "Range Rover / Sport": { 
-            "2005 - 2012 (L322 / L320)": { 
-                "lishi": "HU101", 
+        "Discovery Sport": {
+            "2011 - 2019 (L538 / L550)": {
+                "lishi": "HU101",
+                "price": "Std key £180-£230 | AKL from £450",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID49 / PCF7953 (FK72 / KVM)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
+                "warning": "⚠️ Check KVM location: boot quarter vs. rear roof headliner!",
+                "module": "KVM / RFA (Keyless Vehicle Module)",
+                "location": "N/S/R Boot (Passenger side rear quarter) OR Upper tailgate roof lining behind rear seats.",
+                "access": "Early models (2011-2014): N/S/R boot trim behind luggage loop. Later models (2015+): Drop rear roof headliner slightly at tailgate edge; KVM is bolted to roof rib.",
+                "risk": "HIGH RISK — Locked MCU on 2015+ Facelift & Boot Deadlock Hazard",
+                "protocol": "Check wiring loom label. If 2015+ locked KVM, remove module for bench EEPROM read/write. Manually trip tailgate latch open before stripping trim!",
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Post-2016 models use R1234yf."
+            },
+            "2020+ (L551 / New Discovery Sport)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "JLR Smart / RFA (JPLA / DoIP)",
+                "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
+                "warning": "JPLA / DoIP electrical architecture.",
+                "module": "RFA / BCM Gateway",
+                "location": "O/S/R Boot Quarter Panel / Rear Junction Box.",
+                "access": "Remove O/S/R luggage compartment side trim.",
+                "risk": "HIGH RISK — Online Gateway Authorization Required",
+                "protocol": "OBD programming requires OEM Pathfinder session or active DoIP gateway bypass cable.",
+                "acGas": "R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46",
+                "acNote": "PHEV hybrid models require POE non-conductive oil."
+            }
+        },
+        "Range Rover": {
+            "2005 - 2012 (L322 / L320)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID46 / PCF7936 (EWS / KVM)",
                 "xhorse": "XELND0EN (Super Remote Flip) / XSJL01EN (Smart Key)",
                 "warning": "Early models use BMW-sourced EWS/CAS systems; 2010+ transitioned to KVM.",
@@ -4325,16 +5075,16 @@ const carDatabase = {
                 "access": "Remove rear boot floor cover and unclip O/S/R carpet access door (2x 10mm nuts). Tools: Trim tool, 10mm socket.",
                 "risk": "MODERATE — Keyless Entry Sync Verification",
                 "protocol": "2005-2009: Standard OBD key programming or EWS/CAS bench dump. 2010-2012: OBD key learning supported via KVM.",
-                "acGas": "R134a", 
-                "acCap": "700g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Rear climate control models take 900g."
             },
-            "2013 - 2017 (L405 / L494 - FK72 KVM)": { 
-                "lishi": "HU101", 
+            "2013 - 2017 (L405 / L494 - FK72 KVM)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID49 / PCF7953 (FK72 KVM)",
                 "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
                 "warning": "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
@@ -4343,16 +5093,16 @@ const carDatabase = {
                 "access": "Drop side carpet panel. Module is mounted to inner wing bracket (2x 10mm nuts).",
                 "risk": "HIGH RISK — Locked KVM MC9S12XEQ384 MCU",
                 "protocol": "Bench read required for AKL on locked KVMs. Decode D-Flash via programmer clip/solder adapter, generate key, and rewrite.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "850g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "850g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017 transition year: check under-bonnet label for R1234yf."
             },
-            "2018+ (L405 / L494 / L460 - JPLA / DoIP)": { 
-                "lishi": "HU101", 
+            "2018+ (L405 / L494 / L460 - JPLA / DoIP)": {
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "JLR Smart / RFA (JPLA / DoIP)",
                 "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
                 "warning": "⚠️ JPLA/K8D2 KVM architecture. Requires specialist DoIP unlock or Pathfinder session.",
@@ -4361,14 +5111,69 @@ const carDatabase = {
                 "access": "Remove boot side trim panel. Ensure external 30A+ power supply is connected before touching connectors.",
                 "risk": "HIGH RISK — BCM / RFA Sync Loss & CAN Gateway Security",
                 "protocol": "Requires authorized DoIP server token, Pathfinder/SDDD bypass, or replacing RFA with virgin/unlocked module on bench.",
-                "acGas": "R1234yf", 
-                "acCap": "800g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "800g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard across all UK/EU models."
+            }
+        },
+        "Sport": {
+            "2005 - 2012 (L322 / L320)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID46 / PCF7936 (EWS / KVM)",
+                "xhorse": "XELND0EN (Super Remote Flip) / XSJL01EN (Smart Key)",
+                "warning": "Early models use BMW-sourced EWS/CAS systems; 2010+ transitioned to KVM.",
+                "module": "KVM / SAJ Module or EWS4/CAS (Year Dependent)",
+                "location": "O/S/R Boot Quarter Panel behind carpet trim above rear fuse block.",
+                "access": "Remove rear boot floor cover and unclip O/S/R carpet access door (2x 10mm nuts). Tools: Trim tool, 10mm socket.",
+                "risk": "MODERATE — Keyless Entry Sync Verification",
+                "protocol": "2005-2009: Standard OBD key programming or EWS/CAS bench dump. 2010-2012: OBD key learning supported via KVM.",
+                "acGas": "R134a",
+                "acCap": "700g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Rear climate control models take 900g."
+            },
+            "2013 - 2017 (L405 / L494 - FK72 KVM)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "ID49 / PCF7953 (FK72 KVM)",
+                "xhorse": "XSJL01EN (JLR Smart Key 5-Btn)",
+                "warning": "⚠️ 2015+ KVMs are locked (D-Flash protected MCU).",
+                "module": "KVM / RFA (Keyless Vehicle Module — FK72)",
+                "location": "O/S/R Boot Quarter Panel behind side trim carpet panel above rear fuse box.",
+                "access": "Drop side carpet panel. Module is mounted to inner wing bracket (2x 10mm nuts).",
+                "risk": "HIGH RISK — Locked KVM MC9S12XEQ384 MCU",
+                "protocol": "Bench read required for AKL on locked KVMs. Decode D-Flash via programmer clip/solder adapter, generate key, and rewrite.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "850g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017 transition year: check under-bonnet label for R1234yf."
+            },
+            "2018+ (L405 / L494 / L460 - JPLA / DoIP)": {
+                "lishi": "HU101",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU101TE",
+                "ic": "Card 1098",
+                "chip": "JLR Smart / RFA (JPLA / DoIP)",
+                "xhorse": "XSJL01EN (JLR Smart Key) / OEM JLR Smart Prox",
+                "warning": "⚠️ JPLA/K8D2 KVM architecture. Requires specialist DoIP unlock or Pathfinder session.",
+                "module": "KVM / RFA (JPLA Smart Key System) & BCM",
+                "location": "O/S/R Boot Quarter Panel behind side trim.",
+                "access": "Remove boot side trim panel. Ensure external 30A+ power supply is connected before touching connectors.",
+                "risk": "HIGH RISK — BCM / RFA Sync Loss & CAN Gateway Security",
+                "protocol": "Requires authorized DoIP server token, Pathfinder/SDDD bypass, or replacing RFA with virgin/unlocked module on bench.",
+                "acGas": "R1234yf",
+                "acCap": "800g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard across all UK/EU models."
             }
         }
     },
-
     "Lexus": {
         "Altezza": {
             "1998 - 2005 (SXE10 - JDM IS Twin)": {
@@ -4863,14 +5668,13 @@ const carDatabase = {
             }
         }
     },
-
     "MG (SAIC Motor)": {
-        "MG ZS / MG ZS EV": { 
-            "2017+ (UK Compact SUV Lineup)": { 
-                "lishi": "HU100 / HU101 / HU162T", 
+        "MG ZS": {
+            "2017+ (UK Compact SUV Lineup)": {
+                "lishi": "HU100 / HU101 / HU162T",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100 / HU101", 
-                "ic": "Card 1097 / 1098", 
+                "silca": "HU100 / HU101",
+                "ic": "Card 1097 / 1098",
                 "chip": "ID46 (PCF7936 / SAIC) or 4A Smart Proximity",
                 "xhorse": "XEOP01EN / XEFO01EN (Flip Blade) / XSKF21EN (Smart Prox 4A) / OEM Proximity",
                 "warning": "⚠️ High UK fleet callout! Blade keys typically use GM HU100 or Ford HU101 profile; Smart keys use concealed emergency blade.",
@@ -4879,18 +5683,38 @@ const carDatabase = {
                 "access": "Remove lower dashboard trim panel below steering column.",
                 "risk": "MODERATE — Security PIN Extraction via OBD",
                 "protocol": "OBD programming supported. Programmer reads security PIN directly from BCM before learning flip keys or proximity smart fobs.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "480g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "480g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 MG ZS EV (100% Electric) MUST use non-conductive POE compressor oil! Petrol 1.5/1.0T models use standard PAG 46."
             }
         },
-        "MG HS / MG4 EV / MG5 EV": { 
-            "2019+ (HS SUV / MG4 EV / MG5 EV)": { 
-                "lishi": "HU100 / HU162T", 
+        "MG ZS EV": {
+            "2017+ (UK Compact SUV Lineup)": {
+                "lishi": "HU100 / HU101 / HU162T",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100", 
-                "ic": "Card 1097", 
+                "silca": "HU100 / HU101",
+                "ic": "Card 1097 / 1098",
+                "chip": "ID46 (PCF7936 / SAIC) or 4A Smart Proximity",
+                "xhorse": "XEOP01EN / XEFO01EN (Flip Blade) / XSKF21EN (Smart Prox 4A) / OEM Proximity",
+                "warning": "⚠️ High UK fleet callout! Blade keys typically use GM HU100 or Ford HU101 profile; Smart keys use concealed emergency blade.",
+                "module": "SAIC BCM / Smart Keyless Receiver",
+                "location": "Driver's Footwell — lower dashboard fuse panel area (RHD UK Driver's side).",
+                "access": "Remove lower dashboard trim panel below steering column.",
+                "risk": "MODERATE — Security PIN Extraction via OBD",
+                "protocol": "OBD programming supported. Programmer reads security PIN directly from BCM before learning flip keys or proximity smart fobs.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "480g ± 20g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "🛑 MG ZS EV (100% Electric) MUST use non-conductive POE compressor oil! Petrol 1.5/1.0T models use standard PAG 46."
+            }
+        },
+        "MG HS": {
+            "2019+ (HS SUV / MG4 EV / MG5 EV)": {
+                "lishi": "HU100 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU100",
+                "ic": "Card 1097",
                 "chip": "4A Smart Proximity (HITAG AES / SAIC)",
                 "xhorse": "XSKF21EN / Dedicated MG 4A Smart Key / OEM Only",
                 "warning": "⚠️ Dedicated EV / PHEV architecture. Emergency blade concealed inside modern MG smart fob.",
@@ -4899,17 +5723,57 @@ const carDatabase = {
                 "access": "Drop glovebox door past retention stops.",
                 "risk": "HIGH RISK — High Voltage Vehicle & PEPS Sync",
                 "protocol": "Connect 12V auxiliary battery charger. OBD PIN reading and proximity fob learning supported via SAIC diagnostic software.",
-                "acGas": "R1234yf", 
-                "acCap": "520g ± 20g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "520g ± 20g",
+                "acOil": "POE",
                 "acNote": "🛑 100% Electric / PHEV Lineup! Strictly non-conductive POE compressor oil ONLY!"
             }
         },
-        "MG3": { 
-            "2013 - 2023 (MK2 - 2nd Gen)": { 
-                "lishi": "HU100", 
+        "MG4 EV": {
+            "2019+ (HS SUV / MG4 EV / MG5 EV)": {
+                "lishi": "HU100 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU100",
+                "ic": "Card 1097",
+                "chip": "4A Smart Proximity (HITAG AES / SAIC)",
+                "xhorse": "XSKF21EN / Dedicated MG 4A Smart Key / OEM Only",
+                "warning": "⚠️ Dedicated EV / PHEV architecture. Emergency blade concealed inside modern MG smart fob.",
+                "module": "SAIC BCM / PEPS Keyless Module",
+                "location": "Passenger Footwell behind lower glovebox / centre console stack.",
+                "access": "Drop glovebox door past retention stops.",
+                "risk": "HIGH RISK — High Voltage Vehicle & PEPS Sync",
+                "protocol": "Connect 12V auxiliary battery charger. OBD PIN reading and proximity fob learning supported via SAIC diagnostic software.",
+                "acGas": "R1234yf",
+                "acCap": "520g ± 20g",
+                "acOil": "POE",
+                "acNote": "🛑 100% Electric / PHEV Lineup! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "MG5 EV": {
+            "2019+ (HS SUV / MG4 EV / MG5 EV)": {
+                "lishi": "HU100 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU100",
+                "ic": "Card 1097",
+                "chip": "4A Smart Proximity (HITAG AES / SAIC)",
+                "xhorse": "XSKF21EN / Dedicated MG 4A Smart Key / OEM Only",
+                "warning": "⚠️ Dedicated EV / PHEV architecture. Emergency blade concealed inside modern MG smart fob.",
+                "module": "SAIC BCM / PEPS Keyless Module",
+                "location": "Passenger Footwell behind lower glovebox / centre console stack.",
+                "access": "Drop glovebox door past retention stops.",
+                "risk": "HIGH RISK — High Voltage Vehicle & PEPS Sync",
+                "protocol": "Connect 12V auxiliary battery charger. OBD PIN reading and proximity fob learning supported via SAIC diagnostic software.",
+                "acGas": "R1234yf",
+                "acCap": "520g ± 20g",
+                "acOil": "POE",
+                "acNote": "🛑 100% Electric / PHEV Lineup! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "MG3": {
+            "2013 - 2023 (MK2 - 2nd Gen)": {
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 / PCF7936 (SAIC)",
                 "xhorse": "XEOP01EN (Vauxhall/MG Super Remote Flip 3-Btn) / XT27A Transponder",
@@ -4918,21 +5782,20 @@ const carDatabase = {
                 "access": "Remove fuse access panel.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Standard OBD PIN read and flip key learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             }
         }
     },
-
     "Mazda": {
-        "Mazda 2 / Mazda 3 / Mazda 6": { 
-            "2008 - 2014 (2nd Gen - Ford Platform Shared)": { 
-                "lishi": "MAZ24R / FO38", 
+        "Mazda 2": {
+            "2008 - 2014 (2nd Gen - Ford Platform Shared)": {
+                "lishi": "MAZ24R / FO38",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "MAZ24R", 
-                "ic": "Card 791", 
+                "silca": "MAZ24R",
+                "ic": "Card 791",
                 "chip": "ID63 (40-Bit / 80-Bit) / 4D63",
                 "xhorse": "XEMAZ0EN (Mazda Super Remote Flip 3-Btn) / XEFO01EN / XT27A Transponder",
                 "warning": "Shared Ford/Mazda electrical architecture. Check MAZ24R vs FO38 blade.",
@@ -4941,16 +5804,16 @@ const carDatabase = {
                 "access": "Drop glovebox assembly down.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Standard OBD key programming (Ford/Mazda protocol). Minimum 2 keys required on All Keys Lost reset!",
-                "acGas": "R134a", 
-                "acCap": "500g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a fill."
             },
-            "2014 - 2019 (SkyActiv 3rd Gen)": { 
-                "lishi": "MAZ24R / MAZ2014", 
+            "2014 - 2019 (SkyActiv 3rd Gen)": {
+                "lishi": "MAZ24R / MAZ2014",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MAZ24R", 
-                "ic": "Card 1345", 
+                "silca": "MAZ24R",
+                "ic": "Card 1345",
                 "chip": "ID49 / 6D Smart Proximity",
                 "xhorse": "XSMZ01EN (Mazda SKE Smart Prox 2/3-Btn) / XSMQB1EN",
                 "warning": "⚠️ Transitioned to Mazda 2014+ (10-Cut / Lishi K5) internal track laser profile on latest shapes.",
@@ -4959,16 +5822,16 @@ const carDatabase = {
                 "access": "Remove plastic sill strip and lower passenger kick panel trim.",
                 "risk": "MODERATE — Smart Key Reset & Incodes",
                 "protocol": "OBD smart key programming supported. May require Outcode/Incode calculation on select 2017+ models.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "470g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "470g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ facelift models use R1234yf."
             },
-            "2019+ (4th Gen - BP / GL - Latest SkyActiv)": { 
-                "lishi": "MAZ2014 (10-Cut) / K5", 
+            "2019+ (4th Gen - BP / GL - Latest SkyActiv)": {
+                "lishi": "MAZ2014 (10-Cut) / K5",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "MAZ2014", 
-                "ic": "Card 1345", 
+                "silca": "MAZ2014",
+                "ic": "Card 1345",
                 "chip": "8A / 4A Smart Proximity (HITAG AES)",
                 "xhorse": "Dedicated Mazda 3rd/4th Gen Smart Key / OEM Only",
                 "warning": "⚠️ Latest Mazda 10-Cut laser keyway. Slim emergency blade inside smart fob.",
@@ -4977,17 +5840,129 @@ const carDatabase = {
                 "access": "Drop glovebox door past dampener arm.",
                 "risk": "HIGH RISK — Security Gateway Protection",
                 "protocol": "Requires active online server calculation or gateway bypass adapter for OBD key programming.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard across entire SkyActiv-X lineup."
             }
         },
-        "CX-3 / CX-5 / CX-30": { 
-            "2012 - 2017 (CX-5 KE / CX-3 Early)": { 
-                "lishi": "MAZ24R", 
+        "Mazda 3": {
+            "2008 - 2014 (2nd Gen - Ford Platform Shared)": {
+                "lishi": "MAZ24R / FO38",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "MAZ24R",
+                "ic": "Card 791",
+                "chip": "ID63 (40-Bit / 80-Bit) / 4D63",
+                "xhorse": "XEMAZ0EN (Mazda Super Remote Flip 3-Btn) / XEFO01EN / XT27A Transponder",
+                "warning": "Shared Ford/Mazda electrical architecture. Check MAZ24R vs FO38 blade.",
+                "module": "Instrument Cluster / BCM",
+                "location": "Passenger Footwell behind lower glovebox panel.",
+                "access": "Drop glovebox assembly down.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD key programming (Ford/Mazda protocol). Minimum 2 keys required on All Keys Lost reset!",
+                "acGas": "R134a",
+                "acCap": "500g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a fill."
+            },
+            "2014 - 2019 (SkyActiv 3rd Gen)": {
+                "lishi": "MAZ24R / MAZ2014",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MAZ24R", 
+                "silca": "MAZ24R",
+                "ic": "Card 1345",
+                "chip": "ID49 / 6D Smart Proximity",
+                "xhorse": "XSMZ01EN (Mazda SKE Smart Prox 2/3-Btn) / XSMQB1EN",
+                "warning": "⚠️ Transitioned to Mazda 2014+ (10-Cut / Lishi K5) internal track laser profile on latest shapes.",
+                "module": "Smart Start Unit (SSU) / BCM",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Remove plastic sill strip and lower passenger kick panel trim.",
+                "risk": "MODERATE — Smart Key Reset & Incodes",
+                "protocol": "OBD smart key programming supported. May require Outcode/Incode calculation on select 2017+ models.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "470g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ facelift models use R1234yf."
+            },
+            "2019+ (4th Gen - BP / GL - Latest SkyActiv)": {
+                "lishi": "MAZ2014 (10-Cut) / K5",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "MAZ2014",
+                "ic": "Card 1345",
+                "chip": "8A / 4A Smart Proximity (HITAG AES)",
+                "xhorse": "Dedicated Mazda 3rd/4th Gen Smart Key / OEM Only",
+                "warning": "⚠️ Latest Mazda 10-Cut laser keyway. Slim emergency blade inside smart fob.",
+                "module": "New Gen SSU / Gateway",
+                "location": "Behind Glovebox Assembly / lower A-pillar.",
+                "access": "Drop glovebox door past dampener arm.",
+                "risk": "HIGH RISK — Security Gateway Protection",
+                "protocol": "Requires active online server calculation or gateway bypass adapter for OBD key programming.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard across entire SkyActiv-X lineup."
+            }
+        },
+        "Mazda 6": {
+            "2008 - 2014 (2nd Gen - Ford Platform Shared)": {
+                "lishi": "MAZ24R / FO38",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "MAZ24R",
+                "ic": "Card 791",
+                "chip": "ID63 (40-Bit / 80-Bit) / 4D63",
+                "xhorse": "XEMAZ0EN (Mazda Super Remote Flip 3-Btn) / XEFO01EN / XT27A Transponder",
+                "warning": "Shared Ford/Mazda electrical architecture. Check MAZ24R vs FO38 blade.",
+                "module": "Instrument Cluster / BCM",
+                "location": "Passenger Footwell behind lower glovebox panel.",
+                "access": "Drop glovebox assembly down.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD key programming (Ford/Mazda protocol). Minimum 2 keys required on All Keys Lost reset!",
+                "acGas": "R134a",
+                "acCap": "500g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a fill."
+            },
+            "2014 - 2019 (SkyActiv 3rd Gen)": {
+                "lishi": "MAZ24R / MAZ2014",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MAZ24R",
+                "ic": "Card 1345",
+                "chip": "ID49 / 6D Smart Proximity",
+                "xhorse": "XSMZ01EN (Mazda SKE Smart Prox 2/3-Btn) / XSMQB1EN",
+                "warning": "⚠️ Transitioned to Mazda 2014+ (10-Cut / Lishi K5) internal track laser profile on latest shapes.",
+                "module": "Smart Start Unit (SSU) / BCM",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Remove plastic sill strip and lower passenger kick panel trim.",
+                "risk": "MODERATE — Smart Key Reset & Incodes",
+                "protocol": "OBD smart key programming supported. May require Outcode/Incode calculation on select 2017+ models.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "470g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ facelift models use R1234yf."
+            },
+            "2019+ (4th Gen - BP / GL - Latest SkyActiv)": {
+                "lishi": "MAZ2014 (10-Cut) / K5",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "MAZ2014",
+                "ic": "Card 1345",
+                "chip": "8A / 4A Smart Proximity (HITAG AES)",
+                "xhorse": "Dedicated Mazda 3rd/4th Gen Smart Key / OEM Only",
+                "warning": "⚠️ Latest Mazda 10-Cut laser keyway. Slim emergency blade inside smart fob.",
+                "module": "New Gen SSU / Gateway",
+                "location": "Behind Glovebox Assembly / lower A-pillar.",
+                "access": "Drop glovebox door past dampener arm.",
+                "risk": "HIGH RISK — Security Gateway Protection",
+                "protocol": "Requires active online server calculation or gateway bypass adapter for OBD key programming.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard across entire SkyActiv-X lineup."
+            }
+        },
+        "CX-3": {
+            "2012 - 2017 (CX-5 KE / CX-3 Early)": {
+                "lishi": "MAZ24R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MAZ24R",
                 "ic": "Card 791 / 1345",
                 "chip": "ID49 / 6D Smart Proximity",
                 "xhorse": "XSMZ01EN (Mazda Smart Prox 2/3-Btn)",
@@ -4996,16 +5971,16 @@ const carDatabase = {
                 "access": "Unclip passenger kick panel trim.",
                 "risk": "MODERATE",
                 "protocol": "Standard OBD smart key programming.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "490g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "490g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
-            "2017+ (CX-5 KF / CX-30 - SkyActiv)": { 
-                "lishi": "MAZ2014 (10-Cut) / K5", 
+            "2017+ (CX-5 KF / CX-30 - SkyActiv)": {
+                "lishi": "MAZ2014 (10-Cut) / K5",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "MAZ2014", 
-                "ic": "Card 1345", 
+                "silca": "MAZ2014",
+                "ic": "Card 1345",
                 "chip": "8A / 4A Smart Proximity (HITAG AES)",
                 "xhorse": "XSMZ01EN (Pre-2019) / Dedicated Mazda Smart Key (2019+)",
                 "warning": "10-Cut laser keyway standard across all latest CX SUVs.",
@@ -5014,22 +5989,94 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE / HIGH — Gateway Protection",
                 "protocol": "OBD smart key programming; maintain stable auxiliary power (>13.5V).",
-                "acGas": "R1234yf", 
-                "acCap": "480g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "R1234yf standard. CX-60 PHEV models require POE oil."
+            }
+        },
+        "CX-5": {
+            "2012 - 2017 (CX-5 KE / CX-3 Early)": {
+                "lishi": "MAZ24R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MAZ24R",
+                "ic": "Card 791 / 1345",
+                "chip": "ID49 / 6D Smart Proximity",
+                "xhorse": "XSMZ01EN (Mazda Smart Prox 2/3-Btn)",
+                "module": "Smart Start Unit (SSU)",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Unclip passenger kick panel trim.",
+                "risk": "MODERATE",
+                "protocol": "Standard OBD smart key programming.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "490g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2017+ (CX-5 KF / CX-30 - SkyActiv)": {
+                "lishi": "MAZ2014 (10-Cut) / K5",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "MAZ2014",
+                "ic": "Card 1345",
+                "chip": "8A / 4A Smart Proximity (HITAG AES)",
+                "xhorse": "XSMZ01EN (Pre-2019) / Dedicated Mazda Smart Key (2019+)",
+                "warning": "10-Cut laser keyway standard across all latest CX SUVs.",
+                "module": "SSU & Smart Gateway",
+                "location": "Behind Glovebox Assembly / lower A-pillar.",
+                "access": "Drop glovebox assembly.",
+                "risk": "MODERATE / HIGH — Gateway Protection",
+                "protocol": "OBD smart key programming; maintain stable auxiliary power (>13.5V).",
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "R1234yf standard. CX-60 PHEV models require POE oil."
+            }
+        },
+        "CX-30": {
+            "2012 - 2017 (CX-5 KE / CX-3 Early)": {
+                "lishi": "MAZ24R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MAZ24R",
+                "ic": "Card 791 / 1345",
+                "chip": "ID49 / 6D Smart Proximity",
+                "xhorse": "XSMZ01EN (Mazda Smart Prox 2/3-Btn)",
+                "module": "Smart Start Unit (SSU)",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Unclip passenger kick panel trim.",
+                "risk": "MODERATE",
+                "protocol": "Standard OBD smart key programming.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "490g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2017+ (CX-5 KF / CX-30 - SkyActiv)": {
+                "lishi": "MAZ2014 (10-Cut) / K5",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "MAZ2014",
+                "ic": "Card 1345",
+                "chip": "8A / 4A Smart Proximity (HITAG AES)",
+                "xhorse": "XSMZ01EN (Pre-2019) / Dedicated Mazda Smart Key (2019+)",
+                "warning": "10-Cut laser keyway standard across all latest CX SUVs.",
+                "module": "SSU & Smart Gateway",
+                "location": "Behind Glovebox Assembly / lower A-pillar.",
+                "access": "Drop glovebox assembly.",
+                "risk": "MODERATE / HIGH — Gateway Protection",
+                "protocol": "OBD smart key programming; maintain stable auxiliary power (>13.5V).",
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "R1234yf standard. CX-60 PHEV models require POE oil."
             }
         }
     },
-
-
     "Mercedes-Benz": {
-        "A-Class": { 
-            "2012 - 2018 (W176)": { 
-                "lishi": "HU64", 
+        "A-Class": {
+            "2012 - 2018 (W176)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971", 
+                "silca": "HU64",
+                "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3) / FBS4 Dealer",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3/4-Btn)",
                 "warning": "⚠️ Transition models! Pre-2015 = FBS3 (Programmable). Post-2015 facelift = FBS4 (Locked).",
@@ -5038,15 +6085,15 @@ const carDatabase = {
                 "access": "Remove driver knee airbag / bolster panel.",
                 "risk": "MODERATE / HIGH — Verify FBS Version First",
                 "protocol": "Check EIS hash via OBD. If FBS3: extract IR password and program key. If FBS4: abort AKL unless dealer-authorized.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "650g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
-            "2018+ (W177 - New Shape)": { 
-                "lishi": "HU64 / HU136", 
+            "2018+ (W177 - New Shape)": {
+                "lishi": "HU64 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971 / 1420",
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
                 "xhorse": "Dedicated FBS4 Key / OEM Dealer Key Only",
@@ -5055,17 +6102,17 @@ const carDatabase = {
                 "access": "Remove lower steering column shroud.",
                 "risk": "HIGH — FBS4 & Security Gateway",
                 "protocol": "Dealer or OEM-authorized token access required. No aftermarket AKL calculation.",
-                "acGas": "R1234yf", 
-                "acCap": "580g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "580g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "A250e PHEV models require POE oil."
             }
         },
         "B-Class": {
             "2011 - 2018 (W246)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3) / FBS4 Dealer",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3)",
@@ -5075,15 +6122,15 @@ const carDatabase = {
                 "access": "Remove lower dash trim.",
                 "risk": "MODERATE / HIGH",
                 "protocol": "Check FBS generation via OBD. Extract IR password on FBS3.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             },
             "2019+ (W247)": {
-                "lishi": "HU64 / HU136", 
+                "lishi": "HU64 / HU136",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS4 Dealer / Virgin Smart",
                 "xhorse": "Dedicated FBS4 Key / OEM Dealer Key Only",
@@ -5092,18 +6139,18 @@ const carDatabase = {
                 "access": "Advanced teardown.",
                 "risk": "HIGH — FBS4",
                 "protocol": "Dealer ordering or specialist cloning only.",
-                "acGas": "R1234yf", 
-                "acCap": "580g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "580g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "B250e PHEV takes POE oil."
             }
         },
-        "C-Class": { 
-            "2007 - 2014 (W204)": { 
-                "lishi": "HU64", 
+        "C-Class": {
+            "2007 - 2014 (W204)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971", 
+                "silca": "HU64",
+                "ic": "Card 971",
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3/4-Btn)",
                 "warning": "FBS3 Electronic Ignition Switch (EIS/EZS). IR password calculation required.",
@@ -5112,16 +6159,16 @@ const carDatabase = {
                 "access": "Unscrew outer EZS bezel ring using Mercedes Rose lock-ring tool.",
                 "risk": "MODERATE — Password Calculation via IR / Bench",
                 "protocol": "Connect bench adapter (G-Box / VVDI). Perform IR password calculation, generate key file, and write to BE fob.",
-                "acGas": "R134a", 
-                "acCap": "590g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "590g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2014 - 2021 (W205)": { 
-                "lishi": "HU64", 
+            "2014 - 2021 (W205)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971", 
+                "silca": "HU64",
+                "ic": "Card 971",
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
                 "xhorse": "Dedicated FBS4 Key / OEM Dealer Key Only",
                 "warning": "⚠️ FBS4 Architecture! CANNOT be calculated on bench or OBD for AKL!",
@@ -5130,15 +6177,15 @@ const carDatabase = {
                 "access": "Remove driver lower knee bolster.",
                 "risk": "HIGH RISK — FBS4 Dealer Lockout",
                 "protocol": "🛑 FBS4 AKL requires factory-coded replacement key or specialist ECU/ISM cloning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "630g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "630g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "C300e / C350e Hybrid requires POE oil."
             },
             "2021+ (W206 - New Shape)": {
-                "lishi": "HU136 / HU64", 
+                "lishi": "HU136 / HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 1420",
                 "chip": "FBS4 Proximity Smart",
                 "xhorse": "Dedicated OEM Smart Key Only",
@@ -5148,17 +6195,17 @@ const carDatabase = {
                 "access": "Dealer diagnostic access.",
                 "risk": "EXTREME — Full Lockout",
                 "protocol": "Authorized dealer replacement only at this time.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "PHEV uses POE oil."
             }
         },
         "CL": {
             "1999 - 2006 (C215)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS2b / Early FBS3",
                 "xhorse": "XMB400EN (FBS3) / Motorola MCU EEPROM Key File",
@@ -5167,15 +6214,15 @@ const carDatabase = {
                 "access": "Remove dash trim.",
                 "risk": "MODERATE",
                 "protocol": "Motorola MCU bench read for early models or IR password for FBS3.",
-                "acGas": "R134a", 
-                "acCap": "950g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "950g",
+                "acOil": "PAG 46",
                 "acNote": "Large capacity luxury system."
             },
             "2006 - 2014 (C216)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3)",
@@ -5184,17 +6231,17 @@ const carDatabase = {
                 "access": "Remove lower dash trim.",
                 "risk": "MODERATE",
                 "protocol": "IR password calculation via OBD or bench.",
-                "acGas": "R134a", 
-                "acCap": "1050g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "1050g",
+                "acOil": "PAG 46",
                 "acNote": "Very large AC capacity."
             }
         },
         "CLK": {
             "1997 - 2003 (W208)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS2b / FBS3",
                 "xhorse": "XMB400EN (FBS3) / MCU Dump Write",
@@ -5203,15 +6250,15 @@ const carDatabase = {
                 "access": "Remove dash panels.",
                 "risk": "MODERATE",
                 "protocol": "MCU bench read (HC05/HC08) to generate keys.",
-                "acGas": "R134a", 
-                "acCap": "850g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "850g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2003 - 2010 (W209)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3-Btn)",
@@ -5220,17 +6267,17 @@ const carDatabase = {
                 "access": "Remove lower dash.",
                 "risk": "LOW / MODERATE",
                 "protocol": "IR password extraction via bench adapter (G-Box/VVDI).",
-                "acGas": "R134a", 
-                "acCap": "750g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "750g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Citan": {
             "2012 - 2021 (W415 - Renault Kangoo Twin)": {
-                "lishi": "VAC102 / HU136", 
+                "lishi": "VAC102 / HU136",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 (Renault PCF7936)",
                 "xhorse": "XERN01EN (Renault Super Remote Flip 2/3-Btn)",
@@ -5240,15 +6287,15 @@ const carDatabase = {
                 "access": "Remove glovebox.",
                 "risk": "MODERATE",
                 "protocol": "Program as Renault Kangoo. Read PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2021+ (W420 - Renault Kangoo III Twin)": {
-                "lishi": "HU136 / VA2", 
+                "lishi": "HU136 / VA2",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN / Dedicated Renault/Smart 4A Key",
@@ -5257,17 +6304,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Renault gateway bypass may be required.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
-        "E-Class": { 
-            "2009 - 2016 (W212)": { 
-                "lishi": "HU64", 
+        "E-Class": {
+            "2009 - 2016 (W212)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3/4-Btn)",
@@ -5276,16 +6323,16 @@ const carDatabase = {
                 "access": "Release outer EZS bezel ring and lower dash trim shroud.",
                 "risk": "MODERATE — FBS3 IR Password Calculation",
                 "protocol": "Bench or OBD IR password reading supported. Generate key dump and personalize key via IR.",
-                "acGas": "R134a", 
-                "acCap": "590g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "590g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "4-zone rear climate models take 800g."
             },
-            "2016 - 2023 (W213)": { 
-                "lishi": "HU64 / HU136", 
+            "2016 - 2023 (W213)": {
+                "lishi": "HU64 / HU136",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971 / 1420", 
+                "silca": "HU64",
+                "ic": "Card 971 / 1420",
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
                 "xhorse": "Dedicated FBS4 Smart Key / OEM Only",
                 "warning": "FBS4 security architecture across all W213 models.",
@@ -5294,15 +6341,15 @@ const carDatabase = {
                 "access": "Remove instrument/dash trim bezel.",
                 "risk": "HIGH — FBS4 Security Lockout",
                 "protocol": "No aftermarket AKL password calculation supported. Spare key addition requires working master key or dealer server authorization.",
-                "acGas": "R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard. E300de PHEV models require POE non-conductive oil."
             },
             "2023+ (W214)": {
-                "lishi": "HU136", 
+                "lishi": "HU136",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 1420",
                 "chip": "FBS4 Next-Gen Smart",
                 "xhorse": "Dedicated OEM Smart Key Only",
@@ -5311,17 +6358,17 @@ const carDatabase = {
                 "access": "Dealer only.",
                 "risk": "EXTREME",
                 "protocol": "Fully locked down to OEM server.",
-                "acGas": "R1234yf", 
-                "acCap": "600g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "PHEV takes POE oil."
             }
         },
         "M-Class": {
             "2005 - 2011 (W164)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3)",
@@ -5330,15 +6377,15 @@ const carDatabase = {
                 "access": "Remove lower dash trim.",
                 "risk": "MODERATE",
                 "protocol": "IR password calculation via OBD or Bench.",
-                "acGas": "R134a", 
-                "acCap": "950g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "950g",
+                "acOil": "PAG 46",
                 "acNote": "Rear AC requires up to 1220g."
             },
             "2011 - 2015 (W166)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS3 / FBS4 Transition",
                 "xhorse": "XMB400EN (If verified FBS3) / OEM FBS4 Dealer Key",
@@ -5348,17 +6395,17 @@ const carDatabase = {
                 "access": "Remove outer bezel.",
                 "risk": "HIGH — FBS4 Hazard",
                 "protocol": "Check EIS hash. If FBS3, extract password. If FBS4, dealer replacement only.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "950g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "950g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "S-Class": {
             "2006 - 2013 (W221)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3/4-Btn)",
@@ -5367,15 +6414,15 @@ const carDatabase = {
                 "access": "Remove lower dash trim.",
                 "risk": "MODERATE",
                 "protocol": "IR password extraction via bench/OBD.",
-                "acGas": "R134a", 
-                "acCap": "1050g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "1050g",
+                "acOil": "PAG 46",
                 "acNote": "Very large capacity system."
             },
             "2014 - 2020 (W222)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS4 Dealer Smart",
                 "xhorse": "Dedicated FBS4 Smart Key / OEM Only",
@@ -5385,15 +6432,15 @@ const carDatabase = {
                 "access": "Dealer only.",
                 "risk": "HIGH — FBS4",
                 "protocol": "Factory-coded replacement key required.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "950g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "950g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "S500e PHEV takes POE oil."
             },
             "2021+ (W223)": {
-                "lishi": "HU136", 
+                "lishi": "HU136",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 1420",
                 "chip": "FBS4 Next-Gen Smart",
                 "xhorse": "Dedicated OEM Smart Key Only",
@@ -5402,17 +6449,17 @@ const carDatabase = {
                 "access": "Dealer only.",
                 "risk": "EXTREME",
                 "protocol": "Fully locked down to Mercedes server.",
-                "acGas": "R1234yf", 
-                "acCap": "900g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "900g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "PHEV takes POE oil."
             }
         },
         "SL-Class": {
             "2001 - 2011 (R230)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3)",
@@ -5421,15 +6468,15 @@ const carDatabase = {
                 "access": "Remove dash trim.",
                 "risk": "MODERATE",
                 "protocol": "IR password calculation via OBD / Bench.",
-                "acGas": "R134a", 
-                "acCap": "950g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "950g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2012 - 2020 (R231)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS3 / FBS4 Transition",
                 "xhorse": "XMB400EN (If FBS3) / OEM Dealer Key (If FBS4)",
@@ -5438,17 +6485,17 @@ const carDatabase = {
                 "access": "Remove outer bezel.",
                 "risk": "HIGH — FBS4 Hazard",
                 "protocol": "Verify FBS version before attempting AKL.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "800g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "800g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             }
         },
         "SLK": {
             "2004 - 2010 (R171)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3-Btn)",
@@ -5457,15 +6504,15 @@ const carDatabase = {
                 "access": "Remove lower dash trim.",
                 "risk": "MODERATE",
                 "protocol": "IR password calculation via bench adapter.",
-                "acGas": "R134a", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2011 - 2020 (R172 / SLC)": {
-                "lishi": "HU64", 
+                "lishi": "HU64",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "FBS3 / FBS4 Transition",
                 "xhorse": "XMB400EN (If FBS3) / OEM Dealer Key (If FBS4)",
@@ -5474,17 +6521,17 @@ const carDatabase = {
                 "access": "Remove outer bezel.",
                 "risk": "HIGH — Verify FBS",
                 "protocol": "Check if FBS3 or FBS4 via OBD hash read.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             }
         },
         "Smart": {
             "2007 - 2014 (Fortwo W451)": {
-                "lishi": "HU64 / YM15", 
+                "lishi": "HU64 / YM15",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "ID46 / PCF7941",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN (Blade)",
@@ -5494,15 +6541,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD transponder learning.",
-                "acGas": "R134a", 
-                "acCap": "420g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "420g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity."
             },
             "2014 - 2019 (Fortwo / Forfour W453 - Renault Twingo Twin)": {
-                "lishi": "VAC102 / HU136", 
+                "lishi": "VAC102 / HU136",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "HITAG AES / ID4A",
                 "xhorse": "XERN01EN (Renault Super Remote Flip) / XSKF21EN",
@@ -5512,18 +6559,18 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Program as Renault Twingo. PIN read via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "430g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "430g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
-        "Sprinter": { 
-            "2006 - 2018 (W906 - MK2 Sprinter)": { 
-                "lishi": "HU64", 
+        "Sprinter": {
+            "2006 - 2018 (W906 - MK2 Sprinter)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971", 
+                "silca": "HU64",
+                "ic": "Card 971",
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3/4-Btn)",
                 "warning": "UK commercial fleet workhorse. Runs FBS3 EIS system.",
@@ -5532,16 +6579,16 @@ const carDatabase = {
                 "access": "Unscrew outer retaining bezel ring. Reach up from lower footwell pedal area to release EIS box.",
                 "risk": "MODERATE — FBS3 Password Extraction",
                 "protocol": "OBD IR password read supported on most W906 Sprinters. Bench read via adapter if OBD times out.",
-                "acGas": "R134a", 
-                "acCap": "800g ± 30g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "800g ± 30g",
+                "acOil": "PAG 46",
                 "acNote": "Dual-evaporator rear A/C models take 1190g fill weight!"
             },
-            "2018+ (W907 / W910 - MK3 Sprinter)": { 
-                "lishi": "HU64 / HU136", 
+            "2018+ (W907 / W910 - MK3 Sprinter)": {
+                "lishi": "HU64 / HU136",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971 / 1420", 
+                "silca": "HU64",
+                "ic": "Card 971 / 1420",
                 "chip": "FBS4 Dealer / Virgin Smart Fob",
                 "xhorse": "Dedicated FBS4 Key / OEM Dealer Key Only",
                 "warning": "⚠️ FBS4 Architecture! Push-button start & slot-key variants.",
@@ -5550,17 +6597,17 @@ const carDatabase = {
                 "access": "Remove lower dashboard trim panels.",
                 "risk": "HIGH — FBS4 Commercial Lockout",
                 "protocol": "No direct OBD AKL programming. Spare keys require working key or OEM server commissioning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "750g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "750g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "2019+ UK models use R1234yf. Check compressor label."
             }
         },
-        "Vito": { 
-            "2003 - 2014 (W639 - MK2 Vito)": { 
-                "lishi": "HU64", 
+        "Vito": {
+            "2003 - 2014 (W639 - MK2 Vito)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
+                "silca": "HU64",
                 "ic": "Card 971",
                 "chip": "BE / BGA Smart Fob (FBS3 IR)",
                 "xhorse": "XMB400EN (VVDI Mercedes Smart Key FBS3 3/4-Btn)",
@@ -5569,16 +6616,16 @@ const carDatabase = {
                 "access": "Remove lower driver trim shroud.",
                 "risk": "MODERATE — FBS3 Password Read",
                 "protocol": "Extract IR password via OBD or bench adapter; program BE transponder fob.",
-                "acGas": "R134a", 
-                "acCap": "840g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "840g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Rear climate control models take 1050g."
             },
-            "2014+ (W447 - MK3 Vito / V-Class)": { 
-                "lishi": "HU64", 
+            "2014+ (W447 - MK3 Vito / V-Class)": {
+                "lishi": "HU64",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU64", 
-                "ic": "Card 971", 
+                "silca": "HU64",
+                "ic": "Card 971",
                 "chip": "BE Smart Fob (FBS3) / FBS4 Dealer",
                 "xhorse": "XMB400EN (If FBS3) / OEM Dealer Key (If FBS4)",
                 "warning": "⚠️ Early W447 (2014-2015) = FBS3. Post-2015 = FBS4 architecture.",
@@ -5587,21 +6634,20 @@ const carDatabase = {
                 "access": "Remove outer bezel ring and lower driver trim panel.",
                 "risk": "MODERATE / HIGH — Verify FBS System",
                 "protocol": "If FBS3: extract IR password and program key. If FBS4: dealer ordering or ECU/EIS cloning required.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "700g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "700g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf. eVito (EV) requires POE oil."
             }
         }
     },
-
     "MINI": {
-        "Hatch (3-Door & 5-Door)": { 
-            "2001 - 2006 (R50 / R53 - Gen 1 One / Cooper / Cooper S)": { 
-                "lishi": "HU92", 
+        "Hatch (3-Door & 5-Door)": {
+            "2001 - 2006 (R50 / R53 - Gen 1 One / Cooper / Cooper S)": {
+                "lishi": "HU92",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU92", 
-                "ic": "Card 851", 
+                "silca": "HU92",
+                "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS3) or ID46 (Late 2005+)",
                 "xhorse": "VVDI XT27A Super Chip / XEB510EN (BMW/MINI 3-Btn Blade Remote)",
                 "warning": "1st Gen BMW architecture. 2-button clamshell or 3-button winged remote blade key.",
@@ -5610,16 +6656,16 @@ const carDatabase = {
                 "access": "Remove lower driver knee bolster panel (Phillips/Torx screws). White/grey EWS box.",
                 "risk": "LOW RISK — Bench EWS MCU Read",
                 "protocol": "Bench read EWS3 MCU (0D46J/2D47J) using AK90/VVDI Prog. Write transponder chip directly from dump.",
-                "acGas": "R134a", 
-                "acCap": "415g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "415g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a fill."
             },
-            "2006 - 2014 (R56 - Gen 2 Hatch)": { 
-                "lishi": "HU92", 
+            "2006 - 2014 (R56 - Gen 2 Hatch)": {
+                "lishi": "HU92",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU92", 
-                "ic": "Card 851", 
+                "silca": "HU92",
+                "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
                 "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Key Fob",
                 "warning": "⚠️ Round saucer dash-slot key fob (CAS3 / CAS3+ system). Emergency blade slides into top of remote.",
@@ -5628,16 +6674,16 @@ const carDatabase = {
                 "access": "Remove 3x T20 Torx screws holding lower driver's footwell trim panel. Lower panel down. CAS is a rectangular white/black box clipped into a bracket.",
                 "risk": "MODERATE RISK — CAS3+ ISTAP Flash Downgrade Hazard",
                 "protocol": "CAS3: Standard OBD key learning supported. CAS3+ (ISTAP / 2008+): Requires EEPROM downgrade or flash via OBD/bench. Always back up CAS EEPROM & D-FLASH before writing!",
-                "acGas": "R134a", 
-                "acCap": "490g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "490g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2014 - 2024 (F55 5-Door / F56 3-Door - Gen 3 / MINI Electric)": { 
-                "lishi": "HU100R", 
+            "2014 - 2024 (F55 5-Door / F56 3-Door - Gen 3 / MINI Electric)": {
+                "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100R", 
-                "ic": "Card 1324", 
+                "silca": "HU100R",
+                "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
                 "xhorse": "XSF400EN (BMW/MINI F-Series Smart Prox 3/4-Btn) / Dedicated MINI Round F-Series Smart Key",
                 "warning": "⚠️ 3rd Gen BMW UKL platform! Uses BMW HU100R keyway and BDC (Body Domain Controller), NOT CAS!",
@@ -5646,15 +6692,15 @@ const carDatabase = {
                 "access": "Remove plastic door sill kick strip and pull passenger footwell side trim cover (1x T20 Torx and plastic retaining clips). Large black module with multi-colored plugs.",
                 "risk": "HIGH RISK — Bench EEPROM Pre-processing Required",
                 "protocol": "Remove BDC module. Use programmer (IM608/VVDI) to read 95256 EEPROM on bench, unlock module via OBD/bench harness, and generate dealer key. 🛑 Maintain >13.5V battery voltage!",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "Pre-2017 uses R134a; 2017+ facelift uses R1234yf. 🛑 MINI Electric (F56 Cooper SE) strictly requires POE non-conductive oil!"
             },
             "2024+ (J01 EV / F66 ICE - Gen 4 New Generation)": {
-                "lishi": "HU100R", 
+                "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU100R", 
+                "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "ID49 Smart (BDC3 / Security Gateway)",
                 "xhorse": "Dedicated Gen 4 OEM Smart Key Only",
@@ -5664,18 +6710,18 @@ const carDatabase = {
                 "access": "Unclip passenger kick panel trim.",
                 "risk": "EXTREME — Full OEM Lockdown",
                 "protocol": "Online server authorization or dealer session required.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 J01 EV requires POE non-conductive compressor oil. F66 ICE petrol uses PAG 46."
             }
         },
         "Clubman": {
             "2007 - 2014 (R55 - Gen 2 Estate)": {
-                "lishi": "HU92", 
+                "lishi": "HU92",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU92", 
-                "ic": "Card 851", 
+                "silca": "HU92",
+                "ic": "Card 851",
                 "chip": "ID46 / PCF7936 / PCF7945 (CAS3)",
                 "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Fob",
                 "warning": "Round saucer slot key. Split rear barn doors operate from remote release.",
@@ -5684,16 +6730,16 @@ const carDatabase = {
                 "access": "Remove lower dash trim shroud (3x T20 Torx).",
                 "risk": "MODERATE — CAS3+ ISTAP Flash",
                 "protocol": "OBD key learn on CAS3; EEPROM backup/flash downgrade on CAS3+ ISTAP.",
-                "acGas": "R134a", 
-                "acCap": "490g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "490g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2015 - 2024 (F54 - Gen 3 Estate)": {
-                "lishi": "HU100R", 
+                "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100R", 
-                "ic": "Card 1324", 
+                "silca": "HU100R",
+                "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
                 "xhorse": "XSF400EN (BMW/MINI Smart Prox 3/4-Btn) / Dedicated MINI F-Series Smart Key",
                 "module": "BDC (Body Domain Controller)",
@@ -5701,18 +6747,18 @@ const carDatabase = {
                 "access": "Remove passenger sill kick strip and side trim panel.",
                 "risk": "HIGH RISK — Bench EEPROM Unlock Required",
                 "protocol": "Bench read 95256 EEPROM on BDC before OBD key programming.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "530g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "530g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models transitioned to R1234yf."
             }
         },
-        "Countryman / Paceman": {
+        "Countryman": {
             "2010 - 2016 (R60 Countryman / R61 Paceman - Gen 2 Crossover)": {
-                "lishi": "HU92", 
+                "lishi": "HU92",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU92", 
-                "ic": "Card 851", 
+                "silca": "HU92",
+                "ic": "Card 851",
                 "chip": "ID46 / PCF7945 (CAS3+)",
                 "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Fob",
                 "warning": "Slot key fob. CAS3+ ISTAP version is standard across nearly all R60/R61 production.",
@@ -5721,16 +6767,16 @@ const carDatabase = {
                 "access": "Lower knee bolster trim panel (3x T20 Torx).",
                 "risk": "MODERATE / HIGH — CAS3+ ISTAP Protection",
                 "protocol": "Perform CAS3+ flash downgrade via OBD/bench before key learning. Keep voltage >13.5V.",
-                "acGas": "R134a", 
-                "acCap": "500g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2017 - 2024 (F60 Countryman - Gen 3 / Cooper S E PHEV)": {
-                "lishi": "HU100R", 
+                "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100R", 
-                "ic": "Card 1324", 
+                "silca": "HU100R",
+                "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
                 "xhorse": "XSF400EN (BMW/MINI Smart Prox 3/4-Btn) / Dedicated MINI F-Series Smart Key",
                 "module": "BDC Module",
@@ -5738,15 +6784,15 @@ const carDatabase = {
                 "access": "Remove passenger door sill cover and A-pillar trim.",
                 "risk": "HIGH RISK — BDC Pre-processing Required",
                 "protocol": "Bench unlock BDC MCU/EEPROM before programming key via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "550g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "550g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 Cooper S E Hybrid (PHEV) strictly requires POE non-conductive compressor oil!"
             },
             "2024+ (U25 Countryman - Gen 4 / Countryman Electric)": {
-                "lishi": "HU100R", 
+                "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU100R", 
+                "silca": "HU100R",
                 "ic": "Card 1324",
                 "chip": "ID49 Smart (BDC3 / Security Gateway)",
                 "xhorse": "Dedicated Gen 4 OEM Smart Key Only",
@@ -5756,18 +6802,73 @@ const carDatabase = {
                 "access": "Unclip passenger kick panel trim.",
                 "risk": "EXTREME",
                 "protocol": "Online server authorization required for key additions.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 Countryman EV requires POE oil. Petrol/diesel uses PAG 46."
             }
         },
-        "Coupe / Roadster / Convertible": {
+        "Paceman": {
+            "2010 - 2016 (R60 Countryman / R61 Paceman - Gen 2 Crossover)": {
+                "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU92",
+                "ic": "Card 851",
+                "chip": "ID46 / PCF7945 (CAS3+)",
+                "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Fob",
+                "warning": "Slot key fob. CAS3+ ISTAP version is standard across nearly all R60/R61 production.",
+                "module": "CAS3+ Module",
+                "location": "Driver's Footwell above steering column lower shroud.",
+                "access": "Lower knee bolster trim panel (3x T20 Torx).",
+                "risk": "MODERATE / HIGH — CAS3+ ISTAP Protection",
+                "protocol": "Perform CAS3+ flash downgrade via OBD/bench before key learning. Keep voltage >13.5V.",
+                "acGas": "R134a",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2017 - 2024 (F60 Countryman - Gen 3 / Cooper S E PHEV)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU100R",
+                "ic": "Card 1324",
+                "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
+                "xhorse": "XSF400EN (BMW/MINI Smart Prox 3/4-Btn) / Dedicated MINI F-Series Smart Key",
+                "module": "BDC Module",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Remove passenger door sill cover and A-pillar trim.",
+                "risk": "HIGH RISK — BDC Pre-processing Required",
+                "protocol": "Bench unlock BDC MCU/EEPROM before programming key via OBD.",
+                "acGas": "R1234yf",
+                "acCap": "550g ± 20g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "🛑 Cooper S E Hybrid (PHEV) strictly requires POE non-conductive compressor oil!"
+            },
+            "2024+ (U25 Countryman - Gen 4 / Countryman Electric)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU100R",
+                "ic": "Card 1324",
+                "chip": "ID49 Smart (BDC3 / Security Gateway)",
+                "xhorse": "Dedicated Gen 4 OEM Smart Key Only",
+                "warning": "⚠️ Shared platform with BMW X1 (U11). Security Gateway active.",
+                "module": "BDC3 / Gateway",
+                "location": "Passenger Footwell lower A-pillar area.",
+                "access": "Unclip passenger kick panel trim.",
+                "risk": "EXTREME",
+                "protocol": "Online server authorization required for key additions.",
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "🛑 Countryman EV requires POE oil. Petrol/diesel uses PAG 46."
+            }
+        },
+        "Coupe": {
             "2004 - 2008 (R52 Convertible - Gen 1)": {
-                "lishi": "HU92", 
+                "lishi": "HU92",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU92", 
-                "ic": "Card 851", 
+                "silca": "HU92",
+                "ic": "Card 851",
                 "chip": "ID44 / PCF7935 (EWS3)",
                 "xhorse": "VVDI XT27A Super Chip / XEB510EN (3-Btn Blade Remote)",
                 "module": "EWS3 Immobiliser",
@@ -5775,16 +6876,16 @@ const carDatabase = {
                 "access": "Remove lower knee bolster.",
                 "risk": "LOW — Bench Read EWS",
                 "protocol": "Read EWS3 MCU on bench and write transponder directly to dump.",
-                "acGas": "R134a", 
-                "acCap": "415g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "415g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a fill."
             },
             "2008 - 2015 (R57 Convertible / R58 Coupe / R59 Roadster - Gen 2)": {
-                "lishi": "HU92", 
+                "lishi": "HU92",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU92", 
-                "ic": "Card 851", 
+                "silca": "HU92",
+                "ic": "Card 851",
                 "chip": "ID46 / PCF7945 (CAS3+)",
                 "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Fob",
                 "module": "CAS3+ Module",
@@ -5792,16 +6893,16 @@ const carDatabase = {
                 "access": "Remove 3x T20 Torx screws on lower driver trim panel.",
                 "risk": "MODERATE — CAS3+ ISTAP Protection",
                 "protocol": "OBD key learn or EEPROM flash downgrade on CAS3+ ISTAP.",
-                "acGas": "R134a", 
-                "acCap": "490g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "490g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2016+ (F57 Convertible - Gen 3)": {
-                "lishi": "HU100R", 
+                "lishi": "HU100R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100R", 
-                "ic": "Card 1324", 
+                "silca": "HU100R",
+                "ic": "Card 1324",
                 "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
                 "xhorse": "XSF400EN (BMW/MINI Smart Prox 3/4-Btn) / Dedicated MINI F-Series Smart Key",
                 "module": "BDC Module",
@@ -5809,20 +6910,125 @@ const carDatabase = {
                 "access": "Remove passenger sill kick strip and side trim panel.",
                 "risk": "HIGH RISK — BDC Pre-processing Required",
                 "protocol": "Bench unlock BDC 95256 EEPROM before programming key via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "500g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard."
+            }
+        },
+        "Roadster": {
+            "2004 - 2008 (R52 Convertible - Gen 1)": {
+                "lishi": "HU92",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU92",
+                "ic": "Card 851",
+                "chip": "ID44 / PCF7935 (EWS3)",
+                "xhorse": "VVDI XT27A Super Chip / XEB510EN (3-Btn Blade Remote)",
+                "module": "EWS3 Immobiliser",
+                "location": "Driver's Footwell near bonnet release.",
+                "access": "Remove lower knee bolster.",
+                "risk": "LOW — Bench Read EWS",
+                "protocol": "Read EWS3 MCU on bench and write transponder directly to dump.",
+                "acGas": "R134a",
+                "acCap": "415g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a fill."
+            },
+            "2008 - 2015 (R57 Convertible / R58 Coupe / R59 Roadster - Gen 2)": {
+                "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU92",
+                "ic": "Card 851",
+                "chip": "ID46 / PCF7945 (CAS3+)",
+                "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Fob",
+                "module": "CAS3+ Module",
+                "location": "Driver's Footwell above steering column lower shroud.",
+                "access": "Remove 3x T20 Torx screws on lower driver trim panel.",
+                "risk": "MODERATE — CAS3+ ISTAP Protection",
+                "protocol": "OBD key learn or EEPROM flash downgrade on CAS3+ ISTAP.",
+                "acGas": "R134a",
+                "acCap": "490g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2016+ (F57 Convertible - Gen 3)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU100R",
+                "ic": "Card 1324",
+                "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
+                "xhorse": "XSF400EN (BMW/MINI Smart Prox 3/4-Btn) / Dedicated MINI F-Series Smart Key",
+                "module": "BDC Module",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Remove passenger sill kick strip and side trim panel.",
+                "risk": "HIGH RISK — BDC Pre-processing Required",
+                "protocol": "Bench unlock BDC 95256 EEPROM before programming key via OBD.",
+                "acGas": "R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard."
+            }
+        },
+        "Convertible": {
+            "2004 - 2008 (R52 Convertible - Gen 1)": {
+                "lishi": "HU92",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU92",
+                "ic": "Card 851",
+                "chip": "ID44 / PCF7935 (EWS3)",
+                "xhorse": "VVDI XT27A Super Chip / XEB510EN (3-Btn Blade Remote)",
+                "module": "EWS3 Immobiliser",
+                "location": "Driver's Footwell near bonnet release.",
+                "access": "Remove lower knee bolster.",
+                "risk": "LOW — Bench Read EWS",
+                "protocol": "Read EWS3 MCU on bench and write transponder directly to dump.",
+                "acGas": "R134a",
+                "acCap": "415g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a fill."
+            },
+            "2008 - 2015 (R57 Convertible / R58 Coupe / R59 Roadster - Gen 2)": {
+                "lishi": "HU92",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU92",
+                "ic": "Card 851",
+                "chip": "ID46 / PCF7945 (CAS3+)",
+                "xhorse": "XSBM01EN (BMW/MINI Smart Key CAS3 3-Btn) / Dedicated Round Saucer Fob",
+                "module": "CAS3+ Module",
+                "location": "Driver's Footwell above steering column lower shroud.",
+                "access": "Remove 3x T20 Torx screws on lower driver trim panel.",
+                "risk": "MODERATE — CAS3+ ISTAP Protection",
+                "protocol": "OBD key learn or EEPROM flash downgrade on CAS3+ ISTAP.",
+                "acGas": "R134a",
+                "acCap": "490g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2016+ (F57 Convertible - Gen 3)": {
+                "lishi": "HU100R",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU100R",
+                "ic": "Card 1324",
+                "chip": "HU100R Smart (ID49 / PCF7953 BDC)",
+                "xhorse": "XSF400EN (BMW/MINI Smart Prox 3/4-Btn) / Dedicated MINI F-Series Smart Key",
+                "module": "BDC Module",
+                "location": "Passenger Footwell lower A-pillar kick panel.",
+                "access": "Remove passenger sill kick strip and side trim panel.",
+                "risk": "HIGH RISK — BDC Pre-processing Required",
+                "protocol": "Bench unlock BDC 95256 EEPROM before programming key via OBD.",
+                "acGas": "R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         }
     },
-
     "Mitsubishi": {
         "ASX": {
             "2010 - 2021": {
-                "lishi": "MIT11R", 
+                "lishi": "MIT11R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MIT11R", 
+                "silca": "MIT11R",
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936 (Blade) or PCF7952 (Smart)",
                 "xhorse": "XEMOB0EN (Super Remote Flip) / XSMQB1EN / XT27A Transponder",
@@ -5832,17 +7038,17 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "LOW RISK",
                 "protocol": "OBD programming. Smart key models use a slot in the glovebox or require holding the fob to the start button if the battery is dead.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             }
         },
         "Colt": {
             "2004 - 2012 (MK6)": {
-                "lishi": "MIT11R", 
+                "lishi": "MIT11R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "MIT11R", 
+                "silca": "MIT11R",
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "VVDI XT27A Super Chip / XEMOB0EN (Super Remote)",
@@ -5852,17 +7058,17 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "LOW RISK",
                 "protocol": "Standard OBD PIN-less or default PIN transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "430g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "430g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a fill."
             }
         },
         "L200 (Triton)": {
             "2006 - 2015 (Series 4)": {
-                "lishi": "MIT11R", 
+                "lishi": "MIT11R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "MIT11R", 
+                "silca": "MIT11R",
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "VVDI XT27A Super Chip / XEMOB0EN (Super Remote 2-Btn)",
@@ -5872,15 +7078,15 @@ const carDatabase = {
                 "access": "Remove the lower steering column plastics if direct access is needed, but OBD is standard.",
                 "risk": "LOW RISK",
                 "protocol": "Standard OBD PIN-less transponder programming. Remote programs manually via diagnostic tool or on-board procedure.",
-                "acGas": "R134a", 
-                "acCap": "520g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "520g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2015 - 2019 (Series 5)": {
-                "lishi": "MIT11R / HU87", 
+                "lishi": "MIT11R / HU87",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MIT11R / HU133R", 
+                "silca": "MIT11R / HU133R",
                 "ic": "Card 772 / 996",
                 "chip": "ID46 (PCF7936) or ID47 / 8A Smart",
                 "xhorse": "XEMOB0EN (Super Remote Flip) / Dedicated Mitsubishi Smart Prox (ID47)",
@@ -5890,17 +7096,17 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "MODERATE",
                 "protocol": "Extract PIN/Password via OBD. If it's a smart key, keep the fob inside the cabin during the learning cycle.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "520g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "520g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models generally use R1234yf."
             }
         },
         "Outlander": {
             "2007 - 2012 (MK2)": {
-                "lishi": "MIT11R", 
+                "lishi": "MIT11R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MIT11R", 
+                "silca": "MIT11R",
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936 (Blade) or PCF7952 (Smart)",
                 "xhorse": "XEMOB0EN (Super Remote) / Dedicated Smart Fob",
@@ -5910,17 +7116,17 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "LOW RISK",
                 "protocol": "Standard OBD programming for both standard transponder and KOS smart keys.",
-                "acGas": "R134a", 
-                "acCap": "500g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a fill."
             }
         },
-        "Outlander / Outlander PHEV": {
+        "Outlander PHEV": {
             "2013 - 2021 (MK3)": {
-                "lishi": "MIT11R", 
+                "lishi": "MIT11R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "MIT11R", 
+                "silca": "MIT11R",
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7952 (Smart Proximity)",
                 "xhorse": "Dedicated Mitsubishi Smart Prox Fob / XSMQB1EN",
@@ -5930,17 +7136,17 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "MODERATE — KOS Syncing",
                 "protocol": "Standard OBD programming for smart keys. Ensure vehicle is completely powered down (not in 'Ready' mode) before initiating comms.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g ± 20g", 
-                "acOil": "ND-Oil 11 (POE)", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 20g",
+                "acOil": "ND-Oil 11 (POE)",
                 "acNote": "🛑 PHEV STRICTLY REQUIRES POE NON-CONDUCTIVE OIL! When a compressor is installed at the factory, it contains 70 mL of compressor oil. Do not use PAG oil, or it will short the high-voltage compressor!"
             }
         },
-        "Shogun / Pajero": {
+        "Shogun": {
             "2006 - 2019 (MK4)": {
-                "lishi": "MIT11R", 
+                "lishi": "MIT11R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "MIT11R", 
+                "silca": "MIT11R",
                 "ic": "Card 772",
                 "chip": "ID46 / PCF7936",
                 "xhorse": "VVDI XT27A Super Chip / XEMOB0EN (Super Remote 2-Btn)",
@@ -5950,20 +7156,39 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "LOW RISK",
                 "protocol": "OBD PIN-less programming. If OBD fails, check the diagnostic fuses.",
-                "acGas": "R134a", 
-                "acCap": "650g ± 20g (Single) / 850g (Dual)", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g ± 20g (Single) / 850g (Dual)",
+                "acOil": "PAG 46",
+                "acNote": "Check if the vehicle has rear A/C (dual system) before filling; capacities differ significantly."
+            }
+        },
+        "Pajero": {
+            "2006 - 2019 (MK4)": {
+                "lishi": "MIT11R",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "MIT11R",
+                "ic": "Card 772",
+                "chip": "ID46 / PCF7936",
+                "xhorse": "VVDI XT27A Super Chip / XEMOB0EN (Super Remote 2-Btn)",
+                "warning": "Solid, old-school system. Keys are often two-button remotes with the transponder chip separated inside the plastic casing.",
+                "module": "Immobiliser Box",
+                "location": "Driver's side dashboard / around the ignition cylinder.",
+                "access": "Standard OBD access.",
+                "risk": "LOW RISK",
+                "protocol": "OBD PIN-less programming. If OBD fails, check the diagnostic fuses.",
+                "acGas": "R134a",
+                "acCap": "650g ± 20g (Single) / 850g (Dual)",
+                "acOil": "PAG 46",
                 "acNote": "Check if the vehicle has rear A/C (dual system) before filling; capacities differ significantly."
             }
         }
     },
-
     "Nissan": {
-        "Juke": { 
-            "2010 - 2019 (F15)": { 
-                "lishi": "NSN14", 
+        "Juke": {
+            "2010 - 2019 (F15)": {
+                "lishi": "NSN14",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "NSN14", 
+                "silca": "NSN14",
                 "ic": "Card 890",
                 "chip": "ID46 (PCF7936 / Nissan)",
                 "xhorse": "XENST0EN (Nissan Super Remote 3-Btn) / XSNIS0EN (Smart Prox 3-Btn)",
@@ -5972,15 +7197,15 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE — 4-Digit / 20-Digit PIN",
                 "protocol": "OBD PIN extraction and smart key programming.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "475g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "475g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2019+ (F16)": { 
-                "lishi": "NSN14", 
+            "2019+ (F16)": {
+                "lishi": "NSN14",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "NSN14", 
+                "silca": "NSN14",
                 "ic": "Card 890",
                 "chip": "HITAG AES / 4A Proximity",
                 "xhorse": "XSKF21EN / Dedicated Nissan 4A Smart Key",
@@ -5989,17 +7214,17 @@ const carDatabase = {
                 "access": "Remove lower dash trim cover.",
                 "risk": "HIGH — Gateway Security",
                 "protocol": "OBD token PIN read with SGW bypass adapter.",
-                "acGas": "R1234yf", 
-                "acCap": "430g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "430g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "Navara": { 
-            "2005 - 2015 (D40)": { 
-                "lishi": "NSN14", 
+        "Navara": {
+            "2005 - 2015 (D40)": {
+                "lishi": "NSN14",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "NSN14", 
+                "silca": "NSN14",
                 "ic": "Card 890",
                 "chip": "ID46 (PCF7936 / Nissan)",
                 "xhorse": "XENST0EN (Nissan Super Remote 2/3-Btn) / XT27A Transponder",
@@ -6008,15 +7233,15 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "LOW / MODERATE — 4-Digit PIN",
                 "protocol": "Convert BCM barcode to PIN and program via OBD.",
-                "acGas": "R134a", 
-                "acCap": "700g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "High-capacity truck system."
             },
-            "2015+ (NP300 / D23)": { 
-                "lishi": "NSN14", 
+            "2015+ (NP300 / D23)": {
+                "lishi": "NSN14",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "NSN14", 
+                "silca": "NSN14",
                 "ic": "Card 890",
                 "chip": "HITAG AES / 4A Proximity",
                 "xhorse": "XSNIS0EN (Nissan Smart Prox) / XSKF21EN",
@@ -6025,18 +7250,18 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "MODERATE — 20-Digit PIN Code",
                 "protocol": "Read PIN via OBD and program blade/smart key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf on post-2017 models."
             }
         },
-        "Qashqai": { 
-            "2006 - 2013 (J10)": { 
-                "lishi": "NSN14", 
+        "Qashqai": {
+            "2006 - 2013 (J10)": {
+                "lishi": "NSN14",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "NSN14", 
-                "ic": "Card 890", 
+                "silca": "NSN14",
+                "ic": "Card 890",
                 "chip": "ID46 (PCF7936 / Nissan)",
                 "xhorse": "XENST0EN (Nissan Super Remote 2-Btn) / XSNIS0EN (Twist-Start Smart)",
                 "warning": "4-digit BCM PIN conversion required.",
@@ -6045,16 +7270,16 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "LOW / MODERATE — 4-Digit BCM PIN Code",
                 "protocol": "Convert BCM serial/barcode to 4-digit PIN, program remote/smart key via OBD.",
-                "acGas": "R134a", 
-                "acCap": "500g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2013 - 2021 (J11)": { 
-                "lishi": "NSN14", 
+            "2013 - 2021 (J11)": {
+                "lishi": "NSN14",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "NSN14", 
-                "ic": "Card 890", 
+                "silca": "NSN14",
+                "ic": "Card 890",
                 "chip": "HITAG AES / 4A Proximity (Nissan)",
                 "xhorse": "XSNIS0EN (Nissan Smart Prox 3-Btn) / XSKF21EN",
                 "warning": "20-digit rolling PIN code required for smart key learning.",
@@ -6063,16 +7288,16 @@ const carDatabase = {
                 "access": "Unclip passenger lower felt cover.",
                 "risk": "MODERATE / HIGH — 20-Digit Rolling PIN Code",
                 "protocol": "Calculate 20-digit PIN via OBD token/online server, pair smart fob.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf. Check high-pressure port near O/S headlight."
             },
-            "2021+ (J12)": { 
-                "lishi": "DAT17 / NSN14", 
+            "2021+ (J12)": {
+                "lishi": "DAT17 / NSN14",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "NSN14", 
-                "ic": "Card 890 / 1350", 
+                "silca": "NSN14",
+                "ic": "Card 890 / 1350",
                 "chip": "HITAG AES / 4A Proximity (SGW)",
                 "xhorse": "Dedicated Nissan 4A Smart Key / OEM Only",
                 "warning": "⚠️ Nissan / Renault CMF-C Platform. Security Gateway (SGW) Protected!",
@@ -6081,20 +7306,19 @@ const carDatabase = {
                 "access": "Remove lower dashboard trim shroud.",
                 "risk": "HIGH RISK — Nissan Security Gateway (SGW)",
                 "protocol": "Requires 16+32 SGW bypass adapter connected to BCM loom or active Nissan server token for OBD programming.",
-                "acGas": "R1234yf", 
-                "acCap": "430g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "430g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "e-POWER Hybrid models require POE non-conductive oil!"
             }
         }
     },
-
     "Peugeot": {
         "107": {
             "2005 - 2014": {
-                "lishi": "VA2", 
+                "lishi": "VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "4D67 / 4D70 (Toyota IMMO)",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN (Super Remote Blade)",
@@ -6104,17 +7328,17 @@ const carDatabase = {
                 "access": "Remove 2x screws holding speedometer shroud.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Program as Toyota Aygo / ID4D. OBD key learn or bench EEPROM reset on AKL.",
-                "acGas": "R134a", 
-                "acCap": "400g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "400g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity system."
             }
         },
         "108": {
             "2014 - 2021": {
-                "lishi": "VA2 / TOY48", 
+                "lishi": "VA2 / TOY48",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "ID4E (4D67) / 8A Smart Proximity",
                 "xhorse": "VVDI XT27A Super Chip (Blade) / XSTO01EN (Toyota Smart Prox)",
@@ -6124,17 +7348,17 @@ const carDatabase = {
                 "access": "Drop glovebox door.",
                 "risk": "MODERATE — Toyota Key Architecture",
                 "protocol": "Program as Toyota (Aygo / Yaris protocol). Smart keys require Toyota emulator/reset on AKL.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "400g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "400g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             }
         },
         "206": {
             "1998 - 2009 (Includes 206+)": {
-                "lishi": "NE78 / HU83", 
+                "lishi": "NE78 / HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "NE78", 
+                "silca": "NE78",
                 "ic": "Card 584",
                 "chip": "ID45 (Early) / ID46 (PCF7936 Late)",
                 "xhorse": "VVDI XT27A Super Chip / XEKB01EN (Super Remote)",
@@ -6144,17 +7368,17 @@ const carDatabase = {
                 "access": "Turn plastic fasteners to drop fuse cover.",
                 "risk": "LOW / MODERATE — 4-Digit Security Code Required",
                 "protocol": "Extract PIN via OBD or read EEPROM (95160 / NEC) on bench. Learn keys via OBD.",
-                "acGas": "R134a", 
-                "acCap": "550g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
         "207": {
             "2006 - 2014": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83 / VA2", 
+                "silca": "HU83 / VA2",
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN / XEP001EN (PSA Super Remote Flip)",
@@ -6164,18 +7388,18 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "LOW / MODERATE — PIN Extraction Needed",
                 "protocol": "Extract 4-digit PIN via OBD. Program remote fob via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
-        "208": { 
-            "2012 - 2019 (MK1 - A9)": { 
-                "lishi": "HU83 / VA2", 
+        "208": {
+            "2012 - 2019 (MK1 - A9)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83 / VA2", 
-                "ic": "Card 1030 / 1310", 
+                "silca": "HU83 / VA2",
+                "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XEP001EN",
                 "warning": "Check if keyway has HU83 side grooves or is plain VA2.",
@@ -6184,16 +7408,16 @@ const carDatabase = {
                 "access": "Drop lower fuse box panel / unclip glovebox assembly.",
                 "risk": "MODERATE — Security PIN Extraction Needed",
                 "protocol": "Read 4-digit Security PIN via OBD. Program transponder via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Pre-2016 uses R134a; post-2016 uses R1234yf."
             },
-            "2019+ (MK2 / e-208 - CMP Platform)": { 
-                "lishi": "HU83 / VA2 / HU136", 
+            "2019+ (MK2 / e-208 - CMP Platform)": {
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2 / HU83", 
-                "ic": "Card 1310 / 1030", 
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310 / 1030",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A) / OEM Proximity",
                 "warning": "Latest Stellantis CMP platform. Flip blade or smart proximity options.",
@@ -6202,17 +7426,17 @@ const carDatabase = {
                 "access": "Remove 2x turn-clips on lower dash fuse cover.",
                 "risk": "MODERATE / HIGH — CAN Gateway Protection & Eco Mode Hazard",
                 "protocol": "🛑 Ensure Economy Mode is NOT active! Keep hazard lights blinking or charger attached during OBD PIN read.",
-                "acGas": "R1234yf", 
-                "acCap": "430g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "430g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 e-208 (EV) strictly requires POE non-conductive oil!"
             }
         },
         "307": {
             "2001 - 2008": {
-                "lishi": "NE73 / HU83", 
+                "lishi": "NE73 / HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7936 / PCF7941)",
                 "xhorse": "XEKB01EN (PSA Super Remote Flip)",
@@ -6222,17 +7446,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Extract PIN via OBD. Program transponder / remote.",
-                "acGas": "R134a", 
-                "acCap": "585g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "585g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
-        "308": { 
-            "2007 - 2013 (T7)": { 
-                "lishi": "HU83 / VA2", 
+        "308": {
+            "2007 - 2013 (T7)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83 / VA2", 
+                "silca": "HU83 / VA2",
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn)",
@@ -6241,15 +7465,15 @@ const carDatabase = {
                 "access": "Drop glovebox door fully down.",
                 "risk": "MODERATE — PIN Code Extraction via OBD",
                 "protocol": "OBD PIN reading supported. Program remote via OBD.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a fill."
             },
-            "2013 - 2021 (T9 - EMP2 Platform)": { 
-                "lishi": "HU83 / VA2", 
+            "2013 - 2021 (T9 - EMP2 Platform)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU83 / VA2", 
+                "silca": "HU83 / VA2",
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7941) / HITAG AES",
                 "xhorse": "XEKB01EN (Super Remote) / XSKF21EN (Smart Prox)",
@@ -6258,15 +7482,15 @@ const carDatabase = {
                 "access": "Remove felt footwell cover (2x push clips).",
                 "risk": "MODERATE — Economy Mode Sleep Hazard",
                 "protocol": "Extract 4-digit PIN via OBD. If vehicle drops to Economy Mode, turn hazard lights on to keep CAN awake.",
-                "acGas": "R1234yf / R134a", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf / R134a",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
-            "2021+ (MK3 - Stellantis EMP2 V3)": { 
-                "lishi": "HU83 / VA2 / HU136", 
+            "2021+ (MK3 - Stellantis EMP2 V3)": {
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN (Smart Key 4A) / OEM Proximity Key",
@@ -6275,17 +7499,17 @@ const carDatabase = {
                 "access": "Unclip lower steering column trim panel.",
                 "risk": "HIGH — Stellantis Security Gateway",
                 "protocol": "Requires Security Gateway bypass harness or online diagnostics token for OBD programming.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "PHEV / e-308 models require POE oil."
             }
         },
         "407": {
             "2004 - 2011": {
-                "lishi": "HU83", 
+                "lishi": "HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7941)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn Flip)",
@@ -6294,17 +7518,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "LOW / MODERATE",
                 "protocol": "Extract PIN via OBD. Remote syncs during programming cycle.",
-                "acGas": "R134a", 
-                "acCap": "625g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "625g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "508": {
             "2011 - 2018 (MK1)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7941) / Smart Proximity",
                 "xhorse": "XEKB01EN (Super Remote) / XSKF21EN (Smart Prox)",
@@ -6313,15 +7537,15 @@ const carDatabase = {
                 "access": "Remove lower dashboard trim panel.",
                 "risk": "MODERATE — 4-Digit Security PIN",
                 "protocol": "OBD PIN read and smart key learn. Slot key backup in centre dash / console.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "525g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "525g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             },
             "2018+ (MK2 - EMP2)": {
-                "lishi": "HU83 / VA2 / HU136", 
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN (Smart Key 4A)",
@@ -6330,17 +7554,17 @@ const carDatabase = {
                 "access": "Unclip fuse cover.",
                 "risk": "MODERATE / HIGH — Eco Mode & Gateway",
                 "protocol": "Read PIN via OBD. Maintain power supply >13.0V.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "508 PSE / Hybrid requires POE non-conductive oil."
             }
         },
         "806": {
             "1994 - 2002 (Eurovan Platform)": {
-                "lishi": "NE73 / SX9", 
+                "lishi": "NE73 / SX9",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "NE73", 
+                "silca": "NE73",
                 "ic": "Card 584",
                 "chip": "ID33 / ID48 / CPH Box",
                 "xhorse": "VVDI XT27A Super Chip / Mechanical Cut",
@@ -6350,17 +7574,17 @@ const carDatabase = {
                 "access": "Remove lower column shroud.",
                 "risk": "LOW",
                 "protocol": "Early: Keypad immobiliser or OBD transponder learn.",
-                "acGas": "R134a", 
-                "acCap": "950g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "950g",
+                "acOil": "PAG 46",
                 "acNote": "Large dual-zone MPV capacity."
             }
         },
         "807": {
             "2002 - 2014": {
-                "lishi": "HU83", 
+                "lishi": "HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83", 
+                "silca": "HU83",
                 "ic": "Card 1030",
                 "chip": "ID46 (PCF7941)",
                 "xhorse": "XEKB01EN (PSA Super Remote 4-Btn / Slider)",
@@ -6369,17 +7593,17 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "LOW / MODERATE",
                 "protocol": "PSA PIN read via OBD. Program keys via OBD.",
-                "acGas": "R134a", 
-                "acCap": "675g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "675g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Large cabin capacity."
             }
         },
         "1007": {
             "2005 - 2009": {
-                "lishi": "VA2 / HU83", 
+                "lishi": "VA2 / HU83",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 4-Btn Slider)",
@@ -6389,17 +7613,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "LOW / MODERATE — PIN Pull via OBD",
                 "protocol": "Standard PSA OBD PIN extraction and key programming.",
-                "acGas": "R134a", 
-                "acCap": "550g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         },
         "2008": {
             "2013 - 2019 (MK1 - A94)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "ID46 (PCF7941) / HITAG AES",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
@@ -6408,15 +7632,15 @@ const carDatabase = {
                 "access": "Remove felt cover under glovebox.",
                 "risk": "MODERATE — Economy Mode Cutoff Hazard",
                 "protocol": "OBD PIN extraction supported. Ensure hazard lights are blinking to keep CAN awake.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             },
             "2019+ (MK2 / e-2008 - CMP Platform)": {
-                "lishi": "HU83 / VA2 / HU136", 
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A)",
@@ -6426,17 +7650,17 @@ const carDatabase = {
                 "access": "Unclip lower dash panel.",
                 "risk": "HIGH — CAN Gateway & Economy Mode",
                 "protocol": "Maintain >13.0V. Extract PIN via OBD and pair remote/smart key.",
-                "acGas": "R1234yf", 
-                "acCap": "430g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "430g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 e-2008 (EV) strictly requires POE non-conductive oil!"
             }
         },
-        "3008": { 
-            "2008 - 2016 (MK1)": { 
-                "lishi": "HU83 / VA2", 
+        "3008": {
+            "2008 - 2016 (MK1)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83 / VA2", 
+                "silca": "HU83 / VA2",
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn)",
@@ -6445,16 +7669,16 @@ const carDatabase = {
                 "access": "Drop glovebox door past dampener stops.",
                 "risk": "MODERATE — PIN Extraction via OBD",
                 "protocol": "Extract 4-digit PIN via OBD; program transponder/remote.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2016 - 2023 (MK2 - EMP2)": { 
-                "lishi": "HU83 / VA2", 
+            "2016 - 2023 (MK2 - EMP2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2 / HU83", 
-                "ic": "Card 1310 / 1030", 
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310 / 1030",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN (Smart Key 4A)",
                 "warning": "Concealed emergency blade inside smart card fob.",
@@ -6463,15 +7687,15 @@ const carDatabase = {
                 "access": "Remove lower passenger felt cover.",
                 "risk": "MODERATE — Economy Mode Lockout Hazard",
                 "protocol": "OBD PIN read supported. Connect battery charger to prevent Eco Mode cutoff during key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "480g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "Hybrid4 / PHEV models require POE oil."
             },
             "2024+ (MK3 / e-3008 - STLA Medium)": {
-                "lishi": "HU83 / VA2 / HU136", 
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart Proximity",
                 "xhorse": "XSKF21EN / OEM Stellantis Smart Key",
@@ -6480,17 +7704,17 @@ const carDatabase = {
                 "access": "OBD / Gateway bypass.",
                 "risk": "HIGH — Stellantis Security Gateway",
                 "protocol": "Requires active gateway token or 12+8 bypass harness for key programming.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "POE",
                 "acNote": "🛑 e-3008 (EV) strictly requires POE non-conductive oil!"
             }
         },
         "Bipper": {
             "2008 - 2017 (Fiat Fiorino Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XT27A Transponder",
@@ -6500,18 +7724,18 @@ const carDatabase = {
                 "access": "Remove 2x thumbscrews on lower dashboard fuse cover.",
                 "risk": "HIGH RISK — Transponder Precoding Required",
                 "protocol": "Read BSI EEPROM via OBD/bench to extract PIN and 6-byte component key. Precode transponder before OBD learn.",
-                "acGas": "R134a", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Fiat air conditioning platform."
             }
         },
-        "Boxer": { 
-            "2006 - 2021 (MK3 - Fiat Ducato Twin)": { 
-                "lishi": "SIP22", 
+        "Boxer": {
+            "2006 - 2021 (MK3 - Fiat Ducato Twin)": {
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
-                "ic": "Card 1137", 
+                "silca": "SIP22",
+                "ic": "Card 1137",
                 "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
                 "warning": "⚠️ Fiat Ducato platform twin! Uses Fiat SIP22 keyway and Delphi/Marelli BSI.",
@@ -6520,15 +7744,15 @@ const carDatabase = {
                 "access": "Remove 2x plastic thumbscrews on lower dashboard fuse cover (2x 10mm frame bolts).",
                 "risk": "HIGH RISK — Precoding Transponder Required",
                 "protocol": "Fiat keys CANNOT be programmed raw! Read BSI EEPROM via bench/OBD to extract PIN and 6-byte component key. Precode ID46/Megamos 48 chip before OBD learning.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
             "2021+ (Series 8 / New Boxer - FCA / Stellantis)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSFT01EN (Fiat Smart Prox) / XEFT01EN",
@@ -6538,17 +7762,17 @@ const carDatabase = {
                 "access": "Remove lower steering column / fuse trim cover.",
                 "risk": "HIGH — Stellantis Security Gateway (SGW)",
                 "protocol": "Requires 12+8 SGW bypass adapter or online diagnostics token before reading PIN/learning keys via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "Expert": { 
-            "2007 - 2016 (MK2)": { 
-                "lishi": "HU83 / VA2", 
+        "Expert": {
+            "2007 - 2016 (MK2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83 / VA2", 
+                "silca": "HU83 / VA2",
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote 3-Btn Flip)",
@@ -6557,15 +7781,15 @@ const carDatabase = {
                 "access": "Open glovebox and pull fuse access cover.",
                 "risk": "MODERATE",
                 "protocol": "Standard OBD PIN extraction and key programming.",
-                "acGas": "R134a", 
-                "acCap": "550g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "550g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
-            "2016+ (MK3 / e-Expert)": { 
-                "lishi": "HU83 / VA2", 
+            "2016+ (MK3 / e-Expert)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote) / XSKF21EN (Smart Prox)",
@@ -6574,17 +7798,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE — Eco Mode Protection",
                 "protocol": "Maintain >13.0V voltage. Read PIN via OBD and pair remote fob.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "🛑 e-Expert (EV) strictly requires POE non-conductive oil!"
             }
         },
-        "Partner": { 
+        "Partner": {
             "1996 - 2008 (MK1)": {
-                "lishi": "NE73 / SX9 / HU83", 
+                "lishi": "NE73 / SX9 / HU83",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "NE73", 
+                "silca": "NE73",
                 "ic": "Card 584",
                 "chip": "ID33 / ID46",
                 "xhorse": "VVDI XT27A Super Chip / XEKB01EN",
@@ -6593,15 +7817,15 @@ const carDatabase = {
                 "access": "Drop lower column shroud.",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN extraction and transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "575g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "575g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
-            "2008 - 2018 (MK2)": { 
-                "lishi": "HU83 / VA2", 
+            "2008 - 2018 (MK2)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU83 / VA2", 
+                "silca": "HU83 / VA2",
                 "ic": "Card 1030 / 1310",
                 "chip": "ID46 (PCF7936 / PCF7941 PSA)",
                 "xhorse": "XEKB01EN (PSA Super Remote Flip 3-Btn)",
@@ -6610,15 +7834,15 @@ const carDatabase = {
                 "access": "Open glovebox and pull fuse access cover.",
                 "risk": "MODERATE",
                 "protocol": "Standard OBD PIN extraction and key programming.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "450g - 550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g - 550g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2018+ (MK3 / Rifter / e-Partner)": { 
-                "lishi": "HU83 / VA2", 
+            "2018+ (MK3 / Rifter / e-Partner)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2 / HU83", 
+                "silca": "VA2 / HU83",
                 "ic": "Card 1310 / 1030",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
@@ -6627,17 +7851,17 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE — Eco Mode Protection",
                 "protocol": "Maintain >13.0V voltage. Read PIN via OBD and pair remote fob.",
-                "acGas": "R1234yf", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "e-Partner (EV) requires POE non-conductive oil."
             }
         },
         "Ranch": {
             "1997 - 2008 (Partner Utility Variant)": {
-                "lishi": "NE73 / SX9 / HU83", 
+                "lishi": "NE73 / SX9 / HU83",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "NE73", 
+                "silca": "NE73",
                 "ic": "Card 584",
                 "chip": "ID33 / ID46",
                 "xhorse": "VVDI XT27A Super Chip / XEKB01EN",
@@ -6647,20 +7871,19 @@ const carDatabase = {
                 "access": "Drop lower steering shroud.",
                 "risk": "LOW",
                 "protocol": "Standard PSA OBD programming with 4-digit PIN.",
-                "acGas": "R134a", 
-                "acCap": "575g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "575g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             }
         }
     },
-
     "Porsche": {
         "911": {
             "1997 - 2005 (996 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "ID48 (Megamos Crypto)",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN (Super Remote Blade)",
@@ -6670,15 +7893,15 @@ const carDatabase = {
                 "access": "Unbolt seat or reach under carpet.",
                 "risk": "MODERATE — EEPROM 93C66 Dump Required on AKL",
                 "protocol": "Standard OBD learning with IPAS PIN code or bench read 93C66 EEPROM from alarm module.",
-                "acGas": "R134a", 
-                "acCap": "825g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "825g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2005 - 2012 (997 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7947 / PAS Unit)",
                 "xhorse": "Dedicated Porsche 997 Key Head / XT27A Transponder",
@@ -6688,15 +7911,15 @@ const carDatabase = {
                 "access": "Remove lower knee bolster shroud.",
                 "risk": "HIGH RISK — MCU Flash / EEPROM Read",
                 "protocol": "AKL requires reading PAS module (9S12 MCU) on bench to extract CS and generate dealer key.",
-                "acGas": "R134a", 
-                "acCap": "850g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "850g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2012 - 2019 (991 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 / 128-Bit Smart Key)",
                 "xhorse": "XSPOR0EN (Porsche Panamera/911 Smart Prox 3/4-Btn)",
@@ -6706,15 +7929,15 @@ const carDatabase = {
                 "access": "Remove lower dashboard trim panel to access Front BCM.",
                 "risk": "HIGH RISK — BCM MCU Bench Read Required",
                 "protocol": "AKL requires removing Front BCM and reading D-FLASH/EEPROM on bench (XP400/VVDI Prog) to precode dealer key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models transitioned to R1234yf."
             },
             "2019+ (992 Generation)": {
-                "lishi": "HU162T (9/10 Cut)", 
+                "lishi": "HU162T (9/10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "Megamos AES / Smart Proximity",
                 "xhorse": "Dedicated OEM Porsche 992 Smart Key Only",
@@ -6724,17 +7947,17 @@ const carDatabase = {
                 "access": "Advanced teardown.",
                 "risk": "EXTREME — Dealer Component Security",
                 "protocol": "Online dealer server session or specialized sync data calculation required.",
-                "acGas": "R1234yf", 
-                "acCap": "550g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "Boxster": {
             "1996 - 2004 (986 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "ID48 (Megamos Crypto)",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN",
@@ -6743,15 +7966,15 @@ const carDatabase = {
                 "access": "Slide seat fully forward/backward or remove seat mounting bolts.",
                 "risk": "MODERATE",
                 "protocol": "OBD programming with PIN or direct EEPROM read (93C66) on AKL.",
-                "acGas": "R134a", 
-                "acCap": "850g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "850g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2005 - 2012 (987 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7947)",
                 "xhorse": "Dedicated Porsche 987 Key Head / XT27A Transponder",
@@ -6760,15 +7983,15 @@ const carDatabase = {
                 "access": "Remove lower knee bolster trim.",
                 "risk": "HIGH — Bench Read Required on AKL",
                 "protocol": "Bench read PAS 9S12 MCU to generate working dealer key.",
-                "acGas": "R134a", 
-                "acCap": "850g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "850g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             },
             "2012 - 2016 (981 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 Smart Key)",
                 "xhorse": "XSPOR0EN (Porsche Smart Prox 3-Btn)",
@@ -6777,15 +8000,15 @@ const carDatabase = {
                 "access": "Remove footwell side trim.",
                 "risk": "HIGH RISK",
                 "protocol": "Bench read Front BCM D-FLASH/EEPROM to extract CS bytes and program dealer key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Check under-bonnet label."
             },
             "2016+ (718 Boxster / 982)": {
-                "lishi": "HU66 / HU162T", 
+                "lishi": "HU66 / HU162T",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "HITAG Pro / Megamos AES Smart",
                 "xhorse": "XSPOR0EN (Smart Prox) / Dedicated OEM Key",
@@ -6794,17 +8017,17 @@ const carDatabase = {
                 "access": "Remove kick panel trim.",
                 "risk": "HIGH / EXTREME",
                 "protocol": "Bench read Front BCM MCU (5M48H) or online calculation.",
-                "acGas": "R1234yf", 
-                "acCap": "580g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "580g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "Cayenne": {
             "2002 - 2010 (9PA / 955 / 957 - Touareg Twin)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7936 / PCF7946 / KESSY)",
                 "xhorse": "XEVW01EN (Super Remote Flip) / XT27A Transponder",
@@ -6814,15 +8037,15 @@ const carDatabase = {
                 "access": "Remove lower dashboard trim shroud.",
                 "risk": "MODERATE / HIGH — 93C86 EEPROM Bench Read",
                 "protocol": "AKL: Bench read 93C86 EEPROM from KESSY module to extract 7-byte CS & PIN, then precode transponder.",
-                "acGas": "R134a", 
-                "acCap": "750g (Single) / 1050g (Dual Rear A/C)", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "750g (Single) / 1050g (Dual Rear A/C)",
+                "acOil": "PAG 46",
                 "acNote": "Dual evaporator models hold up to 1050g."
             },
             "2010 - 2017 (92A / 958 Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 Smart Key)",
                 "xhorse": "XSPOR0EN (Porsche Cayenne Smart Prox 3/4-Btn)",
@@ -6831,15 +8054,15 @@ const carDatabase = {
                 "access": "Remove passenger kick panel trim.",
                 "risk": "HIGH RISK — BCM MCU Read",
                 "protocol": "Remove Front BCM. Read D-FLASH/EEPROM on bench to extract CS and generate dealer key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "850g ± 25g", 
-                "acOil": "PAG 46 / POE (E-Hybrid)", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "850g ± 25g",
+                "acOil": "PAG 46 / POE (E-Hybrid)",
                 "acNote": "Cayenne E-Hybrid strictly requires POE non-conductive oil!"
             },
             "2018+ (9YA / PO536 - MLB Evo Platform)": {
-                "lishi": "HU162T (9/10 Cut)", 
+                "lishi": "HU162T (9/10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "Megamos AES (MLB-Evo Smart Key)",
                 "xhorse": "Dedicated MLB-Evo Smart Key / OEM Only",
@@ -6849,17 +8072,17 @@ const carDatabase = {
                 "access": "Remove right boot side carpet trim.",
                 "risk": "EXTREME — Sync Data & Component Protection",
                 "protocol": "AKL requires specialized bench calculation or OEM dealer session.",
-                "acGas": "R1234yf", 
-                "acCap": "700g ± 20g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "700g ± 20g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "E-Hybrid PHEV models require POE compressor oil."
             }
         },
         "Cayman": {
             "2005 - 2012 (987c Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "ID46 (PCF7947 / PAS Unit)",
                 "xhorse": "Dedicated Porsche 987 Key Head / XT27A Transponder",
@@ -6868,15 +8091,15 @@ const carDatabase = {
                 "access": "Remove lower knee bolster trim.",
                 "risk": "HIGH — Bench Read on AKL",
                 "protocol": "Read 9S12 MCU from PAS on bench to write transponder.",
-                "acGas": "R134a", 
-                "acCap": "850g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "850g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
             "2013 - 2016 (981c Generation)": {
-                "lishi": "HU66", 
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "HITAG Pro (ID49 Smart Key)",
                 "xhorse": "XSPOR0EN (Porsche Smart Prox 3-Btn)",
@@ -6885,15 +8108,15 @@ const carDatabase = {
                 "access": "Remove footwell side trim.",
                 "risk": "HIGH RISK — BCM Bench Read",
                 "protocol": "Remove BCM and read MCU on bench to generate dealer key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Check label."
             },
             "2016+ (718 Cayman / 982c)": {
-                "lishi": "HU66 / HU162T", 
+                "lishi": "HU66 / HU162T",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "HITAG Pro / Megamos AES Smart",
                 "xhorse": "XSPOR0EN (Smart Prox) / Dedicated OEM Key",
@@ -6902,17 +8125,17 @@ const carDatabase = {
                 "access": "Remove lower trim.",
                 "risk": "HIGH / EXTREME",
                 "protocol": "Bench read Front BCM MCU or online server calculation.",
-                "acGas": "R1234yf", 
-                "acCap": "580g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "580g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "Macan": {
             "2014 - 2024 (95B - Audi Q5 Platform)": {
-                "lishi": "HU66 / HU162T", 
+                "lishi": "HU66 / HU162T",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 688",
                 "chip": "Megamos 48 / HITAG Pro (BCM2)",
                 "xhorse": "XSAU01EN (Audi BCM2 Smart Key) / OEM Audi/Porsche Key",
@@ -6922,15 +8145,15 @@ const carDatabase = {
                 "access": "Remove right-side luggage compartment trim cover.",
                 "risk": "HIGH / EXTREME — BCM2 Bench Unlock Required",
                 "protocol": "Read BCM2 (D-FLASH/EEPROM) on bench to obtain CS and PIN before generating dealer key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
             "2024+ (Macan EV - PPE Platform)": {
-                "lishi": "HU162T", 
+                "lishi": "HU162T",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1412",
                 "chip": "Smart UWB / NFC Key",
                 "xhorse": "Dedicated OEM Smart Key Only",
@@ -6940,14 +8163,13 @@ const carDatabase = {
                 "access": "Dealer diagnostic access.",
                 "risk": "EXTREME — Full OEM Lockdown",
                 "protocol": "Authorized dealer replacement only.",
-                "acGas": "R1234yf", 
-                "acCap": "650g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "POE",
                 "acNote": "🛑 High voltage EV! Strictly POE non-conductive compressor oil only."
             }
         }
     },
-
     "Renault": {
         "Captur": {
             "2013 - 2019 (MK1 - J87)": {
@@ -7456,7 +8678,6 @@ const carDatabase = {
             }
         }
     },
-
     "Saab": {
         "9-3": {
             "1998 - 2002 (OG 9-3)": {
@@ -7534,14 +8755,13 @@ const carDatabase = {
             }
         }
     },
-
     "SEAT / Cupra": {
-        "Arona": { 
-            "2017+ (KJ7 - MQB A0 Platform)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+        "Arona": {
+            "2017+ (KJ7 - MQB A0 Platform)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU162T", 
-                "ic": "Card 1412", 
+                "silca": "HU162T",
+                "ic": "Card 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
                 "warning": "SEAT Ibiza MK5 crossover twin.",
@@ -7550,17 +8770,17 @@ const carDatabase = {
                 "access": "Drop glovebox door fully down.",
                 "risk": "HIGH — MQB Component Security",
                 "protocol": "Extract CS bytes via OBD/bench before programming dealer key.",
-                "acGas": "R1234yf", 
-                "acCap": "460g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "460g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "Ibiza": { 
-            "2008 - 2017 (MK4 - 6J)": { 
-                "lishi": "HU66", 
+        "Ibiza": {
+            "2008 - 2017 (MK4 - 6J)": {
+                "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48 CAN)",
                 "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN / XT27A Transponder",
@@ -7569,15 +8789,15 @@ const carDatabase = {
                 "access": "Remove lower cluster trim shroud.",
                 "risk": "LOW / MODERATE",
                 "protocol": "OBD PIN/CS read and transponder learning.",
-                "acGas": "R134a", 
-                "acCap": "500g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2017+ (MK5 - 6F - MQB A0)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+            "2017+ (MK5 - 6F - MQB A0)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU162T", 
+                "silca": "HU162T",
                 "ic": "Card 1412 / 1413",
                 "chip": "MQB Smart Proximity (Megamos AES)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
@@ -7586,17 +8806,17 @@ const carDatabase = {
                 "access": "Drop glovebox door fully down.",
                 "risk": "HIGH — MQB Component Security",
                 "protocol": "Extract CS bytes via OBD/bench before programming dealer key.",
-                "acGas": "R1234yf", 
-                "acCap": "460g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "460g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
-        "Leon / Cupra Leon / Formentor": { 
-            "2005 - 2012 (Leon MK2 - 1P)": { 
-                "lishi": "HU66", 
+        "Leon": {
+            "2005 - 2012 (Leon MK2 - 1P)": {
+                "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU66", 
+                "silca": "HU66",
                 "ic": "Card 813",
                 "chip": "Megamos 48 (ID48)",
                 "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN",
@@ -7605,16 +8825,16 @@ const carDatabase = {
                 "access": "Unclip lower steering column shroud.",
                 "risk": "LOW / MODERATE",
                 "protocol": "OBD PIN/CS read and precoded key learning.",
-                "acGas": "R134a", 
-                "acCap": "525g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "525g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2013 - 2020 (Leon MK3 - 5F - MQB Platform)": { 
-                "lishi": "HU66 / HU162T", 
+            "2013 - 2020 (Leon MK3 - 5F - MQB Platform)": {
+                "lishi": "HU66 / HU162T",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU66 / HU162T", 
-                "ic": "Card 813 / 1412", 
+                "silca": "HU66 / HU162T",
+                "ic": "Card 813 / 1412",
                 "chip": "MQB Smart Proximity (Megamos AES)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
                 "warning": "⚠️ MQB Platform. Check HU66 vs HU162T keyway on 2013-2015 models.",
@@ -7623,16 +8843,16 @@ const carDatabase = {
                 "access": "Release glovebox side tabs and drop door down.",
                 "risk": "HIGH RISK — MQB Component Security",
                 "protocol": "Extract 16-byte CS and PIN. Generate dealer key before OBD programming.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             },
-            "2020+ (Leon MK4 / Cupra Formentor / Ateca - MQB Evo)": { 
-                "lishi": "HU162T (9 / 10 Cut)", 
+            "2020+ (Leon MK4 / Cupra Formentor / Ateca - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "HU162T", 
-                "ic": "Card 1412 / 1413", 
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
                 "chip": "VAG Megamos AES / 4A (MQB-Evo)",
                 "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key Only",
                 "warning": "⚠️ Side-cut wafers! Verify 9-cut (door) vs 10-cut ignition system.",
@@ -7641,15 +8861,123 @@ const carDatabase = {
                 "access": "Drop glovebox stops.",
                 "risk": "HIGH — VAG Security Gateway (SFD)",
                 "protocol": "Requires SFD unlock token / online server authorization for OBD programming.",
-                "acGas": "R1234yf", 
-                "acCap": "480g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "R1234yf standard. e-Hybrid PHEV models take POE oil."
+            }
+        },
+        "Cupra Leon": {
+            "2005 - 2012 (Leon MK2 - 1P)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48)",
+                "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN",
+                "module": "Instrument Cluster (VDO / Micronas)",
+                "location": "Main Dashboard Binnacle.",
+                "access": "Unclip lower steering column shroud.",
+                "risk": "LOW / MODERATE",
+                "protocol": "OBD PIN/CS read and precoded key learning.",
+                "acGas": "R134a",
+                "acCap": "525g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2013 - 2020 (Leon MK3 - 5F - MQB Platform)": {
+                "lishi": "HU66 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66 / HU162T",
+                "ic": "Card 813 / 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
+                "warning": "⚠️ MQB Platform. Check HU66 vs HU162T keyway on 2013-2015 models.",
+                "module": "MQB Instrument Cluster & KESSY",
+                "location": "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                "access": "Release glovebox side tabs and drop door down.",
+                "risk": "HIGH RISK — MQB Component Security",
+                "protocol": "Extract 16-byte CS and PIN. Generate dealer key before OBD programming.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2020+ (Leon MK4 / Cupra Formentor / Ateca - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "VAG Megamos AES / 4A (MQB-Evo)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key Only",
+                "warning": "⚠️ Side-cut wafers! Verify 9-cut (door) vs 10-cut ignition system.",
+                "module": "MQB Evo BCM & Gateway",
+                "location": "Behind glovebox assembly / lower dash.",
+                "access": "Drop glovebox stops.",
+                "risk": "HIGH — VAG Security Gateway (SFD)",
+                "protocol": "Requires SFD unlock token / online server authorization for OBD programming.",
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "R1234yf standard. e-Hybrid PHEV models take POE oil."
+            }
+        },
+        "Formentor": {
+            "2005 - 2012 (Leon MK2 - 1P)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48)",
+                "xhorse": "XEVW01EN (Super Remote Flip 3-Btn) / XEFS01EN",
+                "module": "Instrument Cluster (VDO / Micronas)",
+                "location": "Main Dashboard Binnacle.",
+                "access": "Unclip lower steering column shroud.",
+                "risk": "LOW / MODERATE",
+                "protocol": "OBD PIN/CS read and precoded key learning.",
+                "acGas": "R134a",
+                "acCap": "525g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a system."
+            },
+            "2013 - 2020 (Leon MK3 - 5F - MQB Platform)": {
+                "lishi": "HU66 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU66 / HU162T",
+                "ic": "Card 813 / 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn) / XEMQB1EN (MQB Super Flip)",
+                "warning": "⚠️ MQB Platform. Check HU66 vs HU162T keyway on 2013-2015 models.",
+                "module": "MQB Instrument Cluster & KESSY",
+                "location": "KESSY: Behind Glovebox. Cluster: Main Dashboard Binnacle.",
+                "access": "Release glovebox side tabs and drop door down.",
+                "risk": "HIGH RISK — MQB Component Security",
+                "protocol": "Extract 16-byte CS and PIN. Generate dealer key before OBD programming.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            },
+            "2020+ (Leon MK4 / Cupra Formentor / Ateca - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "VAG Megamos AES / 4A (MQB-Evo)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key Only",
+                "warning": "⚠️ Side-cut wafers! Verify 9-cut (door) vs 10-cut ignition system.",
+                "module": "MQB Evo BCM & Gateway",
+                "location": "Behind glovebox assembly / lower dash.",
+                "access": "Drop glovebox stops.",
+                "risk": "HIGH — VAG Security Gateway (SFD)",
+                "protocol": "Requires SFD unlock token / online server authorization for OBD programming.",
+                "acGas": "R1234yf",
+                "acCap": "480g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "R1234yf standard. e-Hybrid PHEV models take POE oil."
             }
         }
     },
-
-    
     "Skoda": {
         "Citigo": {
             "2012 - 2020 (AA / PQ12 Platform)": {
@@ -8038,13 +9366,12 @@ const carDatabase = {
             }
         }
     },
-
     "Suzuki": {
-        "Swift": { 
-            "2004 - 2010 (MK2 - RS)": { 
-                "lishi": "TOY43 / HU87", 
+        "Swift": {
+            "2004 - 2010 (MK2 - RS)": {
+                "lishi": "TOY43 / HU87",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU87 / TOY43", 
+                "silca": "HU87 / TOY43",
                 "ic": "Card 802 / 996",
                 "chip": "ID46 (PCF7936 / Suzuki)",
                 "xhorse": "XESU01EN (Suzuki Super Remote Flip 2/3-Btn) / XT27A Transponder",
@@ -8053,15 +9380,15 @@ const carDatabase = {
                 "access": "Remove lower steering column shroud.",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN-less transponder programming.",
-                "acGas": "R134a", 
-                "acCap": "400g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "400g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "R134a standard."
             },
-            "2010 - 2017 (MK3 - AZG)": { 
-                "lishi": "HU87 / HU133R", 
+            "2010 - 2017 (MK3 - AZG)": {
+                "lishi": "HU87 / HU133R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU133R", 
+                "silca": "HU133R",
                 "ic": "Card 996",
                 "chip": "ID46 / PCF7952 (Smart Proximity) or ID46 Blade",
                 "xhorse": "XESU01EN (Super Remote) / Dedicated Suzuki Smart Key",
@@ -8070,16 +9397,16 @@ const carDatabase = {
                 "access": "Drop glovebox assembly.",
                 "risk": "MODERATE — 4-Digit / 8-Digit PIN Code",
                 "protocol": "Read PIN via OBD or VIN calculation; program blade/smart key.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "370g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "370g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2017+ (MK4 - A2L - BoosterJet / Hybrid)": { 
-                "lishi": "HU87 / HU133R / TOY43", 
+            "2017+ (MK4 - A2L - BoosterJet / Hybrid)": {
+                "lishi": "HU87 / HU133R / TOY43",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU133R", 
-                "ic": "Card 996", 
+                "silca": "HU133R",
+                "ic": "Card 996",
                 "chip": "8A Smart Proximity / ID46",
                 "xhorse": "XESU01EN (Blade) / Dedicated Suzuki Smart Prox",
                 "warning": "Check emergency blade profile. Smart proximity fob inductive pairing required.",
@@ -8088,18 +9415,18 @@ const carDatabase = {
                 "access": "Drop glovebox door past dampener stops.",
                 "risk": "MODERATE — Smart Proximity Pairing",
                 "protocol": "OBD PIN read and smart fob registration against Start/Stop button.",
-                "acGas": "R1234yf", 
-                "acCap": "370g ± 15g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "370g ± 15g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "R1234yf standard. BoosterJet SHVS Mild Hybrids use PAG 46; full EV/HEV use POE."
             }
         },
-        "Vitara / SX4 S-Cross": { 
-            "2015+ (LY Series)": { 
-                "lishi": "HU87 / HU133R", 
+        "Vitara": {
+            "2015+ (LY Series)": {
+                "lishi": "HU87 / HU133R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU133R", 
-                "ic": "Card 996", 
+                "silca": "HU133R",
+                "ic": "Card 996",
                 "chip": "ID46 (PCF7952) / 8A Smart Proximity",
                 "xhorse": "XESU01EN (Super Remote) / Dedicated Suzuki Smart Key",
                 "warning": "Standard UK crossover. Emergency blade concealed inside smart remote.",
@@ -8108,18 +9435,38 @@ const carDatabase = {
                 "access": "Drop glovebox assembly down.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and key learning supported.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "420g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "420g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2017+ models use R1234yf."
             }
         },
-        "Swace / Across": { 
-            "2020+ (Toyota Corolla / RAV4 Rebadged Twins)": { 
-                "lishi": "TOY43 / TOY48", 
+        "SX4 S-Cross": {
+            "2015+ (LY Series)": {
+                "lishi": "HU87 / HU133R",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "TOY48", 
-                "ic": "Card 1122", 
+                "silca": "HU133R",
+                "ic": "Card 996",
+                "chip": "ID46 (PCF7952) / 8A Smart Proximity",
+                "xhorse": "XESU01EN (Super Remote) / Dedicated Suzuki Smart Key",
+                "warning": "Standard UK crossover. Emergency blade concealed inside smart remote.",
+                "module": "BCM / Keyless Start Unit",
+                "location": "Passenger Footwell behind glovebox.",
+                "access": "Drop glovebox assembly down.",
+                "risk": "MODERATE",
+                "protocol": "OBD PIN read and key learning supported.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "420g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models use R1234yf."
+            }
+        },
+        "Swace": {
+            "2020+ (Toyota Corolla / RAV4 Rebadged Twins)": {
+                "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "TOY48",
+                "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
                 "xhorse": "XSTO01EN / XM38 Toyota Smart Prox (BA/4A/8A)",
                 "warning": "🛑 TOYOTA TNGA PLATFORM TWINS! Uses Toyota 8A/4A Smart architecture & Security Gateway (SGW) protection!",
@@ -8128,35 +9475,34 @@ const carDatabase = {
                 "access": "Drop glovebox assembly and unclip lower passenger knee trim.",
                 "risk": "HIGH RISK — Toyota SGW Bypass Harness Required",
                 "protocol": "🛑 DO NOT use Suzuki programming protocols! Connect Toyota SGW bypass cable directly to Smart Key ECU before attempting OBD key learn.",
-                "acGas": "R1234yf", 
-                "acCap": "470g ± 15g", 
-                "acOil": "POE", 
+                "acGas": "R1234yf",
+                "acCap": "470g ± 15g",
+                "acOil": "POE",
+                "acNote": "🛑 Rebadged Toyota Hybrids! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "Across": {
+            "2020+ (Toyota Corolla / RAV4 Rebadged Twins)": {
+                "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "TOY48",
+                "ic": "Card 1122",
+                "chip": "8A / 4A Smart Proximity (TNGA)",
+                "xhorse": "XSTO01EN / XM38 Toyota Smart Prox (BA/4A/8A)",
+                "warning": "🛑 TOYOTA TNGA PLATFORM TWINS! Uses Toyota 8A/4A Smart architecture & Security Gateway (SGW) protection!",
+                "module": "Smart Key ECU (Certification Box)",
+                "location": "Behind Glovebox Assembly on upper passenger bulkhead.",
+                "access": "Drop glovebox assembly and unclip lower passenger knee trim.",
+                "risk": "HIGH RISK — Toyota SGW Bypass Harness Required",
+                "protocol": "🛑 DO NOT use Suzuki programming protocols! Connect Toyota SGW bypass cable directly to Smart Key ECU before attempting OBD key learn.",
+                "acGas": "R1234yf",
+                "acCap": "470g ± 15g",
+                "acOil": "POE",
                 "acNote": "🛑 Rebadged Toyota Hybrids! Strictly non-conductive POE compressor oil ONLY!"
             }
         }
     },
-
-
     "Toyota": {
-        "4-Runner": {
-            "2010 - 2023 (N280)": {
-                "lishi": "TOY43 / TOY48",
-                "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "TOY43 / TOY48",
-                "ic": "Card 802 / 950",
-                "chip": "4D67 / 4G (80-Bit) / 8A Smart",
-                "xhorse": "XETO01EN (Super Remote) / XSTO01EN (Toyota Smart Prox) / XT27A Transponder",
-                "module": "IMMO Box / Smart Key ECU",
-                "location": "Behind dashboard cluster / glovebox.",
-                "access": "OBD.",
-                "risk": "LOW / MODERATE",
-                "protocol": "Standard OBD key programming (4D/4G/8A). Master key or emulator required on AKL.",
-                "acGas": "R134a / R1234yf",
-                "acCap": "650g ± 30g",
-                "acOil": "PAG 46",
-                "acNote": "Standard."
-            }
-        },
         "86": {
             "2012 - 2021 (GT86 - Subaru BRZ Twin)": {
                 "lishi": "TOY48 / DAT17",
@@ -8194,8 +9540,27 @@ const carDatabase = {
                 "acNote": "R1234yf standard."
             }
         },
-        "Auris": { 
-            "2007 - 2018 (E150 / E180)": { 
+        "4-Runner": {
+            "2010 - 2023 (N280)": {
+                "lishi": "TOY43 / TOY48",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "TOY43 / TOY48",
+                "ic": "Card 802 / 950",
+                "chip": "4D67 / 4G (80-Bit) / 8A Smart",
+                "xhorse": "XETO01EN (Super Remote) / XSTO01EN (Toyota Smart Prox) / XT27A Transponder",
+                "module": "IMMO Box / Smart Key ECU",
+                "location": "Behind dashboard cluster / glovebox.",
+                "access": "OBD.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD key programming (4D/4G/8A). Master key or emulator required on AKL.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "650g ± 30g",
+                "acOil": "PAG 46",
+                "acNote": "Standard."
+            }
+        },
+        "Auris": {
+            "2007 - 2018 (E150 / E180)": {
                 "lishi": "TOY43",
                 "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43",
@@ -8286,12 +9651,12 @@ const carDatabase = {
                 "acNote": "2016+ uses R1234yf."
             }
         },
-        "Aygo": { 
-            "2005 - 2021 (MK1 / MK2)": { 
+        "Aygo": {
+            "2005 - 2021 (MK1 / MK2)": {
                 "lishi": "VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "VA2",
-                "ic": "Card 1310", 
+                "ic": "Card 1310",
                 "chip": "4D67 / ID4E (Toyota IMMO)",
                 "xhorse": "VVDI XT27A Super Chip / XEKF21EN (Blade) / XSTO01EN (Smart Prox MK2)",
                 "warning": "⚠️ Citroen C1 / Peugeot 108 platform twin! Toyota IMMO architecture.",
@@ -8415,8 +9780,8 @@ const carDatabase = {
                 "acNote": "Standard R134a."
             }
         },
-        "Corolla": { 
-            "2007 - 2018 (E150 / E180)": { 
+        "Corolla": {
+            "2007 - 2018 (E150 / E180)": {
                 "lishi": "TOY43",
                 "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY43",
@@ -8433,11 +9798,11 @@ const carDatabase = {
                 "acOil": "PAG 46 / POE",
                 "acNote": "Hybrid models require POE oil."
             },
-            "2018+ (E210 - TNGA)": { 
+            "2018+ (E210 - TNGA)": {
                 "lishi": "TOY43 / TOY48",
                 "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
-                "ic": "Card 950 / 1122", 
+                "ic": "Card 950 / 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
                 "xhorse": "XSTO01EN / XM38 Toyota Smart Prox (BA/4A/8A)",
                 "warning": "⚠️ TNGA Platform. Dedicated SGW Bypass Harness Required!",
@@ -8488,8 +9853,8 @@ const carDatabase = {
                 "acNote": "Hybrid system uses POE oil."
             }
         },
-        "Hilux": { 
-            "2005 - 2015 (MK6 / MK7)": { 
+        "Hilux": {
+            "2005 - 2015 (MK6 / MK7)": {
                 "lishi": "TOY43",
                 "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
@@ -8506,7 +9871,7 @@ const carDatabase = {
                 "acOil": "PAG 46",
                 "acNote": "Standard R134a system."
             },
-            "2015+ (MK8 / MK9)": { 
+            "2015+ (MK8 / MK9)": {
                 "lishi": "TOY43 / TOY48",
                 "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
@@ -8692,8 +10057,8 @@ const carDatabase = {
                 "acNote": "Standard R134a."
             }
         },
-        "RAV4": { 
-            "2013 - 2018 (XA40)": { 
+        "RAV4": {
+            "2013 - 2018 (XA40)": {
                 "lishi": "TOY48",
                 "price": "Std key £220-£330 | AKL from £450-£650",
                 "silca": "TOY48",
@@ -8710,11 +10075,11 @@ const carDatabase = {
                 "acOil": "PAG 46 / POE",
                 "acNote": "Hybrid models require POE oil."
             },
-            "2018+ (XA50 - TNGA)": { 
+            "2018+ (XA50 - TNGA)": {
                 "lishi": "TOY48",
                 "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
-                "ic": "Card 1122", 
+                "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
                 "xhorse": "XSTO01EN / XM38 Toyota Smart Prox (BA/4A/8A)",
                 "warning": "TNGA Platform smart key system.",
@@ -8932,12 +10297,12 @@ const carDatabase = {
                 "acNote": "Hybrid i-FORCE MAX takes POE oil."
             }
         },
-        "Yaris": { 
-            "2006 - 2020 (MK2 / MK3)": { 
+        "Yaris": {
+            "2006 - 2020 (MK2 / MK3)": {
                 "lishi": "TOY43 / VA2",
                 "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "TOY43",
-                "ic": "Card 802", 
+                "ic": "Card 802",
                 "chip": "4D67 / 4D70 / 4G (80-Bit)",
                 "xhorse": "VVDI XT27A Super Chip / XETO01EN (Super Remote Flip)",
                 "warning": "Check if keyway is standard 8-cut TOY43 or French VA2 profile.",
@@ -8951,11 +10316,11 @@ const carDatabase = {
                 "acOil": "PAG 46",
                 "acNote": "Small capacity system—do not overfill!"
             },
-            "2020+ (MK4 - TNGA Platform)": { 
+            "2020+ (MK4 - TNGA Platform)": {
                 "lishi": "TOY48 / Toyota 2018+",
                 "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "TOY48",
-                "ic": "Card 1122", 
+                "ic": "Card 1122",
                 "chip": "8A / 4A Smart Proximity (TNGA)",
                 "xhorse": "XM38 Toyota Smart Prox (BA/4A) / XSTO01EN",
                 "warning": "⚠️ TNGA Platform (4A / AA Smart System). Security Gateway (SGW) Protection!",
@@ -8971,13 +10336,12 @@ const carDatabase = {
             }
         }
     },
-
     "Vauxhall / Opel": {
         "Adam": {
             "2013 - 2019": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 2/3-Btn)",
@@ -8986,17 +10350,17 @@ const carDatabase = {
                 "access": "Unclip passenger kick panel trim.",
                 "risk": "LOW",
                 "protocol": "Read 4-digit PIN via OBD. Program remote key via OBD.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "420g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "420g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             }
         },
         "Agila": {
             "2008 - 2014 (Agila B - Suzuki Splash Twin)": {
-                "lishi": "HU87", 
+                "lishi": "HU87",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU87", 
+                "silca": "HU87",
                 "ic": "Card 929",
                 "chip": "ID46 (PCF7936)",
                 "xhorse": "VVDI XT27A Super Chip / XESU01EN (Suzuki Super Remote)",
@@ -9006,17 +10370,17 @@ const carDatabase = {
                 "access": "Standard OBD.",
                 "risk": "LOW",
                 "protocol": "Program as Suzuki Splash. Read PIN via OBD or use default Suzuki PINs.",
-                "acGas": "R134a", 
-                "acCap": "370g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "370g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Small capacity system."
             }
         },
         "Antara": {
             "2006 - 2015": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7936)",
                 "xhorse": "XEOP01EN (Super Remote Flip 3-Btn)",
@@ -9025,17 +10389,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Requires 4-digit Security PIN for programming via OBD.",
-                "acGas": "R134a", 
-                "acCap": "650g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             }
         },
-        "Astra": { 
-            "2009 - 2015 (Astra J - GM)": { 
-                "lishi": "HU100", 
+        "Astra": {
+            "2009 - 2015 (Astra J - GM)": {
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 2/3-Btn)",
@@ -9044,15 +10408,15 @@ const carDatabase = {
                 "access": "Unclip passenger kick panel.",
                 "risk": "MODERATE — 30-Min Lockout Timer",
                 "protocol": "Extract 4-digit PIN via OBD. 🛑 Wrong PIN 3 times triggers a 30-minute security lock!",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2015 - 2021 (Astra K - GM)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 / GM Smart",
                 "xhorse": "XEOP01EN (Flip Blade) / XSBU01EN (GM Smart Prox)",
@@ -9061,16 +10425,16 @@ const carDatabase = {
                 "access": "Unclip passenger kick panel.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and key programming.",
-                "acGas": "R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             },
-            "2022+ (Astra L - Stellantis EMP2)": { 
-                "lishi": "HU83 / VA2 / HU136", 
+            "2022+ (Astra L - Stellantis EMP2)": {
+                "lishi": "HU83 / VA2 / HU136",
                 "price": "Std key £220-£330 | AKL from £550-£800",
-                "silca": "VA2", 
-                "ic": "Card 1310", 
+                "silca": "VA2",
+                "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A) / OEM Proximity",
                 "warning": "Stellantis platform share (Peugeot 308 twin).",
@@ -9079,17 +10443,17 @@ const carDatabase = {
                 "access": "Unclip lower column trim.",
                 "risk": "HIGH — Security Gateway",
                 "protocol": "Requires SGW bypass harness or token for OBD key programming.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "PHEV models use POE oil."
             }
         },
         "Cascada": {
             "2013 - 2019": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 3-Btn)",
@@ -9098,17 +10462,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Standard GM 4-digit PIN extraction and programming.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             }
         },
         "Combo": {
             "2012 - 2018 (Combo D - Fiat Doblo Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 (Precode)",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -9118,15 +10482,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Requires precoding ID46 transponder before learning.",
-                "acGas": "R134a", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2019+ (Combo E - Stellantis)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
@@ -9135,18 +10499,18 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "MODERATE",
                 "protocol": "PSA OBD PIN read and key learning.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
-        "Corsa": { 
-            "2006 - 2019 (Corsa D / E - GM Platform)": { 
-                "lishi": "HU100", 
+        "Corsa": {
+            "2006 - 2019 (Corsa D / E - GM Platform)": {
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
-                "ic": "Card 1097", 
+                "silca": "HU100",
+                "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 2/3-Btn)",
                 "module": "BCM (Body Control Module)",
@@ -9154,16 +10518,16 @@ const carDatabase = {
                 "access": "Remove lower dash trim shroud (3x T20 Torx).",
                 "risk": "LOW / MODERATE",
                 "protocol": "Read 4-digit PIN via OBD or EEPROM (24C16/95160) from BCM dump.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "420g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "420g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ Corsa E uses R1234yf."
             },
-            "2020+ (Corsa F - Stellantis CMP)": { 
-                "lishi": "HU83 / VA2", 
+            "2020+ (Corsa F - Stellantis CMP)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
-                "ic": "Card 1310", 
+                "silca": "VA2",
+                "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
                 "warning": "⚠️ Stellantis transition! Uses French keyway and PSA BSI.",
@@ -9172,17 +10536,17 @@ const carDatabase = {
                 "access": "Remove lower dash fuse cover.",
                 "risk": "MODERATE / HIGH — Economy Mode",
                 "protocol": "Ensure Economy Mode is OFF. Read PSA PIN via OBD and pair remote.",
-                "acGas": "R1234yf", 
-                "acCap": "430g ± 15g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "430g ± 15g",
+                "acOil": "PAG 46",
                 "acNote": "Corsa-e (EV) requires POE oil."
             }
         },
         "Crossland X": {
             "2017+ (Stellantis Platform)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
@@ -9191,17 +10555,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "PSA PIN read via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Frontera": {
             "1998 - 2004 (Frontera B)": {
-                "lishi": "HU43", 
+                "lishi": "HU43",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "YM28", 
+                "silca": "YM28",
                 "ic": "Card 342",
                 "chip": "ID33 / ID40",
                 "xhorse": "VVDI XT27A Super Chip / Mechanical Cut Blade",
@@ -9210,17 +10574,17 @@ const carDatabase = {
                 "access": "Remove column shrouds.",
                 "risk": "LOW",
                 "protocol": "Standard OBD learning.",
-                "acGas": "R134a", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Grandland X": {
             "2017+ (Stellantis Platform)": {
-                "lishi": "HU83 / VA2", 
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
+                "silca": "VA2",
                 "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN (Smart Key 4A) / XEKB01EN",
@@ -9229,17 +10593,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "PSA architecture. Read PIN and learn via OBD.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Hybrid uses POE oil."
             }
         },
         "Insignia": {
             "2008 - 2017 (Insignia A)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 2/3-Btn)",
@@ -9248,15 +10612,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Read 4-digit PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2017 - 2022 (Insignia B)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "GM Smart",
                 "xhorse": "XSBU01EN (Buick/GM Smart Prox 3/4-Btn)",
@@ -9265,17 +10629,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD PIN read and smart key learn.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Meriva": {
             "2010 - 2017 (Meriva B)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 2/3-Btn)",
@@ -9284,17 +10648,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD 4-digit PIN extraction.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
-        "Mokka": { 
-            "2012 - 2019 (Mokka / Mokka X - GM)": { 
-                "lishi": "HU100", 
+        "Mokka": {
+            "2012 - 2019 (Mokka / Mokka X - GM)": {
+                "lishi": "HU100",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7937 / GM 46)",
                 "xhorse": "XEOP01EN (Super Remote Flip) / XSBU01EN (Smart Prox)",
@@ -9303,16 +10667,16 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Extract 4-digit PIN via OBD. Check 30-min security timer.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "500g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             },
-            "2021+ (Mokka MK2 - Stellantis)": { 
-                "lishi": "HU83 / VA2", 
+            "2021+ (Mokka MK2 - Stellantis)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
-                "ic": "Card 1310", 
+                "silca": "VA2",
+                "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XSKF21EN / XSCH01EN (Smart Key 4A)",
                 "module": "Stellantis BSI",
@@ -9320,17 +10684,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "SGW bypass may be required.",
-                "acGas": "R1234yf", 
-                "acCap": "450g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
                 "acNote": "Mokka-e uses POE oil."
             }
         },
         "Movano": {
             "2010 - 2021 (Movano B - Renault Twin)": {
-                "lishi": "VAC102", 
+                "lishi": "VAC102",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961",
                 "xhorse": "XERN01EN (Renault Super Remote Flip 2/3-Btn)",
@@ -9339,15 +10703,15 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "Renault programming protocol. Read ISK/PIN via OBD.",
-                "acGas": "R134a", 
-                "acCap": "750g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "750g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2021+ (Movano C - Fiat Twin)": {
-                "lishi": "SIP22", 
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SIP22", 
+                "silca": "SIP22",
                 "ic": "Card 1137",
                 "chip": "ID46 Precode",
                 "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
@@ -9357,17 +10721,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "HIGH",
                 "protocol": "Requires transponder precoding before OBD learning.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Tigra": {
             "2004 - 2009 (Tigra TwinTop)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID40",
                 "xhorse": "VVDI XT27A Super Chip / XEOP01EN",
@@ -9376,17 +10740,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Standard OBD learning with 4-digit PIN.",
-                "acGas": "R134a", 
-                "acCap": "600g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "Vectra": {
             "2002 - 2008 (Vectra C)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7946)",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 3-Btn)",
@@ -9395,17 +10759,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "LOW",
                 "protocol": "Read PIN via OBD or from CIM EEPROM.",
-                "acGas": "R134a", 
-                "acCap": "730g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "730g",
+                "acOil": "PAG 46",
                 "acNote": "High capacity."
             }
         },
-        "Vivaro": { 
-            "2001 - 2014 (Vivaro A - Renault Twin)": { 
-                "lishi": "NE73", 
+        "Vivaro": {
+            "2001 - 2014 (Vivaro A - Renault Twin)": {
+                "lishi": "NE73",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "NE73", 
+                "silca": "NE73",
                 "ic": "Card 584",
                 "chip": "ID46 (PCF7936 / Renault)",
                 "xhorse": "XERN01EN (Renault Super Remote Flip 2/3-Btn)",
@@ -9414,15 +10778,15 @@ const carDatabase = {
                 "access": "Remove lower dash trim panel (T20 Torx).",
                 "risk": "LOW",
                 "protocol": "Standard OBD PIN read and key programming.",
-                "acGas": "R134a", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "R134a standard."
             },
-            "2014 - 2019 (Vivaro B - Renault Twin)": { 
-                "lishi": "VAC102", 
+            "2014 - 2019 (Vivaro B - Renault Twin)": {
+                "lishi": "VAC102",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "VAC102", 
+                "silca": "VAC102",
                 "ic": "Card 1240",
                 "chip": "ID46 / PCF7961",
                 "xhorse": "XERN01EN (Renault Super Remote Flip 3-Btn)",
@@ -9431,16 +10795,16 @@ const carDatabase = {
                 "access": "Remove glovebox liner (4x T20 Torx).",
                 "risk": "HIGH RISK — ISK PIN & All Keys Erased Hazard",
                 "protocol": "🛑 ALL existing keys are erased during key learning! Ensure all spares are present.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ models use R1234yf."
             },
-            "2019+ (Vivaro C - Stellantis)": { 
-                "lishi": "HU83 / VA2", 
+            "2019+ (Vivaro C - Stellantis)": {
+                "lishi": "HU83 / VA2",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "VA2", 
-                "ic": "Card 1310", 
+                "silca": "VA2",
+                "ic": "Card 1310",
                 "chip": "HITAG AES / 4A Smart",
                 "xhorse": "XEKB01EN (Super Remote Flip) / XSKF21EN (Smart Prox)",
                 "warning": "PSA architecture.",
@@ -9449,17 +10813,17 @@ const carDatabase = {
                 "access": "Drop glovebox.",
                 "risk": "MODERATE",
                 "protocol": "PSA OBD PIN read.",
-                "acGas": "R1234yf", 
-                "acCap": "550g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R1234yf."
             }
         },
         "Zafira": {
             "2005 - 2014 (Zafira B)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 / PCF7941",
                 "xhorse": "XEOP01EN (Vauxhall Super Remote Flip 2/3-Btn)",
@@ -9469,15 +10833,15 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "LOW",
                 "protocol": "Extract PIN via OBD, then program keys. Remote syncs automatically.",
-                "acGas": "R134a", 
-                "acCap": "450g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "Standard R134a."
             },
             "2011 - 2019 (Zafira Tourer C)": {
-                "lishi": "HU100", 
+                "lishi": "HU100",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU100", 
+                "silca": "HU100",
                 "ic": "Card 1097",
                 "chip": "ID46 (PCF7941) or ID47 (Smart)",
                 "xhorse": "XEOP01EN (Flip Blade) / XSBU01EN (Smart Prox)",
@@ -9486,14 +10850,13 @@ const carDatabase = {
                 "access": "Standard OBD access.",
                 "risk": "MODERATE — 10 Minute Wait Time",
                 "protocol": "Extract PIN via OBD. Programming may require a 10 to 12-minute security wait.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "600g ± 20g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
                 "acNote": "2016+ uses R1234yf."
             }
         }
     },
-
     "Volkswagen": {
         "Amarok (Pick-up)": {
             "2010 - 2022 (MK1 - 2H)": {
@@ -9680,7 +11043,7 @@ const carDatabase = {
                 "acNote": "R1234yf standard. eHybrid models require POE non-conductive oil."
             }
         },
-        "ID.3 / ID.4 / ID.5 / ID. Buzz (EV Lineup)": {
+        "ID.3": {
             "2020+ (MEB Electric Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
@@ -9700,7 +11063,105 @@ const carDatabase = {
                 "acNote": "🛑 100% Electric Vehicles! Strictly non-conductive POE compressor oil ONLY!"
             }
         },
-        "Passat / CC": {
+        "ID.4": {
+            "2020+ (MEB Electric Platform)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "VAG Megamos AES / 4A (VW MEB)",
+                "xhorse": "XSMQB1EN (Smart Key) / OEM MEB Smart Key Only",
+                "warning": "⚠️ VW MEB Electric Architecture! High voltage vehicle & SFD protection.",
+                "module": "MEB KESSY Module & Gateway",
+                "location": "Passenger Footwell behind glovebox assembly.",
+                "access": "Release glovebox retention tabs and lower assembly.",
+                "risk": "HIGH RISK — SFD Gateway Token & MEB Component Security",
+                "protocol": "Requires active SFD unlock token and online VAG server calculation to program proximity smart fob.",
+                "acGas": "R1234yf",
+                "acCap": "550g ± 20g",
+                "acOil": "POE",
+                "acNote": "🛑 100% Electric Vehicles! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "ID.5": {
+            "2020+ (MEB Electric Platform)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "VAG Megamos AES / 4A (VW MEB)",
+                "xhorse": "XSMQB1EN (Smart Key) / OEM MEB Smart Key Only",
+                "warning": "⚠️ VW MEB Electric Architecture! High voltage vehicle & SFD protection.",
+                "module": "MEB KESSY Module & Gateway",
+                "location": "Passenger Footwell behind glovebox assembly.",
+                "access": "Release glovebox retention tabs and lower assembly.",
+                "risk": "HIGH RISK — SFD Gateway Token & MEB Component Security",
+                "protocol": "Requires active SFD unlock token and online VAG server calculation to program proximity smart fob.",
+                "acGas": "R1234yf",
+                "acCap": "550g ± 20g",
+                "acOil": "POE",
+                "acNote": "🛑 100% Electric Vehicles! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "ID. Buzz (EV Lineup)": {
+            "2020+ (MEB Electric Platform)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "VAG Megamos AES / 4A (VW MEB)",
+                "xhorse": "XSMQB1EN (Smart Key) / OEM MEB Smart Key Only",
+                "warning": "⚠️ VW MEB Electric Architecture! High voltage vehicle & SFD protection.",
+                "module": "MEB KESSY Module & Gateway",
+                "location": "Passenger Footwell behind glovebox assembly.",
+                "access": "Release glovebox retention tabs and lower assembly.",
+                "risk": "HIGH RISK — SFD Gateway Token & MEB Component Security",
+                "protocol": "Requires active SFD unlock token and online VAG server calculation to program proximity smart fob.",
+                "acGas": "R1234yf",
+                "acCap": "550g ± 20g",
+                "acOil": "POE",
+                "acNote": "🛑 100% Electric Vehicles! Strictly non-conductive POE compressor oil ONLY!"
+            }
+        },
+        "Passat": {
+            "2005 - 2014 (B6 / B7 / Passat CC)": {
+                "lishi": "HU66",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (Passat CCM Slot Key)",
+                "xhorse": "Dedicated Passat B6/B7 Slot Key / XT27A Transponder",
+                "warning": "⚠️ Dash-slot key fob. Immo data lives in Comfort Control Module (CCM), NOT cluster!",
+                "module": "CCM (Comfort Control Module) & ELV Steering Lock",
+                "location": "Passenger Footwell — Behind lower glovebox compartment (RHD UK Passenger side).",
+                "access": "Remove glovebox liner (5x T20 Torx screws). CCM is black module mounted on upper bulkhead.",
+                "risk": "HIGH RISK — Bench EEPROM Read (95320) Required on AKL",
+                "protocol": "Read CCM 95320 EEPROM on bench (or via OBD) to extract 7-byte CS and PIN. Precode ID48 / Passat slot-key before OBD learning.",
+                "acGas": "R134a",
+                "acCap": "600g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Standard R134a fill."
+            },
+            "2014 - 2023 (B8 / Passat CC - MQB)": {
+                "lishi": "HU66 / HU162T",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn)",
+                "warning": "MQB smart key system.",
+                "module": "MQB Instrument Cluster & KESSY Module",
+                "location": "Behind Glovebox Assembly.",
+                "access": "Drop glovebox door past dampener stops.",
+                "risk": "HIGH RISK — MQB Sync Data Required",
+                "protocol": "Extract CS bytes via OBD/bench dump before writing dealer key.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "2017+ models use R1234yf. Passat GTE PHEV MUST use POE oil!"
+            }
+        },
+        "CC": {
             "2005 - 2014 (B6 / B7 / Passat CC)": {
                 "lishi": "HU66",
                 "price": "Std key £90-£150 | AKL from £170-£260",
@@ -9791,7 +11252,7 @@ const carDatabase = {
                 "acNote": "R1234yf standard."
             }
         },
-        "Scirocco / Arteon": {
+        "Scirocco": {
             "2008 - 2017 (Scirocco - 13)": {
                 "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -9827,7 +11288,63 @@ const carDatabase = {
                 "acNote": "eHybrid models require POE oil."
             }
         },
-        "T-Cross / Taigo": {
+        "Arteon": {
+            "2008 - 2017 (Scirocco - 13)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48 CAN)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn)",
+                "module": "Instrument Cluster (VDO / NEC)",
+                "location": "Main Dashboard Binnacle.",
+                "access": "Remove binnacle bezel.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD PIN/CS read and Megamos 48 key learn.",
+                "acGas": "R134a",
+                "acCap": "525g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R134a system."
+            },
+            "2017+ (Arteon - MQB)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn)",
+                "module": "MQB Instrument Cluster & KESSY",
+                "location": "Behind Glovebox Assembly.",
+                "access": "Drop glovebox.",
+                "risk": "HIGH — MQB Component Security",
+                "protocol": "Extract CS bytes via OBD/bench before programming dealer key.",
+                "acGas": "R1234yf",
+                "acCap": "500g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "eHybrid models require POE oil."
+            }
+        },
+        "T-Cross": {
+            "2019+ (C11 / CS - MQB A0 Platform)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox) / XEMQB1EN (MQB Super Flip)",
+                "warning": "⚠️ MQB A0 Crossover platform (Polo AW twin). Verify 9-cut vs 10-cut ignition system.",
+                "module": "MQB Instrument Cluster & KESSY",
+                "location": "Behind Glovebox Assembly.",
+                "access": "Release glovebox dampener arm and drop assembly past retention tabs.",
+                "risk": "HIGH RISK — MQB Component Security",
+                "protocol": "Extract 16-byte CS bytes via OBD/bench dump before programming dealer key.",
+                "acGas": "R1234yf",
+                "acCap": "460g ± 15g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard across T-Cross & Taigo lineup."
+            }
+        },
+        "Taigo": {
             "2019+ (C11 / CS - MQB A0 Platform)": {
                 "lishi": "HU162T (9 / 10 Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -9960,7 +11477,7 @@ const carDatabase = {
                 "acNote": "R1234yf system."
             }
         },
-        "Touran / Sharan": {
+        "Touran": {
             "2003 - 2015 (Touran MK1 / Sharan MK2)": {
                 "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -9996,7 +11513,43 @@ const carDatabase = {
                 "acNote": "Post-2016 models use R1234yf."
             }
         },
-        "Transporter / Caravelle / Multivan": {
+        "Sharan": {
+            "2003 - 2015 (Touran MK1 / Sharan MK2)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn)",
+                "module": "Instrument Cluster / IMMO ECU",
+                "location": "Main Dashboard Binnacle.",
+                "access": "Remove lower cluster trim panel.",
+                "risk": "LOW / MODERATE",
+                "protocol": "OBD PIN/CS read and transponder learning.",
+                "acGas": "R134a",
+                "acCap": "600g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Dual rear A/C models take 850g."
+            },
+            "2015+ (Touran MK2 - MQB)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox 3-Btn)",
+                "module": "MQB Instrument Cluster & KESSY",
+                "location": "Behind Glovebox Assembly.",
+                "access": "Drop glovebox assembly.",
+                "risk": "HIGH — MQB Component Security",
+                "protocol": "Extract CS bytes via OBD/bench before writing dealer key.",
+                "acGas": "R1234yf / R134a",
+                "acCap": "500g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Post-2016 models use R1234yf."
+            }
+        },
+        "Transporter": {
             "2003 - 2015 (T5 / T5.1 Transporter)": {
                 "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10069,7 +11622,172 @@ const carDatabase = {
                 "acNote": "eHybrid models require POE non-conductive oil."
             }
         },
-        "Up! / e-Up!": {
+        "Caravelle": {
+            "2003 - 2015 (T5 / T5.1 Transporter)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48 CAN)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn) / XEFS01EN",
+                "warning": "⚠️ High callout UK trade van! T5.1 (2010+) uses 7E0 BCM in driver's footwell.",
+                "module": "BCM 7E0 (Body Control Module — 7E0 937 089 / 090)",
+                "location": "Driver's Footwell — Mounted vertically above clutch/brake pedal assembly (RHD UK Driver's side).",
+                "access": "Remove lower driver knee bolster panel (3x T20 Torx). Unclip BCM frame.",
+                "risk": "MODERATE / HIGH — BCM 7E0 EEPROM / OBD PIN Read",
+                "protocol": "Read PIN/CS via OBD or bench read BCM 7E0 MCU (NEC 24C64 / 95180). Precode Megamos 48 transponder before OBD key learn.",
+                "acGas": "R134a",
+                "acCap": "700g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Caravelle / Multivan with dual rear A/C takes 950g fill weight!"
+            },
+            "2015 - 2019 (T6 Transporter)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48 CAN)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn)",
+                "warning": "BCM 7E0 architecture carried over from T5.1.",
+                "module": "BCM 7E0 Unit & Instrument Cluster",
+                "location": "Driver's Footwell above pedal box.",
+                "access": "Remove lower driver's dash shroud.",
+                "risk": "MODERATE — Precoded Key Learn",
+                "protocol": "Extract CS/PIN via OBD or bench dump BCM 7E0. Program flip key via OBD.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models transitioned to R1234yf. Dual A/C takes 900g."
+            },
+            "2019 - 2024 (T6.1 Transporter)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XEMQB1EN (MQB Super Flip) / XSMQB1EN (MQB Smart Prox)",
+                "warning": "⚠️ MQB platform upgrade! HU162T side-cut laser keyway.",
+                "module": "MQB BCM & Instrument Cluster",
+                "location": "Passenger Footwell behind glovebox / driver footwell.",
+                "access": "Drop glovebox assembly.",
+                "risk": "HIGH RISK — MQB Sync Data Required",
+                "protocol": "Extract 16-byte CS bytes via OBD/bench before programming dealer key.",
+                "acGas": "R1234yf",
+                "acCap": "560g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. Dual A/C takes 880g."
+            },
+            "2022+ (T7 Multivan - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "VAG Megamos AES / 4A (MQB-Evo)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key",
+                "module": "MQB Evo BCM & Gateway",
+                "location": "Behind glovebox assembly.",
+                "access": "Drop glovebox.",
+                "risk": "HIGH — VAG Security Gateway (SFD)",
+                "protocol": "Requires SFD unlock token / online server authorization.",
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "eHybrid models require POE non-conductive oil."
+            }
+        },
+        "Multivan": {
+            "2003 - 2015 (T5 / T5.1 Transporter)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48 CAN)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn) / XEFS01EN",
+                "warning": "⚠️ High callout UK trade van! T5.1 (2010+) uses 7E0 BCM in driver's footwell.",
+                "module": "BCM 7E0 (Body Control Module — 7E0 937 089 / 090)",
+                "location": "Driver's Footwell — Mounted vertically above clutch/brake pedal assembly (RHD UK Driver's side).",
+                "access": "Remove lower driver knee bolster panel (3x T20 Torx). Unclip BCM frame.",
+                "risk": "MODERATE / HIGH — BCM 7E0 EEPROM / OBD PIN Read",
+                "protocol": "Read PIN/CS via OBD or bench read BCM 7E0 MCU (NEC 24C64 / 95180). Precode Megamos 48 transponder before OBD key learn.",
+                "acGas": "R134a",
+                "acCap": "700g ± 25g",
+                "acOil": "PAG 46",
+                "acNote": "Caravelle / Multivan with dual rear A/C takes 950g fill weight!"
+            },
+            "2015 - 2019 (T6 Transporter)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48 CAN)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn)",
+                "warning": "BCM 7E0 architecture carried over from T5.1.",
+                "module": "BCM 7E0 Unit & Instrument Cluster",
+                "location": "Driver's Footwell above pedal box.",
+                "access": "Remove lower driver's dash shroud.",
+                "risk": "MODERATE — Precoded Key Learn",
+                "protocol": "Extract CS/PIN via OBD or bench dump BCM 7E0. Program flip key via OBD.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "2017+ models transitioned to R1234yf. Dual A/C takes 900g."
+            },
+            "2019 - 2024 (T6.1 Transporter)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU162T",
+                "ic": "Card 1412 / 1413",
+                "chip": "MQB Smart Proximity (Megamos AES)",
+                "xhorse": "XEMQB1EN (MQB Super Flip) / XSMQB1EN (MQB Smart Prox)",
+                "warning": "⚠️ MQB platform upgrade! HU162T side-cut laser keyway.",
+                "module": "MQB BCM & Instrument Cluster",
+                "location": "Passenger Footwell behind glovebox / driver footwell.",
+                "access": "Drop glovebox assembly.",
+                "risk": "HIGH RISK — MQB Sync Data Required",
+                "protocol": "Extract 16-byte CS bytes via OBD/bench before programming dealer key.",
+                "acGas": "R1234yf",
+                "acCap": "560g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "R1234yf standard. Dual A/C takes 880g."
+            },
+            "2022+ (T7 Multivan - MQB Evo)": {
+                "lishi": "HU162T (9 / 10 Cut)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU162T",
+                "ic": "Card 1412",
+                "chip": "VAG Megamos AES / 4A (MQB-Evo)",
+                "xhorse": "XSMQB1EN (MQB Smart Prox) / OEM Dealer Key",
+                "module": "MQB Evo BCM & Gateway",
+                "location": "Behind glovebox assembly.",
+                "access": "Drop glovebox.",
+                "risk": "HIGH — VAG Security Gateway (SFD)",
+                "protocol": "Requires SFD unlock token / online server authorization.",
+                "acGas": "R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "eHybrid models require POE non-conductive oil."
+            }
+        },
+        "Up!": {
+            "2011+ (AA Platform)": {
+                "lishi": "HU66",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48)",
+                "xhorse": "XEVW01EN (Super Remote 3-Btn)",
+                "module": "Instrument Cluster / IMMO ECU",
+                "location": "Main Dashboard Binnacle.",
+                "access": "Remove cluster shroud screws.",
+                "risk": "LOW / MODERATE",
+                "protocol": "Standard OBD PIN read and key learning.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "380g ± 15g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "🛑 e-Up! (EV) MUST use non-conductive POE compressor oil! Petrol models use PAG 46."
+            }
+        },
+        "e-Up!": {
             "2011+ (AA Platform)": {
                 "lishi": "HU66",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10089,13 +11807,12 @@ const carDatabase = {
             }
         }
     },
-
     "Volvo (Cars)": {
         "C30": {
             "2006 - 2013 (P1 Platform)": {
-                "lishi": "HU101", 
+                "lishi": "HU101",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46 (PCF7936)",
                 "xhorse": "XEVW01EN (Super Remote) / XT27A Transponder / Dedicated Volvo Blade Fob",
@@ -10104,17 +11821,17 @@ const carDatabase = {
                 "access": "OBD / Bench.",
                 "risk": "MODERATE",
                 "protocol": "OBD add key. AKL requires CEM bench read for PIN.",
-                "acGas": "R134a", 
-                "acCap": "530g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "530g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "S40": {
             "2004 - 2012 (P1 Platform)": {
-                "lishi": "HU101", 
+                "lishi": "HU101",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46",
                 "xhorse": "XEVW01EN (Super Remote) / XT27A Transponder / Dedicated Volvo Blade Fob",
@@ -10123,18 +11840,18 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD add key. AKL requires CEM bench read.",
-                "acGas": "R134a", 
-                "acCap": "530g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "530g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "S60": {
-            "2010 - 2018 (P3 Architecture)": { 
-                "lishi": "HU101 / HU56", 
+            "2010 - 2018 (P3 Architecture)": {
+                "lishi": "HU101 / HU56",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID46 / 4D63 (Volvo P3 Smart)",
                 "xhorse": "Dedicated Volvo P3 Slot Key Fob / OEM Only",
                 "warning": "Smart slot fob. Emergency blade slides into remote body.",
@@ -10143,15 +11860,15 @@ const carDatabase = {
                 "access": "Remove kick panel and pull carpet down. CEM mounted vertically.",
                 "risk": "MODERATE / HIGH — CEM Bench Read Required on AKL",
                 "protocol": "Add Key via OBD. AKL: Remove CEM and read microcontroller/EEPROM on bench to extract 32-byte IMMO code.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "700g ± 25g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "700g ± 25g",
+                "acOil": "PAG 46",
                 "acNote": "Pre-2016 uses R134a; post-2016 uses R1234yf."
             },
             "2019+ (SPA Architecture)": {
-                "lishi": "HU152", 
+                "lishi": "HU152",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU152", 
+                "silca": "HU152",
                 "ic": "Card 1098",
                 "chip": "HITAG Pro / ID49",
                 "xhorse": "Dedicated Volvo SPA Smart Key / OEM Only",
@@ -10160,17 +11877,17 @@ const carDatabase = {
                 "access": "Bench / OBD.",
                 "risk": "HIGH RISK",
                 "protocol": "Remove CEM for bench read (32-byte PIN). 🛑 Disconnect main battery before unplugging CEM!",
-                "acGas": "R1234yf", 
-                "acCap": "650g", 
-                "acOil": "PAG 46", 
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
                 "acNote": "R1234yf standard."
             }
         },
         "S80": {
             "2006 - 2016 (P3 Platform)": {
-                "lishi": "HU101", 
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46 / Smart",
                 "xhorse": "Dedicated Volvo P3 Slot Key Fob / OEM Only",
@@ -10179,18 +11896,18 @@ const carDatabase = {
                 "access": "OBD / Bench.",
                 "risk": "MODERATE",
                 "protocol": "Add key OBD. AKL requires CEM read.",
-                "acGas": "R134a", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "V40": {
-            "2012 - 2019 (P3 Architecture)": { 
-                "lishi": "HU101 / HU56", 
+            "2012 - 2019 (P3 Architecture)": {
+                "lishi": "HU101 / HU56",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID46 / 4D63",
                 "xhorse": "Dedicated Volvo P3 Slot Key Fob / OEM Only",
                 "module": "CEM",
@@ -10198,17 +11915,17 @@ const carDatabase = {
                 "access": "Remove kick panel.",
                 "risk": "MODERATE",
                 "protocol": "Add Key via OBD. AKL requires CEM bench read.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Post-2016 uses R1234yf."
             }
         },
         "V50": {
             "2004 - 2012 (P1 Platform)": {
-                "lishi": "HU101", 
+                "lishi": "HU101",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46",
                 "xhorse": "XEVW01EN (Super Remote) / XT27A Transponder",
@@ -10217,17 +11934,17 @@ const carDatabase = {
                 "access": "OBD.",
                 "risk": "MODERATE",
                 "protocol": "OBD add key. AKL requires CEM bench read.",
-                "acGas": "R134a", 
-                "acCap": "530g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "530g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "V70": {
             "2007 - 2016 (P3 Platform)": {
-                "lishi": "HU101", 
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46 / Smart",
                 "xhorse": "Dedicated Volvo P3 Slot Key Fob / OEM Only",
@@ -10236,18 +11953,18 @@ const carDatabase = {
                 "access": "OBD / Bench.",
                 "risk": "MODERATE",
                 "protocol": "Add key OBD. AKL requires CEM read.",
-                "acGas": "R134a", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "XC60": {
-            "2008 - 2017 (P3 Architecture)": { 
-                "lishi": "HU101 / HU56", 
+            "2008 - 2017 (P3 Architecture)": {
+                "lishi": "HU101 / HU56",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "ID46 / 4D63 (Volvo P3 Smart)",
                 "xhorse": "Dedicated Volvo P3 Slot Key Fob / OEM Only",
                 "module": "CEM / KVM",
@@ -10255,16 +11972,16 @@ const carDatabase = {
                 "access": "Remove passenger kick panel.",
                 "risk": "MODERATE / HIGH",
                 "protocol": "Add Key OBD. AKL requires CEM bench read for 32-byte IMMO code.",
-                "acGas": "R134a / R1234yf", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a / R1234yf",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Pre-2016 uses R134a; post-2016 uses R1234yf."
             },
-            "2018+ (SPA Architecture)": { 
-                "lishi": "HU152", 
+            "2018+ (SPA Architecture)": {
+                "lishi": "HU152",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU152", 
-                "ic": "Card 1098", 
+                "silca": "HU152",
+                "ic": "Card 1098",
                 "chip": "HITAG Pro / ID49",
                 "xhorse": "Dedicated Volvo SPA Smart Key / OEM Only",
                 "module": "CEM & KVM",
@@ -10272,17 +11989,17 @@ const carDatabase = {
                 "access": "Bench / OBD.",
                 "risk": "HIGH RISK",
                 "protocol": "For AKL, remove CEM and read on bench for 32-byte code. 🛑 Disconnect main battery first!",
-                "acGas": "R1234yf", 
-                "acCap": "650g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "T8 PHEV requires POE non-conductive oil!"
             }
         },
         "XC70": {
             "2007 - 2016 (P3 Platform)": {
-                "lishi": "HU101", 
+                "lishi": "HU101",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
+                "silca": "HU101TE",
                 "ic": "Card 1098",
                 "chip": "ID46 / Smart",
                 "xhorse": "Dedicated Volvo P3 Slot Key Fob / OEM Only",
@@ -10291,18 +12008,18 @@ const carDatabase = {
                 "access": "OBD / Bench.",
                 "risk": "MODERATE",
                 "protocol": "Add key OBD. AKL requires CEM read.",
-                "acGas": "R134a", 
-                "acCap": "700g", 
-                "acOil": "PAG 46", 
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
                 "acNote": "Standard."
             }
         },
         "XC90": {
-            "2015+ (SPA Architecture)": { 
-                "lishi": "HU101 / HU152", 
+            "2015+ (SPA Architecture)": {
+                "lishi": "HU101 / HU152",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "HU101TE", 
-                "ic": "Card 1098", 
+                "silca": "HU101TE",
+                "ic": "Card 1098",
                 "chip": "HITAG Pro / ID49",
                 "xhorse": "Dedicated Volvo SPA Smart Key / OEM Only",
                 "warning": "⚠️ Square luxury smart key. Door lock cylinder concealed under handle cap.",
@@ -10311,15 +12028,15 @@ const carDatabase = {
                 "access": "Remove passenger footwell kick panel and pull carpet down.",
                 "risk": "HIGH RISK — CEM Bench Read",
                 "protocol": "For AKL, remove CEM and read on bench to extract 32-byte IMMO code. 🛑 Disconnect main battery before unplugging CEM!",
-                "acGas": "R1234yf", 
-                "acCap": "750g", 
-                "acOil": "PAG 46 / POE", 
+                "acGas": "R1234yf",
+                "acCap": "750g",
+                "acOil": "PAG 46 / POE",
                 "acNote": "T8 Twin Engine / PHEV requires POE non-conductive oil!"
             }
         }
     },
     "Abarth": {
-        "500 / 595 / 695": {
+        "500": {
             "2008+": {
                 "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10339,7 +12056,66 @@ const carDatabase = {
                 "acNote": "Pre-2016 uses R134a; 2016+ uses R1234yf."
             }
         },
-        "Punto / Grande Punto": {
+        "595": {
+            "2008+": {
+                "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SIP22",
+                "ic": "Card 1137",
+                "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
+                "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XT27A Transponder",
+                "warning": "⚠️ Fiat / Marelli BSI Architecture. Transponder precoding required!",
+                "module": "BSI (Marelli)",
+                "location": "Driver's Footwell — integrated into main interior fuse box.",
+                "access": "Remove 2x plastic thumbscrews on lower dashboard fuse cover.",
+                "risk": "HIGH RISK — Precoding Transponder Required",
+                "protocol": "Read BSI EEPROM via bench or OBD to extract Security PIN and 6-byte component key. Precode chip before OBD key learn.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Pre-2016 uses R134a; 2016+ uses R1234yf."
+            }
+        },
+        "695": {
+            "2008+": {
+                "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SIP22",
+                "ic": "Card 1137",
+                "chip": "ID46 (PCF7936 / Megamos 48 Precode)",
+                "xhorse": "XEFT01EN (Fiat Super Remote Flip) / XT27A Transponder",
+                "warning": "⚠️ Fiat / Marelli BSI Architecture. Transponder precoding required!",
+                "module": "BSI (Marelli)",
+                "location": "Driver's Footwell — integrated into main interior fuse box.",
+                "access": "Remove 2x plastic thumbscrews on lower dashboard fuse cover.",
+                "risk": "HIGH RISK — Precoding Transponder Required",
+                "protocol": "Read BSI EEPROM via bench or OBD to extract Security PIN and 6-byte component key. Precode chip before OBD key learn.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "Pre-2016 uses R134a; 2016+ uses R1234yf."
+            }
+        },
+        "Punto": {
+            "2007 - 2018 (Fiat Twin)": {
+                "lishi": "SIP22",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SIP22",
+                "ic": "Card 1137",
+                "chip": "ID46 (Precode)",
+                "xhorse": "XEFT01EN (Fiat Super Remote Flip 3-Btn)",
+                "module": "BSI (Marelli)",
+                "location": "Driver's Footwell.",
+                "access": "OBD.",
+                "risk": "HIGH",
+                "protocol": "Precode ID46 chip before learning.",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Standard."
+            }
+        },
+        "Grande Punto": {
             "2007 - 2018 (Fiat Twin)": {
                 "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10380,7 +12156,45 @@ const carDatabase = {
         }
     },
     "Bentley": {
-        "Continental GT / Flying Spur": {
+        "Continental GT": {
+            "2003 - 2018 (VAG-Derived)": {
+                "lishi": "HU66 (Verify keyway)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "HU66",
+                "ic": "Card 813",
+                "chip": "Megamos 48 (ID48) / 4A Smart",
+                "xhorse": "OEM Bentley Key / VAG-Type Smart Key (verify)",
+                "warning": "⚠️ Bentley is VAG-hardened. Verify the specific keyway before picking — most later cars are keyless.",
+                "module": "VAG BCM / KESSY",
+                "location": "Driver's Kick Panel / Boot Quarter.",
+                "access": "Remove trim panel — Bentley hides modules behind leather-trimmed covers.",
+                "risk": "HIGH RISK — VAG Security (SFD-Type)",
+                "protocol": "Treat as VAG Group: read PIN/CS via OBD or bench. Bentley dealer server may be required for AKL.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "540g ± 20g",
+                "acOil": "PAG 46",
+                "acNote": "W12 and Flying Spur dual-climate models vary; verify from under-bonnet label."
+            },
+            "2018+ (Continental GT III / Flying Spur)": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £550-£800",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Keyless — 4A / AES (verify)",
+                "xhorse": "OEM Dealer Key Only",
+                "warning": "⚠️ No conventional door cylinder to Lishi. Use non-destructive opening / OBD AKL.",
+                "module": "VAG MQB-Evo / MLB-Evo Gateway",
+                "location": "Driver's Footwell / behind glovebox.",
+                "access": "Drop glovebox stops.",
+                "risk": "HIGH — Online Dealer Server Sync Required",
+                "protocol": "SFD-style security gate. Requires manufacturer-level server token for key programming.",
+                "acGas": "R1234yf",
+                "acCap": "540g",
+                "acOil": "PAG 46",
+                "acNote": "Verify exact charge from boot/under-bonnet label."
+            }
+        },
+        "Flying Spur": {
             "2003 - 2018 (VAG-Derived)": {
                 "lishi": "HU66 (Verify keyway)",
                 "price": "Std key £220-£330 | AKL from £550-£800",
@@ -10420,7 +12234,7 @@ const carDatabase = {
         }
     },
     "BYD": {
-        "F3 / F6 / S6 / G6": {
+        "F3": {
             "2008 - 2016 (Legacy Sedans)": {
                 "lishi": "BYD01 / BYD01R (Verify)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10440,7 +12254,127 @@ const carDatabase = {
                 "acNote": "Verify refrigerant from badge; early models varied."
             }
         },
-        "Atto 3 / Dolphin / Seal / Han": {
+        "F6": {
+            "2008 - 2016 (Legacy Sedans)": {
+                "lishi": "BYD01 / BYD01R (Verify)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "Verify BYD01 keyway",
+                "ic": "N/A",
+                "chip": "ID46 / ID48 (verify on disassembly)",
+                "xhorse": "OEM / Aftermarket BYD Remote (verify)",
+                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "module": "Body Control Module / Remote Receiver",
+                "location": "Behind Glovebox / Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Standard PIN read via OBD; AKL may require BCM bench read.",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Verify refrigerant from badge; early models varied."
+            }
+        },
+        "S6": {
+            "2008 - 2016 (Legacy Sedans)": {
+                "lishi": "BYD01 / BYD01R (Verify)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "Verify BYD01 keyway",
+                "ic": "N/A",
+                "chip": "ID46 / ID48 (verify on disassembly)",
+                "xhorse": "OEM / Aftermarket BYD Remote (verify)",
+                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "module": "Body Control Module / Remote Receiver",
+                "location": "Behind Glovebox / Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Standard PIN read via OBD; AKL may require BCM bench read.",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Verify refrigerant from badge; early models varied."
+            }
+        },
+        "G6": {
+            "2008 - 2016 (Legacy Sedans)": {
+                "lishi": "BYD01 / BYD01R (Verify)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "Verify BYD01 keyway",
+                "ic": "N/A",
+                "chip": "ID46 / ID48 (verify on disassembly)",
+                "xhorse": "OEM / Aftermarket BYD Remote (verify)",
+                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "module": "Body Control Module / Remote Receiver",
+                "location": "Behind Glovebox / Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Standard PIN read via OBD; AKL may require BCM bench read.",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Verify refrigerant from badge; early models varied."
+            }
+        },
+        "Atto 3": {
+            "2021+ (e-Platform 3.0)": {
+                "lishi": "N/A — Keyless / NFC Only",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital Key (no conventional transponder)",
+                "xhorse": "OEM BYD NFC Card / Phone Key Only",
+                "warning": "⚠️ No conventional door cylinder to pick. Use non-destructive opening; phone key / NFC card is the only backup.",
+                "module": "VCU / NFC Receiver",
+                "location": "Front Centre Console NFC Pad / Driver Door Handle Area.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Only Architecture",
+                "protocol": "No mechanical key generation possible. For AKL contact BYD / dealer or use approved diagnostic with cloud token.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV — strictly POE oil, never PAG."
+            }
+        },
+        "Dolphin": {
+            "2021+ (e-Platform 3.0)": {
+                "lishi": "N/A — Keyless / NFC Only",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital Key (no conventional transponder)",
+                "xhorse": "OEM BYD NFC Card / Phone Key Only",
+                "warning": "⚠️ No conventional door cylinder to pick. Use non-destructive opening; phone key / NFC card is the only backup.",
+                "module": "VCU / NFC Receiver",
+                "location": "Front Centre Console NFC Pad / Driver Door Handle Area.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Only Architecture",
+                "protocol": "No mechanical key generation possible. For AKL contact BYD / dealer or use approved diagnostic with cloud token.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV — strictly POE oil, never PAG."
+            }
+        },
+        "Seal": {
+            "2021+ (e-Platform 3.0)": {
+                "lishi": "N/A — Keyless / NFC Only",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital Key (no conventional transponder)",
+                "xhorse": "OEM BYD NFC Card / Phone Key Only",
+                "warning": "⚠️ No conventional door cylinder to pick. Use non-destructive opening; phone key / NFC card is the only backup.",
+                "module": "VCU / NFC Receiver",
+                "location": "Front Centre Console NFC Pad / Driver Door Handle Area.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Only Architecture",
+                "protocol": "No mechanical key generation possible. For AKL contact BYD / dealer or use approved diagnostic with cloud token.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV — strictly POE oil, never PAG."
+            }
+        },
+        "Han": {
             "2021+ (e-Platform 3.0)": {
                 "lishi": "N/A — Keyless / NFC Only",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10462,7 +12396,7 @@ const carDatabase = {
         }
     },
     "Chrysler": {
-        "300C / 300 / 200": {
+        "200": {
             "2005 - 2010 (300C / 300 LX)": {
                 "lishi": "HU64 (10-Cut)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10500,7 +12434,157 @@ const carDatabase = {
                 "acNote": "2015+ uses R1234yf."
             }
         },
-        "Voyager / Grand Voyager / Town & Country": {
+        "300": {
+            "2005 - 2010 (300C / 300 LX)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 / T5 (verify on model)",
+                "xhorse": "OEM Chrysler Fob / Xhorse Chrysler Remote (verify)",
+                "warning": "⚠️ HU64 covers Chrysler, Dodge, Mercedes & VW — confirm keyway before picking.",
+                "module": "BCM / RFHUB",
+                "location": "Driver's Kick Panel / Behind Fuse Block.",
+                "access": "Remove lower driver's dash panel.",
+                "risk": "MODERATE / HIGH",
+                "protocol": "Read 5-digit PIN via OBD (Chrysler/Stellantis protocol) for AKL. Precode chip if HITAG2.",
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2011 - 2017 (300 / 200 LD / RF)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 / 4A Smart (verify)",
+                "xhorse": "OEM / Xhorse Chrysler Smart Key (verify)",
+                "warning": "⚠️ Keyless cars: flat emergency blade, door cylinder concealed. Verify before picking.",
+                "module": "RFHUB (Keyless) / BCM",
+                "location": "Behind Rear Quarter Trim OR Driver's Footwell.",
+                "access": "Drop lower dash panel / rear trim access.",
+                "risk": "HIGH — RFHUB Keyless",
+                "protocol": "PIN via OBD; AKL on keyless requires RFHUB bench read.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "2015+ uses R1234yf."
+            }
+        },
+        "300C": {
+            "2005 - 2010 (300C / 300 LX)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 / T5 (verify on model)",
+                "xhorse": "OEM Chrysler Fob / Xhorse Chrysler Remote (verify)",
+                "warning": "⚠️ HU64 covers Chrysler, Dodge, Mercedes & VW — confirm keyway before picking.",
+                "module": "BCM / RFHUB",
+                "location": "Driver's Kick Panel / Behind Fuse Block.",
+                "access": "Remove lower driver's dash panel.",
+                "risk": "MODERATE / HIGH",
+                "protocol": "Read 5-digit PIN via OBD (Chrysler/Stellantis protocol) for AKL. Precode chip if HITAG2.",
+                "acGas": "R134a",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2011 - 2017 (300 / 200 LD / RF)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 / 4A Smart (verify)",
+                "xhorse": "OEM / Xhorse Chrysler Smart Key (verify)",
+                "warning": "⚠️ Keyless cars: flat emergency blade, door cylinder concealed. Verify before picking.",
+                "module": "RFHUB (Keyless) / BCM",
+                "location": "Behind Rear Quarter Trim OR Driver's Footwell.",
+                "access": "Drop lower dash panel / rear trim access.",
+                "risk": "HIGH — RFHUB Keyless",
+                "protocol": "PIN via OBD; AKL on keyless requires RFHUB bench read.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "2015+ uses R1234yf."
+            }
+        },
+        "Voyager": {
+            "2008 - 2016 (RT Platform)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 (verify)",
+                "xhorse": "OEM Chrysler Fob (verify)",
+                "module": "BCM / RFHUB",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "PIN via OBD; HITAG2 precode where required.",
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2017+ (EU — Rebadged Peugeot Traveller)": {
+                "lishi": "HU83 / VA2 (PSA)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310",
+                "chip": "HITAG AES / 4A Smart",
+                "xhorse": "XEKB01EN (PSA Super Remote) / XSKF21EN (Smart Prox)",
+                "warning": "⚠️ NOT Chrysler HU64! EU Voyager is a rebadged Peugeot Traveller — use PSA van data (see Peugeot Expert / Citroen Jumpy).",
+                "module": "Stellantis BSI",
+                "location": "Passenger Footwell behind glovebox.",
+                "access": "Drop glovebox assembly.",
+                "risk": "MODERATE — Eco Mode Protection",
+                "protocol": "Maintain >13.0V voltage. Read PIN via OBD and pair remote fob.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "e-Voyager / EV variants strictly POE non-conductive oil."
+            }
+        },
+        "Grand Voyager": {
+            "2008 - 2016 (RT Platform)": {
+                "lishi": "HU64 (10-Cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "Card 1019 / 1369",
+                "chip": "HITAG2 (verify)",
+                "xhorse": "OEM Chrysler Fob (verify)",
+                "module": "BCM / RFHUB",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "PIN via OBD; HITAG2 precode where required.",
+                "acGas": "R134a",
+                "acCap": "600g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2017+ (EU — Rebadged Peugeot Traveller)": {
+                "lishi": "HU83 / VA2 (PSA)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "VA2 / HU83",
+                "ic": "Card 1310",
+                "chip": "HITAG AES / 4A Smart",
+                "xhorse": "XEKB01EN (PSA Super Remote) / XSKF21EN (Smart Prox)",
+                "warning": "⚠️ NOT Chrysler HU64! EU Voyager is a rebadged Peugeot Traveller — use PSA van data (see Peugeot Expert / Citroen Jumpy).",
+                "module": "Stellantis BSI",
+                "location": "Passenger Footwell behind glovebox.",
+                "access": "Drop glovebox assembly.",
+                "risk": "MODERATE — Eco Mode Protection",
+                "protocol": "Maintain >13.0V voltage. Read PIN via OBD and pair remote fob.",
+                "acGas": "R1234yf",
+                "acCap": "450g ± 20g",
+                "acOil": "PAG 46 / POE",
+                "acNote": "e-Voyager / EV variants strictly POE non-conductive oil."
+            }
+        },
+        "Town & Country": {
             "2008 - 2016 (RT Platform)": {
                 "lishi": "HU64 (10-Cut)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10539,7 +12623,63 @@ const carDatabase = {
         }
     },
     "Isuzu": {
-        "D-Max / MU-X": {
+        "D-Max": {
+            "2002 - 2012 (RA/RD)": {
+                "lishi": "N/A (verify TOY43R-type keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "Verify",
+                "ic": "N/A",
+                "chip": "ID46 (verify — GM-derived)",
+                "xhorse": "OEM Isuzu Remote (verify)",
+                "warning": "⚠️ Some D-Max/Ascender locks use a Toyota 43R-style profile (TOY43R tool) — confirm blade before picking.",
+                "module": "BCM / Immobiliser Box",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "PIN via OBD; GM/Isuzu protocol. Precode where required.",
+                "acGas": "R134a",
+                "acCap": "520g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2012 - 2021 (RG / RC)": {
+                "lishi": "N/A — Flat Emergency Blade (Keyless)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — ID46 / 4A (keyless)",
+                "xhorse": "OEM Isuzu Smart / Flip Key (verify)",
+                "warning": "⚠️ Keyless: door cylinder concealed under cap, flat emergency blade. No practical Lishi pick.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "AKL on keyless requires BCM read (bench or advanced OBD tool).",
+                "acGas": "R134a / R1234yf",
+                "acCap": "580g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2021+ (D-Max RZ4 / New MU-X)": {
+                "lishi": "N/A — Keyless Only",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "4A / AES Smart (verify)",
+                "xhorse": "OEM Dealer Key Only",
+                "warning": "⚠️ Keyless with concealed cylinder — non-destructive opening only.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD / benchmark.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Advanced diagnostic or BCM bench read for AKL.",
+                "acGas": "R1234yf",
+                "acCap": "580g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            }
+        },
+        "MU-X": {
             "2002 - 2012 (RA/RD)": {
                 "lishi": "N/A (verify TOY43R-type keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10597,7 +12737,83 @@ const carDatabase = {
         }
     },
     "Maxus": {
-        "V80 / V90 / D90": {
+        "V80": {
+            "2012 - 2020 (LDV-Maxus / SAIC)": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — transponder present in flip key",
+                "xhorse": "OEM Maxus Flip Key (verify)",
+                "warning": "⚠️ No Lishi coverage. Vans are keyless with concealed cylinder — use non-destructive opening.",
+                "module": "BCM / Remote Receiver",
+                "location": "Driver's Kick Panel / Behind Fuse Box.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL requires BCM read or dealer tooling.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2021+ (V90 / eDeliver 3 / eDeliver 9)": {
+                "lishi": "N/A — Keyless / EV",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital or 4A Smart (verify)",
+                "xhorse": "OEM Only",
+                "warning": "⚠️ No mechanical lock mechanism to pick. EV / keyless architecture.",
+                "module": "VCU / Keyless Module",
+                "location": "Behind Glovebox / Centre Console.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Architecture",
+                "protocol": "No mechanical key generation. Contact dealer / approved diagnostic with cloud token for AKL.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV vans — strictly POE oil, never PAG."
+            }
+        },
+        "V90": {
+            "2012 - 2020 (LDV-Maxus / SAIC)": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — transponder present in flip key",
+                "xhorse": "OEM Maxus Flip Key (verify)",
+                "warning": "⚠️ No Lishi coverage. Vans are keyless with concealed cylinder — use non-destructive opening.",
+                "module": "BCM / Remote Receiver",
+                "location": "Driver's Kick Panel / Behind Fuse Box.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL requires BCM read or dealer tooling.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "550g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            },
+            "2021+ (V90 / eDeliver 3 / eDeliver 9)": {
+                "lishi": "N/A — Keyless / EV",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "NFC / BLE Digital or 4A Smart (verify)",
+                "xhorse": "OEM Only",
+                "warning": "⚠️ No mechanical lock mechanism to pick. EV / keyless architecture.",
+                "module": "VCU / Keyless Module",
+                "location": "Behind Glovebox / Centre Console.",
+                "access": "OBD.",
+                "risk": "HIGH — Digital-Key Architecture",
+                "protocol": "No mechanical key generation. Contact dealer / approved diagnostic with cloud token for AKL.",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 EV vans — strictly POE oil, never PAG."
+            }
+        },
+        "D90": {
             "2012 - 2020 (LDV-Maxus / SAIC)": {
                 "lishi": "N/A — Keyless (Flat Emergency Blade)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10637,7 +12853,27 @@ const carDatabase = {
         }
     },
     "Polestar": {
-        "1 / 2": {
+        "1": {
+            "2020+ (SPA / CMA — Volvo-Based)": {
+                "lishi": "N/A — Concealed Cylinder",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "HITAG Pro / ID49 (Volvo SPA)",
+                "xhorse": "Dedicated Volvo SPA Smart Key / OEM Only",
+                "warning": "⚠️ Door lock cylinder concealed under handle cap (as Volvo SPA). No practical Lishi pick.",
+                "module": "CEM & KVM",
+                "location": "CEM: Passenger Footwell — Upper Bulkhead under glovebox.",
+                "access": "Remove passenger footwell kick panel and pull carpet down.",
+                "risk": "HIGH RISK — CEM Bench Read",
+                "protocol": "For AKL, remove CEM and read on bench to extract 32-byte IMMO code. 🛑 Disconnect main battery before unplugging CEM!",
+                "acGas": "N/A (Electric Compressor)",
+                "acCap": "N/A",
+                "acOil": "POE (Non-Conductive)",
+                "acNote": "🛑 Polestar 1 via Volvo VM; 2 is BEV — strictly POE oil, never PAG."
+            }
+        },
+        "2": {
             "2020+ (SPA / CMA — Volvo-Based)": {
                 "lishi": "N/A — Concealed Cylinder",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10679,7 +12915,45 @@ const carDatabase = {
                 "acNote": "Small-capacity system — verify charge label."
             }
         },
-        "fortwo / forfour (451)": {
+        "fortwo": {
+            "2007 - 2015": {
+                "lishi": "MB39 / YM23 (8-Cut)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "MB39 / YM23",
+                "ic": "N/A",
+                "chip": "4A / ID48 Smart (verify)",
+                "xhorse": "OEM Smart Flip Key (verify)",
+                "warning": "⚠️ Lishi MB39/YM23 covers the 451 fortwo (2008-2015). Keyless cars use a flat emergency blade — confirm before picking.",
+                "module": "SAM / BCM",
+                "location": "Under Front Bonnet / Passenger Footwell.",
+                "access": "Front bonnet SAM access or passenger footwell cover.",
+                "risk": "MODERATE / HIGH — Keyless AKL",
+                "protocol": "Keyless AKL requires SAM/BCM bench read or approved diagnostic.",
+                "acGas": "R134a / R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "2012+ may run R1234yf."
+            },
+            "2015+": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "4A / AES Smart (verify)",
+                "xhorse": "OEM Smart Key (verify)",
+                "warning": "⚠️ Renault-based (453 is a rebadged Renault Twingo platform). Keyless flat blade — no Lishi pick.",
+                "module": "BCM / Keyless Module",
+                "location": "Passenger Footwell.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL via BCM read or dealer tooling.",
+                "acGas": "R1234yf",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Essence (EV) is strictly POE oil."
+            }
+        },
+        "forfour (451)": {
             "2007 - 2015": {
                 "lishi": "MB39 / YM23 (8-Cut)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10699,7 +12973,7 @@ const carDatabase = {
                 "acNote": "2012+ may run R1234yf."
             }
         },
-        "fortwo / forfour (453)": {
+        "forfour (453)": {
             "2015+": {
                 "lishi": "N/A — Keyless (Flat Emergency Blade)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10721,7 +12995,7 @@ const carDatabase = {
         }
     },
     "SsangYong": {
-        "Musso / Rexton": {
+        "Musso": {
             "1999 - 2007 (Mercedes-Derived)": {
                 "lishi": "HU64 (Verify keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10741,7 +13015,67 @@ const carDatabase = {
                 "acNote": "Verify charge label."
             }
         },
-        "Korando / Tivoli / New Rexton": {
+        "Rexton": {
+            "1999 - 2007 (Mercedes-Derived)": {
+                "lishi": "HU64 (Verify keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU64",
+                "ic": "N/A",
+                "chip": "Verify transponder on disassembly",
+                "xhorse": "OEM SsangYong Remote (verify)",
+                "warning": "⚠️ Early Musso/Rexton share Mercedes W163-derived architecture — HU64 may fit, but ALWAYS verify the keyway before picking.",
+                "module": "Immo Box / BCM",
+                "location": "Behind Instrument Cluster / Under Steering Column.",
+                "access": "Remove cluster trim bezel.",
+                "risk": "MODERATE — Verify Platform",
+                "protocol": "Standard immo box read / OBD PIN. Confirm immo type first.",
+                "acGas": "R134a",
+                "acCap": "700g",
+                "acOil": "PAG 46",
+                "acNote": "Verify charge label."
+            }
+        },
+        "Korando": {
+            "2011+": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — 4A Smart / transponder keyless",
+                "xhorse": "OEM SsangYong Key (verify)",
+                "warning": "⚠️ No dedicated Lishi for modern SsangYong. Keyless flat blade — non-destructive opening only.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL via BCM read or dealer tooling.",
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
+                "acNote": "Korando e-Motion (EV) strictly POE oil."
+            }
+        },
+        "Tivoli": {
+            "2011+": {
+                "lishi": "N/A — Keyless (Flat Emergency Blade)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Verify — 4A Smart / transponder keyless",
+                "xhorse": "OEM SsangYong Key (verify)",
+                "warning": "⚠️ No dedicated Lishi for modern SsangYong. Keyless flat blade — non-destructive opening only.",
+                "module": "BCM / Keyless Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Keyless AKL",
+                "protocol": "Keyless AKL via BCM read or dealer tooling.",
+                "acGas": "R1234yf",
+                "acCap": "650g",
+                "acOil": "PAG 46",
+                "acNote": "Korando e-Motion (EV) strictly POE oil."
+            }
+        },
+        "New Rexton": {
             "2011+": {
                 "lishi": "N/A — Keyless (Flat Emergency Blade)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10763,7 +13097,7 @@ const carDatabase = {
         }
     },
     "Subaru": {
-        "Impreza / WRX": {
+        "Impreza": {
             "1998 - 2007": {
                 "lishi": "TOY48 / SUB2 (verify keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10782,7 +13116,45 @@ const carDatabase = {
                 "acNote": "Standard."
             }
         },
-        "Outback / Legacy (Bluetooth)": {
+        "WRX": {
+            "1998 - 2007": {
+                "lishi": "TOY48 / SUB2 (verify keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "SUB2",
+                "ic": "N/A — verify blank",
+                "chip": "4D / Hitag (verify per year)",
+                "xhorse": "SRC rolling remote — OEM (verify)",
+                "module": "Immo / BCM",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "MODERATE — SRC rolling remote",
+                "protocol": "Key learn via OBD; remote must sync to the rolling code.",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Standard."
+            }
+        },
+        "Outback": {
+            "2010+": {
+                "lishi": "N/A — verify (blade keyway)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "4D-62/63 (verify)",
+                "xhorse": "OEM Smart / Prox (verify)",
+                "module": "Keyless / Smart Module",
+                "location": "Driver's Kick Panel.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via smart module / tooling.",
+                "acGas": "R1234yf",
+                "acCap": "500g (verify label)",
+                "acOil": "PAG 46",
+                "acNote": "Verify condensate & labels before regas."
+            }
+        },
+        "Legacy (Bluetooth)": {
             "2010+": {
                 "lishi": "N/A — verify (blade keyway)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10803,7 +13175,7 @@ const carDatabase = {
         }
     },
     "Tesla": {
-        "Model 3 / Model Y": {
+        "Model 3": {
             "2019+ (M3/MY)": {
                 "lishi": "N/A — Keyless (no ignition barrel)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10822,7 +13194,45 @@ const carDatabase = {
                 "acNote": "EV — POE oil only. No engine runs; valet/tow modes matter."
             }
         },
-        "Model S / Model X": {
+        "Model Y": {
+            "2019+ (M3/MY)": {
+                "lishi": "N/A — Keyless (no ignition barrel)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Keyless — Phone Key / NFC Card",
+                "xhorse": "OEM phone key — no physical unit",
+                "module": "NFC BCM (door / side-handle)",
+                "location": "Front side-handle NFC reader.",
+                "access": "Owner phone key / service account.",
+                "risk": "— (no mechanical key on most)",
+                "protocol": "Keyless entry & start; NFC card for driver door + BMS start.",
+                "acGas": "R1234yf",
+                "acCap": "Verify under-bonnet label (~450g)",
+                "acOil": "POE (electric compressor)",
+                "acNote": "EV — POE oil only. No engine runs; valet/tow modes matter."
+            }
+        },
+        "Model S": {
+            "2016+": {
+                "lishi": "N/A — Keyless (flat emergency blade, some markets)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A",
+                "ic": "N/A",
+                "chip": "Keyless — Phone Key / FOB",
+                "xhorse": "OEM FOB (verify)",
+                "module": "NFC / Keyless Module",
+                "location": "Door handle / charge-port area.",
+                "access": "Service account or owner phone key.",
+                "risk": "— (keyless)",
+                "protocol": "Keyless learn via service tooling.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "POE",
+                "acNote": "EV only."
+            }
+        },
+        "Model X": {
             "2016+": {
                 "lishi": "N/A — Keyless (flat emergency blade, some markets)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -10904,7 +13314,7 @@ const carDatabase = {
         }
     },
     "Chevrolet": {
-        "Spark / Matiz": {
+        "Spark": {
             "2005 - 2015": {
                 "lishi": "N/A — verify (GM / Daewoo keyway)",
                 "price": "Std key £90-£150 | AKL from £170-£260",
@@ -10923,7 +13333,45 @@ const carDatabase = {
                 "acNote": "Verify keyway before blanking."
             }
         },
-        "Corvette / US Imports": {
+        "Matiz": {
+            "2005 - 2015": {
+                "lishi": "N/A — verify (GM / Daewoo keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID44 / ID46 (verify)",
+                "xhorse": "OEM RKE (verify)",
+                "module": "Immobiliser ECU (GM)",
+                "location": "Under dash / glove box.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Key learn via OBD (PIN or 2-key method).",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Verify keyway before blanking."
+            }
+        },
+        "Corvette": {
+            "C5 - C7": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "Transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "BCM / Immobiliser",
+                "location": "Driver's side / under dash.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Sentry key learn via OBD (2-key method).",
+                "acGas": "R134a (older) / R1234yf",
+                "acCap": "850g",
+                "acOil": "PAG 46",
+                "acNote": "US-spec radios/tools — verify region."
+            }
+        },
+        "US Imports": {
             "C5 - C7": {
                 "lishi": "N/A — verify (US-spec keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10944,7 +13392,45 @@ const carDatabase = {
         }
     },
     "Dodge": {
-        "Challenger / Charger / RAM (Import)": {
+        "Challenger": {
+            "2008+": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA rolling transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "SKIM / NFR (FCA)",
+                "location": "Under dash / column.",
+                "access": "OBD.",
+                "risk": "MODERATE — SKIM PIN",
+                "protocol": "Sentry Immobiliser key learn via OBD (SKIM PIN).",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify keys/region."
+            }
+        },
+        "Charger": {
+            "2008+": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA rolling transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "SKIM / NFR (FCA)",
+                "location": "Under dash / column.",
+                "access": "OBD.",
+                "risk": "MODERATE — SKIM PIN",
+                "protocol": "Sentry Immobiliser key learn via OBD (SKIM PIN).",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify keys/region."
+            }
+        },
+        "RAM (Import)": {
             "2008+": {
                 "lishi": "N/A — verify (US-spec keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10965,7 +13451,26 @@ const carDatabase = {
         }
     },
     "GMC": {
-        "Yukon / Sierra (Import)": {
+        "Yukon": {
+            "2007+": {
+                "lishi": "N/A — verify (US-spec keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID / GM transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "BCM (GM)",
+                "location": "Under dash / driver's kick.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Key learn via OBD (2-key method).",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify region."
+            }
+        },
+        "Sierra (Import)": {
             "2007+": {
                 "lishi": "N/A — verify (US-spec keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -10986,7 +13491,7 @@ const carDatabase = {
         }
     },
     "Lotus": {
-        "Elise / Exige": {
+        "Elise": {
             "2000 - 2011": {
                 "lishi": "N/A — verify (Renault-sourced keyway)",
                 "price": "Std key £90-£150 | AKL from £170-£260",
@@ -11005,7 +13510,45 @@ const carDatabase = {
                 "acNote": "Verify platform — Elise varies by year."
             }
         },
-        "Evora / Emira": {
+        "Exige": {
+            "2000 - 2011": {
+                "lishi": "N/A — verify (Renault-sourced keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "4D / ID46 (verify by year)",
+                "xhorse": "OEM (verify)",
+                "module": "Immo — varies (Renault-based)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Key learn via OBD.",
+                "acGas": "R134a",
+                "acCap": "450g",
+                "acOil": "PAG 46",
+                "acNote": "Verify platform — Elise varies by year."
+            }
+        },
+        "Evora": {
+            "2011+": {
+                "lishi": "N/A — verify (Toyota-sourced keyway)",
+                "price": "Std key £220-£330 | AKL from £450-£650",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "Smart keyless (verify)",
+                "xhorse": "OEM (verify)",
+                "module": "Keyless Module (Toyota-based)",
+                "location": "Under dash.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via module/tool.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "Verify year/platform."
+            }
+        },
+        "Emira": {
             "2011+": {
                 "lishi": "N/A — verify (Toyota-sourced keyway)",
                 "price": "Std key £220-£330 | AKL from £450-£650",
@@ -11026,7 +13569,45 @@ const carDatabase = {
         }
     },
     "Maserati": {
-        "Ghibli / Quattroporte / Levante": {
+        "Ghibli": {
+            "2014+": {
+                "lishi": "N/A — verify (FCA keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA rolling transponder (verify)",
+                "xhorse": "FCA FOB (verify)",
+                "module": "NFR / BCM (FCA)",
+                "location": "Under dash / footwell.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via BCM / tooling.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "FCA platform — verify engine variant."
+            }
+        },
+        "Quattroporte": {
+            "2014+": {
+                "lishi": "N/A — verify (FCA keyway)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "FCA rolling transponder (verify)",
+                "xhorse": "FCA FOB (verify)",
+                "module": "NFR / BCM (FCA)",
+                "location": "Under dash / footwell.",
+                "access": "OBD.",
+                "risk": "HIGH — Smart Key",
+                "protocol": "Keyless AKL via BCM / tooling.",
+                "acGas": "R1234yf",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "FCA platform — verify engine variant."
+            }
+        },
+        "Levante": {
             "2014+": {
                 "lishi": "N/A — verify (FCA keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
@@ -11066,7 +13647,45 @@ const carDatabase = {
         }
     },
     "Rover": {
-        "400 / 600 / 75": {
+        "75": {
+            "1990 - 2005": {
+                "lishi": "N/A — verify (Rover keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID44-style (verify)",
+                "xhorse": "OEM RKE (verify)",
+                "module": "Body ECU / 5AS Immo",
+                "location": "Under dash / behind kick.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Immobiliser key sync (2-key method).",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Early 200s ran without an immobiliser — verify before charging."
+            }
+        },
+        "400": {
+            "1990 - 2005": {
+                "lishi": "N/A — verify (Rover keyway)",
+                "price": "Std key £90-£150 | AKL from £170-£260",
+                "silca": "N/A — verify",
+                "ic": "N/A",
+                "chip": "ID44-style (verify)",
+                "xhorse": "OEM RKE (verify)",
+                "module": "Body ECU / 5AS Immo",
+                "location": "Under dash / behind kick.",
+                "access": "OBD.",
+                "risk": "LOW – MODERATE",
+                "protocol": "Immobiliser key sync (2-key method).",
+                "acGas": "R134a",
+                "acCap": "500g",
+                "acOil": "PAG 46",
+                "acNote": "Early 200s ran without an immobiliser — verify before charging."
+            }
+        },
+        "600": {
             "1990 - 2005": {
                 "lishi": "N/A — verify (Rover keyway)",
                 "price": "Std key £90-£150 | AKL from £170-£260",
@@ -11086,4 +13705,5 @@ const carDatabase = {
             }
         }
     }
-};
+}
+;

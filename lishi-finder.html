@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SVA Lishi Pick Finder | Smart Tooling Reference</title>
+    <title>Lishi Pick Finder — Car, Van, HGV &amp; Farm Machinery Tool Guide | SVA</title>
+    <meta name="description" content="Free Lishi pick lookup for cars, vans, HGVs and farm machinery. Search by make, model and year to find the pick a vehicle needs, plus dealer-locked key warnings for trucks and tractors.">
+    <meta name="theme-color" content="#0a0b0d">
     
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,22 +53,84 @@
         .app-header {
             text-align: center;
             border-bottom: 2px solid var(--sva-green);
-            padding-bottom: 15px;
+            padding-bottom: 20px;
             margin-bottom: 25px;
         }
 
+        /* Eyebrow / kicker above the title */
+        .app-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            margin-bottom: 12px;
+            padding: 5px 13px;
+            border: 1px solid rgba(46, 204, 113, 0.3);
+            border-radius: 999px;
+            background: rgba(46, 204, 113, 0.1);
+            color: var(--sva-green);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
         .app-header h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: -0.01em;
+            line-height: 1.1;
             color: #fff;
             text-transform: uppercase;
         }
 
-        .app-header p {
-            font-size: 0.8rem;
+        .app-header h1 .hl {
+            color: var(--sva-green);
+        }
+
+        /* Standfirst / description */
+        .app-lede {
+            max-width: 44ch;
+            margin: 12px auto 0;
+            font-size: 0.88rem;
+            line-height: 1.65;
             color: var(--text-muted);
-            margin-top: 4px;
+        }
+
+        /* Coverage chips */
+        .app-chips {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin: 18px 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .app-chips li {
+            padding: 5px 11px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: #0e1014;
+            color: #a8b0b9;
+            font-size: 0.67rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .app-chips li.chip-hgv {
+            border-color: rgba(127, 178, 255, 0.32);
+            background: rgba(127, 178, 255, 0.08);
+            color: #8fbcff;
+        }
+
+        .app-chips li.chip-agri {
+            border-color: rgba(255, 209, 102, 0.32);
+            background: rgba(255, 209, 102, 0.08);
+            color: #ffd166;
         }
 
         /* Smart Search Box */
@@ -258,13 +322,24 @@
 
     <div class="finder-container">
         <div class="app-header">
-            <h1>SVA Lishi Pick Finder</h1>
-            <p>Automotive & Commercial Vehicle Guide</p>
+            <span class="app-eyebrow"><span aria-hidden="true">🔑</span> Shropshire Vehicle Access</span>
+            <h1>Lishi Pick <span class="hl">Finder</span></h1>
+            <p class="app-lede">
+                Check the exact Lishi pick a vehicle needs before you commit the job.
+                Covers cars, vans, HGVs and farm machinery &mdash; type a make and model
+                in the box, or step through the dropdowns.
+            </p>
+            <ul class="app-chips">
+                <li>Cars &amp; Vans</li>
+                <li class="chip-hgv">HGV &amp; Haulage</li>
+                <li class="chip-agri">Farm Machinery</li>
+                <li>Trade Warnings</li>
+            </ul>
         </div>
 
         <!-- Smart Search Box -->
         <div class="search-box">
-            <input type="text" id="filterInput" class="search-input" placeholder="⚡ Try: 'BMW 5 Series 2016' or 'Transit Custom'...">
+            <input type="text" id="filterInput" class="search-input" placeholder="⚡ Try: 'BMW 5 Series 2016', 'Transit Custom' or 'John Deere'...">
         </div>
 
         <!-- Live Search Results (Appears immediately when typing) -->
@@ -304,10 +379,15 @@
         <button type="button" id="btnReset" class="btn-reset">Reset Lookup</button>
     </div>
 
-    <script src="services/car-database.js"></script>
+    <script src="services/car-database.js?v=2.3.1"></script>
+    <!-- HGV / haulage + agricultural machinery. Deep-merges itself into
+         carDatabase, so it must come after car-database.js. -->
+    <script src="services/trucks-agri-db.js?v=2.3.1"></script>
 
     <script>
-        // LISHI FINDER LOGIC — vehicle database loaded from services/car-database.js
+        // LISHI FINDER LOGIC — vehicle database loaded from
+        // services/car-database.js + services/trucks-agri-db.js
+        // (cars, vans, HGV and agri all in one carDatabase object)
 
         const makeSelect = document.getElementById('makeSelect');
         const modelSelect = document.getElementById('modelSelect');

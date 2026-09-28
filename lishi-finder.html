@@ -258,6 +258,82 @@
             margin-top: 5px;
         }
 
+        /* ---- Cab lock profile (HGV / farm machinery tranche only) ---- */
+        .lock-profile {
+            margin-top: 15px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-color);
+            text-align: left;
+        }
+
+        .lp-head {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            color: var(--sva-green);
+            margin-bottom: 9px;
+        }
+
+        .lp-row {
+            display: flex;
+            gap: 12px;
+            padding: 5px 0;
+            align-items: flex-start;
+        }
+
+        .lp-k {
+            flex: 0 0 78px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #8b939e;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            padding-top: 1px;
+        }
+
+        .lp-v {
+            flex: 1;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            color: #e4e7ec;
+        }
+
+        /* Codes are the thing you read off the lock, so let them stand out. */
+        .lp-v.lp-code {
+            font-family: 'Courier New', monospace;
+            color: var(--sva-green);
+            font-weight: 700;
+        }
+
+        /* Evidence level drives the confidence pill colour. */
+        .lp-conf {
+            display: inline-block;
+            padding: 3px 9px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .lp-conf[data-level="documented"] {
+            background: rgba(46, 204, 113, 0.15);
+            border: 1px solid rgba(46, 204, 113, 0.35);
+            color: var(--sva-green);
+        }
+
+        .lp-conf[data-level="family"] {
+            background: rgba(241, 196, 15, 0.15);
+            border: 1px solid rgba(241, 196, 15, 0.35);
+            color: #f1c40f;
+        }
+
+        .lp-conf[data-level="generic"] {
+            background: rgba(142, 150, 160, 0.15);
+            border: 1px solid rgba(142, 150, 160, 0.35);
+            color: #b0b7c0;
+        }
+
         /* Smart Live Search List Cards */
         .live-results-container {
             display: none;
@@ -447,6 +523,18 @@
                 <div class="result-header">Required Lishi Pick Tool</div>
                 <div id="lishiResult" class="lishi-code">--</div>
                 <div id="toolNote" class="tool-note" style="display: none;">--</div>
+
+                <!-- Cab lock profile. Only shown for the HGV / farm machinery
+                     tranche, which carries the researched lock data. Car
+                     entries have no lockType so this stays hidden for them. -->
+                <div id="lockProfile" class="lock-profile" style="display: none;">
+                    <div class="lp-head">Cab lock profile</div>
+                    <div class="lp-row"><span class="lp-k">Lock</span><span class="lp-v" id="lpLock"></span></div>
+                    <div class="lp-row"><span class="lp-k">Key code</span><span class="lp-v lp-code" id="lpCode"></span></div>
+                    <div class="lp-row"><span class="lp-k">Blank</span><span class="lp-v" id="lpBlank"></span></div>
+                    <div class="lp-row"><span class="lp-k">Open with</span><span class="lp-v" id="lpPick"></span></div>
+                    <div class="lp-row"><span class="lp-k">Evidence</span><span class="lp-v"><span class="lp-conf" id="lpConf"></span></span></div>
+                </div>
             </div>
         </div>
 
@@ -483,7 +571,7 @@
     <script src="services/car-database.js?v=2.3.1"></script>
     <!-- HGV / haulage + agricultural machinery. Deep-merges itself into
          carDatabase, so it must come after car-database.js. -->
-    <script src="services/trucks-agri-db.js?v=2.3.1"></script>
+    <script src="services/trucks-agri-db.js?v=2.4.0"></script>
 
     <script>
         // LISHI FINDER LOGIC — vehicle database loaded from
@@ -496,6 +584,12 @@
         const resultBox = document.getElementById('resultBox');
         const lishiResult = document.getElementById('lishiResult');
         const toolNote = document.getElementById('toolNote');
+        const lockProfile = document.getElementById('lockProfile');
+        const lpLock = document.getElementById('lpLock');
+        const lpCode = document.getElementById('lpCode');
+        const lpBlank = document.getElementById('lpBlank');
+        const lpPick = document.getElementById('lpPick');
+        const lpConf = document.getElementById('lpConf');
         const filterInput = document.getElementById('filterInput');
         const btnReset = document.getElementById('btnReset');
         const liveResults = document.getElementById('liveResults');
@@ -625,6 +719,39 @@
         });
 
         // Handle Year Selection & Display Results
+
+        // The HGV / farm machinery tranche carries researched lock data.
+        // Car entries don't, so this simply stays hidden for them.
+        const CONF_LABEL = {
+            documented: 'Documented — part number / key code confirmed against a parts catalogue or key supplier',
+            family: 'Family — strong prior from the parent key programme or shared platform; confirm on the lock',
+            generic: 'Generic — the usual arrangement for this segment, not verified per model; confirm before cutting'
+        };
+
+        function renderLockProfile(data) {
+            if (!lockProfile) return;
+            const hide = () => {
+                lpLock.textContent = '';
+                lpCode.textContent = '';
+                lpBlank.textContent = '';
+                lpPick.textContent = '';
+                lpConf.textContent = '';
+                delete lpConf.dataset.level;
+                lockProfile.style.display = 'none';
+            };
+            if (!data || !data.lockType) {
+                hide();
+                return;
+            }
+            lpLock.textContent = data.lockType || '';
+            lpCode.textContent = data.lockCode || '';
+            lpBlank.textContent = data.blank || '';
+            lpPick.textContent = data.pickable || '';
+            lpConf.textContent = CONF_LABEL[data.conf] || data.conf || '';
+            lpConf.dataset.level = data.conf || '';
+            lockProfile.style.display = 'block';
+        }
+
         yearSelect.addEventListener('change', function() {
             if (this.value) {
                 const make = makeSelect.value;
@@ -636,16 +763,18 @@
                     mainCode = data.lishi || data.silca || data.price || '';
                     toolNote.textContent = data.warning || '';
                     toolNote.style.display = data.warning ? 'inline-block' : 'none';
+                    renderLockProfile(data);
                 } else {
                     const noteMatch = (data || '').match(/\((.*?)\)/);
                     mainCode = data || '';
                     if (noteMatch) {
-                        mainCode = data.replace(/\s*\(.*?\)/, '');
+                        mainCode = data.replace(/\s*\((.*?)\)/, '');
                         toolNote.textContent = 'NOTE: ' + noteMatch[1];
                         toolNote.style.display = 'inline-block';
                     } else {
                         toolNote.style.display = 'none';
                     }
+                    renderLockProfile(null);
                 }
                 
                 lishiResult.textContent = mainCode;

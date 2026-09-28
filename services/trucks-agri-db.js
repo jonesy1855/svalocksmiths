@@ -16,6 +16,7 @@
 // ============================================================
 
 const HGV_BASE = {
+    "segment": "HGV",
     "lishi": "N/A",
     "silca": "N/A",
     "ic": "N/A",
@@ -39,6 +40,7 @@ const HGV_BASE = {
 };
 
 const AGRI_BASE = {
+    "segment": "Agri",
     "lishi": "N/A",
     "silca": "N/A",
     "ic": "N/A",
@@ -219,10 +221,12 @@ const TRUCKS_AGRI_DB = {
     "Isuzu": {
         "N-Series (NPR / NQR / NPS)": {
             "2012 - Present (7.5t light truck)": Object.assign({}, HGV_BASE, {
+                lishi: "DAT12R (X154/B54) / ISU5 (B113)",
                 price: "Cab key £70-£120 | Lost key / AKL from £160-£280",
                 chip: "Transponder cab key — PIN via Isuzu dealer by VIN.",
                 entry: "N-Series cabs are reachable — wedge low and long-reach the latch; the door geometry is vander than a car.",
-                tip: "Fleet N-Series usually keep spare keys in the depot — check before charging AKL rates."
+                tip: "Fleet N-Series usually keep spare keys in the depot — check before charging AKL rates.",
+                warning: "Isuzu is one of the few HGV makes Lishi actually tools. DAT12R (X154/B54) is sold as the Isuzu Heavy Truck pick; ISU5 (B113) is the Isuzu car/LCV depth. Match the depth to the lock before you commit — wrong depth costs you a tool, not just a job."
             })
         }
     },
@@ -238,9 +242,11 @@ const TRUCKS_AGRI_DB = {
     "Hino": {
         "500 / 700": {
             "2013 - Present (7.5-32t)": Object.assign({}, HGV_BASE, {
+                lishi: "HI1 / DAT12R (X154/B54)",
                 price: "Cab key £80-£140 | Lost key / AKL from £180-£300",
                 chip: "Transponder cab key — PIN via Hino dealer by VIN.",
-                tip: "Hino runs Toyota-family key architecture in places — verify the chassis before ordering blanks."
+                tip: "Hino runs Toyota-family key architecture in places — verify the chassis before ordering blanks.",
+                warning: "Hino is charted to the Lishi HI1, and the DAT12R (X154/B54) is listed for Hino heavy trucks alongside Isuzu. Read the keyway off the existing key first — HI1 and DAT12R are not interchangeable."
             })
         }
     },
@@ -473,6 +479,231 @@ const TRUCKS_AGRI_DB = {
         }
     }
 };
+
+// ---- LOCK PROFILE RESEARCH ---------------------------------------------
+// The defining data for a farm/HGV job is not the Lishi code, it is:
+// what the lock physically is, what code identifies it, and whether
+// you can open it. Everything below is researched, and every row
+// carries its own evidence level so nothing reads as more certain
+// than it is.
+//
+// conf: "documented" = part number / key code confirmed against a
+//       manufacturer parts catalogue or an equipment-key supplier.
+//       "family"      = solid prior from the parent company's key
+//                       programme or a shared platform, but confirm.
+//       "generic"     = the common arrangement for the segment, not
+//                       verified per model. Confirm before cutting.
+//
+// THE UNIVERSAL IDENTIFIER, and the most useful line on this card:
+// on essentially all plant and HGV locks the key code is stamped on
+// the key bow AND repeated on the face of the lock or the barrel.
+// If the customer still has a key, read it. If not, read the lock.
+const LOCK_PROFILE = {
+    // ---- HGV: cab doors across the European truck range are serviceable
+    // mechanical cylinders. Aftermarket "cylinder + 2 keys" kits are sold
+    // for Volvo/Scania/MAN/Mercedes/DAF/Renault/Iveco, which is the proof
+    // that keys are cut from a code and not dealer-only.
+    "DAF": {
+        lockType: "Mechanical euro-profile cab door cylinder",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "Cut from the barrel code — DAF cab key blank",
+        pickable: "Yes — euro profile, pickable or override. Do NOT lever the A-pillar",
+        conf: "generic"
+    },
+    "Scania": {
+        lockType: "Mechanical euro-profile cab door cylinder",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "Cut from the barrel code — Scania cab key blank",
+        pickable: "Yes — euro profile, pickable or override",
+        conf: "generic"
+    },
+    "MAN": {
+        lockType: "Mechanical euro-profile cab door cylinder",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "Cut from the barrel code — MAN cab key blank",
+        pickable: "Yes — euro profile, pickable or override",
+        conf: "generic"
+    },
+    "Volvo Trucks": {
+        lockType: "Serviceable mechanical cylinder — cylinder kits sold with 2 keys",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "Cut from the barrel code. Cylinder kit 3090483 (FH/FM/NH) is '1 cylinder, 2 keys'",
+        pickable: "Yes — mechanical cylinder is replaceable; the door mechanism (21505893/94) is a separate part",
+        conf: "documented"
+    },
+    "Renault Trucks": {
+        lockType: "Mechanical euro-profile cab door cylinder",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "Cut from the barrel code — Renault cab key blank",
+        pickable: "Yes — euro profile, pickable or override",
+        conf: "generic"
+    },
+    // Mercedes and Iveco: our own car DB already verifies the keyway for the
+    // light-commercial siblings of these trucks. Actros/Eurocargo cab doors
+    // very often use the same keyway, but that is a strong prior, not a fact.
+    "Mercedes-Benz": {
+        lockType: "Mechanical cab door cylinder, Mercedes keyway family",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "HU64 family — verified in our car DB on the Sprinter (W906 = HU64, W907/W910 = HU64/HU136)",
+        pickable: "Try HU64 first — it is the Mercedes keyway, but confirm the barrel before you commit",
+        conf: "family"
+    },
+    "Iveco": {
+        lockType: "Mechanical cab door cylinder, Fiat-derived keyway on older units",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "SIP22 on pre-Euro VI (verified in our car DB on the Daily 2006-2014); Euro VI moved to a new keyway",
+        pickable: "Try SIP22 on older cabs; Euro VI is a different keyway — read the code",
+        conf: "family"
+    },
+    "Mitsubishi Fuso": {
+        lockType: "Mechanical cab door cylinder, Iveco-Daily-derived cab on most Canter/Fuso",
+        lockCode: "Code stamped on the lock barrel face; read it before ordering",
+        blank: "Try SIP22 — the Fuso Canter cab is derived from the Iveco Daily (SIP22 in our car DB). Confirm the barrel",
+        pickable: "Likely yes — euro profile, pickable or override. Confirm before quoting",
+        conf: "family"
+    },
+    "Isuzu": {
+        lockType: "Mechanical cylinder, deeper 5-depth wafer on heavy trucks",
+        lockCode: "Code stamped on the lock barrel face",
+        blank: "DAT12R (X154/B54) heavy-truck depth, or ISU5 (B113) car/LCV depth — match the depth to the lock",
+        pickable: "Yes — pick and decode with the matching Lishi depth; standard CY24 will NOT reach the 5th wafer",
+        conf: "documented"
+    },
+    "Hino": {
+        lockType: "Mechanical cylinder, Toyota-family key architecture on some units",
+        lockCode: "Code stamped on the lock barrel face",
+        blank: "HI1 (charted to Hino trucks) or DAT12R (X154/B54, listed for Hino heavy) — not interchangeable",
+        pickable: "Yes with the matching tool; read the keyway before choosing HI1 vs DAT12R",
+        conf: "documented"
+    },
+
+    // ---- AGRI. Note the two alliances: CNH runs New Holland and Case IH
+    // on a SHARED key programme, and AGCO runs Massey Ferguson, Valtra,
+    // Fendt, Challenger and Gleaner — so AGCO's ACW/ACX/429xxxxMxx family
+    // is a live prior for Fendt and Valtra too.
+    "JCB": {
+        lockType: "Mechanical steel cab door key, code stamped on bow and barrel",
+        lockCode: "14603 / 14607 / 14707 / 14657 / 334-D2856 / 334-D2895 / 701-45501A / ELI80-0088. Fastrac: 2820308170, 2440311000, NFHPR731101101",
+        blank: "JCB 146xx-series machine key (14601-14650 family)",
+        pickable: "Yes — older mechanical cylinders are pickable; decode and cut from the code",
+        conf: "documented"
+    },
+    "John Deere": {
+        lockType: "Mechanical machine key, code stamped on bow; smart key on later models",
+        lockCode: "Genuine OE key blank TriMark KS970 (also sold as KS960, KS970R/S/P). Yard tractors: E1098JD / JD-3D. Part nos. include AT194969, GY20680",
+        blank: "TriMark KS970 for tractors; E1098JD for yard tractors",
+        pickable: "Older machines — yes, mechanical and decodable. 2000+ smart-key models route to dealer",
+        conf: "documented"
+    },
+    "New Holland": {
+        lockType: "Mechanical machine key, code stamped on bow",
+        lockCode: "86502903 (also E9NN11603AB; 81877351 obsolete; keys marked 92274). Also 71451203, 86533202, 9971268",
+        blank: "NH/CNH machine key — the SAME blank as Case IH on the shared CNH programme",
+        pickable: "Older mechanical machines yes; coded/smart machines route to dealer by serial",
+        conf: "documented"
+    },
+    "Case IH": {
+        lockType: "Mechanical machine key, code stamped on bow",
+        lockCode: "86502903 and 89995262 — the same blanks as New Holland (shared CNH programme). Challenger: 71468224, VA371222",
+        blank: "NH/CNH shared machine key blank",
+        pickable: "Older mechanical machines yes; coded machines route to dealer by serial",
+        conf: "documented"
+    },
+    "Massey Ferguson": {
+        lockType: "Mechanical machine key, code stamped on bow",
+        lockCode: "3813582M1 (marked 5713), 4297513M91, ACW1987250, ACX315899A (cab door), ACX4046710, 4354361M3, 3902584M91, 4290720M1, ACW0461630/3A",
+        blank: "AGCO machine key — ACW/ACX/429xxxxMxx family",
+        pickable: "Older mechanical machines yes; AGCO-coded machines route to dealer",
+        conf: "documented"
+    },
+    "Fendt": {
+        lockType: "Mechanical machine key — Fendt sits inside the AGCO key programme",
+        lockCode: "Look for the AGCO ACW/ACX/429xxxxMxx codes (Massey Ferguson uses these). Confirm on the bow",
+        blank: "AGCO machine key family — confirm the code before cutting",
+        pickable: "Mechanical cab cylinders usually pickable; coded keys dealer-only, and Fendt keys are among the most restricted in agri",
+        conf: "family"
+    },
+    "Valtra": {
+        lockType: "Mechanical machine key — Valtra is AGCO-owned, so AGCO key family applies",
+        lockCode: "Look for the AGCO ACW/ACX/429xxxxMxx codes (Massey Ferguson uses these). Confirm on the bow",
+        blank: "AGCO machine key family — confirm the code before cutting",
+        pickable: "Mechanical cab cylinders usually pickable; coded keys dealer-only",
+        conf: "family"
+    },
+    "Claas": {
+        lockType: "Mechanical machine key, code stamped on bow",
+        lockCode: "013142 / 0000131420",
+        blank: "Claas machine key",
+        pickable: "Older mechanical machines yes; coded/combine keys dealer or ADM route",
+        conf: "documented"
+    },
+    "Kubota": {
+        lockType: "Mechanical cab door cylinder, code stamped on bow/barrel",
+        lockCode: "Read the code off the key bow or the lock face — we have no confirmed Kubota code yet",
+        blank: "Cut from the code — order the blank to match",
+        pickable: "Usually yes — small utility cabs use simple mechanical cylinders, but confirm before quoting",
+        conf: "generic"
+    },
+    "Deutz-Fahr": {
+        lockType: "Mechanical cab door cylinder, code stamped on bow/barrel",
+        lockCode: "Read the code off the key bow or the lock face — no confirmed Deutz code yet",
+        blank: "Cut from the code — order the blank to match",
+        pickable: "Usually yes on older mechanical machines; confirm the lock before quoting",
+        conf: "generic"
+    }
+};
+
+// ---- Lishi coverage pass ------------------------------------------------
+// Lishi publishes an automotive-only tool range. Across the whole
+// published catalogue the only plant/commercial applications are
+// DAT12R (Isuzu / Hino heavy trucks), ISU5 (Isuzu), HI1 (Hino),
+// CY24-CV and CY24-TRUCK (Chrysler/Dodge/Jeep/Peterbilt commercial) —
+// there is no Lishi tooling for agricultural machinery at all.
+//
+// So an entry we could not match to a published Lishi tool now says
+// so outright instead of showing a bare "N/A", and carries the
+// realistic non-Lishi route so the card is still actionable at the
+// roadside. Runs over TRUCKS_AGRI_DB only, before the merge, so the
+// car catalogue is untouched and future entries are covered too.
+const NO_LISHI_ROUTE = {
+    HGV: "No Lishi tool for this make — read the keyway off the existing key before quoting. Older mechanical cab locks are often generic-wafer pickable or overridable; coded keys go via maker/dealer.",
+    Agri: "No Lishi tool for farm machinery (Lishi's range is automotive only) — read the keyway off the existing key. Older steel machine keys can be cut from code; coded keys go via maker/dealer by machine serial."
+};
+
+Object.keys(TRUCKS_AGRI_DB).forEach(function (make) {
+    Object.keys(TRUCKS_AGRI_DB[make]).forEach(function (model) {
+        Object.keys(TRUCKS_AGRI_DB[make][model]).forEach(function (year) {
+            const rec = TRUCKS_AGRI_DB[make][model][year];
+            if (!rec || typeof rec !== 'object') return;
+            if (!rec.lishi || /^(n\/?a|none|tbc|—|-)$/i.test(String(rec.lishi).trim())) {
+                rec.lishi = "No Lishi tool";
+            }
+            const hasRealTool = rec.lishi.indexOf('Lishi') === -1 &&
+                                rec.lishi.indexOf('no Lishi') === -1;
+            if (!hasRealTool) {
+                const route = NO_LISHI_ROUTE[rec.segment] || NO_LISHI_ROUTE.HGV;
+                if (!rec.warning) {
+                    rec.warning = route;
+                } else if (rec.warning.indexOf('read the keyway') === -1 &&
+                           rec.warning.indexOf('automotive only') === -1) {
+                    rec.warning = rec.warning + ' ' + route;
+                }
+            }
+
+            // Attach the researched lock profile for this make. Entries
+            // that did not carry a per-model override get the make-level
+            // research; per-model fields already on the record win.
+            const prof = LOCK_PROFILE[make];
+            if (prof) {
+                if (!rec.lockType) rec.lockType = prof.lockType;
+                if (!rec.lockCode) rec.lockCode = prof.lockCode;
+                if (!rec.blank) rec.blank = prof.blank;
+                if (!rec.pickable) rec.pickable = prof.pickable;
+                if (!rec.conf) rec.conf = prof.conf;
+            }
+        });
+    });
+});
 
 // Deep-merge into the master catalogue so search, reverse-lookup,
 // dropdowns and gating pick these up with no other change. Deep merge

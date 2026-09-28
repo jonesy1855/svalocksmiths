@@ -12,15 +12,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+    <!-- Shared site theme: site header, footer, nav and buttons -->
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.8">
+
     <style>
         :root {
-            --bg-dark: #0a0b0d;
-            --card-bg: #131519;
+            /* Palette mirrors the site theme (assets/css/styles.css) so the
+               tool reads as part of the site rather than a separate app. */
+            --bg-dark: #1a1a1a;
+            --card-bg: #232323;
             --border-color: rgba(255, 255, 255, 0.1);
             --sva-green: #2ecc71;
             --sva-green-dark: #27ae60;
             --text-main: #ffffff;
-            --text-muted: #8e959f;
+            --text-muted: #aaaaaa;
         }
 
         * {
@@ -35,9 +40,23 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
+            padding: 0 0 80px;
+        }
+
+        /* The shared stylesheet sets a font on every element, so pin the tool
+           itself to Inter to keep the form's original typography. */
+        .finder-shell,
+        .finder-shell * {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .finder-shell {
+            flex: 1 0 auto;
+            display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 20px 15px 60px;
+            padding: 40px 15px 60px;
         }
 
         .finder-container {
@@ -175,7 +194,9 @@
         select {
             width: 100%;
             padding: 14px 12px;
-            background-color: #08090a;
+            /* Matches the option background the shared stylesheet forces,
+               so the closed control and the open list look identical. */
+            background-color: #161616;
             color: #fff;
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -320,6 +341,59 @@
 </head>
 <body>
 
+    <header class="site-header">
+        <div class="compliance-banner">
+            ⚠️ CURRENTLY UNDER TRAINING – SERVICES &amp; DISPATCH NOT ACTIVE YET
+        </div>
+
+        <div class="header-main-content">
+
+            <!-- Logo & Brand Title -->
+            <div class="logo-container">
+                <a href="index.html" class="brand-link">
+                    <span class="brand-mark">
+                        <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" width="42" height="42">
+                    </span>
+                    <span class="brand-name">
+                        <span class="brand-main">Shropshire <em>Vehicle Access</em></span>
+                        <span class="brand-sub">Auto Locksmith &amp; Key Specialist</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="main-nav">
+                <a href="preview.html#services" class="nav-link">Services</a>
+
+                <!-- Dropdown for Areas -->
+                <div class="dropdown">
+                    <button class="dropbtn nav-link" type="button" aria-haspopup="true">
+                        Areas We Cover <span aria-hidden="true">▼</span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="locksmith-shawbury.html">Shawbury</a>
+                        <a href="locksmith-market-drayton.html">Market Drayton</a>
+                        <a href="locksmith-shrewsbury.html">Shrewsbury</a>
+                        <a href="locksmith-telford.html">Telford</a>
+                        <a href="locksmith-oswestry.html">Oswestry</a>
+                        <a href="locksmith-whitchurch.html">Whitchurch</a>
+                    </div>
+                </div>
+
+                <a href="who-am-i.html" class="nav-link">Who Am I</a>
+
+                <a href="lishi-finder.html" class="nav-link nav-lishi" aria-current="page">🔑 Lishi Picker</a>
+
+                <!-- PRO LOGIN LINK -->
+                <a href="services/login.html" id="authNavLink" class="nav-link nav-auth">🔐 Sign In</a>
+
+                <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="finder-shell">
     <div class="finder-container">
         <div class="app-header">
             <span class="app-eyebrow"><span aria-hidden="true">🔑</span> Shropshire Vehicle Access</span>
@@ -378,6 +452,33 @@
 
         <button type="button" id="btnReset" class="btn-reset">Reset Lookup</button>
     </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Shropshire Vehicle Access. All Rights Reserved. Fully Insured | DBS checked Mobile Auto Locksmith Services.</p>
+
+            <div class="footer-policy-links">
+                <a href="who-am-i.html">Who Am I</a>
+                <a href="legal.html">Privacy &amp; Terms</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+
+            <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
+                <a href="https://facebook.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Facebook</a>
+                <a href="https://instagram.com/svalocksmiths" target="_blank" rel="noopener noreferrer" class="social-link">Instagram</a>
+            </div>
+
+            <div class="footer-locations">
+                <a href="locksmith-shawbury.html" class="footer-loc-link">Serving Shawbury</a>
+                <a href="locksmith-market-drayton.html" class="footer-loc-link">Serving Market Drayton</a>
+                <a href="locksmith-shrewsbury.html" class="footer-loc-link">Serving Shrewsbury</a>
+                <a href="locksmith-telford.html" class="footer-loc-link">Serving Telford</a>
+                <a href="locksmith-oswestry.html" class="footer-loc-link">Serving Oswestry</a>
+                <a href="locksmith-whitchurch.html" class="footer-loc-link">Serving Whitchurch</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="services/car-database.js?v=2.3.1"></script>
     <!-- HGV / haulage + agricultural machinery. Deep-merges itself into
@@ -567,6 +668,6 @@
             resultBox.style.display = 'none';
         });
     </script>
-<div style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;flex-direction:column;align-items:flex-end;gap:10px;"><a href="tel:07123123456" style="display:inline-flex;align-items:center;gap:8px;background:#2ecc71;color:#000;padding:12px 18px;border-radius:999px;font-weight:700;font-size:0.9rem;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,0.45);">📞 Call Now</a><a href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp" style="position:relative;width:58px;height:58px;border-radius:50%;display:block;box-shadow:0 6px 20px rgba(0,0,0,0.45);background:#25d366;"><img src="assets/images/profile.png" alt="Chat on WhatsApp" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;border-radius:50%;border:3px solid #25d366;background:#fff;"><span style="position:absolute;right:-1px;bottom:-1px;width:14px;height:14px;border-radius:50%;background:#25d366;border:2px solid #fff;"></span></a></div>
+    <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
 </body>
 </html>

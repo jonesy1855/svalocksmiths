@@ -2394,7 +2394,7 @@ body.preview-page .bench-img-wrapper img {
 }
 
 /* --- FOOTER POLICY LINKS --- */
-body.preview-page .footer-policy-links {
+.footer-policy-links {
     margin: 15px 0;
     display: flex;
     justify-content: center;
@@ -2403,14 +2403,14 @@ body.preview-page .footer-policy-links {
     flex-wrap: wrap;
 }
 
-body.preview-page .footer-policy-links a {
+.footer-policy-links a {
     color: #bababa;
     text-decoration: underline;
     font-size: 0.85rem;
     transition: color 0.2s ease;
 }
 
-body.preview-page .footer-policy-links a:hover {
+.footer-policy-links a:hover {
     color: #2ecc71;
 }
 

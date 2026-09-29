@@ -74,7 +74,7 @@
 
 
     <!-- Core Stylesheet & Google Fonts -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.8">
+    <link rel="stylesheet" href="assets/css/styles.css?v=1.9">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -259,25 +259,42 @@
     <section style="margin: 0 auto; padding: 60px 20px 20px; max-width: 960px;">
         <div style="background: linear-gradient(135deg, #0d1117 0%, #121923 100%); border: 1px solid rgba(46,204,113,0.2); border-radius: 12px; padding: 36px 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 32px;">
             <div style="flex: 1.4; min-width: 250px;">
-                <span style="display: inline-block; background: rgba(46,204,113,0.15); color: #2ecc71; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 10px; border-radius: 4px; margin-bottom: 14px;">NEW — Offline App</span>
+                <span style="display: inline-block; background: rgba(46,204,113,0.15); color: #2ecc71; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 10px; border-radius: 4px; margin-bottom: 14px;">Android — In Final Testing</span>
                 <h2 style="color: #fff; font-size: 1.6rem; margin: 0 0 10px 0; line-height: 1.2;">Get SVA FieldMate Pro</h2>
                 <p style="color: #9ca3af; font-size: 0.92rem; margin: 0 0 22px 0; line-height: 1.6;">
                     Our Android app ships the Lishi Finder database <strong style="color:#ddd;">completely offline</strong> — free. No signal needed at the door: the right pick and decoder for 40+ makes in seconds, with Pro unlocks for module locations, A/C specs and job quotes.
                 </p>
-                <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center;">
+                <!-- Google Play holder. To go live: set the href below to the store URL
+                     and flip data-state from "pending" to "live". -->
+                <div class="sva-store" data-state="pending" aria-disabled="true">
+                    <a class="sva-store-badge" href="#" onclick="return false;" tabindex="-1" aria-hidden="true">
+                        <svg viewBox="0 0 24 26" fill="none" aria-hidden="true">
+                            <path d="M1.6.9a2 2 0 0 0-.6 1.45v21.3c0 .55.22 1.04.6 1.45l.06.06L13.3 13.1v-.2L1.66.84a2.2 2.2 0 0 0-.06.06Z" fill="#00D2FF"/>
+                            <path d="M16.9 16.7 13.3 13.1v-.2l3.6-3.6.08.05 4.3 2.45c1.23.7 1.23 1.85 0 2.55l-4.3 2.4-.08.05Z" fill="#FFCE00"/>
+                            <path d="M16.98 16.65 13.3 13.1 1.6 25l15.38-8.35Z" fill="#FF3A44"/>
+                            <path d="M16.98 9.35 1.6 1 13.3 12.9l3.68-3.55Z" fill="#00F076"/>
+                        </svg>
+                        <span class="sva-store-badge-text">
+                            <span class="sva-store-badge-eyebrow">Get it on</span>
+                            <span class="sva-store-badge-name">Google Play</span>
+                        </span>
+                    </a>
+                    <span class="sva-store-pill">Coming soon</span>
+                    <span class="sva-store-note">Android app in final testing. The Play Store link goes live here the moment it publishes.</span>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 20px;">
                     <a href="app.html"
                        style="display: inline-block; background: #2ecc71; color: #000; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s; margin-bottom: 10px;">
-                        📲 Download v2.3.1 APK
+                        About FieldMate Pro
                     </a>
                     <a href="lishi-finder.html"
                        style="display: inline-block; background: transparent; color: #2ecc71; border: 1px solid rgba(46,204,113,0.5); padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: all 0.2s; margin-bottom: 10px;">
                         🔑 Try the Lishi Picker Online
                     </a>
                 </div>
-                <span style="display: block; color: #6b7280; font-size: 0.76rem; margin-top: 6px;">Free download · 11.9 MB · Android 6.0+</span>
             </div>
             <div style="flex: 0 0 220px; text-align: center;">
-                <img loading="lazy" src="assets/images/lishi-pick-entry-1.jpg" alt="Lishi tool being used on a vehicle door lock" style="width: 100%; max-width: 220px; border-radius: 8px; border: 2px solid rgba(46,204,113,0.3);">
+                <img loading="lazy" class="sva-app-logo" src="assets/images/svafieldmatepro-logo.png" alt="SVA FieldMate Pro app icon">
             </div>
         </div>
     </section>

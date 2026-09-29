@@ -3280,3 +3280,145 @@ body.preview-page .container { scroll-margin-top: 124px; }
     .site-header .header-cta { margin-left: 0; padding: 8px 12px; }
     body.preview-page .container { scroll-margin-top: 190px; }
 }
+
+/* --- Google Play launch holder ---------------------------------------
+   Placeholder for the Play Store listing. Sits in the app card in place
+   of the old APK button until the listing goes live.
+   To launch: set the <a> href to the store URL, add class "is-live" to
+   the wrapper, and drop the official badge PNG over the inline glyph
+   (Play Console > Store listing > Main store listing > Graphics assets).
+   --------------------------------------------------------------------- */
+.sva-store {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+    text-decoration: none;
+}
+
+.sva-store-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 8px;
+    padding: 9px 18px 9px 15px;
+    min-height: 56px;
+    box-sizing: border-box;
+    transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.sva-store-badge svg {
+    width: 26px;
+    height: 28px;
+    flex: 0 0 auto;
+    display: block;
+}
+
+.sva-store-badge-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    text-align: left;
+}
+
+.sva-store-badge-eyebrow {
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0.78;
+}
+
+.sva-store-badge-name {
+    font-size: 1.08rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: #fff;
+}
+
+/* Pending state — muted, non-interactive, clearly not yet a live link. */
+.sva-store[data-state="pending"] .sva-store-badge {
+    opacity: 0.42;
+    cursor: default;
+    border-style: dashed;
+}
+
+.sva-store[data-state="pending"]:hover .sva-store-badge {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.sva-store-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(46, 204, 113, 0.15);
+    border: 1px solid rgba(46, 204, 113, 0.45);
+    color: var(--accent-green, #2ecc71);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 999px;
+}
+
+.sva-store-pill::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    box-shadow: 0 0 0 0 currentColor;
+    animation: sva-store-pulse 2.2s ease-out infinite;
+}
+
+@keyframes sva-store-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.55); }
+    70%  { box-shadow: 0 0 0 7px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+.sva-store-note {
+    color: #6b7280;
+    font-size: 0.74rem;
+    line-height: 1.5;
+    max-width: 34ch;
+}
+
+.sva-store[data-state="live"] .sva-store-badge:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sva-store-pill::before { animation: none; }
+    .sva-store-badge { transition: none; }
+}
+
+/* App card artwork */
+.sva-app-logo {
+    width: 100%;
+    max-width: 220px;
+    border-radius: 18px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* The app.html hero crops its slot to 4:3 with object-fit:cover, which would
+   slice a square icon. Override it to a 1:1 frame with a neutral backdrop. */
+body.service-page .svc-hero-photo img.sva-app-logo {
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    width: auto;
+    max-width: 200px;
+    padding: 18px;
+    background: linear-gradient(150deg, #14181f 0%, #0b0e13 100%);
+}
+
+body.service-page .svc-hero-actions {
+    align-items: center;
+}

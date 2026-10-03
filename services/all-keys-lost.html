@@ -388,19 +388,24 @@ if (yearSelect) {
 
         if (activeUser) {
             try {
-                // Fetch real-time tier/purchases from Firestore using the live UID
-                const userDoc = await firebase.firestore().collection('users').doc(activeUser.uid).get();
-                if (userDoc.exists) {
-                    const userData = userDoc.data();
-                    const tier = userData.tier || 'free';
-                    const unlockedMakes = userData.unlockedMakes || [];
+                // Pro status MUST come from entitlements/{uid}, not users/{uid}.
+                // The rules allow a user to write their own profile doc, so a
+                // "tier" field there is self-assigned and proves nothing.
+                // entitlements/{uid} is written only by the Admin SDK after a
+                // verified purchase and is `allow write: if false` for clients.
+                const entDoc = await firebase.firestore().collection('entitlements').doc(activeUser.uid).get();
+                if (entDoc.exists) {
+                    const ent = entDoc.data();
+                    const pro = ent.pro === true;
+                    const unlocked = Array.isArray(ent.unlockedMakes) ? ent.unlockedMakes : [];
 
-                    if (tier === 'pro_unlimited' || unlockedMakes.includes(make)) {
+                    if (pro || unlocked.includes(make)) {
                         hasProAccess = true;
                     }
                 }
             } catch (e) {
-                console.error("Error fetching user tier:", e);
+                // Stay locked on failure. Never fail open.
+                console.warn("Could not confirm Pro status:", e.code || e.message);
             }
         }
 
@@ -532,6 +537,8 @@ const specificStripeUrl = stripeMakeLinks[make] || stripeMakeLinks["Default"];
 
 
 <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
+<!-- Idle session guard: signs Pro users out after 30 minutes of inactivity. -->
+<script src="../assets/js/session-guard.js" defer></script>
 </body>
 </html>
 

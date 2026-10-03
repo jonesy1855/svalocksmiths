@@ -1,0 +1,19 @@
+# Dependencies — installed by npm, never committed.
+# package-lock.json IS tracked deliberately, so installs are reproducible.
+node_modules/
+
+# Build / tooling output
+dist/
+build/
+*.log
+
+# Editor + OS noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local environment overrides
+.env
+.env.*

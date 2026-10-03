@@ -41,7 +41,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            padding: 0 0 80px;
+            padding: 0 0 32px;
         }
 
         /* The shared stylesheet sets a font on every element, so pin the tool
@@ -51,12 +51,15 @@
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
+        /* Sticky footer: the shell grows so the footer stays at the foot of a
+           short viewport. Padding kept tight so the filler space reads as
+           breathing room rather than a gap under the card. */
         .finder-shell {
             flex: 1 0 auto;
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            padding: 40px 15px 60px;
+            padding: 28px 15px 22px;
         }
 
         .finder-container {
@@ -176,19 +179,77 @@
             box-shadow: 0 0 15px rgba(46, 204, 113, 0.2);
         }
 
-        /* Form Controls */
+        /* Form Controls — the three selects read as one connected sequence
+           rather than three anonymous boxes stacked in a card. */
+        .stepper {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 4px 14px 2px;
+        }
+
         .control-group {
-            margin-bottom: 18px;
+            margin-bottom: 0;
+            padding: 12px 0;
+            position: relative;
+        }
+
+        /* Connector between steps, drawn in the gutter to the left. */
+        .control-group + .control-group::before {
+            content: "";
+            position: absolute;
+            left: -14px;
+            top: -6px;
+            width: 2px;
+            height: 18px;
+            background: linear-gradient(180deg, rgba(46, 204, 113, 0.55), rgba(46, 204, 113, 0.12));
         }
 
         label {
-            display: block;
-            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 8px;
             font-weight: 700;
             color: #d1d5db;
-            font-size: 0.8rem;
+            font-size: 0.74rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+        }
+
+        .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            flex: 0 0 auto;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.15);
+            border: 1px solid rgba(46, 204, 113, 0.45);
+            color: var(--sva-green);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        /* Once a step is reachable, its badge fills in. */
+        .control-group.is-ready .step-num {
+            background: var(--sva-green);
+            color: #0b1410;
+            border-color: var(--sva-green);
+        }
+
+        .stepper-hint {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            padding: 8px 0 4px;
+            border-top: 1px dashed var(--border-color);
+            margin-top: 4px;
         }
 
         select {
@@ -211,9 +272,14 @@
             border-color: var(--sva-green);
         }
 
+        /* Reads as "not yet", not "broken" — dashed edge and a muted
+           surface instead of a flat fade over the live styling. */
         select:disabled {
-            opacity: 0.4;
+            opacity: 1;
             cursor: not-allowed;
+            background-color: rgba(255, 255, 255, 0.02);
+            border-style: dashed;
+            color: var(--text-muted);
         }
 
         /* Single Result Display Card (Dropdown Mode) */
@@ -456,6 +522,8 @@
                     </div>
                 </div>
 
+                <a href="preview.html" class="nav-link nav-back">← Back</a>
+
                 <a href="who-am-i.html" class="nav-link">Who Am I</a>
 
                 <a href="lishi-finder.html" class="nav-link nav-lishi" aria-current="page">🔑 Lishi Picker</a>
@@ -497,25 +565,29 @@
         
         <!-- Classic Dropdown UI (Hidden while searching) -->
         <div id="dropdownSection">
-            <div class="control-group">
-                <label for="makeSelect">1. Select Manufacturer</label>
-                <select id="makeSelect">
-                    <option value="">-- Choose Make --</option>
-                </select>
-            </div>
+            <div class="stepper">
+                <div class="control-group" id="stepMake">
+                    <label for="makeSelect"><span class="step-num" aria-hidden="true">1</span> Select Manufacturer</label>
+                    <select id="makeSelect">
+                        <option value="">-- Choose Make --</option>
+                    </select>
+                </div>
 
-            <div class="control-group">
-                <label for="modelSelect">2. Select Model / Series</label>
-                <select id="modelSelect" disabled>
-                    <option value="">-- Choose Model --</option>
-                </select>
-            </div>
+                <div class="control-group" id="stepModel">
+                    <label for="modelSelect"><span class="step-num" aria-hidden="true">2</span> Select Model / Series</label>
+                    <select id="modelSelect" disabled>
+                        <option value="">-- Choose Model --</option>
+                    </select>
+                </div>
 
-            <div class="control-group">
-                <label for="yearSelect">3. Select Generation / Year</label>
-                <select id="yearSelect" disabled>
-                    <option value="">-- Choose Year --</option>
-                </select>
+                <div class="control-group" id="stepYear">
+                    <label for="yearSelect"><span class="step-num" aria-hidden="true">3</span> Select Generation / Year</label>
+                    <select id="yearSelect" disabled>
+                        <option value="">-- Choose Year --</option>
+                    </select>
+                </div>
+
+                <p class="stepper-hint">Each step unlocks the next. Not sure of the year? <b>Type it in the search box above</b> — the dropdowns are just the fallback.</p>
             </div>
 
             <!-- Single Result Display Block -->
@@ -595,6 +667,15 @@
         const liveResults = document.getElementById('liveResults');
         const dropdownSection = document.getElementById('dropdownSection');
 
+        // Fill in a step's badge once that step is actually reachable, so the
+        // sequence shows progress instead of three identical inactive boxes.
+        function syncStepBadges() {
+            [['stepMake', makeSelect], ['stepModel', modelSelect], ['stepYear', yearSelect]].forEach(function (p) {
+                const el = document.getElementById(p[0]);
+                if (el && p[1]) el.classList.toggle('is-ready', !p[1].disabled);
+            });
+        }
+
         // Populate Manufacturers in Dropdown
         function populateMakes() {
             makeSelect.innerHTML = '<option value="">-- Choose Make --</option>';
@@ -603,6 +684,7 @@
             });
         }
         populateMakes();
+        syncStepBadges();
 
         // SMART YEAR RANGE MATCHER
         function smartYearMatch(rangeStr, queryYear) {
@@ -700,6 +782,7 @@
             } else {
                 modelSelect.disabled = true;
             }
+            syncStepBadges();
         });
 
         // Handle Model Selection
@@ -716,6 +799,7 @@
             } else {
                 yearSelect.disabled = true;
             }
+            syncStepBadges();
         });
 
         // Handle Year Selection & Display Results
@@ -795,6 +879,7 @@
             yearSelect.innerHTML = '<option value="">-- Choose Year --</option>';
             yearSelect.disabled = true;
             resultBox.style.display = 'none';
+            syncStepBadges();
         });
     </script>
     <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>

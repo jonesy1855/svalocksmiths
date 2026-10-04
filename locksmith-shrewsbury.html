@@ -6,9 +6,9 @@
 
     <meta name="description" content="Mobile auto locksmiths in Shrewsbury, Shropshire. Non-destructive entry, vehicle key programming &amp; laser key cutting. SVA Locksmiths.">
 
-    <title>Shropshire Vehicle Access Locksmiths</title>
+    <title>Auto Locksmiths in Shrewsbury, Shropshire | SVA Locksmiths</title>
     <meta property="og:site_name" content="Shropshire Vehicle Access Locksmiths">
-    <meta property="og:title" content="Shropshire Vehicle Access Locksmiths">
+    <meta property="og:title" content="Auto Locksmiths in Shrewsbury, Shropshire | SVA Locksmiths">
     
     <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="apple-touch-icon" href="assets/images/logo.png">
@@ -209,7 +209,8 @@
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 SVA Locksmiths. All Rights Reserved. Fully Insured Mobile Auto Locksmith Services.</p>
-            <p style="margin-top: 5px;"><a href="legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy & Terms</a></p>
+            <p style="margin-top: 5px;"><a href="legal.html" style="color: #888; text-decoration: underline; font-size: 0.85rem;">Privacy &amp; Terms</a></p>
+            <p style="margin-top: 5px;"><a href="#" id="cookie-settings" style="color: #888; text-decoration: underline; font-size: 0.85rem; cursor: pointer;">Cookie Settings</a></p>
             
             <!-- Social Links -->
             <div class="footer-socials" style="margin-top: 20px; margin-bottom: 20px;">
@@ -228,6 +229,7 @@
         </div>
     </footer>
     <script src="assets/js/forms.js"></script>
+    <script src="assets/js/consent-settings.js"></script>
     <script>
 document.addEventListener("DOMContentLoaded", function() {
     const banner = document.getElementById('cookie-banner');
@@ -241,8 +243,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let consent = localStorage.getItem('sva_cookie_consent');
 
     if (!consent) {
-        // If no choice made yet, show the banner
-        banner.style.display = 'flex';
+        // No choice yet. These town pages have no banner element - the map
+        // placeholder is the consent prompt - so only show one if it exists.
+        if (banner) banner.style.display = 'flex';
     } else if (consent === 'accepted') {
         // If they already accepted previously, load the map instantly
         loadMap();
@@ -259,9 +262,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // Accept Button Clicked
-    acceptBtn.addEventListener('click', function() {
+    if (acceptBtn) acceptBtn.addEventListener('click', function() {
         localStorage.setItem('sva_cookie_consent', 'accepted');
-        banner.style.display = 'none';
+        if (banner) banner.style.display = 'none';
         loadMap();
     });
 
@@ -269,15 +272,15 @@ document.addEventListener("DOMContentLoaded", function() {
     if (placeholderAccept) {
         placeholderAccept.addEventListener('click', function() {
             localStorage.setItem('sva_cookie_consent', 'accepted');
-            banner.style.display = 'none';
+            if (banner) banner.style.display = 'none';
             loadMap();
         });
     }
 
     // Decline Button Clicked
-    declineBtn.addEventListener('click', function() {
+    if (declineBtn) declineBtn.addEventListener('click', function() {
         localStorage.setItem('sva_cookie_consent', 'declined');
-        banner.style.display = 'none';
+        if (banner) banner.style.display = 'none';
         // Map stays blocked
     });
 });

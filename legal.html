@@ -187,6 +187,7 @@
             <li><strong>Vehicle identifiers:</strong> Vehicle Registration Mark (VRM), Make, Model, and Vehicle Identification Number (VIN).</li>
             <li><strong>Geographical data:</strong> Breakdown location, driveway address, or billing location required to coordinate our mobile workshop.</li>
             <li><strong>Identity verification data:</strong> Sight inspection of valid Photographic ID and matching V5C logbook documentation (conducted solely on-site to verify lawful vehicle connection; we do not store photocopies of personal identification cards unless required by law).</li>
+            <li><strong>Trade account data:</strong> Where you register for a trade or partner login, we process your email address, account creation date, and subscription entitlement status. Passwords are hashed by our authentication provider and are never stored or transmitted in plain text by us.</li>
         </ul>
 
         <h3>2. Lawful Basis for Processing</h3>
@@ -200,6 +201,8 @@
         <h3>3. Data Processors & Third-Party Platforms</h3>
         <p>We strictly do not sell, rent, or trade your personal data with third-party marketing companies. Personal data is handled exclusively through our operational processors:</p>
         <ul>
+            <li><strong>Website Hosting &amp; Delivery:</strong> Our website is hosted and delivered through Cloudflare Pages and the Cloudflare content delivery network (including anycast edge caching and SSL/TLS termination).</li>
+            <li><strong>Trade Account Platform (Google Firebase):</strong> Trade/partner accounts are handled by Google Firebase. Firebase Authentication processes and stores your email address and a securely hashed password (we never see or store your plaintext password), and Cloud Firestore stores your account profile record (email address, account creation date) together with your subscription entitlement status. This data is held on Google infrastructure under Google's data processing terms.</li>
             <li><strong>Website Form Processing:</strong> Inquiries submitted through web contact forms are transmitted securely via Formspree and stored within our protected Google Workspace infrastructure.</li>
             <li><strong>Direct Messaging:</strong> Chats initiated via our direct WhatsApp widget are governed by WhatsApp/Meta end-to-end encryption protocols.</li>
             <li><strong>Card Processing:</strong> In-person card payments are processed on-site through secure, PCI-DSS-compliant mobile point-of-sale terminals.</li>
@@ -210,7 +213,9 @@
         <p>Under UK GDPR, you retain the right to request access to, rectification of, or erasure of your personal data, or to restrict its processing. To submit a data request, contact us directly at <a href="mailto:contact@sva-locksmiths.co.uk">contact@sva-locksmiths.co.uk</a>. You also hold the statutory right to lodge a complaint with the Information Commissioner's Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer">ico.org.uk</a>.</p>
 
         <h3>5. Cookies & Third-Party Media</h3>
-        <p>Our website utilises essential session cookies to support site security and secure form submission. Embedded third-party elements (such as Google Maps for local routing and YouTube video demonstrations) may deploy functional or analytical cookies once consented to via our cookie banner. You may update or revoke cookie preferences at any time via your web browser settings.</p>
+        <p>Our own website does not set any tracking or advertising cookies. Your consent choice is stored locally in your browser's local storage (under the key "sva_cookie_consent"), which never leaves your device and is not transmitted to us or to any third party. The only consequence of your choice is whether interactive third-party media is displayed: embedded Google Maps (shown for local routing) and YouTube video demonstrations will not request any data from Google or YouTube unless you have actively enabled them.
+
+<b>Changing or withdrawing your choice.</b> Your consent can be withdrawn at any time, and withdrawing is as easy as giving consent. Use the "Cookie Settings" link available in the footer of every page: this clears your stored choice and re-opens the consent banner so you can confirm or refuse again. You may also erase the stored value at any time through your browser's "clear site data" function. Until you enable interactive media, no Google Maps or YouTube content is requested and no third-party cookies can be set by those embeds.</p>
 
         <hr class="divider">
 

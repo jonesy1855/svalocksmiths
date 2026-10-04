@@ -1,31 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap for sva-locksmiths.co.uk -->
+<!-- Only indexable pages are listed. utility/auth/prototype pages carry noindex. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>https://sva-locksmiths.co.uk/</loc>
+      <lastmod>2026-10-04</lastmod>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>https://sva-locksmiths.co.uk/locksmith-shawbury.html</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
       <loc>https://sva-locksmiths.co.uk/locksmith-telford.html</loc>
+      <lastmod>2026-10-04</lastmod>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://sva-locksmiths.co.uk/locksmith-shrewsbury.html</loc>
-      <priority>0.8</priority>
-   </url>
-   <url>
-      <loc>https://sva-locksmiths.co.uk/locksmith-market-drayton.html</loc>
+      <lastmod>2026-10-04</lastmod>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://sva-locksmiths.co.uk/locksmith-oswestry.html</loc>
+      <lastmod>2026-10-04</lastmod>
       <priority>0.8</priority>
    </url>
    <url>
       <loc>https://sva-locksmiths.co.uk/locksmith-whitchurch.html</loc>
+      <lastmod>2026-10-04</lastmod>
       <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/locksmith-market-drayton.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/locksmith-shawbury.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/services/emergency-lockout.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/services/all-keys-lost.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/services/spare-keys.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/services/van-security.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.8</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/services/ac-regassing.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/pricing.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.7</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/app.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/lishi-finder.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.6</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/who-am-i.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.5</priority>
+   </url>
+   <url>
+      <loc>https://sva-locksmiths.co.uk/legal.html</loc>
+      <lastmod>2026-10-04</lastmod>
+      <priority>0.3</priority>
    </url>
 </urlset>

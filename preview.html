@@ -750,53 +750,6 @@
                 });
             }
 
-            // B. Cookie Consent & Map Loading
-            const banner = document.getElementById('cookie-banner');
-            const acceptBtn = document.getElementById('accept-cookies');
-            const declineBtn = document.getElementById('decline-cookies');
-            const mapIframe = document.getElementById('google-map-iframe');
-            const mapPlaceholder = document.getElementById('map-placeholder');
-            const placeholderAccept = document.getElementById('placeholder-accept');
-
-            let consent = localStorage.getItem('sva_cookie_consent');
-
-            if (!consent && banner) {
-                banner.style.display = 'flex';
-            } else if (consent === 'accepted') {
-                loadMap();
-            }
-
-            function loadMap() {
-                if (mapIframe) {
-                    mapIframe.src = mapIframe.getAttribute('data-src');
-                    mapIframe.style.display = 'block';
-                    if (mapPlaceholder) mapPlaceholder.style.display = 'none';
-                }
-            }
-
-            if (acceptBtn) {
-                acceptBtn.addEventListener('click', function() {
-                    localStorage.setItem('sva_cookie_consent', 'accepted');
-                    if (banner) banner.style.display = 'none';
-                    loadMap();
-                });
-            }
-
-            if (placeholderAccept) {
-                placeholderAccept.addEventListener('click', function() {
-                    localStorage.setItem('sva_cookie_consent', 'accepted');
-                    if (banner) banner.style.display = 'none';
-                    loadMap();
-                });
-            }
-
-            if (declineBtn) {
-                declineBtn.addEventListener('click', function() {
-                    localStorage.setItem('sva_cookie_consent', 'declined');
-                    if (banner) banner.style.display = 'none';
-                });
-            }
-
             // C. Background Form Submission (AJAX)
             const contactForms = document.querySelectorAll('form[action^="https://formspree.io"]');
             
@@ -917,7 +870,7 @@
     </script>
     <!-- Core UI Interactions (FAQ accordion, video overlay, slider) -->
     <script src="assets/js/forms.js"></script>
-    <script src="assets/js/consent-settings.js"></script>
+    <script src="assets/js/consent.js?v=1"></script>
 <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
 <!-- Idle session guard: signs Pro users out after 30 minutes of inactivity. -->
 <script src="assets/js/session-guard.js" defer></script>

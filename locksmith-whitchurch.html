@@ -307,62 +307,7 @@
         </div>
     </footer>
     <script src="assets/js/forms.js"></script>
-    <script src="assets/js/consent-settings.js"></script>
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const banner = document.getElementById('cookie-banner');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const declineBtn = document.getElementById('decline-cookies');
-    const mapIframe = document.getElementById('google-map-iframe');
-    const mapPlaceholder = document.getElementById('map-placeholder');
-    const placeholderAccept = document.getElementById('placeholder-accept');
-
-    // Check if the user has already made a choice
-    let consent = localStorage.getItem('sva_cookie_consent');
-
-    if (!consent) {
-        // No choice yet. These town pages have no banner element - the map
-        // placeholder is the consent prompt - so only show one if it exists.
-        if (banner) banner.style.display = 'flex';
-    } else if (consent === 'accepted') {
-        // If they already accepted previously, load the map instantly
-        loadMap();
-    }
-
-    // Function to load the Google Map
-    function loadMap() {
-        if (mapIframe) {
-            // Swap data-src to src to trigger the map download
-            mapIframe.src = mapIframe.getAttribute('data-src');
-            mapIframe.style.display = 'block';
-            if (mapPlaceholder) mapPlaceholder.style.display = 'none';
-        }
-    }
-
-    // Accept Button Clicked
-    if (acceptBtn) acceptBtn.addEventListener('click', function() {
-        localStorage.setItem('sva_cookie_consent', 'accepted');
-        if (banner) banner.style.display = 'none';
-        loadMap();
-    });
-
-    // Accept Button Clicked (from the map placeholder box)
-    if (placeholderAccept) {
-        placeholderAccept.addEventListener('click', function() {
-            localStorage.setItem('sva_cookie_consent', 'accepted');
-            if (banner) banner.style.display = 'none';
-            loadMap();
-        });
-    }
-
-    // Decline Button Clicked
-    if (declineBtn) declineBtn.addEventListener('click', function() {
-        localStorage.setItem('sva_cookie_consent', 'declined');
-        if (banner) banner.style.display = 'none';
-        // Map stays blocked
-    });
-});
-</script>
+    <script src="assets/js/consent.js?v=1"></script>
 
 <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
 </body>

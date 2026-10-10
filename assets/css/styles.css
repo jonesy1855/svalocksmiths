@@ -22,6 +22,17 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Keyboard focus is never removed: every interactive element keeps a clear,
+   visible indicator when reached via the keyboard or switch device. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent-green);
+    outline-offset: 2px;
+}
+
 body {
     background-color: var(--primary-bg);
     color: var(--text-light);
@@ -113,6 +124,7 @@ nav a:hover {
    3. HERO & GLOBAL ACTIONS
    ========================================================================== */
 
+.hero h1,
 .hero h2 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
@@ -177,7 +189,6 @@ nav a:hover {
     text-decoration: none;
     color: inherit;
     display: block;
-    outline: none;
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1778,6 +1789,7 @@ main h2::after {
     color: #ffffff;
 }
 
+.hero h1,
 .hero h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
@@ -3383,7 +3395,7 @@ body.preview-page .container { scroll-margin-top: 124px; }
 }
 
 .sva-store-note {
-    color: #6b7280;
+    color: #9ca3af;
     font-size: 0.74rem;
     line-height: 1.5;
     max-width: 34ch;

@@ -40,12 +40,7 @@
         "areaServed": { "@type": "Place", "name": "Shropshire" }
     }
     </script>
-<!-- Firebase App (The core Firebase SDK) -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<!-- Firebase Auth -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
-<!-- THIS LINE: Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+<!-- The vehicle reference catalogue is free and open — no account or payment required. -->
 
     <link rel="stylesheet" href="../assets/css/styles.css?v=1.9">
 </head>
@@ -63,7 +58,6 @@
             </a>
             <nav class="svc-nav" aria-label="Page navigation">
                 <a href="../preview.html" class="svc-nav-back">← Back Home</a>
-                <a href="login.html" id="authNavLink" style="color:#e67e22;" class="svc-nav-back">🔐 Sign In</a>
                 <a class="svc-cta-tel" href="tel:07123123456">📞 Call Now</a>
             </nav>
         </div>
@@ -206,18 +200,9 @@
             <p id="lishiResult" style="font-size: 2.5rem; margin: 0; text-shadow: 1px 1px 2px rgba(255,255,255,0.3);"></p>
         </div>
 
-        <!-- ==================== PRO PAYWALL GATE (LOCKED VEHICLE DATA & WARNINGS) ==================== -->
-        <!-- This box can stay hidden until a result appears, or stay visible as a teaser -->
-        <div id="lockedDataSection" style="display: none; margin-top: 20px; background: #11141a; border: 1px dashed #e67e22; border-radius: 6px; padding: 20px; text-align: center;">
-            <div style="font-size: 1.5rem; margin-bottom: 8px;">🔒</div>
-            <h4 style="color: #fff; margin: 0 0 8px 0; font-size: 1rem;">Pro Trade Data & Security Warnings Locked</h4>
-            <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
-                Sign in to view specific door deadlocking risks, ignition pick directions, wafer counts, and specialized bypass notes for this model.
-            </p>
-            <a href="login.html" style="display: inline-block; background-color: #e67e22; color: #fff; padding: 10px 20px; border-radius: 4px; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: background 0.2s;">
-                🔐 Sign In to Unlock Vehicle Data
-            </a>
-        </div>
+        <!-- ==================== VEHICLE REFERENCE RESULTS ==================== -->
+        <!-- Filled with the full free spec card once make / model / year are selected. -->
+        <div id="lockedDataSection" style="display: none; margin-top: 20px;"></div>
 
     </div>
 </div>
@@ -263,54 +248,17 @@
         </div>
     </footer>
 
-<script src="car-database.js?v=2.3.1"></script>
-<!-- HGV / haulage + agricultural machinery. Deep-merges itself into
-     carDatabase, so it must come after car-database.js. -->
-<script src="trucks-agri-db.js?v=2.4.0"></script>
+<script src="car-database.js?v=3.0"></script>
+<!-- Each tranche deeply self-merges into carDatabase, so load order MUST be:
+     cars → trucks/agri → bikes/ATV → current-gen HGV/agri → newer vehicles. -->
+<script src="trucks-agri-db.js?v=3.0"></script>
+<script src="bikes-atv-db.js?v=3.0"></script>
+<script src="current-gen-db.js?v=3.0"></script>
+<script src="newer-vehicles-db.js?v=3.0"></script>
 
 <script>
-    // 1. Initialize Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
-        authDomain: "sva-auth.firebaseapp.com",
-        projectId: "sva-auth",
-        storageBucket: "sva-auth.firebasestorage.app",
-        messagingSenderId: "778693286501",
-        appId: "1:778693286501:web:594b3f4618c542ee0b848c",
-        measurementId: "G-5GWZJKDN36"
-    };
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
-
-    // 2. Global Auth State Tracker
-    let currentUser = null;
-
-    firebase.auth().onAuthStateChanged((user) => {
-        currentUser = user;
-        const authNavLink = document.getElementById('authNavLink');
-
-        if (user) {
-            // --- USER IS LOGGED IN ---
-            if (authNavLink) {
-                authNavLink.innerHTML = "👤 Pro Active";
-                authNavLink.style.color = "#2ecc71";
-                authNavLink.href = "#";
-                authNavLink.onclick = () => {
-                    if(confirm("Do you want to log out of your Pro account?")) {
-                        firebase.auth().signOut().then(() => window.location.reload());
-                    }
-                };
-            }
-        } else {
-            // --- USER IS LOGGED OUT ---
-            if (authNavLink) {
-                authNavLink.innerHTML = "🔐 Sign In";
-                authNavLink.style.color = "#e67e22";
-                authNavLink.href = "login.html";
-            }
-        }
-    });
+    // The catalogue is free and open — no account, no payment, no Firebase.
+    // (The Pro/Stripe paywall that used to gate this page was removed.)
 
     // 3. Grab DOM Elements
     const makeSelect = document.getElementById('makeSelect');
@@ -365,9 +313,9 @@
         });
     }
 
-// 6. Secure Tier-Checked Year Selection Event
+// 6. Year Selection — full reference card, shown free
 if (yearSelect) {
-    yearSelect.addEventListener('change', async function() {
+    yearSelect.addEventListener('change', function() {
         if (!this.value) {
             if (resultBox) resultBox.style.display = 'none';
             if (lockedDataSection) lockedDataSection.style.display = 'none';
@@ -379,43 +327,13 @@ if (yearSelect) {
         const year = this.value;
         const data = carDatabase[make][model][year];
 
+        if (!data) return;
+
         if (resultBox) resultBox.style.display = 'none';
         if (!lockedDataSection) return;
 
         lockedDataSection.style.display = 'block';
-
-        // Directly check Firebase auth state right now
-        const activeUser = firebase.auth().currentUser;
-        let hasProAccess = false;
-
-        if (activeUser) {
-            try {
-                // Pro status MUST come from entitlements/{uid}, not users/{uid}.
-                // The rules allow a user to write their own profile doc, so a
-                // "tier" field there is self-assigned and proves nothing.
-                // entitlements/{uid} is written only by the Admin SDK after a
-                // verified purchase and is `allow write: if false` for clients.
-                const entDoc = await firebase.firestore().collection('entitlements').doc(activeUser.uid).get();
-                if (entDoc.exists) {
-                    const ent = entDoc.data();
-                    const pro = ent.pro === true;
-                    const unlocked = Array.isArray(ent.unlockedMakes) ? ent.unlockedMakes : [];
-
-                    if (pro || unlocked.includes(make)) {
-                        hasProAccess = true;
-                    }
-                }
-            } catch (e) {
-                // Stay locked on failure. Never fail open.
-                console.warn("Could not confirm Pro status:", e.code || e.message);
-            }
-        }
-
-        if (hasProAccess) {
-            // ==========================================
-            // LOGGED-IN & PAID/PRO VIEW (Full Details Card)
-            // ==========================================
-            lockedDataSection.innerHTML = `
+        lockedDataSection.innerHTML = `
                 <div style="background: #14171f; border: 1px solid #2ecc71; border-radius: 10px; padding: 18px; text-align: left; box-shadow: 0 4px 15px rgba(0,0,0,0.4); margin-top: 15px;">
                     
                     <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #222730; padding-bottom: 10px; margin-bottom: 14px;">
@@ -462,75 +380,6 @@ if (yearSelect) {
 
                 </div>
             `;
-        } else {
-// 1. Define your Stripe links for each make
-const stripeMakeLinks = {
-    "Alfa Romeo": "https://buy.stripe.com/dRm5kwh2T5vT88V3cbeUU04",
-    "Audi": "https://buy.stripe.com/9B6fZadQH0bz0Gt4gfeUU05",
-    "BMW": "https://buy.stripe.com/eVq9AMdQH7E1dtf5kjeUU03",
-    "Citroen": "https://buy.stripe.com/aFa00caEvgaxbl78wveUU06",
-    "DS Automobiles": "https://buy.stripe.com/aFa7sE5kb7E160N9AzeUU07",
-    "Dacia": "https://buy.stripe.com/7sY00c9ArcYl9cZ5kjeUU08",
-    "Fiat": "https://buy.stripe.com/28E5kw27Ze2pah36oneUU09",
-    "Ford": "https://buy.stripe.com/28EbIU9Ar0bz9cZbIHeUU0a",
-    "Honda": "https://buy.stripe.com/7sY4gs5kb4rP88V8wveUU0b",
-    "Hyundai": "https://buy.stripe.com/bJeeV67sj0bz60N287eUU0c",
-    "Jaguar": "https://buy.stripe.com/bJe28k4g7cYlbl7eUTeUU0d",
-    "Jeep": "https://buy.stripe.com/4gM8wI4g75vTcpbfYXeUU0e",
-    "Kia": "https://buy.stripe.com/5kQ9AM27ZaQddtffYXeUU0f",
-    "Land Rover": "https://buy.stripe.com/4gM9AMfYP8I5dtf287eUU0g",
-    "Lexus": "https://buy.stripe.com/6oU28keUL8I53SFeUTeUU0h",
-    "MG (SAIC Motor)": "https://buy.stripe.com/5kQcMYh2T6zX9cZfYXeUU0i",
-    "MINI": "https://buy.stripe.com/14A8wI3c32jH74RfYXeUU0j",
-    "Mazda": "https://buy.stripe.com/14AeV6aEv5vT4WJ287eUU0k",
-    "Mercedes-Benz": "https://buy.stripe.com/bJecMYbIz1fDfBn6oneUU0l",
-    "Mitsubishi": "https://buy.stripe.com/8x214g9Ar0bz1KxaEDeUU0m",
-    "Nissan": "https://buy.stripe.com/5kQ28k7sj6zXexjaEDeUU0n",
-    "Peugeot": "https://buy.stripe.com/28E9AM6of2jH9cZ7sreUU0o",
-    "Porsche": "https://buy.stripe.com/9B66oAdQH3nLfBndQPeUU0p",
-    "Renault": "https://buy.stripe.com/4gM3cocMD4rPexj3cbeUU0q",
-    "SEAT / Cupra": "https://buy.stripe.com/bJe7sE27Z9M90GtbIHeUU0r",
-    "Saab": "https://buy.stripe.com/4gMeV68wn2jH60NbIHeUU0s",
-    "Skoda": "https://buy.stripe.com/6oU5kw7sjf6t0GteUTeUU0t",
-    "Suzuki": "https://buy.stripe.com/4gM3coh2T0bz0Gt4gfeUU0u",
-    "Toyota": "https://buy.stripe.com/14AdR29Ar2jH88V9AzeUU0v",
-    "Vauxhall / Opel": "https://buy.stripe.com/4gM14g6ofgaxdtf287eUU0w",
-    "Volkswagen": "https://buy.stripe.com/5kQ8wIdQHf6t2OB3cbeUU0x",
-    "Volvo (Cars)": "https://buy.stripe.com/dRm5kw27ZbUhdtf3cbeUU0y",  
-    "Default": "https://buy.stripe.com/cNi4gscMD3nL88VcMLeUU02" // Fallback generic link
-};
-
-// 2. Pick the correct link based on the selected make (falls back to default if not listed yet)
-const specificStripeUrl = stripeMakeLinks[make] || stripeMakeLinks["Default"];
-
-        // ==========================================
-        // PAYWALL TEASER VIEW
-        // ==========================================
-        lockedDataSection.innerHTML = `
-            <div style="background: #14171f; border: 1px dashed #e67e22; border-radius: 8px; padding: 20px; text-align: center; margin-top: 15px;">
-                <div style="font-size: 1.5rem; margin-bottom: 6px;">🔒</div>
-                <h4 style="color: #fff; margin: 0 0 6px 0; font-size: 1rem;">Required Lishi: <span style="color: #2ecc71;">${data.lishi || 'N/A'}</span></h4>
-                <p style="color: #9ca3af; font-size: 0.82rem; margin: 0 0 15px 0; line-height: 1.4;">
-                    Unlock complete specs, Instacode references, and module locations for <strong>${make}</strong>.
-                </p>
-                
-                <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px;">
-                    <!-- Uses the dynamic link matched to the selected make -->
-                    <a href="${specificStripeUrl}" target="_blank" style="background-color: #3498db; color: #fff; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
-                        🔓 Unlock All ${make} Models (£4.99)
-                    </a>
-                    <a href="https://buy.stripe.com/3cIbIU27Z4rPah3287eUU01" target="_blank" style="background-color: #2ecc71; color: #000; padding: 10px; border-radius: 4px; font-weight: 700; font-size: 0.82rem; text-decoration: none;">
-                        ⚡ Unlock Full Database Pro (£19.99)
-                    </a>
-                </div>
-
-                <a href="login.html" style="color: #9ca3af; font-size: 0.75rem; text-decoration: underline;">
-                    Already purchased? Sign in here
-                </a>
-            </div>
-        `;
-        }
-
     });
 }
 </script>
@@ -539,8 +388,6 @@ const specificStripeUrl = stripeMakeLinks[make] || stripeMakeLinks["Default"];
 
 
 <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="../assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
-<!-- Idle session guard: signs Pro users out after 30 minutes of inactivity. -->
-<script src="../assets/js/session-guard.js" defer></script>
 </body>
 </html>
 

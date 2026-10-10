@@ -76,12 +76,6 @@
 
 
 </script>
-<!-- Firebase App (The core Firebase SDK) -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<!-- Firebase Auth -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
-<!-- ADD THIS LINE: Firebase Firestore -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 
 
 
@@ -148,9 +142,6 @@
                 <a href="who-am-i.html" class="nav-link">Who Am I</a>
 
                 <a href="lishi-finder.html" class="nav-link nav-lishi">🔑 Lishi Picker</a>
-
-                <!-- NEW PRO LOGIN LINK -->
-                <a href="services/login.html" id="authNavLink" class="nav-link nav-auth">🔐 Sign In</a>
 
                 <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
             </nav>
@@ -642,53 +633,6 @@
 
 
 
-<script>
-    // Initialize Firebase
-    const firebaseConfig = {
-        apiKey: "AIzaSyD6xQcZ3458Jn75Q1sFNyS7lxZuT9JOPTg",
-        authDomain: "sva-auth.firebaseapp.com",
-        projectId: "sva-auth",
-        storageBucket: "sva-auth.firebasestorage.app",
-        messagingSenderId: "778693286501",
-        appId: "1:778693286501:web:594b3f4618c542ee0b848c",
-        measurementId: "G-5GWZJKDN36"
-    };
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
-    }
-
-    // Global Auth State Tracker (Handles Navbar UI Only)
-    let currentUser = null;
-
-    firebase.auth().onAuthStateChanged((user) => {
-        currentUser = user;
-        const authNavLink = document.getElementById('authNavLink');
-
-        if (user) {
-            // --- USER IS LOGGED IN ---
-            if (authNavLink) {
-                authNavLink.innerHTML = "👤 Pro Active";
-                authNavLink.style.color = "#2ecc71";
-                authNavLink.href = "#";
-                authNavLink.onclick = () => {
-                    if(confirm("Do you want to log out of your Pro account?")) {
-                        firebase.auth().signOut().then(() => window.location.reload());
-                    }
-                };
-            }
-        } else {
-            // --- USER IS LOGGED OUT ---
-            if (authNavLink) {
-                authNavLink.innerHTML = "🔐 Sign In";
-                authNavLink.style.color = "#e67e22";
-                authNavLink.href = "services/login.html";
-            }
-        }
-    });
-</script>
-
-
-
     <script>
         // 1. YouTube Video Player Logic
         let player;
@@ -875,7 +819,5 @@
     <script src="assets/js/forms.js"></script>
     <script src="assets/js/consent.js?v=1"></script>
 <div class="floating-cta"><a class="fc-call" href="tel:07123123456">📞 Call Now</a><a class="fc-wa-face" href="https://wa.me/447123123456?text=Hi%20SVA%20Locksmiths,%20I%20need%20assistance%20with%20my%20vehicle." target="_blank" rel="noopener noreferrer" aria-label="Chat with SVA Locksmiths on WhatsApp"><img src="assets/images/profile.png" alt="Chat on WhatsApp" class="fc-face" loading="lazy"><span class="fc-status"></span></a></div>
-<!-- Idle session guard: signs Pro users out after 30 minutes of inactivity. -->
-<script src="assets/js/session-guard.js" defer></script>
 </body>
 </html>

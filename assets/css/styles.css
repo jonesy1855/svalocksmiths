@@ -1851,18 +1851,22 @@ main h2::after {
     margin-right: 0;    /* Overrides the phantom squish margin */
 }
 
-/* Mobile: the two hero CTAs stack full-width and centred so they never
-   collide or wrap awkwardly against each other. */
+/* Hero call-to-action buttons sit side by side (flex row), centred, with a
+   consistent gap — they never stack or collide on mobile. */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
 @media (max-width: 600px) {
-    .hero-text-block .cta-btn {
-        display: block;
-        width: 100%;
-        max-width: 320px;
-        margin: 0 auto 12px;
-        text-align: center;
-    }
-    .hero-text-block .cta-btn:last-child {
-        margin-bottom: 0;
+    .hero-actions .cta-btn {
+        padding: 0.7rem 1.1rem;
+        font-size: 0.78rem;
+        margin: 0;
     }
 }
 /* ==========================================================================

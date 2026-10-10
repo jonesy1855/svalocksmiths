@@ -40,94 +40,6 @@
             padding: 0;
         }
 
-        /* Compliance Banner */
-        .compliance-banner {
-            background-color: #d35400;
-            color: #fff;
-            text-align: center;
-            padding: 8px 15px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            width: 100%;
-            letter-spacing: 0.5px;
-        }
-
-        /* Standardized Header */
-        header {
-            background-color: #111;
-            border-bottom: 1px solid #222;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        header .compliance-banner {
-            position: static;
-            display: block;
-            width: auto;
-            margin: 0;
-            padding: 7px 20px;
-            background: linear-gradient(90deg, #9c3d00 0%, #d35400 50%, #9c3d00 100%);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.45);
-            color: #ffffff;
-            text-align: center;
-            font-size: 0.7rem;
-            font-weight: 800;
-            line-height: 1.4;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .header-main-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 20px;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .logo-container a {
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        .brand-name {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .header-cta {
-            background-color: #2ecc71 !important;
-            color: #000 !important;
-            padding: 6px 12px !important;
-            border-radius: 6px !important;
-            font-weight: 700 !important;
-            text-decoration: none !important;
-            font-size: 0.85rem !important;
-            display: flex !important;
-            align-items: center !important;
-            gap: 4px !important;
-            white-space: nowrap !important;
-            border: none !important;
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .header-cta:hover {
-            background-color: #27ae60 !important;
-            transform: translateY(-1px);
-        }
-
         /* About Section Copy */
         .about-section {
             padding: 70px 5% 80px;
@@ -343,28 +255,32 @@
 <body>
 
     <!-- HEADER & TOP NAVIGATION -->
-    <header>
+    <header class="site-header">
         <div class="compliance-banner">
-            ⚠️ CURRENTLY UNDER TRAINING – SERVICES & DISPATCH NOT ACTIVE YET
+            ⚠️ CURRENTLY UNDER TRAINING – SERVICES &amp; DISPATCH NOT ACTIVE YET
         </div>
-        
+
         <div class="header-main-content">
+
             <!-- Logo & Brand Title -->
             <div class="logo-container">
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img">
-                    <div class="brand-name">
-                        <span style="color: #2ecc71; font-size: 1.1rem; font-weight: 800; letter-spacing: 0.3px; line-height: 1.2;">Shropshire Vehicle Access</span>
-                        <span style="color: #9ca3af; font-size: 0.68rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;">Auto Locksmith & Key Specialist</span>
-                    </div>
+                <a href="index.html" class="brand-link">
+                    <span class="brand-mark">
+                        <img src="assets/images/logo.png" alt="SVA Logo" class="logo-img" width="42" height="42">
+                    </span>
+                    <span class="brand-name">
+                        <span class="brand-main">Shropshire <em>Vehicle Access</em></span>
+                        <span class="brand-sub">Auto Locksmith &amp; Key Specialist</span>
+                    </span>
                 </a>
             </div>
 
             <!-- Navigation Links -->
-            <nav style="display: flex; align-items: center; gap: 10px;">
-                <a href="index.html" style="color: #2ecc71; text-decoration: none; font-weight: 600; font-size: 0.85rem; white-space: nowrap;">← Back Home</a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link nav-back">← Back Home</a>
                 <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
             </nav>
+
         </div>
     </header>
 

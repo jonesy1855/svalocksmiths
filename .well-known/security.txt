@@ -1,0 +1,7 @@
+# Vulnerability disclosure for sva-locksmiths.co.uk
+# Canonical: https://sva-locksmiths.co.uk/.well-known/security.txt
+
+Contact: mailto:contact@svalocksmiths.co.uk
+Expires: 2027-10-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://sva-locksmiths.co.uk/.well-known/security.txt

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lishi Pick Finder — Car, Van, HGV &amp; Farm Machinery Tool Guide | SVA</title>
+    <title>Lishi Finder — Car, Van, HGV &amp; Farm Machinery Tool Guide | SVA</title>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/images/favicon-192.png">
@@ -532,7 +532,7 @@
 
                 <a href="who-am-i.html" class="nav-link">Who Am I</a>
 
-                <a href="lishi-finder.html" class="nav-link nav-lishi" aria-current="page">🔑 Lishi Picker</a>
+                <a href="lishi-finder.html" class="nav-link nav-lishi" aria-current="page">🔑 Lishi Finder</a>
 
                 <a class="header-cta" href="tel:07123123456">📞 Call Now</a>
             </nav>
@@ -544,16 +544,18 @@
     <div class="finder-container">
         <div class="app-header">
             <span class="app-eyebrow"><span aria-hidden="true">🔑</span> Shropshire Vehicle Access</span>
-            <h1>Lishi Pick <span class="hl">Finder</span></h1>
+            <h1>Lishi <span class="hl">Finder</span></h1>
             <p class="app-lede">
                 Check the exact Lishi pick a vehicle needs before you commit the job.
-                Covers cars, vans, HGVs and farm machinery &mdash; type a make and model
-                in the box, or step through the dropdowns.
+                Covers cars, vans, HGVs, farm machinery, bikes &amp; ATVs and newer models —
+                type a make and model in the box, or step through the dropdowns.
             </p>
             <ul class="app-chips">
                 <li>Cars &amp; Vans</li>
                 <li class="chip-hgv">HGV &amp; Haulage</li>
                 <li class="chip-agri">Agri</li>
+                <li>Bikes &amp; ATV</li>
+                <li>EV &amp; Newer</li>
             </ul>
         </div>
 
@@ -642,15 +644,18 @@
         </div>
     </footer>
 
-    <script src="services/car-database.js?v=2.3.1"></script>
-    <!-- HGV / haulage + agricultural machinery. Deep-merges itself into
-         carDatabase, so it must come after car-database.js. -->
-    <script src="services/trucks-agri-db.js?v=2.4.0"></script>
+    <script src="services/car-database.js?v=3.0" defer></script>
+    <!-- Each tranche deeply self-merges into carDatabase, so load order MUST be:
+         cars → trucks/agri → bikes/ATV → current-gen HGV/agri → newer vehicles. -->
+    <script src="services/trucks-agri-db.js?v=3.0" defer></script>
+    <script src="services/bikes-atv-db.js?v=3.0" defer></script>
+    <script src="services/current-gen-db.js?v=3.0" defer></script>
+    <script src="services/newer-vehicles-db.js?v=3.0" defer></script>
 
     <script>
-        // LISHI FINDER LOGIC — vehicle database loaded from
-        // services/car-database.js + services/trucks-agri-db.js
-        // (cars, vans, HGV and agri all in one carDatabase object)
+        // LISHI FINDER LOGIC — the vehicle catalogue is served in five
+        // tranches (cars, trucks/agri, bikes/ATV, current-gen, newer) that
+        // deep-merge into one carDatabase object.
 
         const makeSelect = document.getElementById('makeSelect');
         const modelSelect = document.getElementById('modelSelect');
@@ -685,8 +690,17 @@
                 makeSelect.add(new Option(make, make));
             });
         }
-        populateMakes();
-        syncStepBadges();
+        // The tranche scripts load with defer, so carDatabase may not exist
+        // yet when this inline script runs. Populate as soon as it appears.
+        function initWhenReady() {
+            if (typeof carDatabase !== 'undefined' && makeSelect && filterInput) {
+                populateMakes();
+                syncStepBadges();
+            } else {
+                setTimeout(initWhenReady, 25);
+            }
+        }
+        initWhenReady();
 
         // SMART YEAR RANGE MATCHER
         function smartYearMatch(rangeStr, queryYear) {

@@ -1850,6 +1850,21 @@ main h2::after {
     width: 100%;        /* Forces it to use the full grid space */
     margin-right: 0;    /* Overrides the phantom squish margin */
 }
+
+/* Mobile: the two hero CTAs stack full-width and centred so they never
+   collide or wrap awkwardly against each other. */
+@media (max-width: 600px) {
+    .hero-text-block .cta-btn {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 12px;
+        text-align: center;
+    }
+    .hero-text-block .cta-btn:last-child {
+        margin-bottom: 0;
+    }
+}
 /* ==========================================================================
    FAQ ACCORDION SECTION
    ========================================================================== */

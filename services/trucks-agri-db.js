@@ -30,7 +30,7 @@ const HGV_BASE = {
     "acCap": "Per under-bonnet label",
     "acOil": "PAG 46",
     "acNote": "Cab A/C systems are large and cab-variant dependent — always charge to the machine's label, never a car spec.",
-    "entry": "Cab door lock cylinder / handle release. HGV door seals wedge well — never lever an aerodynamic cab's A-pillar.",
+    "entry": "Cab door lock cylinder / handle release. HGV door seals wedge well — never lever an aerodynamic cab's A-pillar. Cab cylinders are euro-profile pin-tumbler: standard automotive picks under tension, or an override, open the mechanical locks — the dedicated Lishi tools (DAT12R, HI1, FB77, HU71/HU109, WT47T, VOLVO-VNL-2024) matter for depth-coded wafer locks, not for opening the door.",
     "battery": "Under-cab tray — often dual batteries; isolate the chassis earth before touching terminals.",
     "battType": "Typically 2x 12V HGV-grade AGM.",
     "fobBatt": "CR2032",
@@ -54,7 +54,7 @@ const AGRI_BASE = {
     "acCap": "Per cabin label",
     "acOil": "PAG 46",
     "acNote": "Cabin A/C is a specialist charge — follow the machine label, not a car spec.",
-    "entry": "Cab door latch/handle cylinders are mechanically simple and pickable on most makes — wedge the door seal and work the latch, confirm lock type before levering.",
+    "entry": "Cab door latch/handle cylinders are mechanically simple on most makes — wedge the door seal and work the latch, confirm lock type before levering. These are small pin-tumbler cylinders: standard automotive picks under light tension open them in seconds, and there is no dedicated tractor tool (Lishi's range is automotive only). For key cutting, read the stamped code off the key bow or lock face rather than decoding wafers.",
     "battery": "Single heavy-duty 12V AGM under the bonnet / side pod; isolate before service.",
     "battType": "12V heavy-duty AGM (100Ah+ class).",
     "blankNote": "Steel machine keys cut from code suit older mechanical locks; coded modern keys need dealer blanks."
@@ -64,31 +64,34 @@ const TRUCKS_AGRI_DB = {
     "DAF": {
         "XF": {
             "2013 - 2021 (XF105 / XF106)": Object.assign({}, HGV_BASE, {
+                lishi: "FB77",
                 price: "Cab key £85-£150 | Lost key / AKL from £200-£350 (dealer or rig)",
                 chip: "Transponder cab key — PIN via DAF dealer by VIN; newer multiplexed cabs coded with maker tooling.",
                 warning: "⚠️ DAF lost-ALL-key jobs route through PACCAR/dealer — quote the dealer or a truck rig, not an OBD add.",
-                tip: "XF doors are heavy, well-sealed HGV units — wedge and long-reach; never lever an aerodynamic cab's A-pillar."
+                tip: "DAF XF (and CF/LF below) are charted to the FB77 keyway on 2013+ cab locks — the Lishi FB77 opens and decodes them. Read the keyway before committing, as bodies get aftermarket locks."
             })
         },
         "LF": {
             "2013 - 2021 (LF / LF45-LF55)": Object.assign({}, HGV_BASE, {
+                lishi: "FB77",
                 price: "Cab key £80-£140 | Lost key / AKL from £180-£300",
                 chip: "Transponder cab key — PIN via DAF dealer by VIN.",
-                tip: "LF is distribution-route common — fleet ops often hold spare keys; check before AKL-pricing."
+                tip: "LF is distribution-route common — fleet ops often hold spare keys; check before AKL-pricing. 2013+ cab locks are charted to the FB77 keyway — read the barrel before ordering a tool."
             })
         },
         "XG / XG+": {
             "2021 - Present (New Generation)": Object.assign({}, HGV_BASE, {
                 price: "Cab key £95-£160 | Lost key / AKL from £230-£400",
                 chip: "Transponder cab key — PIN via DAF dealer by VIN; New-Gen coded on maker tooling.",
-                tip: "XG cab is the newest PACCAR platform — confirm chassis variant before ordering blanks or chips."
+                tip: "XG cab is the newest PACCAR platform — confirm chassis variant before ordering blanks or chips. Too new for a published Lishi tool, so read the keyway off the barrel."
             })
         },
         "CF": {
             "2013 - Present (CF, incl. new CF Euro 6)": Object.assign({}, HGV_BASE, {
+                lishi: "FB77",
                 price: "Cab key £80-£140 | Lost key / AKL from £180-£300",
                 chip: "Transponder cab key — PIN via DAF dealer by VIN.",
-                tip: "CF is the fleet-workhorse — shared cab architecture with XF, so keys and blanks interchange-check against the chassis."
+                tip: "CF is the fleet-workhorse — shared cab architecture with XF, so keys and blanks interchange-check against the chassis. 2013+ cab locks are charted to the FB77 keyway; later Euro 6 variants can differ, so read the barrel."
             })
         }
     },
@@ -109,26 +112,39 @@ const TRUCKS_AGRI_DB = {
         },
         "R / G / P Previous Gen": {
             "2010 - 2018": Object.assign({}, HGV_BASE, {
+                lishi: "HU71 / HU109",
                 price: "Cab key £85-£150 | Lost key / AKL from £200-£340",
                 chip: "Transponder cab key — PIN via Scania dealer by VIN; older cabs code on maker tooling.",
-                tip: "Previous-gen cabs still dominate the UK fleet — a large slice of roadside truck AKL calls are these."
+                tip: "Previous-gen Scania truck cabs are documented on HU71/HU109 (164/R-Series through roughly 2015) — the later part of this range moves to a different keyway, so read the barrel before ordering a Lishi tool.",
+                warning: "Scania lost keys route via dealer by VIN — quote accordingly."
             })
         }
     },
     "Volvo Trucks": {
         "FH": {
             "2013 - Present (FH4 / FH5)": Object.assign({}, HGV_BASE, {
+                lishi: "WT47T",
                 price: "Cab key £90-£160 | Lost key / AKL from £220-£380",
                 chip: "Transponder/coded cab key — PIN via Volvo Trucks dealer by VIN.",
                 warning: "⚠️ Volvo FH keys are VIN-coded — order by chassis and expect maker/dealer or rig coding.",
-                tip: "FH cab doors use heavy seals — wedge low, long-reach to the latch release, confirm lock type before levering."
+                tip: "FH4 (2012-2020) cab locks are charted to the Saab WT47 keyway — the Lishi WT47T opens and decodes them. FH5 (2021+) is a new platform: read the keyway before ordering a tool. Cab doors use heavy seals — wedge low, long-reach the latch release, never lever an aerodynamic cab's A-pillar."
             })
         },
         "FM": {
             "2013 - Present (FM4 / FM5)": Object.assign({}, HGV_BASE, {
+                lishi: "WT47T",
                 price: "Cab key £85-£150 | Lost key / AKL from £200-£340",
                 chip: "Transponder/coded cab key — PIN via Volvo Trucks dealer by VIN.",
-                tip: "FM shares FH key architecture — check chassis variant when ordering blanks."
+                tip: "FM shares FH key architecture, so FM4 is charted to the Saab WT47 keyway like the FH4 — the Lishi WT47T applies. Check chassis variant when ordering blanks."
+            })
+        },
+        "VNL (US-market)": {
+            "2024 - Present (VNL 860 / New Gen)": Object.assign({}, HGV_BASE, {
+                lishi: "VOLVO-VNL-2024",
+                price: "Cab key £90-£160 | Lost key / AKL from £220-£380",
+                chip: "Transponder/coded cab key — PIN via Volvo Trucks dealer by VIN.",
+                tip: "VNL 2024-on has a dedicated Lishi (VOLVO-VNL-2024, 7 cuts / 4 depths, door + ignition). One of the few truck-specific tools Lishi makes — a USA-centric tool sold worldwide.",
+                warning: "⚠️ VNL keys are VIN-coded — order by chassis and expect maker/dealer or rig coding."
             })
         },
         "FL / FE": {
@@ -139,10 +155,11 @@ const TRUCKS_AGRI_DB = {
             })
         },
         "FH / FM (2009 - 2012)": {
-            "2009 - 2012 (FH4-legacy / FM3-legacy)": Object.assign({}, HGV_BASE, {
+            "2009 - 2012 (FH3 / FM3 legacy)": Object.assign({}, HGV_BASE, {
                 price: "Cab key £85-£150 | Lost key / AKL from £200-£340",
                 chip: "Transponder/coded cab key — PIN via Volvo Trucks dealer by VIN.",
-                tip: "Older Volvo cabs still use the VIN-coded system — the dealer/rig PIN route applies exactly the same."
+                tip: "Tail of the FH3/FM3 generation — pre-dates the charted WT47 era and no dedicated Lishi is published for it. Read the keyway off the barrel; older euro-profile cab cylinders are still pickable.",
+                warning: "⚠️ Volvo FH/FM keys are VIN-coded — order by chassis and expect maker/dealer or rig coding."
             })
         }
     },
@@ -165,9 +182,11 @@ const TRUCKS_AGRI_DB = {
     "Mercedes-Benz": {
         "Actros / Arocs": {
             "2012 - 2021 (New Generation)": Object.assign({}, HGV_BASE, {
+                lishi: "HU64",
                 price: "Cab key £95-£165 | Lost key / AKL from £230-£400",
                 chip: "Transponder/coded cab key — PIN via Mercedes dealer by VIN.",
-                tip: "Newest Actros cabs may carry R1234yf A/C instead of R134a — read the label before quoting a recharge."
+                tip: "Actros/Arocs cab locks share Mercedes keyway family (HU64) with Sprinter — treat as a strong prior only; read the lock face before committing to a Lishi tool.",
+                warning: "Mercedes-Benz truck keys are VIN-coded — expect maker/dealer or approved rig for coding."
             })
         },
         "Atego": {
@@ -189,16 +208,18 @@ const TRUCKS_AGRI_DB = {
     "Iveco": {
         "S-Way / Stralis": {
             "2013 - Present (S-Way 2021+, Stralis to 2020)": Object.assign({}, HGV_BASE, {
+                lishi: "GT10 / SIP22",
                 price: "Cab key £90-£160 | Lost key / AKL from £220-£380",
                 chip: "Transponder/coded cab key — PIN via Iveco dealer by VIN.",
-                tip: "S-Way cab is fully multiplexed; isolate the chassis earth before any module work."
+                tip: "Iveco Stralis/S-Way cab locks vary by generation — read the keyway/barrel code before ordering a Lishi tool (Daily family SIP22/GT10 is a strong prior on older cabs)."
             })
         },
         "Eurocargo": {
             "2013 - Present (7.5-16t midi)": Object.assign({}, HGV_BASE, {
+                lishi: "SIP22 / GT10",
                 price: "Cab key £80-£140 | Lost key / AKL from £180-£300",
                 chip: "Transponder cab key — PIN via Iveco dealer by VIN.",
-                tip: "Eurocargo is a midi-rig — many are bodybuilders with aftermarket locks fitted; ask about the body first."
+                tip: "Eurocargo cab locks: pre-Euro VI often SIP22 (Daily family); Euro VI moved to a different keyway — read the keyway/barrel before selecting a Lishi tool."
             })
         }
     },
@@ -518,10 +539,10 @@ const LOCK_PROFILE = {
         conf: "generic"
     },
     "MAN": {
-        lockType: "Mechanical euro-profile cab door cylinder",
+        lockType: "Mechanical euro-profile cab door cylinder (laser-coded ignition on later trucks)",
         lockCode: "Code stamped on the lock barrel face; read it before ordering",
-        blank: "Cut from the barrel code — MAN cab key blank",
-        pickable: "Yes — euro profile, pickable or override",
+        blank: "Cut from the barrel code — MAN cab key blank. MAN is VAG-owned, so some blades share the laser family",
+        pickable: "Yes — euro profile cab door cylinder, pickable or override. MAN publishes no dedicated Lishi tool; later trucks are laser-coded via dealer",
         conf: "generic"
     },
     "Volvo Trucks": {
@@ -654,19 +675,33 @@ const LOCK_PROFILE = {
 };
 
 // ---- Lishi coverage pass ------------------------------------------------
-// Lishi publishes an automotive-only tool range. Across the whole
-// published catalogue the only plant/commercial applications are
-// DAT12R (Isuzu / Hino heavy trucks), ISU5 (Isuzu), HI1 (Hino),
-// CY24-CV and CY24-TRUCK (Chrysler/Dodge/Jeep/Peterbilt commercial) —
-// there is no Lishi tooling for agricultural machinery at all.
+// Lishi's published range is automotive, with a small but real truck
+// corner. Dedicated / charted tools now on offer:
+//   DAT12R + ISU5  Isuzu N-Series, HI1 + DAT12R  Hino 500/700
+//   FB77            DAF XF / CF / LF 2013+ (Lishi's own DAF page)
+//   WT47T           Volvo FH4 / FM4 (charted to the Saab WT47 keyway)
+//   VOLVO-VNL-2024  Volvo VNL 2024-on (door + ignition, 7 cuts / 4 depths)
+//   HU71 / HU109    previous-gen Scania 164/R-Series (to ~2015)
+//   HU64            Mercedes family - strong for Sprinter/Crafter,
+//                   family prior for Actros/Arocs
+//   SIP22 / GT10    older Iveco Eurocargo / Stralis (generation-dependent)
+// No published Lishi exists for DAF XG, new-gen Scania, MAN, Renault
+// Trucks, or Volvo FL/FE — those stay "No Lishi tool" rather than
+// inheriting a family guess. VAG HU66/HU162 is sometimes listed for MAN
+// laser trucks, but it is not documented well enough to publish.
 //
-// So an entry we could not match to a published Lishi tool now says
-// so outright instead of showing a bare "N/A", and carries the
-// realistic non-Lishi route so the card is still actionable at the
-// roadside. Runs over TRUCKS_AGRI_DB only, before the merge, so the
-// car catalogue is untouched and future entries are covered too.
+// There is no Lishi tooling for agricultural machinery at all. Agri
+// cylinders are small pin-tumbler locks that standard automotive picks
+// and light tension open - see AGRI_BASE.entry - so a dedicated tool is
+// neither needed nor sold.
+//
+// A record with no published tool says so outright instead of showing a
+// bare "N/A", and carries the realistic non-Lishi route so the card is
+// still actionable at the roadside. Runs over TRUCKS_AGRI_DB only,
+// before the merge, so the car catalogue is untouched and future entries
+// are covered too.
 const NO_LISHI_ROUTE = {
-    HGV: "No Lishi tool for this make — read the keyway off the existing key before quoting. Older mechanical cab locks are often generic-wafer pickable or overridable; coded keys go via maker/dealer.",
+    HGV: "No verified Lishi tool for this make — read the keyway off the existing key before quoting. Older mechanical cab locks are often generic-wafer pickable or overridable; coded keys go via maker/dealer.",
     Agri: "No Lishi tool for farm machinery (Lishi's range is automotive only) — read the keyway off the existing key. Older steel machine keys can be cut from code; coded keys go via maker/dealer by machine serial."
 };
 

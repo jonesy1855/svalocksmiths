@@ -12136,13 +12136,13 @@ const carDatabase = {
         },
         "124 Spider": {
             "2016 - 2019 (Mazda MX-5 ND Twin)": {
-                "lishi": "Verify Mazda MX-5 (ND) keyway",
+                "lishi": "MAZ24R",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "Verify — MX-5 ND profile",
+                "silca": "MZ31",
                 "ic": "N/A",
-                "chip": "Verify Mazda MX-5 immobiliser (ND)",
+                "chip": "Mazda MX-5 (ND) immobiliser",
                 "xhorse": "OEM Key Only (verify)",
-                "warning": "⚠️ NOT a Fiat lock — this is a Mazda ND MX-5 twin. Do NOT use SIP22!",
+                "warning": "⚠️ NOT a Fiat lock — this is a Mazda ND MX-5 twin. Use MAZ24R (Mazda), never SIP22!",
                 "module": "Mazda BCM",
                 "location": "Passenger Footwell.",
                 "access": "OBD.",
@@ -12158,7 +12158,7 @@ const carDatabase = {
     "Bentley": {
         "Continental GT": {
             "2003 - 2018 (VAG-Derived)": {
-                "lishi": "HU66 (Verify keyway)",
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU66",
                 "ic": "Card 813",
@@ -12196,7 +12196,7 @@ const carDatabase = {
         },
         "Flying Spur": {
             "2003 - 2018 (VAG-Derived)": {
-                "lishi": "HU66 (Verify keyway)",
+                "lishi": "HU66",
                 "price": "Std key £220-£330 | AKL from £550-£800",
                 "silca": "HU66",
                 "ic": "Card 813",
@@ -12236,13 +12236,13 @@ const carDatabase = {
     "BYD": {
         "F3": {
             "2008 - 2016 (Legacy Sedans)": {
-                "lishi": "BYD01 / BYD01R (Verify)",
+                "lishi": "BYD01 / BYD01R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "Verify BYD01 keyway",
+                "silca": "BYD01",
                 "ic": "N/A",
                 "chip": "ID46 / ID48 (verify on disassembly)",
                 "xhorse": "OEM / Aftermarket BYD Remote (verify)",
-                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "warning": "⚠️ Dedicated BYD Lishi (BYD01 / BYD01R) fits later models; early F3 is Corolla-derived — confirm keyway (possible TOY48) before picking.",
                 "module": "Body Control Module / Remote Receiver",
                 "location": "Behind Glovebox / Driver's Kick Panel.",
                 "access": "OBD.",
@@ -12256,13 +12256,13 @@ const carDatabase = {
         },
         "F6": {
             "2008 - 2016 (Legacy Sedans)": {
-                "lishi": "BYD01 / BYD01R (Verify)",
+                "lishi": "BYD01 / BYD01R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "Verify BYD01 keyway",
+                "silca": "BYD01",
                 "ic": "N/A",
                 "chip": "ID46 / ID48 (verify on disassembly)",
                 "xhorse": "OEM / Aftermarket BYD Remote (verify)",
-                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "warning": "⚠️ Dedicated BYD Lishi (BYD01 / BYD01R) fits later models; early F3 is Corolla-derived — confirm keyway (possible TOY48) before picking.",
                 "module": "Body Control Module / Remote Receiver",
                 "location": "Behind Glovebox / Driver's Kick Panel.",
                 "access": "OBD.",
@@ -12276,13 +12276,13 @@ const carDatabase = {
         },
         "S6": {
             "2008 - 2016 (Legacy Sedans)": {
-                "lishi": "BYD01 / BYD01R (Verify)",
+                "lishi": "BYD01 / BYD01R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "Verify BYD01 keyway",
+                "silca": "BYD01",
                 "ic": "N/A",
                 "chip": "ID46 / ID48 (verify on disassembly)",
                 "xhorse": "OEM / Aftermarket BYD Remote (verify)",
-                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "warning": "⚠️ Dedicated BYD Lishi (BYD01 / BYD01R) fits later models; early F3 is Corolla-derived — confirm keyway (possible TOY48) before picking.",
                 "module": "Body Control Module / Remote Receiver",
                 "location": "Behind Glovebox / Driver's Kick Panel.",
                 "access": "OBD.",
@@ -12296,13 +12296,13 @@ const carDatabase = {
         },
         "G6": {
             "2008 - 2016 (Legacy Sedans)": {
-                "lishi": "BYD01 / BYD01R (Verify)",
+                "lishi": "BYD01 / BYD01R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "Verify BYD01 keyway",
+                "silca": "BYD01",
                 "ic": "N/A",
                 "chip": "ID46 / ID48 (verify on disassembly)",
                 "xhorse": "OEM / Aftermarket BYD Remote (verify)",
-                "warning": "⚠️ Dedicated BYD Lishi exists (BYD01 / BYD01R) — confirm the specific keyway profile before using.",
+                "warning": "⚠️ Dedicated BYD Lishi (BYD01 / BYD01R) fits later models; early F3 is Corolla-derived — confirm keyway (possible TOY48) before picking.",
                 "module": "Body Control Module / Remote Receiver",
                 "location": "Behind Glovebox / Driver's Kick Panel.",
                 "access": "OBD.",
@@ -12625,13 +12625,14 @@ const carDatabase = {
     "Isuzu": {
         "D-Max": {
             "2002 - 2012 (RA/RD)": {
-                "lishi": "N/A (verify TOY43R-type keyway)",
+                "lishi": "TOY43R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "Verify",
+                "silca": "TOY43R / B110",
                 "ic": "N/A",
                 "chip": "ID46 (verify — GM-derived)",
                 "xhorse": "OEM Isuzu Remote (verify)",
-                "warning": "⚠️ Some D-Max/Ascender locks use a Toyota 43R-style profile (TOY43R tool) — confirm blade before picking.",
+                "warning": "⚠️ Uses the Toyota 43R-style edge-cut (Lishi TOY43R). Early 2002-2007 GM-derived locks may differ — confirm the blade before picking.",
+
                 "module": "BCM / Immobiliser Box",
                 "location": "Driver's Kick Panel.",
                 "access": "OBD.",
@@ -12681,13 +12682,14 @@ const carDatabase = {
         },
         "MU-X": {
             "2002 - 2012 (RA/RD)": {
-                "lishi": "N/A (verify TOY43R-type keyway)",
+                "lishi": "TOY43R",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "Verify",
+                "silca": "TOY43R / B110",
                 "ic": "N/A",
                 "chip": "ID46 (verify — GM-derived)",
                 "xhorse": "OEM Isuzu Remote (verify)",
-                "warning": "⚠️ Some D-Max/Ascender locks use a Toyota 43R-style profile (TOY43R tool) — confirm blade before picking.",
+                "warning": "⚠️ Uses the Toyota 43R-style edge-cut (Lishi TOY43R). Early 2002-2007 GM-derived locks may differ — confirm the blade before picking.",
+
                 "module": "BCM / Immobiliser Box",
                 "location": "Driver's Kick Panel.",
                 "access": "OBD.",
@@ -12997,7 +12999,7 @@ const carDatabase = {
     "SsangYong": {
         "Musso": {
             "1999 - 2007 (Mercedes-Derived)": {
-                "lishi": "HU64 (Verify keyway)",
+                "lishi": "HU64",
                 "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU64",
                 "ic": "N/A",
@@ -13017,7 +13019,7 @@ const carDatabase = {
         },
         "Rexton": {
             "1999 - 2007 (Mercedes-Derived)": {
-                "lishi": "HU64 (Verify keyway)",
+                "lishi": "HU64",
                 "price": "Std key £160-£240 | AKL from £280-£400",
                 "silca": "HU64",
                 "ic": "N/A",
@@ -13099,12 +13101,13 @@ const carDatabase = {
     "Subaru": {
         "Impreza": {
             "1998 - 2007": {
-                "lishi": "TOY48 / SUB2 (verify keyway)",
+                "lishi": "NSN14",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SUB2",
-                "ic": "N/A — verify blank",
+                "silca": "SUB1 / NSN14",
+                "ic": "N/A",
                 "chip": "4D / Hitag (verify per year)",
                 "xhorse": "SRC rolling remote — OEM (verify)",
+                "warning": "⚠️ 1998-2007 uses the SUB1/NSN14 edge-cut (Lishi NSN14). Very early models may use the older NSN11 profile — verify the blade.",
                 "module": "Immo / BCM",
                 "location": "Driver's Kick Panel.",
                 "access": "OBD.",
@@ -13118,12 +13121,13 @@ const carDatabase = {
         },
         "WRX": {
             "1998 - 2007": {
-                "lishi": "TOY48 / SUB2 (verify keyway)",
+                "lishi": "NSN14",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "SUB2",
-                "ic": "N/A — verify blank",
+                "silca": "SUB1 / NSN14",
+                "ic": "N/A",
                 "chip": "4D / Hitag (verify per year)",
                 "xhorse": "SRC rolling remote — OEM (verify)",
+                "warning": "⚠️ 1998-2007 uses the SUB1/NSN14 edge-cut (Lishi NSN14). Very early models may use the older NSN11 profile — verify the blade.",
                 "module": "Immo / BCM",
                 "location": "Driver's Kick Panel.",
                 "access": "OBD.",
@@ -13137,12 +13141,13 @@ const carDatabase = {
         },
         "Outback": {
             "2010+": {
-                "lishi": "N/A — verify (blade keyway)",
+                "lishi": "DAT17",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "N/A — verify",
+                "silca": "DAT17",
                 "ic": "N/A",
                 "chip": "4D-62/63 (verify)",
                 "xhorse": "OEM Smart / Prox (verify)",
+                "warning": "⚠️ 2010+ uses the DAT17 blade (Lishi DAT17) on the emergency door cylinder. Cars are keyless — use OBD for AKL.",
                 "module": "Keyless / Smart Module",
                 "location": "Driver's Kick Panel.",
                 "access": "OBD.",
@@ -13156,12 +13161,13 @@ const carDatabase = {
         },
         "Legacy (Bluetooth)": {
             "2010+": {
-                "lishi": "N/A — verify (blade keyway)",
+                "lishi": "DAT17",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "N/A — verify",
+                "silca": "DAT17",
                 "ic": "N/A",
                 "chip": "4D-62/63 (verify)",
                 "xhorse": "OEM Smart / Prox (verify)",
+                "warning": "⚠️ 2010+ uses the DAT17 blade (Lishi DAT17) on the emergency door cylinder. Cars are keyless — use OBD for AKL.",
                 "module": "Keyless / Smart Module",
                 "location": "Driver's Kick Panel.",
                 "access": "OBD.",
@@ -13295,12 +13301,13 @@ const carDatabase = {
         },
         "Daily Euro VI": {
             "2014+": {
-                "lishi": "N/A — verify (new keyway)",
+                "lishi": "SIP22",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "N/A — verify",
+                "silca": "SIP22",
                 "ic": "N/A",
                 "chip": "ID46 / Smart (verify)",
                 "xhorse": "OEM (verify)",
+                "warning": "⚠️ 2014+ (Euro VI) shares the SIP22 blade with Fiat Ducato. 2019+ (Euro VII) adds a security gateway — verify before quoting.",
                 "module": "BCM / Keyless (verify)",
                 "location": "Under dash.",
                 "access": "OBD.",
@@ -13316,9 +13323,9 @@ const carDatabase = {
     "Chevrolet": {
         "Spark": {
             "2005 - 2015": {
-                "lishi": "N/A — verify (GM / Daewoo keyway)",
+                "lishi": "HU46",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "HU46",
                 "ic": "N/A",
                 "chip": "ID44 / ID46 (verify)",
                 "xhorse": "OEM RKE (verify)",
@@ -13330,14 +13337,15 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "450g",
                 "acOil": "PAG 46",
-                "acNote": "Verify keyway before blanking."
+                "acNote": "Standard.",
+                "warning": "⚠️ Daewoo-built (Spark) — confirm HU46 vs HU43 / DW05 on the existing key before blanking."
             }
         },
         "Matiz": {
             "2005 - 2015": {
-                "lishi": "N/A — verify (GM / Daewoo keyway)",
+                "lishi": "HU46",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "HU46",
                 "ic": "N/A",
                 "chip": "ID44 / ID46 (verify)",
                 "xhorse": "OEM RKE (verify)",
@@ -13349,14 +13357,15 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "450g",
                 "acOil": "PAG 46",
-                "acNote": "Verify keyway before blanking."
+                "acNote": "Standard.",
+                "warning": "⚠️ Daewoo-built (Matiz) — confirm HU46 vs HU43 / DW05 on the existing key before blanking."
             }
         },
         "Corvette": {
             "C5 - C7": {
-                "lishi": "N/A — verify (US-spec keyway)",
+                "lishi": "GM37 (B106 Z-keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "GM37",
                 "ic": "N/A",
                 "chip": "Transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
@@ -13368,14 +13377,15 @@ const carDatabase = {
                 "acGas": "R134a (older) / R1234yf",
                 "acCap": "850g",
                 "acOil": "PAG 46",
-                "acNote": "US-spec radios/tools — verify region."
+                "acNote": "US-spec radios/tools — verify region.",
+                "warning": "⚠️ C5/C6 use the GM Z-keyway (GM37). Verify C7 (2014+) — later blade may differ."
             }
         },
         "US Imports": {
             "C5 - C7": {
-                "lishi": "N/A — verify (US-spec keyway)",
+                "lishi": "GM37 (B106 Z-keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "GM37",
                 "ic": "N/A",
                 "chip": "Transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
@@ -13387,16 +13397,17 @@ const carDatabase = {
                 "acGas": "R134a (older) / R1234yf",
                 "acCap": "850g",
                 "acOil": "PAG 46",
-                "acNote": "US-spec radios/tools — verify region."
+                "acNote": "US-spec radios/tools — verify region.",
+                "warning": "⚠️ US-spec imports — GM Z-keyway (GM37) covers most; verify the exact year/blade."
             }
         }
     },
     "Dodge": {
         "Challenger": {
             "2008+": {
-                "lishi": "N/A — verify (US-spec keyway)",
+                "lishi": "CY24 (Y157/Y159)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "CY24",
                 "ic": "N/A",
                 "chip": "FCA rolling transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
@@ -13413,9 +13424,9 @@ const carDatabase = {
         },
         "Charger": {
             "2008+": {
-                "lishi": "N/A — verify (US-spec keyway)",
+                "lishi": "CY24 (Y157/Y159)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "CY24",
                 "ic": "N/A",
                 "chip": "FCA rolling transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
@@ -13432,9 +13443,9 @@ const carDatabase = {
         },
         "RAM (Import)": {
             "2008+": {
-                "lishi": "N/A — verify (US-spec keyway)",
+                "lishi": "CY24 (Y157/Y159)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "CY24",
                 "ic": "N/A",
                 "chip": "FCA rolling transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
@@ -13452,12 +13463,29 @@ const carDatabase = {
     },
     "GMC": {
         "Yukon": {
-            "2007+": {
-                "lishi": "N/A — verify (US-spec keyway)",
+            "2007 - 2014": {
+                "lishi": "GM37 (B106/B111 Z-keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "GM37",
                 "ic": "N/A",
-                "chip": "ID / GM transponder (verify)",
+                "chip": "ID46 / GM transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "BCM (GM)",
+                "location": "Under dash / driver's kick.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Key learn via OBD (2-key method).",
+                "acGas": "R134a",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify region."
+            },
+            "2015+": {
+                "lishi": "HU100 (10-cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU100",
+                "ic": "N/A",
+                "chip": "ID46 / GM transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
                 "module": "BCM (GM)",
                 "location": "Under dash / driver's kick.",
@@ -13471,12 +13499,29 @@ const carDatabase = {
             }
         },
         "Sierra (Import)": {
-            "2007+": {
-                "lishi": "N/A — verify (US-spec keyway)",
+            "2007 - 2013": {
+                "lishi": "GM37 (B106/B111 Z-keyway)",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "GM37",
                 "ic": "N/A",
-                "chip": "ID / GM transponder (verify)",
+                "chip": "ID46 / GM transponder (verify)",
+                "xhorse": "FOB — US 315MHz (verify)",
+                "module": "BCM (GM)",
+                "location": "Under dash / driver's kick.",
+                "access": "OBD.",
+                "risk": "MODERATE",
+                "protocol": "Key learn via OBD (2-key method).",
+                "acGas": "R134a",
+                "acCap": "Verify label",
+                "acOil": "PAG 46",
+                "acNote": "US-spec imports — verify region."
+            },
+            "2014+": {
+                "lishi": "HU100 (10-cut)",
+                "price": "Std key £160-£240 | AKL from £280-£400",
+                "silca": "HU100",
+                "ic": "N/A",
+                "chip": "ID46 / GM transponder (verify)",
                 "xhorse": "FOB — US 315MHz (verify)",
                 "module": "BCM (GM)",
                 "location": "Under dash / driver's kick.",
@@ -13493,13 +13538,13 @@ const carDatabase = {
     "Lotus": {
         "Elise": {
             "2000 - 2011": {
-                "lishi": "N/A — verify (Renault-sourced keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "4D / ID46 (verify by year)",
                 "xhorse": "OEM (verify)",
-                "module": "Immo — varies (Renault-based)",
+                "module": "Immo — varies (Lotus/Cobra)",
                 "location": "Under dash.",
                 "access": "OBD.",
                 "risk": "LOW – MODERATE",
@@ -13507,18 +13552,19 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "450g",
                 "acOil": "PAG 46",
-                "acNote": "Verify platform — Elise varies by year."
+                "acNote": "Verify platform — Elise varies by year.",
+                "warning": "⚠️ Pre-2007 Elise/Exige run a Cobra alarm with a Rover-family blade; 2007+ use a Lotus-specific 'V' blade. No standard Lishi 2-in-1 — read the keyway off the existing key."
             }
         },
         "Exige": {
             "2000 - 2011": {
-                "lishi": "N/A — verify (Renault-sourced keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "4D / ID46 (verify by year)",
                 "xhorse": "OEM (verify)",
-                "module": "Immo — varies (Renault-based)",
+                "module": "Immo — varies (Lotus/Cobra)",
                 "location": "Under dash.",
                 "access": "OBD.",
                 "risk": "LOW – MODERATE",
@@ -13526,14 +13572,15 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "450g",
                 "acOil": "PAG 46",
-                "acNote": "Verify platform — Elise varies by year."
+                "acNote": "Verify platform — Elise varies by year.",
+                "warning": "⚠️ Pre-2007 Elise/Exige run a Cobra alarm with a Rover-family blade; 2007+ use a Lotus-specific 'V' blade. No standard Lishi 2-in-1 — read the keyway off the existing key."
             }
         },
         "Evora": {
             "2011+": {
-                "lishi": "N/A — verify (Toyota-sourced keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "Smart keyless (verify)",
                 "xhorse": "OEM (verify)",
@@ -13545,14 +13592,15 @@ const carDatabase = {
                 "acGas": "R1234yf",
                 "acCap": "Verify label",
                 "acOil": "PAG 46",
-                "acNote": "Verify year/platform."
+                "acNote": "Verify year/platform.",
+                "warning": "⚠️ Toyota-derived engine but a Lotus-specific smart fob and emergency blade. No standard Lishi 2-in-1 — read the blade off the fob."
             }
         },
         "Emira": {
             "2011+": {
-                "lishi": "N/A — verify (Toyota-sourced keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £220-£330 | AKL from £450-£650",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "Smart keyless (verify)",
                 "xhorse": "OEM (verify)",
@@ -13564,16 +13612,17 @@ const carDatabase = {
                 "acGas": "R1234yf",
                 "acCap": "Verify label",
                 "acOil": "PAG 46",
-                "acNote": "Verify year/platform."
+                "acNote": "Verify year/platform.",
+                "warning": "⚠️ Toyota-derived engine but a Lotus-specific smart fob and emergency blade. No standard Lishi 2-in-1 — read the blade off the fob."
             }
         }
     },
     "Maserati": {
         "Ghibli": {
             "2014+": {
-                "lishi": "N/A — verify (FCA keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "FCA rolling transponder (verify)",
                 "xhorse": "FCA FOB (verify)",
@@ -13585,14 +13634,15 @@ const carDatabase = {
                 "acGas": "R1234yf",
                 "acCap": "Verify label",
                 "acOil": "PAG 46",
-                "acNote": "FCA platform — verify engine variant."
+                "acNote": "FCA platform — verify engine variant.",
+                "warning": "⚠️ Keyless — the door uses the Y171 emergency blade (2014-2023); 2023+ moved to SIP22. No Lishi 2-in-1 for Y171 — read the blade off the fob."
             }
         },
         "Quattroporte": {
             "2014+": {
-                "lishi": "N/A — verify (FCA keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "FCA rolling transponder (verify)",
                 "xhorse": "FCA FOB (verify)",
@@ -13604,14 +13654,15 @@ const carDatabase = {
                 "acGas": "R1234yf",
                 "acCap": "Verify label",
                 "acOil": "PAG 46",
-                "acNote": "FCA platform — verify engine variant."
+                "acNote": "FCA platform — verify engine variant.",
+                "warning": "⚠️ Keyless — the door uses the Y171 emergency blade (2014-2023); 2023+ moved to SIP22. No Lishi 2-in-1 for Y171 — read the blade off the fob."
             }
         },
         "Levante": {
             "2014+": {
-                "lishi": "N/A — verify (FCA keyway)",
+                "lishi": "No Lishi tool",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "N/A",
                 "ic": "N/A",
                 "chip": "FCA rolling transponder (verify)",
                 "xhorse": "FCA FOB (verify)",
@@ -13623,14 +13674,15 @@ const carDatabase = {
                 "acGas": "R1234yf",
                 "acCap": "Verify label",
                 "acOil": "PAG 46",
-                "acNote": "FCA platform — verify engine variant."
+                "acNote": "FCA platform — verify engine variant.",
+                "warning": "⚠️ Keyless — the door uses the Y171 emergency blade (2014-2023); 2023+ moved to SIP22. No Lishi 2-in-1 for Y171 — read the blade off the fob."
             }
         },
         "GranTurismo": {
             "2008 - 2019": {
-                "lishi": "N/A — verify (FCA / older keyway)",
+                "lishi": "SIP22",
                 "price": "Std key £160-£240 | AKL from £280-£400",
-                "silca": "N/A — verify",
+                "silca": "SIP22",
                 "ic": "N/A",
                 "chip": "FCA transponder (verify)",
                 "xhorse": "FCA FOB (verify)",
@@ -13642,16 +13694,17 @@ const carDatabase = {
                 "acGas": "R134a / R1234yf",
                 "acCap": "Verify label",
                 "acOil": "PAG 46",
-                "acNote": "Verify year."
+                "acNote": "Verify year.",
+                "warning": "⚠️ SIP22 covers GranTurismo 2007-2012; verify the later 2013+ blade before committing to the tool."
             }
         }
     },
     "Rover": {
         "75": {
             "1990 - 2005": {
-                "lishi": "N/A — verify (Rover keyway)",
+                "lishi": "HU92",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "HU92",
                 "ic": "N/A",
                 "chip": "ID44-style (verify)",
                 "xhorse": "OEM RKE (verify)",
@@ -13663,14 +13716,15 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "500g",
                 "acOil": "PAG 46",
-                "acNote": "Early 200s ran without an immobiliser — verify before charging."
+                "acNote": "Early 200s ran without an immobiliser — verify before charging.",
+                "warning": "⚠️ Rover 75 / MG ZT (1999-2005) use the BMW-derived HU92 blade. Get the key-specific code from the fob/key."
             }
         },
         "400": {
             "1990 - 2005": {
-                "lishi": "N/A — verify (Rover keyway)",
+                "lishi": "HON66 (verify — Honda platform)",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "HON66",
                 "ic": "N/A",
                 "chip": "ID44-style (verify)",
                 "xhorse": "OEM RKE (verify)",
@@ -13682,14 +13736,15 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "500g",
                 "acOil": "PAG 46",
-                "acNote": "Early 200s ran without an immobiliser — verify before charging."
+                "acNote": "Early 200s ran without an immobiliser — verify before charging.",
+                "warning": "⚠️ Rover 400 R8 is Honda Concerto-based — the Honda-series keyway (HON66) is the likely tool. Verify the later Rover-designed 400/45 before quoting."
             }
         },
         "600": {
             "1990 - 2005": {
-                "lishi": "N/A — verify (Rover keyway)",
+                "lishi": "HON66 (verify — Honda platform)",
                 "price": "Std key £90-£150 | AKL from £170-£260",
-                "silca": "N/A — verify",
+                "silca": "HON66",
                 "ic": "N/A",
                 "chip": "ID44-style (verify)",
                 "xhorse": "OEM RKE (verify)",
@@ -13701,7 +13756,8 @@ const carDatabase = {
                 "acGas": "R134a",
                 "acCap": "500g",
                 "acOil": "PAG 46",
-                "acNote": "Early 200s ran without an immobiliser — verify before charging."
+                "acNote": "Early 200s ran without an immobiliser — verify before charging.",
+                "warning": "⚠️ Rover 600 is Honda Accord-based — the Honda-series keyway (HON66) is the likely tool. Verify before quoting."
             }
         }
     }

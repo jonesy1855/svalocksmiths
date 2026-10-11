@@ -183,7 +183,7 @@
     <main class="policy-container">
         
         <h2 class="section-title">Privacy Policy</h2>
-        <p class="date-badge">Last Updated: August 2026</p>
+        <p class="date-badge">Last Updated: October 2026</p>
 
         <h3>1. Data Controller & Information We Collect</h3>
         <p>Shropshire Vehicle Access, trading as SVA Locksmiths (and referred to here as "we", "our", "us") operates as a mobile automotive locksmith service provider across Shropshire. For the purposes of the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018, we act as the Data Controller.</p>
@@ -193,7 +193,7 @@
             <li><strong>Vehicle identifiers:</strong> Vehicle Registration Mark (VRM), Make, Model, and Vehicle Identification Number (VIN).</li>
             <li><strong>Geographical data:</strong> Breakdown location, driveway address, or billing location required to coordinate our mobile workshop.</li>
             <li><strong>Identity verification data:</strong> Sight inspection of valid Photographic ID and matching V5C logbook documentation (conducted solely on-site to verify lawful vehicle connection; we do not store photocopies of personal identification cards unless required by law).</li>
-            <li><strong>FieldMate Pro app account data:</strong> Where you create an account in our FieldMate Pro mobile app for vehicle-reference lookups, we process your email address and subscription entitlement status. Sign-in is handled through the app's authentication provider (see Section 3) and passwords are never stored or transmitted in plain text. No account system is used on this website — the site's Lishi Finder is free and open.</li>
+            <li><strong>FieldMate Pro accounts and the web companion:</strong> Where you create an account in our FieldMate Pro mobile app, we process your email address and subscription entitlement status. Sign-in is handled through the app's authentication provider (see Section 3), and passwords are never stored or transmitted in plain text. This website does not operate its own account system — the site's Lishi Finder is free and open — but it provides a "Sign in" link to the <strong>SVA FieldMate web companion</strong>, a browser-based view of the same FieldMate Pro account where you can see your own jobs, quotes and invoices. Signing in there uses the same credentials and account as the app; this website does not create, hold or require any separate website account.</li>
         </ul>
 
         <h3>2. Lawful Basis for Processing</h3>
@@ -208,7 +208,7 @@
         <p>We strictly do not sell, rent, or trade your personal data with third-party marketing companies. Personal data is handled exclusively through our operational processors:</p>
         <ul>
             <li><strong>Website Hosting &amp; Delivery:</strong> Our website is hosted and delivered through Cloudflare Pages and the Cloudflare content delivery network (including anycast edge caching and SSL/TLS termination).</li>
-            <li><strong>Mobile App Accounts (Google Firebase):</strong> FieldMate Pro app accounts are handled by Google Firebase. Firebase Authentication processes and stores your email address and a securely hashed password (we never see or store your plaintext password), and Cloud Firestore stores your account profile record (email address, account creation date) together with your subscription entitlement status. This data is held on Google infrastructure under Google's data processing terms.</li>
+            <li><strong>Mobile App &amp; Web Companion Accounts (Google Firebase):</strong> FieldMate Pro app accounts, and the SVA FieldMate web companion that the site's "Sign in" link opens, are handled by Google Firebase. Firebase Authentication processes and stores your email address and a securely hashed password (we never see or store your plaintext password). Cloud Firestore stores your account profile record (email address, account creation date), your subscription entitlement status, and — where you use the app or the web companion — the job, quote and invoice records you create. The web companion is served through Firebase Hosting and reads live from the same Firestore database; access is restricted so an account can only ever read its own data. This data is held on Google infrastructure under Google's data processing terms (storage region europe-west2).</li>
             <li><strong>Website Form Processing:</strong> Inquiries submitted through web contact forms are transmitted securely via Formspree and stored within our protected Google Workspace infrastructure.</li>
             <li><strong>Direct Messaging:</strong> Chats initiated via our direct WhatsApp widget are governed by WhatsApp/Meta end-to-end encryption protocols.</li>
             <li><strong>Card Processing:</strong> In-person card payments are processed on-site through secure, PCI-DSS-compliant mobile point-of-sale terminals.</li>

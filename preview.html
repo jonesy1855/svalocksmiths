@@ -270,7 +270,7 @@
                     Our Android app ships the Lishi Finder database <strong style="color:#ddd;">completely offline</strong> — free. No signal needed at the door: the right pick and decoder for 40+ makes in seconds, with Pro unlocks for module locations, A/C specs and job quotes.
                 </p>
                 <div class="sva-store" data-state="live">
-                    <a class="sva-store-badge" href="app.html">
+                    <a class="sva-store-badge" href="https://play.google.com/store/apps/details?id=com.sva.fieldmate" target="_blank" rel="noopener">
                         <svg viewBox="0 0 24 26" fill="none" aria-hidden="true">
                             <path d="M1.6.9a2 2 0 0 0-.6 1.45v21.3c0 .55.22 1.04.6 1.45l.06.06L13.3 13.1v-.2L1.66.84a2.2 2.2 0 0 0-.06.06Z" fill="#00D2FF"/>
                             <path d="M16.9 16.7 13.3 13.1v-.2l3.6-3.6.08.05 4.3 2.45c1.23.7 1.23 1.85 0 2.55l-4.3 2.4-.08.05Z" fill="#FFCE00"/>
@@ -278,12 +278,12 @@
                             <path d="M16.98 9.35 1.6 1 13.3 12.9l3.68-3.55Z" fill="#00F076"/>
                         </svg>
                         <span class="sva-store-badge-text">
-                            <span class="sva-store-badge-eyebrow">Get</span>
-                            <span class="sva-store-badge-name">SVA FieldMate Pro</span>
+                            <span class="sva-store-badge-eyebrow">Get it on</span>
+                            <span class="sva-store-badge-name">Google Play</span>
                         </span>
                     </a>
                     <span class="sva-store-pill">Available</span>
-                    <span class="sva-store-note">Official link: <a href="app.html" style="color:#2ecc71;">sva-locksmiths.co.uk/app.html</a></span>
+                    <span class="sva-store-note"><a href="https://play.google.com/store/apps/details?id=com.sva.fieldmate" target="_blank" rel="noopener" style="color:#2ecc71;">View on Google Play</a> · <a href="app.html" style="color:#9ca3af;">App info</a></span>
                 </div>
                 <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-top: 20px;">
                     <a href="app.html"
@@ -296,8 +296,23 @@
                     </a>
                 </div>
             </div>
-            <div style="flex: 0 0 220px; text-align: center;">
-                <video class="sva-app-logo" src="assets/images/SVA_FieldMate_Pro.mp4" autoplay muted loop playsinline controls style="width: 100%; max-width: 220px; border-radius: 18px;"></video>
+            <div style="flex: 0 0 240px; text-align: center;">
+                <div style="width: 100%; max-width: 240px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,0.4);">
+                    <video id="fieldmatePromo" src="assets/images/SVA_FieldMate_Pro.mp4" muted playsinline style="width: 100%; display: block;"></video>
+                </div>
+                <script>
+                    (function(){
+                        const v = document.getElementById('fieldmatePromo');
+                        if(!v) return;
+                        const play = ()=>{ try{ v.play(); }catch(e){} };
+                        play();
+                        v.addEventListener('ended', function(){
+                            v.pause();
+                            v.currentTime = 0;
+                        }, {once:false});
+                        v.addEventListener('click', function(){ play(); }, {once:true});
+                    })();
+                </script>
             </div>
         </div>
     </section>
